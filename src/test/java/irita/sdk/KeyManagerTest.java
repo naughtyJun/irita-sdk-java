@@ -1,4 +1,4 @@
-package sdk;
+package irita.sdk;
 
 import irita.sdk.module.keys.Key;
 import irita.sdk.module.keys.KeyManager;

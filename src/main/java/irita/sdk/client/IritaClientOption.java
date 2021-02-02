@@ -13,7 +13,8 @@ public class IritaClientOption {
     private Key keyManager;
 
     private static final int defaultGas = 1;
-    private static final String defaultAmount = "20";
+    // TODO this amount
+    private static final String defaultAmount = "130";
     private static final String defaultDenom = "stake";
     private static final int defaultMaxTxsBytes = 1073741824;
     private static final String defaultMode = "";

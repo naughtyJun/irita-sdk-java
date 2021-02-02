@@ -1,8 +1,10 @@
-package sdk;
+package irita.sdk;
 
 import irita.sdk.util.HttpUtils;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class HttpUtilsTest {
     @Test
     public void get() throws Exception {

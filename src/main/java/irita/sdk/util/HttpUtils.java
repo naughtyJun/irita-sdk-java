@@ -99,16 +99,15 @@ public class HttpUtils {
             }
             result = builder.toString();
         } else {
-            // TODO this, 抛出一个可检测异常，供外部 try catch
-//            throw new RuntimeException("connect error");
+            throw new IOException("connect error, httpCode:" + connection.getResponseCode());
         }
         br.close();
         return result;
     }
 
     // use this to send tx
-// TODO use lock
-    public static <T extends com.google.protobuf.GeneratedMessageV3> String post(String uri, WrappedRequest<T> object) throws IOException {
+    // TODO use lock
+    public static <S extends com.google.protobuf.GeneratedMessageV3> String post(String uri, WrappedRequest<S> object) throws IOException {
         return post(uri, JSON.toJSONString(object));
     }
 }

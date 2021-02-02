@@ -1,4 +1,4 @@
-package sdk;
+package irita.sdk;
 
 import irita.sdk.util.IOUtils;
 import org.junit.Test;

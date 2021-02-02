@@ -1,4 +1,4 @@
-package sdk;
+package irita.sdk;
 
 import irita.sdk.client.IritaClient;
 import irita.sdk.client.IritaClientOption;
@@ -13,7 +13,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -112,7 +111,7 @@ public class WasmTest {
     public void exportContractState() {
         String contractAddress = "iaa1pcknsatx5ceyfu6zvtmz3yr8auumzrdtrn8h4v";
 
-        Map<String, byte[]> res = wasmClient.exportContractState(contractAddress);
+        Map<String, String> res = wasmClient.exportContractState(contractAddress);
         System.out.println(res);
     }
 }

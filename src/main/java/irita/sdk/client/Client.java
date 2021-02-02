@@ -97,7 +97,7 @@ public abstract class Client implements TxService {
 
         baseTx = new BaseTx();
         baseTx.setGas(option.getGas());
-        baseTx.setFee(baseTx.getFee());
+        baseTx.setFee(option.getFee());
         return baseTx;
     }
 

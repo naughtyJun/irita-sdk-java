@@ -11,6 +11,7 @@ import cosmwasm.wasm.v1beta1.Types;
 import io.grpc.ManagedChannel;
 import irita.sdk.client.Client;
 import irita.sdk.client.IritaClientOption;
+import irita.sdk.constant.TxStatus;
 import irita.sdk.constant.enums.EventEnum;
 import irita.sdk.exception.IritaSDKException;
 import irita.sdk.module.base.*;
@@ -19,10 +20,10 @@ import irita.sdk.util.IOUtils;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class WasmClient extends Client {
     public WasmClient(String nodeUri, String grpcAddr, String chainId, IritaClientOption option) {
@@ -64,7 +65,6 @@ public class WasmClient extends Client {
 
     // instantiate the contract state
     public String instantiate(InstantiateRequest req, BaseTx baseTx) throws IOException {
-
         Account account = super.queryAccount(option.getKeyManager().getAddr());
         Tx.MsgInstantiateContract.Builder builder = Tx.MsgInstantiateContract.newBuilder()
                 .setSender(account.getAddress())
@@ -112,10 +112,10 @@ public class WasmClient extends Client {
         TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
 
         String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        return JSON.parseObject(res, ResultTx.class);
+        return checkResTxAndConvert(res);
     }
 
-    public Result migrate(String contractAddress, long newCodeID, byte[] msgByte) throws IOException {
+    public ResultTx migrate(String contractAddress, long newCodeID, byte[] msgByte) throws IOException {
         Account account = super.queryAccount(option.getKeyManager().getAddr());
         Tx.MsgMigrateContract msg = Tx.MsgMigrateContract.newBuilder()
                 .setSender(account.getAddress())
@@ -127,7 +127,7 @@ public class WasmClient extends Client {
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(null, body, false);
         String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        return JSON.parseObject(res, Result.class);
+        return checkResTxAndConvert(res);
     }
 
     // return the contract information
@@ -160,7 +160,7 @@ public class WasmClient extends Client {
     }
 
     // export all state data of the contract
-    public Map<String, byte[]> exportContractState(String address) {
+    public Map<String, String> exportContractState(String address) {
         ManagedChannel channel = super.getGrpcClient();
         QueryOuterClass.QueryAllContractStateRequest req = QueryOuterClass.QueryAllContractStateRequest
                 .newBuilder()
@@ -170,16 +170,40 @@ public class WasmClient extends Client {
         QueryOuterClass.QueryAllContractStateResponse resp = QueryGrpc.newBlockingStub(channel).allContractState(req);
         channel.shutdown();
 
+        Map<String, String> map = new HashMap<>();
         List<Types.Model> models = resp.getModelsList();
-        return models.stream().collect(Collectors.toMap(k -> k.getKey().toString(), v -> v.getValue().toByteArray()));
+        for (Types.Model model : models) {
+            byte[] bytes = model.getKey().toByteArray();
+            final int PREFIX = 2;
+            byte[] dest = new byte[bytes.length - PREFIX];
+            System.arraycopy(bytes, PREFIX, dest, 0, dest.length);
+
+            String key = new String(dest);
+            String value = new String(model.getValue().toByteArray());
+            map.put(key, value);
+        }
+        return map;
     }
 
     private ResultTx checkResTxAndConvert(String res) {
         ResultTx resultTx = JSON.parseObject(res, ResultTx.class);
-        if ("0".equals(resultTx.getResult().getHeight())) {
-            throw new IritaSDKException(resultTx.getResult().getCheck_tx().getLog());
+
+        if (getTxCode(resultTx) != TxStatus.SUCCESS) {
+            throw new IritaSDKException(getTxLog(resultTx));
         }
         return resultTx;
+    }
+
+    private int getTxCode(ResultTx resultTx) {
+        int checkTxCode = resultTx.getResult().getCheck_tx().getCode();
+        int deliverTxCode = resultTx.getResult().getDeliver_tx().getCode();
+        return checkTxCode | deliverTxCode;
+    }
+
+    private String getTxLog(ResultTx resultTx) {
+        String checkTxLog = resultTx.getResult().getCheck_tx().getLog();
+        String deliverTxLog = resultTx.getResult().getDeliver_tx().getLog();
+        return checkTxLog + deliverTxLog;
     }
 
     private String getWasmEventValue(ResultTx resultTx, EventEnum eventEnum) {

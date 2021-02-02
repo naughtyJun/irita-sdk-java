@@ -1,12 +1,17 @@
 package irita.sdk.module.community_gov;
 
-import com.alibaba.fastjson.JSON;
+import io.grpc.StatusRuntimeException;
+import irita.sdk.client.IritaClientOption;
+import irita.sdk.constant.ContractAddress;
 import irita.sdk.constant.ContractArg;
 import irita.sdk.constant.ContractMethod;
-import irita.sdk.module.base.Coin;
-import irita.sdk.module.base.Result;
+import irita.sdk.constant.enums.RoleEnum;
+import irita.sdk.exception.ContractException;
+import irita.sdk.exception.IritaSDKException;
+import irita.sdk.module.base.BaseTx;
 import irita.sdk.module.wasm.ContractABI;
 import irita.sdk.module.wasm.WasmClient;
+import org.apache.commons.lang3.StringUtils;
 import org.bouncycastle.crypto.CryptoException;
 
 import java.io.IOException;
@@ -20,8 +25,107 @@ public class CommunityGovClient {
         this.wasmClient = wasmClient;
     }
 
-    // TODO addDepartment, updateDepartment, addMember, removeMember, removeHash ...
+    // TODO  addMember, removeMember, removeHash ...
 
+    /**
+     * 添加一个部门
+     *
+     * @param departmentName 部门名称
+     * @param publicKey      证书所对应的公钥（当前版本在链上存储时是直接存储，认为公钥就是地址）
+     */
+    public void addDepartment(String departmentName, String publicKey) throws ContractException {
+        if (StringUtils.isEmpty(departmentName) || StringUtils.isEmpty(publicKey)) {
+            throw new NullPointerException("departmentName or publicKey is null");
+        }
+
+        Map<String, Object> args = new HashMap<>();
+        args.put(ContractArg.DEPARTMENT_NAME, departmentName);
+        args.put(ContractArg.PUBLIC_KEY, publicKey);
+
+        ContractABI abi = new ContractABI();
+        abi.setMethod(ContractMethod.ADD_DEPARTMENT);
+        abi.setArgs(args);
+
+        try {
+            wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
+        } catch (IritaSDKException | IOException e) {
+            throw new ContractException(e.getMessage());
+        }
+    }
+
+    /**
+     * 更新部门的身份信息（相当于群主转让）
+     *
+     * @param publicKey 对方的公钥（当前版本和地址一样）
+     */
+    public void updateDepartment(String publicKey) throws ContractException {
+        if (StringUtils.isEmpty(publicKey)) {
+            throw new NullPointerException("publicKey is null");
+        }
+
+        Map<String, Object> args = new HashMap<>();
+        args.put(ContractArg.PUBLIC_KEY, publicKey);
+
+        ContractABI abi = new ContractABI();
+        abi.setMethod(ContractMethod.UPDATE_DEPARTMENT);
+        abi.setArgs(args);
+
+        try {
+            wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
+        } catch (IritaSDKException | IOException e) {
+            throw new ContractException(e.getMessage());
+        }
+    }
+
+    /**
+     * 向部门添加一个 成员
+     *
+     * @param address 成员管理员的地址
+     * @param role    成员的角色
+     */
+    public void addMember(String address, RoleEnum role) throws ContractException {
+        if (StringUtils.isEmpty(address) || role == null) {
+            throw new NullPointerException("address or role is null");
+        }
+
+        Map<String, Object> args = new HashMap<>();
+        args.put(ContractArg.ADDRESS, address);
+        args.put(ContractArg.ROLE, role.getRole());
+
+        ContractABI abi = new ContractABI();
+        abi.setMethod(ContractMethod.ADD_MEMBER);
+        abi.setArgs(args);
+
+        try {
+            wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
+        } catch (IritaSDKException | IOException e) {
+            throw new ContractException(e.getMessage());
+        }
+    }
+
+    /**
+     * 删除一个成员
+     *
+     * @param address 要删除的地址
+     */
+    public void removeMember(String address) throws ContractException {
+        if (StringUtils.isEmpty(address)) {
+            throw new NullPointerException("address is null");
+        }
+
+        Map<String, Object> args = new HashMap<>();
+        args.put(ContractArg.ADDRESS, address);
+
+        ContractABI abi = new ContractABI();
+        abi.setMethod(ContractMethod.REMOVE_MEMBER);
+        abi.setArgs(args);
+
+        try {
+            wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
+        } catch (IritaSDKException | IOException e) {
+            throw new ContractException(e.getMessage());
+        }
+    }
 
     /**
      * Hash创建（根据证照类型及唯一性ID, 判断本地是否已存在相应的票面信息Hash及证照文件Hash, 如存在，则将链上所有此证照的历史Hash变为删除态）
@@ -31,19 +135,41 @@ public class CommunityGovClient {
      * @param strHash  文件hash, 当file_hash为空时必填
      * @param fileHash 字符hash, 当str_hash为空时必填
      */
-    public void addHash(String docType, String docId, String strHash, String fileHash) throws CryptoException, IOException {
-        ContractABI abi = new ContractABI();
-        abi.setMethod(ContractMethod.ADD_HASH);
+    public void addHash(String docType, String docId, String strHash, String fileHash) throws IOException, ContractException {
+        if (!addHashParamValid(docType, docId, strHash, fileHash)) {
+            throw new NullPointerException("param is not correct");
+        }
+
         Map<String, Object> args = new HashMap<>();
         args.put(ContractArg.DOC_TYPE, docType);
         args.put(ContractArg.DOC_ID, docId);
         args.put(ContractArg.STR_HASH, strHash);
         args.put(ContractArg.FILE_HASH, fileHash);
+
+        ContractABI abi = new ContractABI();
+        abi.setMethod(ContractMethod.ADD_HASH);
         abi.setArgs(args);
 
-        // TODO 把contractAddress 合约地址配进去
-//        Result execute = wasmClient.execute("", abi, new Coin());
-//        System.out.println(JSON.toJSONString(execute));
+        try {
+            wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
+        } catch (IritaSDKException | IOException e) {
+            throw new ContractException(e.getMessage());
+        }
+    }
+
+    private boolean addHashParamValid(String docType, String docId, String strHash, String fileHash) {
+        if (StringUtils.isEmpty(docType) || StringUtils.isEmpty(docId)) {
+            return false;
+        }
+
+        if (StringUtils.isEmpty(strHash) && StringUtils.isEmpty(fileHash)) {
+            return false;
+        }
+
+        if (StringUtils.isNotEmpty(strHash) && StringUtils.isNotEmpty(fileHash)) {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -52,19 +178,35 @@ public class CommunityGovClient {
      * @param strHash  文件hash, 当file_hash为空时必填
      * @param fileHash 字符hash, 当str_hash为空时必填
      */
-    public Boolean getHash(String strHash, String fileHash) throws CryptoException, IOException {
-        ContractABI abi = new ContractABI();
-        abi.setMethod(ContractMethod.ADD_HASH);
+    public boolean getHash(String strHash, String fileHash) throws ContractException {
         Map<String, Object> args = new HashMap<>();
-        args.put(ContractArg.STR_HASH, strHash);
-        args.put(ContractArg.FILE_HASH, fileHash);
+
+        if (!StringUtils.isEmpty(strHash)) {
+            args.put(ContractArg.STR_HASH, strHash);
+        }
+        if (!StringUtils.isEmpty(strHash)) {
+            args.put(ContractArg.FILE_HASH, fileHash);
+        }
+
+        ContractABI abi = new ContractABI();
+        abi.setMethod(ContractMethod.GET_HASH);
         abi.setArgs(args);
 
-        // TODO 把contractAddress 合约地址配进去
-//        Result execute = wasmClient.execute("", abi, new Coin());
-//        System.out.println(JSON.toJSONString(execute));
+        try {
+            byte[] bytes = wasmClient.queryContract(ContractAddress.DEFAULT, abi);
+            if (bytes.length > 0) {
+                System.out.println("bytes: " + new String(bytes));
 
-        // TODO when send failed
+                return true;
+            }
+        } catch (StatusRuntimeException e) {
+            // StatusRuntimeException means not found
+            return false;
+        }
         return false;
+    }
+
+    private BaseTx getComGovBaseTx() {
+        return new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
     }
 }

@@ -16,6 +16,7 @@ import irita.sdk.exception.IritaSDKException;
 import irita.sdk.module.base.Account;
 import irita.sdk.module.base.TxService;
 import irita.sdk.module.keys.Key;
+import irita.sdk.util.ByteUtils;
 import irita.sdk.util.SM2Utils;
 import org.bouncycastle.crypto.CryptoException;
 import org.bouncycastle.math.ec.ECPoint;
@@ -36,13 +37,17 @@ public abstract class Client implements TxService {
         }
 
         String[] split = grpcAddr.split(":");
+        if (split.length != 2) {
+            throw new IritaSDKException("grpcAddr:\t" + grpcAddr + "is not correct");
+        }
+
         String addr = split[0];
         int port = Integer.parseInt(split[1]);
         return ManagedChannelBuilder.forAddress(addr, port).usePlaintext().build();
     }
 
     @Override
-    public TxOuterClass.Tx signTx(TxOuterClass.TxBody txBody, boolean offline) throws IritaSDKException, CryptoException, IOException {
+    public TxOuterClass.Tx signTx(TxOuterClass.TxBody txBody, boolean offline) {
         Key km = option.getKeyManager();
         BigInteger privKey = km.getPrivKey();
         ECPoint publicKey = SM2Utils.getPublicKeyFromPrivkey(privKey);
@@ -65,9 +70,15 @@ public abstract class Client implements TxService {
                 .setChainId(chainId)
                 .build();
 
-        byte[] signature = SM2Utils.sign(privKey, signDoc.toByteArray());
-        BigInteger[] rs = SM2Utils.getRSFromSignature(signature);
-        byte[] sigBytes = addAll(toBytesPadded(rs[0], 32), toBytesPadded(rs[1], 32));
+        byte[] signature;
+        BigInteger[] rs;
+        try {
+            signature = SM2Utils.sign(privKey, signDoc.toByteArray());
+            rs = SM2Utils.getRSFromSignature(signature);
+        } catch (CryptoException | IOException e) {
+            throw new IritaSDKException("use sm2 sign filed", e);
+        }
+        byte[] sigBytes = ByteUtils.addAll(ByteUtils.toBytesPadded(rs[0], 32), ByteUtils.toBytesPadded(rs[1], 32));
 
         return TxOuterClass.Tx.newBuilder()
                 .setBody(txBody)
@@ -76,56 +87,35 @@ public abstract class Client implements TxService {
                 .build();
     }
 
-
-    // TODO move this to correct position
-    public static byte[] addAll(byte[] array1, byte... array2) {
-        byte[] joinedArray = new byte[array1.length + array2.length];
-        System.arraycopy(array1, 0, joinedArray, 0, array1.length);
-        System.arraycopy(array2, 0, joinedArray, array1.length, array2.length);
-        return joinedArray;
-
+    // if you want to add memo, you will build by yourSelf
+    public TxOuterClass.TxBody buildTxBody(com.google.protobuf.GeneratedMessageV3 msg) {
+        return TxOuterClass.TxBody.newBuilder()
+                .addMessages(Any.pack(msg, "/"))
+                .setMemo("")
+                .setTimeoutHeight(0)
+                .build();
     }
 
-    // TODO move this to correct position
-    public static byte[] toBytesPadded(BigInteger value, int length) {
-        byte[] result = new byte[length];
-        byte[] bytes = value.toByteArray();
-        int bytesLength;
-        byte srcOffset;
-        if (bytes[0] == 0) {
-            bytesLength = bytes.length - 1;
-            srcOffset = 1;
-        } else {
-            bytesLength = bytes.length;
-            srcOffset = 0;
-        }
-
-        if (bytesLength > length) {
-            throw new RuntimeException("Input is too large to put in byte array of size " + length);
-        } else {
-            int destOffset = length - bytesLength;
-            System.arraycopy(bytes, srcOffset, result, destOffset, bytesLength);
-            return result;
-        }
-    }
-
-    public Account queryAccount(String addr) {
+    public Account queryAccount(String address) {
         ManagedChannel channel = getGrpcClient();
-        QueryOuterClass.QueryAccountRequest req = QueryOuterClass.QueryAccountRequest.newBuilder().setAddress(addr).build();
-        QueryOuterClass.QueryAccountResponse res = QueryGrpc.newBlockingStub(channel).account(req);
+        QueryOuterClass.QueryAccountRequest req = QueryOuterClass.QueryAccountRequest
+                .newBuilder()
+                .setAddress(address)
+                .build();
+
+        QueryOuterClass.QueryAccountResponse resp = QueryGrpc.newBlockingStub(channel).account(req);
 
         Auth.BaseAccount baseAccount = null;
         try {
-            baseAccount = res.getAccount().unpack(Auth.BaseAccount.class);
+            baseAccount = resp.getAccount().unpack(Auth.BaseAccount.class);
         } catch (InvalidProtocolBufferException e) {
-            e.printStackTrace();
+            throw new IritaSDKException("account:\t" + address + "is not exist", e);
         }
+
         Account account = new Account();
-        if (baseAccount != null) {
-            account.setAddress(baseAccount.getAddress());
-            account.setAccountNumber(baseAccount.getAccountNumber());
-            account.setSequence(baseAccount.getSequence());
-        }
+        account.setAddress(baseAccount.getAddress());
+        account.setAccountNumber(baseAccount.getAccountNumber());
+        account.setSequence(baseAccount.getSequence());
         return account;
     }
 }

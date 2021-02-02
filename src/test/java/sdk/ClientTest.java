@@ -7,6 +7,8 @@ import irita.sdk.module.base.Account;
 import irita.sdk.module.base.BaseClient;
 import irita.sdk.module.keys.Key;
 import irita.sdk.module.keys.KeyManager;
+import irita.sdk.module.wasm.ContractInfo;
+import irita.sdk.module.wasm.WasmClient;
 import org.bouncycastle.crypto.CryptoException;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,6 +46,15 @@ public class ClientTest {
     @Test
     public void send() throws CryptoException, IOException {
         BankClient bankClient = client.getBankClient();
-        bankClient.send("");
+        String res = bankClient.send("1", "iaa18xcshrf7qwjmmurxxxe6tezw7qeqzjaz2z5326");
+        System.out.println(res);
+    }
+
+    // TODO
+    @Test
+    public void queryContractInfo() {
+        WasmClient wasmClient = client.getWasmClient();
+        ContractInfo contractInfo = wasmClient.queryContractInfo("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3");
+        System.out.println(contractInfo);
     }
 }

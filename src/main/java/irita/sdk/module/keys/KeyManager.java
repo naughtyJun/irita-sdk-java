@@ -15,7 +15,7 @@ public class KeyManager implements Key {
     private BigInteger privKey;
     private String addr;
     private String mnemonic;
-    // this HD_PATH just for iris
+    // this KEY_PATH just for iris
     private static final String KEY_PATH = "m/44'/118'/0'/0/0";
     private static final String HRP = "iaa";
 

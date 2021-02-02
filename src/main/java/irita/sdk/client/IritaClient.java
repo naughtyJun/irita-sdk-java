@@ -2,12 +2,14 @@ package irita.sdk.client;
 
 import irita.sdk.module.bank.BankClient;
 import irita.sdk.module.base.BaseClient;
+import irita.sdk.module.community_gov.CommunityGovClient;
 import irita.sdk.module.wasm.WasmClient;
 
 public class IritaClient extends Client {
     private BaseClient baseClient;
     private BankClient bankClient;
     private WasmClient wasmClient;
+    private CommunityGovClient communityGovClient;
 
 
     public IritaClient() {
@@ -73,6 +75,14 @@ public class IritaClient extends Client {
             return this.wasmClient;
         } else {
             return new WasmClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
+        }
+    }
+
+    public CommunityGovClient getCommunityGovClient() {
+        if (this.communityGovClient != null) {
+            return this.communityGovClient;
+        } else {
+            return new CommunityGovClient(getWasmClient());
         }
     }
 }

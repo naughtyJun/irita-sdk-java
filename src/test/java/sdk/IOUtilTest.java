@@ -9,7 +9,7 @@ import static org.junit.Assert.assertNotNull;
 public class IOUtilTest {
     @Test
     public void readAll() {
-        byte[] bytes = IOUtils.readAll("src/main/resources/election.wasm");
+        byte[] bytes = IOUtils.readAll("src/main/resources/test.wasm");
         assertNotNull(bytes);
         assertEquals(146310, bytes.length);
     }

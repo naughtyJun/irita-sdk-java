@@ -32,7 +32,7 @@ public class ClientTest {
         String chainId = "irita";
         client = new IritaClient(nodeUri, grpcAddr, chainId, option);
 
-        assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3",km.getAddr());
+        assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
     }
 
     @Test
@@ -44,17 +44,9 @@ public class ClientTest {
     }
 
     @Test
-    public void send() throws CryptoException, IOException {
+    public void send() throws IOException {
         BankClient bankClient = client.getBankClient();
         String res = bankClient.send("1", "iaa18xcshrf7qwjmmurxxxe6tezw7qeqzjaz2z5326");
         System.out.println(res);
-    }
-
-    // TODO
-    @Test
-    public void queryContractInfo() {
-        WasmClient wasmClient = client.getWasmClient();
-        ContractInfo contractInfo = wasmClient.queryContractInfo("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3");
-        System.out.println(contractInfo);
     }
 }

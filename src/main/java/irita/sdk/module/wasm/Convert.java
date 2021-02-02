@@ -1,7 +1,8 @@
 package irita.sdk.module.wasm;
 
-import cosmos.wasm.QueryOuterClass;
-import cosmos.wasm.Wasm;
+
+import cosmwasm.wasm.v1beta1.QueryOuterClass;
+import cosmwasm.wasm.v1beta1.Types;
 
 public class Convert {
     public static ContractInfo toContractInfo(QueryOuterClass.QueryContractInfoResponse resp) {
@@ -11,7 +12,7 @@ public class Convert {
         contractInfo.setAdmin(resp.getContractInfo().getAdmin());
         contractInfo.setLabel(resp.getContractInfo().getLabel());
 
-        Wasm.AbsoluteTxPosition absoluteTxPosition = resp.getContractInfo().getCreated();
+        Types.AbsoluteTxPosition absoluteTxPosition = resp.getContractInfo().getCreated();
         ContractInfo.AbsoluteTxPosition created = new ContractInfo.AbsoluteTxPosition();
 
         created.BlockHeight = absoluteTxPosition.getBlockHeight();

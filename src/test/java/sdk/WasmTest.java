@@ -2,22 +2,24 @@ package sdk;
 
 import irita.sdk.client.IritaClient;
 import irita.sdk.client.IritaClientOption;
-import irita.sdk.module.community_gov.CommunityGovClient;
+import irita.sdk.module.base.BaseTx;
+import irita.sdk.module.base.ResultTx;
 import irita.sdk.module.keys.Key;
 import irita.sdk.module.keys.KeyManager;
-import irita.sdk.module.wasm.StoreRequest;
-import irita.sdk.module.wasm.WasmClient;
-import org.bouncycastle.crypto.CryptoException;
+import irita.sdk.module.wasm.*;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
 public class WasmTest {
-    private IritaClient client;
     private WasmClient wasmClient;
 
     @Before
@@ -29,21 +31,88 @@ public class WasmTest {
         String nodeUri = "http://localhost:26657";
         String grpcAddr = "http://localhost:9090";
         String chainId = "irita";
-        client = new IritaClient(nodeUri, grpcAddr, chainId, option);
+        IritaClient client = new IritaClient(nodeUri, grpcAddr, chainId, option);
         wasmClient = client.getWasmClient();
 
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
     }
 
+
     // when you want to add new Contract to block-chain, remove the @Ignore
     @Ignore
     @Test
-    public void TestWasm() throws CryptoException, IOException {
+    public void store() throws IOException {
         StoreRequest req = new StoreRequest();
         req.setWasmFile("src/main/resources/election.wasm");
-        String codId = wasmClient.store(req);
-        assertNotNull(codId);
-        System.out.println(codId);
+
+        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+        String codeId = wasmClient.store(req, baseTx);
+        assertTrue(StringUtils.isNotEmpty(codeId));
+        System.out.println(codeId);
     }
 
+    @Test
+    @Ignore
+    public void instantiate() throws IOException {
+        // code_id is res of store
+        long codeId = 7L;
+
+        Map<String, Object> initMsg = new HashMap<>();
+        initMsg.put("start", 1);
+        initMsg.put("end", 100);
+        initMsg.put("candidates", new String[]{"iaa1qvty8x0c78am8c44zv2n7tgm6gfqt78j0verqa", "iaa1zk2tse0pkk87p2v8tcsfs0ytfw3t88kejecye5"});
+
+        InstantiateRequest req = new InstantiateRequest();
+        req.setCodeId(codeId);
+        req.setInitMsg(initMsg);
+        req.setLabel("test wasm");
+        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+
+        String contractAddress = wasmClient.instantiate(req, baseTx);
+        assertTrue(StringUtils.isNotEmpty(contractAddress));
+        System.out.println(contractAddress);
+
+        // test queryContractInfo
+        ContractInfo contractInfo = wasmClient.queryContractInfo(contractAddress);
+        assertNotNull(contractInfo);
+        System.out.println(contractInfo);
+    }
+
+    @Test
+    @Ignore
+    public void execute() throws IOException {
+        // contractAddress is res of instantiate
+        String contractAddress = "iaa1pcknsatx5ceyfu6zvtmz3yr8auumzrdtrn8h4v";
+        Map<String, Object> args = new HashMap<>();
+        args.put("candidate", "iaa1qvty8x0c78am8c44zv2n7tgm6gfqt78j0verqa");
+
+        ContractABI execAbi = new ContractABI();
+        execAbi.setArgs(args);
+        execAbi.setMethod("vote");
+        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+
+        ResultTx resultTx = wasmClient.execute(contractAddress, execAbi, null, baseTx);
+
+        String height = resultTx.getResult().getHeight();
+        assertTrue(Integer.parseInt(height) > 0);
+        assertNotNull(resultTx.getResult().getHash());
+
+        // test QueryContract
+        ContractABI queryAbi = new ContractABI();
+        queryAbi.setMethod("get_vote_info");
+
+        byte[] bytes = wasmClient.queryContract(contractAddress, queryAbi);
+        assertNotNull(bytes);
+        assertTrue(bytes.length > 0);
+        System.out.println(new String(bytes));
+    }
+
+    @Test
+    @Ignore
+    public void exportContractState() {
+        String contractAddress = "iaa1pcknsatx5ceyfu6zvtmz3yr8auumzrdtrn8h4v";
+
+        Map<String, byte[]> res = wasmClient.exportContractState(contractAddress);
+        System.out.println(res);
+    }
 }

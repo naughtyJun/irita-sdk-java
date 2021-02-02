@@ -20,8 +20,13 @@ public class ContractABI {
         }
 
         Map<String, Map<String, Object>> map = new HashMap<>();
-        map.put(method, args);
-        return JSON.toJSONString(map).getBytes(StandardCharsets.UTF_8);
+        if (args == null) {
+            map.put(method, new HashMap<>());
+        } else {
+            map.put(method, args);
+        }
+
+        return JSON.toJSONBytes(map);
     }
 
     public String getMethod() {

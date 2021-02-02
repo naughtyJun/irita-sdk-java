@@ -1,7 +1,9 @@
 package irita.sdk.constant.enums;
 
 public enum EventEnum {
-    MessageCodeId("message", "code_id");
+    MESSAGE_CODE_ID("message", "code_id"),
+    MESSAGE_CONTRACT_ADDRESS("message", "contract_address");
+    ;
 
 
     private final String type;

@@ -5,7 +5,7 @@ import irita.sdk.module.keys.KeyManager;
 
 public class IritaClientOption {
     private int gas;
-    private final int gasLimit = 200000;
+    private final int gasLimit = 20000000;
     private Fee fee;
     private int maxTxsBytes;
     private String mode;

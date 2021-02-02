@@ -62,4 +62,15 @@ public class ContractInfo {
     public void setCreated(AbsoluteTxPosition created) {
         this.created = created;
     }
+
+    @Override
+    public String toString() {
+        return "ContractInfo{" +
+                "codeId=" + codeId +
+                ", creator='" + creator + '\'' +
+                ", admin='" + admin + '\'' +
+                ", label='" + label + '\'' +
+                ", created=" + created +
+                '}';
+    }
 }

@@ -16,7 +16,7 @@ public interface TxService {
      * @return The signed tx
      * @throws IritaSDKException if the signing failed
      */
-    TxOuterClass.Tx signTx(TxOuterClass.TxBody txBody, boolean offline) throws IritaSDKException, IOException, CryptoException;
+    TxOuterClass.Tx signTx(BaseTx baseTx, TxOuterClass.TxBody txBody, boolean offline) throws IritaSDKException, IOException, CryptoException;
 
     /**
      * verify a transaction

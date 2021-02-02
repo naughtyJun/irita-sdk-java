@@ -2,6 +2,9 @@ package irita.sdk.module.base;
 
 import irita.sdk.constant.enums.EventEnum;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
 
 public class Deliver_tx {
     private int code;
@@ -17,13 +20,16 @@ public class Deliver_tx {
         for (StringEvent e : events) {
             if (eventEnum.getType().equals(e.getType())) {
                 for (StringEvent.Attribute attr : e.getAttributes()) {
-                    if (eventEnum.getKey().equals(attr.key)) {
-                        return attr.value;
+                    String key = new String(Base64.getDecoder().decode(attr.key));
+
+                    if (eventEnum.getKey().equals(key)) {
+                        byte[] value = Base64.getDecoder().decode(attr.value);
+                        return new String(value);
                     }
                 }
             }
         }
-        return null;
+        return "";
     }
 
     public void setCode(int code) {

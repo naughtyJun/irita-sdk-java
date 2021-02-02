@@ -4,10 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.google.protobuf.ByteString;
 import cosmos.base.v1beta1.CoinOuterClass;
 import cosmos.tx.v1beta1.TxOuterClass;
-import cosmos.wasm.QueryGrpc;
-import cosmos.wasm.QueryOuterClass;
-import cosmos.wasm.Tx;
-import cosmos.wasm.Wasm;
+import cosmwasm.wasm.v1beta1.QueryGrpc;
+import cosmwasm.wasm.v1beta1.QueryOuterClass;
+import cosmwasm.wasm.v1beta1.Tx;
+import cosmwasm.wasm.v1beta1.Types;
 import io.grpc.ManagedChannel;
 import irita.sdk.client.Client;
 import irita.sdk.client.IritaClientOption;
@@ -33,7 +33,7 @@ public class WasmClient extends Client {
     }
 
     // upload the contract to block-chain and return the codeId for user
-    public String store(StoreRequest req) throws IOException {
+    public String store(StoreRequest req, BaseTx baseTx) throws IOException {
         Account account = super.queryAccount(option.getKeyManager().getAddr());
 
         if (req.getWasmByteCode() != null) {
@@ -41,8 +41,7 @@ public class WasmClient extends Client {
         } else {
             byte[] bytes = IOUtils.readAll(req.getWasmFile());
             if (bytes == null) {
-                // TODO fix this
-                throw new IritaSDKException("file not open");
+                throw new IritaSDKException("file not read");
             }
             req.setWasmByteCode(bytes);
         }
@@ -52,67 +51,68 @@ public class WasmClient extends Client {
                 .setWasmByteCode(ByteString.copyFrom(req.getWasmByteCode()))
                 .setSource("")
                 .setBuilder("")
-                .setInstantiatePermission(Wasm.AccessConfig.newBuilder().build())
                 .build();
 
         TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(body, false);
+        TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
+
         String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        ResultTx resultTx = JSON.parseObject(res, ResultTx.class);
+        ResultTx resultTx = checkResTxAndConvert(res);
 
-        if ("0".equals(resultTx.getResult().getHeight())) {
-            throw new IritaSDKException(resultTx.getResult().getCheck_tx().getLog());
-        }
-
-        return Optional.of(resultTx)
-                .map(ResultTx::getResult)
-                .map(Result::getDeliver_tx)
-                .map(x -> x.getEventValue(EventEnum.MessageCodeId))
-                .orElse(null);
+        return getWasmEventValue(resultTx, EventEnum.MESSAGE_CODE_ID);
     }
 
     // instantiate the contract state
-    public String instantiate(InstantiateRequest req) throws  IOException {
-        Account account = super.queryAccount(option.getKeyManager().getAddr());
-        Tx.MsgInstantiateContract msg = Tx.MsgInstantiateContract.newBuilder()
-                .setSender(account.getAddress())
-                .setAdmin(req.getAdmin())
-                .setCodeId(req.getCodeId())
-                .setInitMsg(
-                        ByteString.copyFrom(
-                                JSON.toJSONString(req.getInitMsg()).getBytes(StandardCharsets.UTF_8)))
-                .addInitFunds((
-                        CoinOuterClass.Coin.newBuilder()
-                                .setAmount(req.getInitFunds().getAmount())
-                                .setDenom(req.getInitFunds().getDenom())
-                                .build()))
-                .build();
+    public String instantiate(InstantiateRequest req, BaseTx baseTx) throws IOException {
 
+        Account account = super.queryAccount(option.getKeyManager().getAddr());
+        Tx.MsgInstantiateContract.Builder builder = Tx.MsgInstantiateContract.newBuilder()
+                .setSender(account.getAddress())
+                .setAdmin(Optional.of(req).map(InstantiateRequest::getAdmin).orElse(""))
+                .setCodeId(req.getCodeId())
+                .setInitMsg(ByteString.copyFrom(JSON.toJSONString(req.getInitMsg()).getBytes(StandardCharsets.UTF_8)))
+                .setLabel(req.getLabel());
+
+        if (req.getInitFunds() != null) {
+            builder.addInitFunds(
+                    CoinOuterClass.Coin.newBuilder()
+                            .setDenom(req.getInitFunds().getDenom())
+                            .setAmount(req.getInitFunds().getAmount()));
+        }
+
+        Tx.MsgInstantiateContract msg = builder.build();
         TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(body, false);
-        return HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
+        TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
+
+        String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
+        ResultTx resultTx = checkResTxAndConvert(res);
+
+        return getWasmEventValue(resultTx, EventEnum.MESSAGE_CONTRACT_ADDRESS);
     }
 
     // execute the contract method
-    public Result execute(String contractAddress, ContractABI abi, Coin sentFunds) throws IOException {
+    public ResultTx execute(String contractAddress, ContractABI abi, Coin funds, BaseTx baseTx) throws IOException {
         Account account = super.queryAccount(option.getKeyManager().getAddr());
         byte[] msgBytes = abi.build();
 
-        Tx.MsgExecuteContract msg = Tx.MsgExecuteContract.newBuilder()
+        Tx.MsgExecuteContract.Builder builder = Tx.MsgExecuteContract.newBuilder()
                 .setSender(account.getAddress())
                 .setContract(contractAddress)
-                .addSentFunds(
-                        CoinOuterClass.Coin.newBuilder()
-                                .setAmount(sentFunds.getAmount())
-                                .setDenom(sentFunds.getDenom())
-                                .build())
-                .setMsg(ByteString.copyFrom(msgBytes))
-                .build();
+                .setMsg(ByteString.copyFrom(msgBytes));
 
+        if (funds != null) {
+            builder.addSentFunds(
+                    CoinOuterClass.Coin.newBuilder()
+                            .setAmount(funds.getAmount())
+                            .setDenom(funds.getDenom()));
+        }
+
+        Tx.MsgExecuteContract msg = builder.build();
         TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(body, false);
+        TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
+
         String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        return JSON.parseObject(res, Result.class);
+        return JSON.parseObject(res, ResultTx.class);
     }
 
     public Result migrate(String contractAddress, long newCodeID, byte[] msgByte) throws IOException {
@@ -125,20 +125,21 @@ public class WasmClient extends Client {
                 .build();
 
         TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(body, false);
+        TxOuterClass.Tx tx = super.signTx(null, body, false);
         String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
         return JSON.parseObject(res, Result.class);
     }
 
     // return the contract information
-    public ContractInfo queryContractInfo(String address) {
+    public ContractInfo queryContractInfo(String contractAddress) {
         ManagedChannel channel = super.getGrpcClient();
         QueryOuterClass.QueryContractInfoRequest req = QueryOuterClass.QueryContractInfoRequest
                 .newBuilder()
-                .setAddress(address)
+                .setAddress(contractAddress)
                 .build();
 
         QueryOuterClass.QueryContractInfoResponse resp = QueryGrpc.newBlockingStub(channel).contractInfo(req);
+        channel.shutdown();
         return Convert.toContractInfo(resp);
     }
 
@@ -146,14 +147,15 @@ public class WasmClient extends Client {
     public byte[] queryContract(String address, ContractABI abi) {
         ManagedChannel channel = super.getGrpcClient();
 
-        byte[] queryData = JSON.toJSONBytes(abi);
+        byte[] msgBytes = abi.build();
         QueryOuterClass.QuerySmartContractStateRequest req = QueryOuterClass.QuerySmartContractStateRequest
                 .newBuilder()
                 .setAddress(address)
-                .setQueryData(ByteString.copyFrom(queryData))
+                .setQueryData(ByteString.copyFrom(msgBytes))
                 .build();
 
         QueryOuterClass.QuerySmartContractStateResponse resp = QueryGrpc.newBlockingStub(channel).smartContractState(req);
+        channel.shutdown();
         return resp.toByteArray();
     }
 
@@ -166,8 +168,29 @@ public class WasmClient extends Client {
                 .build();
 
         QueryOuterClass.QueryAllContractStateResponse resp = QueryGrpc.newBlockingStub(channel).allContractState(req);
+        channel.shutdown();
 
-        List<Wasm.Model> models = resp.getModelsList();
+        List<Types.Model> models = resp.getModelsList();
         return models.stream().collect(Collectors.toMap(k -> k.getKey().toString(), v -> v.getValue().toByteArray()));
+    }
+
+    private ResultTx checkResTxAndConvert(String res) {
+        ResultTx resultTx = JSON.parseObject(res, ResultTx.class);
+        if ("0".equals(resultTx.getResult().getHeight())) {
+            throw new IritaSDKException(resultTx.getResult().getCheck_tx().getLog());
+        }
+        return resultTx;
+    }
+
+    private String getWasmEventValue(ResultTx resultTx, EventEnum eventEnum) {
+        if (resultTx == null) {
+            throw new NullPointerException("resultTx tx is null");
+        }
+
+        return Optional.of(resultTx)
+                .map(ResultTx::getResult)
+                .map(Result::getDeliver_tx)
+                .map(x -> x.getEventValue(eventEnum))
+                .orElse("");
     }
 }

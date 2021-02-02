@@ -1,7 +1,5 @@
 package irita.sdk.module.wasm;
 
-import com.google.protobuf.ByteString;
-
 // StoreRequest define a struct for Store method
 public class StoreRequest {
     /**

@@ -29,7 +29,7 @@ public class BankClient extends Client {
                 .build();
 
         TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(body, false);
+        TxOuterClass.Tx tx = super.signTx(null, body, false);
         return HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
     }
 }

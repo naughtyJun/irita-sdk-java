@@ -42,8 +42,8 @@ public class CommunityGovClient {
         abi.setArgs(args);
 
         // TODO 把contractAddress 合约地址配进去
-        Result execute = wasmClient.execute("", abi, new Coin());
-        System.out.println(JSON.toJSONString(execute));
+//        Result execute = wasmClient.execute("", abi, new Coin());
+//        System.out.println(JSON.toJSONString(execute));
     }
 
     /**
@@ -61,8 +61,8 @@ public class CommunityGovClient {
         abi.setArgs(args);
 
         // TODO 把contractAddress 合约地址配进去
-        Result execute = wasmClient.execute("", abi, new Coin());
-        System.out.println(JSON.toJSONString(execute));
+//        Result execute = wasmClient.execute("", abi, new Coin());
+//        System.out.println(JSON.toJSONString(execute));
 
         // TODO when send failed
         return false;

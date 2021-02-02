@@ -14,6 +14,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import irita.sdk.exception.IritaSDKException;
 import irita.sdk.module.base.Account;
+import irita.sdk.module.base.BaseTx;
 import irita.sdk.module.base.TxService;
 import irita.sdk.module.keys.Key;
 import irita.sdk.util.ByteUtils;
@@ -47,7 +48,9 @@ public abstract class Client implements TxService {
     }
 
     @Override
-    public TxOuterClass.Tx signTx(TxOuterClass.TxBody txBody, boolean offline) {
+    public TxOuterClass.Tx signTx(BaseTx base, TxOuterClass.TxBody txBody, boolean offline) {
+        BaseTx baseTx = initBaseTx(base);
+
         Key km = option.getKeyManager();
         BigInteger privKey = km.getPrivKey();
         ECPoint publicKey = SM2Utils.getPublicKeyFromPrivkey(privKey);
@@ -60,7 +63,7 @@ public abstract class Client implements TxService {
                                 .setPublicKey(Any.pack(Keys.PubKey.newBuilder().setKey(ByteString.copyFrom(publicKeyEncoded)).build(), "/"))
                                 .setModeInfo(TxOuterClass.ModeInfo.newBuilder().setSingle(TxOuterClass.ModeInfo.Single.newBuilder().setMode(Signing.SignMode.SIGN_MODE_DIRECT)))
                                 .setSequence(account.getSequence()))
-                .setFee(TxOuterClass.Fee.newBuilder().setGasLimit(option.getGasLimit()).addAmount(CoinOuterClass.Coin.newBuilder().setAmount(option.getFee().amount).setDenom(option.getFee().denom))).build();
+                .setFee(TxOuterClass.Fee.newBuilder().setGasLimit(option.getGasLimit()).addAmount(CoinOuterClass.Coin.newBuilder().setAmount(baseTx.getFee().amount).setDenom(baseTx.getFee().denom))).build();
 
 
         TxOuterClass.SignDoc signDoc = TxOuterClass.SignDoc.newBuilder()
@@ -87,6 +90,17 @@ public abstract class Client implements TxService {
                 .build();
     }
 
+    private BaseTx initBaseTx(BaseTx baseTx) {
+        if (baseTx != null) {
+            return baseTx;
+        }
+
+        baseTx = new BaseTx();
+        baseTx.setGas(option.getGas());
+        baseTx.setFee(baseTx.getFee());
+        return baseTx;
+    }
+
     // if you want to add memo, you will build by yourSelf
     public TxOuterClass.TxBody buildTxBody(com.google.protobuf.GeneratedMessageV3 msg) {
         return TxOuterClass.TxBody.newBuilder()
@@ -104,6 +118,7 @@ public abstract class Client implements TxService {
                 .build();
 
         QueryOuterClass.QueryAccountResponse resp = QueryGrpc.newBlockingStub(channel).account(req);
+        channel.shutdown();
 
         Auth.BaseAccount baseAccount = null;
         try {

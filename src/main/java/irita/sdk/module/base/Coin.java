@@ -4,6 +4,14 @@ public class Coin {
     private String denom;
     private String amount;
 
+    public Coin() {
+    }
+
+    public Coin(String denom, String amount) {
+        this.denom = denom;
+        this.amount = amount;
+    }
+
     public String getDenom() {
         return denom;
     }

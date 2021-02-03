@@ -60,7 +60,7 @@ public class WasmClient extends Client {
         String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
         ResultTx resultTx = checkResTxAndConvert(res);
 
-        return getWasmEventValue(resultTx, EventEnum.MESSAGE_CODE_ID);
+        return resultTx.getEventValue(EventEnum.MESSAGE_CODE_ID);
     }
 
     // instantiate the contract state
@@ -87,7 +87,7 @@ public class WasmClient extends Client {
         String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
         ResultTx resultTx = checkResTxAndConvert(res);
 
-        return getWasmEventValue(resultTx, EventEnum.MESSAGE_CONTRACT_ADDRESS);
+        return resultTx.getEventValue(EventEnum.MESSAGE_CONTRACT_ADDRESS);
     }
 
     // execute the contract method
@@ -188,33 +188,9 @@ public class WasmClient extends Client {
     private ResultTx checkResTxAndConvert(String res) {
         ResultTx resultTx = JSON.parseObject(res, ResultTx.class);
 
-        if (getTxCode(resultTx) != TxStatus.SUCCESS) {
-            throw new IritaSDKException(getTxLog(resultTx));
+        if (resultTx.getCode() != TxStatus.SUCCESS) {
+            throw new IritaSDKException(resultTx.getLog());
         }
         return resultTx;
-    }
-
-    private int getTxCode(ResultTx resultTx) {
-        int checkTxCode = resultTx.getResult().getCheck_tx().getCode();
-        int deliverTxCode = resultTx.getResult().getDeliver_tx().getCode();
-        return checkTxCode | deliverTxCode;
-    }
-
-    private String getTxLog(ResultTx resultTx) {
-        String checkTxLog = resultTx.getResult().getCheck_tx().getLog();
-        String deliverTxLog = resultTx.getResult().getDeliver_tx().getLog();
-        return checkTxLog + deliverTxLog;
-    }
-
-    private String getWasmEventValue(ResultTx resultTx, EventEnum eventEnum) {
-        if (resultTx == null) {
-            throw new NullPointerException("resultTx tx is null");
-        }
-
-        return Optional.of(resultTx)
-                .map(ResultTx::getResult)
-                .map(Result::getDeliver_tx)
-                .map(x -> x.getEventValue(eventEnum))
-                .orElse("");
     }
 }

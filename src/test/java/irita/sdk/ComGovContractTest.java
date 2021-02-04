@@ -106,10 +106,10 @@ public class ComGovContractTest {
 
     @Test
     public void addMember() {
-        String newAddr = "iaa1ufs8gvg6qf6nzpx7wme5tmyja34dva58kqtx2z";
+        String newAddr = "iaa1wfs050mv8taydn4cttsrhr5dq3tpdaemcm5sk2";
 
         try {
-            comGovClient.addMember(newAddr, RoleEnum.ADMIN);
+            comGovClient.addMember(newAddr, RoleEnum.HASH_ADMIN);
         } catch (ContractException e) {
             e.printStackTrace();
         }
@@ -121,7 +121,7 @@ public class ComGovContractTest {
 
     @Test
     public void removeMember() {
-        String removeAddr = "iaa1ufs8gvg6qf6nzpx7wme5tmyja34dva58kqtx2z";
+        String removeAddr = "iaa1wfs050mv8taydn4cttsrhr5dq3tpdaemcm5sk2";
 
         try {
             comGovClient.removeMember(removeAddr);

@@ -72,9 +72,11 @@ public class ComGovContractTest {
     @Test
     public void addDepartment() {
         // publicKey == address in this version
-        String publicKey = "iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3";
+        final String publicKey = "iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3";
+        final String department = "测试部门";
+
         try {
-            comGovClient.addDepartment("测试1", publicKey);
+            comGovClient.addDepartment(department, publicKey);
         } catch (ContractException e) {
             // you can use log to record
             e.printStackTrace();
@@ -83,10 +85,10 @@ public class ComGovContractTest {
         // query contract for valid
         Map<String, String> map = wasmClient.exportContractState(ContractAddress.DEFAULT);
 
-        String v1 = map.get("测试1");
+        String v1 = map.get(department);
         assertEquals("{}", v1);
         String v2 = map.get("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3");
-        assertEquals("{\"department_name\":\"测试1\",\"role\":0,\"public_key\":\"iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3\"}", v2);
+        assertEquals("{\"department_name\":\"测试部门\",\"role\":0,\"public_key\":\"iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3\"}", v2);
     }
 
     // first update will success

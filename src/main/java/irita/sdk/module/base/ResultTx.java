@@ -19,9 +19,9 @@ public class ResultTx {
     public String getLog() {
         String checkTxLog = this.getResult().getCheck_tx().getLog();
         String deliverTxLog = this.getResult().getDeliver_tx().getLog();
-        if (StringUtils.isNotEmpty(checkTxLog)) {
+        if (!"[]".equals(checkTxLog)) {
             return checkTxLog;
-        } else if (StringUtils.isNotEmpty(deliverTxLog)) {
+        } else if (!"[]".equals(deliverTxLog)) {
             return deliverTxLog;
         } else {
             return "";

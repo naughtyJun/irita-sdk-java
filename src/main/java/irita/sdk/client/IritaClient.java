@@ -55,34 +55,26 @@ public class IritaClient extends Client {
     }
 
     public BankClient getBankClient() {
-        if (this.bankClient != null) {
-            return this.bankClient;
-        } else {
-            return new BankClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
-        }
+        if (bankClient == null)
+            bankClient = new BankClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
+        return bankClient;
     }
 
     public BaseClient getBaseClient() {
-        if (this.baseClient != null) {
-            return this.baseClient;
-        } else {
-            return new BaseClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
-        }
+        if (baseClient == null)
+            baseClient = new BaseClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
+        return baseClient;
     }
 
     public WasmClient getWasmClient() {
-        if (this.wasmClient != null) {
-            return this.wasmClient;
-        } else {
-            return new WasmClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
-        }
+        if (wasmClient == null)
+            wasmClient = new WasmClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
+        return wasmClient;
     }
 
     public CommunityGovClient getCommunityGovClient() {
-        if (this.communityGovClient != null) {
-            return this.communityGovClient;
-        } else {
-            return new CommunityGovClient(getWasmClient());
-        }
+        if (communityGovClient == null)
+            communityGovClient = new CommunityGovClient(getWasmClient());
+        return communityGovClient;
     }
 }

@@ -189,8 +189,6 @@ public class CommunityGovClient {
         try {
             byte[] bytes = wasmClient.queryContract(ContractAddress.DEFAULT, abi);
             if (bytes.length > 0) {
-                System.out.println("bytes: " + new String(bytes));
-
                 return true;
             }
         } catch (StatusRuntimeException e) {

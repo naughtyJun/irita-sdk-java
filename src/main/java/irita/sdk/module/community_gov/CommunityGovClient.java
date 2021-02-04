@@ -12,7 +12,6 @@ import irita.sdk.module.base.BaseTx;
 import irita.sdk.module.wasm.ContractABI;
 import irita.sdk.module.wasm.WasmClient;
 import org.apache.commons.lang3.StringUtils;
-import org.bouncycastle.crypto.CryptoException;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -24,8 +23,6 @@ public class CommunityGovClient {
     public CommunityGovClient(WasmClient wasmClient) {
         this.wasmClient = wasmClient;
     }
-
-    // TODO  addMember, removeMember, removeHash ...
 
     /**
      * 添加一个部门
@@ -166,10 +163,7 @@ public class CommunityGovClient {
             return false;
         }
 
-        if (StringUtils.isNotEmpty(strHash) && StringUtils.isNotEmpty(fileHash)) {
-            return false;
-        }
-        return true;
+        return StringUtils.isEmpty(strHash) || StringUtils.isEmpty(fileHash);
     }
 
     /**

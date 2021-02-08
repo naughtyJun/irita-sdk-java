@@ -5,6 +5,7 @@ import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.ContractAddress;
 import irita.sdk.constant.ContractArg;
 import irita.sdk.constant.ContractMethod;
+import irita.sdk.constant.enums.DocType;
 import irita.sdk.constant.enums.RoleEnum;
 import irita.sdk.exception.ContractException;
 import irita.sdk.exception.IritaSDKException;
@@ -132,8 +133,8 @@ public class CommunityGovClient {
      * @param strHash  文件hash, 当file_hash为空时必填
      * @param fileHash 字符hash, 当str_hash为空时必填
      */
-    public void addHash(String docType, String docId, String strHash, String fileHash) throws IOException, ContractException {
-        if (!addHashParamValid(docType, docId, strHash, fileHash)) {
+    public void addHash(DocType docType, String docId, String strHash, String fileHash) throws IOException, ContractException {
+        if (!addHashParamValid(docId, strHash, fileHash)) {
             throw new NullPointerException("param is not correct");
         }
 
@@ -154,32 +155,24 @@ public class CommunityGovClient {
         }
     }
 
-    private boolean addHashParamValid(String docType, String docId, String strHash, String fileHash) {
-        if (StringUtils.isEmpty(docType) || StringUtils.isEmpty(docId)) {
+    private boolean addHashParamValid(String docId, String strHash, String fileHash) {
+        if (StringUtils.isEmpty(docId)) {
             return false;
         }
 
-        if (StringUtils.isEmpty(strHash) && StringUtils.isEmpty(fileHash)) {
-            return false;
-        }
-
-        return StringUtils.isEmpty(strHash) || StringUtils.isEmpty(fileHash);
+        return StringUtils.isNotEmpty(strHash) && StringUtils.isNotEmpty(fileHash);
     }
 
     /**
      * 根据strHash或者fileHash查找 hash是否存在
      *
-     * @param strHash  文件hash, 当file_hash为空时必填
-     * @param fileHash 字符hash, 当str_hash为空时必填
+     * @param hash 文件hash/字符hash
      */
-    public boolean getHash(String strHash, String fileHash) throws ContractException {
+    public boolean getHash(String hash) throws ContractException {
         Map<String, Object> args = new HashMap<>();
 
-        if (!StringUtils.isEmpty(strHash)) {
-            args.put(ContractArg.STR_HASH, strHash);
-        }
-        if (!StringUtils.isEmpty(strHash)) {
-            args.put(ContractArg.FILE_HASH, fileHash);
+        if (StringUtils.isEmpty(hash)) {
+            throw new RuntimeException("hash is null");
         }
 
         ContractABI abi = new ContractABI();

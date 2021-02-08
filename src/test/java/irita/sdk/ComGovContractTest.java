@@ -3,6 +3,7 @@ package irita.sdk;
 import irita.sdk.client.IritaClient;
 import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.ContractAddress;
+import irita.sdk.constant.enums.DocType;
 import irita.sdk.constant.enums.RoleEnum;
 import irita.sdk.exception.ContractException;
 import irita.sdk.module.base.BaseTx;
@@ -147,10 +148,10 @@ public class ComGovContractTest {
         CommunityGovClient comGovClient1 = new IritaClient(nodeUri, grpcAddr, chainId, option).getCommunityGovClient();
 
         // exec add_hash
-        String docType = "1";
+        DocType docType = DocType.FOREST_SEED_PRODUCTION_OPERATION_LICENSE;
         String docId = "1";
-        String strHash = "789";
-        String fileHash = null;
+        String strHash = "123";
+        String fileHash = "789";
 
         try {
             comGovClient1.addHash(docType, docId, strHash, fileHash);
@@ -167,12 +168,19 @@ public class ComGovContractTest {
 
     @Test
     public void getHash() {
-        String strHash = "789";
+        String strHash = "123";
         String fileHash = "789";
         boolean isExisted = false;
 
         try {
-            isExisted = comGovClient.getHash(strHash, fileHash);
+            isExisted = comGovClient.getHash(strHash);
+        } catch (ContractException e) {
+            e.printStackTrace();
+        }
+        assertTrue(isExisted);
+
+        try {
+            isExisted = comGovClient.getHash(fileHash);
         } catch (ContractException e) {
             e.printStackTrace();
         }

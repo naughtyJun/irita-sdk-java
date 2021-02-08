@@ -168,7 +168,7 @@ public class CommunityGovClient {
      *
      * @param hash 文件hash/字符hash
      */
-    public boolean getHash(String hash) throws ContractException {
+    public boolean getHash(String hash) {
         Map<String, Object> args = new HashMap<>();
 
         if (StringUtils.isEmpty(hash)) {

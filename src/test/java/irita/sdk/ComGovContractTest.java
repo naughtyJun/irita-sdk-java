@@ -4,7 +4,7 @@ import irita.sdk.client.IritaClient;
 import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.ContractAddress;
 import irita.sdk.constant.enums.DocType;
-import irita.sdk.constant.enums.RoleEnum;
+import irita.sdk.constant.enums.Role;
 import irita.sdk.exception.ContractException;
 import irita.sdk.module.base.BaseTx;
 import irita.sdk.module.community_gov.CommunityGovClient;
@@ -110,7 +110,7 @@ public class ComGovContractTest {
         String newAddr = "iaa1wfs050mv8taydn4cttsrhr5dq3tpdaemcm5sk2";
 
         try {
-            comGovClient.addMember(newAddr, RoleEnum.HASH_ADMIN);
+            comGovClient.addMember(newAddr, Role.HASH_ADMIN);
         } catch (ContractException e) {
             e.printStackTrace();
         }
@@ -172,18 +172,10 @@ public class ComGovContractTest {
         String fileHash = "789";
         boolean isExisted = false;
 
-        try {
-            isExisted = comGovClient.getHash(strHash);
-        } catch (ContractException e) {
-            e.printStackTrace();
-        }
+        isExisted = comGovClient.getHash(strHash);
         assertTrue(isExisted);
 
-        try {
-            isExisted = comGovClient.getHash(fileHash);
-        } catch (ContractException e) {
-            e.printStackTrace();
-        }
+        isExisted = comGovClient.getHash(fileHash);
         assertTrue(isExisted);
     }
 
@@ -197,7 +189,7 @@ public class ComGovContractTest {
         int i = 0;
         while (i < 100) {
             try {
-                comGovClient.addMember(addr, RoleEnum.ADMIN);
+                comGovClient.addMember(addr, Role.ADMIN);
                 comGovClient.removeMember(addr);
             } catch (ContractException e) {
                 e.printStackTrace();

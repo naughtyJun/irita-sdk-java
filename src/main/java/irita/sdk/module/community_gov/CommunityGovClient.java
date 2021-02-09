@@ -6,7 +6,7 @@ import irita.sdk.constant.ContractAddress;
 import irita.sdk.constant.ContractArg;
 import irita.sdk.constant.ContractMethod;
 import irita.sdk.constant.enums.DocType;
-import irita.sdk.constant.enums.RoleEnum;
+import irita.sdk.constant.enums.Role;
 import irita.sdk.exception.ContractException;
 import irita.sdk.exception.IritaSDKException;
 import irita.sdk.module.base.BaseTx;
@@ -81,14 +81,14 @@ public class CommunityGovClient {
      * @param address 成员管理员的地址
      * @param role    成员的角色
      */
-    public void addMember(String address, RoleEnum role) throws ContractException {
+    public void addMember(String address, Role role) throws ContractException {
         if (StringUtils.isEmpty(address) || role == null) {
             throw new NullPointerException("address or role is null");
         }
 
         Map<String, Object> args = new HashMap<>();
         args.put(ContractArg.ADDRESS, address);
-        args.put(ContractArg.ROLE, role.getRole());
+        args.put(ContractArg.ROLE, role.getValue());
 
         ContractABI abi = new ContractABI();
         abi.setMethod(ContractMethod.ADD_MEMBER);

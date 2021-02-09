@@ -162,12 +162,13 @@ public class ComGovContractTest {
         // verify from db
         Map<String, String> map = wasmClient.exportContractState(ContractAddress.DEFAULT);
         System.out.println(map);
-        assertNotNull(map.get(docType + docId));
+        assertNotNull(map.get(docType.getCode() + "/" + docId));
         assertNotNull(map.get(strHash));
+        assertNotNull(map.get(fileHash));
     }
 
     @Test
-    public void getHash() {
+    public void getHash() throws ContractException {
         String strHash = "123";
         String fileHash = "789";
         boolean isExisted = false;

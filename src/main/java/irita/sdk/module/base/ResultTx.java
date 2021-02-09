@@ -1,7 +1,6 @@
 package irita.sdk.module.base;
 
 import irita.sdk.constant.enums.EventEnum;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.Optional;
 

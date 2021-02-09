@@ -134,12 +134,12 @@ public class CommunityGovClient {
      * @param fileHash 字符hash, 当str_hash为空时必填
      */
     public void addHash(DocType docType, String docId, String strHash, String fileHash) throws IOException, ContractException {
-        if (!addHashParamValid(docId, strHash, fileHash)) {
+        if (!addHashParamExist(docId, strHash, fileHash)) {
             throw new NullPointerException("param is not correct");
         }
 
         Map<String, Object> args = new HashMap<>();
-        args.put(ContractArg.DOC_TYPE, docType);
+        args.put(ContractArg.DOC_TYPE, docType.getCode());
         args.put(ContractArg.DOC_ID, docId);
         args.put(ContractArg.STR_HASH, strHash);
         args.put(ContractArg.FILE_HASH, fileHash);
@@ -155,12 +155,8 @@ public class CommunityGovClient {
         }
     }
 
-    private boolean addHashParamValid(String docId, String strHash, String fileHash) {
-        if (StringUtils.isEmpty(docId)) {
-            return false;
-        }
-
-        return StringUtils.isNotEmpty(strHash) && StringUtils.isNotEmpty(fileHash);
+    private boolean addHashParamExist(String docId, String strHash, String fileHash) {
+        return StringUtils.isNotEmpty(docId) && StringUtils.isNotEmpty(strHash) && StringUtils.isNotEmpty(fileHash);
     }
 
     /**
@@ -168,15 +164,15 @@ public class CommunityGovClient {
      *
      * @param hash 文件hash/字符hash
      */
-    public boolean getHash(String hash) {
-        Map<String, Object> args = new HashMap<>();
-
+    public boolean getHash(String hash) throws ContractException {
         if (StringUtils.isEmpty(hash)) {
             throw new RuntimeException("hash is null");
         }
 
         ContractABI abi = new ContractABI();
         abi.setMethod(ContractMethod.GET_HASH);
+        Map<String, Object> args = new HashMap<>();
+        args.put(ContractArg.HASH, hash);
         abi.setArgs(args);
 
         try {
@@ -185,8 +181,11 @@ public class CommunityGovClient {
                 return true;
             }
         } catch (StatusRuntimeException e) {
-            // StatusRuntimeException means not found
-            return false;
+            if (e.getMessage().contains("not found")) {
+                return false;
+            }
+
+            throw new ContractException(e.getMessage());
         }
         return false;
     }

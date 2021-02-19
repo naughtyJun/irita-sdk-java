@@ -1,8 +1,8 @@
 package irita.sdk;
 
 import irita.sdk.util.HttpUtils;
-import org.junit.Ignore;
-import org.junit.Test;
+import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.Test;
 
 @Ignore
 public class HttpUtilsTest {

@@ -7,19 +7,19 @@ import irita.sdk.module.base.Account;
 import irita.sdk.module.base.BaseClient;
 import irita.sdk.module.keys.Key;
 import irita.sdk.module.keys.KeyManager;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class ClientTest {
     private IritaClient client;
 
-    @Before
+    @BeforeEach
     public void init() {
         String mnemonic = "opera vivid pride shallow brick crew found resist decade neck expect apple chalk belt sick author know try tank detail tree impact hand best";
         Key km = new KeyManager(mnemonic);

@@ -13,23 +13,24 @@ import irita.sdk.module.keys.KeyManager;
 import irita.sdk.module.wasm.InstantiateRequest;
 import irita.sdk.module.wasm.StoreRequest;
 import irita.sdk.module.wasm.WasmClient;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.apache.commons.lang3.StringUtils;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 @Ignore
 public class ComGovContractTest {
     private CommunityGovClient comGovClient;
     private WasmClient wasmClient;
 
-    @Before
+    @BeforeEach
     @Ignore
     public void init() {
         String mnemonic = "opera vivid pride shallow brick crew found resist decade neck expect apple chalk belt sick author know try tank detail tree impact hand best";

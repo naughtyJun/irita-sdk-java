@@ -47,24 +47,16 @@ public final class HttpProto {
       "tom\030\010 \001(\0132\035.google.api.CustomHttpPattern" +
       "H\000\022\014\n\004body\030\007 \001(\t\022\025\n\rresponse_body\030\014 \001(\t\022" +
       "1\n\023additional_bindings\030\013 \003(\0132\024.google.ap" +
-      "i.HttpRuleB\t\n\007pattern\"/\n\021CustomHttpPatte",
+      "i.HttpRuleB\t\n\007pattern\"/\n\021CustomHttpPatte" +
       "rn\022\014\n\004kind\030\001 \001(\t\022\014\n\004path\030\002 \001(\tBj\n\016com.go" +
       "ogle.apiB\tHttpProtoP\001ZAgoogle.golang.org" +
       "/genproto/googleapis/api/annotations;ann" +
       "otations\370\001\001\242\002\004GAPIb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_google_api_Http_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_google_api_Http_fieldAccessorTable = new

@@ -19,37 +19,44 @@ public final class Opb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string base_token_denom = 1;</code>
+     * <code>string base_token_denom = 1 [(.gogoproto.moretags) = "yaml:&#92;"base_token_denom&#92;""];</code>
+     * @return The baseTokenDenom.
      */
     java.lang.String getBaseTokenDenom();
     /**
-     * <code>optional string base_token_denom = 1;</code>
+     * <code>string base_token_denom = 1 [(.gogoproto.moretags) = "yaml:&#92;"base_token_denom&#92;""];</code>
+     * @return The bytes for baseTokenDenom.
      */
     com.google.protobuf.ByteString
         getBaseTokenDenomBytes();
 
     /**
-     * <code>optional string point_token_denom = 2;</code>
+     * <code>string point_token_denom = 2 [(.gogoproto.moretags) = "yaml:&#92;"point_token_denom&#92;""];</code>
+     * @return The pointTokenDenom.
      */
     java.lang.String getPointTokenDenom();
     /**
-     * <code>optional string point_token_denom = 2;</code>
+     * <code>string point_token_denom = 2 [(.gogoproto.moretags) = "yaml:&#92;"point_token_denom&#92;""];</code>
+     * @return The bytes for pointTokenDenom.
      */
     com.google.protobuf.ByteString
         getPointTokenDenomBytes();
 
     /**
-     * <code>optional string base_token_manager = 3;</code>
+     * <code>string base_token_manager = 3 [(.gogoproto.moretags) = "yaml:&#92;"base_token_manager&#92;""];</code>
+     * @return The baseTokenManager.
      */
     java.lang.String getBaseTokenManager();
     /**
-     * <code>optional string base_token_manager = 3;</code>
+     * <code>string base_token_manager = 3 [(.gogoproto.moretags) = "yaml:&#92;"base_token_manager&#92;""];</code>
+     * @return The bytes for baseTokenManager.
      */
     com.google.protobuf.ByteString
         getBaseTokenManagerBytes();
 
     /**
-     * <code>optional bool unrestricted_token_transfer = 4;</code>
+     * <code>bool unrestricted_token_transfer = 4 [(.gogoproto.moretags) = "yaml:&#92;"unrestricted_token_transfer&#92;""];</code>
+     * @return The unrestrictedTokenTransfer.
      */
     boolean getUnrestrictedTokenTransfer();
   }
@@ -60,10 +67,11 @@ public final class Opb {
    *
    * Protobuf type {@code irita.opb.Params}
    */
-  public  static final class Params extends
+  public static final class Params extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:irita.opb.Params)
       ParamsOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Params.newBuilder() to construct.
     private Params(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -72,20 +80,30 @@ public final class Opb {
       baseTokenDenom_ = "";
       pointTokenDenom_ = "";
       baseTokenManager_ = "";
-      unrestrictedTokenTransfer_ = false;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Params();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Params(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -94,12 +112,6 @@ public final class Opb {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -123,6 +135,13 @@ public final class Opb {
               unrestrictedTokenTransfer_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -131,6 +150,7 @@ public final class Opb {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -139,6 +159,7 @@ public final class Opb {
       return irita.opb.Opb.internal_static_irita_opb_Params_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return irita.opb.Opb.internal_static_irita_opb_Params_fieldAccessorTable
@@ -149,8 +170,10 @@ public final class Opb {
     public static final int BASE_TOKEN_DENOM_FIELD_NUMBER = 1;
     private volatile java.lang.Object baseTokenDenom_;
     /**
-     * <code>optional string base_token_denom = 1;</code>
+     * <code>string base_token_denom = 1 [(.gogoproto.moretags) = "yaml:&#92;"base_token_denom&#92;""];</code>
+     * @return The baseTokenDenom.
      */
+    @java.lang.Override
     public java.lang.String getBaseTokenDenom() {
       java.lang.Object ref = baseTokenDenom_;
       if (ref instanceof java.lang.String) {
@@ -164,8 +187,10 @@ public final class Opb {
       }
     }
     /**
-     * <code>optional string base_token_denom = 1;</code>
+     * <code>string base_token_denom = 1 [(.gogoproto.moretags) = "yaml:&#92;"base_token_denom&#92;""];</code>
+     * @return The bytes for baseTokenDenom.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getBaseTokenDenomBytes() {
       java.lang.Object ref = baseTokenDenom_;
@@ -183,8 +208,10 @@ public final class Opb {
     public static final int POINT_TOKEN_DENOM_FIELD_NUMBER = 2;
     private volatile java.lang.Object pointTokenDenom_;
     /**
-     * <code>optional string point_token_denom = 2;</code>
+     * <code>string point_token_denom = 2 [(.gogoproto.moretags) = "yaml:&#92;"point_token_denom&#92;""];</code>
+     * @return The pointTokenDenom.
      */
+    @java.lang.Override
     public java.lang.String getPointTokenDenom() {
       java.lang.Object ref = pointTokenDenom_;
       if (ref instanceof java.lang.String) {
@@ -198,8 +225,10 @@ public final class Opb {
       }
     }
     /**
-     * <code>optional string point_token_denom = 2;</code>
+     * <code>string point_token_denom = 2 [(.gogoproto.moretags) = "yaml:&#92;"point_token_denom&#92;""];</code>
+     * @return The bytes for pointTokenDenom.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPointTokenDenomBytes() {
       java.lang.Object ref = pointTokenDenom_;
@@ -217,8 +246,10 @@ public final class Opb {
     public static final int BASE_TOKEN_MANAGER_FIELD_NUMBER = 3;
     private volatile java.lang.Object baseTokenManager_;
     /**
-     * <code>optional string base_token_manager = 3;</code>
+     * <code>string base_token_manager = 3 [(.gogoproto.moretags) = "yaml:&#92;"base_token_manager&#92;""];</code>
+     * @return The baseTokenManager.
      */
+    @java.lang.Override
     public java.lang.String getBaseTokenManager() {
       java.lang.Object ref = baseTokenManager_;
       if (ref instanceof java.lang.String) {
@@ -232,8 +263,10 @@ public final class Opb {
       }
     }
     /**
-     * <code>optional string base_token_manager = 3;</code>
+     * <code>string base_token_manager = 3 [(.gogoproto.moretags) = "yaml:&#92;"base_token_manager&#92;""];</code>
+     * @return The bytes for baseTokenManager.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getBaseTokenManagerBytes() {
       java.lang.Object ref = baseTokenManager_;
@@ -251,13 +284,16 @@ public final class Opb {
     public static final int UNRESTRICTED_TOKEN_TRANSFER_FIELD_NUMBER = 4;
     private boolean unrestrictedTokenTransfer_;
     /**
-     * <code>optional bool unrestricted_token_transfer = 4;</code>
+     * <code>bool unrestricted_token_transfer = 4 [(.gogoproto.moretags) = "yaml:&#92;"unrestricted_token_transfer&#92;""];</code>
+     * @return The unrestrictedTokenTransfer.
      */
+    @java.lang.Override
     public boolean getUnrestrictedTokenTransfer() {
       return unrestrictedTokenTransfer_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -267,6 +303,7 @@ public final class Opb {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getBaseTokenDenomBytes().isEmpty()) {
@@ -281,8 +318,10 @@ public final class Opb {
       if (unrestrictedTokenTransfer_ != false) {
         output.writeBool(4, unrestrictedTokenTransfer_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -301,11 +340,11 @@ public final class Opb {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, unrestrictedTokenTransfer_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -316,16 +355,16 @@ public final class Opb {
       }
       irita.opb.Opb.Params other = (irita.opb.Opb.Params) obj;
 
-      boolean result = true;
-      result = result && getBaseTokenDenom()
-          .equals(other.getBaseTokenDenom());
-      result = result && getPointTokenDenom()
-          .equals(other.getPointTokenDenom());
-      result = result && getBaseTokenManager()
-          .equals(other.getBaseTokenManager());
-      result = result && (getUnrestrictedTokenTransfer()
-          == other.getUnrestrictedTokenTransfer());
-      return result;
+      if (!getBaseTokenDenom()
+          .equals(other.getBaseTokenDenom())) return false;
+      if (!getPointTokenDenom()
+          .equals(other.getPointTokenDenom())) return false;
+      if (!getBaseTokenManager()
+          .equals(other.getBaseTokenManager())) return false;
+      if (getUnrestrictedTokenTransfer()
+          != other.getUnrestrictedTokenTransfer()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -334,7 +373,7 @@ public final class Opb {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BASE_TOKEN_DENOM_FIELD_NUMBER;
       hash = (53 * hash) + getBaseTokenDenom().hashCode();
       hash = (37 * hash) + POINT_TOKEN_DENOM_FIELD_NUMBER;
@@ -349,6 +388,17 @@ public final class Opb {
       return hash;
     }
 
+    public static irita.opb.Opb.Params parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static irita.opb.Opb.Params parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static irita.opb.Opb.Params parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -408,6 +458,7 @@ public final class Opb {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -415,6 +466,7 @@ public final class Opb {
     public static Builder newBuilder(irita.opb.Opb.Params prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -442,6 +494,7 @@ public final class Opb {
         return irita.opb.Opb.internal_static_irita_opb_Params_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return irita.opb.Opb.internal_static_irita_opb_Params_fieldAccessorTable
@@ -464,6 +517,7 @@ public final class Opb {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         baseTokenDenom_ = "";
@@ -477,15 +531,18 @@ public final class Opb {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return irita.opb.Opb.internal_static_irita_opb_Params_descriptor;
       }
 
+      @java.lang.Override
       public irita.opb.Opb.Params getDefaultInstanceForType() {
         return irita.opb.Opb.Params.getDefaultInstance();
       }
 
+      @java.lang.Override
       public irita.opb.Opb.Params build() {
         irita.opb.Opb.Params result = buildPartial();
         if (!result.isInitialized()) {
@@ -494,6 +551,7 @@ public final class Opb {
         return result;
       }
 
+      @java.lang.Override
       public irita.opb.Opb.Params buildPartial() {
         irita.opb.Opb.Params result = new irita.opb.Opb.Params(this);
         result.baseTokenDenom_ = baseTokenDenom_;
@@ -504,32 +562,39 @@ public final class Opb {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof irita.opb.Opb.Params) {
           return mergeFrom((irita.opb.Opb.Params)other);
@@ -556,14 +621,17 @@ public final class Opb {
         if (other.getUnrestrictedTokenTransfer() != false) {
           setUnrestrictedTokenTransfer(other.getUnrestrictedTokenTransfer());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -584,7 +652,8 @@ public final class Opb {
 
       private java.lang.Object baseTokenDenom_ = "";
       /**
-       * <code>optional string base_token_denom = 1;</code>
+       * <code>string base_token_denom = 1 [(.gogoproto.moretags) = "yaml:&#92;"base_token_denom&#92;""];</code>
+       * @return The baseTokenDenom.
        */
       public java.lang.String getBaseTokenDenom() {
         java.lang.Object ref = baseTokenDenom_;
@@ -599,7 +668,8 @@ public final class Opb {
         }
       }
       /**
-       * <code>optional string base_token_denom = 1;</code>
+       * <code>string base_token_denom = 1 [(.gogoproto.moretags) = "yaml:&#92;"base_token_denom&#92;""];</code>
+       * @return The bytes for baseTokenDenom.
        */
       public com.google.protobuf.ByteString
           getBaseTokenDenomBytes() {
@@ -615,7 +685,9 @@ public final class Opb {
         }
       }
       /**
-       * <code>optional string base_token_denom = 1;</code>
+       * <code>string base_token_denom = 1 [(.gogoproto.moretags) = "yaml:&#92;"base_token_denom&#92;""];</code>
+       * @param value The baseTokenDenom to set.
+       * @return This builder for chaining.
        */
       public Builder setBaseTokenDenom(
           java.lang.String value) {
@@ -628,7 +700,8 @@ public final class Opb {
         return this;
       }
       /**
-       * <code>optional string base_token_denom = 1;</code>
+       * <code>string base_token_denom = 1 [(.gogoproto.moretags) = "yaml:&#92;"base_token_denom&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearBaseTokenDenom() {
         
@@ -637,7 +710,9 @@ public final class Opb {
         return this;
       }
       /**
-       * <code>optional string base_token_denom = 1;</code>
+       * <code>string base_token_denom = 1 [(.gogoproto.moretags) = "yaml:&#92;"base_token_denom&#92;""];</code>
+       * @param value The bytes for baseTokenDenom to set.
+       * @return This builder for chaining.
        */
       public Builder setBaseTokenDenomBytes(
           com.google.protobuf.ByteString value) {
@@ -653,7 +728,8 @@ public final class Opb {
 
       private java.lang.Object pointTokenDenom_ = "";
       /**
-       * <code>optional string point_token_denom = 2;</code>
+       * <code>string point_token_denom = 2 [(.gogoproto.moretags) = "yaml:&#92;"point_token_denom&#92;""];</code>
+       * @return The pointTokenDenom.
        */
       public java.lang.String getPointTokenDenom() {
         java.lang.Object ref = pointTokenDenom_;
@@ -668,7 +744,8 @@ public final class Opb {
         }
       }
       /**
-       * <code>optional string point_token_denom = 2;</code>
+       * <code>string point_token_denom = 2 [(.gogoproto.moretags) = "yaml:&#92;"point_token_denom&#92;""];</code>
+       * @return The bytes for pointTokenDenom.
        */
       public com.google.protobuf.ByteString
           getPointTokenDenomBytes() {
@@ -684,7 +761,9 @@ public final class Opb {
         }
       }
       /**
-       * <code>optional string point_token_denom = 2;</code>
+       * <code>string point_token_denom = 2 [(.gogoproto.moretags) = "yaml:&#92;"point_token_denom&#92;""];</code>
+       * @param value The pointTokenDenom to set.
+       * @return This builder for chaining.
        */
       public Builder setPointTokenDenom(
           java.lang.String value) {
@@ -697,7 +776,8 @@ public final class Opb {
         return this;
       }
       /**
-       * <code>optional string point_token_denom = 2;</code>
+       * <code>string point_token_denom = 2 [(.gogoproto.moretags) = "yaml:&#92;"point_token_denom&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearPointTokenDenom() {
         
@@ -706,7 +786,9 @@ public final class Opb {
         return this;
       }
       /**
-       * <code>optional string point_token_denom = 2;</code>
+       * <code>string point_token_denom = 2 [(.gogoproto.moretags) = "yaml:&#92;"point_token_denom&#92;""];</code>
+       * @param value The bytes for pointTokenDenom to set.
+       * @return This builder for chaining.
        */
       public Builder setPointTokenDenomBytes(
           com.google.protobuf.ByteString value) {
@@ -722,7 +804,8 @@ public final class Opb {
 
       private java.lang.Object baseTokenManager_ = "";
       /**
-       * <code>optional string base_token_manager = 3;</code>
+       * <code>string base_token_manager = 3 [(.gogoproto.moretags) = "yaml:&#92;"base_token_manager&#92;""];</code>
+       * @return The baseTokenManager.
        */
       public java.lang.String getBaseTokenManager() {
         java.lang.Object ref = baseTokenManager_;
@@ -737,7 +820,8 @@ public final class Opb {
         }
       }
       /**
-       * <code>optional string base_token_manager = 3;</code>
+       * <code>string base_token_manager = 3 [(.gogoproto.moretags) = "yaml:&#92;"base_token_manager&#92;""];</code>
+       * @return The bytes for baseTokenManager.
        */
       public com.google.protobuf.ByteString
           getBaseTokenManagerBytes() {
@@ -753,7 +837,9 @@ public final class Opb {
         }
       }
       /**
-       * <code>optional string base_token_manager = 3;</code>
+       * <code>string base_token_manager = 3 [(.gogoproto.moretags) = "yaml:&#92;"base_token_manager&#92;""];</code>
+       * @param value The baseTokenManager to set.
+       * @return This builder for chaining.
        */
       public Builder setBaseTokenManager(
           java.lang.String value) {
@@ -766,7 +852,8 @@ public final class Opb {
         return this;
       }
       /**
-       * <code>optional string base_token_manager = 3;</code>
+       * <code>string base_token_manager = 3 [(.gogoproto.moretags) = "yaml:&#92;"base_token_manager&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearBaseTokenManager() {
         
@@ -775,7 +862,9 @@ public final class Opb {
         return this;
       }
       /**
-       * <code>optional string base_token_manager = 3;</code>
+       * <code>string base_token_manager = 3 [(.gogoproto.moretags) = "yaml:&#92;"base_token_manager&#92;""];</code>
+       * @param value The bytes for baseTokenManager to set.
+       * @return This builder for chaining.
        */
       public Builder setBaseTokenManagerBytes(
           com.google.protobuf.ByteString value) {
@@ -791,13 +880,17 @@ public final class Opb {
 
       private boolean unrestrictedTokenTransfer_ ;
       /**
-       * <code>optional bool unrestricted_token_transfer = 4;</code>
+       * <code>bool unrestricted_token_transfer = 4 [(.gogoproto.moretags) = "yaml:&#92;"unrestricted_token_transfer&#92;""];</code>
+       * @return The unrestrictedTokenTransfer.
        */
+      @java.lang.Override
       public boolean getUnrestrictedTokenTransfer() {
         return unrestrictedTokenTransfer_;
       }
       /**
-       * <code>optional bool unrestricted_token_transfer = 4;</code>
+       * <code>bool unrestricted_token_transfer = 4 [(.gogoproto.moretags) = "yaml:&#92;"unrestricted_token_transfer&#92;""];</code>
+       * @param value The unrestrictedTokenTransfer to set.
+       * @return This builder for chaining.
        */
       public Builder setUnrestrictedTokenTransfer(boolean value) {
         
@@ -806,7 +899,8 @@ public final class Opb {
         return this;
       }
       /**
-       * <code>optional bool unrestricted_token_transfer = 4;</code>
+       * <code>bool unrestricted_token_transfer = 4 [(.gogoproto.moretags) = "yaml:&#92;"unrestricted_token_transfer&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearUnrestrictedTokenTransfer() {
         
@@ -814,14 +908,16 @@ public final class Opb {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -840,11 +936,12 @@ public final class Opb {
 
     private static final com.google.protobuf.Parser<Params>
         PARSER = new com.google.protobuf.AbstractParser<Params>() {
+      @java.lang.Override
       public Params parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Params(input, extensionRegistry);
+        return new Params(input, extensionRegistry);
       }
     };
 
@@ -857,6 +954,7 @@ public final class Opb {
       return PARSER;
     }
 
+    @java.lang.Override
     public irita.opb.Opb.Params getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -888,19 +986,11 @@ public final class Opb {
       ",github.com/bianjieai/irita/modules/opb/" +
       "types\310\341\036\000b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_irita_opb_Params_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_irita_opb_Params_fieldAccessorTable = new

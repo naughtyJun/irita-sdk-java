@@ -19,25 +19,25 @@ public final class Kv {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<cosmos.base.kv.v1beta1.Kv.Pair> 
         getPairsList();
     /**
-     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.kv.v1beta1.Kv.Pair getPairs(int index);
     /**
-     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
      */
     int getPairsCount();
     /**
-     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends cosmos.base.kv.v1beta1.Kv.PairOrBuilder> 
         getPairsOrBuilderList();
     /**
-     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.kv.v1beta1.Kv.PairOrBuilder getPairsOrBuilder(
         int index);
@@ -49,10 +49,11 @@ public final class Kv {
    *
    * Protobuf type {@code cosmos.base.kv.v1beta1.Pairs}
    */
-  public  static final class Pairs extends
+  public static final class Pairs extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.kv.v1beta1.Pairs)
       PairsOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Pairs.newBuilder() to construct.
     private Pairs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -62,16 +63,28 @@ public final class Kv {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Pairs();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Pairs(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -80,19 +93,20 @@ public final class Kv {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 pairs_ = new java.util.ArrayList<cosmos.base.kv.v1beta1.Kv.Pair>();
                 mutable_bitField0_ |= 0x00000001;
               }
               pairs_.add(
                   input.readMessage(cosmos.base.kv.v1beta1.Kv.Pair.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -103,9 +117,10 @@ public final class Kv {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           pairs_ = java.util.Collections.unmodifiableList(pairs_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -114,6 +129,7 @@ public final class Kv {
       return cosmos.base.kv.v1beta1.Kv.internal_static_cosmos_base_kv_v1beta1_Pairs_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.kv.v1beta1.Kv.internal_static_cosmos_base_kv_v1beta1_Pairs_fieldAccessorTable
@@ -124,39 +140,45 @@ public final class Kv {
     public static final int PAIRS_FIELD_NUMBER = 1;
     private java.util.List<cosmos.base.kv.v1beta1.Kv.Pair> pairs_;
     /**
-     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.kv.v1beta1.Kv.Pair> getPairsList() {
       return pairs_;
     }
     /**
-     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.kv.v1beta1.Kv.PairOrBuilder> 
         getPairsOrBuilderList() {
       return pairs_;
     }
     /**
-     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public int getPairsCount() {
       return pairs_.size();
     }
     /**
-     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.base.kv.v1beta1.Kv.Pair getPairs(int index) {
       return pairs_.get(index);
     }
     /**
-     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+     * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.base.kv.v1beta1.Kv.PairOrBuilder getPairsOrBuilder(
         int index) {
       return pairs_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -166,13 +188,16 @@ public final class Kv {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < pairs_.size(); i++) {
         output.writeMessage(1, pairs_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -182,11 +207,11 @@ public final class Kv {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, pairs_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -197,10 +222,10 @@ public final class Kv {
       }
       cosmos.base.kv.v1beta1.Kv.Pairs other = (cosmos.base.kv.v1beta1.Kv.Pairs) obj;
 
-      boolean result = true;
-      result = result && getPairsList()
-          .equals(other.getPairsList());
-      return result;
+      if (!getPairsList()
+          .equals(other.getPairsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -209,7 +234,7 @@ public final class Kv {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getPairsCount() > 0) {
         hash = (37 * hash) + PAIRS_FIELD_NUMBER;
         hash = (53 * hash) + getPairsList().hashCode();
@@ -219,6 +244,17 @@ public final class Kv {
       return hash;
     }
 
+    public static cosmos.base.kv.v1beta1.Kv.Pairs parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.kv.v1beta1.Kv.Pairs parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.kv.v1beta1.Kv.Pairs parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -278,6 +314,7 @@ public final class Kv {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -285,6 +322,7 @@ public final class Kv {
     public static Builder newBuilder(cosmos.base.kv.v1beta1.Kv.Pairs prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -312,6 +350,7 @@ public final class Kv {
         return cosmos.base.kv.v1beta1.Kv.internal_static_cosmos_base_kv_v1beta1_Pairs_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.kv.v1beta1.Kv.internal_static_cosmos_base_kv_v1beta1_Pairs_fieldAccessorTable
@@ -335,6 +374,7 @@ public final class Kv {
           getPairsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (pairsBuilder_ == null) {
@@ -346,15 +386,18 @@ public final class Kv {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.kv.v1beta1.Kv.internal_static_cosmos_base_kv_v1beta1_Pairs_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.kv.v1beta1.Kv.Pairs getDefaultInstanceForType() {
         return cosmos.base.kv.v1beta1.Kv.Pairs.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.kv.v1beta1.Kv.Pairs build() {
         cosmos.base.kv.v1beta1.Kv.Pairs result = buildPartial();
         if (!result.isInitialized()) {
@@ -363,11 +406,12 @@ public final class Kv {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.kv.v1beta1.Kv.Pairs buildPartial() {
         cosmos.base.kv.v1beta1.Kv.Pairs result = new cosmos.base.kv.v1beta1.Kv.Pairs(this);
         int from_bitField0_ = bitField0_;
         if (pairsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             pairs_ = java.util.Collections.unmodifiableList(pairs_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -379,32 +423,39 @@ public final class Kv {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.kv.v1beta1.Kv.Pairs) {
           return mergeFrom((cosmos.base.kv.v1beta1.Kv.Pairs)other);
@@ -442,14 +493,17 @@ public final class Kv {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -472,7 +526,7 @@ public final class Kv {
       private java.util.List<cosmos.base.kv.v1beta1.Kv.Pair> pairs_ =
         java.util.Collections.emptyList();
       private void ensurePairsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           pairs_ = new java.util.ArrayList<cosmos.base.kv.v1beta1.Kv.Pair>(pairs_);
           bitField0_ |= 0x00000001;
          }
@@ -482,7 +536,7 @@ public final class Kv {
           cosmos.base.kv.v1beta1.Kv.Pair, cosmos.base.kv.v1beta1.Kv.Pair.Builder, cosmos.base.kv.v1beta1.Kv.PairOrBuilder> pairsBuilder_;
 
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmos.base.kv.v1beta1.Kv.Pair> getPairsList() {
         if (pairsBuilder_ == null) {
@@ -492,7 +546,7 @@ public final class Kv {
         }
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public int getPairsCount() {
         if (pairsBuilder_ == null) {
@@ -502,7 +556,7 @@ public final class Kv {
         }
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.kv.v1beta1.Kv.Pair getPairs(int index) {
         if (pairsBuilder_ == null) {
@@ -512,7 +566,7 @@ public final class Kv {
         }
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setPairs(
           int index, cosmos.base.kv.v1beta1.Kv.Pair value) {
@@ -529,7 +583,7 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setPairs(
           int index, cosmos.base.kv.v1beta1.Kv.Pair.Builder builderForValue) {
@@ -543,7 +597,7 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addPairs(cosmos.base.kv.v1beta1.Kv.Pair value) {
         if (pairsBuilder_ == null) {
@@ -559,7 +613,7 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addPairs(
           int index, cosmos.base.kv.v1beta1.Kv.Pair value) {
@@ -576,7 +630,7 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addPairs(
           cosmos.base.kv.v1beta1.Kv.Pair.Builder builderForValue) {
@@ -590,7 +644,7 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addPairs(
           int index, cosmos.base.kv.v1beta1.Kv.Pair.Builder builderForValue) {
@@ -604,7 +658,7 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllPairs(
           java.lang.Iterable<? extends cosmos.base.kv.v1beta1.Kv.Pair> values) {
@@ -619,7 +673,7 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearPairs() {
         if (pairsBuilder_ == null) {
@@ -632,7 +686,7 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removePairs(int index) {
         if (pairsBuilder_ == null) {
@@ -645,14 +699,14 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.kv.v1beta1.Kv.Pair.Builder getPairsBuilder(
           int index) {
         return getPairsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.kv.v1beta1.Kv.PairOrBuilder getPairsOrBuilder(
           int index) {
@@ -662,7 +716,7 @@ public final class Kv {
         }
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends cosmos.base.kv.v1beta1.Kv.PairOrBuilder> 
            getPairsOrBuilderList() {
@@ -673,14 +727,14 @@ public final class Kv {
         }
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.kv.v1beta1.Kv.Pair.Builder addPairsBuilder() {
         return getPairsFieldBuilder().addBuilder(
             cosmos.base.kv.v1beta1.Kv.Pair.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.kv.v1beta1.Kv.Pair.Builder addPairsBuilder(
           int index) {
@@ -688,7 +742,7 @@ public final class Kv {
             index, cosmos.base.kv.v1beta1.Kv.Pair.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1;</code>
+       * <code>repeated .cosmos.base.kv.v1beta1.Pair pairs = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmos.base.kv.v1beta1.Kv.Pair.Builder> 
            getPairsBuilderList() {
@@ -701,21 +755,23 @@ public final class Kv {
           pairsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.kv.v1beta1.Kv.Pair, cosmos.base.kv.v1beta1.Kv.Pair.Builder, cosmos.base.kv.v1beta1.Kv.PairOrBuilder>(
                   pairs_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           pairs_ = null;
         }
         return pairsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -734,11 +790,12 @@ public final class Kv {
 
     private static final com.google.protobuf.Parser<Pairs>
         PARSER = new com.google.protobuf.AbstractParser<Pairs>() {
+      @java.lang.Override
       public Pairs parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Pairs(input, extensionRegistry);
+        return new Pairs(input, extensionRegistry);
       }
     };
 
@@ -751,6 +808,7 @@ public final class Kv {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.kv.v1beta1.Kv.Pairs getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -762,12 +820,14 @@ public final class Kv {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
     com.google.protobuf.ByteString getKey();
 
     /**
-     * <code>optional bytes value = 2;</code>
+     * <code>bytes value = 2;</code>
+     * @return The value.
      */
     com.google.protobuf.ByteString getValue();
   }
@@ -778,10 +838,11 @@ public final class Kv {
    *
    * Protobuf type {@code cosmos.base.kv.v1beta1.Pair}
    */
-  public  static final class Pair extends
+  public static final class Pair extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.kv.v1beta1.Pair)
       PairOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Pair.newBuilder() to construct.
     private Pair(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -792,16 +853,27 @@ public final class Kv {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Pair();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Pair(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -810,12 +882,6 @@ public final class Kv {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               key_ = input.readBytes();
@@ -826,6 +892,13 @@ public final class Kv {
               value_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -834,6 +907,7 @@ public final class Kv {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -842,6 +916,7 @@ public final class Kv {
       return cosmos.base.kv.v1beta1.Kv.internal_static_cosmos_base_kv_v1beta1_Pair_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.kv.v1beta1.Kv.internal_static_cosmos_base_kv_v1beta1_Pair_fieldAccessorTable
@@ -852,8 +927,10 @@ public final class Kv {
     public static final int KEY_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString key_;
     /**
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
@@ -861,13 +938,16 @@ public final class Kv {
     public static final int VALUE_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString value_;
     /**
-     * <code>optional bytes value = 2;</code>
+     * <code>bytes value = 2;</code>
+     * @return The value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -877,6 +957,7 @@ public final class Kv {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!key_.isEmpty()) {
@@ -885,8 +966,10 @@ public final class Kv {
       if (!value_.isEmpty()) {
         output.writeBytes(2, value_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -900,11 +983,11 @@ public final class Kv {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, value_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -915,12 +998,12 @@ public final class Kv {
       }
       cosmos.base.kv.v1beta1.Kv.Pair other = (cosmos.base.kv.v1beta1.Kv.Pair) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && getValue()
-          .equals(other.getValue());
-      return result;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -929,7 +1012,7 @@ public final class Kv {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -939,6 +1022,17 @@ public final class Kv {
       return hash;
     }
 
+    public static cosmos.base.kv.v1beta1.Kv.Pair parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.kv.v1beta1.Kv.Pair parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.kv.v1beta1.Kv.Pair parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -998,6 +1092,7 @@ public final class Kv {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1005,6 +1100,7 @@ public final class Kv {
     public static Builder newBuilder(cosmos.base.kv.v1beta1.Kv.Pair prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1032,6 +1128,7 @@ public final class Kv {
         return cosmos.base.kv.v1beta1.Kv.internal_static_cosmos_base_kv_v1beta1_Pair_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.kv.v1beta1.Kv.internal_static_cosmos_base_kv_v1beta1_Pair_fieldAccessorTable
@@ -1054,6 +1151,7 @@ public final class Kv {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = com.google.protobuf.ByteString.EMPTY;
@@ -1063,15 +1161,18 @@ public final class Kv {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.kv.v1beta1.Kv.internal_static_cosmos_base_kv_v1beta1_Pair_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.kv.v1beta1.Kv.Pair getDefaultInstanceForType() {
         return cosmos.base.kv.v1beta1.Kv.Pair.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.kv.v1beta1.Kv.Pair build() {
         cosmos.base.kv.v1beta1.Kv.Pair result = buildPartial();
         if (!result.isInitialized()) {
@@ -1080,6 +1181,7 @@ public final class Kv {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.kv.v1beta1.Kv.Pair buildPartial() {
         cosmos.base.kv.v1beta1.Kv.Pair result = new cosmos.base.kv.v1beta1.Kv.Pair(this);
         result.key_ = key_;
@@ -1088,32 +1190,39 @@ public final class Kv {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.kv.v1beta1.Kv.Pair) {
           return mergeFrom((cosmos.base.kv.v1beta1.Kv.Pair)other);
@@ -1131,14 +1240,17 @@ public final class Kv {
         if (other.getValue() != com.google.protobuf.ByteString.EMPTY) {
           setValue(other.getValue());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1159,13 +1271,17 @@ public final class Kv {
 
       private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return The key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getKey() {
         return key_;
       }
       /**
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1177,7 +1293,8 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -1188,13 +1305,17 @@ public final class Kv {
 
       private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @return The value.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getValue() {
         return value_;
       }
       /**
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1206,7 +1327,8 @@ public final class Kv {
         return this;
       }
       /**
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
         
@@ -1214,14 +1336,16 @@ public final class Kv {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1240,11 +1364,12 @@ public final class Kv {
 
     private static final com.google.protobuf.Parser<Pair>
         PARSER = new com.google.protobuf.AbstractParser<Pair>() {
+      @java.lang.Override
       public Pair parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Pair(input, extensionRegistry);
+        return new Pair(input, extensionRegistry);
       }
     };
 
@@ -1257,6 +1382,7 @@ public final class Kv {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.kv.v1beta1.Kv.Pair getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1289,19 +1415,11 @@ public final class Kv {
       "\022\r\n\005value\030\002 \001(\014B\'Z%github.com/cosmos/cos" +
       "mos-sdk/types/kvb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_base_kv_v1beta1_Pairs_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_base_kv_v1beta1_Pairs_fieldAccessorTable = new

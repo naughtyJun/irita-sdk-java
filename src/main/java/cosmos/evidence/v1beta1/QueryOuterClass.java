@@ -23,7 +23,8 @@ public final class QueryOuterClass {
      * evidence_hash defines the hash of the requested evidence.
      * </pre>
      *
-     * <code>optional bytes evidence_hash = 1;</code>
+     * <code>bytes evidence_hash = 1 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+     * @return The evidenceHash.
      */
     com.google.protobuf.ByteString getEvidenceHash();
   }
@@ -34,10 +35,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.evidence.v1beta1.QueryEvidenceRequest}
    */
-  public  static final class QueryEvidenceRequest extends
+  public static final class QueryEvidenceRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.evidence.v1beta1.QueryEvidenceRequest)
       QueryEvidenceRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryEvidenceRequest.newBuilder() to construct.
     private QueryEvidenceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -47,16 +49,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryEvidenceRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryEvidenceRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -65,15 +78,16 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               evidenceHash_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -84,6 +98,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -92,6 +107,7 @@ public final class QueryOuterClass {
       return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryEvidenceRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryEvidenceRequest_fieldAccessorTable
@@ -106,13 +122,16 @@ public final class QueryOuterClass {
      * evidence_hash defines the hash of the requested evidence.
      * </pre>
      *
-     * <code>optional bytes evidence_hash = 1;</code>
+     * <code>bytes evidence_hash = 1 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+     * @return The evidenceHash.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEvidenceHash() {
       return evidenceHash_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -122,13 +141,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!evidenceHash_.isEmpty()) {
         output.writeBytes(1, evidenceHash_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -138,11 +160,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, evidenceHash_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -153,10 +175,10 @@ public final class QueryOuterClass {
       }
       cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest other = (cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest) obj;
 
-      boolean result = true;
-      result = result && getEvidenceHash()
-          .equals(other.getEvidenceHash());
-      return result;
+      if (!getEvidenceHash()
+          .equals(other.getEvidenceHash())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -165,7 +187,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + EVIDENCE_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getEvidenceHash().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -173,6 +195,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -232,6 +265,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -239,6 +273,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -266,6 +301,7 @@ public final class QueryOuterClass {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryEvidenceRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryEvidenceRequest_fieldAccessorTable
@@ -288,6 +324,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         evidenceHash_ = com.google.protobuf.ByteString.EMPTY;
@@ -295,15 +332,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryEvidenceRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest getDefaultInstanceForType() {
         return cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest build() {
         cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -312,6 +352,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest buildPartial() {
         cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest result = new cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest(this);
         result.evidenceHash_ = evidenceHash_;
@@ -319,32 +360,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest) {
           return mergeFrom((cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest)other);
@@ -359,14 +407,17 @@ public final class QueryOuterClass {
         if (other.getEvidenceHash() != com.google.protobuf.ByteString.EMPTY) {
           setEvidenceHash(other.getEvidenceHash());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -391,8 +442,10 @@ public final class QueryOuterClass {
        * evidence_hash defines the hash of the requested evidence.
        * </pre>
        *
-       * <code>optional bytes evidence_hash = 1;</code>
+       * <code>bytes evidence_hash = 1 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * @return The evidenceHash.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getEvidenceHash() {
         return evidenceHash_;
       }
@@ -401,7 +454,9 @@ public final class QueryOuterClass {
        * evidence_hash defines the hash of the requested evidence.
        * </pre>
        *
-       * <code>optional bytes evidence_hash = 1;</code>
+       * <code>bytes evidence_hash = 1 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * @param value The evidenceHash to set.
+       * @return This builder for chaining.
        */
       public Builder setEvidenceHash(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -417,7 +472,8 @@ public final class QueryOuterClass {
        * evidence_hash defines the hash of the requested evidence.
        * </pre>
        *
-       * <code>optional bytes evidence_hash = 1;</code>
+       * <code>bytes evidence_hash = 1 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearEvidenceHash() {
         
@@ -425,14 +481,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -451,11 +509,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryEvidenceRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryEvidenceRequest>() {
+      @java.lang.Override
       public QueryEvidenceRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryEvidenceRequest(input, extensionRegistry);
+        return new QueryEvidenceRequest(input, extensionRegistry);
       }
     };
 
@@ -468,6 +527,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -483,7 +543,8 @@ public final class QueryOuterClass {
      * evidence returns the requested evidence.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any evidence = 1;</code>
+     * <code>.google.protobuf.Any evidence = 1;</code>
+     * @return Whether the evidence field is set.
      */
     boolean hasEvidence();
     /**
@@ -491,7 +552,8 @@ public final class QueryOuterClass {
      * evidence returns the requested evidence.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any evidence = 1;</code>
+     * <code>.google.protobuf.Any evidence = 1;</code>
+     * @return The evidence.
      */
     com.google.protobuf.Any getEvidence();
     /**
@@ -499,7 +561,7 @@ public final class QueryOuterClass {
      * evidence returns the requested evidence.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any evidence = 1;</code>
+     * <code>.google.protobuf.Any evidence = 1;</code>
      */
     com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder();
   }
@@ -510,10 +572,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.evidence.v1beta1.QueryEvidenceResponse}
    */
-  public  static final class QueryEvidenceResponse extends
+  public static final class QueryEvidenceResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.evidence.v1beta1.QueryEvidenceResponse)
       QueryEvidenceResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryEvidenceResponse.newBuilder() to construct.
     private QueryEvidenceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -522,16 +585,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryEvidenceResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryEvidenceResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -540,12 +614,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.Any.Builder subBuilder = null;
               if (evidence_ != null) {
@@ -559,6 +627,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -567,6 +642,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -575,6 +651,7 @@ public final class QueryOuterClass {
       return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryEvidenceResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryEvidenceResponse_fieldAccessorTable
@@ -589,8 +666,10 @@ public final class QueryOuterClass {
      * evidence returns the requested evidence.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any evidence = 1;</code>
+     * <code>.google.protobuf.Any evidence = 1;</code>
+     * @return Whether the evidence field is set.
      */
+    @java.lang.Override
     public boolean hasEvidence() {
       return evidence_ != null;
     }
@@ -599,8 +678,10 @@ public final class QueryOuterClass {
      * evidence returns the requested evidence.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any evidence = 1;</code>
+     * <code>.google.protobuf.Any evidence = 1;</code>
+     * @return The evidence.
      */
+    @java.lang.Override
     public com.google.protobuf.Any getEvidence() {
       return evidence_ == null ? com.google.protobuf.Any.getDefaultInstance() : evidence_;
     }
@@ -609,13 +690,15 @@ public final class QueryOuterClass {
      * evidence returns the requested evidence.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any evidence = 1;</code>
+     * <code>.google.protobuf.Any evidence = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder() {
       return getEvidence();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -625,13 +708,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (evidence_ != null) {
         output.writeMessage(1, getEvidence());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -641,11 +727,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getEvidence());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -656,13 +742,13 @@ public final class QueryOuterClass {
       }
       cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse other = (cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse) obj;
 
-      boolean result = true;
-      result = result && (hasEvidence() == other.hasEvidence());
+      if (hasEvidence() != other.hasEvidence()) return false;
       if (hasEvidence()) {
-        result = result && getEvidence()
-            .equals(other.getEvidence());
+        if (!getEvidence()
+            .equals(other.getEvidence())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -671,7 +757,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasEvidence()) {
         hash = (37 * hash) + EVIDENCE_FIELD_NUMBER;
         hash = (53 * hash) + getEvidence().hashCode();
@@ -681,6 +767,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -740,6 +837,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -747,6 +845,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -774,6 +873,7 @@ public final class QueryOuterClass {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryEvidenceResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryEvidenceResponse_fieldAccessorTable
@@ -796,6 +896,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (evidenceBuilder_ == null) {
@@ -807,15 +908,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryEvidenceResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse getDefaultInstanceForType() {
         return cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse build() {
         cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -824,6 +928,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse buildPartial() {
         cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse result = new cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse(this);
         if (evidenceBuilder_ == null) {
@@ -835,32 +940,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse) {
           return mergeFrom((cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse)other);
@@ -875,14 +987,17 @@ public final class QueryOuterClass {
         if (other.hasEvidence()) {
           mergeEvidence(other.getEvidence());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -901,7 +1016,7 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Any evidence_ = null;
+      private com.google.protobuf.Any evidence_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> evidenceBuilder_;
       /**
@@ -909,7 +1024,8 @@ public final class QueryOuterClass {
        * evidence returns the requested evidence.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any evidence = 1;</code>
+       * <code>.google.protobuf.Any evidence = 1;</code>
+       * @return Whether the evidence field is set.
        */
       public boolean hasEvidence() {
         return evidenceBuilder_ != null || evidence_ != null;
@@ -919,7 +1035,8 @@ public final class QueryOuterClass {
        * evidence returns the requested evidence.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any evidence = 1;</code>
+       * <code>.google.protobuf.Any evidence = 1;</code>
+       * @return The evidence.
        */
       public com.google.protobuf.Any getEvidence() {
         if (evidenceBuilder_ == null) {
@@ -933,7 +1050,7 @@ public final class QueryOuterClass {
        * evidence returns the requested evidence.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any evidence = 1;</code>
+       * <code>.google.protobuf.Any evidence = 1;</code>
        */
       public Builder setEvidence(com.google.protobuf.Any value) {
         if (evidenceBuilder_ == null) {
@@ -953,7 +1070,7 @@ public final class QueryOuterClass {
        * evidence returns the requested evidence.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any evidence = 1;</code>
+       * <code>.google.protobuf.Any evidence = 1;</code>
        */
       public Builder setEvidence(
           com.google.protobuf.Any.Builder builderForValue) {
@@ -971,7 +1088,7 @@ public final class QueryOuterClass {
        * evidence returns the requested evidence.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any evidence = 1;</code>
+       * <code>.google.protobuf.Any evidence = 1;</code>
        */
       public Builder mergeEvidence(com.google.protobuf.Any value) {
         if (evidenceBuilder_ == null) {
@@ -993,7 +1110,7 @@ public final class QueryOuterClass {
        * evidence returns the requested evidence.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any evidence = 1;</code>
+       * <code>.google.protobuf.Any evidence = 1;</code>
        */
       public Builder clearEvidence() {
         if (evidenceBuilder_ == null) {
@@ -1011,7 +1128,7 @@ public final class QueryOuterClass {
        * evidence returns the requested evidence.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any evidence = 1;</code>
+       * <code>.google.protobuf.Any evidence = 1;</code>
        */
       public com.google.protobuf.Any.Builder getEvidenceBuilder() {
         
@@ -1023,7 +1140,7 @@ public final class QueryOuterClass {
        * evidence returns the requested evidence.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any evidence = 1;</code>
+       * <code>.google.protobuf.Any evidence = 1;</code>
        */
       public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder() {
         if (evidenceBuilder_ != null) {
@@ -1038,7 +1155,7 @@ public final class QueryOuterClass {
        * evidence returns the requested evidence.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any evidence = 1;</code>
+       * <code>.google.protobuf.Any evidence = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
@@ -1053,14 +1170,16 @@ public final class QueryOuterClass {
         }
         return evidenceBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1079,11 +1198,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryEvidenceResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryEvidenceResponse>() {
+      @java.lang.Override
       public QueryEvidenceResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryEvidenceResponse(input, extensionRegistry);
+        return new QueryEvidenceResponse(input, extensionRegistry);
       }
     };
 
@@ -1096,6 +1216,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.evidence.v1beta1.QueryOuterClass.QueryEvidenceResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1111,7 +1232,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -1119,7 +1241,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
@@ -1127,7 +1250,7 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
   }
@@ -1139,10 +1262,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.evidence.v1beta1.QueryAllEvidenceRequest}
    */
-  public  static final class QueryAllEvidenceRequest extends
+  public static final class QueryAllEvidenceRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.evidence.v1beta1.QueryAllEvidenceRequest)
       QueryAllEvidenceRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryAllEvidenceRequest.newBuilder() to construct.
     private QueryAllEvidenceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1151,16 +1275,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAllEvidenceRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryAllEvidenceRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1169,12 +1304,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmos.base.query.v1beta1.Pagination.PageRequest.Builder subBuilder = null;
               if (pagination_ != null) {
@@ -1188,6 +1317,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1196,6 +1332,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1204,6 +1341,7 @@ public final class QueryOuterClass {
       return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryAllEvidenceRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryAllEvidenceRequest_fieldAccessorTable
@@ -1218,8 +1356,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -1228,8 +1368,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
     }
@@ -1238,13 +1380,15 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1254,13 +1398,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pagination_ != null) {
         output.writeMessage(1, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1270,11 +1417,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1285,13 +1432,13 @@ public final class QueryOuterClass {
       }
       cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest other = (cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest) obj;
 
-      boolean result = true;
-      result = result && (hasPagination() == other.hasPagination());
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1300,7 +1447,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasPagination()) {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
@@ -1310,6 +1457,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1369,6 +1527,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1376,6 +1535,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1404,6 +1564,7 @@ public final class QueryOuterClass {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryAllEvidenceRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryAllEvidenceRequest_fieldAccessorTable
@@ -1426,6 +1587,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (paginationBuilder_ == null) {
@@ -1437,15 +1599,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryAllEvidenceRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest getDefaultInstanceForType() {
         return cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest build() {
         cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -1454,6 +1619,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest buildPartial() {
         cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest result = new cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest(this);
         if (paginationBuilder_ == null) {
@@ -1465,32 +1631,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest) {
           return mergeFrom((cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest)other);
@@ -1505,14 +1678,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1531,7 +1707,7 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
       /**
@@ -1539,7 +1715,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -1549,7 +1726,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
         if (paginationBuilder_ == null) {
@@ -1563,7 +1741,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -1583,7 +1761,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
@@ -1601,7 +1779,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -1623,7 +1801,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -1641,7 +1819,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
         
@@ -1653,7 +1831,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -1668,7 +1846,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
@@ -1683,14 +1861,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1709,11 +1889,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryAllEvidenceRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryAllEvidenceRequest>() {
+      @java.lang.Override
       public QueryAllEvidenceRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryAllEvidenceRequest(input, extensionRegistry);
+        return new QueryAllEvidenceRequest(input, extensionRegistry);
       }
     };
 
@@ -1726,6 +1907,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1785,7 +1967,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -1793,7 +1976,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
@@ -1801,7 +1985,7 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
   }
@@ -1813,10 +1997,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.evidence.v1beta1.QueryAllEvidenceResponse}
    */
-  public  static final class QueryAllEvidenceResponse extends
+  public static final class QueryAllEvidenceResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.evidence.v1beta1.QueryAllEvidenceResponse)
       QueryAllEvidenceResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryAllEvidenceResponse.newBuilder() to construct.
     private QueryAllEvidenceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1826,16 +2011,28 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAllEvidenceResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryAllEvidenceResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1844,14 +2041,8 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 evidence_ = new java.util.ArrayList<com.google.protobuf.Any>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -1872,6 +2063,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1880,9 +2078,10 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           evidence_ = java.util.Collections.unmodifiableList(evidence_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1891,6 +2090,7 @@ public final class QueryOuterClass {
       return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryAllEvidenceResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryAllEvidenceResponse_fieldAccessorTable
@@ -1898,7 +2098,6 @@ public final class QueryOuterClass {
               cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse.class, cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int EVIDENCE_FIELD_NUMBER = 1;
     private java.util.List<com.google.protobuf.Any> evidence_;
     /**
@@ -1908,6 +2107,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.Any> getEvidenceList() {
       return evidence_;
     }
@@ -1918,6 +2118,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getEvidenceOrBuilderList() {
       return evidence_;
@@ -1929,6 +2130,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
+    @java.lang.Override
     public int getEvidenceCount() {
       return evidence_.size();
     }
@@ -1939,6 +2141,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Any getEvidence(int index) {
       return evidence_.get(index);
     }
@@ -1949,6 +2152,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder(
         int index) {
       return evidence_.get(index);
@@ -1961,8 +2165,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -1971,8 +2177,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
@@ -1981,13 +2189,15 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1997,6 +2207,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < evidence_.size(); i++) {
@@ -2005,8 +2216,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2020,11 +2233,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2035,15 +2248,15 @@ public final class QueryOuterClass {
       }
       cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse other = (cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse) obj;
 
-      boolean result = true;
-      result = result && getEvidenceList()
-          .equals(other.getEvidenceList());
-      result = result && (hasPagination() == other.hasPagination());
+      if (!getEvidenceList()
+          .equals(other.getEvidenceList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2052,7 +2265,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getEvidenceCount() > 0) {
         hash = (37 * hash) + EVIDENCE_FIELD_NUMBER;
         hash = (53 * hash) + getEvidenceList().hashCode();
@@ -2066,6 +2279,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2125,6 +2349,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2132,6 +2357,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2160,6 +2386,7 @@ public final class QueryOuterClass {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryAllEvidenceResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryAllEvidenceResponse_fieldAccessorTable
@@ -2183,6 +2410,7 @@ public final class QueryOuterClass {
           getEvidenceFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (evidenceBuilder_ == null) {
@@ -2200,15 +2428,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.evidence.v1beta1.QueryOuterClass.internal_static_cosmos_evidence_v1beta1_QueryAllEvidenceResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse getDefaultInstanceForType() {
         return cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse build() {
         cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -2217,12 +2448,12 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse buildPartial() {
         cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse result = new cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (evidenceBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             evidence_ = java.util.Collections.unmodifiableList(evidence_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2235,37 +2466,43 @@ public final class QueryOuterClass {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse) {
           return mergeFrom((cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse)other);
@@ -2306,14 +2543,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2336,7 +2576,7 @@ public final class QueryOuterClass {
       private java.util.List<com.google.protobuf.Any> evidence_ =
         java.util.Collections.emptyList();
       private void ensureEvidenceIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           evidence_ = new java.util.ArrayList<com.google.protobuf.Any>(evidence_);
           bitField0_ |= 0x00000001;
          }
@@ -2637,7 +2877,7 @@ public final class QueryOuterClass {
           evidenceBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   evidence_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           evidence_ = null;
@@ -2645,7 +2885,7 @@ public final class QueryOuterClass {
         return evidenceBuilder_;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
       /**
@@ -2653,7 +2893,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -2663,7 +2904,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
         if (paginationBuilder_ == null) {
@@ -2677,7 +2919,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -2697,7 +2939,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
@@ -2715,7 +2957,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -2737,7 +2979,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -2755,7 +2997,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
         
@@ -2767,7 +3009,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -2782,7 +3024,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
@@ -2797,14 +3039,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2823,11 +3067,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryAllEvidenceResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryAllEvidenceResponse>() {
+      @java.lang.Override
       public QueryAllEvidenceResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryAllEvidenceResponse(input, extensionRegistry);
+        return new QueryAllEvidenceResponse(input, extensionRegistry);
       }
     };
 
@@ -2840,6 +3085,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.evidence.v1beta1.QueryOuterClass.QueryAllEvidenceResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2884,7 +3130,7 @@ public final class QueryOuterClass {
       "thub.com/tendermint/tendermint/libs/byte" +
       "s.HexBytes\"?\n\025QueryEvidenceResponse\022&\n\010e" +
       "vidence\030\001 \001(\0132\024.google.protobuf.Any\"U\n\027Q" +
-      "ueryAllEvidenceRequest\022:\n\npagination\030\001 \001",
+      "ueryAllEvidenceRequest\022:\n\npagination\030\001 \001" +
       "(\0132&.cosmos.base.query.v1beta1.PageReque" +
       "st\"\177\n\030QueryAllEvidenceResponse\022&\n\010eviden" +
       "ce\030\001 \003(\0132\024.google.protobuf.Any\022;\n\npagina" +
@@ -2894,29 +3140,21 @@ public final class QueryOuterClass {
       "t\032..cosmos.evidence.v1beta1.QueryEvidenc" +
       "eResponse\"9\202\323\344\223\0023\0221/cosmos/evidence/v1be" +
       "ta1/evidence/{evidence_hash}\022\235\001\n\013AllEvid" +
-      "ence\0220.cosmos.evidence.v1beta1.QueryAllE",
+      "ence\0220.cosmos.evidence.v1beta1.QueryAllE" +
       "videnceRequest\0321.cosmos.evidence.v1beta1" +
       ".QueryAllEvidenceResponse\")\202\323\344\223\002#\022!/cosm" +
       "os/evidence/v1beta1/evidenceB/Z-github.c" +
       "om/cosmos/cosmos-sdk/x/evidence/typesb\006p" +
       "roto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
           com.google.protobuf.GoGoProtos.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_evidence_v1beta1_QueryEvidenceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_evidence_v1beta1_QueryEvidenceRequest_fieldAccessorTable = new

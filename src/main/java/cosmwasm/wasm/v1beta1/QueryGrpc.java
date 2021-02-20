@@ -1,19 +1,6 @@
 package cosmwasm.wasm.v1beta1;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 
 /**
  * <pre>
@@ -21,93 +8,275 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.0.0)",
+    value = "by gRPC proto compiler (version 1.35.0)",
     comments = "Source: x/wasm/internal/types/query.proto")
-public class QueryGrpc {
+public final class QueryGrpc {
 
   private QueryGrpc() {}
 
   public static final String SERVICE_NAME = "cosmwasm.wasm.v1beta1.Query";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<QueryOuterClass.QueryContractInfoRequest,
-      QueryOuterClass.QueryContractInfoResponse> METHOD_CONTRACT_INFO =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Query", "ContractInfo"),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryContractInfoRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryContractInfoResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<QueryOuterClass.QueryContractHistoryRequest,
-      QueryOuterClass.QueryContractHistoryResponse> METHOD_CONTRACT_HISTORY =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Query", "ContractHistory"),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryContractHistoryRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryContractHistoryResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<QueryOuterClass.QueryContractsByCodeRequest,
-      QueryOuterClass.QueryContractsByCodeResponse> METHOD_CONTRACTS_BY_CODE =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Query", "ContractsByCode"),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryContractsByCodeRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryContractsByCodeResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<QueryOuterClass.QueryAllContractStateRequest,
-      QueryOuterClass.QueryAllContractStateResponse> METHOD_ALL_CONTRACT_STATE =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Query", "AllContractState"),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryAllContractStateRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryAllContractStateResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<QueryOuterClass.QueryRawContractStateRequest,
-      QueryOuterClass.QueryRawContractStateResponse> METHOD_RAW_CONTRACT_STATE =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Query", "RawContractState"),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryRawContractStateRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryRawContractStateResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<QueryOuterClass.QuerySmartContractStateRequest,
-      QueryOuterClass.QuerySmartContractStateResponse> METHOD_SMART_CONTRACT_STATE =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Query", "SmartContractState"),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QuerySmartContractStateRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QuerySmartContractStateResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<QueryOuterClass.QueryCodeRequest,
-      QueryOuterClass.QueryCodeResponse> METHOD_CODE =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Query", "Code"),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryCodeRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryCodeResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<QueryOuterClass.QueryCodesRequest,
-      QueryOuterClass.QueryCodesResponse> METHOD_CODES =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Query", "Codes"),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryCodesRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(QueryOuterClass.QueryCodesResponse.getDefaultInstance()));
+  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryContractInfoRequest,
+      QueryOuterClass.QueryContractInfoResponse> getContractInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ContractInfo",
+      requestType = QueryOuterClass.QueryContractInfoRequest.class,
+      responseType = QueryOuterClass.QueryContractInfoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryContractInfoRequest,
+      QueryOuterClass.QueryContractInfoResponse> getContractInfoMethod() {
+    io.grpc.MethodDescriptor<QueryOuterClass.QueryContractInfoRequest, QueryOuterClass.QueryContractInfoResponse> getContractInfoMethod;
+    if ((getContractInfoMethod = QueryGrpc.getContractInfoMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getContractInfoMethod = QueryGrpc.getContractInfoMethod) == null) {
+          QueryGrpc.getContractInfoMethod = getContractInfoMethod =
+              io.grpc.MethodDescriptor.<QueryOuterClass.QueryContractInfoRequest, QueryOuterClass.QueryContractInfoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ContractInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryContractInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryContractInfoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("ContractInfo"))
+              .build();
+        }
+      }
+    }
+    return getContractInfoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryContractHistoryRequest,
+      QueryOuterClass.QueryContractHistoryResponse> getContractHistoryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ContractHistory",
+      requestType = QueryOuterClass.QueryContractHistoryRequest.class,
+      responseType = QueryOuterClass.QueryContractHistoryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryContractHistoryRequest,
+      QueryOuterClass.QueryContractHistoryResponse> getContractHistoryMethod() {
+    io.grpc.MethodDescriptor<QueryOuterClass.QueryContractHistoryRequest, QueryOuterClass.QueryContractHistoryResponse> getContractHistoryMethod;
+    if ((getContractHistoryMethod = QueryGrpc.getContractHistoryMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getContractHistoryMethod = QueryGrpc.getContractHistoryMethod) == null) {
+          QueryGrpc.getContractHistoryMethod = getContractHistoryMethod =
+              io.grpc.MethodDescriptor.<QueryOuterClass.QueryContractHistoryRequest, QueryOuterClass.QueryContractHistoryResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ContractHistory"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryContractHistoryRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryContractHistoryResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("ContractHistory"))
+              .build();
+        }
+      }
+    }
+    return getContractHistoryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryContractsByCodeRequest,
+      QueryOuterClass.QueryContractsByCodeResponse> getContractsByCodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ContractsByCode",
+      requestType = QueryOuterClass.QueryContractsByCodeRequest.class,
+      responseType = QueryOuterClass.QueryContractsByCodeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryContractsByCodeRequest,
+      QueryOuterClass.QueryContractsByCodeResponse> getContractsByCodeMethod() {
+    io.grpc.MethodDescriptor<QueryOuterClass.QueryContractsByCodeRequest, QueryOuterClass.QueryContractsByCodeResponse> getContractsByCodeMethod;
+    if ((getContractsByCodeMethod = QueryGrpc.getContractsByCodeMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getContractsByCodeMethod = QueryGrpc.getContractsByCodeMethod) == null) {
+          QueryGrpc.getContractsByCodeMethod = getContractsByCodeMethod =
+              io.grpc.MethodDescriptor.<QueryOuterClass.QueryContractsByCodeRequest, QueryOuterClass.QueryContractsByCodeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ContractsByCode"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryContractsByCodeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryContractsByCodeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("ContractsByCode"))
+              .build();
+        }
+      }
+    }
+    return getContractsByCodeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryAllContractStateRequest,
+      QueryOuterClass.QueryAllContractStateResponse> getAllContractStateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AllContractState",
+      requestType = QueryOuterClass.QueryAllContractStateRequest.class,
+      responseType = QueryOuterClass.QueryAllContractStateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryAllContractStateRequest,
+      QueryOuterClass.QueryAllContractStateResponse> getAllContractStateMethod() {
+    io.grpc.MethodDescriptor<QueryOuterClass.QueryAllContractStateRequest, QueryOuterClass.QueryAllContractStateResponse> getAllContractStateMethod;
+    if ((getAllContractStateMethod = QueryGrpc.getAllContractStateMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getAllContractStateMethod = QueryGrpc.getAllContractStateMethod) == null) {
+          QueryGrpc.getAllContractStateMethod = getAllContractStateMethod =
+              io.grpc.MethodDescriptor.<QueryOuterClass.QueryAllContractStateRequest, QueryOuterClass.QueryAllContractStateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AllContractState"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryAllContractStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryAllContractStateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("AllContractState"))
+              .build();
+        }
+      }
+    }
+    return getAllContractStateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryRawContractStateRequest,
+      QueryOuterClass.QueryRawContractStateResponse> getRawContractStateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RawContractState",
+      requestType = QueryOuterClass.QueryRawContractStateRequest.class,
+      responseType = QueryOuterClass.QueryRawContractStateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryRawContractStateRequest,
+      QueryOuterClass.QueryRawContractStateResponse> getRawContractStateMethod() {
+    io.grpc.MethodDescriptor<QueryOuterClass.QueryRawContractStateRequest, QueryOuterClass.QueryRawContractStateResponse> getRawContractStateMethod;
+    if ((getRawContractStateMethod = QueryGrpc.getRawContractStateMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getRawContractStateMethod = QueryGrpc.getRawContractStateMethod) == null) {
+          QueryGrpc.getRawContractStateMethod = getRawContractStateMethod =
+              io.grpc.MethodDescriptor.<QueryOuterClass.QueryRawContractStateRequest, QueryOuterClass.QueryRawContractStateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RawContractState"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryRawContractStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryRawContractStateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("RawContractState"))
+              .build();
+        }
+      }
+    }
+    return getRawContractStateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QuerySmartContractStateRequest,
+      QueryOuterClass.QuerySmartContractStateResponse> getSmartContractStateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SmartContractState",
+      requestType = QueryOuterClass.QuerySmartContractStateRequest.class,
+      responseType = QueryOuterClass.QuerySmartContractStateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<QueryOuterClass.QuerySmartContractStateRequest,
+      QueryOuterClass.QuerySmartContractStateResponse> getSmartContractStateMethod() {
+    io.grpc.MethodDescriptor<QueryOuterClass.QuerySmartContractStateRequest, QueryOuterClass.QuerySmartContractStateResponse> getSmartContractStateMethod;
+    if ((getSmartContractStateMethod = QueryGrpc.getSmartContractStateMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getSmartContractStateMethod = QueryGrpc.getSmartContractStateMethod) == null) {
+          QueryGrpc.getSmartContractStateMethod = getSmartContractStateMethod =
+              io.grpc.MethodDescriptor.<QueryOuterClass.QuerySmartContractStateRequest, QueryOuterClass.QuerySmartContractStateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SmartContractState"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QuerySmartContractStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QuerySmartContractStateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("SmartContractState"))
+              .build();
+        }
+      }
+    }
+    return getSmartContractStateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryCodeRequest,
+      QueryOuterClass.QueryCodeResponse> getCodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Code",
+      requestType = QueryOuterClass.QueryCodeRequest.class,
+      responseType = QueryOuterClass.QueryCodeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryCodeRequest,
+      QueryOuterClass.QueryCodeResponse> getCodeMethod() {
+    io.grpc.MethodDescriptor<QueryOuterClass.QueryCodeRequest, QueryOuterClass.QueryCodeResponse> getCodeMethod;
+    if ((getCodeMethod = QueryGrpc.getCodeMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getCodeMethod = QueryGrpc.getCodeMethod) == null) {
+          QueryGrpc.getCodeMethod = getCodeMethod =
+              io.grpc.MethodDescriptor.<QueryOuterClass.QueryCodeRequest, QueryOuterClass.QueryCodeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Code"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryCodeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryCodeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Code"))
+              .build();
+        }
+      }
+    }
+    return getCodeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryCodesRequest,
+      QueryOuterClass.QueryCodesResponse> getCodesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Codes",
+      requestType = QueryOuterClass.QueryCodesRequest.class,
+      responseType = QueryOuterClass.QueryCodesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryCodesRequest,
+      QueryOuterClass.QueryCodesResponse> getCodesMethod() {
+    io.grpc.MethodDescriptor<QueryOuterClass.QueryCodesRequest, QueryOuterClass.QueryCodesResponse> getCodesMethod;
+    if ((getCodesMethod = QueryGrpc.getCodesMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getCodesMethod = QueryGrpc.getCodesMethod) == null) {
+          QueryGrpc.getCodesMethod = getCodesMethod =
+              io.grpc.MethodDescriptor.<QueryOuterClass.QueryCodesRequest, QueryOuterClass.QueryCodesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Codes"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryCodesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  QueryOuterClass.QueryCodesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Codes"))
+              .build();
+        }
+      }
+    }
+    return getCodesMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static QueryStub newStub(io.grpc.Channel channel) {
-    return new QueryStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<QueryStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<QueryStub>() {
+        @Override
+        public QueryStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new QueryStub(channel, callOptions);
+        }
+      };
+    return QueryStub.newStub(factory, channel);
   }
 
   /**
@@ -115,15 +284,29 @@ public class QueryGrpc {
    */
   public static QueryBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new QueryBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<QueryBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<QueryBlockingStub>() {
+        @Override
+        public QueryBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new QueryBlockingStub(channel, callOptions);
+        }
+      };
+    return QueryBlockingStub.newStub(factory, channel);
   }
 
   /**
-   * Creates a new ListenableFuture-style stub that supports unary and streaming output calls on the service
+   * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
   public static QueryFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new QueryFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<QueryFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<QueryFutureStub>() {
+        @Override
+        public QueryFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new QueryFutureStub(channel, callOptions);
+        }
+      };
+    return QueryFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -140,7 +323,7 @@ public class QueryGrpc {
      */
     public void contractInfo(QueryOuterClass.QueryContractInfoRequest request,
                              io.grpc.stub.StreamObserver<QueryOuterClass.QueryContractInfoResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_CONTRACT_INFO, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getContractInfoMethod(), responseObserver);
     }
 
     /**
@@ -150,7 +333,7 @@ public class QueryGrpc {
      */
     public void contractHistory(QueryOuterClass.QueryContractHistoryRequest request,
                                 io.grpc.stub.StreamObserver<QueryOuterClass.QueryContractHistoryResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_CONTRACT_HISTORY, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getContractHistoryMethod(), responseObserver);
     }
 
     /**
@@ -160,7 +343,7 @@ public class QueryGrpc {
      */
     public void contractsByCode(QueryOuterClass.QueryContractsByCodeRequest request,
                                 io.grpc.stub.StreamObserver<QueryOuterClass.QueryContractsByCodeResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_CONTRACTS_BY_CODE, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getContractsByCodeMethod(), responseObserver);
     }
 
     /**
@@ -170,7 +353,7 @@ public class QueryGrpc {
      */
     public void allContractState(QueryOuterClass.QueryAllContractStateRequest request,
                                  io.grpc.stub.StreamObserver<QueryOuterClass.QueryAllContractStateResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_ALL_CONTRACT_STATE, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAllContractStateMethod(), responseObserver);
     }
 
     /**
@@ -180,7 +363,7 @@ public class QueryGrpc {
      */
     public void rawContractState(QueryOuterClass.QueryRawContractStateRequest request,
                                  io.grpc.stub.StreamObserver<QueryOuterClass.QueryRawContractStateResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_RAW_CONTRACT_STATE, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRawContractStateMethod(), responseObserver);
     }
 
     /**
@@ -190,7 +373,7 @@ public class QueryGrpc {
      */
     public void smartContractState(QueryOuterClass.QuerySmartContractStateRequest request,
                                    io.grpc.stub.StreamObserver<QueryOuterClass.QuerySmartContractStateResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_SMART_CONTRACT_STATE, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSmartContractStateMethod(), responseObserver);
     }
 
     /**
@@ -200,7 +383,7 @@ public class QueryGrpc {
      */
     public void code(QueryOuterClass.QueryCodeRequest request,
                      io.grpc.stub.StreamObserver<QueryOuterClass.QueryCodeResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_CODE, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCodeMethod(), responseObserver);
     }
 
     /**
@@ -210,63 +393,63 @@ public class QueryGrpc {
      */
     public void codes(QueryOuterClass.QueryCodesRequest request,
                       io.grpc.stub.StreamObserver<QueryOuterClass.QueryCodesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_CODES, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCodesMethod(), responseObserver);
     }
 
-    @Override public io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_CONTRACT_INFO,
-            asyncUnaryCall(
+            getContractInfoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 QueryOuterClass.QueryContractInfoRequest,
                 QueryOuterClass.QueryContractInfoResponse>(
                   this, METHODID_CONTRACT_INFO)))
           .addMethod(
-            METHOD_CONTRACT_HISTORY,
-            asyncUnaryCall(
+            getContractHistoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 QueryOuterClass.QueryContractHistoryRequest,
                 QueryOuterClass.QueryContractHistoryResponse>(
                   this, METHODID_CONTRACT_HISTORY)))
           .addMethod(
-            METHOD_CONTRACTS_BY_CODE,
-            asyncUnaryCall(
+            getContractsByCodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 QueryOuterClass.QueryContractsByCodeRequest,
                 QueryOuterClass.QueryContractsByCodeResponse>(
                   this, METHODID_CONTRACTS_BY_CODE)))
           .addMethod(
-            METHOD_ALL_CONTRACT_STATE,
-            asyncUnaryCall(
+            getAllContractStateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 QueryOuterClass.QueryAllContractStateRequest,
                 QueryOuterClass.QueryAllContractStateResponse>(
                   this, METHODID_ALL_CONTRACT_STATE)))
           .addMethod(
-            METHOD_RAW_CONTRACT_STATE,
-            asyncUnaryCall(
+            getRawContractStateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 QueryOuterClass.QueryRawContractStateRequest,
                 QueryOuterClass.QueryRawContractStateResponse>(
                   this, METHODID_RAW_CONTRACT_STATE)))
           .addMethod(
-            METHOD_SMART_CONTRACT_STATE,
-            asyncUnaryCall(
+            getSmartContractStateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 QueryOuterClass.QuerySmartContractStateRequest,
                 QueryOuterClass.QuerySmartContractStateResponse>(
                   this, METHODID_SMART_CONTRACT_STATE)))
           .addMethod(
-            METHOD_CODE,
-            asyncUnaryCall(
+            getCodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 QueryOuterClass.QueryCodeRequest,
                 QueryOuterClass.QueryCodeResponse>(
                   this, METHODID_CODE)))
           .addMethod(
-            METHOD_CODES,
-            asyncUnaryCall(
+            getCodesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 QueryOuterClass.QueryCodesRequest,
                 QueryOuterClass.QueryCodesResponse>(
@@ -280,19 +463,15 @@ public class QueryGrpc {
    * Query provides defines the gRPC querier service
    * </pre>
    */
-  public static final class QueryStub extends io.grpc.stub.AbstractStub<QueryStub> {
-    private QueryStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private QueryStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class QueryStub extends io.grpc.stub.AbstractAsyncStub<QueryStub> {
+    private QueryStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @Override
-    protected QueryStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected QueryStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new QueryStub(channel, callOptions);
     }
 
@@ -303,8 +482,8 @@ public class QueryGrpc {
      */
     public void contractInfo(QueryOuterClass.QueryContractInfoRequest request,
                              io.grpc.stub.StreamObserver<QueryOuterClass.QueryContractInfoResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_CONTRACT_INFO, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getContractInfoMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -314,8 +493,8 @@ public class QueryGrpc {
      */
     public void contractHistory(QueryOuterClass.QueryContractHistoryRequest request,
                                 io.grpc.stub.StreamObserver<QueryOuterClass.QueryContractHistoryResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_CONTRACT_HISTORY, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getContractHistoryMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -325,8 +504,8 @@ public class QueryGrpc {
      */
     public void contractsByCode(QueryOuterClass.QueryContractsByCodeRequest request,
                                 io.grpc.stub.StreamObserver<QueryOuterClass.QueryContractsByCodeResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_CONTRACTS_BY_CODE, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getContractsByCodeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -336,8 +515,8 @@ public class QueryGrpc {
      */
     public void allContractState(QueryOuterClass.QueryAllContractStateRequest request,
                                  io.grpc.stub.StreamObserver<QueryOuterClass.QueryAllContractStateResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_ALL_CONTRACT_STATE, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAllContractStateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -347,8 +526,8 @@ public class QueryGrpc {
      */
     public void rawContractState(QueryOuterClass.QueryRawContractStateRequest request,
                                  io.grpc.stub.StreamObserver<QueryOuterClass.QueryRawContractStateResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_RAW_CONTRACT_STATE, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRawContractStateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -358,8 +537,8 @@ public class QueryGrpc {
      */
     public void smartContractState(QueryOuterClass.QuerySmartContractStateRequest request,
                                    io.grpc.stub.StreamObserver<QueryOuterClass.QuerySmartContractStateResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_SMART_CONTRACT_STATE, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSmartContractStateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -369,8 +548,8 @@ public class QueryGrpc {
      */
     public void code(QueryOuterClass.QueryCodeRequest request,
                      io.grpc.stub.StreamObserver<QueryOuterClass.QueryCodeResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_CODE, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCodeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -380,8 +559,8 @@ public class QueryGrpc {
      */
     public void codes(QueryOuterClass.QueryCodesRequest request,
                       io.grpc.stub.StreamObserver<QueryOuterClass.QueryCodesResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_CODES, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCodesMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -390,19 +569,15 @@ public class QueryGrpc {
    * Query provides defines the gRPC querier service
    * </pre>
    */
-  public static final class QueryBlockingStub extends io.grpc.stub.AbstractStub<QueryBlockingStub> {
-    private QueryBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private QueryBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class QueryBlockingStub extends io.grpc.stub.AbstractBlockingStub<QueryBlockingStub> {
+    private QueryBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @Override
-    protected QueryBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected QueryBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new QueryBlockingStub(channel, callOptions);
     }
 
@@ -412,8 +587,8 @@ public class QueryGrpc {
      * </pre>
      */
     public QueryOuterClass.QueryContractInfoResponse contractInfo(QueryOuterClass.QueryContractInfoRequest request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_CONTRACT_INFO, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getContractInfoMethod(), getCallOptions(), request);
     }
 
     /**
@@ -422,8 +597,8 @@ public class QueryGrpc {
      * </pre>
      */
     public QueryOuterClass.QueryContractHistoryResponse contractHistory(QueryOuterClass.QueryContractHistoryRequest request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_CONTRACT_HISTORY, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getContractHistoryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -432,8 +607,8 @@ public class QueryGrpc {
      * </pre>
      */
     public QueryOuterClass.QueryContractsByCodeResponse contractsByCode(QueryOuterClass.QueryContractsByCodeRequest request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_CONTRACTS_BY_CODE, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getContractsByCodeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -442,8 +617,8 @@ public class QueryGrpc {
      * </pre>
      */
     public QueryOuterClass.QueryAllContractStateResponse allContractState(QueryOuterClass.QueryAllContractStateRequest request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_ALL_CONTRACT_STATE, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAllContractStateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -452,8 +627,8 @@ public class QueryGrpc {
      * </pre>
      */
     public QueryOuterClass.QueryRawContractStateResponse rawContractState(QueryOuterClass.QueryRawContractStateRequest request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_RAW_CONTRACT_STATE, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRawContractStateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -462,8 +637,8 @@ public class QueryGrpc {
      * </pre>
      */
     public QueryOuterClass.QuerySmartContractStateResponse smartContractState(QueryOuterClass.QuerySmartContractStateRequest request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_SMART_CONTRACT_STATE, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSmartContractStateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -472,8 +647,8 @@ public class QueryGrpc {
      * </pre>
      */
     public QueryOuterClass.QueryCodeResponse code(QueryOuterClass.QueryCodeRequest request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_CODE, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCodeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -482,8 +657,8 @@ public class QueryGrpc {
      * </pre>
      */
     public QueryOuterClass.QueryCodesResponse codes(QueryOuterClass.QueryCodesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_CODES, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCodesMethod(), getCallOptions(), request);
     }
   }
 
@@ -492,19 +667,15 @@ public class QueryGrpc {
    * Query provides defines the gRPC querier service
    * </pre>
    */
-  public static final class QueryFutureStub extends io.grpc.stub.AbstractStub<QueryFutureStub> {
-    private QueryFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private QueryFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class QueryFutureStub extends io.grpc.stub.AbstractFutureStub<QueryFutureStub> {
+    private QueryFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @Override
-    protected QueryFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected QueryFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new QueryFutureStub(channel, callOptions);
     }
 
@@ -515,8 +686,8 @@ public class QueryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryContractInfoResponse> contractInfo(
         QueryOuterClass.QueryContractInfoRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_CONTRACT_INFO, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getContractInfoMethod(), getCallOptions()), request);
     }
 
     /**
@@ -526,8 +697,8 @@ public class QueryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryContractHistoryResponse> contractHistory(
         QueryOuterClass.QueryContractHistoryRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_CONTRACT_HISTORY, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getContractHistoryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -537,8 +708,8 @@ public class QueryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryContractsByCodeResponse> contractsByCode(
         QueryOuterClass.QueryContractsByCodeRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_CONTRACTS_BY_CODE, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getContractsByCodeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -548,8 +719,8 @@ public class QueryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryAllContractStateResponse> allContractState(
         QueryOuterClass.QueryAllContractStateRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_ALL_CONTRACT_STATE, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAllContractStateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -559,8 +730,8 @@ public class QueryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryRawContractStateResponse> rawContractState(
         QueryOuterClass.QueryRawContractStateRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_RAW_CONTRACT_STATE, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRawContractStateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -570,8 +741,8 @@ public class QueryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QuerySmartContractStateResponse> smartContractState(
         QueryOuterClass.QuerySmartContractStateRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_SMART_CONTRACT_STATE, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSmartContractStateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -581,8 +752,8 @@ public class QueryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryCodeResponse> code(
         QueryOuterClass.QueryCodeRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_CODE, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCodeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -592,8 +763,8 @@ public class QueryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryCodesResponse> codes(
         QueryOuterClass.QueryCodesRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_CODES, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCodesMethod(), getCallOptions()), request);
     }
   }
 
@@ -606,7 +777,7 @@ public class QueryGrpc {
   private static final int METHODID_CODE = 6;
   private static final int METHODID_CODES = 7;
 
-  private static class MethodHandlers<Req, Resp> implements
+  private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
@@ -614,7 +785,7 @@ public class QueryGrpc {
     private final QueryImplBase serviceImpl;
     private final int methodId;
 
-    public MethodHandlers(QueryImplBase serviceImpl, int methodId) {
+    MethodHandlers(QueryImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -671,16 +842,63 @@ public class QueryGrpc {
     }
   }
 
-  public static io.grpc.ServiceDescriptor getServiceDescriptor() {
-    return new io.grpc.ServiceDescriptor(SERVICE_NAME,
-        METHOD_CONTRACT_INFO,
-        METHOD_CONTRACT_HISTORY,
-        METHOD_CONTRACTS_BY_CODE,
-        METHOD_ALL_CONTRACT_STATE,
-        METHOD_RAW_CONTRACT_STATE,
-        METHOD_SMART_CONTRACT_STATE,
-        METHOD_CODE,
-        METHOD_CODES);
+  private static abstract class QueryBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    QueryBaseDescriptorSupplier() {}
+
+    @Override
+    public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
+      return QueryOuterClass.getDescriptor();
+    }
+
+    @Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("Query");
+    }
   }
 
+  private static final class QueryFileDescriptorSupplier
+      extends QueryBaseDescriptorSupplier {
+    QueryFileDescriptorSupplier() {}
+  }
+
+  private static final class QueryMethodDescriptorSupplier
+      extends QueryBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    QueryMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
+    }
+  }
+
+  private static volatile io.grpc.ServiceDescriptor serviceDescriptor;
+
+  public static io.grpc.ServiceDescriptor getServiceDescriptor() {
+    io.grpc.ServiceDescriptor result = serviceDescriptor;
+    if (result == null) {
+      synchronized (QueryGrpc.class) {
+        result = serviceDescriptor;
+        if (result == null) {
+          serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
+              .setSchemaDescriptor(new QueryFileDescriptorSupplier())
+              .addMethod(getContractInfoMethod())
+              .addMethod(getContractHistoryMethod())
+              .addMethod(getContractsByCodeMethod())
+              .addMethod(getAllContractStateMethod())
+              .addMethod(getRawContractStateMethod())
+              .addMethod(getSmartContractStateMethod())
+              .addMethod(getCodeMethod())
+              .addMethod(getCodesMethod())
+              .build();
+        }
+      }
+    }
+    return result;
+  }
 }

@@ -1,4 +1,4 @@
-package cosmos.auth.v1beta1;
+package cosmos.evidence.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -9,74 +9,74 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.35.0)",
-    comments = "Source: cosmos/auth/v1beta1/query.proto")
+    comments = "Source: cosmos/evidence/v1beta1/query.proto")
 public final class QueryGrpc {
 
   private QueryGrpc() {}
 
-  public static final String SERVICE_NAME = "cosmos.auth.v1beta1.Query";
+  public static final String SERVICE_NAME = "cosmos.evidence.v1beta1.Query";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryAccountRequest,
-      QueryOuterClass.QueryAccountResponse> getAccountMethod;
+  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryEvidenceRequest,
+      QueryOuterClass.QueryEvidenceResponse> getEvidenceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Account",
-      requestType = QueryOuterClass.QueryAccountRequest.class,
-      responseType = QueryOuterClass.QueryAccountResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "Evidence",
+      requestType = QueryOuterClass.QueryEvidenceRequest.class,
+      responseType = QueryOuterClass.QueryEvidenceResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryAccountRequest,
-      QueryOuterClass.QueryAccountResponse> getAccountMethod() {
-    io.grpc.MethodDescriptor<QueryOuterClass.QueryAccountRequest, QueryOuterClass.QueryAccountResponse> getAccountMethod;
-    if ((getAccountMethod = QueryGrpc.getAccountMethod) == null) {
+  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryEvidenceRequest,
+      QueryOuterClass.QueryEvidenceResponse> getEvidenceMethod() {
+    io.grpc.MethodDescriptor<QueryOuterClass.QueryEvidenceRequest, QueryOuterClass.QueryEvidenceResponse> getEvidenceMethod;
+    if ((getEvidenceMethod = QueryGrpc.getEvidenceMethod) == null) {
       synchronized (QueryGrpc.class) {
-        if ((getAccountMethod = QueryGrpc.getAccountMethod) == null) {
-          QueryGrpc.getAccountMethod = getAccountMethod =
-              io.grpc.MethodDescriptor.<QueryOuterClass.QueryAccountRequest, QueryOuterClass.QueryAccountResponse>newBuilder()
+        if ((getEvidenceMethod = QueryGrpc.getEvidenceMethod) == null) {
+          QueryGrpc.getEvidenceMethod = getEvidenceMethod =
+              io.grpc.MethodDescriptor.<QueryOuterClass.QueryEvidenceRequest, QueryOuterClass.QueryEvidenceResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Account"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Evidence"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  QueryOuterClass.QueryAccountRequest.getDefaultInstance()))
+                  QueryOuterClass.QueryEvidenceRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  QueryOuterClass.QueryAccountResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Account"))
+                  QueryOuterClass.QueryEvidenceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Evidence"))
               .build();
         }
       }
     }
-    return getAccountMethod;
+    return getEvidenceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryParamsRequest,
-      QueryOuterClass.QueryParamsResponse> getParamsMethod;
+  private static volatile io.grpc.MethodDescriptor<QueryOuterClass.QueryAllEvidenceRequest,
+      QueryOuterClass.QueryAllEvidenceResponse> getAllEvidenceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Params",
-      requestType = QueryOuterClass.QueryParamsRequest.class,
-      responseType = QueryOuterClass.QueryParamsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "AllEvidence",
+      requestType = QueryOuterClass.QueryAllEvidenceRequest.class,
+      responseType = QueryOuterClass.QueryAllEvidenceResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryParamsRequest,
-      QueryOuterClass.QueryParamsResponse> getParamsMethod() {
-    io.grpc.MethodDescriptor<QueryOuterClass.QueryParamsRequest, QueryOuterClass.QueryParamsResponse> getParamsMethod;
-    if ((getParamsMethod = QueryGrpc.getParamsMethod) == null) {
+  public static io.grpc.MethodDescriptor<QueryOuterClass.QueryAllEvidenceRequest,
+      QueryOuterClass.QueryAllEvidenceResponse> getAllEvidenceMethod() {
+    io.grpc.MethodDescriptor<QueryOuterClass.QueryAllEvidenceRequest, QueryOuterClass.QueryAllEvidenceResponse> getAllEvidenceMethod;
+    if ((getAllEvidenceMethod = QueryGrpc.getAllEvidenceMethod) == null) {
       synchronized (QueryGrpc.class) {
-        if ((getParamsMethod = QueryGrpc.getParamsMethod) == null) {
-          QueryGrpc.getParamsMethod = getParamsMethod =
-              io.grpc.MethodDescriptor.<QueryOuterClass.QueryParamsRequest, QueryOuterClass.QueryParamsResponse>newBuilder()
+        if ((getAllEvidenceMethod = QueryGrpc.getAllEvidenceMethod) == null) {
+          QueryGrpc.getAllEvidenceMethod = getAllEvidenceMethod =
+              io.grpc.MethodDescriptor.<QueryOuterClass.QueryAllEvidenceRequest, QueryOuterClass.QueryAllEvidenceResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Params"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AllEvidence"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  QueryOuterClass.QueryParamsRequest.getDefaultInstance()))
+                  QueryOuterClass.QueryAllEvidenceRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  QueryOuterClass.QueryParamsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Params"))
+                  QueryOuterClass.QueryAllEvidenceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("AllEvidence"))
               .build();
         }
       }
     }
-    return getParamsMethod;
+    return getAllEvidenceMethod;
   }
 
   /**
@@ -132,40 +132,40 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Account returns account details based on address.
+     * Evidence queries evidence based on evidence hash.
      * </pre>
      */
-    public void account(QueryOuterClass.QueryAccountRequest request,
-                        io.grpc.stub.StreamObserver<QueryOuterClass.QueryAccountResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAccountMethod(), responseObserver);
+    public void evidence(QueryOuterClass.QueryEvidenceRequest request,
+                         io.grpc.stub.StreamObserver<QueryOuterClass.QueryEvidenceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEvidenceMethod(), responseObserver);
     }
 
     /**
      * <pre>
-     * Params queries all parameters.
+     * AllEvidence queries all evidence.
      * </pre>
      */
-    public void params(QueryOuterClass.QueryParamsRequest request,
-                       io.grpc.stub.StreamObserver<QueryOuterClass.QueryParamsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getParamsMethod(), responseObserver);
+    public void allEvidence(QueryOuterClass.QueryAllEvidenceRequest request,
+                            io.grpc.stub.StreamObserver<QueryOuterClass.QueryAllEvidenceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAllEvidenceMethod(), responseObserver);
     }
 
     @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getAccountMethod(),
+            getEvidenceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                QueryOuterClass.QueryAccountRequest,
-                QueryOuterClass.QueryAccountResponse>(
-                  this, METHODID_ACCOUNT)))
+                QueryOuterClass.QueryEvidenceRequest,
+                QueryOuterClass.QueryEvidenceResponse>(
+                  this, METHODID_EVIDENCE)))
           .addMethod(
-            getParamsMethod(),
+            getAllEvidenceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                QueryOuterClass.QueryParamsRequest,
-                QueryOuterClass.QueryParamsResponse>(
-                  this, METHODID_PARAMS)))
+                QueryOuterClass.QueryAllEvidenceRequest,
+                QueryOuterClass.QueryAllEvidenceResponse>(
+                  this, METHODID_ALL_EVIDENCE)))
           .build();
     }
   }
@@ -189,24 +189,24 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Account returns account details based on address.
+     * Evidence queries evidence based on evidence hash.
      * </pre>
      */
-    public void account(QueryOuterClass.QueryAccountRequest request,
-                        io.grpc.stub.StreamObserver<QueryOuterClass.QueryAccountResponse> responseObserver) {
+    public void evidence(QueryOuterClass.QueryEvidenceRequest request,
+                         io.grpc.stub.StreamObserver<QueryOuterClass.QueryEvidenceResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getAccountMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getEvidenceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      * <pre>
-     * Params queries all parameters.
+     * AllEvidence queries all evidence.
      * </pre>
      */
-    public void params(QueryOuterClass.QueryParamsRequest request,
-                       io.grpc.stub.StreamObserver<QueryOuterClass.QueryParamsResponse> responseObserver) {
+    public void allEvidence(QueryOuterClass.QueryAllEvidenceRequest request,
+                            io.grpc.stub.StreamObserver<QueryOuterClass.QueryAllEvidenceResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getParamsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getAllEvidenceMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -229,22 +229,22 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Account returns account details based on address.
+     * Evidence queries evidence based on evidence hash.
      * </pre>
      */
-    public QueryOuterClass.QueryAccountResponse account(QueryOuterClass.QueryAccountRequest request) {
+    public QueryOuterClass.QueryEvidenceResponse evidence(QueryOuterClass.QueryEvidenceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAccountMethod(), getCallOptions(), request);
+          getChannel(), getEvidenceMethod(), getCallOptions(), request);
     }
 
     /**
      * <pre>
-     * Params queries all parameters.
+     * AllEvidence queries all evidence.
      * </pre>
      */
-    public QueryOuterClass.QueryParamsResponse params(QueryOuterClass.QueryParamsRequest request) {
+    public QueryOuterClass.QueryAllEvidenceResponse allEvidence(QueryOuterClass.QueryAllEvidenceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getParamsMethod(), getCallOptions(), request);
+          getChannel(), getAllEvidenceMethod(), getCallOptions(), request);
     }
   }
 
@@ -267,29 +267,29 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Account returns account details based on address.
+     * Evidence queries evidence based on evidence hash.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryAccountResponse> account(
-        QueryOuterClass.QueryAccountRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryEvidenceResponse> evidence(
+        QueryOuterClass.QueryEvidenceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getAccountMethod(), getCallOptions()), request);
+          getChannel().newCall(getEvidenceMethod(), getCallOptions()), request);
     }
 
     /**
      * <pre>
-     * Params queries all parameters.
+     * AllEvidence queries all evidence.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryParamsResponse> params(
-        QueryOuterClass.QueryParamsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<QueryOuterClass.QueryAllEvidenceResponse> allEvidence(
+        QueryOuterClass.QueryAllEvidenceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getParamsMethod(), getCallOptions()), request);
+          getChannel().newCall(getAllEvidenceMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_ACCOUNT = 0;
-  private static final int METHODID_PARAMS = 1;
+  private static final int METHODID_EVIDENCE = 0;
+  private static final int METHODID_ALL_EVIDENCE = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -308,13 +308,13 @@ public final class QueryGrpc {
     @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_ACCOUNT:
-          serviceImpl.account((QueryOuterClass.QueryAccountRequest) request,
-              (io.grpc.stub.StreamObserver<QueryOuterClass.QueryAccountResponse>) responseObserver);
+        case METHODID_EVIDENCE:
+          serviceImpl.evidence((QueryOuterClass.QueryEvidenceRequest) request,
+              (io.grpc.stub.StreamObserver<QueryOuterClass.QueryEvidenceResponse>) responseObserver);
           break;
-        case METHODID_PARAMS:
-          serviceImpl.params((QueryOuterClass.QueryParamsRequest) request,
-              (io.grpc.stub.StreamObserver<QueryOuterClass.QueryParamsResponse>) responseObserver);
+        case METHODID_ALL_EVIDENCE:
+          serviceImpl.allEvidence((QueryOuterClass.QueryAllEvidenceRequest) request,
+              (io.grpc.stub.StreamObserver<QueryOuterClass.QueryAllEvidenceResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -377,8 +377,8 @@ public final class QueryGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new QueryFileDescriptorSupplier())
-              .addMethod(getAccountMethod())
-              .addMethod(getParamsMethod())
+              .addMethod(getEvidenceMethod())
+              .addMethod(getAllEvidenceMethod())
               .build();
         }
       }

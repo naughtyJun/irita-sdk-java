@@ -34,7 +34,8 @@ public interface AnyOrBuilder extends
    * used with implementation specific semantics.
    * </pre>
    *
-   * <code>optional string type_url = 1;</code>
+   * <code>string type_url = 1;</code>
+   * @return The typeUrl.
    */
   java.lang.String getTypeUrl();
   /**
@@ -64,7 +65,8 @@ public interface AnyOrBuilder extends
    * used with implementation specific semantics.
    * </pre>
    *
-   * <code>optional string type_url = 1;</code>
+   * <code>string type_url = 1;</code>
+   * @return The bytes for typeUrl.
    */
   com.google.protobuf.ByteString
       getTypeUrlBytes();
@@ -74,7 +76,8 @@ public interface AnyOrBuilder extends
    * Must be a valid serialized protocol buffer of the above specified type.
    * </pre>
    *
-   * <code>optional bytes value = 2;</code>
+   * <code>bytes value = 2;</code>
+   * @return The value.
    */
   com.google.protobuf.ByteString getValue();
 }

@@ -12,30 +12,42 @@ package com.google.api;
  *
  * Protobuf type {@code google.api.Http}
  */
-public  final class Http extends
+public final class Http extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.api.Http)
     HttpOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use Http.newBuilder() to construct.
   private Http(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private Http() {
     rules_ = java.util.Collections.emptyList();
-    fullyDecodeReservedExpansion_ = false;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Http();
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private Http(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -44,14 +56,8 @@ public  final class Http extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               rules_ = new java.util.ArrayList<com.google.api.HttpRule>();
               mutable_bitField0_ |= 0x00000001;
             }
@@ -64,6 +70,13 @@ public  final class Http extends
             fullyDecodeReservedExpansion_ = input.readBool();
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -72,9 +85,10 @@ public  final class Http extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         rules_ = java.util.Collections.unmodifiableList(rules_);
       }
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -83,6 +97,7 @@ public  final class Http extends
     return com.google.api.HttpProto.internal_static_google_api_Http_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.api.HttpProto.internal_static_google_api_Http_fieldAccessorTable
@@ -90,7 +105,6 @@ public  final class Http extends
             com.google.api.Http.class, com.google.api.Http.Builder.class);
   }
 
-  private int bitField0_;
   public static final int RULES_FIELD_NUMBER = 1;
   private java.util.List<com.google.api.HttpRule> rules_;
   /**
@@ -101,6 +115,7 @@ public  final class Http extends
    *
    * <code>repeated .google.api.HttpRule rules = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.api.HttpRule> getRulesList() {
     return rules_;
   }
@@ -112,6 +127,7 @@ public  final class Http extends
    *
    * <code>repeated .google.api.HttpRule rules = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.api.HttpRuleOrBuilder> 
       getRulesOrBuilderList() {
     return rules_;
@@ -124,6 +140,7 @@ public  final class Http extends
    *
    * <code>repeated .google.api.HttpRule rules = 1;</code>
    */
+  @java.lang.Override
   public int getRulesCount() {
     return rules_.size();
   }
@@ -135,6 +152,7 @@ public  final class Http extends
    *
    * <code>repeated .google.api.HttpRule rules = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.HttpRule getRules(int index) {
     return rules_.get(index);
   }
@@ -146,6 +164,7 @@ public  final class Http extends
    *
    * <code>repeated .google.api.HttpRule rules = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.HttpRuleOrBuilder getRulesOrBuilder(
       int index) {
     return rules_.get(index);
@@ -162,13 +181,16 @@ public  final class Http extends
    * segment matches.
    * </pre>
    *
-   * <code>optional bool fully_decode_reserved_expansion = 2;</code>
+   * <code>bool fully_decode_reserved_expansion = 2;</code>
+   * @return The fullyDecodeReservedExpansion.
    */
+  @java.lang.Override
   public boolean getFullyDecodeReservedExpansion() {
     return fullyDecodeReservedExpansion_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -178,6 +200,7 @@ public  final class Http extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < rules_.size(); i++) {
@@ -186,8 +209,10 @@ public  final class Http extends
     if (fullyDecodeReservedExpansion_ != false) {
       output.writeBool(2, fullyDecodeReservedExpansion_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -201,11 +226,11 @@ public  final class Http extends
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, fullyDecodeReservedExpansion_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -216,12 +241,12 @@ public  final class Http extends
     }
     com.google.api.Http other = (com.google.api.Http) obj;
 
-    boolean result = true;
-    result = result && getRulesList()
-        .equals(other.getRulesList());
-    result = result && (getFullyDecodeReservedExpansion()
-        == other.getFullyDecodeReservedExpansion());
-    return result;
+    if (!getRulesList()
+        .equals(other.getRulesList())) return false;
+    if (getFullyDecodeReservedExpansion()
+        != other.getFullyDecodeReservedExpansion()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -230,7 +255,7 @@ public  final class Http extends
       return memoizedHashCode;
     }
     int hash = 41;
-    hash = (19 * hash) + getDescriptorForType().hashCode();
+    hash = (19 * hash) + getDescriptor().hashCode();
     if (getRulesCount() > 0) {
       hash = (37 * hash) + RULES_FIELD_NUMBER;
       hash = (53 * hash) + getRulesList().hashCode();
@@ -243,6 +268,17 @@ public  final class Http extends
     return hash;
   }
 
+  public static com.google.api.Http parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.google.api.Http parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static com.google.api.Http parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -302,6 +338,7 @@ public  final class Http extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -309,6 +346,7 @@ public  final class Http extends
   public static Builder newBuilder(com.google.api.Http prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -338,6 +376,7 @@ public  final class Http extends
       return com.google.api.HttpProto.internal_static_google_api_Http_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.api.HttpProto.internal_static_google_api_Http_fieldAccessorTable
@@ -361,6 +400,7 @@ public  final class Http extends
         getRulesFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (rulesBuilder_ == null) {
@@ -374,15 +414,18 @@ public  final class Http extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.api.HttpProto.internal_static_google_api_Http_descriptor;
     }
 
+    @java.lang.Override
     public com.google.api.Http getDefaultInstanceForType() {
       return com.google.api.Http.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.api.Http build() {
       com.google.api.Http result = buildPartial();
       if (!result.isInitialized()) {
@@ -391,12 +434,12 @@ public  final class Http extends
       return result;
     }
 
+    @java.lang.Override
     public com.google.api.Http buildPartial() {
       com.google.api.Http result = new com.google.api.Http(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -405,37 +448,43 @@ public  final class Http extends
         result.rules_ = rulesBuilder_.build();
       }
       result.fullyDecodeReservedExpansion_ = fullyDecodeReservedExpansion_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.api.Http) {
         return mergeFrom((com.google.api.Http)other);
@@ -476,14 +525,17 @@ public  final class Http extends
       if (other.getFullyDecodeReservedExpansion() != false) {
         setFullyDecodeReservedExpansion(other.getFullyDecodeReservedExpansion());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -506,7 +558,7 @@ public  final class Http extends
     private java.util.List<com.google.api.HttpRule> rules_ =
       java.util.Collections.emptyList();
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         rules_ = new java.util.ArrayList<com.google.api.HttpRule>(rules_);
         bitField0_ |= 0x00000001;
        }
@@ -825,7 +877,7 @@ public  final class Http extends
         rulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.HttpRule, com.google.api.HttpRule.Builder, com.google.api.HttpRuleOrBuilder>(
                 rules_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         rules_ = null;
@@ -843,8 +895,10 @@ public  final class Http extends
      * segment matches.
      * </pre>
      *
-     * <code>optional bool fully_decode_reserved_expansion = 2;</code>
+     * <code>bool fully_decode_reserved_expansion = 2;</code>
+     * @return The fullyDecodeReservedExpansion.
      */
+    @java.lang.Override
     public boolean getFullyDecodeReservedExpansion() {
       return fullyDecodeReservedExpansion_;
     }
@@ -857,7 +911,9 @@ public  final class Http extends
      * segment matches.
      * </pre>
      *
-     * <code>optional bool fully_decode_reserved_expansion = 2;</code>
+     * <code>bool fully_decode_reserved_expansion = 2;</code>
+     * @param value The fullyDecodeReservedExpansion to set.
+     * @return This builder for chaining.
      */
     public Builder setFullyDecodeReservedExpansion(boolean value) {
       
@@ -874,7 +930,8 @@ public  final class Http extends
      * segment matches.
      * </pre>
      *
-     * <code>optional bool fully_decode_reserved_expansion = 2;</code>
+     * <code>bool fully_decode_reserved_expansion = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFullyDecodeReservedExpansion() {
       
@@ -882,14 +939,16 @@ public  final class Http extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -908,11 +967,12 @@ public  final class Http extends
 
   private static final com.google.protobuf.Parser<Http>
       PARSER = new com.google.protobuf.AbstractParser<Http>() {
+    @java.lang.Override
     public Http parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Http(input, extensionRegistry);
+      return new Http(input, extensionRegistry);
     }
   };
 
@@ -925,6 +985,7 @@ public  final class Http extends
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.api.Http getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

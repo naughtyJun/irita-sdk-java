@@ -23,7 +23,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
     java.lang.String getSender();
     /**
@@ -31,7 +32,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
     com.google.protobuf.ByteString
         getSenderBytes();
@@ -41,7 +43,8 @@ public final class Tx {
      * WASMByteCode can be raw or gzip compressed
      * </pre>
      *
-     * <code>optional bytes wasm_byte_code = 2;</code>
+     * <code>bytes wasm_byte_code = 2 [(.gogoproto.customname) = "WASMByteCode"];</code>
+     * @return The wasmByteCode.
      */
     com.google.protobuf.ByteString getWasmByteCode();
 
@@ -50,7 +53,8 @@ public final class Tx {
      * Source is a valid absolute HTTPS URI to the contract's source code, optional
      * </pre>
      *
-     * <code>optional string source = 3;</code>
+     * <code>string source = 3;</code>
+     * @return The source.
      */
     java.lang.String getSource();
     /**
@@ -58,7 +62,8 @@ public final class Tx {
      * Source is a valid absolute HTTPS URI to the contract's source code, optional
      * </pre>
      *
-     * <code>optional string source = 3;</code>
+     * <code>string source = 3;</code>
+     * @return The bytes for source.
      */
     com.google.protobuf.ByteString
         getSourceBytes();
@@ -68,7 +73,8 @@ public final class Tx {
      * Builder is a valid docker image name with tag, optional
      * </pre>
      *
-     * <code>optional string builder = 4;</code>
+     * <code>string builder = 4;</code>
+     * @return The builder.
      */
     java.lang.String getBuilder();
     /**
@@ -76,7 +82,8 @@ public final class Tx {
      * Builder is a valid docker image name with tag, optional
      * </pre>
      *
-     * <code>optional string builder = 4;</code>
+     * <code>string builder = 4;</code>
+     * @return The bytes for builder.
      */
     com.google.protobuf.ByteString
         getBuilderBytes();
@@ -86,7 +93,8 @@ public final class Tx {
      * InstantiatePermission access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+     * @return Whether the instantiatePermission field is set.
      */
     boolean hasInstantiatePermission();
     /**
@@ -94,7 +102,8 @@ public final class Tx {
      * InstantiatePermission access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+     * @return The instantiatePermission.
      */
     cosmwasm.wasm.v1beta1.Types.AccessConfig getInstantiatePermission();
     /**
@@ -102,7 +111,7 @@ public final class Tx {
      * InstantiatePermission access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
      */
     cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder getInstantiatePermissionOrBuilder();
   }
@@ -113,10 +122,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgStoreCode}
    */
-  public  static final class MsgStoreCode extends
+  public static final class MsgStoreCode extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgStoreCode)
       MsgStoreCodeOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgStoreCode.newBuilder() to construct.
     private MsgStoreCode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -129,16 +139,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgStoreCode();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgStoreCode(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -147,12 +168,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -189,6 +204,13 @@ public final class Tx {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -197,6 +219,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -205,6 +228,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgStoreCode_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgStoreCode_fieldAccessorTable
@@ -219,8 +243,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
+    @java.lang.Override
     public java.lang.String getSender() {
       java.lang.Object ref = sender_;
       if (ref instanceof java.lang.String) {
@@ -238,8 +264,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSenderBytes() {
       java.lang.Object ref = sender_;
@@ -261,8 +289,10 @@ public final class Tx {
      * WASMByteCode can be raw or gzip compressed
      * </pre>
      *
-     * <code>optional bytes wasm_byte_code = 2;</code>
+     * <code>bytes wasm_byte_code = 2 [(.gogoproto.customname) = "WASMByteCode"];</code>
+     * @return The wasmByteCode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getWasmByteCode() {
       return wasmByteCode_;
     }
@@ -274,8 +304,10 @@ public final class Tx {
      * Source is a valid absolute HTTPS URI to the contract's source code, optional
      * </pre>
      *
-     * <code>optional string source = 3;</code>
+     * <code>string source = 3;</code>
+     * @return The source.
      */
+    @java.lang.Override
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
       if (ref instanceof java.lang.String) {
@@ -293,8 +325,10 @@ public final class Tx {
      * Source is a valid absolute HTTPS URI to the contract's source code, optional
      * </pre>
      *
-     * <code>optional string source = 3;</code>
+     * <code>string source = 3;</code>
+     * @return The bytes for source.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSourceBytes() {
       java.lang.Object ref = source_;
@@ -316,8 +350,10 @@ public final class Tx {
      * Builder is a valid docker image name with tag, optional
      * </pre>
      *
-     * <code>optional string builder = 4;</code>
+     * <code>string builder = 4;</code>
+     * @return The builder.
      */
+    @java.lang.Override
     public java.lang.String getBuilder() {
       java.lang.Object ref = builder_;
       if (ref instanceof java.lang.String) {
@@ -335,8 +371,10 @@ public final class Tx {
      * Builder is a valid docker image name with tag, optional
      * </pre>
      *
-     * <code>optional string builder = 4;</code>
+     * <code>string builder = 4;</code>
+     * @return The bytes for builder.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getBuilderBytes() {
       java.lang.Object ref = builder_;
@@ -358,8 +396,10 @@ public final class Tx {
      * InstantiatePermission access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+     * @return Whether the instantiatePermission field is set.
      */
+    @java.lang.Override
     public boolean hasInstantiatePermission() {
       return instantiatePermission_ != null;
     }
@@ -368,8 +408,10 @@ public final class Tx {
      * InstantiatePermission access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+     * @return The instantiatePermission.
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AccessConfig getInstantiatePermission() {
       return instantiatePermission_ == null ? cosmwasm.wasm.v1beta1.Types.AccessConfig.getDefaultInstance() : instantiatePermission_;
     }
@@ -378,13 +420,15 @@ public final class Tx {
      * InstantiatePermission access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder getInstantiatePermissionOrBuilder() {
       return getInstantiatePermission();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -394,6 +438,7 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getSenderBytes().isEmpty()) {
@@ -411,8 +456,10 @@ public final class Tx {
       if (instantiatePermission_ != null) {
         output.writeMessage(5, getInstantiatePermission());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -435,11 +482,11 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getInstantiatePermission());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -450,21 +497,21 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgStoreCode other = (cosmwasm.wasm.v1beta1.Tx.MsgStoreCode) obj;
 
-      boolean result = true;
-      result = result && getSender()
-          .equals(other.getSender());
-      result = result && getWasmByteCode()
-          .equals(other.getWasmByteCode());
-      result = result && getSource()
-          .equals(other.getSource());
-      result = result && getBuilder()
-          .equals(other.getBuilder());
-      result = result && (hasInstantiatePermission() == other.hasInstantiatePermission());
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (!getWasmByteCode()
+          .equals(other.getWasmByteCode())) return false;
+      if (!getSource()
+          .equals(other.getSource())) return false;
+      if (!getBuilder()
+          .equals(other.getBuilder())) return false;
+      if (hasInstantiatePermission() != other.hasInstantiatePermission()) return false;
       if (hasInstantiatePermission()) {
-        result = result && getInstantiatePermission()
-            .equals(other.getInstantiatePermission());
+        if (!getInstantiatePermission()
+            .equals(other.getInstantiatePermission())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -473,7 +520,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SENDER_FIELD_NUMBER;
       hash = (53 * hash) + getSender().hashCode();
       hash = (37 * hash) + WASM_BYTE_CODE_FIELD_NUMBER;
@@ -491,6 +538,17 @@ public final class Tx {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgStoreCode parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgStoreCode parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgStoreCode parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -550,6 +608,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -557,6 +616,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgStoreCode prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -584,6 +644,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgStoreCode_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgStoreCode_fieldAccessorTable
@@ -606,6 +667,7 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         sender_ = "";
@@ -625,15 +687,18 @@ public final class Tx {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgStoreCode_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgStoreCode getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgStoreCode.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgStoreCode build() {
         cosmwasm.wasm.v1beta1.Tx.MsgStoreCode result = buildPartial();
         if (!result.isInitialized()) {
@@ -642,6 +707,7 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgStoreCode buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgStoreCode result = new cosmwasm.wasm.v1beta1.Tx.MsgStoreCode(this);
         result.sender_ = sender_;
@@ -657,32 +723,39 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgStoreCode) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgStoreCode)other);
@@ -712,14 +785,17 @@ public final class Tx {
         if (other.hasInstantiatePermission()) {
           mergeInstantiatePermission(other.getInstantiatePermission());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -744,7 +820,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The sender.
        */
       public java.lang.String getSender() {
         java.lang.Object ref = sender_;
@@ -763,7 +840,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The bytes for sender.
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
@@ -783,7 +861,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSender(
           java.lang.String value) {
@@ -800,7 +880,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSender() {
         
@@ -813,7 +894,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSenderBytes(
           com.google.protobuf.ByteString value) {
@@ -833,8 +916,10 @@ public final class Tx {
        * WASMByteCode can be raw or gzip compressed
        * </pre>
        *
-       * <code>optional bytes wasm_byte_code = 2;</code>
+       * <code>bytes wasm_byte_code = 2 [(.gogoproto.customname) = "WASMByteCode"];</code>
+       * @return The wasmByteCode.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getWasmByteCode() {
         return wasmByteCode_;
       }
@@ -843,7 +928,9 @@ public final class Tx {
        * WASMByteCode can be raw or gzip compressed
        * </pre>
        *
-       * <code>optional bytes wasm_byte_code = 2;</code>
+       * <code>bytes wasm_byte_code = 2 [(.gogoproto.customname) = "WASMByteCode"];</code>
+       * @param value The wasmByteCode to set.
+       * @return This builder for chaining.
        */
       public Builder setWasmByteCode(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -859,7 +946,8 @@ public final class Tx {
        * WASMByteCode can be raw or gzip compressed
        * </pre>
        *
-       * <code>optional bytes wasm_byte_code = 2;</code>
+       * <code>bytes wasm_byte_code = 2 [(.gogoproto.customname) = "WASMByteCode"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearWasmByteCode() {
         
@@ -874,7 +962,8 @@ public final class Tx {
        * Source is a valid absolute HTTPS URI to the contract's source code, optional
        * </pre>
        *
-       * <code>optional string source = 3;</code>
+       * <code>string source = 3;</code>
+       * @return The source.
        */
       public java.lang.String getSource() {
         java.lang.Object ref = source_;
@@ -893,7 +982,8 @@ public final class Tx {
        * Source is a valid absolute HTTPS URI to the contract's source code, optional
        * </pre>
        *
-       * <code>optional string source = 3;</code>
+       * <code>string source = 3;</code>
+       * @return The bytes for source.
        */
       public com.google.protobuf.ByteString
           getSourceBytes() {
@@ -913,7 +1003,9 @@ public final class Tx {
        * Source is a valid absolute HTTPS URI to the contract's source code, optional
        * </pre>
        *
-       * <code>optional string source = 3;</code>
+       * <code>string source = 3;</code>
+       * @param value The source to set.
+       * @return This builder for chaining.
        */
       public Builder setSource(
           java.lang.String value) {
@@ -930,7 +1022,8 @@ public final class Tx {
        * Source is a valid absolute HTTPS URI to the contract's source code, optional
        * </pre>
        *
-       * <code>optional string source = 3;</code>
+       * <code>string source = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSource() {
         
@@ -943,7 +1036,9 @@ public final class Tx {
        * Source is a valid absolute HTTPS URI to the contract's source code, optional
        * </pre>
        *
-       * <code>optional string source = 3;</code>
+       * <code>string source = 3;</code>
+       * @param value The bytes for source to set.
+       * @return This builder for chaining.
        */
       public Builder setSourceBytes(
           com.google.protobuf.ByteString value) {
@@ -963,7 +1058,8 @@ public final class Tx {
        * Builder is a valid docker image name with tag, optional
        * </pre>
        *
-       * <code>optional string builder = 4;</code>
+       * <code>string builder = 4;</code>
+       * @return The builder.
        */
       public java.lang.String getBuilder() {
         java.lang.Object ref = builder_;
@@ -982,7 +1078,8 @@ public final class Tx {
        * Builder is a valid docker image name with tag, optional
        * </pre>
        *
-       * <code>optional string builder = 4;</code>
+       * <code>string builder = 4;</code>
+       * @return The bytes for builder.
        */
       public com.google.protobuf.ByteString
           getBuilderBytes() {
@@ -1002,7 +1099,9 @@ public final class Tx {
        * Builder is a valid docker image name with tag, optional
        * </pre>
        *
-       * <code>optional string builder = 4;</code>
+       * <code>string builder = 4;</code>
+       * @param value The builder to set.
+       * @return This builder for chaining.
        */
       public Builder setBuilder(
           java.lang.String value) {
@@ -1019,7 +1118,8 @@ public final class Tx {
        * Builder is a valid docker image name with tag, optional
        * </pre>
        *
-       * <code>optional string builder = 4;</code>
+       * <code>string builder = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBuilder() {
         
@@ -1032,7 +1132,9 @@ public final class Tx {
        * Builder is a valid docker image name with tag, optional
        * </pre>
        *
-       * <code>optional string builder = 4;</code>
+       * <code>string builder = 4;</code>
+       * @param value The bytes for builder to set.
+       * @return This builder for chaining.
        */
       public Builder setBuilderBytes(
           com.google.protobuf.ByteString value) {
@@ -1046,7 +1148,7 @@ public final class Tx {
         return this;
       }
 
-      private cosmwasm.wasm.v1beta1.Types.AccessConfig instantiatePermission_ = null;
+      private cosmwasm.wasm.v1beta1.Types.AccessConfig instantiatePermission_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.AccessConfig, cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder, cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder> instantiatePermissionBuilder_;
       /**
@@ -1054,7 +1156,8 @@ public final class Tx {
        * InstantiatePermission access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * @return Whether the instantiatePermission field is set.
        */
       public boolean hasInstantiatePermission() {
         return instantiatePermissionBuilder_ != null || instantiatePermission_ != null;
@@ -1064,7 +1167,8 @@ public final class Tx {
        * InstantiatePermission access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * @return The instantiatePermission.
        */
       public cosmwasm.wasm.v1beta1.Types.AccessConfig getInstantiatePermission() {
         if (instantiatePermissionBuilder_ == null) {
@@ -1078,7 +1182,7 @@ public final class Tx {
        * InstantiatePermission access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
        */
       public Builder setInstantiatePermission(cosmwasm.wasm.v1beta1.Types.AccessConfig value) {
         if (instantiatePermissionBuilder_ == null) {
@@ -1098,7 +1202,7 @@ public final class Tx {
        * InstantiatePermission access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
        */
       public Builder setInstantiatePermission(
           cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder builderForValue) {
@@ -1116,7 +1220,7 @@ public final class Tx {
        * InstantiatePermission access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
        */
       public Builder mergeInstantiatePermission(cosmwasm.wasm.v1beta1.Types.AccessConfig value) {
         if (instantiatePermissionBuilder_ == null) {
@@ -1138,7 +1242,7 @@ public final class Tx {
        * InstantiatePermission access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
        */
       public Builder clearInstantiatePermission() {
         if (instantiatePermissionBuilder_ == null) {
@@ -1156,7 +1260,7 @@ public final class Tx {
        * InstantiatePermission access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
        */
       public cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder getInstantiatePermissionBuilder() {
         
@@ -1168,7 +1272,7 @@ public final class Tx {
        * InstantiatePermission access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
        */
       public cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder getInstantiatePermissionOrBuilder() {
         if (instantiatePermissionBuilder_ != null) {
@@ -1183,7 +1287,7 @@ public final class Tx {
        * InstantiatePermission access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_permission = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.AccessConfig, cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder, cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder> 
@@ -1198,14 +1302,16 @@ public final class Tx {
         }
         return instantiatePermissionBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1224,11 +1330,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgStoreCode>
         PARSER = new com.google.protobuf.AbstractParser<MsgStoreCode>() {
+      @java.lang.Override
       public MsgStoreCode parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgStoreCode(input, extensionRegistry);
+        return new MsgStoreCode(input, extensionRegistry);
       }
     };
 
@@ -1241,6 +1348,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgStoreCode getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1256,7 +1364,8 @@ public final class Tx {
      * CodeID is the reference to the stored WASM code
      * </pre>
      *
-     * <code>optional uint64 code_id = 1;</code>
+     * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
      */
     long getCodeId();
   }
@@ -1267,29 +1376,40 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgStoreCodeResponse}
    */
-  public  static final class MsgStoreCodeResponse extends
+  public static final class MsgStoreCodeResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgStoreCodeResponse)
       MsgStoreCodeResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgStoreCodeResponse.newBuilder() to construct.
     private MsgStoreCodeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private MsgStoreCodeResponse() {
-      codeId_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgStoreCodeResponse();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgStoreCodeResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1298,15 +1418,16 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               codeId_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1317,6 +1438,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1325,6 +1447,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgStoreCodeResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgStoreCodeResponse_fieldAccessorTable
@@ -1339,13 +1462,16 @@ public final class Tx {
      * CodeID is the reference to the stored WASM code
      * </pre>
      *
-     * <code>optional uint64 code_id = 1;</code>
+     * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
      */
+    @java.lang.Override
     public long getCodeId() {
       return codeId_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1355,13 +1481,16 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (codeId_ != 0L) {
         output.writeUInt64(1, codeId_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1371,11 +1500,11 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, codeId_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1386,10 +1515,10 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse other = (cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse) obj;
 
-      boolean result = true;
-      result = result && (getCodeId()
-          == other.getCodeId());
-      return result;
+      if (getCodeId()
+          != other.getCodeId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1398,7 +1527,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CODE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCodeId());
@@ -1407,6 +1536,17 @@ public final class Tx {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1466,6 +1606,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1473,6 +1614,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1500,6 +1642,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgStoreCodeResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgStoreCodeResponse_fieldAccessorTable
@@ -1522,6 +1665,7 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         codeId_ = 0L;
@@ -1529,15 +1673,18 @@ public final class Tx {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgStoreCodeResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse build() {
         cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -1546,6 +1693,7 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse result = new cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse(this);
         result.codeId_ = codeId_;
@@ -1553,32 +1701,39 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse)other);
@@ -1593,14 +1748,17 @@ public final class Tx {
         if (other.getCodeId() != 0L) {
           setCodeId(other.getCodeId());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1625,8 +1783,10 @@ public final class Tx {
        * CodeID is the reference to the stored WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return The codeId.
        */
+      @java.lang.Override
       public long getCodeId() {
         return codeId_;
       }
@@ -1635,7 +1795,9 @@ public final class Tx {
        * CodeID is the reference to the stored WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+       * @param value The codeId to set.
+       * @return This builder for chaining.
        */
       public Builder setCodeId(long value) {
         
@@ -1648,7 +1810,8 @@ public final class Tx {
        * CodeID is the reference to the stored WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearCodeId() {
         
@@ -1656,14 +1819,16 @@ public final class Tx {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1682,11 +1847,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgStoreCodeResponse>
         PARSER = new com.google.protobuf.AbstractParser<MsgStoreCodeResponse>() {
+      @java.lang.Override
       public MsgStoreCodeResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgStoreCodeResponse(input, extensionRegistry);
+        return new MsgStoreCodeResponse(input, extensionRegistry);
       }
     };
 
@@ -1699,6 +1865,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgStoreCodeResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1714,7 +1881,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
     java.lang.String getSender();
     /**
@@ -1722,7 +1890,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
     com.google.protobuf.ByteString
         getSenderBytes();
@@ -1732,7 +1901,8 @@ public final class Tx {
      * Admin is an optional address that can execute migrations
      * </pre>
      *
-     * <code>optional string admin = 2;</code>
+     * <code>string admin = 2;</code>
+     * @return The admin.
      */
     java.lang.String getAdmin();
     /**
@@ -1740,7 +1910,8 @@ public final class Tx {
      * Admin is an optional address that can execute migrations
      * </pre>
      *
-     * <code>optional string admin = 2;</code>
+     * <code>string admin = 2;</code>
+     * @return The bytes for admin.
      */
     com.google.protobuf.ByteString
         getAdminBytes();
@@ -1750,7 +1921,8 @@ public final class Tx {
      * CodeID is the reference to the stored WASM code
      * </pre>
      *
-     * <code>optional uint64 code_id = 3;</code>
+     * <code>uint64 code_id = 3 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
      */
     long getCodeId();
 
@@ -1759,7 +1931,8 @@ public final class Tx {
      * Label is optional metadata to be stored with a contract instance.
      * </pre>
      *
-     * <code>optional string label = 4;</code>
+     * <code>string label = 4;</code>
+     * @return The label.
      */
     java.lang.String getLabel();
     /**
@@ -1767,7 +1940,8 @@ public final class Tx {
      * Label is optional metadata to be stored with a contract instance.
      * </pre>
      *
-     * <code>optional string label = 4;</code>
+     * <code>string label = 4;</code>
+     * @return The bytes for label.
      */
     com.google.protobuf.ByteString
         getLabelBytes();
@@ -1777,7 +1951,8 @@ public final class Tx {
      * InitMsg json encoded message to be passed to the contract on instantiation
      * </pre>
      *
-     * <code>optional bytes init_msg = 5;</code>
+     * <code>bytes init_msg = 5 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The initMsg.
      */
     com.google.protobuf.ByteString getInitMsg();
 
@@ -1786,7 +1961,7 @@ public final class Tx {
      * InitFunds coins that are transferred to the contract on instantiation
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getInitFundsList();
@@ -1795,7 +1970,7 @@ public final class Tx {
      * InitFunds coins that are transferred to the contract on instantiation
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getInitFunds(int index);
     /**
@@ -1803,7 +1978,7 @@ public final class Tx {
      * InitFunds coins that are transferred to the contract on instantiation
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getInitFundsCount();
     /**
@@ -1811,7 +1986,7 @@ public final class Tx {
      * InitFunds coins that are transferred to the contract on instantiation
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getInitFundsOrBuilderList();
@@ -1820,7 +1995,7 @@ public final class Tx {
      * InitFunds coins that are transferred to the contract on instantiation
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getInitFundsOrBuilder(
         int index);
@@ -1832,10 +2007,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgInstantiateContract}
    */
-  public  static final class MsgInstantiateContract extends
+  public static final class MsgInstantiateContract extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgInstantiateContract)
       MsgInstantiateContractOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgInstantiateContract.newBuilder() to construct.
     private MsgInstantiateContract(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1843,23 +2019,34 @@ public final class Tx {
     private MsgInstantiateContract() {
       sender_ = "";
       admin_ = "";
-      codeId_ = 0L;
       label_ = "";
       initMsg_ = com.google.protobuf.ByteString.EMPTY;
       initFunds_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgInstantiateContract();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgInstantiateContract(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1868,12 +2055,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1903,12 +2084,19 @@ public final class Tx {
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 initFunds_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               initFunds_.add(
                   input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1919,9 +2107,10 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           initFunds_ = java.util.Collections.unmodifiableList(initFunds_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1930,6 +2119,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgInstantiateContract_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgInstantiateContract_fieldAccessorTable
@@ -1937,7 +2127,6 @@ public final class Tx {
               cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract.class, cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract.Builder.class);
     }
 
-    private int bitField0_;
     public static final int SENDER_FIELD_NUMBER = 1;
     private volatile java.lang.Object sender_;
     /**
@@ -1945,8 +2134,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
+    @java.lang.Override
     public java.lang.String getSender() {
       java.lang.Object ref = sender_;
       if (ref instanceof java.lang.String) {
@@ -1964,8 +2155,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSenderBytes() {
       java.lang.Object ref = sender_;
@@ -1987,8 +2180,10 @@ public final class Tx {
      * Admin is an optional address that can execute migrations
      * </pre>
      *
-     * <code>optional string admin = 2;</code>
+     * <code>string admin = 2;</code>
+     * @return The admin.
      */
+    @java.lang.Override
     public java.lang.String getAdmin() {
       java.lang.Object ref = admin_;
       if (ref instanceof java.lang.String) {
@@ -2006,8 +2201,10 @@ public final class Tx {
      * Admin is an optional address that can execute migrations
      * </pre>
      *
-     * <code>optional string admin = 2;</code>
+     * <code>string admin = 2;</code>
+     * @return The bytes for admin.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAdminBytes() {
       java.lang.Object ref = admin_;
@@ -2029,8 +2226,10 @@ public final class Tx {
      * CodeID is the reference to the stored WASM code
      * </pre>
      *
-     * <code>optional uint64 code_id = 3;</code>
+     * <code>uint64 code_id = 3 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
      */
+    @java.lang.Override
     public long getCodeId() {
       return codeId_;
     }
@@ -2042,8 +2241,10 @@ public final class Tx {
      * Label is optional metadata to be stored with a contract instance.
      * </pre>
      *
-     * <code>optional string label = 4;</code>
+     * <code>string label = 4;</code>
+     * @return The label.
      */
+    @java.lang.Override
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
       if (ref instanceof java.lang.String) {
@@ -2061,8 +2262,10 @@ public final class Tx {
      * Label is optional metadata to be stored with a contract instance.
      * </pre>
      *
-     * <code>optional string label = 4;</code>
+     * <code>string label = 4;</code>
+     * @return The bytes for label.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getLabelBytes() {
       java.lang.Object ref = label_;
@@ -2084,8 +2287,10 @@ public final class Tx {
      * InitMsg json encoded message to be passed to the contract on instantiation
      * </pre>
      *
-     * <code>optional bytes init_msg = 5;</code>
+     * <code>bytes init_msg = 5 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The initMsg.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getInitMsg() {
       return initMsg_;
     }
@@ -2097,8 +2302,9 @@ public final class Tx {
      * InitFunds coins that are transferred to the contract on instantiation
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getInitFundsList() {
       return initFunds_;
     }
@@ -2107,8 +2313,9 @@ public final class Tx {
      * InitFunds coins that are transferred to the contract on instantiation
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getInitFundsOrBuilderList() {
       return initFunds_;
@@ -2118,8 +2325,9 @@ public final class Tx {
      * InitFunds coins that are transferred to the contract on instantiation
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public int getInitFundsCount() {
       return initFunds_.size();
     }
@@ -2128,8 +2336,9 @@ public final class Tx {
      * InitFunds coins that are transferred to the contract on instantiation
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getInitFunds(int index) {
       return initFunds_.get(index);
     }
@@ -2138,14 +2347,16 @@ public final class Tx {
      * InitFunds coins that are transferred to the contract on instantiation
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getInitFundsOrBuilder(
         int index) {
       return initFunds_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2155,6 +2366,7 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getSenderBytes().isEmpty()) {
@@ -2175,8 +2387,10 @@ public final class Tx {
       for (int i = 0; i < initFunds_.size(); i++) {
         output.writeMessage(6, initFunds_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2203,11 +2417,11 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, initFunds_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2218,20 +2432,20 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract other = (cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract) obj;
 
-      boolean result = true;
-      result = result && getSender()
-          .equals(other.getSender());
-      result = result && getAdmin()
-          .equals(other.getAdmin());
-      result = result && (getCodeId()
-          == other.getCodeId());
-      result = result && getLabel()
-          .equals(other.getLabel());
-      result = result && getInitMsg()
-          .equals(other.getInitMsg());
-      result = result && getInitFundsList()
-          .equals(other.getInitFundsList());
-      return result;
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (!getAdmin()
+          .equals(other.getAdmin())) return false;
+      if (getCodeId()
+          != other.getCodeId()) return false;
+      if (!getLabel()
+          .equals(other.getLabel())) return false;
+      if (!getInitMsg()
+          .equals(other.getInitMsg())) return false;
+      if (!getInitFundsList()
+          .equals(other.getInitFundsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2240,7 +2454,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SENDER_FIELD_NUMBER;
       hash = (53 * hash) + getSender().hashCode();
       hash = (37 * hash) + ADMIN_FIELD_NUMBER;
@@ -2261,6 +2475,17 @@ public final class Tx {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2320,6 +2545,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2327,6 +2553,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2354,6 +2581,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgInstantiateContract_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgInstantiateContract_fieldAccessorTable
@@ -2377,6 +2605,7 @@ public final class Tx {
           getInitFundsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         sender_ = "";
@@ -2391,22 +2620,25 @@ public final class Tx {
 
         if (initFundsBuilder_ == null) {
           initFunds_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           initFundsBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgInstantiateContract_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract build() {
         cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract result = buildPartial();
         if (!result.isInitialized()) {
@@ -2415,55 +2647,61 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract result = new cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.sender_ = sender_;
         result.admin_ = admin_;
         result.codeId_ = codeId_;
         result.label_ = label_;
         result.initMsg_ = initMsg_;
         if (initFundsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             initFunds_ = java.util.Collections.unmodifiableList(initFunds_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.initFunds_ = initFunds_;
         } else {
           result.initFunds_ = initFundsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract)other);
@@ -2497,7 +2735,7 @@ public final class Tx {
           if (!other.initFunds_.isEmpty()) {
             if (initFunds_.isEmpty()) {
               initFunds_ = other.initFunds_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureInitFundsIsMutable();
               initFunds_.addAll(other.initFunds_);
@@ -2510,7 +2748,7 @@ public final class Tx {
               initFundsBuilder_.dispose();
               initFundsBuilder_ = null;
               initFunds_ = other.initFunds_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000001);
               initFundsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getInitFundsFieldBuilder() : null;
@@ -2519,14 +2757,17 @@ public final class Tx {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2552,7 +2793,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The sender.
        */
       public java.lang.String getSender() {
         java.lang.Object ref = sender_;
@@ -2571,7 +2813,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The bytes for sender.
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
@@ -2591,7 +2834,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSender(
           java.lang.String value) {
@@ -2608,7 +2853,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSender() {
         
@@ -2621,7 +2867,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSenderBytes(
           com.google.protobuf.ByteString value) {
@@ -2641,7 +2889,8 @@ public final class Tx {
        * Admin is an optional address that can execute migrations
        * </pre>
        *
-       * <code>optional string admin = 2;</code>
+       * <code>string admin = 2;</code>
+       * @return The admin.
        */
       public java.lang.String getAdmin() {
         java.lang.Object ref = admin_;
@@ -2660,7 +2909,8 @@ public final class Tx {
        * Admin is an optional address that can execute migrations
        * </pre>
        *
-       * <code>optional string admin = 2;</code>
+       * <code>string admin = 2;</code>
+       * @return The bytes for admin.
        */
       public com.google.protobuf.ByteString
           getAdminBytes() {
@@ -2680,7 +2930,9 @@ public final class Tx {
        * Admin is an optional address that can execute migrations
        * </pre>
        *
-       * <code>optional string admin = 2;</code>
+       * <code>string admin = 2;</code>
+       * @param value The admin to set.
+       * @return This builder for chaining.
        */
       public Builder setAdmin(
           java.lang.String value) {
@@ -2697,7 +2949,8 @@ public final class Tx {
        * Admin is an optional address that can execute migrations
        * </pre>
        *
-       * <code>optional string admin = 2;</code>
+       * <code>string admin = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAdmin() {
         
@@ -2710,7 +2963,9 @@ public final class Tx {
        * Admin is an optional address that can execute migrations
        * </pre>
        *
-       * <code>optional string admin = 2;</code>
+       * <code>string admin = 2;</code>
+       * @param value The bytes for admin to set.
+       * @return This builder for chaining.
        */
       public Builder setAdminBytes(
           com.google.protobuf.ByteString value) {
@@ -2730,8 +2985,10 @@ public final class Tx {
        * CodeID is the reference to the stored WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 3;</code>
+       * <code>uint64 code_id = 3 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return The codeId.
        */
+      @java.lang.Override
       public long getCodeId() {
         return codeId_;
       }
@@ -2740,7 +2997,9 @@ public final class Tx {
        * CodeID is the reference to the stored WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 3;</code>
+       * <code>uint64 code_id = 3 [(.gogoproto.customname) = "CodeID"];</code>
+       * @param value The codeId to set.
+       * @return This builder for chaining.
        */
       public Builder setCodeId(long value) {
         
@@ -2753,7 +3012,8 @@ public final class Tx {
        * CodeID is the reference to the stored WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 3;</code>
+       * <code>uint64 code_id = 3 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearCodeId() {
         
@@ -2768,7 +3028,8 @@ public final class Tx {
        * Label is optional metadata to be stored with a contract instance.
        * </pre>
        *
-       * <code>optional string label = 4;</code>
+       * <code>string label = 4;</code>
+       * @return The label.
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -2787,7 +3048,8 @@ public final class Tx {
        * Label is optional metadata to be stored with a contract instance.
        * </pre>
        *
-       * <code>optional string label = 4;</code>
+       * <code>string label = 4;</code>
+       * @return The bytes for label.
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -2807,7 +3069,9 @@ public final class Tx {
        * Label is optional metadata to be stored with a contract instance.
        * </pre>
        *
-       * <code>optional string label = 4;</code>
+       * <code>string label = 4;</code>
+       * @param value The label to set.
+       * @return This builder for chaining.
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -2824,7 +3088,8 @@ public final class Tx {
        * Label is optional metadata to be stored with a contract instance.
        * </pre>
        *
-       * <code>optional string label = 4;</code>
+       * <code>string label = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLabel() {
         
@@ -2837,7 +3102,9 @@ public final class Tx {
        * Label is optional metadata to be stored with a contract instance.
        * </pre>
        *
-       * <code>optional string label = 4;</code>
+       * <code>string label = 4;</code>
+       * @param value The bytes for label to set.
+       * @return This builder for chaining.
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -2857,8 +3124,10 @@ public final class Tx {
        * InitMsg json encoded message to be passed to the contract on instantiation
        * </pre>
        *
-       * <code>optional bytes init_msg = 5;</code>
+       * <code>bytes init_msg = 5 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return The initMsg.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getInitMsg() {
         return initMsg_;
       }
@@ -2867,7 +3136,9 @@ public final class Tx {
        * InitMsg json encoded message to be passed to the contract on instantiation
        * </pre>
        *
-       * <code>optional bytes init_msg = 5;</code>
+       * <code>bytes init_msg = 5 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @param value The initMsg to set.
+       * @return This builder for chaining.
        */
       public Builder setInitMsg(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2883,7 +3154,8 @@ public final class Tx {
        * InitMsg json encoded message to be passed to the contract on instantiation
        * </pre>
        *
-       * <code>optional bytes init_msg = 5;</code>
+       * <code>bytes init_msg = 5 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearInitMsg() {
         
@@ -2895,9 +3167,9 @@ public final class Tx {
       private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> initFunds_ =
         java.util.Collections.emptyList();
       private void ensureInitFundsIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           initFunds_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(initFunds_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -2909,7 +3181,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getInitFundsList() {
         if (initFundsBuilder_ == null) {
@@ -2923,7 +3195,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getInitFundsCount() {
         if (initFundsBuilder_ == null) {
@@ -2937,7 +3209,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getInitFunds(int index) {
         if (initFundsBuilder_ == null) {
@@ -2951,7 +3223,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setInitFunds(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -2972,7 +3244,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setInitFunds(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2990,7 +3262,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addInitFunds(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (initFundsBuilder_ == null) {
@@ -3010,7 +3282,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addInitFunds(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -3031,7 +3303,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addInitFunds(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3049,7 +3321,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addInitFunds(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3067,7 +3339,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllInitFunds(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -3086,12 +3358,12 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearInitFunds() {
         if (initFundsBuilder_ == null) {
           initFunds_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           initFundsBuilder_.clear();
@@ -3103,7 +3375,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeInitFunds(int index) {
         if (initFundsBuilder_ == null) {
@@ -3120,7 +3392,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getInitFundsBuilder(
           int index) {
@@ -3131,7 +3403,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getInitFundsOrBuilder(
           int index) {
@@ -3145,7 +3417,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getInitFundsOrBuilderList() {
@@ -3160,7 +3432,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addInitFundsBuilder() {
         return getInitFundsFieldBuilder().addBuilder(
@@ -3171,7 +3443,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addInitFundsBuilder(
           int index) {
@@ -3183,7 +3455,7 @@ public final class Tx {
        * InitFunds coins that are transferred to the contract on instantiation
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin init_funds = 6 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getInitFundsBuilderList() {
@@ -3196,21 +3468,23 @@ public final class Tx {
           initFundsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
                   initFunds_,
-                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           initFunds_ = null;
         }
         return initFundsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3229,11 +3503,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgInstantiateContract>
         PARSER = new com.google.protobuf.AbstractParser<MsgInstantiateContract>() {
+      @java.lang.Override
       public MsgInstantiateContract parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgInstantiateContract(input, extensionRegistry);
+        return new MsgInstantiateContract(input, extensionRegistry);
       }
     };
 
@@ -3246,6 +3521,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContract getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3261,7 +3537,8 @@ public final class Tx {
      * Address is the bech32 address of the new contract instance.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
@@ -3269,7 +3546,8 @@ public final class Tx {
      * Address is the bech32 address of the new contract instance.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -3281,10 +3559,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgInstantiateContractResponse}
    */
-  public  static final class MsgInstantiateContractResponse extends
+  public static final class MsgInstantiateContractResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgInstantiateContractResponse)
       MsgInstantiateContractResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgInstantiateContractResponse.newBuilder() to construct.
     private MsgInstantiateContractResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3294,16 +3573,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgInstantiateContractResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgInstantiateContractResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3312,16 +3602,17 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               address_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3332,6 +3623,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3340,6 +3632,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgInstantiateContractResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgInstantiateContractResponse_fieldAccessorTable
@@ -3354,8 +3647,10 @@ public final class Tx {
      * Address is the bech32 address of the new contract instance.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -3373,8 +3668,10 @@ public final class Tx {
      * Address is the bech32 address of the new contract instance.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -3390,6 +3687,7 @@ public final class Tx {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3399,13 +3697,16 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3414,11 +3715,11 @@ public final class Tx {
       if (!getAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3429,10 +3730,10 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse other = (cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      return result;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3441,7 +3742,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3449,6 +3750,17 @@ public final class Tx {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3508,6 +3820,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3515,6 +3828,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3542,6 +3856,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgInstantiateContractResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgInstantiateContractResponse_fieldAccessorTable
@@ -3564,6 +3879,7 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -3571,15 +3887,18 @@ public final class Tx {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgInstantiateContractResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse build() {
         cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -3588,6 +3907,7 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse result = new cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse(this);
         result.address_ = address_;
@@ -3595,32 +3915,39 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse)other);
@@ -3636,14 +3963,17 @@ public final class Tx {
           address_ = other.address_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3668,7 +3998,8 @@ public final class Tx {
        * Address is the bech32 address of the new contract instance.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -3687,7 +4018,8 @@ public final class Tx {
        * Address is the bech32 address of the new contract instance.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -3707,7 +4039,9 @@ public final class Tx {
        * Address is the bech32 address of the new contract instance.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -3724,7 +4058,8 @@ public final class Tx {
        * Address is the bech32 address of the new contract instance.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -3737,7 +4072,9 @@ public final class Tx {
        * Address is the bech32 address of the new contract instance.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -3750,14 +4087,16 @@ public final class Tx {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3776,11 +4115,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgInstantiateContractResponse>
         PARSER = new com.google.protobuf.AbstractParser<MsgInstantiateContractResponse>() {
+      @java.lang.Override
       public MsgInstantiateContractResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgInstantiateContractResponse(input, extensionRegistry);
+        return new MsgInstantiateContractResponse(input, extensionRegistry);
       }
     };
 
@@ -3793,6 +4133,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgInstantiateContractResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3808,7 +4149,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
     java.lang.String getSender();
     /**
@@ -3816,7 +4158,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
     com.google.protobuf.ByteString
         getSenderBytes();
@@ -3826,7 +4169,8 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 2;</code>
+     * <code>string contract = 2;</code>
+     * @return The contract.
      */
     java.lang.String getContract();
     /**
@@ -3834,7 +4178,8 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 2;</code>
+     * <code>string contract = 2;</code>
+     * @return The bytes for contract.
      */
     com.google.protobuf.ByteString
         getContractBytes();
@@ -3844,7 +4189,8 @@ public final class Tx {
      * Msg json encoded message to be passed to the contract
      * </pre>
      *
-     * <code>optional bytes msg = 3;</code>
+     * <code>bytes msg = 3 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The msg.
      */
     com.google.protobuf.ByteString getMsg();
 
@@ -3853,7 +4199,7 @@ public final class Tx {
      * SentFunds coins that are transferred to the contract on execution
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getSentFundsList();
@@ -3862,7 +4208,7 @@ public final class Tx {
      * SentFunds coins that are transferred to the contract on execution
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getSentFunds(int index);
     /**
@@ -3870,7 +4216,7 @@ public final class Tx {
      * SentFunds coins that are transferred to the contract on execution
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getSentFundsCount();
     /**
@@ -3878,7 +4224,7 @@ public final class Tx {
      * SentFunds coins that are transferred to the contract on execution
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getSentFundsOrBuilderList();
@@ -3887,7 +4233,7 @@ public final class Tx {
      * SentFunds coins that are transferred to the contract on execution
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSentFundsOrBuilder(
         int index);
@@ -3899,10 +4245,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgExecuteContract}
    */
-  public  static final class MsgExecuteContract extends
+  public static final class MsgExecuteContract extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgExecuteContract)
       MsgExecuteContractOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgExecuteContract.newBuilder() to construct.
     private MsgExecuteContract(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3915,16 +4262,28 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgExecuteContract();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgExecuteContract(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3933,12 +4292,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -3957,12 +4310,19 @@ public final class Tx {
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sentFunds_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               sentFunds_.add(
                   input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3973,9 +4333,10 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           sentFunds_ = java.util.Collections.unmodifiableList(sentFunds_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3984,6 +4345,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgExecuteContract_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgExecuteContract_fieldAccessorTable
@@ -3991,7 +4353,6 @@ public final class Tx {
               cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract.class, cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract.Builder.class);
     }
 
-    private int bitField0_;
     public static final int SENDER_FIELD_NUMBER = 1;
     private volatile java.lang.Object sender_;
     /**
@@ -3999,8 +4360,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
+    @java.lang.Override
     public java.lang.String getSender() {
       java.lang.Object ref = sender_;
       if (ref instanceof java.lang.String) {
@@ -4018,8 +4381,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSenderBytes() {
       java.lang.Object ref = sender_;
@@ -4041,8 +4406,10 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 2;</code>
+     * <code>string contract = 2;</code>
+     * @return The contract.
      */
+    @java.lang.Override
     public java.lang.String getContract() {
       java.lang.Object ref = contract_;
       if (ref instanceof java.lang.String) {
@@ -4060,8 +4427,10 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 2;</code>
+     * <code>string contract = 2;</code>
+     * @return The bytes for contract.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getContractBytes() {
       java.lang.Object ref = contract_;
@@ -4083,8 +4452,10 @@ public final class Tx {
      * Msg json encoded message to be passed to the contract
      * </pre>
      *
-     * <code>optional bytes msg = 3;</code>
+     * <code>bytes msg = 3 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The msg.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMsg() {
       return msg_;
     }
@@ -4096,8 +4467,9 @@ public final class Tx {
      * SentFunds coins that are transferred to the contract on execution
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSentFundsList() {
       return sentFunds_;
     }
@@ -4106,8 +4478,9 @@ public final class Tx {
      * SentFunds coins that are transferred to the contract on execution
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getSentFundsOrBuilderList() {
       return sentFunds_;
@@ -4117,8 +4490,9 @@ public final class Tx {
      * SentFunds coins that are transferred to the contract on execution
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public int getSentFundsCount() {
       return sentFunds_.size();
     }
@@ -4127,8 +4501,9 @@ public final class Tx {
      * SentFunds coins that are transferred to the contract on execution
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getSentFunds(int index) {
       return sentFunds_.get(index);
     }
@@ -4137,14 +4512,16 @@ public final class Tx {
      * SentFunds coins that are transferred to the contract on execution
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSentFundsOrBuilder(
         int index) {
       return sentFunds_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4154,6 +4531,7 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getSenderBytes().isEmpty()) {
@@ -4168,8 +4546,10 @@ public final class Tx {
       for (int i = 0; i < sentFunds_.size(); i++) {
         output.writeMessage(5, sentFunds_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4189,11 +4569,11 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, sentFunds_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4204,16 +4584,16 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract other = (cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract) obj;
 
-      boolean result = true;
-      result = result && getSender()
-          .equals(other.getSender());
-      result = result && getContract()
-          .equals(other.getContract());
-      result = result && getMsg()
-          .equals(other.getMsg());
-      result = result && getSentFundsList()
-          .equals(other.getSentFundsList());
-      return result;
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (!getContract()
+          .equals(other.getContract())) return false;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!getSentFundsList()
+          .equals(other.getSentFundsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4222,7 +4602,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SENDER_FIELD_NUMBER;
       hash = (53 * hash) + getSender().hashCode();
       hash = (37 * hash) + CONTRACT_FIELD_NUMBER;
@@ -4238,6 +4618,17 @@ public final class Tx {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4297,6 +4688,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4304,6 +4696,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4331,6 +4724,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgExecuteContract_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgExecuteContract_fieldAccessorTable
@@ -4354,6 +4748,7 @@ public final class Tx {
           getSentFundsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         sender_ = "";
@@ -4364,22 +4759,25 @@ public final class Tx {
 
         if (sentFundsBuilder_ == null) {
           sentFunds_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           sentFundsBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgExecuteContract_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract build() {
         cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract result = buildPartial();
         if (!result.isInitialized()) {
@@ -4388,53 +4786,59 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract result = new cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.sender_ = sender_;
         result.contract_ = contract_;
         result.msg_ = msg_;
         if (sentFundsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             sentFunds_ = java.util.Collections.unmodifiableList(sentFunds_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.sentFunds_ = sentFunds_;
         } else {
           result.sentFunds_ = sentFundsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract)other);
@@ -4461,7 +4865,7 @@ public final class Tx {
           if (!other.sentFunds_.isEmpty()) {
             if (sentFunds_.isEmpty()) {
               sentFunds_ = other.sentFunds_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureSentFundsIsMutable();
               sentFunds_.addAll(other.sentFunds_);
@@ -4474,7 +4878,7 @@ public final class Tx {
               sentFundsBuilder_.dispose();
               sentFundsBuilder_ = null;
               sentFunds_ = other.sentFunds_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               sentFundsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSentFundsFieldBuilder() : null;
@@ -4483,14 +4887,17 @@ public final class Tx {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4516,7 +4923,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The sender.
        */
       public java.lang.String getSender() {
         java.lang.Object ref = sender_;
@@ -4535,7 +4943,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The bytes for sender.
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
@@ -4555,7 +4964,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSender(
           java.lang.String value) {
@@ -4572,7 +4983,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSender() {
         
@@ -4585,7 +4997,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSenderBytes(
           com.google.protobuf.ByteString value) {
@@ -4605,7 +5019,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 2;</code>
+       * <code>string contract = 2;</code>
+       * @return The contract.
        */
       public java.lang.String getContract() {
         java.lang.Object ref = contract_;
@@ -4624,7 +5039,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 2;</code>
+       * <code>string contract = 2;</code>
+       * @return The bytes for contract.
        */
       public com.google.protobuf.ByteString
           getContractBytes() {
@@ -4644,7 +5060,9 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 2;</code>
+       * <code>string contract = 2;</code>
+       * @param value The contract to set.
+       * @return This builder for chaining.
        */
       public Builder setContract(
           java.lang.String value) {
@@ -4661,7 +5079,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 2;</code>
+       * <code>string contract = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearContract() {
         
@@ -4674,7 +5093,9 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 2;</code>
+       * <code>string contract = 2;</code>
+       * @param value The bytes for contract to set.
+       * @return This builder for chaining.
        */
       public Builder setContractBytes(
           com.google.protobuf.ByteString value) {
@@ -4694,8 +5115,10 @@ public final class Tx {
        * Msg json encoded message to be passed to the contract
        * </pre>
        *
-       * <code>optional bytes msg = 3;</code>
+       * <code>bytes msg = 3 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return The msg.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getMsg() {
         return msg_;
       }
@@ -4704,7 +5127,9 @@ public final class Tx {
        * Msg json encoded message to be passed to the contract
        * </pre>
        *
-       * <code>optional bytes msg = 3;</code>
+       * <code>bytes msg = 3 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
        */
       public Builder setMsg(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4720,7 +5145,8 @@ public final class Tx {
        * Msg json encoded message to be passed to the contract
        * </pre>
        *
-       * <code>optional bytes msg = 3;</code>
+       * <code>bytes msg = 3 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearMsg() {
         
@@ -4732,9 +5158,9 @@ public final class Tx {
       private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> sentFunds_ =
         java.util.Collections.emptyList();
       private void ensureSentFundsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           sentFunds_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(sentFunds_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -4746,7 +5172,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSentFundsList() {
         if (sentFundsBuilder_ == null) {
@@ -4760,7 +5186,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getSentFundsCount() {
         if (sentFundsBuilder_ == null) {
@@ -4774,7 +5200,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getSentFunds(int index) {
         if (sentFundsBuilder_ == null) {
@@ -4788,7 +5214,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setSentFunds(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -4809,7 +5235,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setSentFunds(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -4827,7 +5253,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSentFunds(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (sentFundsBuilder_ == null) {
@@ -4847,7 +5273,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSentFunds(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -4868,7 +5294,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSentFunds(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -4886,7 +5312,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSentFunds(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -4904,7 +5330,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllSentFunds(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -4923,12 +5349,12 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearSentFunds() {
         if (sentFundsBuilder_ == null) {
           sentFunds_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           sentFundsBuilder_.clear();
@@ -4940,7 +5366,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeSentFunds(int index) {
         if (sentFundsBuilder_ == null) {
@@ -4957,7 +5383,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getSentFundsBuilder(
           int index) {
@@ -4968,7 +5394,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSentFundsOrBuilder(
           int index) {
@@ -4982,7 +5408,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getSentFundsOrBuilderList() {
@@ -4997,7 +5423,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSentFundsBuilder() {
         return getSentFundsFieldBuilder().addBuilder(
@@ -5008,7 +5434,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSentFundsBuilder(
           int index) {
@@ -5020,7 +5446,7 @@ public final class Tx {
        * SentFunds coins that are transferred to the contract on execution
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin sent_funds = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getSentFundsBuilderList() {
@@ -5033,21 +5459,23 @@ public final class Tx {
           sentFundsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
                   sentFunds_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           sentFunds_ = null;
         }
         return sentFundsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5066,11 +5494,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgExecuteContract>
         PARSER = new com.google.protobuf.AbstractParser<MsgExecuteContract>() {
+      @java.lang.Override
       public MsgExecuteContract parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgExecuteContract(input, extensionRegistry);
+        return new MsgExecuteContract(input, extensionRegistry);
       }
     };
 
@@ -5083,6 +5512,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgExecuteContract getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5098,7 +5528,8 @@ public final class Tx {
      * Data contains base64-encoded bytes to returned from the contract
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>bytes data = 1;</code>
+     * @return The data.
      */
     com.google.protobuf.ByteString getData();
   }
@@ -5109,10 +5540,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgExecuteContractResponse}
    */
-  public  static final class MsgExecuteContractResponse extends
+  public static final class MsgExecuteContractResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgExecuteContractResponse)
       MsgExecuteContractResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgExecuteContractResponse.newBuilder() to construct.
     private MsgExecuteContractResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5122,16 +5554,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgExecuteContractResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgExecuteContractResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5140,15 +5583,16 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               data_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -5159,6 +5603,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5167,6 +5612,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgExecuteContractResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgExecuteContractResponse_fieldAccessorTable
@@ -5181,13 +5627,16 @@ public final class Tx {
      * Data contains base64-encoded bytes to returned from the contract
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>bytes data = 1;</code>
+     * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5197,13 +5646,16 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!data_.isEmpty()) {
         output.writeBytes(1, data_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5213,11 +5665,11 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, data_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5228,10 +5680,10 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse other = (cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse) obj;
 
-      boolean result = true;
-      result = result && getData()
-          .equals(other.getData());
-      return result;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5240,7 +5692,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -5248,6 +5700,17 @@ public final class Tx {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5307,6 +5770,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5314,6 +5778,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5341,6 +5806,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgExecuteContractResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgExecuteContractResponse_fieldAccessorTable
@@ -5363,6 +5829,7 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         data_ = com.google.protobuf.ByteString.EMPTY;
@@ -5370,15 +5837,18 @@ public final class Tx {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgExecuteContractResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse build() {
         cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -5387,6 +5857,7 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse result = new cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse(this);
         result.data_ = data_;
@@ -5394,32 +5865,39 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse)other);
@@ -5434,14 +5912,17 @@ public final class Tx {
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5466,8 +5947,10 @@ public final class Tx {
        * Data contains base64-encoded bytes to returned from the contract
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @return The data.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
@@ -5476,7 +5959,9 @@ public final class Tx {
        * Data contains base64-encoded bytes to returned from the contract
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5492,7 +5977,8 @@ public final class Tx {
        * Data contains base64-encoded bytes to returned from the contract
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -5500,14 +5986,16 @@ public final class Tx {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5526,11 +6014,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgExecuteContractResponse>
         PARSER = new com.google.protobuf.AbstractParser<MsgExecuteContractResponse>() {
+      @java.lang.Override
       public MsgExecuteContractResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgExecuteContractResponse(input, extensionRegistry);
+        return new MsgExecuteContractResponse(input, extensionRegistry);
       }
     };
 
@@ -5543,6 +6032,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgExecuteContractResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5558,7 +6048,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
     java.lang.String getSender();
     /**
@@ -5566,7 +6057,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
     com.google.protobuf.ByteString
         getSenderBytes();
@@ -5576,7 +6068,8 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 2;</code>
+     * <code>string contract = 2;</code>
+     * @return The contract.
      */
     java.lang.String getContract();
     /**
@@ -5584,7 +6077,8 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 2;</code>
+     * <code>string contract = 2;</code>
+     * @return The bytes for contract.
      */
     com.google.protobuf.ByteString
         getContractBytes();
@@ -5594,7 +6088,8 @@ public final class Tx {
      * CodeID references the new WASM code
      * </pre>
      *
-     * <code>optional uint64 code_id = 3;</code>
+     * <code>uint64 code_id = 3 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
      */
     long getCodeId();
 
@@ -5603,7 +6098,8 @@ public final class Tx {
      * MigrateMsg json encoded message to be passed to the contract on migration
      * </pre>
      *
-     * <code>optional bytes migrate_msg = 4;</code>
+     * <code>bytes migrate_msg = 4 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The migrateMsg.
      */
     com.google.protobuf.ByteString getMigrateMsg();
   }
@@ -5614,10 +6110,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgMigrateContract}
    */
-  public  static final class MsgMigrateContract extends
+  public static final class MsgMigrateContract extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgMigrateContract)
       MsgMigrateContractOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgMigrateContract.newBuilder() to construct.
     private MsgMigrateContract(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5625,21 +6122,31 @@ public final class Tx {
     private MsgMigrateContract() {
       sender_ = "";
       contract_ = "";
-      codeId_ = 0L;
       migrateMsg_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgMigrateContract();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgMigrateContract(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5648,12 +6155,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -5676,6 +6177,13 @@ public final class Tx {
               migrateMsg_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5684,6 +6192,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5692,6 +6201,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgMigrateContract_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgMigrateContract_fieldAccessorTable
@@ -5706,8 +6216,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
+    @java.lang.Override
     public java.lang.String getSender() {
       java.lang.Object ref = sender_;
       if (ref instanceof java.lang.String) {
@@ -5725,8 +6237,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSenderBytes() {
       java.lang.Object ref = sender_;
@@ -5748,8 +6262,10 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 2;</code>
+     * <code>string contract = 2;</code>
+     * @return The contract.
      */
+    @java.lang.Override
     public java.lang.String getContract() {
       java.lang.Object ref = contract_;
       if (ref instanceof java.lang.String) {
@@ -5767,8 +6283,10 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 2;</code>
+     * <code>string contract = 2;</code>
+     * @return The bytes for contract.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getContractBytes() {
       java.lang.Object ref = contract_;
@@ -5790,8 +6308,10 @@ public final class Tx {
      * CodeID references the new WASM code
      * </pre>
      *
-     * <code>optional uint64 code_id = 3;</code>
+     * <code>uint64 code_id = 3 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
      */
+    @java.lang.Override
     public long getCodeId() {
       return codeId_;
     }
@@ -5803,13 +6323,16 @@ public final class Tx {
      * MigrateMsg json encoded message to be passed to the contract on migration
      * </pre>
      *
-     * <code>optional bytes migrate_msg = 4;</code>
+     * <code>bytes migrate_msg = 4 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The migrateMsg.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMigrateMsg() {
       return migrateMsg_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5819,6 +6342,7 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getSenderBytes().isEmpty()) {
@@ -5833,8 +6357,10 @@ public final class Tx {
       if (!migrateMsg_.isEmpty()) {
         output.writeBytes(4, migrateMsg_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5854,11 +6380,11 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, migrateMsg_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5869,16 +6395,16 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract other = (cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract) obj;
 
-      boolean result = true;
-      result = result && getSender()
-          .equals(other.getSender());
-      result = result && getContract()
-          .equals(other.getContract());
-      result = result && (getCodeId()
-          == other.getCodeId());
-      result = result && getMigrateMsg()
-          .equals(other.getMigrateMsg());
-      return result;
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (!getContract()
+          .equals(other.getContract())) return false;
+      if (getCodeId()
+          != other.getCodeId()) return false;
+      if (!getMigrateMsg()
+          .equals(other.getMigrateMsg())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5887,7 +6413,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SENDER_FIELD_NUMBER;
       hash = (53 * hash) + getSender().hashCode();
       hash = (37 * hash) + CONTRACT_FIELD_NUMBER;
@@ -5902,6 +6428,17 @@ public final class Tx {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5961,6 +6498,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5968,6 +6506,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5995,6 +6534,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgMigrateContract_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgMigrateContract_fieldAccessorTable
@@ -6017,6 +6557,7 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         sender_ = "";
@@ -6030,15 +6571,18 @@ public final class Tx {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgMigrateContract_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract build() {
         cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract result = buildPartial();
         if (!result.isInitialized()) {
@@ -6047,6 +6591,7 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract result = new cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract(this);
         result.sender_ = sender_;
@@ -6057,32 +6602,39 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract)other);
@@ -6108,14 +6660,17 @@ public final class Tx {
         if (other.getMigrateMsg() != com.google.protobuf.ByteString.EMPTY) {
           setMigrateMsg(other.getMigrateMsg());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6140,7 +6695,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The sender.
        */
       public java.lang.String getSender() {
         java.lang.Object ref = sender_;
@@ -6159,7 +6715,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The bytes for sender.
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
@@ -6179,7 +6736,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSender(
           java.lang.String value) {
@@ -6196,7 +6755,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSender() {
         
@@ -6209,7 +6769,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSenderBytes(
           com.google.protobuf.ByteString value) {
@@ -6229,7 +6791,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 2;</code>
+       * <code>string contract = 2;</code>
+       * @return The contract.
        */
       public java.lang.String getContract() {
         java.lang.Object ref = contract_;
@@ -6248,7 +6811,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 2;</code>
+       * <code>string contract = 2;</code>
+       * @return The bytes for contract.
        */
       public com.google.protobuf.ByteString
           getContractBytes() {
@@ -6268,7 +6832,9 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 2;</code>
+       * <code>string contract = 2;</code>
+       * @param value The contract to set.
+       * @return This builder for chaining.
        */
       public Builder setContract(
           java.lang.String value) {
@@ -6285,7 +6851,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 2;</code>
+       * <code>string contract = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearContract() {
         
@@ -6298,7 +6865,9 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 2;</code>
+       * <code>string contract = 2;</code>
+       * @param value The bytes for contract to set.
+       * @return This builder for chaining.
        */
       public Builder setContractBytes(
           com.google.protobuf.ByteString value) {
@@ -6318,8 +6887,10 @@ public final class Tx {
        * CodeID references the new WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 3;</code>
+       * <code>uint64 code_id = 3 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return The codeId.
        */
+      @java.lang.Override
       public long getCodeId() {
         return codeId_;
       }
@@ -6328,7 +6899,9 @@ public final class Tx {
        * CodeID references the new WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 3;</code>
+       * <code>uint64 code_id = 3 [(.gogoproto.customname) = "CodeID"];</code>
+       * @param value The codeId to set.
+       * @return This builder for chaining.
        */
       public Builder setCodeId(long value) {
         
@@ -6341,7 +6914,8 @@ public final class Tx {
        * CodeID references the new WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 3;</code>
+       * <code>uint64 code_id = 3 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearCodeId() {
         
@@ -6356,8 +6930,10 @@ public final class Tx {
        * MigrateMsg json encoded message to be passed to the contract on migration
        * </pre>
        *
-       * <code>optional bytes migrate_msg = 4;</code>
+       * <code>bytes migrate_msg = 4 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return The migrateMsg.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getMigrateMsg() {
         return migrateMsg_;
       }
@@ -6366,7 +6942,9 @@ public final class Tx {
        * MigrateMsg json encoded message to be passed to the contract on migration
        * </pre>
        *
-       * <code>optional bytes migrate_msg = 4;</code>
+       * <code>bytes migrate_msg = 4 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @param value The migrateMsg to set.
+       * @return This builder for chaining.
        */
       public Builder setMigrateMsg(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -6382,7 +6960,8 @@ public final class Tx {
        * MigrateMsg json encoded message to be passed to the contract on migration
        * </pre>
        *
-       * <code>optional bytes migrate_msg = 4;</code>
+       * <code>bytes migrate_msg = 4 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearMigrateMsg() {
         
@@ -6390,14 +6969,16 @@ public final class Tx {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6416,11 +6997,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgMigrateContract>
         PARSER = new com.google.protobuf.AbstractParser<MsgMigrateContract>() {
+      @java.lang.Override
       public MsgMigrateContract parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgMigrateContract(input, extensionRegistry);
+        return new MsgMigrateContract(input, extensionRegistry);
       }
     };
 
@@ -6433,6 +7015,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgMigrateContract getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6449,7 +7032,8 @@ public final class Tx {
      * (May be empty)
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>bytes data = 1;</code>
+     * @return The data.
      */
     com.google.protobuf.ByteString getData();
   }
@@ -6460,10 +7044,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgMigrateContractResponse}
    */
-  public  static final class MsgMigrateContractResponse extends
+  public static final class MsgMigrateContractResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgMigrateContractResponse)
       MsgMigrateContractResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgMigrateContractResponse.newBuilder() to construct.
     private MsgMigrateContractResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6473,16 +7058,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgMigrateContractResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgMigrateContractResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6491,15 +7087,16 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               data_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -6510,6 +7107,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6518,6 +7116,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgMigrateContractResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgMigrateContractResponse_fieldAccessorTable
@@ -6533,13 +7132,16 @@ public final class Tx {
      * (May be empty)
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>bytes data = 1;</code>
+     * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6549,13 +7151,16 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!data_.isEmpty()) {
         output.writeBytes(1, data_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6565,11 +7170,11 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, data_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6580,10 +7185,10 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse other = (cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse) obj;
 
-      boolean result = true;
-      result = result && getData()
-          .equals(other.getData());
-      return result;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6592,7 +7197,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -6600,6 +7205,17 @@ public final class Tx {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6659,6 +7275,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6666,6 +7283,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6693,6 +7311,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgMigrateContractResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgMigrateContractResponse_fieldAccessorTable
@@ -6715,6 +7334,7 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         data_ = com.google.protobuf.ByteString.EMPTY;
@@ -6722,15 +7342,18 @@ public final class Tx {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgMigrateContractResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse build() {
         cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -6739,6 +7362,7 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse result = new cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse(this);
         result.data_ = data_;
@@ -6746,32 +7370,39 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse)other);
@@ -6786,14 +7417,17 @@ public final class Tx {
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6819,8 +7453,10 @@ public final class Tx {
        * (May be empty)
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @return The data.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
@@ -6830,7 +7466,9 @@ public final class Tx {
        * (May be empty)
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -6847,7 +7485,8 @@ public final class Tx {
        * (May be empty)
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -6855,14 +7494,16 @@ public final class Tx {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6881,11 +7522,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgMigrateContractResponse>
         PARSER = new com.google.protobuf.AbstractParser<MsgMigrateContractResponse>() {
+      @java.lang.Override
       public MsgMigrateContractResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgMigrateContractResponse(input, extensionRegistry);
+        return new MsgMigrateContractResponse(input, extensionRegistry);
       }
     };
 
@@ -6898,6 +7540,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgMigrateContractResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6913,7 +7556,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
     java.lang.String getSender();
     /**
@@ -6921,7 +7565,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
     com.google.protobuf.ByteString
         getSenderBytes();
@@ -6931,7 +7576,8 @@ public final class Tx {
      * NewAdmin address to be set
      * </pre>
      *
-     * <code>optional string new_admin = 2;</code>
+     * <code>string new_admin = 2;</code>
+     * @return The newAdmin.
      */
     java.lang.String getNewAdmin();
     /**
@@ -6939,7 +7585,8 @@ public final class Tx {
      * NewAdmin address to be set
      * </pre>
      *
-     * <code>optional string new_admin = 2;</code>
+     * <code>string new_admin = 2;</code>
+     * @return The bytes for newAdmin.
      */
     com.google.protobuf.ByteString
         getNewAdminBytes();
@@ -6949,7 +7596,8 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 3;</code>
+     * <code>string contract = 3;</code>
+     * @return The contract.
      */
     java.lang.String getContract();
     /**
@@ -6957,7 +7605,8 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 3;</code>
+     * <code>string contract = 3;</code>
+     * @return The bytes for contract.
      */
     com.google.protobuf.ByteString
         getContractBytes();
@@ -6969,10 +7618,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgUpdateAdmin}
    */
-  public  static final class MsgUpdateAdmin extends
+  public static final class MsgUpdateAdmin extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgUpdateAdmin)
       MsgUpdateAdminOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgUpdateAdmin.newBuilder() to construct.
     private MsgUpdateAdmin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6984,16 +7634,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgUpdateAdmin();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgUpdateAdmin(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7002,12 +7663,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -7026,6 +7681,13 @@ public final class Tx {
               contract_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7034,6 +7696,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7042,6 +7705,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgUpdateAdmin_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgUpdateAdmin_fieldAccessorTable
@@ -7056,8 +7720,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
+    @java.lang.Override
     public java.lang.String getSender() {
       java.lang.Object ref = sender_;
       if (ref instanceof java.lang.String) {
@@ -7075,8 +7741,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSenderBytes() {
       java.lang.Object ref = sender_;
@@ -7098,8 +7766,10 @@ public final class Tx {
      * NewAdmin address to be set
      * </pre>
      *
-     * <code>optional string new_admin = 2;</code>
+     * <code>string new_admin = 2;</code>
+     * @return The newAdmin.
      */
+    @java.lang.Override
     public java.lang.String getNewAdmin() {
       java.lang.Object ref = newAdmin_;
       if (ref instanceof java.lang.String) {
@@ -7117,8 +7787,10 @@ public final class Tx {
      * NewAdmin address to be set
      * </pre>
      *
-     * <code>optional string new_admin = 2;</code>
+     * <code>string new_admin = 2;</code>
+     * @return The bytes for newAdmin.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNewAdminBytes() {
       java.lang.Object ref = newAdmin_;
@@ -7140,8 +7812,10 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 3;</code>
+     * <code>string contract = 3;</code>
+     * @return The contract.
      */
+    @java.lang.Override
     public java.lang.String getContract() {
       java.lang.Object ref = contract_;
       if (ref instanceof java.lang.String) {
@@ -7159,8 +7833,10 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 3;</code>
+     * <code>string contract = 3;</code>
+     * @return The bytes for contract.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getContractBytes() {
       java.lang.Object ref = contract_;
@@ -7176,6 +7852,7 @@ public final class Tx {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7185,6 +7862,7 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getSenderBytes().isEmpty()) {
@@ -7196,8 +7874,10 @@ public final class Tx {
       if (!getContractBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contract_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7212,11 +7892,11 @@ public final class Tx {
       if (!getContractBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contract_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7227,14 +7907,14 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin other = (cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin) obj;
 
-      boolean result = true;
-      result = result && getSender()
-          .equals(other.getSender());
-      result = result && getNewAdmin()
-          .equals(other.getNewAdmin());
-      result = result && getContract()
-          .equals(other.getContract());
-      return result;
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (!getNewAdmin()
+          .equals(other.getNewAdmin())) return false;
+      if (!getContract()
+          .equals(other.getContract())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7243,7 +7923,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SENDER_FIELD_NUMBER;
       hash = (53 * hash) + getSender().hashCode();
       hash = (37 * hash) + NEW_ADMIN_FIELD_NUMBER;
@@ -7255,6 +7935,17 @@ public final class Tx {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7314,6 +8005,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7321,6 +8013,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7348,6 +8041,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgUpdateAdmin_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgUpdateAdmin_fieldAccessorTable
@@ -7370,6 +8064,7 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         sender_ = "";
@@ -7381,15 +8076,18 @@ public final class Tx {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgUpdateAdmin_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin build() {
         cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin result = buildPartial();
         if (!result.isInitialized()) {
@@ -7398,6 +8096,7 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin result = new cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin(this);
         result.sender_ = sender_;
@@ -7407,32 +8106,39 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin)other);
@@ -7456,14 +8162,17 @@ public final class Tx {
           contract_ = other.contract_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7488,7 +8197,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The sender.
        */
       public java.lang.String getSender() {
         java.lang.Object ref = sender_;
@@ -7507,7 +8217,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The bytes for sender.
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
@@ -7527,7 +8238,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSender(
           java.lang.String value) {
@@ -7544,7 +8257,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSender() {
         
@@ -7557,7 +8271,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSenderBytes(
           com.google.protobuf.ByteString value) {
@@ -7577,7 +8293,8 @@ public final class Tx {
        * NewAdmin address to be set
        * </pre>
        *
-       * <code>optional string new_admin = 2;</code>
+       * <code>string new_admin = 2;</code>
+       * @return The newAdmin.
        */
       public java.lang.String getNewAdmin() {
         java.lang.Object ref = newAdmin_;
@@ -7596,7 +8313,8 @@ public final class Tx {
        * NewAdmin address to be set
        * </pre>
        *
-       * <code>optional string new_admin = 2;</code>
+       * <code>string new_admin = 2;</code>
+       * @return The bytes for newAdmin.
        */
       public com.google.protobuf.ByteString
           getNewAdminBytes() {
@@ -7616,7 +8334,9 @@ public final class Tx {
        * NewAdmin address to be set
        * </pre>
        *
-       * <code>optional string new_admin = 2;</code>
+       * <code>string new_admin = 2;</code>
+       * @param value The newAdmin to set.
+       * @return This builder for chaining.
        */
       public Builder setNewAdmin(
           java.lang.String value) {
@@ -7633,7 +8353,8 @@ public final class Tx {
        * NewAdmin address to be set
        * </pre>
        *
-       * <code>optional string new_admin = 2;</code>
+       * <code>string new_admin = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearNewAdmin() {
         
@@ -7646,7 +8367,9 @@ public final class Tx {
        * NewAdmin address to be set
        * </pre>
        *
-       * <code>optional string new_admin = 2;</code>
+       * <code>string new_admin = 2;</code>
+       * @param value The bytes for newAdmin to set.
+       * @return This builder for chaining.
        */
       public Builder setNewAdminBytes(
           com.google.protobuf.ByteString value) {
@@ -7666,7 +8389,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 3;</code>
+       * <code>string contract = 3;</code>
+       * @return The contract.
        */
       public java.lang.String getContract() {
         java.lang.Object ref = contract_;
@@ -7685,7 +8409,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 3;</code>
+       * <code>string contract = 3;</code>
+       * @return The bytes for contract.
        */
       public com.google.protobuf.ByteString
           getContractBytes() {
@@ -7705,7 +8430,9 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 3;</code>
+       * <code>string contract = 3;</code>
+       * @param value The contract to set.
+       * @return This builder for chaining.
        */
       public Builder setContract(
           java.lang.String value) {
@@ -7722,7 +8449,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 3;</code>
+       * <code>string contract = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearContract() {
         
@@ -7735,7 +8463,9 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 3;</code>
+       * <code>string contract = 3;</code>
+       * @param value The bytes for contract to set.
+       * @return This builder for chaining.
        */
       public Builder setContractBytes(
           com.google.protobuf.ByteString value) {
@@ -7748,14 +8478,16 @@ public final class Tx {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7774,11 +8506,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgUpdateAdmin>
         PARSER = new com.google.protobuf.AbstractParser<MsgUpdateAdmin>() {
+      @java.lang.Override
       public MsgUpdateAdmin parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgUpdateAdmin(input, extensionRegistry);
+        return new MsgUpdateAdmin(input, extensionRegistry);
       }
     };
 
@@ -7791,6 +8524,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdmin getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7808,10 +8542,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgUpdateAdminResponse}
    */
-  public  static final class MsgUpdateAdminResponse extends
+  public static final class MsgUpdateAdminResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgUpdateAdminResponse)
       MsgUpdateAdminResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgUpdateAdminResponse.newBuilder() to construct.
     private MsgUpdateAdminResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7820,15 +8555,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgUpdateAdminResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgUpdateAdminResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7838,7 +8585,8 @@ public final class Tx {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -7851,6 +8599,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7859,6 +8608,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgUpdateAdminResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgUpdateAdminResponse_fieldAccessorTable
@@ -7867,6 +8617,7 @@ public final class Tx {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7876,20 +8627,23 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7900,8 +8654,8 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse other = (cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7910,12 +8664,23 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7975,6 +8740,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7982,6 +8748,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8009,6 +8776,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgUpdateAdminResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgUpdateAdminResponse_fieldAccessorTable
@@ -8031,20 +8799,24 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgUpdateAdminResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse build() {
         cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -8053,38 +8825,46 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse result = new cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse)other);
@@ -8096,14 +8876,17 @@ public final class Tx {
 
       public Builder mergeFrom(cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse other) {
         if (other == cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8121,14 +8904,16 @@ public final class Tx {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8147,11 +8932,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgUpdateAdminResponse>
         PARSER = new com.google.protobuf.AbstractParser<MsgUpdateAdminResponse>() {
+      @java.lang.Override
       public MsgUpdateAdminResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgUpdateAdminResponse(input, extensionRegistry);
+        return new MsgUpdateAdminResponse(input, extensionRegistry);
       }
     };
 
@@ -8164,6 +8950,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgUpdateAdminResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8179,7 +8966,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
     java.lang.String getSender();
     /**
@@ -8187,7 +8975,8 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
     com.google.protobuf.ByteString
         getSenderBytes();
@@ -8197,7 +8986,8 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 3;</code>
+     * <code>string contract = 3;</code>
+     * @return The contract.
      */
     java.lang.String getContract();
     /**
@@ -8205,7 +8995,8 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 3;</code>
+     * <code>string contract = 3;</code>
+     * @return The bytes for contract.
      */
     com.google.protobuf.ByteString
         getContractBytes();
@@ -8217,10 +9008,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgClearAdmin}
    */
-  public  static final class MsgClearAdmin extends
+  public static final class MsgClearAdmin extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgClearAdmin)
       MsgClearAdminOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgClearAdmin.newBuilder() to construct.
     private MsgClearAdmin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8231,16 +9023,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgClearAdmin();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgClearAdmin(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8249,12 +9052,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -8267,6 +9064,13 @@ public final class Tx {
               contract_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8275,6 +9079,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8283,6 +9088,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgClearAdmin_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgClearAdmin_fieldAccessorTable
@@ -8297,8 +9103,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The sender.
      */
+    @java.lang.Override
     public java.lang.String getSender() {
       java.lang.Object ref = sender_;
       if (ref instanceof java.lang.String) {
@@ -8316,8 +9124,10 @@ public final class Tx {
      * Sender is the that actor that signed the messages
      * </pre>
      *
-     * <code>optional string sender = 1;</code>
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSenderBytes() {
       java.lang.Object ref = sender_;
@@ -8339,8 +9149,10 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 3;</code>
+     * <code>string contract = 3;</code>
+     * @return The contract.
      */
+    @java.lang.Override
     public java.lang.String getContract() {
       java.lang.Object ref = contract_;
       if (ref instanceof java.lang.String) {
@@ -8358,8 +9170,10 @@ public final class Tx {
      * Contract is the address of the smart contract
      * </pre>
      *
-     * <code>optional string contract = 3;</code>
+     * <code>string contract = 3;</code>
+     * @return The bytes for contract.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getContractBytes() {
       java.lang.Object ref = contract_;
@@ -8375,6 +9189,7 @@ public final class Tx {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8384,6 +9199,7 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getSenderBytes().isEmpty()) {
@@ -8392,8 +9208,10 @@ public final class Tx {
       if (!getContractBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contract_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8405,11 +9223,11 @@ public final class Tx {
       if (!getContractBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contract_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8420,12 +9238,12 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin other = (cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin) obj;
 
-      boolean result = true;
-      result = result && getSender()
-          .equals(other.getSender());
-      result = result && getContract()
-          .equals(other.getContract());
-      return result;
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (!getContract()
+          .equals(other.getContract())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8434,7 +9252,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SENDER_FIELD_NUMBER;
       hash = (53 * hash) + getSender().hashCode();
       hash = (37 * hash) + CONTRACT_FIELD_NUMBER;
@@ -8444,6 +9262,17 @@ public final class Tx {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8503,6 +9332,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8510,6 +9340,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8537,6 +9368,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgClearAdmin_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgClearAdmin_fieldAccessorTable
@@ -8559,6 +9391,7 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         sender_ = "";
@@ -8568,15 +9401,18 @@ public final class Tx {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgClearAdmin_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin build() {
         cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin result = buildPartial();
         if (!result.isInitialized()) {
@@ -8585,6 +9421,7 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin result = new cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin(this);
         result.sender_ = sender_;
@@ -8593,32 +9430,39 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin)other);
@@ -8638,14 +9482,17 @@ public final class Tx {
           contract_ = other.contract_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8670,7 +9517,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The sender.
        */
       public java.lang.String getSender() {
         java.lang.Object ref = sender_;
@@ -8689,7 +9537,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return The bytes for sender.
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
@@ -8709,7 +9558,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSender(
           java.lang.String value) {
@@ -8726,7 +9577,8 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSender() {
         
@@ -8739,7 +9591,9 @@ public final class Tx {
        * Sender is the that actor that signed the messages
        * </pre>
        *
-       * <code>optional string sender = 1;</code>
+       * <code>string sender = 1;</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
        */
       public Builder setSenderBytes(
           com.google.protobuf.ByteString value) {
@@ -8759,7 +9613,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 3;</code>
+       * <code>string contract = 3;</code>
+       * @return The contract.
        */
       public java.lang.String getContract() {
         java.lang.Object ref = contract_;
@@ -8778,7 +9633,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 3;</code>
+       * <code>string contract = 3;</code>
+       * @return The bytes for contract.
        */
       public com.google.protobuf.ByteString
           getContractBytes() {
@@ -8798,7 +9654,9 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 3;</code>
+       * <code>string contract = 3;</code>
+       * @param value The contract to set.
+       * @return This builder for chaining.
        */
       public Builder setContract(
           java.lang.String value) {
@@ -8815,7 +9673,8 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 3;</code>
+       * <code>string contract = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearContract() {
         
@@ -8828,7 +9687,9 @@ public final class Tx {
        * Contract is the address of the smart contract
        * </pre>
        *
-       * <code>optional string contract = 3;</code>
+       * <code>string contract = 3;</code>
+       * @param value The bytes for contract to set.
+       * @return This builder for chaining.
        */
       public Builder setContractBytes(
           com.google.protobuf.ByteString value) {
@@ -8841,14 +9702,16 @@ public final class Tx {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8867,11 +9730,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgClearAdmin>
         PARSER = new com.google.protobuf.AbstractParser<MsgClearAdmin>() {
+      @java.lang.Override
       public MsgClearAdmin parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgClearAdmin(input, extensionRegistry);
+        return new MsgClearAdmin(input, extensionRegistry);
       }
     };
 
@@ -8884,6 +9748,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgClearAdmin getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8901,10 +9766,11 @@ public final class Tx {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.MsgClearAdminResponse}
    */
-  public  static final class MsgClearAdminResponse extends
+  public static final class MsgClearAdminResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.MsgClearAdminResponse)
       MsgClearAdminResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgClearAdminResponse.newBuilder() to construct.
     private MsgClearAdminResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8913,15 +9779,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgClearAdminResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgClearAdminResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8931,7 +9809,8 @@ public final class Tx {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -8944,6 +9823,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8952,6 +9832,7 @@ public final class Tx {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgClearAdminResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgClearAdminResponse_fieldAccessorTable
@@ -8960,6 +9841,7 @@ public final class Tx {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8969,20 +9851,23 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8993,8 +9878,8 @@ public final class Tx {
       }
       cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse other = (cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9003,12 +9888,23 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9068,6 +9964,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9075,6 +9972,7 @@ public final class Tx {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9102,6 +10000,7 @@ public final class Tx {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgClearAdminResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgClearAdminResponse_fieldAccessorTable
@@ -9124,20 +10023,24 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Tx.internal_static_cosmwasm_wasm_v1beta1_MsgClearAdminResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse build() {
         cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -9146,38 +10049,46 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse buildPartial() {
         cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse result = new cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse)other);
@@ -9189,14 +10100,17 @@ public final class Tx {
 
       public Builder mergeFrom(cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse other) {
         if (other == cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9214,14 +10128,16 @@ public final class Tx {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9240,11 +10156,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgClearAdminResponse>
         PARSER = new com.google.protobuf.AbstractParser<MsgClearAdminResponse>() {
+      @java.lang.Override
       public MsgClearAdminResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgClearAdminResponse(input, extensionRegistry);
+        return new MsgClearAdminResponse(input, extensionRegistry);
       }
     };
 
@@ -9257,6 +10174,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Tx.MsgClearAdminResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9341,7 +10259,7 @@ public final class Tx {
       "uilder\030\004 \001(\t\022C\n\026instantiate_permission\030\005" +
       " \001(\0132#.cosmwasm.wasm.v1beta1.AccessConfi" +
       "g\"3\n\024MsgStoreCodeResponse\022\033\n\007code_id\030\001 \001" +
-      "(\004B\n\342\336\037\006CodeID\"\364\001\n\026MsgInstantiateContrac",
+      "(\004B\n\342\336\037\006CodeID\"\364\001\n\026MsgInstantiateContrac" +
       "t\022\016\n\006sender\030\001 \001(\t\022\r\n\005admin\030\002 \001(\t\022\033\n\007code" +
       "_id\030\003 \001(\004B\n\342\336\037\006CodeID\022\r\n\005label\030\004 \001(\t\022.\n\010" +
       "init_msg\030\005 \001(\014B\034\372\336\037\030encoding/json.RawMes" +
@@ -9351,7 +10269,7 @@ public final class Tx {
       "ontractResponse\022\017\n\007address\030\001 \001(\t\"\302\001\n\022Msg" +
       "ExecuteContract\022\016\n\006sender\030\001 \001(\t\022\020\n\010contr" +
       "act\030\002 \001(\t\022)\n\003msg\030\003 \001(\014B\034\372\336\037\030encoding/jso" +
-      "n.RawMessage\022_\n\nsent_funds\030\005 \003(\0132\031.cosmo",
+      "n.RawMessage\022_\n\nsent_funds\030\005 \003(\0132\031.cosmo" +
       "s.base.v1beta1.CoinB0\310\336\037\000\252\337\037(github.com/" +
       "cosmos/cosmos-sdk/types.Coins\"*\n\032MsgExec" +
       "uteContractResponse\022\014\n\004data\030\001 \001(\014\"\206\001\n\022Ms" +
@@ -9361,7 +10279,7 @@ public final class Tx {
       "RawMessage\"*\n\032MsgMigrateContractResponse" +
       "\022\014\n\004data\030\001 \001(\014\"E\n\016MsgUpdateAdmin\022\016\n\006send" +
       "er\030\001 \001(\t\022\021\n\tnew_admin\030\002 \001(\t\022\020\n\010contract\030" +
-      "\003 \001(\t\"\030\n\026MsgUpdateAdminResponse\"1\n\rMsgCl",
+      "\003 \001(\t\"\030\n\026MsgUpdateAdminResponse\"1\n\rMsgCl" +
       "earAdmin\022\016\n\006sender\030\001 \001(\t\022\020\n\010contract\030\003 \001" +
       "(\t\"\027\n\025MsgClearAdminResponse2\212\005\n\003Msg\022]\n\tS" +
       "toreCode\022#.cosmwasm.wasm.v1beta1.MsgStor" +
@@ -9371,7 +10289,7 @@ public final class Tx {
       "\0325.cosmwasm.wasm.v1beta1.MsgInstantiateC" +
       "ontractResponse\022o\n\017ExecuteContract\022).cos" +
       "mwasm.wasm.v1beta1.MsgExecuteContract\0321." +
-      "cosmwasm.wasm.v1beta1.MsgExecuteContract",
+      "cosmwasm.wasm.v1beta1.MsgExecuteContract" +
       "Response\022o\n\017MigrateContract\022).cosmwasm.w" +
       "asm.v1beta1.MsgMigrateContract\0321.cosmwas" +
       "m.wasm.v1beta1.MsgMigrateContractRespons" +
@@ -9383,21 +10301,13 @@ public final class Tx {
       "B6Z0github.com/CosmWasm/wasmd/x/wasmd/in" +
       "ternal/types\310\341\036\000b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmwasm.wasm.v1beta1.Types.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmwasm_wasm_v1beta1_MsgStoreCode_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmwasm_wasm_v1beta1_MsgStoreCode_fieldAccessorTable = new

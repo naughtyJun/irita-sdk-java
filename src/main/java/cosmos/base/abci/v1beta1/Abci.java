@@ -23,7 +23,8 @@ public final class Abci {
      * The block height
      * </pre>
      *
-     * <code>optional int64 height = 1;</code>
+     * <code>int64 height = 1;</code>
+     * @return The height.
      */
     long getHeight();
 
@@ -32,7 +33,8 @@ public final class Abci {
      * The transaction hash.
      * </pre>
      *
-     * <code>optional string txhash = 2;</code>
+     * <code>string txhash = 2 [(.gogoproto.customname) = "TxHash"];</code>
+     * @return The txhash.
      */
     java.lang.String getTxhash();
     /**
@@ -40,7 +42,8 @@ public final class Abci {
      * The transaction hash.
      * </pre>
      *
-     * <code>optional string txhash = 2;</code>
+     * <code>string txhash = 2 [(.gogoproto.customname) = "TxHash"];</code>
+     * @return The bytes for txhash.
      */
     com.google.protobuf.ByteString
         getTxhashBytes();
@@ -50,7 +53,8 @@ public final class Abci {
      * Namespace for the Code
      * </pre>
      *
-     * <code>optional string codespace = 3;</code>
+     * <code>string codespace = 3;</code>
+     * @return The codespace.
      */
     java.lang.String getCodespace();
     /**
@@ -58,7 +62,8 @@ public final class Abci {
      * Namespace for the Code
      * </pre>
      *
-     * <code>optional string codespace = 3;</code>
+     * <code>string codespace = 3;</code>
+     * @return The bytes for codespace.
      */
     com.google.protobuf.ByteString
         getCodespaceBytes();
@@ -68,7 +73,8 @@ public final class Abci {
      * Response code.
      * </pre>
      *
-     * <code>optional uint32 code = 4;</code>
+     * <code>uint32 code = 4;</code>
+     * @return The code.
      */
     int getCode();
 
@@ -77,7 +83,8 @@ public final class Abci {
      * Result bytes, if any.
      * </pre>
      *
-     * <code>optional string data = 5;</code>
+     * <code>string data = 5;</code>
+     * @return The data.
      */
     java.lang.String getData();
     /**
@@ -85,7 +92,8 @@ public final class Abci {
      * Result bytes, if any.
      * </pre>
      *
-     * <code>optional string data = 5;</code>
+     * <code>string data = 5;</code>
+     * @return The bytes for data.
      */
     com.google.protobuf.ByteString
         getDataBytes();
@@ -96,7 +104,8 @@ public final class Abci {
      * non-deterministic.
      * </pre>
      *
-     * <code>optional string raw_log = 6;</code>
+     * <code>string raw_log = 6;</code>
+     * @return The rawLog.
      */
     java.lang.String getRawLog();
     /**
@@ -105,7 +114,8 @@ public final class Abci {
      * non-deterministic.
      * </pre>
      *
-     * <code>optional string raw_log = 6;</code>
+     * <code>string raw_log = 6;</code>
+     * @return The bytes for rawLog.
      */
     com.google.protobuf.ByteString
         getRawLogBytes();
@@ -115,7 +125,7 @@ public final class Abci {
      * The output of the application's logger (typed). May be non-deterministic.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
      */
     java.util.List<cosmos.base.abci.v1beta1.Abci.ABCIMessageLog> 
         getLogsList();
@@ -124,7 +134,7 @@ public final class Abci {
      * The output of the application's logger (typed). May be non-deterministic.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
      */
     cosmos.base.abci.v1beta1.Abci.ABCIMessageLog getLogs(int index);
     /**
@@ -132,7 +142,7 @@ public final class Abci {
      * The output of the application's logger (typed). May be non-deterministic.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
      */
     int getLogsCount();
     /**
@@ -140,7 +150,7 @@ public final class Abci {
      * The output of the application's logger (typed). May be non-deterministic.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
      */
     java.util.List<? extends cosmos.base.abci.v1beta1.Abci.ABCIMessageLogOrBuilder> 
         getLogsOrBuilderList();
@@ -149,7 +159,7 @@ public final class Abci {
      * The output of the application's logger (typed). May be non-deterministic.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
      */
     cosmos.base.abci.v1beta1.Abci.ABCIMessageLogOrBuilder getLogsOrBuilder(
         int index);
@@ -159,7 +169,8 @@ public final class Abci {
      * Additional information. May be non-deterministic.
      * </pre>
      *
-     * <code>optional string info = 8;</code>
+     * <code>string info = 8;</code>
+     * @return The info.
      */
     java.lang.String getInfo();
     /**
@@ -167,7 +178,8 @@ public final class Abci {
      * Additional information. May be non-deterministic.
      * </pre>
      *
-     * <code>optional string info = 8;</code>
+     * <code>string info = 8;</code>
+     * @return The bytes for info.
      */
     com.google.protobuf.ByteString
         getInfoBytes();
@@ -177,7 +189,8 @@ public final class Abci {
      * Amount of gas requested for transaction.
      * </pre>
      *
-     * <code>optional int64 gas_wanted = 9;</code>
+     * <code>int64 gas_wanted = 9;</code>
+     * @return The gasWanted.
      */
     long getGasWanted();
 
@@ -186,7 +199,8 @@ public final class Abci {
      * Amount of gas consumed by transaction.
      * </pre>
      *
-     * <code>optional int64 gas_used = 10;</code>
+     * <code>int64 gas_used = 10;</code>
+     * @return The gasUsed.
      */
     long getGasUsed();
 
@@ -195,7 +209,8 @@ public final class Abci {
      * The request transaction bytes.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any tx = 11;</code>
+     * <code>.google.protobuf.Any tx = 11;</code>
+     * @return Whether the tx field is set.
      */
     boolean hasTx();
     /**
@@ -203,7 +218,8 @@ public final class Abci {
      * The request transaction bytes.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any tx = 11;</code>
+     * <code>.google.protobuf.Any tx = 11;</code>
+     * @return The tx.
      */
     com.google.protobuf.Any getTx();
     /**
@@ -211,7 +227,7 @@ public final class Abci {
      * The request transaction bytes.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any tx = 11;</code>
+     * <code>.google.protobuf.Any tx = 11;</code>
      */
     com.google.protobuf.AnyOrBuilder getTxOrBuilder();
 
@@ -222,7 +238,8 @@ public final class Abci {
      * it's genesis time.
      * </pre>
      *
-     * <code>optional string timestamp = 12;</code>
+     * <code>string timestamp = 12;</code>
+     * @return The timestamp.
      */
     java.lang.String getTimestamp();
     /**
@@ -232,7 +249,8 @@ public final class Abci {
      * it's genesis time.
      * </pre>
      *
-     * <code>optional string timestamp = 12;</code>
+     * <code>string timestamp = 12;</code>
+     * @return The bytes for timestamp.
      */
     com.google.protobuf.ByteString
         getTimestampBytes();
@@ -245,39 +263,48 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.TxResponse}
    */
-  public  static final class TxResponse extends
+  public static final class TxResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.TxResponse)
       TxResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use TxResponse.newBuilder() to construct.
     private TxResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private TxResponse() {
-      height_ = 0L;
       txhash_ = "";
       codespace_ = "";
-      code_ = 0;
       data_ = "";
       rawLog_ = "";
       logs_ = java.util.Collections.emptyList();
       info_ = "";
-      gasWanted_ = 0L;
-      gasUsed_ = 0L;
       timestamp_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxResponse();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private TxResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -286,12 +313,6 @@ public final class Abci {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               height_ = input.readInt64();
@@ -327,9 +348,9 @@ public final class Abci {
               break;
             }
             case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 logs_ = new java.util.ArrayList<cosmos.base.abci.v1beta1.Abci.ABCIMessageLog>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               logs_.add(
                   input.readMessage(cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.parser(), extensionRegistry));
@@ -370,6 +391,13 @@ public final class Abci {
               timestamp_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -378,9 +406,10 @@ public final class Abci {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           logs_ = java.util.Collections.unmodifiableList(logs_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -389,6 +418,7 @@ public final class Abci {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_TxResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_TxResponse_fieldAccessorTable
@@ -396,7 +426,6 @@ public final class Abci {
               cosmos.base.abci.v1beta1.Abci.TxResponse.class, cosmos.base.abci.v1beta1.Abci.TxResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int HEIGHT_FIELD_NUMBER = 1;
     private long height_;
     /**
@@ -404,8 +433,10 @@ public final class Abci {
      * The block height
      * </pre>
      *
-     * <code>optional int64 height = 1;</code>
+     * <code>int64 height = 1;</code>
+     * @return The height.
      */
+    @java.lang.Override
     public long getHeight() {
       return height_;
     }
@@ -417,8 +448,10 @@ public final class Abci {
      * The transaction hash.
      * </pre>
      *
-     * <code>optional string txhash = 2;</code>
+     * <code>string txhash = 2 [(.gogoproto.customname) = "TxHash"];</code>
+     * @return The txhash.
      */
+    @java.lang.Override
     public java.lang.String getTxhash() {
       java.lang.Object ref = txhash_;
       if (ref instanceof java.lang.String) {
@@ -436,8 +469,10 @@ public final class Abci {
      * The transaction hash.
      * </pre>
      *
-     * <code>optional string txhash = 2;</code>
+     * <code>string txhash = 2 [(.gogoproto.customname) = "TxHash"];</code>
+     * @return The bytes for txhash.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTxhashBytes() {
       java.lang.Object ref = txhash_;
@@ -459,8 +494,10 @@ public final class Abci {
      * Namespace for the Code
      * </pre>
      *
-     * <code>optional string codespace = 3;</code>
+     * <code>string codespace = 3;</code>
+     * @return The codespace.
      */
+    @java.lang.Override
     public java.lang.String getCodespace() {
       java.lang.Object ref = codespace_;
       if (ref instanceof java.lang.String) {
@@ -478,8 +515,10 @@ public final class Abci {
      * Namespace for the Code
      * </pre>
      *
-     * <code>optional string codespace = 3;</code>
+     * <code>string codespace = 3;</code>
+     * @return The bytes for codespace.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCodespaceBytes() {
       java.lang.Object ref = codespace_;
@@ -501,8 +540,10 @@ public final class Abci {
      * Response code.
      * </pre>
      *
-     * <code>optional uint32 code = 4;</code>
+     * <code>uint32 code = 4;</code>
+     * @return The code.
      */
+    @java.lang.Override
     public int getCode() {
       return code_;
     }
@@ -514,8 +555,10 @@ public final class Abci {
      * Result bytes, if any.
      * </pre>
      *
-     * <code>optional string data = 5;</code>
+     * <code>string data = 5;</code>
+     * @return The data.
      */
+    @java.lang.Override
     public java.lang.String getData() {
       java.lang.Object ref = data_;
       if (ref instanceof java.lang.String) {
@@ -533,8 +576,10 @@ public final class Abci {
      * Result bytes, if any.
      * </pre>
      *
-     * <code>optional string data = 5;</code>
+     * <code>string data = 5;</code>
+     * @return The bytes for data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDataBytes() {
       java.lang.Object ref = data_;
@@ -557,8 +602,10 @@ public final class Abci {
      * non-deterministic.
      * </pre>
      *
-     * <code>optional string raw_log = 6;</code>
+     * <code>string raw_log = 6;</code>
+     * @return The rawLog.
      */
+    @java.lang.Override
     public java.lang.String getRawLog() {
       java.lang.Object ref = rawLog_;
       if (ref instanceof java.lang.String) {
@@ -577,8 +624,10 @@ public final class Abci {
      * non-deterministic.
      * </pre>
      *
-     * <code>optional string raw_log = 6;</code>
+     * <code>string raw_log = 6;</code>
+     * @return The bytes for rawLog.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getRawLogBytes() {
       java.lang.Object ref = rawLog_;
@@ -600,8 +649,9 @@ public final class Abci {
      * The output of the application's logger (typed). May be non-deterministic.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.abci.v1beta1.Abci.ABCIMessageLog> getLogsList() {
       return logs_;
     }
@@ -610,8 +660,9 @@ public final class Abci {
      * The output of the application's logger (typed). May be non-deterministic.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.ABCIMessageLogOrBuilder> 
         getLogsOrBuilderList() {
       return logs_;
@@ -621,8 +672,9 @@ public final class Abci {
      * The output of the application's logger (typed). May be non-deterministic.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
      */
+    @java.lang.Override
     public int getLogsCount() {
       return logs_.size();
     }
@@ -631,8 +683,9 @@ public final class Abci {
      * The output of the application's logger (typed). May be non-deterministic.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.ABCIMessageLog getLogs(int index) {
       return logs_.get(index);
     }
@@ -641,8 +694,9 @@ public final class Abci {
      * The output of the application's logger (typed). May be non-deterministic.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.ABCIMessageLogOrBuilder getLogsOrBuilder(
         int index) {
       return logs_.get(index);
@@ -655,8 +709,10 @@ public final class Abci {
      * Additional information. May be non-deterministic.
      * </pre>
      *
-     * <code>optional string info = 8;</code>
+     * <code>string info = 8;</code>
+     * @return The info.
      */
+    @java.lang.Override
     public java.lang.String getInfo() {
       java.lang.Object ref = info_;
       if (ref instanceof java.lang.String) {
@@ -674,8 +730,10 @@ public final class Abci {
      * Additional information. May be non-deterministic.
      * </pre>
      *
-     * <code>optional string info = 8;</code>
+     * <code>string info = 8;</code>
+     * @return The bytes for info.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getInfoBytes() {
       java.lang.Object ref = info_;
@@ -697,8 +755,10 @@ public final class Abci {
      * Amount of gas requested for transaction.
      * </pre>
      *
-     * <code>optional int64 gas_wanted = 9;</code>
+     * <code>int64 gas_wanted = 9;</code>
+     * @return The gasWanted.
      */
+    @java.lang.Override
     public long getGasWanted() {
       return gasWanted_;
     }
@@ -710,8 +770,10 @@ public final class Abci {
      * Amount of gas consumed by transaction.
      * </pre>
      *
-     * <code>optional int64 gas_used = 10;</code>
+     * <code>int64 gas_used = 10;</code>
+     * @return The gasUsed.
      */
+    @java.lang.Override
     public long getGasUsed() {
       return gasUsed_;
     }
@@ -723,8 +785,10 @@ public final class Abci {
      * The request transaction bytes.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any tx = 11;</code>
+     * <code>.google.protobuf.Any tx = 11;</code>
+     * @return Whether the tx field is set.
      */
+    @java.lang.Override
     public boolean hasTx() {
       return tx_ != null;
     }
@@ -733,8 +797,10 @@ public final class Abci {
      * The request transaction bytes.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any tx = 11;</code>
+     * <code>.google.protobuf.Any tx = 11;</code>
+     * @return The tx.
      */
+    @java.lang.Override
     public com.google.protobuf.Any getTx() {
       return tx_ == null ? com.google.protobuf.Any.getDefaultInstance() : tx_;
     }
@@ -743,8 +809,9 @@ public final class Abci {
      * The request transaction bytes.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any tx = 11;</code>
+     * <code>.google.protobuf.Any tx = 11;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getTxOrBuilder() {
       return getTx();
     }
@@ -758,8 +825,10 @@ public final class Abci {
      * it's genesis time.
      * </pre>
      *
-     * <code>optional string timestamp = 12;</code>
+     * <code>string timestamp = 12;</code>
+     * @return The timestamp.
      */
+    @java.lang.Override
     public java.lang.String getTimestamp() {
       java.lang.Object ref = timestamp_;
       if (ref instanceof java.lang.String) {
@@ -779,8 +848,10 @@ public final class Abci {
      * it's genesis time.
      * </pre>
      *
-     * <code>optional string timestamp = 12;</code>
+     * <code>string timestamp = 12;</code>
+     * @return The bytes for timestamp.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTimestampBytes() {
       java.lang.Object ref = timestamp_;
@@ -796,6 +867,7 @@ public final class Abci {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -805,6 +877,7 @@ public final class Abci {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (height_ != 0L) {
@@ -843,8 +916,10 @@ public final class Abci {
       if (!getTimestampBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, timestamp_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -892,11 +967,11 @@ public final class Abci {
       if (!getTimestampBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, timestamp_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -907,35 +982,35 @@ public final class Abci {
       }
       cosmos.base.abci.v1beta1.Abci.TxResponse other = (cosmos.base.abci.v1beta1.Abci.TxResponse) obj;
 
-      boolean result = true;
-      result = result && (getHeight()
-          == other.getHeight());
-      result = result && getTxhash()
-          .equals(other.getTxhash());
-      result = result && getCodespace()
-          .equals(other.getCodespace());
-      result = result && (getCode()
-          == other.getCode());
-      result = result && getData()
-          .equals(other.getData());
-      result = result && getRawLog()
-          .equals(other.getRawLog());
-      result = result && getLogsList()
-          .equals(other.getLogsList());
-      result = result && getInfo()
-          .equals(other.getInfo());
-      result = result && (getGasWanted()
-          == other.getGasWanted());
-      result = result && (getGasUsed()
-          == other.getGasUsed());
-      result = result && (hasTx() == other.hasTx());
+      if (getHeight()
+          != other.getHeight()) return false;
+      if (!getTxhash()
+          .equals(other.getTxhash())) return false;
+      if (!getCodespace()
+          .equals(other.getCodespace())) return false;
+      if (getCode()
+          != other.getCode()) return false;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!getRawLog()
+          .equals(other.getRawLog())) return false;
+      if (!getLogsList()
+          .equals(other.getLogsList())) return false;
+      if (!getInfo()
+          .equals(other.getInfo())) return false;
+      if (getGasWanted()
+          != other.getGasWanted()) return false;
+      if (getGasUsed()
+          != other.getGasUsed()) return false;
+      if (hasTx() != other.hasTx()) return false;
       if (hasTx()) {
-        result = result && getTx()
-            .equals(other.getTx());
+        if (!getTx()
+            .equals(other.getTx())) return false;
       }
-      result = result && getTimestamp()
-          .equals(other.getTimestamp());
-      return result;
+      if (!getTimestamp()
+          .equals(other.getTimestamp())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -944,7 +1019,7 @@ public final class Abci {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getHeight());
@@ -981,6 +1056,17 @@ public final class Abci {
       return hash;
     }
 
+    public static cosmos.base.abci.v1beta1.Abci.TxResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.TxResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.abci.v1beta1.Abci.TxResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1040,6 +1126,7 @@ public final class Abci {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1047,6 +1134,7 @@ public final class Abci {
     public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.TxResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1075,6 +1163,7 @@ public final class Abci {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_TxResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_TxResponse_fieldAccessorTable
@@ -1098,6 +1187,7 @@ public final class Abci {
           getLogsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         height_ = 0L;
@@ -1114,7 +1204,7 @@ public final class Abci {
 
         if (logsBuilder_ == null) {
           logs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           logsBuilder_.clear();
         }
@@ -1135,15 +1225,18 @@ public final class Abci {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_TxResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.TxResponse getDefaultInstanceForType() {
         return cosmos.base.abci.v1beta1.Abci.TxResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.TxResponse build() {
         cosmos.base.abci.v1beta1.Abci.TxResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -1152,10 +1245,10 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.TxResponse buildPartial() {
         cosmos.base.abci.v1beta1.Abci.TxResponse result = new cosmos.base.abci.v1beta1.Abci.TxResponse(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.height_ = height_;
         result.txhash_ = txhash_;
         result.codespace_ = codespace_;
@@ -1163,9 +1256,9 @@ public final class Abci {
         result.data_ = data_;
         result.rawLog_ = rawLog_;
         if (logsBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             logs_ = java.util.Collections.unmodifiableList(logs_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.logs_ = logs_;
         } else {
@@ -1180,37 +1273,43 @@ public final class Abci {
           result.tx_ = txBuilder_.build();
         }
         result.timestamp_ = timestamp_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.abci.v1beta1.Abci.TxResponse) {
           return mergeFrom((cosmos.base.abci.v1beta1.Abci.TxResponse)other);
@@ -1248,7 +1347,7 @@ public final class Abci {
           if (!other.logs_.isEmpty()) {
             if (logs_.isEmpty()) {
               logs_ = other.logs_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureLogsIsMutable();
               logs_.addAll(other.logs_);
@@ -1261,7 +1360,7 @@ public final class Abci {
               logsBuilder_.dispose();
               logsBuilder_ = null;
               logs_ = other.logs_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000001);
               logsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getLogsFieldBuilder() : null;
@@ -1287,14 +1386,17 @@ public final class Abci {
           timestamp_ = other.timestamp_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1320,8 +1422,10 @@ public final class Abci {
        * The block height
        * </pre>
        *
-       * <code>optional int64 height = 1;</code>
+       * <code>int64 height = 1;</code>
+       * @return The height.
        */
+      @java.lang.Override
       public long getHeight() {
         return height_;
       }
@@ -1330,7 +1434,9 @@ public final class Abci {
        * The block height
        * </pre>
        *
-       * <code>optional int64 height = 1;</code>
+       * <code>int64 height = 1;</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
        */
       public Builder setHeight(long value) {
         
@@ -1343,7 +1449,8 @@ public final class Abci {
        * The block height
        * </pre>
        *
-       * <code>optional int64 height = 1;</code>
+       * <code>int64 height = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHeight() {
         
@@ -1358,7 +1465,8 @@ public final class Abci {
        * The transaction hash.
        * </pre>
        *
-       * <code>optional string txhash = 2;</code>
+       * <code>string txhash = 2 [(.gogoproto.customname) = "TxHash"];</code>
+       * @return The txhash.
        */
       public java.lang.String getTxhash() {
         java.lang.Object ref = txhash_;
@@ -1377,7 +1485,8 @@ public final class Abci {
        * The transaction hash.
        * </pre>
        *
-       * <code>optional string txhash = 2;</code>
+       * <code>string txhash = 2 [(.gogoproto.customname) = "TxHash"];</code>
+       * @return The bytes for txhash.
        */
       public com.google.protobuf.ByteString
           getTxhashBytes() {
@@ -1397,7 +1506,9 @@ public final class Abci {
        * The transaction hash.
        * </pre>
        *
-       * <code>optional string txhash = 2;</code>
+       * <code>string txhash = 2 [(.gogoproto.customname) = "TxHash"];</code>
+       * @param value The txhash to set.
+       * @return This builder for chaining.
        */
       public Builder setTxhash(
           java.lang.String value) {
@@ -1414,7 +1525,8 @@ public final class Abci {
        * The transaction hash.
        * </pre>
        *
-       * <code>optional string txhash = 2;</code>
+       * <code>string txhash = 2 [(.gogoproto.customname) = "TxHash"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearTxhash() {
         
@@ -1427,7 +1539,9 @@ public final class Abci {
        * The transaction hash.
        * </pre>
        *
-       * <code>optional string txhash = 2;</code>
+       * <code>string txhash = 2 [(.gogoproto.customname) = "TxHash"];</code>
+       * @param value The bytes for txhash to set.
+       * @return This builder for chaining.
        */
       public Builder setTxhashBytes(
           com.google.protobuf.ByteString value) {
@@ -1447,7 +1561,8 @@ public final class Abci {
        * Namespace for the Code
        * </pre>
        *
-       * <code>optional string codespace = 3;</code>
+       * <code>string codespace = 3;</code>
+       * @return The codespace.
        */
       public java.lang.String getCodespace() {
         java.lang.Object ref = codespace_;
@@ -1466,7 +1581,8 @@ public final class Abci {
        * Namespace for the Code
        * </pre>
        *
-       * <code>optional string codespace = 3;</code>
+       * <code>string codespace = 3;</code>
+       * @return The bytes for codespace.
        */
       public com.google.protobuf.ByteString
           getCodespaceBytes() {
@@ -1486,7 +1602,9 @@ public final class Abci {
        * Namespace for the Code
        * </pre>
        *
-       * <code>optional string codespace = 3;</code>
+       * <code>string codespace = 3;</code>
+       * @param value The codespace to set.
+       * @return This builder for chaining.
        */
       public Builder setCodespace(
           java.lang.String value) {
@@ -1503,7 +1621,8 @@ public final class Abci {
        * Namespace for the Code
        * </pre>
        *
-       * <code>optional string codespace = 3;</code>
+       * <code>string codespace = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCodespace() {
         
@@ -1516,7 +1635,9 @@ public final class Abci {
        * Namespace for the Code
        * </pre>
        *
-       * <code>optional string codespace = 3;</code>
+       * <code>string codespace = 3;</code>
+       * @param value The bytes for codespace to set.
+       * @return This builder for chaining.
        */
       public Builder setCodespaceBytes(
           com.google.protobuf.ByteString value) {
@@ -1536,8 +1657,10 @@ public final class Abci {
        * Response code.
        * </pre>
        *
-       * <code>optional uint32 code = 4;</code>
+       * <code>uint32 code = 4;</code>
+       * @return The code.
        */
+      @java.lang.Override
       public int getCode() {
         return code_;
       }
@@ -1546,7 +1669,9 @@ public final class Abci {
        * Response code.
        * </pre>
        *
-       * <code>optional uint32 code = 4;</code>
+       * <code>uint32 code = 4;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
        */
       public Builder setCode(int value) {
         
@@ -1559,7 +1684,8 @@ public final class Abci {
        * Response code.
        * </pre>
        *
-       * <code>optional uint32 code = 4;</code>
+       * <code>uint32 code = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCode() {
         
@@ -1574,7 +1700,8 @@ public final class Abci {
        * Result bytes, if any.
        * </pre>
        *
-       * <code>optional string data = 5;</code>
+       * <code>string data = 5;</code>
+       * @return The data.
        */
       public java.lang.String getData() {
         java.lang.Object ref = data_;
@@ -1593,7 +1720,8 @@ public final class Abci {
        * Result bytes, if any.
        * </pre>
        *
-       * <code>optional string data = 5;</code>
+       * <code>string data = 5;</code>
+       * @return The bytes for data.
        */
       public com.google.protobuf.ByteString
           getDataBytes() {
@@ -1613,7 +1741,9 @@ public final class Abci {
        * Result bytes, if any.
        * </pre>
        *
-       * <code>optional string data = 5;</code>
+       * <code>string data = 5;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
        */
       public Builder setData(
           java.lang.String value) {
@@ -1630,7 +1760,8 @@ public final class Abci {
        * Result bytes, if any.
        * </pre>
        *
-       * <code>optional string data = 5;</code>
+       * <code>string data = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -1643,7 +1774,9 @@ public final class Abci {
        * Result bytes, if any.
        * </pre>
        *
-       * <code>optional string data = 5;</code>
+       * <code>string data = 5;</code>
+       * @param value The bytes for data to set.
+       * @return This builder for chaining.
        */
       public Builder setDataBytes(
           com.google.protobuf.ByteString value) {
@@ -1664,7 +1797,8 @@ public final class Abci {
        * non-deterministic.
        * </pre>
        *
-       * <code>optional string raw_log = 6;</code>
+       * <code>string raw_log = 6;</code>
+       * @return The rawLog.
        */
       public java.lang.String getRawLog() {
         java.lang.Object ref = rawLog_;
@@ -1684,7 +1818,8 @@ public final class Abci {
        * non-deterministic.
        * </pre>
        *
-       * <code>optional string raw_log = 6;</code>
+       * <code>string raw_log = 6;</code>
+       * @return The bytes for rawLog.
        */
       public com.google.protobuf.ByteString
           getRawLogBytes() {
@@ -1705,7 +1840,9 @@ public final class Abci {
        * non-deterministic.
        * </pre>
        *
-       * <code>optional string raw_log = 6;</code>
+       * <code>string raw_log = 6;</code>
+       * @param value The rawLog to set.
+       * @return This builder for chaining.
        */
       public Builder setRawLog(
           java.lang.String value) {
@@ -1723,7 +1860,8 @@ public final class Abci {
        * non-deterministic.
        * </pre>
        *
-       * <code>optional string raw_log = 6;</code>
+       * <code>string raw_log = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRawLog() {
         
@@ -1737,7 +1875,9 @@ public final class Abci {
        * non-deterministic.
        * </pre>
        *
-       * <code>optional string raw_log = 6;</code>
+       * <code>string raw_log = 6;</code>
+       * @param value The bytes for rawLog to set.
+       * @return This builder for chaining.
        */
       public Builder setRawLogBytes(
           com.google.protobuf.ByteString value) {
@@ -1754,9 +1894,9 @@ public final class Abci {
       private java.util.List<cosmos.base.abci.v1beta1.Abci.ABCIMessageLog> logs_ =
         java.util.Collections.emptyList();
       private void ensureLogsIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           logs_ = new java.util.ArrayList<cosmos.base.abci.v1beta1.Abci.ABCIMessageLog>(logs_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1768,7 +1908,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public java.util.List<cosmos.base.abci.v1beta1.Abci.ABCIMessageLog> getLogsList() {
         if (logsBuilder_ == null) {
@@ -1782,7 +1922,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public int getLogsCount() {
         if (logsBuilder_ == null) {
@@ -1796,7 +1936,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.ABCIMessageLog getLogs(int index) {
         if (logsBuilder_ == null) {
@@ -1810,7 +1950,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public Builder setLogs(
           int index, cosmos.base.abci.v1beta1.Abci.ABCIMessageLog value) {
@@ -1831,7 +1971,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public Builder setLogs(
           int index, cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.Builder builderForValue) {
@@ -1849,7 +1989,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public Builder addLogs(cosmos.base.abci.v1beta1.Abci.ABCIMessageLog value) {
         if (logsBuilder_ == null) {
@@ -1869,7 +2009,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public Builder addLogs(
           int index, cosmos.base.abci.v1beta1.Abci.ABCIMessageLog value) {
@@ -1890,7 +2030,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public Builder addLogs(
           cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.Builder builderForValue) {
@@ -1908,7 +2048,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public Builder addLogs(
           int index, cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.Builder builderForValue) {
@@ -1926,7 +2066,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public Builder addAllLogs(
           java.lang.Iterable<? extends cosmos.base.abci.v1beta1.Abci.ABCIMessageLog> values) {
@@ -1945,12 +2085,12 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public Builder clearLogs() {
         if (logsBuilder_ == null) {
           logs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           logsBuilder_.clear();
@@ -1962,7 +2102,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public Builder removeLogs(int index) {
         if (logsBuilder_ == null) {
@@ -1979,7 +2119,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.Builder getLogsBuilder(
           int index) {
@@ -1990,7 +2130,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.ABCIMessageLogOrBuilder getLogsOrBuilder(
           int index) {
@@ -2004,7 +2144,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.ABCIMessageLogOrBuilder> 
            getLogsOrBuilderList() {
@@ -2019,7 +2159,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.Builder addLogsBuilder() {
         return getLogsFieldBuilder().addBuilder(
@@ -2030,7 +2170,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.Builder addLogsBuilder(
           int index) {
@@ -2042,7 +2182,7 @@ public final class Abci {
        * The output of the application's logger (typed). May be non-deterministic.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.ABCIMessageLog logs = 7 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "ABCIMessageLogs"];</code>
        */
       public java.util.List<cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.Builder> 
            getLogsBuilderList() {
@@ -2055,7 +2195,7 @@ public final class Abci {
           logsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.abci.v1beta1.Abci.ABCIMessageLog, cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.Builder, cosmos.base.abci.v1beta1.Abci.ABCIMessageLogOrBuilder>(
                   logs_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           logs_ = null;
@@ -2069,7 +2209,8 @@ public final class Abci {
        * Additional information. May be non-deterministic.
        * </pre>
        *
-       * <code>optional string info = 8;</code>
+       * <code>string info = 8;</code>
+       * @return The info.
        */
       public java.lang.String getInfo() {
         java.lang.Object ref = info_;
@@ -2088,7 +2229,8 @@ public final class Abci {
        * Additional information. May be non-deterministic.
        * </pre>
        *
-       * <code>optional string info = 8;</code>
+       * <code>string info = 8;</code>
+       * @return The bytes for info.
        */
       public com.google.protobuf.ByteString
           getInfoBytes() {
@@ -2108,7 +2250,9 @@ public final class Abci {
        * Additional information. May be non-deterministic.
        * </pre>
        *
-       * <code>optional string info = 8;</code>
+       * <code>string info = 8;</code>
+       * @param value The info to set.
+       * @return This builder for chaining.
        */
       public Builder setInfo(
           java.lang.String value) {
@@ -2125,7 +2269,8 @@ public final class Abci {
        * Additional information. May be non-deterministic.
        * </pre>
        *
-       * <code>optional string info = 8;</code>
+       * <code>string info = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearInfo() {
         
@@ -2138,7 +2283,9 @@ public final class Abci {
        * Additional information. May be non-deterministic.
        * </pre>
        *
-       * <code>optional string info = 8;</code>
+       * <code>string info = 8;</code>
+       * @param value The bytes for info to set.
+       * @return This builder for chaining.
        */
       public Builder setInfoBytes(
           com.google.protobuf.ByteString value) {
@@ -2158,8 +2305,10 @@ public final class Abci {
        * Amount of gas requested for transaction.
        * </pre>
        *
-       * <code>optional int64 gas_wanted = 9;</code>
+       * <code>int64 gas_wanted = 9;</code>
+       * @return The gasWanted.
        */
+      @java.lang.Override
       public long getGasWanted() {
         return gasWanted_;
       }
@@ -2168,7 +2317,9 @@ public final class Abci {
        * Amount of gas requested for transaction.
        * </pre>
        *
-       * <code>optional int64 gas_wanted = 9;</code>
+       * <code>int64 gas_wanted = 9;</code>
+       * @param value The gasWanted to set.
+       * @return This builder for chaining.
        */
       public Builder setGasWanted(long value) {
         
@@ -2181,7 +2332,8 @@ public final class Abci {
        * Amount of gas requested for transaction.
        * </pre>
        *
-       * <code>optional int64 gas_wanted = 9;</code>
+       * <code>int64 gas_wanted = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGasWanted() {
         
@@ -2196,8 +2348,10 @@ public final class Abci {
        * Amount of gas consumed by transaction.
        * </pre>
        *
-       * <code>optional int64 gas_used = 10;</code>
+       * <code>int64 gas_used = 10;</code>
+       * @return The gasUsed.
        */
+      @java.lang.Override
       public long getGasUsed() {
         return gasUsed_;
       }
@@ -2206,7 +2360,9 @@ public final class Abci {
        * Amount of gas consumed by transaction.
        * </pre>
        *
-       * <code>optional int64 gas_used = 10;</code>
+       * <code>int64 gas_used = 10;</code>
+       * @param value The gasUsed to set.
+       * @return This builder for chaining.
        */
       public Builder setGasUsed(long value) {
         
@@ -2219,7 +2375,8 @@ public final class Abci {
        * Amount of gas consumed by transaction.
        * </pre>
        *
-       * <code>optional int64 gas_used = 10;</code>
+       * <code>int64 gas_used = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGasUsed() {
         
@@ -2228,7 +2385,7 @@ public final class Abci {
         return this;
       }
 
-      private com.google.protobuf.Any tx_ = null;
+      private com.google.protobuf.Any tx_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> txBuilder_;
       /**
@@ -2236,7 +2393,8 @@ public final class Abci {
        * The request transaction bytes.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any tx = 11;</code>
+       * <code>.google.protobuf.Any tx = 11;</code>
+       * @return Whether the tx field is set.
        */
       public boolean hasTx() {
         return txBuilder_ != null || tx_ != null;
@@ -2246,7 +2404,8 @@ public final class Abci {
        * The request transaction bytes.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any tx = 11;</code>
+       * <code>.google.protobuf.Any tx = 11;</code>
+       * @return The tx.
        */
       public com.google.protobuf.Any getTx() {
         if (txBuilder_ == null) {
@@ -2260,7 +2419,7 @@ public final class Abci {
        * The request transaction bytes.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any tx = 11;</code>
+       * <code>.google.protobuf.Any tx = 11;</code>
        */
       public Builder setTx(com.google.protobuf.Any value) {
         if (txBuilder_ == null) {
@@ -2280,7 +2439,7 @@ public final class Abci {
        * The request transaction bytes.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any tx = 11;</code>
+       * <code>.google.protobuf.Any tx = 11;</code>
        */
       public Builder setTx(
           com.google.protobuf.Any.Builder builderForValue) {
@@ -2298,7 +2457,7 @@ public final class Abci {
        * The request transaction bytes.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any tx = 11;</code>
+       * <code>.google.protobuf.Any tx = 11;</code>
        */
       public Builder mergeTx(com.google.protobuf.Any value) {
         if (txBuilder_ == null) {
@@ -2320,7 +2479,7 @@ public final class Abci {
        * The request transaction bytes.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any tx = 11;</code>
+       * <code>.google.protobuf.Any tx = 11;</code>
        */
       public Builder clearTx() {
         if (txBuilder_ == null) {
@@ -2338,7 +2497,7 @@ public final class Abci {
        * The request transaction bytes.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any tx = 11;</code>
+       * <code>.google.protobuf.Any tx = 11;</code>
        */
       public com.google.protobuf.Any.Builder getTxBuilder() {
         
@@ -2350,7 +2509,7 @@ public final class Abci {
        * The request transaction bytes.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any tx = 11;</code>
+       * <code>.google.protobuf.Any tx = 11;</code>
        */
       public com.google.protobuf.AnyOrBuilder getTxOrBuilder() {
         if (txBuilder_ != null) {
@@ -2365,7 +2524,7 @@ public final class Abci {
        * The request transaction bytes.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any tx = 11;</code>
+       * <code>.google.protobuf.Any tx = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
@@ -2389,7 +2548,8 @@ public final class Abci {
        * it's genesis time.
        * </pre>
        *
-       * <code>optional string timestamp = 12;</code>
+       * <code>string timestamp = 12;</code>
+       * @return The timestamp.
        */
       public java.lang.String getTimestamp() {
         java.lang.Object ref = timestamp_;
@@ -2410,7 +2570,8 @@ public final class Abci {
        * it's genesis time.
        * </pre>
        *
-       * <code>optional string timestamp = 12;</code>
+       * <code>string timestamp = 12;</code>
+       * @return The bytes for timestamp.
        */
       public com.google.protobuf.ByteString
           getTimestampBytes() {
@@ -2432,7 +2593,9 @@ public final class Abci {
        * it's genesis time.
        * </pre>
        *
-       * <code>optional string timestamp = 12;</code>
+       * <code>string timestamp = 12;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
        */
       public Builder setTimestamp(
           java.lang.String value) {
@@ -2451,7 +2614,8 @@ public final class Abci {
        * it's genesis time.
        * </pre>
        *
-       * <code>optional string timestamp = 12;</code>
+       * <code>string timestamp = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
         
@@ -2466,7 +2630,9 @@ public final class Abci {
        * it's genesis time.
        * </pre>
        *
-       * <code>optional string timestamp = 12;</code>
+       * <code>string timestamp = 12;</code>
+       * @param value The bytes for timestamp to set.
+       * @return This builder for chaining.
        */
       public Builder setTimestampBytes(
           com.google.protobuf.ByteString value) {
@@ -2479,14 +2645,16 @@ public final class Abci {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2505,11 +2673,12 @@ public final class Abci {
 
     private static final com.google.protobuf.Parser<TxResponse>
         PARSER = new com.google.protobuf.AbstractParser<TxResponse>() {
+      @java.lang.Override
       public TxResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TxResponse(input, extensionRegistry);
+        return new TxResponse(input, extensionRegistry);
       }
     };
 
@@ -2522,6 +2691,7 @@ public final class Abci {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.TxResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2533,16 +2703,19 @@ public final class Abci {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint32 msg_index = 1;</code>
+     * <code>uint32 msg_index = 1;</code>
+     * @return The msgIndex.
      */
     int getMsgIndex();
 
     /**
-     * <code>optional string log = 2;</code>
+     * <code>string log = 2;</code>
+     * @return The log.
      */
     java.lang.String getLog();
     /**
-     * <code>optional string log = 2;</code>
+     * <code>string log = 2;</code>
+     * @return The bytes for log.
      */
     com.google.protobuf.ByteString
         getLogBytes();
@@ -2553,7 +2726,7 @@ public final class Abci {
      * execution.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
      */
     java.util.List<cosmos.base.abci.v1beta1.Abci.StringEvent> 
         getEventsList();
@@ -2563,7 +2736,7 @@ public final class Abci {
      * execution.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
      */
     cosmos.base.abci.v1beta1.Abci.StringEvent getEvents(int index);
     /**
@@ -2572,7 +2745,7 @@ public final class Abci {
      * execution.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
      */
     int getEventsCount();
     /**
@@ -2581,7 +2754,7 @@ public final class Abci {
      * execution.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
      */
     java.util.List<? extends cosmos.base.abci.v1beta1.Abci.StringEventOrBuilder> 
         getEventsOrBuilderList();
@@ -2591,7 +2764,7 @@ public final class Abci {
      * execution.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
      */
     cosmos.base.abci.v1beta1.Abci.StringEventOrBuilder getEventsOrBuilder(
         int index);
@@ -2603,31 +2776,43 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.ABCIMessageLog}
    */
-  public  static final class ABCIMessageLog extends
+  public static final class ABCIMessageLog extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.ABCIMessageLog)
       ABCIMessageLogOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ABCIMessageLog.newBuilder() to construct.
     private ABCIMessageLog(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private ABCIMessageLog() {
-      msgIndex_ = 0;
       log_ = "";
       events_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ABCIMessageLog();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ABCIMessageLog(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2636,12 +2821,6 @@ public final class Abci {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               msgIndex_ = input.readUInt32();
@@ -2654,12 +2833,19 @@ public final class Abci {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 events_ = new java.util.ArrayList<cosmos.base.abci.v1beta1.Abci.StringEvent>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               events_.add(
                   input.readMessage(cosmos.base.abci.v1beta1.Abci.StringEvent.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2670,9 +2856,10 @@ public final class Abci {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           events_ = java.util.Collections.unmodifiableList(events_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2681,6 +2868,7 @@ public final class Abci {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_ABCIMessageLog_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_ABCIMessageLog_fieldAccessorTable
@@ -2688,12 +2876,13 @@ public final class Abci {
               cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.class, cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.Builder.class);
     }
 
-    private int bitField0_;
     public static final int MSG_INDEX_FIELD_NUMBER = 1;
     private int msgIndex_;
     /**
-     * <code>optional uint32 msg_index = 1;</code>
+     * <code>uint32 msg_index = 1;</code>
+     * @return The msgIndex.
      */
+    @java.lang.Override
     public int getMsgIndex() {
       return msgIndex_;
     }
@@ -2701,8 +2890,10 @@ public final class Abci {
     public static final int LOG_FIELD_NUMBER = 2;
     private volatile java.lang.Object log_;
     /**
-     * <code>optional string log = 2;</code>
+     * <code>string log = 2;</code>
+     * @return The log.
      */
+    @java.lang.Override
     public java.lang.String getLog() {
       java.lang.Object ref = log_;
       if (ref instanceof java.lang.String) {
@@ -2716,8 +2907,10 @@ public final class Abci {
       }
     }
     /**
-     * <code>optional string log = 2;</code>
+     * <code>string log = 2;</code>
+     * @return The bytes for log.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getLogBytes() {
       java.lang.Object ref = log_;
@@ -2740,8 +2933,9 @@ public final class Abci {
      * execution.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.abci.v1beta1.Abci.StringEvent> getEventsList() {
       return events_;
     }
@@ -2751,8 +2945,9 @@ public final class Abci {
      * execution.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.StringEventOrBuilder> 
         getEventsOrBuilderList() {
       return events_;
@@ -2763,8 +2958,9 @@ public final class Abci {
      * execution.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
      */
+    @java.lang.Override
     public int getEventsCount() {
       return events_.size();
     }
@@ -2774,8 +2970,9 @@ public final class Abci {
      * execution.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.StringEvent getEvents(int index) {
       return events_.get(index);
     }
@@ -2785,14 +2982,16 @@ public final class Abci {
      * execution.
      * </pre>
      *
-     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.StringEventOrBuilder getEventsOrBuilder(
         int index) {
       return events_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2802,6 +3001,7 @@ public final class Abci {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (msgIndex_ != 0) {
@@ -2813,8 +3013,10 @@ public final class Abci {
       for (int i = 0; i < events_.size(); i++) {
         output.writeMessage(3, events_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2831,11 +3033,11 @@ public final class Abci {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, events_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2846,14 +3048,14 @@ public final class Abci {
       }
       cosmos.base.abci.v1beta1.Abci.ABCIMessageLog other = (cosmos.base.abci.v1beta1.Abci.ABCIMessageLog) obj;
 
-      boolean result = true;
-      result = result && (getMsgIndex()
-          == other.getMsgIndex());
-      result = result && getLog()
-          .equals(other.getLog());
-      result = result && getEventsList()
-          .equals(other.getEventsList());
-      return result;
+      if (getMsgIndex()
+          != other.getMsgIndex()) return false;
+      if (!getLog()
+          .equals(other.getLog())) return false;
+      if (!getEventsList()
+          .equals(other.getEventsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2862,7 +3064,7 @@ public final class Abci {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getMsgIndex();
       hash = (37 * hash) + LOG_FIELD_NUMBER;
@@ -2876,6 +3078,17 @@ public final class Abci {
       return hash;
     }
 
+    public static cosmos.base.abci.v1beta1.Abci.ABCIMessageLog parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.ABCIMessageLog parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.abci.v1beta1.Abci.ABCIMessageLog parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2935,6 +3148,7 @@ public final class Abci {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2942,6 +3156,7 @@ public final class Abci {
     public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.ABCIMessageLog prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2969,6 +3184,7 @@ public final class Abci {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_ABCIMessageLog_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_ABCIMessageLog_fieldAccessorTable
@@ -2992,6 +3208,7 @@ public final class Abci {
           getEventsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         msgIndex_ = 0;
@@ -3000,22 +3217,25 @@ public final class Abci {
 
         if (eventsBuilder_ == null) {
           events_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           eventsBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_ABCIMessageLog_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.ABCIMessageLog getDefaultInstanceForType() {
         return cosmos.base.abci.v1beta1.Abci.ABCIMessageLog.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.ABCIMessageLog build() {
         cosmos.base.abci.v1beta1.Abci.ABCIMessageLog result = buildPartial();
         if (!result.isInitialized()) {
@@ -3024,52 +3244,58 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.ABCIMessageLog buildPartial() {
         cosmos.base.abci.v1beta1.Abci.ABCIMessageLog result = new cosmos.base.abci.v1beta1.Abci.ABCIMessageLog(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.msgIndex_ = msgIndex_;
         result.log_ = log_;
         if (eventsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             events_ = java.util.Collections.unmodifiableList(events_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.events_ = events_;
         } else {
           result.events_ = eventsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.abci.v1beta1.Abci.ABCIMessageLog) {
           return mergeFrom((cosmos.base.abci.v1beta1.Abci.ABCIMessageLog)other);
@@ -3092,7 +3318,7 @@ public final class Abci {
           if (!other.events_.isEmpty()) {
             if (events_.isEmpty()) {
               events_ = other.events_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureEventsIsMutable();
               events_.addAll(other.events_);
@@ -3105,7 +3331,7 @@ public final class Abci {
               eventsBuilder_.dispose();
               eventsBuilder_ = null;
               events_ = other.events_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               eventsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getEventsFieldBuilder() : null;
@@ -3114,14 +3340,17 @@ public final class Abci {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3143,13 +3372,17 @@ public final class Abci {
 
       private int msgIndex_ ;
       /**
-       * <code>optional uint32 msg_index = 1;</code>
+       * <code>uint32 msg_index = 1;</code>
+       * @return The msgIndex.
        */
+      @java.lang.Override
       public int getMsgIndex() {
         return msgIndex_;
       }
       /**
-       * <code>optional uint32 msg_index = 1;</code>
+       * <code>uint32 msg_index = 1;</code>
+       * @param value The msgIndex to set.
+       * @return This builder for chaining.
        */
       public Builder setMsgIndex(int value) {
         
@@ -3158,7 +3391,8 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional uint32 msg_index = 1;</code>
+       * <code>uint32 msg_index = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMsgIndex() {
         
@@ -3169,7 +3403,8 @@ public final class Abci {
 
       private java.lang.Object log_ = "";
       /**
-       * <code>optional string log = 2;</code>
+       * <code>string log = 2;</code>
+       * @return The log.
        */
       public java.lang.String getLog() {
         java.lang.Object ref = log_;
@@ -3184,7 +3419,8 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional string log = 2;</code>
+       * <code>string log = 2;</code>
+       * @return The bytes for log.
        */
       public com.google.protobuf.ByteString
           getLogBytes() {
@@ -3200,7 +3436,9 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional string log = 2;</code>
+       * <code>string log = 2;</code>
+       * @param value The log to set.
+       * @return This builder for chaining.
        */
       public Builder setLog(
           java.lang.String value) {
@@ -3213,7 +3451,8 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional string log = 2;</code>
+       * <code>string log = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLog() {
         
@@ -3222,7 +3461,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional string log = 2;</code>
+       * <code>string log = 2;</code>
+       * @param value The bytes for log to set.
+       * @return This builder for chaining.
        */
       public Builder setLogBytes(
           com.google.protobuf.ByteString value) {
@@ -3239,9 +3480,9 @@ public final class Abci {
       private java.util.List<cosmos.base.abci.v1beta1.Abci.StringEvent> events_ =
         java.util.Collections.emptyList();
       private void ensureEventsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           events_ = new java.util.ArrayList<cosmos.base.abci.v1beta1.Abci.StringEvent>(events_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -3254,7 +3495,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public java.util.List<cosmos.base.abci.v1beta1.Abci.StringEvent> getEventsList() {
         if (eventsBuilder_ == null) {
@@ -3269,7 +3510,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public int getEventsCount() {
         if (eventsBuilder_ == null) {
@@ -3284,7 +3525,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.StringEvent getEvents(int index) {
         if (eventsBuilder_ == null) {
@@ -3299,7 +3540,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public Builder setEvents(
           int index, cosmos.base.abci.v1beta1.Abci.StringEvent value) {
@@ -3321,7 +3562,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public Builder setEvents(
           int index, cosmos.base.abci.v1beta1.Abci.StringEvent.Builder builderForValue) {
@@ -3340,7 +3581,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public Builder addEvents(cosmos.base.abci.v1beta1.Abci.StringEvent value) {
         if (eventsBuilder_ == null) {
@@ -3361,7 +3602,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public Builder addEvents(
           int index, cosmos.base.abci.v1beta1.Abci.StringEvent value) {
@@ -3383,7 +3624,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public Builder addEvents(
           cosmos.base.abci.v1beta1.Abci.StringEvent.Builder builderForValue) {
@@ -3402,7 +3643,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public Builder addEvents(
           int index, cosmos.base.abci.v1beta1.Abci.StringEvent.Builder builderForValue) {
@@ -3421,7 +3662,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public Builder addAllEvents(
           java.lang.Iterable<? extends cosmos.base.abci.v1beta1.Abci.StringEvent> values) {
@@ -3441,12 +3682,12 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public Builder clearEvents() {
         if (eventsBuilder_ == null) {
           events_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           eventsBuilder_.clear();
@@ -3459,7 +3700,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public Builder removeEvents(int index) {
         if (eventsBuilder_ == null) {
@@ -3477,7 +3718,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.StringEvent.Builder getEventsBuilder(
           int index) {
@@ -3489,7 +3730,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.StringEventOrBuilder getEventsOrBuilder(
           int index) {
@@ -3504,7 +3745,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.StringEventOrBuilder> 
            getEventsOrBuilderList() {
@@ -3520,7 +3761,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.StringEvent.Builder addEventsBuilder() {
         return getEventsFieldBuilder().addBuilder(
@@ -3532,7 +3773,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.StringEvent.Builder addEventsBuilder(
           int index) {
@@ -3545,7 +3786,7 @@ public final class Abci {
        * execution.
        * </pre>
        *
-       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.StringEvent events = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "StringEvents"];</code>
        */
       public java.util.List<cosmos.base.abci.v1beta1.Abci.StringEvent.Builder> 
            getEventsBuilderList() {
@@ -3558,21 +3799,23 @@ public final class Abci {
           eventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.abci.v1beta1.Abci.StringEvent, cosmos.base.abci.v1beta1.Abci.StringEvent.Builder, cosmos.base.abci.v1beta1.Abci.StringEventOrBuilder>(
                   events_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           events_ = null;
         }
         return eventsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3591,11 +3834,12 @@ public final class Abci {
 
     private static final com.google.protobuf.Parser<ABCIMessageLog>
         PARSER = new com.google.protobuf.AbstractParser<ABCIMessageLog>() {
+      @java.lang.Override
       public ABCIMessageLog parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ABCIMessageLog(input, extensionRegistry);
+        return new ABCIMessageLog(input, extensionRegistry);
       }
     };
 
@@ -3608,6 +3852,7 @@ public final class Abci {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.ABCIMessageLog getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3619,35 +3864,37 @@ public final class Abci {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string type = 1;</code>
+     * <code>string type = 1;</code>
+     * @return The type.
      */
     java.lang.String getType();
     /**
-     * <code>optional string type = 1;</code>
+     * <code>string type = 1;</code>
+     * @return The bytes for type.
      */
     com.google.protobuf.ByteString
         getTypeBytes();
 
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<cosmos.base.abci.v1beta1.Abci.Attribute> 
         getAttributesList();
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.abci.v1beta1.Abci.Attribute getAttributes(int index);
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
      */
     int getAttributesCount();
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends cosmos.base.abci.v1beta1.Abci.AttributeOrBuilder> 
         getAttributesOrBuilderList();
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.abci.v1beta1.Abci.AttributeOrBuilder getAttributesOrBuilder(
         int index);
@@ -3660,10 +3907,11 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.StringEvent}
    */
-  public  static final class StringEvent extends
+  public static final class StringEvent extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.StringEvent)
       StringEventOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use StringEvent.newBuilder() to construct.
     private StringEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3674,16 +3922,28 @@ public final class Abci {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StringEvent();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private StringEvent(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3692,12 +3952,6 @@ public final class Abci {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -3705,12 +3959,19 @@ public final class Abci {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 attributes_ = new java.util.ArrayList<cosmos.base.abci.v1beta1.Abci.Attribute>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               attributes_.add(
                   input.readMessage(cosmos.base.abci.v1beta1.Abci.Attribute.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3721,9 +3982,10 @@ public final class Abci {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           attributes_ = java.util.Collections.unmodifiableList(attributes_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3732,6 +3994,7 @@ public final class Abci {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_StringEvent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_StringEvent_fieldAccessorTable
@@ -3739,12 +4002,13 @@ public final class Abci {
               cosmos.base.abci.v1beta1.Abci.StringEvent.class, cosmos.base.abci.v1beta1.Abci.StringEvent.Builder.class);
     }
 
-    private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
     private volatile java.lang.Object type_;
     /**
-     * <code>optional string type = 1;</code>
+     * <code>string type = 1;</code>
+     * @return The type.
      */
+    @java.lang.Override
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
@@ -3758,8 +4022,10 @@ public final class Abci {
       }
     }
     /**
-     * <code>optional string type = 1;</code>
+     * <code>string type = 1;</code>
+     * @return The bytes for type.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTypeBytes() {
       java.lang.Object ref = type_;
@@ -3777,39 +4043,45 @@ public final class Abci {
     public static final int ATTRIBUTES_FIELD_NUMBER = 2;
     private java.util.List<cosmos.base.abci.v1beta1.Abci.Attribute> attributes_;
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.abci.v1beta1.Abci.Attribute> getAttributesList() {
       return attributes_;
     }
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.AttributeOrBuilder> 
         getAttributesOrBuilderList() {
       return attributes_;
     }
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public int getAttributesCount() {
       return attributes_.size();
     }
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.Attribute getAttributes(int index) {
       return attributes_.get(index);
     }
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.AttributeOrBuilder getAttributesOrBuilder(
         int index) {
       return attributes_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3819,6 +4091,7 @@ public final class Abci {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getTypeBytes().isEmpty()) {
@@ -3827,8 +4100,10 @@ public final class Abci {
       for (int i = 0; i < attributes_.size(); i++) {
         output.writeMessage(2, attributes_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3841,11 +4116,11 @@ public final class Abci {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, attributes_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3856,12 +4131,12 @@ public final class Abci {
       }
       cosmos.base.abci.v1beta1.Abci.StringEvent other = (cosmos.base.abci.v1beta1.Abci.StringEvent) obj;
 
-      boolean result = true;
-      result = result && getType()
-          .equals(other.getType());
-      result = result && getAttributesList()
-          .equals(other.getAttributesList());
-      return result;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getAttributesList()
+          .equals(other.getAttributesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3870,7 +4145,7 @@ public final class Abci {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
       if (getAttributesCount() > 0) {
@@ -3882,6 +4157,17 @@ public final class Abci {
       return hash;
     }
 
+    public static cosmos.base.abci.v1beta1.Abci.StringEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.StringEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.abci.v1beta1.Abci.StringEvent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3941,6 +4227,7 @@ public final class Abci {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3948,6 +4235,7 @@ public final class Abci {
     public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.StringEvent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3976,6 +4264,7 @@ public final class Abci {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_StringEvent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_StringEvent_fieldAccessorTable
@@ -3999,28 +4288,32 @@ public final class Abci {
           getAttributesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         type_ = "";
 
         if (attributesBuilder_ == null) {
           attributes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           attributesBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_StringEvent_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.StringEvent getDefaultInstanceForType() {
         return cosmos.base.abci.v1beta1.Abci.StringEvent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.StringEvent build() {
         cosmos.base.abci.v1beta1.Abci.StringEvent result = buildPartial();
         if (!result.isInitialized()) {
@@ -4029,51 +4322,57 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.StringEvent buildPartial() {
         cosmos.base.abci.v1beta1.Abci.StringEvent result = new cosmos.base.abci.v1beta1.Abci.StringEvent(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.type_ = type_;
         if (attributesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             attributes_ = java.util.Collections.unmodifiableList(attributes_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.attributes_ = attributes_;
         } else {
           result.attributes_ = attributesBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.abci.v1beta1.Abci.StringEvent) {
           return mergeFrom((cosmos.base.abci.v1beta1.Abci.StringEvent)other);
@@ -4093,7 +4392,7 @@ public final class Abci {
           if (!other.attributes_.isEmpty()) {
             if (attributes_.isEmpty()) {
               attributes_ = other.attributes_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureAttributesIsMutable();
               attributes_.addAll(other.attributes_);
@@ -4106,7 +4405,7 @@ public final class Abci {
               attributesBuilder_.dispose();
               attributesBuilder_ = null;
               attributes_ = other.attributes_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               attributesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAttributesFieldBuilder() : null;
@@ -4115,14 +4414,17 @@ public final class Abci {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4144,7 +4446,8 @@ public final class Abci {
 
       private java.lang.Object type_ = "";
       /**
-       * <code>optional string type = 1;</code>
+       * <code>string type = 1;</code>
+       * @return The type.
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -4159,7 +4462,8 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional string type = 1;</code>
+       * <code>string type = 1;</code>
+       * @return The bytes for type.
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
@@ -4175,7 +4479,9 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional string type = 1;</code>
+       * <code>string type = 1;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(
           java.lang.String value) {
@@ -4188,7 +4494,8 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional string type = 1;</code>
+       * <code>string type = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
         
@@ -4197,7 +4504,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional string type = 1;</code>
+       * <code>string type = 1;</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -4214,9 +4523,9 @@ public final class Abci {
       private java.util.List<cosmos.base.abci.v1beta1.Abci.Attribute> attributes_ =
         java.util.Collections.emptyList();
       private void ensureAttributesIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           attributes_ = new java.util.ArrayList<cosmos.base.abci.v1beta1.Abci.Attribute>(attributes_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -4224,7 +4533,7 @@ public final class Abci {
           cosmos.base.abci.v1beta1.Abci.Attribute, cosmos.base.abci.v1beta1.Abci.Attribute.Builder, cosmos.base.abci.v1beta1.Abci.AttributeOrBuilder> attributesBuilder_;
 
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmos.base.abci.v1beta1.Abci.Attribute> getAttributesList() {
         if (attributesBuilder_ == null) {
@@ -4234,7 +4543,7 @@ public final class Abci {
         }
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public int getAttributesCount() {
         if (attributesBuilder_ == null) {
@@ -4244,7 +4553,7 @@ public final class Abci {
         }
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.Attribute getAttributes(int index) {
         if (attributesBuilder_ == null) {
@@ -4254,7 +4563,7 @@ public final class Abci {
         }
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAttributes(
           int index, cosmos.base.abci.v1beta1.Abci.Attribute value) {
@@ -4271,7 +4580,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAttributes(
           int index, cosmos.base.abci.v1beta1.Abci.Attribute.Builder builderForValue) {
@@ -4285,7 +4594,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAttributes(cosmos.base.abci.v1beta1.Abci.Attribute value) {
         if (attributesBuilder_ == null) {
@@ -4301,7 +4610,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAttributes(
           int index, cosmos.base.abci.v1beta1.Abci.Attribute value) {
@@ -4318,7 +4627,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAttributes(
           cosmos.base.abci.v1beta1.Abci.Attribute.Builder builderForValue) {
@@ -4332,7 +4641,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAttributes(
           int index, cosmos.base.abci.v1beta1.Abci.Attribute.Builder builderForValue) {
@@ -4346,7 +4655,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllAttributes(
           java.lang.Iterable<? extends cosmos.base.abci.v1beta1.Abci.Attribute> values) {
@@ -4361,12 +4670,12 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearAttributes() {
         if (attributesBuilder_ == null) {
           attributes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           attributesBuilder_.clear();
@@ -4374,7 +4683,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeAttributes(int index) {
         if (attributesBuilder_ == null) {
@@ -4387,14 +4696,14 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.Attribute.Builder getAttributesBuilder(
           int index) {
         return getAttributesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.AttributeOrBuilder getAttributesOrBuilder(
           int index) {
@@ -4404,7 +4713,7 @@ public final class Abci {
         }
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.AttributeOrBuilder> 
            getAttributesOrBuilderList() {
@@ -4415,14 +4724,14 @@ public final class Abci {
         }
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.Attribute.Builder addAttributesBuilder() {
         return getAttributesFieldBuilder().addBuilder(
             cosmos.base.abci.v1beta1.Abci.Attribute.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.Attribute.Builder addAttributesBuilder(
           int index) {
@@ -4430,7 +4739,7 @@ public final class Abci {
             index, cosmos.base.abci.v1beta1.Abci.Attribute.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2;</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.Attribute attributes = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmos.base.abci.v1beta1.Abci.Attribute.Builder> 
            getAttributesBuilderList() {
@@ -4443,21 +4752,23 @@ public final class Abci {
           attributesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.abci.v1beta1.Abci.Attribute, cosmos.base.abci.v1beta1.Abci.Attribute.Builder, cosmos.base.abci.v1beta1.Abci.AttributeOrBuilder>(
                   attributes_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           attributes_ = null;
         }
         return attributesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4476,11 +4787,12 @@ public final class Abci {
 
     private static final com.google.protobuf.Parser<StringEvent>
         PARSER = new com.google.protobuf.AbstractParser<StringEvent>() {
+      @java.lang.Override
       public StringEvent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StringEvent(input, extensionRegistry);
+        return new StringEvent(input, extensionRegistry);
       }
     };
 
@@ -4493,6 +4805,7 @@ public final class Abci {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.StringEvent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4504,21 +4817,25 @@ public final class Abci {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
+     * @return The key.
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
+     * @return The bytes for key.
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string value = 2;</code>
+     * <code>string value = 2;</code>
+     * @return The value.
      */
     java.lang.String getValue();
     /**
-     * <code>optional string value = 2;</code>
+     * <code>string value = 2;</code>
+     * @return The bytes for value.
      */
     com.google.protobuf.ByteString
         getValueBytes();
@@ -4531,10 +4848,11 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.Attribute}
    */
-  public  static final class Attribute extends
+  public static final class Attribute extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.Attribute)
       AttributeOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Attribute.newBuilder() to construct.
     private Attribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4545,16 +4863,27 @@ public final class Abci {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Attribute();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Attribute(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4563,12 +4892,6 @@ public final class Abci {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -4581,6 +4904,13 @@ public final class Abci {
               value_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4589,6 +4919,7 @@ public final class Abci {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4597,6 +4928,7 @@ public final class Abci {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_Attribute_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_Attribute_fieldAccessorTable
@@ -4607,8 +4939,10 @@ public final class Abci {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -4622,8 +4956,10 @@ public final class Abci {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
+     * @return The bytes for key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getKeyBytes() {
       java.lang.Object ref = key_;
@@ -4641,8 +4977,10 @@ public final class Abci {
     public static final int VALUE_FIELD_NUMBER = 2;
     private volatile java.lang.Object value_;
     /**
-     * <code>optional string value = 2;</code>
+     * <code>string value = 2;</code>
+     * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -4656,8 +4994,10 @@ public final class Abci {
       }
     }
     /**
-     * <code>optional string value = 2;</code>
+     * <code>string value = 2;</code>
+     * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getValueBytes() {
       java.lang.Object ref = value_;
@@ -4673,6 +5013,7 @@ public final class Abci {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4682,6 +5023,7 @@ public final class Abci {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getKeyBytes().isEmpty()) {
@@ -4690,8 +5032,10 @@ public final class Abci {
       if (!getValueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4703,11 +5047,11 @@ public final class Abci {
       if (!getValueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4718,12 +5062,12 @@ public final class Abci {
       }
       cosmos.base.abci.v1beta1.Abci.Attribute other = (cosmos.base.abci.v1beta1.Abci.Attribute) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && getValue()
-          .equals(other.getValue());
-      return result;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4732,7 +5076,7 @@ public final class Abci {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -4742,6 +5086,17 @@ public final class Abci {
       return hash;
     }
 
+    public static cosmos.base.abci.v1beta1.Abci.Attribute parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.Attribute parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.abci.v1beta1.Abci.Attribute parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4801,6 +5156,7 @@ public final class Abci {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4808,6 +5164,7 @@ public final class Abci {
     public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.Attribute prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4836,6 +5193,7 @@ public final class Abci {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_Attribute_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_Attribute_fieldAccessorTable
@@ -4858,6 +5216,7 @@ public final class Abci {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = "";
@@ -4867,15 +5226,18 @@ public final class Abci {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_Attribute_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.Attribute getDefaultInstanceForType() {
         return cosmos.base.abci.v1beta1.Abci.Attribute.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.Attribute build() {
         cosmos.base.abci.v1beta1.Abci.Attribute result = buildPartial();
         if (!result.isInitialized()) {
@@ -4884,6 +5246,7 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.Attribute buildPartial() {
         cosmos.base.abci.v1beta1.Abci.Attribute result = new cosmos.base.abci.v1beta1.Abci.Attribute(this);
         result.key_ = key_;
@@ -4892,32 +5255,39 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.abci.v1beta1.Abci.Attribute) {
           return mergeFrom((cosmos.base.abci.v1beta1.Abci.Attribute)other);
@@ -4937,14 +5307,17 @@ public final class Abci {
           value_ = other.value_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4965,7 +5338,8 @@ public final class Abci {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
+       * @return The key.
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -4980,7 +5354,8 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
+       * @return The bytes for key.
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -4996,7 +5371,9 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(
           java.lang.String value) {
@@ -5009,7 +5386,8 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -5018,7 +5396,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -5034,7 +5414,8 @@ public final class Abci {
 
       private java.lang.Object value_ = "";
       /**
-       * <code>optional string value = 2;</code>
+       * <code>string value = 2;</code>
+       * @return The value.
        */
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
@@ -5049,7 +5430,8 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional string value = 2;</code>
+       * <code>string value = 2;</code>
+       * @return The bytes for value.
        */
       public com.google.protobuf.ByteString
           getValueBytes() {
@@ -5065,7 +5447,9 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional string value = 2;</code>
+       * <code>string value = 2;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(
           java.lang.String value) {
@@ -5078,7 +5462,8 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional string value = 2;</code>
+       * <code>string value = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
         
@@ -5087,7 +5472,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional string value = 2;</code>
+       * <code>string value = 2;</code>
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
        */
       public Builder setValueBytes(
           com.google.protobuf.ByteString value) {
@@ -5100,14 +5487,16 @@ public final class Abci {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5126,11 +5515,12 @@ public final class Abci {
 
     private static final com.google.protobuf.Parser<Attribute>
         PARSER = new com.google.protobuf.AbstractParser<Attribute>() {
+      @java.lang.Override
       public Attribute parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Attribute(input, extensionRegistry);
+        return new Attribute(input, extensionRegistry);
       }
     };
 
@@ -5143,6 +5533,7 @@ public final class Abci {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.Attribute getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5158,7 +5549,8 @@ public final class Abci {
      * GasWanted is the maximum units of work we allow this tx to perform.
      * </pre>
      *
-     * <code>optional uint64 gas_wanted = 1;</code>
+     * <code>uint64 gas_wanted = 1 [(.gogoproto.moretags) = "yaml:&#92;"gas_wanted&#92;""];</code>
+     * @return The gasWanted.
      */
     long getGasWanted();
 
@@ -5167,7 +5559,8 @@ public final class Abci {
      * GasUsed is the amount of gas actually consumed.
      * </pre>
      *
-     * <code>optional uint64 gas_used = 2;</code>
+     * <code>uint64 gas_used = 2 [(.gogoproto.moretags) = "yaml:&#92;"gas_used&#92;""];</code>
+     * @return The gasUsed.
      */
     long getGasUsed();
   }
@@ -5178,30 +5571,40 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.GasInfo}
    */
-  public  static final class GasInfo extends
+  public static final class GasInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.GasInfo)
       GasInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GasInfo.newBuilder() to construct.
     private GasInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private GasInfo() {
-      gasWanted_ = 0L;
-      gasUsed_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GasInfo();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GasInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5210,12 +5613,6 @@ public final class Abci {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               gasWanted_ = input.readUInt64();
@@ -5226,6 +5623,13 @@ public final class Abci {
               gasUsed_ = input.readUInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5234,6 +5638,7 @@ public final class Abci {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5242,6 +5647,7 @@ public final class Abci {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_GasInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_GasInfo_fieldAccessorTable
@@ -5256,8 +5662,10 @@ public final class Abci {
      * GasWanted is the maximum units of work we allow this tx to perform.
      * </pre>
      *
-     * <code>optional uint64 gas_wanted = 1;</code>
+     * <code>uint64 gas_wanted = 1 [(.gogoproto.moretags) = "yaml:&#92;"gas_wanted&#92;""];</code>
+     * @return The gasWanted.
      */
+    @java.lang.Override
     public long getGasWanted() {
       return gasWanted_;
     }
@@ -5269,13 +5677,16 @@ public final class Abci {
      * GasUsed is the amount of gas actually consumed.
      * </pre>
      *
-     * <code>optional uint64 gas_used = 2;</code>
+     * <code>uint64 gas_used = 2 [(.gogoproto.moretags) = "yaml:&#92;"gas_used&#92;""];</code>
+     * @return The gasUsed.
      */
+    @java.lang.Override
     public long getGasUsed() {
       return gasUsed_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5285,6 +5696,7 @@ public final class Abci {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (gasWanted_ != 0L) {
@@ -5293,8 +5705,10 @@ public final class Abci {
       if (gasUsed_ != 0L) {
         output.writeUInt64(2, gasUsed_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5308,11 +5722,11 @@ public final class Abci {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, gasUsed_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5323,12 +5737,12 @@ public final class Abci {
       }
       cosmos.base.abci.v1beta1.Abci.GasInfo other = (cosmos.base.abci.v1beta1.Abci.GasInfo) obj;
 
-      boolean result = true;
-      result = result && (getGasWanted()
-          == other.getGasWanted());
-      result = result && (getGasUsed()
-          == other.getGasUsed());
-      return result;
+      if (getGasWanted()
+          != other.getGasWanted()) return false;
+      if (getGasUsed()
+          != other.getGasUsed()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5337,7 +5751,7 @@ public final class Abci {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GAS_WANTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGasWanted());
@@ -5349,6 +5763,17 @@ public final class Abci {
       return hash;
     }
 
+    public static cosmos.base.abci.v1beta1.Abci.GasInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.GasInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.abci.v1beta1.Abci.GasInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5408,6 +5833,7 @@ public final class Abci {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5415,6 +5841,7 @@ public final class Abci {
     public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.GasInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5442,6 +5869,7 @@ public final class Abci {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_GasInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_GasInfo_fieldAccessorTable
@@ -5464,6 +5892,7 @@ public final class Abci {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         gasWanted_ = 0L;
@@ -5473,15 +5902,18 @@ public final class Abci {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_GasInfo_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.GasInfo getDefaultInstanceForType() {
         return cosmos.base.abci.v1beta1.Abci.GasInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.GasInfo build() {
         cosmos.base.abci.v1beta1.Abci.GasInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -5490,6 +5922,7 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.GasInfo buildPartial() {
         cosmos.base.abci.v1beta1.Abci.GasInfo result = new cosmos.base.abci.v1beta1.Abci.GasInfo(this);
         result.gasWanted_ = gasWanted_;
@@ -5498,32 +5931,39 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.abci.v1beta1.Abci.GasInfo) {
           return mergeFrom((cosmos.base.abci.v1beta1.Abci.GasInfo)other);
@@ -5541,14 +5981,17 @@ public final class Abci {
         if (other.getGasUsed() != 0L) {
           setGasUsed(other.getGasUsed());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5573,8 +6016,10 @@ public final class Abci {
        * GasWanted is the maximum units of work we allow this tx to perform.
        * </pre>
        *
-       * <code>optional uint64 gas_wanted = 1;</code>
+       * <code>uint64 gas_wanted = 1 [(.gogoproto.moretags) = "yaml:&#92;"gas_wanted&#92;""];</code>
+       * @return The gasWanted.
        */
+      @java.lang.Override
       public long getGasWanted() {
         return gasWanted_;
       }
@@ -5583,7 +6028,9 @@ public final class Abci {
        * GasWanted is the maximum units of work we allow this tx to perform.
        * </pre>
        *
-       * <code>optional uint64 gas_wanted = 1;</code>
+       * <code>uint64 gas_wanted = 1 [(.gogoproto.moretags) = "yaml:&#92;"gas_wanted&#92;""];</code>
+       * @param value The gasWanted to set.
+       * @return This builder for chaining.
        */
       public Builder setGasWanted(long value) {
         
@@ -5596,7 +6043,8 @@ public final class Abci {
        * GasWanted is the maximum units of work we allow this tx to perform.
        * </pre>
        *
-       * <code>optional uint64 gas_wanted = 1;</code>
+       * <code>uint64 gas_wanted = 1 [(.gogoproto.moretags) = "yaml:&#92;"gas_wanted&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearGasWanted() {
         
@@ -5611,8 +6059,10 @@ public final class Abci {
        * GasUsed is the amount of gas actually consumed.
        * </pre>
        *
-       * <code>optional uint64 gas_used = 2;</code>
+       * <code>uint64 gas_used = 2 [(.gogoproto.moretags) = "yaml:&#92;"gas_used&#92;""];</code>
+       * @return The gasUsed.
        */
+      @java.lang.Override
       public long getGasUsed() {
         return gasUsed_;
       }
@@ -5621,7 +6071,9 @@ public final class Abci {
        * GasUsed is the amount of gas actually consumed.
        * </pre>
        *
-       * <code>optional uint64 gas_used = 2;</code>
+       * <code>uint64 gas_used = 2 [(.gogoproto.moretags) = "yaml:&#92;"gas_used&#92;""];</code>
+       * @param value The gasUsed to set.
+       * @return This builder for chaining.
        */
       public Builder setGasUsed(long value) {
         
@@ -5634,7 +6086,8 @@ public final class Abci {
        * GasUsed is the amount of gas actually consumed.
        * </pre>
        *
-       * <code>optional uint64 gas_used = 2;</code>
+       * <code>uint64 gas_used = 2 [(.gogoproto.moretags) = "yaml:&#92;"gas_used&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearGasUsed() {
         
@@ -5642,14 +6095,16 @@ public final class Abci {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5668,11 +6123,12 @@ public final class Abci {
 
     private static final com.google.protobuf.Parser<GasInfo>
         PARSER = new com.google.protobuf.AbstractParser<GasInfo>() {
+      @java.lang.Override
       public GasInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GasInfo(input, extensionRegistry);
+        return new GasInfo(input, extensionRegistry);
       }
     };
 
@@ -5685,6 +6141,7 @@ public final class Abci {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.GasInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5701,7 +6158,8 @@ public final class Abci {
      * length prefixed in order to separate data from multiple message executions.
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>bytes data = 1;</code>
+     * @return The data.
      */
     com.google.protobuf.ByteString getData();
 
@@ -5710,7 +6168,8 @@ public final class Abci {
      * Log contains the log information from message or handler execution.
      * </pre>
      *
-     * <code>optional string log = 2;</code>
+     * <code>string log = 2;</code>
+     * @return The log.
      */
     java.lang.String getLog();
     /**
@@ -5718,7 +6177,8 @@ public final class Abci {
      * Log contains the log information from message or handler execution.
      * </pre>
      *
-     * <code>optional string log = 2;</code>
+     * <code>string log = 2;</code>
+     * @return The bytes for log.
      */
     com.google.protobuf.ByteString
         getLogBytes();
@@ -5729,7 +6189,7 @@ public final class Abci {
      * or handler execution.
      * </pre>
      *
-     * <code>repeated .tendermint.abci.Event events = 3;</code>
+     * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<tendermint.abci.Types.Event> 
         getEventsList();
@@ -5739,7 +6199,7 @@ public final class Abci {
      * or handler execution.
      * </pre>
      *
-     * <code>repeated .tendermint.abci.Event events = 3;</code>
+     * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
      */
     tendermint.abci.Types.Event getEvents(int index);
     /**
@@ -5748,7 +6208,7 @@ public final class Abci {
      * or handler execution.
      * </pre>
      *
-     * <code>repeated .tendermint.abci.Event events = 3;</code>
+     * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
      */
     int getEventsCount();
     /**
@@ -5757,7 +6217,7 @@ public final class Abci {
      * or handler execution.
      * </pre>
      *
-     * <code>repeated .tendermint.abci.Event events = 3;</code>
+     * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends tendermint.abci.Types.EventOrBuilder> 
         getEventsOrBuilderList();
@@ -5767,7 +6227,7 @@ public final class Abci {
      * or handler execution.
      * </pre>
      *
-     * <code>repeated .tendermint.abci.Event events = 3;</code>
+     * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
      */
     tendermint.abci.Types.EventOrBuilder getEventsOrBuilder(
         int index);
@@ -5779,10 +6239,11 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.Result}
    */
-  public  static final class Result extends
+  public static final class Result extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.Result)
       ResultOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Result.newBuilder() to construct.
     private Result(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5794,16 +6255,28 @@ public final class Abci {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Result();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Result(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5812,12 +6285,6 @@ public final class Abci {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               data_ = input.readBytes();
@@ -5830,12 +6297,19 @@ public final class Abci {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 events_ = new java.util.ArrayList<tendermint.abci.Types.Event>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               events_.add(
                   input.readMessage(tendermint.abci.Types.Event.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -5846,9 +6320,10 @@ public final class Abci {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           events_ = java.util.Collections.unmodifiableList(events_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5857,6 +6332,7 @@ public final class Abci {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_Result_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_Result_fieldAccessorTable
@@ -5864,7 +6340,6 @@ public final class Abci {
               cosmos.base.abci.v1beta1.Abci.Result.class, cosmos.base.abci.v1beta1.Abci.Result.Builder.class);
     }
 
-    private int bitField0_;
     public static final int DATA_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString data_;
     /**
@@ -5873,8 +6348,10 @@ public final class Abci {
      * length prefixed in order to separate data from multiple message executions.
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>bytes data = 1;</code>
+     * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
@@ -5886,8 +6363,10 @@ public final class Abci {
      * Log contains the log information from message or handler execution.
      * </pre>
      *
-     * <code>optional string log = 2;</code>
+     * <code>string log = 2;</code>
+     * @return The log.
      */
+    @java.lang.Override
     public java.lang.String getLog() {
       java.lang.Object ref = log_;
       if (ref instanceof java.lang.String) {
@@ -5905,8 +6384,10 @@ public final class Abci {
      * Log contains the log information from message or handler execution.
      * </pre>
      *
-     * <code>optional string log = 2;</code>
+     * <code>string log = 2;</code>
+     * @return The bytes for log.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getLogBytes() {
       java.lang.Object ref = log_;
@@ -5929,8 +6410,9 @@ public final class Abci {
      * or handler execution.
      * </pre>
      *
-     * <code>repeated .tendermint.abci.Event events = 3;</code>
+     * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<tendermint.abci.Types.Event> getEventsList() {
       return events_;
     }
@@ -5940,8 +6422,9 @@ public final class Abci {
      * or handler execution.
      * </pre>
      *
-     * <code>repeated .tendermint.abci.Event events = 3;</code>
+     * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends tendermint.abci.Types.EventOrBuilder> 
         getEventsOrBuilderList() {
       return events_;
@@ -5952,8 +6435,9 @@ public final class Abci {
      * or handler execution.
      * </pre>
      *
-     * <code>repeated .tendermint.abci.Event events = 3;</code>
+     * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public int getEventsCount() {
       return events_.size();
     }
@@ -5963,8 +6447,9 @@ public final class Abci {
      * or handler execution.
      * </pre>
      *
-     * <code>repeated .tendermint.abci.Event events = 3;</code>
+     * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public tendermint.abci.Types.Event getEvents(int index) {
       return events_.get(index);
     }
@@ -5974,14 +6459,16 @@ public final class Abci {
      * or handler execution.
      * </pre>
      *
-     * <code>repeated .tendermint.abci.Event events = 3;</code>
+     * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public tendermint.abci.Types.EventOrBuilder getEventsOrBuilder(
         int index) {
       return events_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5991,6 +6478,7 @@ public final class Abci {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!data_.isEmpty()) {
@@ -6002,8 +6490,10 @@ public final class Abci {
       for (int i = 0; i < events_.size(); i++) {
         output.writeMessage(3, events_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6020,11 +6510,11 @@ public final class Abci {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, events_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6035,14 +6525,14 @@ public final class Abci {
       }
       cosmos.base.abci.v1beta1.Abci.Result other = (cosmos.base.abci.v1beta1.Abci.Result) obj;
 
-      boolean result = true;
-      result = result && getData()
-          .equals(other.getData());
-      result = result && getLog()
-          .equals(other.getLog());
-      result = result && getEventsList()
-          .equals(other.getEventsList());
-      return result;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!getLog()
+          .equals(other.getLog())) return false;
+      if (!getEventsList()
+          .equals(other.getEventsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6051,7 +6541,7 @@ public final class Abci {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (37 * hash) + LOG_FIELD_NUMBER;
@@ -6065,6 +6555,17 @@ public final class Abci {
       return hash;
     }
 
+    public static cosmos.base.abci.v1beta1.Abci.Result parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.Result parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.abci.v1beta1.Abci.Result parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6124,6 +6625,7 @@ public final class Abci {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6131,6 +6633,7 @@ public final class Abci {
     public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.Result prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6158,6 +6661,7 @@ public final class Abci {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_Result_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_Result_fieldAccessorTable
@@ -6181,6 +6685,7 @@ public final class Abci {
           getEventsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         data_ = com.google.protobuf.ByteString.EMPTY;
@@ -6189,22 +6694,25 @@ public final class Abci {
 
         if (eventsBuilder_ == null) {
           events_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           eventsBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_Result_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.Result getDefaultInstanceForType() {
         return cosmos.base.abci.v1beta1.Abci.Result.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.Result build() {
         cosmos.base.abci.v1beta1.Abci.Result result = buildPartial();
         if (!result.isInitialized()) {
@@ -6213,52 +6721,58 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.Result buildPartial() {
         cosmos.base.abci.v1beta1.Abci.Result result = new cosmos.base.abci.v1beta1.Abci.Result(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.data_ = data_;
         result.log_ = log_;
         if (eventsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             events_ = java.util.Collections.unmodifiableList(events_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.events_ = events_;
         } else {
           result.events_ = eventsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.abci.v1beta1.Abci.Result) {
           return mergeFrom((cosmos.base.abci.v1beta1.Abci.Result)other);
@@ -6281,7 +6795,7 @@ public final class Abci {
           if (!other.events_.isEmpty()) {
             if (events_.isEmpty()) {
               events_ = other.events_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureEventsIsMutable();
               events_.addAll(other.events_);
@@ -6294,7 +6808,7 @@ public final class Abci {
               eventsBuilder_.dispose();
               eventsBuilder_ = null;
               events_ = other.events_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               eventsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getEventsFieldBuilder() : null;
@@ -6303,14 +6817,17 @@ public final class Abci {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6337,8 +6854,10 @@ public final class Abci {
        * length prefixed in order to separate data from multiple message executions.
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @return The data.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
@@ -6348,7 +6867,9 @@ public final class Abci {
        * length prefixed in order to separate data from multiple message executions.
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -6365,7 +6886,8 @@ public final class Abci {
        * length prefixed in order to separate data from multiple message executions.
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -6380,7 +6902,8 @@ public final class Abci {
        * Log contains the log information from message or handler execution.
        * </pre>
        *
-       * <code>optional string log = 2;</code>
+       * <code>string log = 2;</code>
+       * @return The log.
        */
       public java.lang.String getLog() {
         java.lang.Object ref = log_;
@@ -6399,7 +6922,8 @@ public final class Abci {
        * Log contains the log information from message or handler execution.
        * </pre>
        *
-       * <code>optional string log = 2;</code>
+       * <code>string log = 2;</code>
+       * @return The bytes for log.
        */
       public com.google.protobuf.ByteString
           getLogBytes() {
@@ -6419,7 +6943,9 @@ public final class Abci {
        * Log contains the log information from message or handler execution.
        * </pre>
        *
-       * <code>optional string log = 2;</code>
+       * <code>string log = 2;</code>
+       * @param value The log to set.
+       * @return This builder for chaining.
        */
       public Builder setLog(
           java.lang.String value) {
@@ -6436,7 +6962,8 @@ public final class Abci {
        * Log contains the log information from message or handler execution.
        * </pre>
        *
-       * <code>optional string log = 2;</code>
+       * <code>string log = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLog() {
         
@@ -6449,7 +6976,9 @@ public final class Abci {
        * Log contains the log information from message or handler execution.
        * </pre>
        *
-       * <code>optional string log = 2;</code>
+       * <code>string log = 2;</code>
+       * @param value The bytes for log to set.
+       * @return This builder for chaining.
        */
       public Builder setLogBytes(
           com.google.protobuf.ByteString value) {
@@ -6466,9 +6995,9 @@ public final class Abci {
       private java.util.List<tendermint.abci.Types.Event> events_ =
         java.util.Collections.emptyList();
       private void ensureEventsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           events_ = new java.util.ArrayList<tendermint.abci.Types.Event>(events_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -6481,7 +7010,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<tendermint.abci.Types.Event> getEventsList() {
         if (eventsBuilder_ == null) {
@@ -6496,7 +7025,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public int getEventsCount() {
         if (eventsBuilder_ == null) {
@@ -6511,7 +7040,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public tendermint.abci.Types.Event getEvents(int index) {
         if (eventsBuilder_ == null) {
@@ -6526,7 +7055,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setEvents(
           int index, tendermint.abci.Types.Event value) {
@@ -6548,7 +7077,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setEvents(
           int index, tendermint.abci.Types.Event.Builder builderForValue) {
@@ -6567,7 +7096,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addEvents(tendermint.abci.Types.Event value) {
         if (eventsBuilder_ == null) {
@@ -6588,7 +7117,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addEvents(
           int index, tendermint.abci.Types.Event value) {
@@ -6610,7 +7139,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addEvents(
           tendermint.abci.Types.Event.Builder builderForValue) {
@@ -6629,7 +7158,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addEvents(
           int index, tendermint.abci.Types.Event.Builder builderForValue) {
@@ -6648,7 +7177,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllEvents(
           java.lang.Iterable<? extends tendermint.abci.Types.Event> values) {
@@ -6668,12 +7197,12 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearEvents() {
         if (eventsBuilder_ == null) {
           events_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           eventsBuilder_.clear();
@@ -6686,7 +7215,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeEvents(int index) {
         if (eventsBuilder_ == null) {
@@ -6704,7 +7233,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public tendermint.abci.Types.Event.Builder getEventsBuilder(
           int index) {
@@ -6716,7 +7245,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public tendermint.abci.Types.EventOrBuilder getEventsOrBuilder(
           int index) {
@@ -6731,7 +7260,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends tendermint.abci.Types.EventOrBuilder> 
            getEventsOrBuilderList() {
@@ -6747,7 +7276,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public tendermint.abci.Types.Event.Builder addEventsBuilder() {
         return getEventsFieldBuilder().addBuilder(
@@ -6759,7 +7288,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public tendermint.abci.Types.Event.Builder addEventsBuilder(
           int index) {
@@ -6772,7 +7301,7 @@ public final class Abci {
        * or handler execution.
        * </pre>
        *
-       * <code>repeated .tendermint.abci.Event events = 3;</code>
+       * <code>repeated .tendermint.abci.Event events = 3 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<tendermint.abci.Types.Event.Builder> 
            getEventsBuilderList() {
@@ -6785,21 +7314,23 @@ public final class Abci {
           eventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               tendermint.abci.Types.Event, tendermint.abci.Types.Event.Builder, tendermint.abci.Types.EventOrBuilder>(
                   events_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           events_ = null;
         }
         return eventsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6818,11 +7349,12 @@ public final class Abci {
 
     private static final com.google.protobuf.Parser<Result>
         PARSER = new com.google.protobuf.AbstractParser<Result>() {
+      @java.lang.Override
       public Result parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Result(input, extensionRegistry);
+        return new Result(input, extensionRegistry);
       }
     };
 
@@ -6835,6 +7367,7 @@ public final class Abci {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.Result getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6846,28 +7379,32 @@ public final class Abci {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+     * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return Whether the gasInfo field is set.
      */
     boolean hasGasInfo();
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+     * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return The gasInfo.
      */
     cosmos.base.abci.v1beta1.Abci.GasInfo getGasInfo();
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+     * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     cosmos.base.abci.v1beta1.Abci.GasInfoOrBuilder getGasInfoOrBuilder();
 
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+     * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
+     * @return Whether the result field is set.
      */
     boolean hasResult();
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+     * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
+     * @return The result.
      */
     cosmos.base.abci.v1beta1.Abci.Result getResult();
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+     * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
      */
     cosmos.base.abci.v1beta1.Abci.ResultOrBuilder getResultOrBuilder();
   }
@@ -6879,10 +7416,11 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.SimulationResponse}
    */
-  public  static final class SimulationResponse extends
+  public static final class SimulationResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.SimulationResponse)
       SimulationResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use SimulationResponse.newBuilder() to construct.
     private SimulationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6891,16 +7429,27 @@ public final class Abci {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SimulationResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private SimulationResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6909,12 +7458,6 @@ public final class Abci {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmos.base.abci.v1beta1.Abci.GasInfo.Builder subBuilder = null;
               if (gasInfo_ != null) {
@@ -6941,6 +7484,13 @@ public final class Abci {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6949,6 +7499,7 @@ public final class Abci {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6957,6 +7508,7 @@ public final class Abci {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SimulationResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SimulationResponse_fieldAccessorTable
@@ -6967,20 +7519,25 @@ public final class Abci {
     public static final int GAS_INFO_FIELD_NUMBER = 1;
     private cosmos.base.abci.v1beta1.Abci.GasInfo gasInfo_;
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+     * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return Whether the gasInfo field is set.
      */
+    @java.lang.Override
     public boolean hasGasInfo() {
       return gasInfo_ != null;
     }
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+     * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return The gasInfo.
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.GasInfo getGasInfo() {
       return gasInfo_ == null ? cosmos.base.abci.v1beta1.Abci.GasInfo.getDefaultInstance() : gasInfo_;
     }
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+     * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.GasInfoOrBuilder getGasInfoOrBuilder() {
       return getGasInfo();
     }
@@ -6988,25 +7545,31 @@ public final class Abci {
     public static final int RESULT_FIELD_NUMBER = 2;
     private cosmos.base.abci.v1beta1.Abci.Result result_;
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+     * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
+     * @return Whether the result field is set.
      */
+    @java.lang.Override
     public boolean hasResult() {
       return result_ != null;
     }
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+     * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
+     * @return The result.
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.Result getResult() {
       return result_ == null ? cosmos.base.abci.v1beta1.Abci.Result.getDefaultInstance() : result_;
     }
     /**
-     * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+     * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.ResultOrBuilder getResultOrBuilder() {
       return getResult();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7016,6 +7579,7 @@ public final class Abci {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (gasInfo_ != null) {
@@ -7024,8 +7588,10 @@ public final class Abci {
       if (result_ != null) {
         output.writeMessage(2, getResult());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7039,11 +7605,11 @@ public final class Abci {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getResult());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7054,18 +7620,18 @@ public final class Abci {
       }
       cosmos.base.abci.v1beta1.Abci.SimulationResponse other = (cosmos.base.abci.v1beta1.Abci.SimulationResponse) obj;
 
-      boolean result = true;
-      result = result && (hasGasInfo() == other.hasGasInfo());
+      if (hasGasInfo() != other.hasGasInfo()) return false;
       if (hasGasInfo()) {
-        result = result && getGasInfo()
-            .equals(other.getGasInfo());
+        if (!getGasInfo()
+            .equals(other.getGasInfo())) return false;
       }
-      result = result && (hasResult() == other.hasResult());
+      if (hasResult() != other.hasResult()) return false;
       if (hasResult()) {
-        result = result && getResult()
-            .equals(other.getResult());
+        if (!getResult()
+            .equals(other.getResult())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7074,7 +7640,7 @@ public final class Abci {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasGasInfo()) {
         hash = (37 * hash) + GAS_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getGasInfo().hashCode();
@@ -7088,6 +7654,17 @@ public final class Abci {
       return hash;
     }
 
+    public static cosmos.base.abci.v1beta1.Abci.SimulationResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SimulationResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.abci.v1beta1.Abci.SimulationResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7147,6 +7724,7 @@ public final class Abci {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7154,6 +7732,7 @@ public final class Abci {
     public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.SimulationResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7182,6 +7761,7 @@ public final class Abci {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SimulationResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SimulationResponse_fieldAccessorTable
@@ -7204,6 +7784,7 @@ public final class Abci {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (gasInfoBuilder_ == null) {
@@ -7221,15 +7802,18 @@ public final class Abci {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SimulationResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.SimulationResponse getDefaultInstanceForType() {
         return cosmos.base.abci.v1beta1.Abci.SimulationResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.SimulationResponse build() {
         cosmos.base.abci.v1beta1.Abci.SimulationResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -7238,6 +7822,7 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.SimulationResponse buildPartial() {
         cosmos.base.abci.v1beta1.Abci.SimulationResponse result = new cosmos.base.abci.v1beta1.Abci.SimulationResponse(this);
         if (gasInfoBuilder_ == null) {
@@ -7254,32 +7839,39 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.abci.v1beta1.Abci.SimulationResponse) {
           return mergeFrom((cosmos.base.abci.v1beta1.Abci.SimulationResponse)other);
@@ -7297,14 +7889,17 @@ public final class Abci {
         if (other.hasResult()) {
           mergeResult(other.getResult());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7323,17 +7918,19 @@ public final class Abci {
         return this;
       }
 
-      private cosmos.base.abci.v1beta1.Abci.GasInfo gasInfo_ = null;
+      private cosmos.base.abci.v1beta1.Abci.GasInfo gasInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.abci.v1beta1.Abci.GasInfo, cosmos.base.abci.v1beta1.Abci.GasInfo.Builder, cosmos.base.abci.v1beta1.Abci.GasInfoOrBuilder> gasInfoBuilder_;
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+       * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+       * @return Whether the gasInfo field is set.
        */
       public boolean hasGasInfo() {
         return gasInfoBuilder_ != null || gasInfo_ != null;
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+       * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+       * @return The gasInfo.
        */
       public cosmos.base.abci.v1beta1.Abci.GasInfo getGasInfo() {
         if (gasInfoBuilder_ == null) {
@@ -7343,7 +7940,7 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+       * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
        */
       public Builder setGasInfo(cosmos.base.abci.v1beta1.Abci.GasInfo value) {
         if (gasInfoBuilder_ == null) {
@@ -7359,7 +7956,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+       * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
        */
       public Builder setGasInfo(
           cosmos.base.abci.v1beta1.Abci.GasInfo.Builder builderForValue) {
@@ -7373,7 +7970,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+       * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
        */
       public Builder mergeGasInfo(cosmos.base.abci.v1beta1.Abci.GasInfo value) {
         if (gasInfoBuilder_ == null) {
@@ -7391,7 +7988,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+       * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
        */
       public Builder clearGasInfo() {
         if (gasInfoBuilder_ == null) {
@@ -7405,7 +8002,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+       * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.GasInfo.Builder getGasInfoBuilder() {
         
@@ -7413,7 +8010,7 @@ public final class Abci {
         return getGasInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+       * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
        */
       public cosmos.base.abci.v1beta1.Abci.GasInfoOrBuilder getGasInfoOrBuilder() {
         if (gasInfoBuilder_ != null) {
@@ -7424,7 +8021,7 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.GasInfo gas_info = 1;</code>
+       * <code>.cosmos.base.abci.v1beta1.GasInfo gas_info = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.abci.v1beta1.Abci.GasInfo, cosmos.base.abci.v1beta1.Abci.GasInfo.Builder, cosmos.base.abci.v1beta1.Abci.GasInfoOrBuilder> 
@@ -7440,17 +8037,19 @@ public final class Abci {
         return gasInfoBuilder_;
       }
 
-      private cosmos.base.abci.v1beta1.Abci.Result result_ = null;
+      private cosmos.base.abci.v1beta1.Abci.Result result_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.abci.v1beta1.Abci.Result, cosmos.base.abci.v1beta1.Abci.Result.Builder, cosmos.base.abci.v1beta1.Abci.ResultOrBuilder> resultBuilder_;
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * @return Whether the result field is set.
        */
       public boolean hasResult() {
         return resultBuilder_ != null || result_ != null;
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * @return The result.
        */
       public cosmos.base.abci.v1beta1.Abci.Result getResult() {
         if (resultBuilder_ == null) {
@@ -7460,7 +8059,7 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
        */
       public Builder setResult(cosmos.base.abci.v1beta1.Abci.Result value) {
         if (resultBuilder_ == null) {
@@ -7476,7 +8075,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
        */
       public Builder setResult(
           cosmos.base.abci.v1beta1.Abci.Result.Builder builderForValue) {
@@ -7490,7 +8089,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
        */
       public Builder mergeResult(cosmos.base.abci.v1beta1.Abci.Result value) {
         if (resultBuilder_ == null) {
@@ -7508,7 +8107,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
        */
       public Builder clearResult() {
         if (resultBuilder_ == null) {
@@ -7522,7 +8121,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
        */
       public cosmos.base.abci.v1beta1.Abci.Result.Builder getResultBuilder() {
         
@@ -7530,7 +8129,7 @@ public final class Abci {
         return getResultFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
        */
       public cosmos.base.abci.v1beta1.Abci.ResultOrBuilder getResultOrBuilder() {
         if (resultBuilder_ != null) {
@@ -7541,7 +8140,7 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional .cosmos.base.abci.v1beta1.Result result = 2;</code>
+       * <code>.cosmos.base.abci.v1beta1.Result result = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.abci.v1beta1.Abci.Result, cosmos.base.abci.v1beta1.Abci.Result.Builder, cosmos.base.abci.v1beta1.Abci.ResultOrBuilder> 
@@ -7556,14 +8155,16 @@ public final class Abci {
         }
         return resultBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7582,11 +8183,12 @@ public final class Abci {
 
     private static final com.google.protobuf.Parser<SimulationResponse>
         PARSER = new com.google.protobuf.AbstractParser<SimulationResponse>() {
+      @java.lang.Override
       public SimulationResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SimulationResponse(input, extensionRegistry);
+        return new SimulationResponse(input, extensionRegistry);
       }
     };
 
@@ -7599,6 +8201,7 @@ public final class Abci {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.SimulationResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7610,17 +8213,20 @@ public final class Abci {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string msg_type = 1;</code>
+     * <code>string msg_type = 1;</code>
+     * @return The msgType.
      */
     java.lang.String getMsgType();
     /**
-     * <code>optional string msg_type = 1;</code>
+     * <code>string msg_type = 1;</code>
+     * @return The bytes for msgType.
      */
     com.google.protobuf.ByteString
         getMsgTypeBytes();
 
     /**
-     * <code>optional bytes data = 2;</code>
+     * <code>bytes data = 2;</code>
+     * @return The data.
      */
     com.google.protobuf.ByteString getData();
   }
@@ -7632,10 +8238,11 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.MsgData}
    */
-  public  static final class MsgData extends
+  public static final class MsgData extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.MsgData)
       MsgDataOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgData.newBuilder() to construct.
     private MsgData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7646,16 +8253,27 @@ public final class Abci {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgData();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgData(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7664,12 +8282,6 @@ public final class Abci {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -7681,6 +8293,13 @@ public final class Abci {
               data_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7689,6 +8308,7 @@ public final class Abci {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7697,6 +8317,7 @@ public final class Abci {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_MsgData_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_MsgData_fieldAccessorTable
@@ -7707,8 +8328,10 @@ public final class Abci {
     public static final int MSG_TYPE_FIELD_NUMBER = 1;
     private volatile java.lang.Object msgType_;
     /**
-     * <code>optional string msg_type = 1;</code>
+     * <code>string msg_type = 1;</code>
+     * @return The msgType.
      */
+    @java.lang.Override
     public java.lang.String getMsgType() {
       java.lang.Object ref = msgType_;
       if (ref instanceof java.lang.String) {
@@ -7722,8 +8345,10 @@ public final class Abci {
       }
     }
     /**
-     * <code>optional string msg_type = 1;</code>
+     * <code>string msg_type = 1;</code>
+     * @return The bytes for msgType.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMsgTypeBytes() {
       java.lang.Object ref = msgType_;
@@ -7741,13 +8366,16 @@ public final class Abci {
     public static final int DATA_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString data_;
     /**
-     * <code>optional bytes data = 2;</code>
+     * <code>bytes data = 2;</code>
+     * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7757,6 +8385,7 @@ public final class Abci {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getMsgTypeBytes().isEmpty()) {
@@ -7765,8 +8394,10 @@ public final class Abci {
       if (!data_.isEmpty()) {
         output.writeBytes(2, data_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7779,11 +8410,11 @@ public final class Abci {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, data_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7794,12 +8425,12 @@ public final class Abci {
       }
       cosmos.base.abci.v1beta1.Abci.MsgData other = (cosmos.base.abci.v1beta1.Abci.MsgData) obj;
 
-      boolean result = true;
-      result = result && getMsgType()
-          .equals(other.getMsgType());
-      result = result && getData()
-          .equals(other.getData());
-      return result;
+      if (!getMsgType()
+          .equals(other.getMsgType())) return false;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7808,7 +8439,7 @@ public final class Abci {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getMsgType().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
@@ -7818,6 +8449,17 @@ public final class Abci {
       return hash;
     }
 
+    public static cosmos.base.abci.v1beta1.Abci.MsgData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.MsgData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.abci.v1beta1.Abci.MsgData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7877,6 +8519,7 @@ public final class Abci {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7884,6 +8527,7 @@ public final class Abci {
     public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.MsgData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7912,6 +8556,7 @@ public final class Abci {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_MsgData_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_MsgData_fieldAccessorTable
@@ -7934,6 +8579,7 @@ public final class Abci {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         msgType_ = "";
@@ -7943,15 +8589,18 @@ public final class Abci {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_MsgData_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.MsgData getDefaultInstanceForType() {
         return cosmos.base.abci.v1beta1.Abci.MsgData.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.MsgData build() {
         cosmos.base.abci.v1beta1.Abci.MsgData result = buildPartial();
         if (!result.isInitialized()) {
@@ -7960,6 +8609,7 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.MsgData buildPartial() {
         cosmos.base.abci.v1beta1.Abci.MsgData result = new cosmos.base.abci.v1beta1.Abci.MsgData(this);
         result.msgType_ = msgType_;
@@ -7968,32 +8618,39 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.abci.v1beta1.Abci.MsgData) {
           return mergeFrom((cosmos.base.abci.v1beta1.Abci.MsgData)other);
@@ -8012,14 +8669,17 @@ public final class Abci {
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8040,7 +8700,8 @@ public final class Abci {
 
       private java.lang.Object msgType_ = "";
       /**
-       * <code>optional string msg_type = 1;</code>
+       * <code>string msg_type = 1;</code>
+       * @return The msgType.
        */
       public java.lang.String getMsgType() {
         java.lang.Object ref = msgType_;
@@ -8055,7 +8716,8 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional string msg_type = 1;</code>
+       * <code>string msg_type = 1;</code>
+       * @return The bytes for msgType.
        */
       public com.google.protobuf.ByteString
           getMsgTypeBytes() {
@@ -8071,7 +8733,9 @@ public final class Abci {
         }
       }
       /**
-       * <code>optional string msg_type = 1;</code>
+       * <code>string msg_type = 1;</code>
+       * @param value The msgType to set.
+       * @return This builder for chaining.
        */
       public Builder setMsgType(
           java.lang.String value) {
@@ -8084,7 +8748,8 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional string msg_type = 1;</code>
+       * <code>string msg_type = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMsgType() {
         
@@ -8093,7 +8758,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional string msg_type = 1;</code>
+       * <code>string msg_type = 1;</code>
+       * @param value The bytes for msgType to set.
+       * @return This builder for chaining.
        */
       public Builder setMsgTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -8109,13 +8776,17 @@ public final class Abci {
 
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes data = 2;</code>
+       * <code>bytes data = 2;</code>
+       * @return The data.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
       /**
-       * <code>optional bytes data = 2;</code>
+       * <code>bytes data = 2;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -8127,7 +8798,8 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>optional bytes data = 2;</code>
+       * <code>bytes data = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -8135,14 +8807,16 @@ public final class Abci {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8161,11 +8835,12 @@ public final class Abci {
 
     private static final com.google.protobuf.Parser<MsgData>
         PARSER = new com.google.protobuf.AbstractParser<MsgData>() {
+      @java.lang.Override
       public MsgData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgData(input, extensionRegistry);
+        return new MsgData(input, extensionRegistry);
       }
     };
 
@@ -8178,6 +8853,7 @@ public final class Abci {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.MsgData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8220,10 +8896,11 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.TxMsgData}
    */
-  public  static final class TxMsgData extends
+  public static final class TxMsgData extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.TxMsgData)
       TxMsgDataOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use TxMsgData.newBuilder() to construct.
     private TxMsgData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8233,16 +8910,28 @@ public final class Abci {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxMsgData();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private TxMsgData(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8251,19 +8940,20 @@ public final class Abci {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 data_ = new java.util.ArrayList<cosmos.base.abci.v1beta1.Abci.MsgData>();
                 mutable_bitField0_ |= 0x00000001;
               }
               data_.add(
                   input.readMessage(cosmos.base.abci.v1beta1.Abci.MsgData.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -8274,9 +8964,10 @@ public final class Abci {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           data_ = java.util.Collections.unmodifiableList(data_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8285,6 +8976,7 @@ public final class Abci {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_TxMsgData_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_TxMsgData_fieldAccessorTable
@@ -8297,12 +8989,14 @@ public final class Abci {
     /**
      * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> getDataList() {
       return data_;
     }
     /**
      * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
         getDataOrBuilderList() {
       return data_;
@@ -8310,24 +9004,28 @@ public final class Abci {
     /**
      * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
+    @java.lang.Override
     public int getDataCount() {
       return data_.size();
     }
     /**
      * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.MsgData getData(int index) {
       return data_.get(index);
     }
     /**
      * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
         int index) {
       return data_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8337,13 +9035,16 @@ public final class Abci {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < data_.size(); i++) {
         output.writeMessage(1, data_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8353,11 +9054,11 @@ public final class Abci {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, data_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8368,10 +9069,10 @@ public final class Abci {
       }
       cosmos.base.abci.v1beta1.Abci.TxMsgData other = (cosmos.base.abci.v1beta1.Abci.TxMsgData) obj;
 
-      boolean result = true;
-      result = result && getDataList()
-          .equals(other.getDataList());
-      return result;
+      if (!getDataList()
+          .equals(other.getDataList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8380,7 +9081,7 @@ public final class Abci {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getDataCount() > 0) {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
         hash = (53 * hash) + getDataList().hashCode();
@@ -8390,6 +9091,17 @@ public final class Abci {
       return hash;
     }
 
+    public static cosmos.base.abci.v1beta1.Abci.TxMsgData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.TxMsgData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.abci.v1beta1.Abci.TxMsgData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8449,6 +9161,7 @@ public final class Abci {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8456,6 +9169,7 @@ public final class Abci {
     public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.TxMsgData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8484,6 +9198,7 @@ public final class Abci {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_TxMsgData_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_TxMsgData_fieldAccessorTable
@@ -8507,6 +9222,7 @@ public final class Abci {
           getDataFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (dataBuilder_ == null) {
@@ -8518,15 +9234,18 @@ public final class Abci {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_TxMsgData_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.TxMsgData getDefaultInstanceForType() {
         return cosmos.base.abci.v1beta1.Abci.TxMsgData.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.TxMsgData build() {
         cosmos.base.abci.v1beta1.Abci.TxMsgData result = buildPartial();
         if (!result.isInitialized()) {
@@ -8535,11 +9254,12 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.TxMsgData buildPartial() {
         cosmos.base.abci.v1beta1.Abci.TxMsgData result = new cosmos.base.abci.v1beta1.Abci.TxMsgData(this);
         int from_bitField0_ = bitField0_;
         if (dataBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             data_ = java.util.Collections.unmodifiableList(data_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -8551,32 +9271,39 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.abci.v1beta1.Abci.TxMsgData) {
           return mergeFrom((cosmos.base.abci.v1beta1.Abci.TxMsgData)other);
@@ -8614,14 +9341,17 @@ public final class Abci {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8644,7 +9374,7 @@ public final class Abci {
       private java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> data_ =
         java.util.Collections.emptyList();
       private void ensureDataIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           data_ = new java.util.ArrayList<cosmos.base.abci.v1beta1.Abci.MsgData>(data_);
           bitField0_ |= 0x00000001;
          }
@@ -8873,21 +9603,23 @@ public final class Abci {
           dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.abci.v1beta1.Abci.MsgData, cosmos.base.abci.v1beta1.Abci.MsgData.Builder, cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder>(
                   data_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           data_ = null;
         }
         return dataBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8906,11 +9638,12 @@ public final class Abci {
 
     private static final com.google.protobuf.Parser<TxMsgData>
         PARSER = new com.google.protobuf.AbstractParser<TxMsgData>() {
+      @java.lang.Override
       public TxMsgData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TxMsgData(input, extensionRegistry);
+        return new TxMsgData(input, extensionRegistry);
       }
     };
 
@@ -8923,6 +9656,7 @@ public final class Abci {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.TxMsgData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8938,7 +9672,8 @@ public final class Abci {
      * Count of all txs
      * </pre>
      *
-     * <code>optional uint64 total_count = 1;</code>
+     * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count", (.gogoproto.moretags) = "yaml:&#92;"total_count&#92;""];</code>
+     * @return The totalCount.
      */
     long getTotalCount();
 
@@ -8947,7 +9682,8 @@ public final class Abci {
      * Count of txs in current page
      * </pre>
      *
-     * <code>optional uint64 count = 2;</code>
+     * <code>uint64 count = 2;</code>
+     * @return The count.
      */
     long getCount();
 
@@ -8956,7 +9692,8 @@ public final class Abci {
      * Index of current page, start from 1
      * </pre>
      *
-     * <code>optional uint64 page_number = 3;</code>
+     * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number", (.gogoproto.moretags) = "yaml:&#92;"page_number&#92;""];</code>
+     * @return The pageNumber.
      */
     long getPageNumber();
 
@@ -8965,7 +9702,8 @@ public final class Abci {
      * Count of total pages
      * </pre>
      *
-     * <code>optional uint64 page_total = 4;</code>
+     * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total", (.gogoproto.moretags) = "yaml:&#92;"page_total&#92;""];</code>
+     * @return The pageTotal.
      */
     long getPageTotal();
 
@@ -8974,7 +9712,8 @@ public final class Abci {
      * Max count txs per page
      * </pre>
      *
-     * <code>optional uint64 limit = 5;</code>
+     * <code>uint64 limit = 5;</code>
+     * @return The limit.
      */
     long getLimit();
 
@@ -9029,34 +9768,42 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.SearchTxsResult}
    */
-  public  static final class SearchTxsResult extends
+  public static final class SearchTxsResult extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.SearchTxsResult)
       SearchTxsResultOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use SearchTxsResult.newBuilder() to construct.
     private SearchTxsResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private SearchTxsResult() {
-      totalCount_ = 0L;
-      count_ = 0L;
-      pageNumber_ = 0L;
-      pageTotal_ = 0L;
-      limit_ = 0L;
       txs_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SearchTxsResult();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private SearchTxsResult(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -9065,12 +9812,6 @@ public final class Abci {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               totalCount_ = input.readUInt64();
@@ -9097,12 +9838,19 @@ public final class Abci {
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 txs_ = new java.util.ArrayList<cosmos.base.abci.v1beta1.Abci.TxResponse>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               txs_.add(
                   input.readMessage(cosmos.base.abci.v1beta1.Abci.TxResponse.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -9113,9 +9861,10 @@ public final class Abci {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           txs_ = java.util.Collections.unmodifiableList(txs_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -9124,6 +9873,7 @@ public final class Abci {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_fieldAccessorTable
@@ -9131,7 +9881,6 @@ public final class Abci {
               cosmos.base.abci.v1beta1.Abci.SearchTxsResult.class, cosmos.base.abci.v1beta1.Abci.SearchTxsResult.Builder.class);
     }
 
-    private int bitField0_;
     public static final int TOTAL_COUNT_FIELD_NUMBER = 1;
     private long totalCount_;
     /**
@@ -9139,8 +9888,10 @@ public final class Abci {
      * Count of all txs
      * </pre>
      *
-     * <code>optional uint64 total_count = 1;</code>
+     * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count", (.gogoproto.moretags) = "yaml:&#92;"total_count&#92;""];</code>
+     * @return The totalCount.
      */
+    @java.lang.Override
     public long getTotalCount() {
       return totalCount_;
     }
@@ -9152,8 +9903,10 @@ public final class Abci {
      * Count of txs in current page
      * </pre>
      *
-     * <code>optional uint64 count = 2;</code>
+     * <code>uint64 count = 2;</code>
+     * @return The count.
      */
+    @java.lang.Override
     public long getCount() {
       return count_;
     }
@@ -9165,8 +9918,10 @@ public final class Abci {
      * Index of current page, start from 1
      * </pre>
      *
-     * <code>optional uint64 page_number = 3;</code>
+     * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number", (.gogoproto.moretags) = "yaml:&#92;"page_number&#92;""];</code>
+     * @return The pageNumber.
      */
+    @java.lang.Override
     public long getPageNumber() {
       return pageNumber_;
     }
@@ -9178,8 +9933,10 @@ public final class Abci {
      * Count of total pages
      * </pre>
      *
-     * <code>optional uint64 page_total = 4;</code>
+     * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total", (.gogoproto.moretags) = "yaml:&#92;"page_total&#92;""];</code>
+     * @return The pageTotal.
      */
+    @java.lang.Override
     public long getPageTotal() {
       return pageTotal_;
     }
@@ -9191,8 +9948,10 @@ public final class Abci {
      * Max count txs per page
      * </pre>
      *
-     * <code>optional uint64 limit = 5;</code>
+     * <code>uint64 limit = 5;</code>
+     * @return The limit.
      */
+    @java.lang.Override
     public long getLimit() {
       return limit_;
     }
@@ -9206,6 +9965,7 @@ public final class Abci {
      *
      * <code>repeated .cosmos.base.abci.v1beta1.TxResponse txs = 6;</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.abci.v1beta1.Abci.TxResponse> getTxsList() {
       return txs_;
     }
@@ -9216,6 +9976,7 @@ public final class Abci {
      *
      * <code>repeated .cosmos.base.abci.v1beta1.TxResponse txs = 6;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.TxResponseOrBuilder> 
         getTxsOrBuilderList() {
       return txs_;
@@ -9227,6 +9988,7 @@ public final class Abci {
      *
      * <code>repeated .cosmos.base.abci.v1beta1.TxResponse txs = 6;</code>
      */
+    @java.lang.Override
     public int getTxsCount() {
       return txs_.size();
     }
@@ -9237,6 +9999,7 @@ public final class Abci {
      *
      * <code>repeated .cosmos.base.abci.v1beta1.TxResponse txs = 6;</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.TxResponse getTxs(int index) {
       return txs_.get(index);
     }
@@ -9247,12 +10010,14 @@ public final class Abci {
      *
      * <code>repeated .cosmos.base.abci.v1beta1.TxResponse txs = 6;</code>
      */
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.TxResponseOrBuilder getTxsOrBuilder(
         int index) {
       return txs_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9262,6 +10027,7 @@ public final class Abci {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (totalCount_ != 0L) {
@@ -9282,8 +10048,10 @@ public final class Abci {
       for (int i = 0; i < txs_.size(); i++) {
         output.writeMessage(6, txs_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9313,11 +10081,11 @@ public final class Abci {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, txs_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -9328,20 +10096,20 @@ public final class Abci {
       }
       cosmos.base.abci.v1beta1.Abci.SearchTxsResult other = (cosmos.base.abci.v1beta1.Abci.SearchTxsResult) obj;
 
-      boolean result = true;
-      result = result && (getTotalCount()
-          == other.getTotalCount());
-      result = result && (getCount()
-          == other.getCount());
-      result = result && (getPageNumber()
-          == other.getPageNumber());
-      result = result && (getPageTotal()
-          == other.getPageTotal());
-      result = result && (getLimit()
-          == other.getLimit());
-      result = result && getTxsList()
-          .equals(other.getTxsList());
-      return result;
+      if (getTotalCount()
+          != other.getTotalCount()) return false;
+      if (getCount()
+          != other.getCount()) return false;
+      if (getPageNumber()
+          != other.getPageNumber()) return false;
+      if (getPageTotal()
+          != other.getPageTotal()) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (!getTxsList()
+          .equals(other.getTxsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9350,7 +10118,7 @@ public final class Abci {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TOTAL_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTotalCount());
@@ -9375,6 +10143,17 @@ public final class Abci {
       return hash;
     }
 
+    public static cosmos.base.abci.v1beta1.Abci.SearchTxsResult parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchTxsResult parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.abci.v1beta1.Abci.SearchTxsResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9434,6 +10213,7 @@ public final class Abci {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9441,6 +10221,7 @@ public final class Abci {
     public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.SearchTxsResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9468,6 +10249,7 @@ public final class Abci {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_fieldAccessorTable
@@ -9491,6 +10273,7 @@ public final class Abci {
           getTxsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         totalCount_ = 0L;
@@ -9505,22 +10288,25 @@ public final class Abci {
 
         if (txsBuilder_ == null) {
           txs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           txsBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.SearchTxsResult getDefaultInstanceForType() {
         return cosmos.base.abci.v1beta1.Abci.SearchTxsResult.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.SearchTxsResult build() {
         cosmos.base.abci.v1beta1.Abci.SearchTxsResult result = buildPartial();
         if (!result.isInitialized()) {
@@ -9529,55 +10315,61 @@ public final class Abci {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.abci.v1beta1.Abci.SearchTxsResult buildPartial() {
         cosmos.base.abci.v1beta1.Abci.SearchTxsResult result = new cosmos.base.abci.v1beta1.Abci.SearchTxsResult(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.totalCount_ = totalCount_;
         result.count_ = count_;
         result.pageNumber_ = pageNumber_;
         result.pageTotal_ = pageTotal_;
         result.limit_ = limit_;
         if (txsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             txs_ = java.util.Collections.unmodifiableList(txs_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.txs_ = txs_;
         } else {
           result.txs_ = txsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.abci.v1beta1.Abci.SearchTxsResult) {
           return mergeFrom((cosmos.base.abci.v1beta1.Abci.SearchTxsResult)other);
@@ -9608,7 +10400,7 @@ public final class Abci {
           if (!other.txs_.isEmpty()) {
             if (txs_.isEmpty()) {
               txs_ = other.txs_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureTxsIsMutable();
               txs_.addAll(other.txs_);
@@ -9621,7 +10413,7 @@ public final class Abci {
               txsBuilder_.dispose();
               txsBuilder_ = null;
               txs_ = other.txs_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000001);
               txsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTxsFieldBuilder() : null;
@@ -9630,14 +10422,17 @@ public final class Abci {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9663,8 +10458,10 @@ public final class Abci {
        * Count of all txs
        * </pre>
        *
-       * <code>optional uint64 total_count = 1;</code>
+       * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count", (.gogoproto.moretags) = "yaml:&#92;"total_count&#92;""];</code>
+       * @return The totalCount.
        */
+      @java.lang.Override
       public long getTotalCount() {
         return totalCount_;
       }
@@ -9673,7 +10470,9 @@ public final class Abci {
        * Count of all txs
        * </pre>
        *
-       * <code>optional uint64 total_count = 1;</code>
+       * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count", (.gogoproto.moretags) = "yaml:&#92;"total_count&#92;""];</code>
+       * @param value The totalCount to set.
+       * @return This builder for chaining.
        */
       public Builder setTotalCount(long value) {
         
@@ -9686,7 +10485,8 @@ public final class Abci {
        * Count of all txs
        * </pre>
        *
-       * <code>optional uint64 total_count = 1;</code>
+       * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count", (.gogoproto.moretags) = "yaml:&#92;"total_count&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearTotalCount() {
         
@@ -9701,8 +10501,10 @@ public final class Abci {
        * Count of txs in current page
        * </pre>
        *
-       * <code>optional uint64 count = 2;</code>
+       * <code>uint64 count = 2;</code>
+       * @return The count.
        */
+      @java.lang.Override
       public long getCount() {
         return count_;
       }
@@ -9711,7 +10513,9 @@ public final class Abci {
        * Count of txs in current page
        * </pre>
        *
-       * <code>optional uint64 count = 2;</code>
+       * <code>uint64 count = 2;</code>
+       * @param value The count to set.
+       * @return This builder for chaining.
        */
       public Builder setCount(long value) {
         
@@ -9724,7 +10528,8 @@ public final class Abci {
        * Count of txs in current page
        * </pre>
        *
-       * <code>optional uint64 count = 2;</code>
+       * <code>uint64 count = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCount() {
         
@@ -9739,8 +10544,10 @@ public final class Abci {
        * Index of current page, start from 1
        * </pre>
        *
-       * <code>optional uint64 page_number = 3;</code>
+       * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number", (.gogoproto.moretags) = "yaml:&#92;"page_number&#92;""];</code>
+       * @return The pageNumber.
        */
+      @java.lang.Override
       public long getPageNumber() {
         return pageNumber_;
       }
@@ -9749,7 +10556,9 @@ public final class Abci {
        * Index of current page, start from 1
        * </pre>
        *
-       * <code>optional uint64 page_number = 3;</code>
+       * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number", (.gogoproto.moretags) = "yaml:&#92;"page_number&#92;""];</code>
+       * @param value The pageNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setPageNumber(long value) {
         
@@ -9762,7 +10571,8 @@ public final class Abci {
        * Index of current page, start from 1
        * </pre>
        *
-       * <code>optional uint64 page_number = 3;</code>
+       * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number", (.gogoproto.moretags) = "yaml:&#92;"page_number&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearPageNumber() {
         
@@ -9777,8 +10587,10 @@ public final class Abci {
        * Count of total pages
        * </pre>
        *
-       * <code>optional uint64 page_total = 4;</code>
+       * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total", (.gogoproto.moretags) = "yaml:&#92;"page_total&#92;""];</code>
+       * @return The pageTotal.
        */
+      @java.lang.Override
       public long getPageTotal() {
         return pageTotal_;
       }
@@ -9787,7 +10599,9 @@ public final class Abci {
        * Count of total pages
        * </pre>
        *
-       * <code>optional uint64 page_total = 4;</code>
+       * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total", (.gogoproto.moretags) = "yaml:&#92;"page_total&#92;""];</code>
+       * @param value The pageTotal to set.
+       * @return This builder for chaining.
        */
       public Builder setPageTotal(long value) {
         
@@ -9800,7 +10614,8 @@ public final class Abci {
        * Count of total pages
        * </pre>
        *
-       * <code>optional uint64 page_total = 4;</code>
+       * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total", (.gogoproto.moretags) = "yaml:&#92;"page_total&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearPageTotal() {
         
@@ -9815,8 +10630,10 @@ public final class Abci {
        * Max count txs per page
        * </pre>
        *
-       * <code>optional uint64 limit = 5;</code>
+       * <code>uint64 limit = 5;</code>
+       * @return The limit.
        */
+      @java.lang.Override
       public long getLimit() {
         return limit_;
       }
@@ -9825,7 +10642,9 @@ public final class Abci {
        * Max count txs per page
        * </pre>
        *
-       * <code>optional uint64 limit = 5;</code>
+       * <code>uint64 limit = 5;</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
        */
       public Builder setLimit(long value) {
         
@@ -9838,7 +10657,8 @@ public final class Abci {
        * Max count txs per page
        * </pre>
        *
-       * <code>optional uint64 limit = 5;</code>
+       * <code>uint64 limit = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLimit() {
         
@@ -9850,9 +10670,9 @@ public final class Abci {
       private java.util.List<cosmos.base.abci.v1beta1.Abci.TxResponse> txs_ =
         java.util.Collections.emptyList();
       private void ensureTxsIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           txs_ = new java.util.ArrayList<cosmos.base.abci.v1beta1.Abci.TxResponse>(txs_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -10046,7 +10866,7 @@ public final class Abci {
       public Builder clearTxs() {
         if (txsBuilder_ == null) {
           txs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           txsBuilder_.clear();
@@ -10151,21 +10971,23 @@ public final class Abci {
           txsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.abci.v1beta1.Abci.TxResponse, cosmos.base.abci.v1beta1.Abci.TxResponse.Builder, cosmos.base.abci.v1beta1.Abci.TxResponseOrBuilder>(
                   txs_,
-                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           txs_ = null;
         }
         return txsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -10184,11 +11006,12 @@ public final class Abci {
 
     private static final com.google.protobuf.Parser<SearchTxsResult>
         PARSER = new com.google.protobuf.AbstractParser<SearchTxsResult>() {
+      @java.lang.Override
       public SearchTxsResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SearchTxsResult(input, extensionRegistry);
+        return new SearchTxsResult(input, extensionRegistry);
       }
     };
 
@@ -10201,6 +11024,7 @@ public final class Abci {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.abci.v1beta1.Abci.SearchTxsResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10275,7 +11099,7 @@ public final class Abci {
       "a\030\005 \001(\t\022\017\n\007raw_log\030\006 \001(\t\022O\n\004logs\030\007 \003(\0132(" +
       ".cosmos.base.abci.v1beta1.ABCIMessageLog" +
       "B\027\252\337\037\017ABCIMessageLogs\310\336\037\000\022\014\n\004info\030\010 \001(\t\022" +
-      "\022\n\ngas_wanted\030\t \001(\003\022\020\n\010gas_used\030\n \001(\003\022 \n",
+      "\022\n\ngas_wanted\030\t \001(\003\022\020\n\010gas_used\030\n \001(\003\022 \n" +
       "\002tx\030\013 \001(\0132\024.google.protobuf.Any\022\021\n\ttimes" +
       "tamp\030\014 \001(\t:\004\210\240\037\000\"\203\001\n\016ABCIMessageLog\022\021\n\tm" +
       "sg_index\030\001 \001(\r\022\013\n\003log\030\002 \001(\t\022K\n\006events\030\003 " +
@@ -10285,7 +11109,7 @@ public final class Abci {
       "#.cosmos.base.abci.v1beta1.AttributeB\004\310\336" +
       "\037\000:\004\200\334 \001\"\'\n\tAttribute\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
       "lue\030\002 \001(\t\"[\n\007GasInfo\022)\n\ngas_wanted\030\001 \001(\004" +
-      "B\025\362\336\037\021yaml:\"gas_wanted\"\022%\n\010gas_used\030\002 \001(",
+      "B\025\362\336\037\021yaml:\"gas_wanted\"\022%\n\010gas_used\030\002 \001(" +
       "\004B\023\362\336\037\017yaml:\"gas_used\"\"W\n\006Result\022\014\n\004data" +
       "\030\001 \001(\014\022\013\n\003log\030\002 \001(\t\022,\n\006events\030\003 \003(\0132\026.te" +
       "ndermint.abci.EventB\004\310\336\037\000:\004\210\240\037\000\"\205\001\n\022Simu" +
@@ -10295,7 +11119,7 @@ public final class Abci {
       ".Result\"/\n\007MsgData\022\020\n\010msg_type\030\001 \001(\t\022\014\n\004" +
       "data\030\002 \001(\014:\004\200\334 \001\"B\n\tTxMsgData\022/\n\004data\030\001 " +
       "\003(\0132!.cosmos.base.abci.v1beta1.MsgData:\004" +
-      "\200\334 \001\"\231\002\n\017SearchTxsResult\022:\n\013total_count\030",
+      "\200\334 \001\"\231\002\n\017SearchTxsResult\022:\n\013total_count\030" +
       "\001 \001(\004B%\362\336\037\022yaml:\"total_count\"\352\336\037\013total_c" +
       "ount\022\r\n\005count\030\002 \001(\004\022:\n\013page_number\030\003 \001(\004" +
       "B%\362\336\037\022yaml:\"page_number\"\352\336\037\013page_number\022" +
@@ -10305,21 +11129,13 @@ public final class Abci {
       "se:\004\200\334 \001B(Z\"github.com/cosmos/cosmos-sdk" +
       "/types\330\341\036\000b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
           tendermint.abci.Types.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_base_abci_v1beta1_TxResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_base_abci_v1beta1_TxResponse_fieldAccessorTable = new

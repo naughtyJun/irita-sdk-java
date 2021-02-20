@@ -1,19 +1,6 @@
 package cosmwasm.wasm.v1beta1;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 
 /**
  * <pre>
@@ -21,75 +8,213 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.0.0)",
+    value = "by gRPC proto compiler (version 1.35.0)",
     comments = "Source: x/wasm/internal/types/tx.proto")
-public class MsgGrpc {
+public final class MsgGrpc {
 
   private MsgGrpc() {}
 
   public static final String SERVICE_NAME = "cosmwasm.wasm.v1beta1.Msg";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<Tx.MsgStoreCode,
-      Tx.MsgStoreCodeResponse> METHOD_STORE_CODE =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Msg", "StoreCode"),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgStoreCode.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgStoreCodeResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<Tx.MsgInstantiateContract,
-      Tx.MsgInstantiateContractResponse> METHOD_INSTANTIATE_CONTRACT =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Msg", "InstantiateContract"),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgInstantiateContract.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgInstantiateContractResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<Tx.MsgExecuteContract,
-      Tx.MsgExecuteContractResponse> METHOD_EXECUTE_CONTRACT =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Msg", "ExecuteContract"),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgExecuteContract.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgExecuteContractResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<Tx.MsgMigrateContract,
-      Tx.MsgMigrateContractResponse> METHOD_MIGRATE_CONTRACT =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Msg", "MigrateContract"),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgMigrateContract.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgMigrateContractResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<Tx.MsgUpdateAdmin,
-      Tx.MsgUpdateAdminResponse> METHOD_UPDATE_ADMIN =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Msg", "UpdateAdmin"),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgUpdateAdmin.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgUpdateAdminResponse.getDefaultInstance()));
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<Tx.MsgClearAdmin,
-      Tx.MsgClearAdminResponse> METHOD_CLEAR_ADMIN =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "cosmwasm.wasm.v1beta1.Msg", "ClearAdmin"),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgClearAdmin.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(Tx.MsgClearAdminResponse.getDefaultInstance()));
+  private static volatile io.grpc.MethodDescriptor<Tx.MsgStoreCode,
+      Tx.MsgStoreCodeResponse> getStoreCodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StoreCode",
+      requestType = Tx.MsgStoreCode.class,
+      responseType = Tx.MsgStoreCodeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<Tx.MsgStoreCode,
+      Tx.MsgStoreCodeResponse> getStoreCodeMethod() {
+    io.grpc.MethodDescriptor<Tx.MsgStoreCode, Tx.MsgStoreCodeResponse> getStoreCodeMethod;
+    if ((getStoreCodeMethod = MsgGrpc.getStoreCodeMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getStoreCodeMethod = MsgGrpc.getStoreCodeMethod) == null) {
+          MsgGrpc.getStoreCodeMethod = getStoreCodeMethod =
+              io.grpc.MethodDescriptor.<Tx.MsgStoreCode, Tx.MsgStoreCodeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StoreCode"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgStoreCode.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgStoreCodeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("StoreCode"))
+              .build();
+        }
+      }
+    }
+    return getStoreCodeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<Tx.MsgInstantiateContract,
+      Tx.MsgInstantiateContractResponse> getInstantiateContractMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "InstantiateContract",
+      requestType = Tx.MsgInstantiateContract.class,
+      responseType = Tx.MsgInstantiateContractResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<Tx.MsgInstantiateContract,
+      Tx.MsgInstantiateContractResponse> getInstantiateContractMethod() {
+    io.grpc.MethodDescriptor<Tx.MsgInstantiateContract, Tx.MsgInstantiateContractResponse> getInstantiateContractMethod;
+    if ((getInstantiateContractMethod = MsgGrpc.getInstantiateContractMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getInstantiateContractMethod = MsgGrpc.getInstantiateContractMethod) == null) {
+          MsgGrpc.getInstantiateContractMethod = getInstantiateContractMethod =
+              io.grpc.MethodDescriptor.<Tx.MsgInstantiateContract, Tx.MsgInstantiateContractResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "InstantiateContract"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgInstantiateContract.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgInstantiateContractResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("InstantiateContract"))
+              .build();
+        }
+      }
+    }
+    return getInstantiateContractMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<Tx.MsgExecuteContract,
+      Tx.MsgExecuteContractResponse> getExecuteContractMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExecuteContract",
+      requestType = Tx.MsgExecuteContract.class,
+      responseType = Tx.MsgExecuteContractResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<Tx.MsgExecuteContract,
+      Tx.MsgExecuteContractResponse> getExecuteContractMethod() {
+    io.grpc.MethodDescriptor<Tx.MsgExecuteContract, Tx.MsgExecuteContractResponse> getExecuteContractMethod;
+    if ((getExecuteContractMethod = MsgGrpc.getExecuteContractMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getExecuteContractMethod = MsgGrpc.getExecuteContractMethod) == null) {
+          MsgGrpc.getExecuteContractMethod = getExecuteContractMethod =
+              io.grpc.MethodDescriptor.<Tx.MsgExecuteContract, Tx.MsgExecuteContractResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExecuteContract"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgExecuteContract.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgExecuteContractResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("ExecuteContract"))
+              .build();
+        }
+      }
+    }
+    return getExecuteContractMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<Tx.MsgMigrateContract,
+      Tx.MsgMigrateContractResponse> getMigrateContractMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MigrateContract",
+      requestType = Tx.MsgMigrateContract.class,
+      responseType = Tx.MsgMigrateContractResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<Tx.MsgMigrateContract,
+      Tx.MsgMigrateContractResponse> getMigrateContractMethod() {
+    io.grpc.MethodDescriptor<Tx.MsgMigrateContract, Tx.MsgMigrateContractResponse> getMigrateContractMethod;
+    if ((getMigrateContractMethod = MsgGrpc.getMigrateContractMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getMigrateContractMethod = MsgGrpc.getMigrateContractMethod) == null) {
+          MsgGrpc.getMigrateContractMethod = getMigrateContractMethod =
+              io.grpc.MethodDescriptor.<Tx.MsgMigrateContract, Tx.MsgMigrateContractResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MigrateContract"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgMigrateContract.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgMigrateContractResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("MigrateContract"))
+              .build();
+        }
+      }
+    }
+    return getMigrateContractMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<Tx.MsgUpdateAdmin,
+      Tx.MsgUpdateAdminResponse> getUpdateAdminMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAdmin",
+      requestType = Tx.MsgUpdateAdmin.class,
+      responseType = Tx.MsgUpdateAdminResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<Tx.MsgUpdateAdmin,
+      Tx.MsgUpdateAdminResponse> getUpdateAdminMethod() {
+    io.grpc.MethodDescriptor<Tx.MsgUpdateAdmin, Tx.MsgUpdateAdminResponse> getUpdateAdminMethod;
+    if ((getUpdateAdminMethod = MsgGrpc.getUpdateAdminMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getUpdateAdminMethod = MsgGrpc.getUpdateAdminMethod) == null) {
+          MsgGrpc.getUpdateAdminMethod = getUpdateAdminMethod =
+              io.grpc.MethodDescriptor.<Tx.MsgUpdateAdmin, Tx.MsgUpdateAdminResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAdmin"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgUpdateAdmin.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgUpdateAdminResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("UpdateAdmin"))
+              .build();
+        }
+      }
+    }
+    return getUpdateAdminMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<Tx.MsgClearAdmin,
+      Tx.MsgClearAdminResponse> getClearAdminMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ClearAdmin",
+      requestType = Tx.MsgClearAdmin.class,
+      responseType = Tx.MsgClearAdminResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<Tx.MsgClearAdmin,
+      Tx.MsgClearAdminResponse> getClearAdminMethod() {
+    io.grpc.MethodDescriptor<Tx.MsgClearAdmin, Tx.MsgClearAdminResponse> getClearAdminMethod;
+    if ((getClearAdminMethod = MsgGrpc.getClearAdminMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getClearAdminMethod = MsgGrpc.getClearAdminMethod) == null) {
+          MsgGrpc.getClearAdminMethod = getClearAdminMethod =
+              io.grpc.MethodDescriptor.<Tx.MsgClearAdmin, Tx.MsgClearAdminResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ClearAdmin"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgClearAdmin.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Tx.MsgClearAdminResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("ClearAdmin"))
+              .build();
+        }
+      }
+    }
+    return getClearAdminMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static MsgStub newStub(io.grpc.Channel channel) {
-    return new MsgStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<MsgStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MsgStub>() {
+        @Override
+        public MsgStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MsgStub(channel, callOptions);
+        }
+      };
+    return MsgStub.newStub(factory, channel);
   }
 
   /**
@@ -97,15 +222,29 @@ public class MsgGrpc {
    */
   public static MsgBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new MsgBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<MsgBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MsgBlockingStub>() {
+        @Override
+        public MsgBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MsgBlockingStub(channel, callOptions);
+        }
+      };
+    return MsgBlockingStub.newStub(factory, channel);
   }
 
   /**
-   * Creates a new ListenableFuture-style stub that supports unary and streaming output calls on the service
+   * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
   public static MsgFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new MsgFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<MsgFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MsgFutureStub>() {
+        @Override
+        public MsgFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MsgFutureStub(channel, callOptions);
+        }
+      };
+    return MsgFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -122,7 +261,7 @@ public class MsgGrpc {
      */
     public void storeCode(Tx.MsgStoreCode request,
                           io.grpc.stub.StreamObserver<Tx.MsgStoreCodeResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_STORE_CODE, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStoreCodeMethod(), responseObserver);
     }
 
     /**
@@ -132,7 +271,7 @@ public class MsgGrpc {
      */
     public void instantiateContract(Tx.MsgInstantiateContract request,
                                     io.grpc.stub.StreamObserver<Tx.MsgInstantiateContractResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_INSTANTIATE_CONTRACT, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInstantiateContractMethod(), responseObserver);
     }
 
     /**
@@ -142,7 +281,7 @@ public class MsgGrpc {
      */
     public void executeContract(Tx.MsgExecuteContract request,
                                 io.grpc.stub.StreamObserver<Tx.MsgExecuteContractResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_EXECUTE_CONTRACT, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExecuteContractMethod(), responseObserver);
     }
 
     /**
@@ -152,7 +291,7 @@ public class MsgGrpc {
      */
     public void migrateContract(Tx.MsgMigrateContract request,
                                 io.grpc.stub.StreamObserver<Tx.MsgMigrateContractResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_MIGRATE_CONTRACT, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateContractMethod(), responseObserver);
     }
 
     /**
@@ -162,7 +301,7 @@ public class MsgGrpc {
      */
     public void updateAdmin(Tx.MsgUpdateAdmin request,
                             io.grpc.stub.StreamObserver<Tx.MsgUpdateAdminResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_UPDATE_ADMIN, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAdminMethod(), responseObserver);
     }
 
     /**
@@ -172,49 +311,49 @@ public class MsgGrpc {
      */
     public void clearAdmin(Tx.MsgClearAdmin request,
                            io.grpc.stub.StreamObserver<Tx.MsgClearAdminResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_CLEAR_ADMIN, responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getClearAdminMethod(), responseObserver);
     }
 
-    @Override public io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_STORE_CODE,
-            asyncUnaryCall(
+            getStoreCodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 Tx.MsgStoreCode,
                 Tx.MsgStoreCodeResponse>(
                   this, METHODID_STORE_CODE)))
           .addMethod(
-            METHOD_INSTANTIATE_CONTRACT,
-            asyncUnaryCall(
+            getInstantiateContractMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 Tx.MsgInstantiateContract,
                 Tx.MsgInstantiateContractResponse>(
                   this, METHODID_INSTANTIATE_CONTRACT)))
           .addMethod(
-            METHOD_EXECUTE_CONTRACT,
-            asyncUnaryCall(
+            getExecuteContractMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 Tx.MsgExecuteContract,
                 Tx.MsgExecuteContractResponse>(
                   this, METHODID_EXECUTE_CONTRACT)))
           .addMethod(
-            METHOD_MIGRATE_CONTRACT,
-            asyncUnaryCall(
+            getMigrateContractMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 Tx.MsgMigrateContract,
                 Tx.MsgMigrateContractResponse>(
                   this, METHODID_MIGRATE_CONTRACT)))
           .addMethod(
-            METHOD_UPDATE_ADMIN,
-            asyncUnaryCall(
+            getUpdateAdminMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 Tx.MsgUpdateAdmin,
                 Tx.MsgUpdateAdminResponse>(
                   this, METHODID_UPDATE_ADMIN)))
           .addMethod(
-            METHOD_CLEAR_ADMIN,
-            asyncUnaryCall(
+            getClearAdminMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 Tx.MsgClearAdmin,
                 Tx.MsgClearAdminResponse>(
@@ -228,19 +367,15 @@ public class MsgGrpc {
    * Msg defines the wasm Msg service.
    * </pre>
    */
-  public static final class MsgStub extends io.grpc.stub.AbstractStub<MsgStub> {
-    private MsgStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private MsgStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class MsgStub extends io.grpc.stub.AbstractAsyncStub<MsgStub> {
+    private MsgStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @Override
-    protected MsgStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected MsgStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MsgStub(channel, callOptions);
     }
 
@@ -251,8 +386,8 @@ public class MsgGrpc {
      */
     public void storeCode(Tx.MsgStoreCode request,
                           io.grpc.stub.StreamObserver<Tx.MsgStoreCodeResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_STORE_CODE, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStoreCodeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -262,8 +397,8 @@ public class MsgGrpc {
      */
     public void instantiateContract(Tx.MsgInstantiateContract request,
                                     io.grpc.stub.StreamObserver<Tx.MsgInstantiateContractResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_INSTANTIATE_CONTRACT, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getInstantiateContractMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -273,8 +408,8 @@ public class MsgGrpc {
      */
     public void executeContract(Tx.MsgExecuteContract request,
                                 io.grpc.stub.StreamObserver<Tx.MsgExecuteContractResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_EXECUTE_CONTRACT, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExecuteContractMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -284,8 +419,8 @@ public class MsgGrpc {
      */
     public void migrateContract(Tx.MsgMigrateContract request,
                                 io.grpc.stub.StreamObserver<Tx.MsgMigrateContractResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_MIGRATE_CONTRACT, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMigrateContractMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -295,8 +430,8 @@ public class MsgGrpc {
      */
     public void updateAdmin(Tx.MsgUpdateAdmin request,
                             io.grpc.stub.StreamObserver<Tx.MsgUpdateAdminResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_UPDATE_ADMIN, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAdminMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -306,8 +441,8 @@ public class MsgGrpc {
      */
     public void clearAdmin(Tx.MsgClearAdmin request,
                            io.grpc.stub.StreamObserver<Tx.MsgClearAdminResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_CLEAR_ADMIN, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getClearAdminMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -316,19 +451,15 @@ public class MsgGrpc {
    * Msg defines the wasm Msg service.
    * </pre>
    */
-  public static final class MsgBlockingStub extends io.grpc.stub.AbstractStub<MsgBlockingStub> {
-    private MsgBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private MsgBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class MsgBlockingStub extends io.grpc.stub.AbstractBlockingStub<MsgBlockingStub> {
+    private MsgBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @Override
-    protected MsgBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected MsgBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MsgBlockingStub(channel, callOptions);
     }
 
@@ -338,8 +469,8 @@ public class MsgGrpc {
      * </pre>
      */
     public Tx.MsgStoreCodeResponse storeCode(Tx.MsgStoreCode request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_STORE_CODE, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStoreCodeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -348,8 +479,8 @@ public class MsgGrpc {
      * </pre>
      */
     public Tx.MsgInstantiateContractResponse instantiateContract(Tx.MsgInstantiateContract request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_INSTANTIATE_CONTRACT, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInstantiateContractMethod(), getCallOptions(), request);
     }
 
     /**
@@ -358,8 +489,8 @@ public class MsgGrpc {
      * </pre>
      */
     public Tx.MsgExecuteContractResponse executeContract(Tx.MsgExecuteContract request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_EXECUTE_CONTRACT, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExecuteContractMethod(), getCallOptions(), request);
     }
 
     /**
@@ -368,8 +499,8 @@ public class MsgGrpc {
      * </pre>
      */
     public Tx.MsgMigrateContractResponse migrateContract(Tx.MsgMigrateContract request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_MIGRATE_CONTRACT, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMigrateContractMethod(), getCallOptions(), request);
     }
 
     /**
@@ -378,8 +509,8 @@ public class MsgGrpc {
      * </pre>
      */
     public Tx.MsgUpdateAdminResponse updateAdmin(Tx.MsgUpdateAdmin request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_UPDATE_ADMIN, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAdminMethod(), getCallOptions(), request);
     }
 
     /**
@@ -388,8 +519,8 @@ public class MsgGrpc {
      * </pre>
      */
     public Tx.MsgClearAdminResponse clearAdmin(Tx.MsgClearAdmin request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_CLEAR_ADMIN, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getClearAdminMethod(), getCallOptions(), request);
     }
   }
 
@@ -398,19 +529,15 @@ public class MsgGrpc {
    * Msg defines the wasm Msg service.
    * </pre>
    */
-  public static final class MsgFutureStub extends io.grpc.stub.AbstractStub<MsgFutureStub> {
-    private MsgFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private MsgFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class MsgFutureStub extends io.grpc.stub.AbstractFutureStub<MsgFutureStub> {
+    private MsgFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @Override
-    protected MsgFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected MsgFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MsgFutureStub(channel, callOptions);
     }
 
@@ -421,8 +548,8 @@ public class MsgGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<Tx.MsgStoreCodeResponse> storeCode(
         Tx.MsgStoreCode request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_STORE_CODE, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStoreCodeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -432,8 +559,8 @@ public class MsgGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<Tx.MsgInstantiateContractResponse> instantiateContract(
         Tx.MsgInstantiateContract request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_INSTANTIATE_CONTRACT, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getInstantiateContractMethod(), getCallOptions()), request);
     }
 
     /**
@@ -443,8 +570,8 @@ public class MsgGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<Tx.MsgExecuteContractResponse> executeContract(
         Tx.MsgExecuteContract request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_EXECUTE_CONTRACT, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExecuteContractMethod(), getCallOptions()), request);
     }
 
     /**
@@ -454,8 +581,8 @@ public class MsgGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<Tx.MsgMigrateContractResponse> migrateContract(
         Tx.MsgMigrateContract request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_MIGRATE_CONTRACT, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMigrateContractMethod(), getCallOptions()), request);
     }
 
     /**
@@ -465,8 +592,8 @@ public class MsgGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<Tx.MsgUpdateAdminResponse> updateAdmin(
         Tx.MsgUpdateAdmin request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_UPDATE_ADMIN, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAdminMethod(), getCallOptions()), request);
     }
 
     /**
@@ -476,8 +603,8 @@ public class MsgGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<Tx.MsgClearAdminResponse> clearAdmin(
         Tx.MsgClearAdmin request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_CLEAR_ADMIN, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getClearAdminMethod(), getCallOptions()), request);
     }
   }
 
@@ -488,7 +615,7 @@ public class MsgGrpc {
   private static final int METHODID_UPDATE_ADMIN = 4;
   private static final int METHODID_CLEAR_ADMIN = 5;
 
-  private static class MethodHandlers<Req, Resp> implements
+  private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
@@ -496,7 +623,7 @@ public class MsgGrpc {
     private final MsgImplBase serviceImpl;
     private final int methodId;
 
-    public MethodHandlers(MsgImplBase serviceImpl, int methodId) {
+    MethodHandlers(MsgImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -545,14 +672,61 @@ public class MsgGrpc {
     }
   }
 
-  public static io.grpc.ServiceDescriptor getServiceDescriptor() {
-    return new io.grpc.ServiceDescriptor(SERVICE_NAME,
-        METHOD_STORE_CODE,
-        METHOD_INSTANTIATE_CONTRACT,
-        METHOD_EXECUTE_CONTRACT,
-        METHOD_MIGRATE_CONTRACT,
-        METHOD_UPDATE_ADMIN,
-        METHOD_CLEAR_ADMIN);
+  private static abstract class MsgBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    MsgBaseDescriptorSupplier() {}
+
+    @Override
+    public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
+      return Tx.getDescriptor();
+    }
+
+    @Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("Msg");
+    }
   }
 
+  private static final class MsgFileDescriptorSupplier
+      extends MsgBaseDescriptorSupplier {
+    MsgFileDescriptorSupplier() {}
+  }
+
+  private static final class MsgMethodDescriptorSupplier
+      extends MsgBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    MsgMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
+    }
+  }
+
+  private static volatile io.grpc.ServiceDescriptor serviceDescriptor;
+
+  public static io.grpc.ServiceDescriptor getServiceDescriptor() {
+    io.grpc.ServiceDescriptor result = serviceDescriptor;
+    if (result == null) {
+      synchronized (MsgGrpc.class) {
+        result = serviceDescriptor;
+        if (result == null) {
+          serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
+              .setSchemaDescriptor(new MsgFileDescriptorSupplier())
+              .addMethod(getStoreCodeMethod())
+              .addMethod(getInstantiateContractMethod())
+              .addMethod(getExecuteContractMethod())
+              .addMethod(getMigrateContractMethod())
+              .addMethod(getUpdateAdminMethod())
+              .addMethod(getClearAdminMethod())
+              .build();
+        }
+      }
+    }
+    return result;
+  }
 }

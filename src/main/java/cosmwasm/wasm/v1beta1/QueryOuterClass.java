@@ -23,7 +23,8 @@ public final class QueryOuterClass {
      * address is the address of the contract to query
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
@@ -31,7 +32,8 @@ public final class QueryOuterClass {
      * address is the address of the contract to query
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -43,10 +45,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryContractInfoRequest}
    */
-  public  static final class QueryContractInfoRequest extends
+  public static final class QueryContractInfoRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryContractInfoRequest)
       QueryContractInfoRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryContractInfoRequest.newBuilder() to construct.
     private QueryContractInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -56,16 +59,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryContractInfoRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryContractInfoRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -74,16 +88,17 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               address_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -94,6 +109,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -102,6 +118,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoRequest_fieldAccessorTable
@@ -116,8 +133,10 @@ public final class QueryOuterClass {
      * address is the address of the contract to query
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -135,8 +154,10 @@ public final class QueryOuterClass {
      * address is the address of the contract to query
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -152,6 +173,7 @@ public final class QueryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -161,13 +183,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -176,11 +201,11 @@ public final class QueryOuterClass {
       if (!getAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -191,10 +216,10 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      return result;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -203,7 +228,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -211,6 +236,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -270,6 +306,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -277,6 +314,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -304,6 +342,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoRequest_fieldAccessorTable
@@ -326,6 +365,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -333,15 +373,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -350,6 +393,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest(this);
         result.address_ = address_;
@@ -357,32 +401,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest)other);
@@ -398,14 +449,17 @@ public final class QueryOuterClass {
           address_ = other.address_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -430,7 +484,8 @@ public final class QueryOuterClass {
        * address is the address of the contract to query
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -449,7 +504,8 @@ public final class QueryOuterClass {
        * address is the address of the contract to query
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -469,7 +525,9 @@ public final class QueryOuterClass {
        * address is the address of the contract to query
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -486,7 +544,8 @@ public final class QueryOuterClass {
        * address is the address of the contract to query
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -499,7 +558,9 @@ public final class QueryOuterClass {
        * address is the address of the contract to query
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -512,14 +573,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -538,11 +601,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryContractInfoRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryContractInfoRequest>() {
+      @java.lang.Override
       public QueryContractInfoRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryContractInfoRequest(input, extensionRegistry);
+        return new QueryContractInfoRequest(input, extensionRegistry);
       }
     };
 
@@ -555,6 +619,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -570,7 +635,8 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
@@ -578,21 +644,24 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
 
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return Whether the contractInfo field is set.
      */
     boolean hasContractInfo();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return The contractInfo.
      */
     cosmwasm.wasm.v1beta1.Types.ContractInfo getContractInfo();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
      */
     cosmwasm.wasm.v1beta1.Types.ContractInfoOrBuilder getContractInfoOrBuilder();
   }
@@ -603,10 +672,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryContractInfoResponse}
    */
-  public  static final class QueryContractInfoResponse extends
+  public static final class QueryContractInfoResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryContractInfoResponse)
       QueryContractInfoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryContractInfoResponse.newBuilder() to construct.
     private QueryContractInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -616,16 +686,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryContractInfoResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryContractInfoResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -634,12 +715,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -659,6 +734,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -667,6 +749,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -675,6 +758,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoResponse_fieldAccessorTable
@@ -689,8 +773,10 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -708,8 +794,10 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -727,25 +815,31 @@ public final class QueryOuterClass {
     public static final int CONTRACT_INFO_FIELD_NUMBER = 2;
     private cosmwasm.wasm.v1beta1.Types.ContractInfo contractInfo_;
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return Whether the contractInfo field is set.
      */
+    @java.lang.Override
     public boolean hasContractInfo() {
       return contractInfo_ != null;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return The contractInfo.
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.ContractInfo getContractInfo() {
       return contractInfo_ == null ? cosmwasm.wasm.v1beta1.Types.ContractInfo.getDefaultInstance() : contractInfo_;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.ContractInfoOrBuilder getContractInfoOrBuilder() {
       return getContractInfo();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -755,6 +849,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -763,8 +858,10 @@ public final class QueryOuterClass {
       if (contractInfo_ != null) {
         output.writeMessage(2, getContractInfo());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -777,11 +874,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getContractInfo());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -792,15 +889,15 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && (hasContractInfo() == other.hasContractInfo());
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (hasContractInfo() != other.hasContractInfo()) return false;
       if (hasContractInfo()) {
-        result = result && getContractInfo()
-            .equals(other.getContractInfo());
+        if (!getContractInfo()
+            .equals(other.getContractInfo())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -809,7 +906,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       if (hasContractInfo()) {
@@ -821,6 +918,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -880,6 +988,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -887,6 +996,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -914,6 +1024,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoResponse_fieldAccessorTable
@@ -936,6 +1047,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -949,15 +1061,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -966,6 +1081,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse(this);
         result.address_ = address_;
@@ -978,32 +1094,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse)other);
@@ -1022,14 +1145,17 @@ public final class QueryOuterClass {
         if (other.hasContractInfo()) {
           mergeContractInfo(other.getContractInfo());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1054,7 +1180,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -1073,7 +1200,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -1093,7 +1221,9 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -1110,7 +1240,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -1123,7 +1254,9 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -1137,17 +1270,19 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmwasm.wasm.v1beta1.Types.ContractInfo contractInfo_ = null;
+      private cosmwasm.wasm.v1beta1.Types.ContractInfo contractInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.ContractInfo, cosmwasm.wasm.v1beta1.Types.ContractInfo.Builder, cosmwasm.wasm.v1beta1.Types.ContractInfoOrBuilder> contractInfoBuilder_;
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+       * @return Whether the contractInfo field is set.
        */
       public boolean hasContractInfo() {
         return contractInfoBuilder_ != null || contractInfo_ != null;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+       * @return The contractInfo.
        */
       public cosmwasm.wasm.v1beta1.Types.ContractInfo getContractInfo() {
         if (contractInfoBuilder_ == null) {
@@ -1157,7 +1292,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder setContractInfo(cosmwasm.wasm.v1beta1.Types.ContractInfo value) {
         if (contractInfoBuilder_ == null) {
@@ -1173,7 +1308,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder setContractInfo(
           cosmwasm.wasm.v1beta1.Types.ContractInfo.Builder builderForValue) {
@@ -1187,7 +1322,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder mergeContractInfo(cosmwasm.wasm.v1beta1.Types.ContractInfo value) {
         if (contractInfoBuilder_ == null) {
@@ -1205,7 +1340,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder clearContractInfo() {
         if (contractInfoBuilder_ == null) {
@@ -1219,7 +1354,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.ContractInfo.Builder getContractInfoBuilder() {
         
@@ -1227,7 +1362,7 @@ public final class QueryOuterClass {
         return getContractInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.ContractInfoOrBuilder getContractInfoOrBuilder() {
         if (contractInfoBuilder_ != null) {
@@ -1238,7 +1373,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.ContractInfo, cosmwasm.wasm.v1beta1.Types.ContractInfo.Builder, cosmwasm.wasm.v1beta1.Types.ContractInfoOrBuilder> 
@@ -1253,14 +1388,16 @@ public final class QueryOuterClass {
         }
         return contractInfoBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1279,11 +1416,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryContractInfoResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryContractInfoResponse>() {
+      @java.lang.Override
       public QueryContractInfoResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryContractInfoResponse(input, extensionRegistry);
+        return new QueryContractInfoResponse(input, extensionRegistry);
       }
     };
 
@@ -1296,6 +1434,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractInfoResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1311,7 +1450,8 @@ public final class QueryOuterClass {
      * address is the address of the contract to query
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
@@ -1319,7 +1459,8 @@ public final class QueryOuterClass {
      * address is the address of the contract to query
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -1329,7 +1470,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -1337,7 +1479,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
@@ -1345,7 +1488,7 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
   }
@@ -1356,10 +1499,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryContractHistoryRequest}
    */
-  public  static final class QueryContractHistoryRequest extends
+  public static final class QueryContractHistoryRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryContractHistoryRequest)
       QueryContractHistoryRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryContractHistoryRequest.newBuilder() to construct.
     private QueryContractHistoryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1369,16 +1513,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryContractHistoryRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryContractHistoryRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1387,12 +1542,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1412,6 +1561,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1420,6 +1576,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1428,6 +1585,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractHistoryRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractHistoryRequest_fieldAccessorTable
@@ -1442,8 +1600,10 @@ public final class QueryOuterClass {
      * address is the address of the contract to query
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -1461,8 +1621,10 @@ public final class QueryOuterClass {
      * address is the address of the contract to query
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -1484,8 +1646,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -1494,8 +1658,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
     }
@@ -1504,13 +1670,15 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1520,6 +1688,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -1528,8 +1697,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1542,11 +1713,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1557,15 +1728,15 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && (hasPagination() == other.hasPagination());
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1574,7 +1745,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       if (hasPagination()) {
@@ -1586,6 +1757,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1645,6 +1827,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1652,6 +1835,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1679,6 +1863,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractHistoryRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractHistoryRequest_fieldAccessorTable
@@ -1701,6 +1886,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -1714,15 +1900,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractHistoryRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -1731,6 +1920,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest(this);
         result.address_ = address_;
@@ -1743,32 +1933,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest)other);
@@ -1787,14 +1984,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1819,7 +2019,8 @@ public final class QueryOuterClass {
        * address is the address of the contract to query
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -1838,7 +2039,8 @@ public final class QueryOuterClass {
        * address is the address of the contract to query
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -1858,7 +2060,9 @@ public final class QueryOuterClass {
        * address is the address of the contract to query
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -1875,7 +2079,8 @@ public final class QueryOuterClass {
        * address is the address of the contract to query
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -1888,7 +2093,9 @@ public final class QueryOuterClass {
        * address is the address of the contract to query
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -1902,7 +2109,7 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
       /**
@@ -1910,7 +2117,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -1920,7 +2128,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
         if (paginationBuilder_ == null) {
@@ -1934,7 +2143,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -1954,7 +2163,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
@@ -1972,7 +2181,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -1994,7 +2203,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -2012,7 +2221,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
         
@@ -2024,7 +2233,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -2039,7 +2248,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
@@ -2054,14 +2263,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2080,11 +2291,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryContractHistoryRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryContractHistoryRequest>() {
+      @java.lang.Override
       public QueryContractHistoryRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryContractHistoryRequest(input, extensionRegistry);
+        return new QueryContractHistoryRequest(input, extensionRegistry);
       }
     };
 
@@ -2097,6 +2309,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2108,25 +2321,25 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry> 
         getEntriesList();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry getEntries(int index);
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
      */
     int getEntriesCount();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntryOrBuilder> 
         getEntriesOrBuilderList();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntryOrBuilder getEntriesOrBuilder(
         int index);
@@ -2136,7 +2349,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -2144,7 +2358,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
@@ -2152,7 +2367,7 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
   }
@@ -2163,10 +2378,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryContractHistoryResponse}
    */
-  public  static final class QueryContractHistoryResponse extends
+  public static final class QueryContractHistoryResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryContractHistoryResponse)
       QueryContractHistoryResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryContractHistoryResponse.newBuilder() to construct.
     private QueryContractHistoryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2176,16 +2392,28 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryContractHistoryResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryContractHistoryResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2194,14 +2422,8 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entries_ = new java.util.ArrayList<cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -2222,6 +2444,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2230,9 +2459,10 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2241,6 +2471,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractHistoryResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractHistoryResponse_fieldAccessorTable
@@ -2248,37 +2479,41 @@ public final class QueryOuterClass {
               cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse.class, cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ENTRIES_FIELD_NUMBER = 1;
     private java.util.List<cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry> entries_;
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry> getEntriesList() {
       return entries_;
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntryOrBuilder> 
         getEntriesOrBuilderList() {
       return entries_;
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public int getEntriesCount() {
       return entries_.size();
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry getEntries(int index) {
       return entries_.get(index);
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntryOrBuilder getEntriesOrBuilder(
         int index) {
       return entries_.get(index);
@@ -2291,8 +2526,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -2301,8 +2538,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
@@ -2311,13 +2550,15 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2327,6 +2568,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < entries_.size(); i++) {
@@ -2335,8 +2577,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2350,11 +2594,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2365,15 +2609,15 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse) obj;
 
-      boolean result = true;
-      result = result && getEntriesList()
-          .equals(other.getEntriesList());
-      result = result && (hasPagination() == other.hasPagination());
+      if (!getEntriesList()
+          .equals(other.getEntriesList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2382,7 +2626,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getEntriesCount() > 0) {
         hash = (37 * hash) + ENTRIES_FIELD_NUMBER;
         hash = (53 * hash) + getEntriesList().hashCode();
@@ -2396,6 +2640,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2455,6 +2710,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2462,6 +2718,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2489,6 +2746,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractHistoryResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractHistoryResponse_fieldAccessorTable
@@ -2512,6 +2770,7 @@ public final class QueryOuterClass {
           getEntriesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (entriesBuilder_ == null) {
@@ -2529,15 +2788,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractHistoryResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -2546,12 +2808,12 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (entriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             entries_ = java.util.Collections.unmodifiableList(entries_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2564,37 +2826,43 @@ public final class QueryOuterClass {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse)other);
@@ -2635,14 +2903,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2665,7 +2936,7 @@ public final class QueryOuterClass {
       private java.util.List<cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry> entries_ =
         java.util.Collections.emptyList();
       private void ensureEntriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           entries_ = new java.util.ArrayList<cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry>(entries_);
           bitField0_ |= 0x00000001;
          }
@@ -2675,7 +2946,7 @@ public final class QueryOuterClass {
           cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry, cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.Builder, cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntryOrBuilder> entriesBuilder_;
 
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry> getEntriesList() {
         if (entriesBuilder_ == null) {
@@ -2685,7 +2956,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public int getEntriesCount() {
         if (entriesBuilder_ == null) {
@@ -2695,7 +2966,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry getEntries(int index) {
         if (entriesBuilder_ == null) {
@@ -2705,7 +2976,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setEntries(
           int index, cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry value) {
@@ -2722,7 +2993,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setEntries(
           int index, cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.Builder builderForValue) {
@@ -2736,7 +3007,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addEntries(cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry value) {
         if (entriesBuilder_ == null) {
@@ -2752,7 +3023,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addEntries(
           int index, cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry value) {
@@ -2769,7 +3040,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addEntries(
           cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.Builder builderForValue) {
@@ -2783,7 +3054,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addEntries(
           int index, cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.Builder builderForValue) {
@@ -2797,7 +3068,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllEntries(
           java.lang.Iterable<? extends cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry> values) {
@@ -2812,7 +3083,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearEntries() {
         if (entriesBuilder_ == null) {
@@ -2825,7 +3096,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeEntries(int index) {
         if (entriesBuilder_ == null) {
@@ -2838,14 +3109,14 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.Builder getEntriesBuilder(
           int index) {
         return getEntriesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntryOrBuilder getEntriesOrBuilder(
           int index) {
@@ -2855,7 +3126,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntryOrBuilder> 
            getEntriesOrBuilderList() {
@@ -2866,14 +3137,14 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.Builder addEntriesBuilder() {
         return getEntriesFieldBuilder().addBuilder(
             cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.Builder addEntriesBuilder(
           int index) {
@@ -2881,7 +3152,7 @@ public final class QueryOuterClass {
             index, cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry entries = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.Builder> 
            getEntriesBuilderList() {
@@ -2894,7 +3165,7 @@ public final class QueryOuterClass {
           entriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry, cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.Builder, cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntryOrBuilder>(
                   entries_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           entries_ = null;
@@ -2902,7 +3173,7 @@ public final class QueryOuterClass {
         return entriesBuilder_;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
       /**
@@ -2910,7 +3181,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -2920,7 +3192,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
         if (paginationBuilder_ == null) {
@@ -2934,7 +3207,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -2954,7 +3227,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
@@ -2972,7 +3245,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -2994,7 +3267,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -3012,7 +3285,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
         
@@ -3024,7 +3297,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -3039,7 +3312,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
@@ -3054,14 +3327,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3080,11 +3355,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryContractHistoryResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryContractHistoryResponse>() {
+      @java.lang.Override
       public QueryContractHistoryResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryContractHistoryResponse(input, extensionRegistry);
+        return new QueryContractHistoryResponse(input, extensionRegistry);
       }
     };
 
@@ -3097,6 +3373,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractHistoryResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3112,7 +3389,8 @@ public final class QueryOuterClass {
      * grpc-gateway_out does not support Go style CodID
      * </pre>
      *
-     * <code>optional uint64 code_id = 1;</code>
+     * <code>uint64 code_id = 1;</code>
+     * @return The codeId.
      */
     long getCodeId();
 
@@ -3121,7 +3399,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -3129,7 +3408,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
@@ -3137,7 +3417,7 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
   }
@@ -3148,29 +3428,40 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryContractsByCodeRequest}
    */
-  public  static final class QueryContractsByCodeRequest extends
+  public static final class QueryContractsByCodeRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryContractsByCodeRequest)
       QueryContractsByCodeRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryContractsByCodeRequest.newBuilder() to construct.
     private QueryContractsByCodeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private QueryContractsByCodeRequest() {
-      codeId_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryContractsByCodeRequest();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryContractsByCodeRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3179,12 +3470,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               codeId_ = input.readUInt64();
@@ -3203,6 +3488,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3211,6 +3503,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3219,6 +3512,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractsByCodeRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractsByCodeRequest_fieldAccessorTable
@@ -3233,8 +3527,10 @@ public final class QueryOuterClass {
      * grpc-gateway_out does not support Go style CodID
      * </pre>
      *
-     * <code>optional uint64 code_id = 1;</code>
+     * <code>uint64 code_id = 1;</code>
+     * @return The codeId.
      */
+    @java.lang.Override
     public long getCodeId() {
       return codeId_;
     }
@@ -3246,8 +3542,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -3256,8 +3554,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
     }
@@ -3266,13 +3566,15 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3282,6 +3584,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (codeId_ != 0L) {
@@ -3290,8 +3593,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3305,11 +3610,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3320,15 +3625,15 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest) obj;
 
-      boolean result = true;
-      result = result && (getCodeId()
-          == other.getCodeId());
-      result = result && (hasPagination() == other.hasPagination());
+      if (getCodeId()
+          != other.getCodeId()) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3337,7 +3642,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CODE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCodeId());
@@ -3350,6 +3655,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3409,6 +3725,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3416,6 +3733,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3443,6 +3761,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractsByCodeRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractsByCodeRequest_fieldAccessorTable
@@ -3465,6 +3784,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         codeId_ = 0L;
@@ -3478,15 +3798,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractsByCodeRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -3495,6 +3818,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest(this);
         result.codeId_ = codeId_;
@@ -3507,32 +3831,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest)other);
@@ -3550,14 +3881,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3582,8 +3916,10 @@ public final class QueryOuterClass {
        * grpc-gateway_out does not support Go style CodID
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1;</code>
+       * @return The codeId.
        */
+      @java.lang.Override
       public long getCodeId() {
         return codeId_;
       }
@@ -3592,7 +3928,9 @@ public final class QueryOuterClass {
        * grpc-gateway_out does not support Go style CodID
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1;</code>
+       * @param value The codeId to set.
+       * @return This builder for chaining.
        */
       public Builder setCodeId(long value) {
         
@@ -3605,7 +3943,8 @@ public final class QueryOuterClass {
        * grpc-gateway_out does not support Go style CodID
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCodeId() {
         
@@ -3614,7 +3953,7 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
       /**
@@ -3622,7 +3961,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -3632,7 +3972,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
         if (paginationBuilder_ == null) {
@@ -3646,7 +3987,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -3666,7 +4007,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
@@ -3684,7 +4025,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -3706,7 +4047,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -3724,7 +4065,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
         
@@ -3736,7 +4077,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -3751,7 +4092,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
@@ -3766,14 +4107,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3792,11 +4135,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryContractsByCodeRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryContractsByCodeRequest>() {
+      @java.lang.Override
       public QueryContractsByCodeRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryContractsByCodeRequest(input, extensionRegistry);
+        return new QueryContractsByCodeRequest(input, extensionRegistry);
       }
     };
 
@@ -3809,6 +4153,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3820,25 +4165,29 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
 
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return Whether the contractInfo field is set.
      */
     boolean hasContractInfo();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return The contractInfo.
      */
     cosmwasm.wasm.v1beta1.Types.ContractInfo getContractInfo();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
      */
     cosmwasm.wasm.v1beta1.Types.ContractInfoOrBuilder getContractInfoOrBuilder();
   }
@@ -3849,10 +4198,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.ContractInfoWithAddress}
    */
-  public  static final class ContractInfoWithAddress extends
+  public static final class ContractInfoWithAddress extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.ContractInfoWithAddress)
       ContractInfoWithAddressOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ContractInfoWithAddress.newBuilder() to construct.
     private ContractInfoWithAddress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3862,16 +4212,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ContractInfoWithAddress();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ContractInfoWithAddress(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3880,12 +4241,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -3905,6 +4260,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3913,6 +4275,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3921,6 +4284,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_ContractInfoWithAddress_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_ContractInfoWithAddress_fieldAccessorTable
@@ -3931,8 +4295,10 @@ public final class QueryOuterClass {
     public static final int ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object address_;
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -3946,8 +4312,10 @@ public final class QueryOuterClass {
       }
     }
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -3965,25 +4333,31 @@ public final class QueryOuterClass {
     public static final int CONTRACT_INFO_FIELD_NUMBER = 2;
     private cosmwasm.wasm.v1beta1.Types.ContractInfo contractInfo_;
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return Whether the contractInfo field is set.
      */
+    @java.lang.Override
     public boolean hasContractInfo() {
       return contractInfo_ != null;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return The contractInfo.
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.ContractInfo getContractInfo() {
       return contractInfo_ == null ? cosmwasm.wasm.v1beta1.Types.ContractInfo.getDefaultInstance() : contractInfo_;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.ContractInfoOrBuilder getContractInfoOrBuilder() {
       return getContractInfo();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3993,6 +4367,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -4001,8 +4376,10 @@ public final class QueryOuterClass {
       if (contractInfo_ != null) {
         output.writeMessage(2, getContractInfo());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4015,11 +4392,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getContractInfo());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4030,15 +4407,15 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress other = (cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && (hasContractInfo() == other.hasContractInfo());
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (hasContractInfo() != other.hasContractInfo()) return false;
       if (hasContractInfo()) {
-        result = result && getContractInfo()
-            .equals(other.getContractInfo());
+        if (!getContractInfo()
+            .equals(other.getContractInfo())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4047,7 +4424,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       if (hasContractInfo()) {
@@ -4059,6 +4436,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4118,6 +4506,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4125,6 +4514,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4152,6 +4542,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_ContractInfoWithAddress_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_ContractInfoWithAddress_fieldAccessorTable
@@ -4174,6 +4565,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -4187,15 +4579,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_ContractInfoWithAddress_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress result = buildPartial();
         if (!result.isInitialized()) {
@@ -4204,6 +4599,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress result = new cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress(this);
         result.address_ = address_;
@@ -4216,32 +4612,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress)other);
@@ -4260,14 +4663,17 @@ public final class QueryOuterClass {
         if (other.hasContractInfo()) {
           mergeContractInfo(other.getContractInfo());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4288,7 +4694,8 @@ public final class QueryOuterClass {
 
       private java.lang.Object address_ = "";
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -4303,7 +4710,8 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -4319,7 +4727,9 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -4332,7 +4742,8 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -4341,7 +4752,9 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -4355,17 +4768,19 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmwasm.wasm.v1beta1.Types.ContractInfo contractInfo_ = null;
+      private cosmwasm.wasm.v1beta1.Types.ContractInfo contractInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.ContractInfo, cosmwasm.wasm.v1beta1.Types.ContractInfo.Builder, cosmwasm.wasm.v1beta1.Types.ContractInfoOrBuilder> contractInfoBuilder_;
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+       * @return Whether the contractInfo field is set.
        */
       public boolean hasContractInfo() {
         return contractInfoBuilder_ != null || contractInfo_ != null;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+       * @return The contractInfo.
        */
       public cosmwasm.wasm.v1beta1.Types.ContractInfo getContractInfo() {
         if (contractInfoBuilder_ == null) {
@@ -4375,7 +4790,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder setContractInfo(cosmwasm.wasm.v1beta1.Types.ContractInfo value) {
         if (contractInfoBuilder_ == null) {
@@ -4391,7 +4806,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder setContractInfo(
           cosmwasm.wasm.v1beta1.Types.ContractInfo.Builder builderForValue) {
@@ -4405,7 +4820,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder mergeContractInfo(cosmwasm.wasm.v1beta1.Types.ContractInfo value) {
         if (contractInfoBuilder_ == null) {
@@ -4423,7 +4838,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder clearContractInfo() {
         if (contractInfoBuilder_ == null) {
@@ -4437,7 +4852,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.ContractInfo.Builder getContractInfoBuilder() {
         
@@ -4445,7 +4860,7 @@ public final class QueryOuterClass {
         return getContractInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.ContractInfoOrBuilder getContractInfoOrBuilder() {
         if (contractInfoBuilder_ != null) {
@@ -4456,7 +4871,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractInfo contract_info = 2 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.ContractInfo, cosmwasm.wasm.v1beta1.Types.ContractInfo.Builder, cosmwasm.wasm.v1beta1.Types.ContractInfoOrBuilder> 
@@ -4471,14 +4886,16 @@ public final class QueryOuterClass {
         }
         return contractInfoBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4497,11 +4914,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<ContractInfoWithAddress>
         PARSER = new com.google.protobuf.AbstractParser<ContractInfoWithAddress>() {
+      @java.lang.Override
       public ContractInfoWithAddress parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ContractInfoWithAddress(input, extensionRegistry);
+        return new ContractInfoWithAddress(input, extensionRegistry);
       }
     };
 
@@ -4514,6 +4932,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4525,25 +4944,25 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress> 
         getContractInfosList();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress getContractInfos(int index);
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
     int getContractInfosCount();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddressOrBuilder> 
         getContractInfosOrBuilderList();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddressOrBuilder getContractInfosOrBuilder(
         int index);
@@ -4553,7 +4972,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -4561,7 +4981,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
@@ -4569,7 +4990,7 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
   }
@@ -4580,10 +5001,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryContractsByCodeResponse}
    */
-  public  static final class QueryContractsByCodeResponse extends
+  public static final class QueryContractsByCodeResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryContractsByCodeResponse)
       QueryContractsByCodeResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryContractsByCodeResponse.newBuilder() to construct.
     private QueryContractsByCodeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4593,16 +5015,28 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryContractsByCodeResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryContractsByCodeResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4611,14 +5045,8 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 contractInfos_ = new java.util.ArrayList<cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -4639,6 +5067,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4647,9 +5082,10 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           contractInfos_ = java.util.Collections.unmodifiableList(contractInfos_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4658,6 +5094,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractsByCodeResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractsByCodeResponse_fieldAccessorTable
@@ -4665,37 +5102,41 @@ public final class QueryOuterClass {
               cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse.class, cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int CONTRACT_INFOS_FIELD_NUMBER = 1;
     private java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress> contractInfos_;
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress> getContractInfosList() {
       return contractInfos_;
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddressOrBuilder> 
         getContractInfosOrBuilderList() {
       return contractInfos_;
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public int getContractInfosCount() {
       return contractInfos_.size();
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress getContractInfos(int index) {
       return contractInfos_.get(index);
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddressOrBuilder getContractInfosOrBuilder(
         int index) {
       return contractInfos_.get(index);
@@ -4708,8 +5149,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -4718,8 +5161,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
@@ -4728,13 +5173,15 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4744,6 +5191,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < contractInfos_.size(); i++) {
@@ -4752,8 +5200,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4767,11 +5217,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4782,15 +5232,15 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse) obj;
 
-      boolean result = true;
-      result = result && getContractInfosList()
-          .equals(other.getContractInfosList());
-      result = result && (hasPagination() == other.hasPagination());
+      if (!getContractInfosList()
+          .equals(other.getContractInfosList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4799,7 +5249,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getContractInfosCount() > 0) {
         hash = (37 * hash) + CONTRACT_INFOS_FIELD_NUMBER;
         hash = (53 * hash) + getContractInfosList().hashCode();
@@ -4813,6 +5263,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4872,6 +5333,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4879,6 +5341,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4906,6 +5369,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractsByCodeResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractsByCodeResponse_fieldAccessorTable
@@ -4929,6 +5393,7 @@ public final class QueryOuterClass {
           getContractInfosFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (contractInfosBuilder_ == null) {
@@ -4946,15 +5411,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryContractsByCodeResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -4963,12 +5431,12 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (contractInfosBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             contractInfos_ = java.util.Collections.unmodifiableList(contractInfos_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -4981,37 +5449,43 @@ public final class QueryOuterClass {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse)other);
@@ -5052,14 +5526,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5082,7 +5559,7 @@ public final class QueryOuterClass {
       private java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress> contractInfos_ =
         java.util.Collections.emptyList();
       private void ensureContractInfosIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           contractInfos_ = new java.util.ArrayList<cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress>(contractInfos_);
           bitField0_ |= 0x00000001;
          }
@@ -5092,7 +5569,7 @@ public final class QueryOuterClass {
           cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress, cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.Builder, cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddressOrBuilder> contractInfosBuilder_;
 
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress> getContractInfosList() {
         if (contractInfosBuilder_ == null) {
@@ -5102,7 +5579,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public int getContractInfosCount() {
         if (contractInfosBuilder_ == null) {
@@ -5112,7 +5589,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress getContractInfos(int index) {
         if (contractInfosBuilder_ == null) {
@@ -5122,7 +5599,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setContractInfos(
           int index, cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress value) {
@@ -5139,7 +5616,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setContractInfos(
           int index, cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.Builder builderForValue) {
@@ -5153,7 +5630,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addContractInfos(cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress value) {
         if (contractInfosBuilder_ == null) {
@@ -5169,7 +5646,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addContractInfos(
           int index, cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress value) {
@@ -5186,7 +5663,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addContractInfos(
           cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.Builder builderForValue) {
@@ -5200,7 +5677,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addContractInfos(
           int index, cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.Builder builderForValue) {
@@ -5214,7 +5691,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllContractInfos(
           java.lang.Iterable<? extends cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress> values) {
@@ -5229,7 +5706,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearContractInfos() {
         if (contractInfosBuilder_ == null) {
@@ -5242,7 +5719,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeContractInfos(int index) {
         if (contractInfosBuilder_ == null) {
@@ -5255,14 +5732,14 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.Builder getContractInfosBuilder(
           int index) {
         return getContractInfosFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddressOrBuilder getContractInfosOrBuilder(
           int index) {
@@ -5272,7 +5749,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddressOrBuilder> 
            getContractInfosOrBuilderList() {
@@ -5283,14 +5760,14 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.Builder addContractInfosBuilder() {
         return getContractInfosFieldBuilder().addBuilder(
             cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.Builder addContractInfosBuilder(
           int index) {
@@ -5298,7 +5775,7 @@ public final class QueryOuterClass {
             index, cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.ContractInfoWithAddress contract_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.Builder> 
            getContractInfosBuilderList() {
@@ -5311,7 +5788,7 @@ public final class QueryOuterClass {
           contractInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress, cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddress.Builder, cosmwasm.wasm.v1beta1.QueryOuterClass.ContractInfoWithAddressOrBuilder>(
                   contractInfos_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           contractInfos_ = null;
@@ -5319,7 +5796,7 @@ public final class QueryOuterClass {
         return contractInfosBuilder_;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
       /**
@@ -5327,7 +5804,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -5337,7 +5815,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
         if (paginationBuilder_ == null) {
@@ -5351,7 +5830,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -5371,7 +5850,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
@@ -5389,7 +5868,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -5411,7 +5890,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -5429,7 +5908,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
         
@@ -5441,7 +5920,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -5456,7 +5935,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
@@ -5471,14 +5950,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5497,11 +5978,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryContractsByCodeResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryContractsByCodeResponse>() {
+      @java.lang.Override
       public QueryContractsByCodeResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryContractsByCodeResponse(input, extensionRegistry);
+        return new QueryContractsByCodeResponse(input, extensionRegistry);
       }
     };
 
@@ -5514,6 +5996,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryContractsByCodeResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5529,7 +6012,8 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
@@ -5537,7 +6021,8 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -5547,7 +6032,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -5555,7 +6041,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
@@ -5563,7 +6050,7 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
   }
@@ -5574,10 +6061,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryAllContractStateRequest}
    */
-  public  static final class QueryAllContractStateRequest extends
+  public static final class QueryAllContractStateRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryAllContractStateRequest)
       QueryAllContractStateRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryAllContractStateRequest.newBuilder() to construct.
     private QueryAllContractStateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5587,16 +6075,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAllContractStateRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryAllContractStateRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5605,12 +6104,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -5630,6 +6123,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5638,6 +6138,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5646,6 +6147,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryAllContractStateRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryAllContractStateRequest_fieldAccessorTable
@@ -5660,8 +6162,10 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -5679,8 +6183,10 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -5702,8 +6208,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -5712,8 +6220,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
     }
@@ -5722,13 +6232,15 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5738,6 +6250,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -5746,8 +6259,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5760,11 +6275,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5775,15 +6290,15 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && (hasPagination() == other.hasPagination());
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5792,7 +6307,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       if (hasPagination()) {
@@ -5804,6 +6319,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5863,6 +6389,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5870,6 +6397,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5897,6 +6425,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryAllContractStateRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryAllContractStateRequest_fieldAccessorTable
@@ -5919,6 +6448,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -5932,15 +6462,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryAllContractStateRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -5949,6 +6482,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest(this);
         result.address_ = address_;
@@ -5961,32 +6495,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest)other);
@@ -6005,14 +6546,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6037,7 +6581,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -6056,7 +6601,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -6076,7 +6622,9 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -6093,7 +6641,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -6106,7 +6655,9 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -6120,7 +6671,7 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
       /**
@@ -6128,7 +6679,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -6138,7 +6690,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
         if (paginationBuilder_ == null) {
@@ -6152,7 +6705,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -6172,7 +6725,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
@@ -6190,7 +6743,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -6212,7 +6765,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -6230,7 +6783,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
         
@@ -6242,7 +6795,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -6257,7 +6810,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
@@ -6272,14 +6825,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6298,11 +6853,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryAllContractStateRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryAllContractStateRequest>() {
+      @java.lang.Override
       public QueryAllContractStateRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryAllContractStateRequest(input, extensionRegistry);
+        return new QueryAllContractStateRequest(input, extensionRegistry);
       }
     };
 
@@ -6315,6 +6871,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6326,25 +6883,25 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<cosmwasm.wasm.v1beta1.Types.Model> 
         getModelsList();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmwasm.wasm.v1beta1.Types.Model getModels(int index);
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
      */
     int getModelsCount();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends cosmwasm.wasm.v1beta1.Types.ModelOrBuilder> 
         getModelsOrBuilderList();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmwasm.wasm.v1beta1.Types.ModelOrBuilder getModelsOrBuilder(
         int index);
@@ -6354,7 +6911,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -6362,7 +6920,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
@@ -6370,7 +6929,7 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
   }
@@ -6381,10 +6940,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryAllContractStateResponse}
    */
-  public  static final class QueryAllContractStateResponse extends
+  public static final class QueryAllContractStateResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryAllContractStateResponse)
       QueryAllContractStateResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryAllContractStateResponse.newBuilder() to construct.
     private QueryAllContractStateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6394,16 +6954,28 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAllContractStateResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryAllContractStateResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6412,14 +6984,8 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 models_ = new java.util.ArrayList<cosmwasm.wasm.v1beta1.Types.Model>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -6440,6 +7006,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6448,9 +7021,10 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           models_ = java.util.Collections.unmodifiableList(models_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6459,6 +7033,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryAllContractStateResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryAllContractStateResponse_fieldAccessorTable
@@ -6466,37 +7041,41 @@ public final class QueryOuterClass {
               cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse.class, cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int MODELS_FIELD_NUMBER = 1;
     private java.util.List<cosmwasm.wasm.v1beta1.Types.Model> models_;
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmwasm.wasm.v1beta1.Types.Model> getModelsList() {
       return models_;
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmwasm.wasm.v1beta1.Types.ModelOrBuilder> 
         getModelsOrBuilderList() {
       return models_;
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public int getModelsCount() {
       return models_.size();
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.Model getModels(int index) {
       return models_.get(index);
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.ModelOrBuilder getModelsOrBuilder(
         int index) {
       return models_.get(index);
@@ -6509,8 +7088,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -6519,8 +7100,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
@@ -6529,13 +7112,15 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6545,6 +7130,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < models_.size(); i++) {
@@ -6553,8 +7139,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6568,11 +7156,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6583,15 +7171,15 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse) obj;
 
-      boolean result = true;
-      result = result && getModelsList()
-          .equals(other.getModelsList());
-      result = result && (hasPagination() == other.hasPagination());
+      if (!getModelsList()
+          .equals(other.getModelsList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6600,7 +7188,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getModelsCount() > 0) {
         hash = (37 * hash) + MODELS_FIELD_NUMBER;
         hash = (53 * hash) + getModelsList().hashCode();
@@ -6614,6 +7202,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6673,6 +7272,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6680,6 +7280,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6707,6 +7308,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryAllContractStateResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryAllContractStateResponse_fieldAccessorTable
@@ -6730,6 +7332,7 @@ public final class QueryOuterClass {
           getModelsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (modelsBuilder_ == null) {
@@ -6747,15 +7350,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryAllContractStateResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -6764,12 +7370,12 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (modelsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             models_ = java.util.Collections.unmodifiableList(models_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -6782,37 +7388,43 @@ public final class QueryOuterClass {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse)other);
@@ -6853,14 +7465,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6883,7 +7498,7 @@ public final class QueryOuterClass {
       private java.util.List<cosmwasm.wasm.v1beta1.Types.Model> models_ =
         java.util.Collections.emptyList();
       private void ensureModelsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           models_ = new java.util.ArrayList<cosmwasm.wasm.v1beta1.Types.Model>(models_);
           bitField0_ |= 0x00000001;
          }
@@ -6893,7 +7508,7 @@ public final class QueryOuterClass {
           cosmwasm.wasm.v1beta1.Types.Model, cosmwasm.wasm.v1beta1.Types.Model.Builder, cosmwasm.wasm.v1beta1.Types.ModelOrBuilder> modelsBuilder_;
 
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmwasm.wasm.v1beta1.Types.Model> getModelsList() {
         if (modelsBuilder_ == null) {
@@ -6903,7 +7518,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public int getModelsCount() {
         if (modelsBuilder_ == null) {
@@ -6913,7 +7528,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.Model getModels(int index) {
         if (modelsBuilder_ == null) {
@@ -6923,7 +7538,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setModels(
           int index, cosmwasm.wasm.v1beta1.Types.Model value) {
@@ -6940,7 +7555,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setModels(
           int index, cosmwasm.wasm.v1beta1.Types.Model.Builder builderForValue) {
@@ -6954,7 +7569,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addModels(cosmwasm.wasm.v1beta1.Types.Model value) {
         if (modelsBuilder_ == null) {
@@ -6970,7 +7585,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addModels(
           int index, cosmwasm.wasm.v1beta1.Types.Model value) {
@@ -6987,7 +7602,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addModels(
           cosmwasm.wasm.v1beta1.Types.Model.Builder builderForValue) {
@@ -7001,7 +7616,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addModels(
           int index, cosmwasm.wasm.v1beta1.Types.Model.Builder builderForValue) {
@@ -7015,7 +7630,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllModels(
           java.lang.Iterable<? extends cosmwasm.wasm.v1beta1.Types.Model> values) {
@@ -7030,7 +7645,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearModels() {
         if (modelsBuilder_ == null) {
@@ -7043,7 +7658,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeModels(int index) {
         if (modelsBuilder_ == null) {
@@ -7056,14 +7671,14 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.Model.Builder getModelsBuilder(
           int index) {
         return getModelsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.ModelOrBuilder getModelsOrBuilder(
           int index) {
@@ -7073,7 +7688,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends cosmwasm.wasm.v1beta1.Types.ModelOrBuilder> 
            getModelsOrBuilderList() {
@@ -7084,14 +7699,14 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.Model.Builder addModelsBuilder() {
         return getModelsFieldBuilder().addBuilder(
             cosmwasm.wasm.v1beta1.Types.Model.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.Model.Builder addModelsBuilder(
           int index) {
@@ -7099,7 +7714,7 @@ public final class QueryOuterClass {
             index, cosmwasm.wasm.v1beta1.Types.Model.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.Model models = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmwasm.wasm.v1beta1.Types.Model.Builder> 
            getModelsBuilderList() {
@@ -7112,7 +7727,7 @@ public final class QueryOuterClass {
           modelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmwasm.wasm.v1beta1.Types.Model, cosmwasm.wasm.v1beta1.Types.Model.Builder, cosmwasm.wasm.v1beta1.Types.ModelOrBuilder>(
                   models_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           models_ = null;
@@ -7120,7 +7735,7 @@ public final class QueryOuterClass {
         return modelsBuilder_;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
       /**
@@ -7128,7 +7743,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -7138,7 +7754,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
         if (paginationBuilder_ == null) {
@@ -7152,7 +7769,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -7172,7 +7789,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
@@ -7190,7 +7807,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -7212,7 +7829,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -7230,7 +7847,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
         
@@ -7242,7 +7859,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -7257,7 +7874,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
@@ -7272,14 +7889,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7298,11 +7917,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryAllContractStateResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryAllContractStateResponse>() {
+      @java.lang.Override
       public QueryAllContractStateResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryAllContractStateResponse(input, extensionRegistry);
+        return new QueryAllContractStateResponse(input, extensionRegistry);
       }
     };
 
@@ -7315,6 +7935,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryAllContractStateResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7330,7 +7951,8 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
@@ -7338,13 +7960,15 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
 
     /**
-     * <code>optional bytes query_data = 2;</code>
+     * <code>bytes query_data = 2;</code>
+     * @return The queryData.
      */
     com.google.protobuf.ByteString getQueryData();
   }
@@ -7355,10 +7979,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryRawContractStateRequest}
    */
-  public  static final class QueryRawContractStateRequest extends
+  public static final class QueryRawContractStateRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryRawContractStateRequest)
       QueryRawContractStateRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryRawContractStateRequest.newBuilder() to construct.
     private QueryRawContractStateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7369,16 +7994,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryRawContractStateRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryRawContractStateRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7387,12 +8023,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -7404,6 +8034,13 @@ public final class QueryOuterClass {
               queryData_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7412,6 +8049,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7420,6 +8058,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryRawContractStateRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryRawContractStateRequest_fieldAccessorTable
@@ -7434,8 +8073,10 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -7453,8 +8094,10 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -7472,13 +8115,16 @@ public final class QueryOuterClass {
     public static final int QUERY_DATA_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString queryData_;
     /**
-     * <code>optional bytes query_data = 2;</code>
+     * <code>bytes query_data = 2;</code>
+     * @return The queryData.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getQueryData() {
       return queryData_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7488,6 +8134,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -7496,8 +8143,10 @@ public final class QueryOuterClass {
       if (!queryData_.isEmpty()) {
         output.writeBytes(2, queryData_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7510,11 +8159,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, queryData_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7525,12 +8174,12 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && getQueryData()
-          .equals(other.getQueryData());
-      return result;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!getQueryData()
+          .equals(other.getQueryData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7539,7 +8188,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       hash = (37 * hash) + QUERY_DATA_FIELD_NUMBER;
@@ -7549,6 +8198,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7608,6 +8268,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7615,6 +8276,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7642,6 +8304,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryRawContractStateRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryRawContractStateRequest_fieldAccessorTable
@@ -7664,6 +8327,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -7673,15 +8337,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryRawContractStateRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -7690,6 +8357,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest(this);
         result.address_ = address_;
@@ -7698,32 +8366,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest)other);
@@ -7742,14 +8417,17 @@ public final class QueryOuterClass {
         if (other.getQueryData() != com.google.protobuf.ByteString.EMPTY) {
           setQueryData(other.getQueryData());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7774,7 +8452,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -7793,7 +8472,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -7813,7 +8493,9 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -7830,7 +8512,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -7843,7 +8526,9 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -7859,13 +8544,17 @@ public final class QueryOuterClass {
 
       private com.google.protobuf.ByteString queryData_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes query_data = 2;</code>
+       * <code>bytes query_data = 2;</code>
+       * @return The queryData.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getQueryData() {
         return queryData_;
       }
       /**
-       * <code>optional bytes query_data = 2;</code>
+       * <code>bytes query_data = 2;</code>
+       * @param value The queryData to set.
+       * @return This builder for chaining.
        */
       public Builder setQueryData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -7877,7 +8566,8 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes query_data = 2;</code>
+       * <code>bytes query_data = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearQueryData() {
         
@@ -7885,14 +8575,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7911,11 +8603,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryRawContractStateRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryRawContractStateRequest>() {
+      @java.lang.Override
       public QueryRawContractStateRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryRawContractStateRequest(input, extensionRegistry);
+        return new QueryRawContractStateRequest(input, extensionRegistry);
       }
     };
 
@@ -7928,6 +8621,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7943,7 +8637,8 @@ public final class QueryOuterClass {
      * Data contains the raw store data
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>bytes data = 1;</code>
+     * @return The data.
      */
     com.google.protobuf.ByteString getData();
   }
@@ -7954,10 +8649,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryRawContractStateResponse}
    */
-  public  static final class QueryRawContractStateResponse extends
+  public static final class QueryRawContractStateResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryRawContractStateResponse)
       QueryRawContractStateResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryRawContractStateResponse.newBuilder() to construct.
     private QueryRawContractStateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7967,16 +8663,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryRawContractStateResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryRawContractStateResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7985,15 +8692,16 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               data_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -8004,6 +8712,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8012,6 +8721,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryRawContractStateResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryRawContractStateResponse_fieldAccessorTable
@@ -8026,13 +8736,16 @@ public final class QueryOuterClass {
      * Data contains the raw store data
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>bytes data = 1;</code>
+     * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8042,13 +8755,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!data_.isEmpty()) {
         output.writeBytes(1, data_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8058,11 +8774,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, data_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8073,10 +8789,10 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse) obj;
 
-      boolean result = true;
-      result = result && getData()
-          .equals(other.getData());
-      return result;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8085,7 +8801,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -8093,6 +8809,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8152,6 +8879,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8159,6 +8887,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8186,6 +8915,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryRawContractStateResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryRawContractStateResponse_fieldAccessorTable
@@ -8208,6 +8938,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         data_ = com.google.protobuf.ByteString.EMPTY;
@@ -8215,15 +8946,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryRawContractStateResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -8232,6 +8966,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse(this);
         result.data_ = data_;
@@ -8239,32 +8974,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse)other);
@@ -8279,14 +9021,17 @@ public final class QueryOuterClass {
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8311,8 +9056,10 @@ public final class QueryOuterClass {
        * Data contains the raw store data
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @return The data.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
@@ -8321,7 +9068,9 @@ public final class QueryOuterClass {
        * Data contains the raw store data
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -8337,7 +9086,8 @@ public final class QueryOuterClass {
        * Data contains the raw store data
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -8345,14 +9095,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8371,11 +9123,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryRawContractStateResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryRawContractStateResponse>() {
+      @java.lang.Override
       public QueryRawContractStateResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryRawContractStateResponse(input, extensionRegistry);
+        return new QueryRawContractStateResponse(input, extensionRegistry);
       }
     };
 
@@ -8388,6 +9141,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryRawContractStateResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8403,7 +9157,8 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
@@ -8411,7 +9166,8 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -8421,7 +9177,8 @@ public final class QueryOuterClass {
      * QueryData contains the query data passed to the contract
      * </pre>
      *
-     * <code>optional bytes query_data = 2;</code>
+     * <code>bytes query_data = 2;</code>
+     * @return The queryData.
      */
     com.google.protobuf.ByteString getQueryData();
   }
@@ -8432,10 +9189,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QuerySmartContractStateRequest}
    */
-  public  static final class QuerySmartContractStateRequest extends
+  public static final class QuerySmartContractStateRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QuerySmartContractStateRequest)
       QuerySmartContractStateRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QuerySmartContractStateRequest.newBuilder() to construct.
     private QuerySmartContractStateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8446,16 +9204,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuerySmartContractStateRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QuerySmartContractStateRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8464,12 +9233,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -8481,6 +9244,13 @@ public final class QueryOuterClass {
               queryData_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8489,6 +9259,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8497,6 +9268,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QuerySmartContractStateRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QuerySmartContractStateRequest_fieldAccessorTable
@@ -8511,8 +9283,10 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -8530,8 +9304,10 @@ public final class QueryOuterClass {
      * address is the address of the contract
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -8553,13 +9329,16 @@ public final class QueryOuterClass {
      * QueryData contains the query data passed to the contract
      * </pre>
      *
-     * <code>optional bytes query_data = 2;</code>
+     * <code>bytes query_data = 2;</code>
+     * @return The queryData.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getQueryData() {
       return queryData_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8569,6 +9348,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -8577,8 +9357,10 @@ public final class QueryOuterClass {
       if (!queryData_.isEmpty()) {
         output.writeBytes(2, queryData_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8591,11 +9373,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, queryData_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8606,12 +9388,12 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && getQueryData()
-          .equals(other.getQueryData());
-      return result;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!getQueryData()
+          .equals(other.getQueryData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8620,7 +9402,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       hash = (37 * hash) + QUERY_DATA_FIELD_NUMBER;
@@ -8630,6 +9412,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8689,6 +9482,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8696,6 +9490,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8723,6 +9518,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QuerySmartContractStateRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QuerySmartContractStateRequest_fieldAccessorTable
@@ -8745,6 +9541,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -8754,15 +9551,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QuerySmartContractStateRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -8771,6 +9571,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest(this);
         result.address_ = address_;
@@ -8779,32 +9580,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest)other);
@@ -8823,14 +9631,17 @@ public final class QueryOuterClass {
         if (other.getQueryData() != com.google.protobuf.ByteString.EMPTY) {
           setQueryData(other.getQueryData());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8855,7 +9666,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -8874,7 +9686,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -8894,7 +9707,9 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -8911,7 +9726,8 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -8924,7 +9740,9 @@ public final class QueryOuterClass {
        * address is the address of the contract
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -8944,8 +9762,10 @@ public final class QueryOuterClass {
        * QueryData contains the query data passed to the contract
        * </pre>
        *
-       * <code>optional bytes query_data = 2;</code>
+       * <code>bytes query_data = 2;</code>
+       * @return The queryData.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getQueryData() {
         return queryData_;
       }
@@ -8954,7 +9774,9 @@ public final class QueryOuterClass {
        * QueryData contains the query data passed to the contract
        * </pre>
        *
-       * <code>optional bytes query_data = 2;</code>
+       * <code>bytes query_data = 2;</code>
+       * @param value The queryData to set.
+       * @return This builder for chaining.
        */
       public Builder setQueryData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -8970,7 +9792,8 @@ public final class QueryOuterClass {
        * QueryData contains the query data passed to the contract
        * </pre>
        *
-       * <code>optional bytes query_data = 2;</code>
+       * <code>bytes query_data = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearQueryData() {
         
@@ -8978,14 +9801,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9004,11 +9829,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QuerySmartContractStateRequest>
         PARSER = new com.google.protobuf.AbstractParser<QuerySmartContractStateRequest>() {
+      @java.lang.Override
       public QuerySmartContractStateRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QuerySmartContractStateRequest(input, extensionRegistry);
+        return new QuerySmartContractStateRequest(input, extensionRegistry);
       }
     };
 
@@ -9021,6 +9847,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9036,7 +9863,8 @@ public final class QueryOuterClass {
      * Data contains the json data returned from the smart contract
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>bytes data = 1 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The data.
      */
     com.google.protobuf.ByteString getData();
   }
@@ -9047,10 +9875,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QuerySmartContractStateResponse}
    */
-  public  static final class QuerySmartContractStateResponse extends
+  public static final class QuerySmartContractStateResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QuerySmartContractStateResponse)
       QuerySmartContractStateResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QuerySmartContractStateResponse.newBuilder() to construct.
     private QuerySmartContractStateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9060,16 +9889,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuerySmartContractStateResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QuerySmartContractStateResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -9078,15 +9918,16 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               data_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -9097,6 +9938,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -9105,6 +9947,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QuerySmartContractStateResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QuerySmartContractStateResponse_fieldAccessorTable
@@ -9119,13 +9962,16 @@ public final class QueryOuterClass {
      * Data contains the json data returned from the smart contract
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>bytes data = 1 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9135,13 +9981,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!data_.isEmpty()) {
         output.writeBytes(1, data_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9151,11 +10000,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, data_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -9166,10 +10015,10 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse) obj;
 
-      boolean result = true;
-      result = result && getData()
-          .equals(other.getData());
-      return result;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9178,7 +10027,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9186,6 +10035,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9245,6 +10105,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9252,6 +10113,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9279,6 +10141,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QuerySmartContractStateResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QuerySmartContractStateResponse_fieldAccessorTable
@@ -9301,6 +10164,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         data_ = com.google.protobuf.ByteString.EMPTY;
@@ -9308,15 +10172,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QuerySmartContractStateResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -9325,6 +10192,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse(this);
         result.data_ = data_;
@@ -9332,32 +10200,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse)other);
@@ -9372,14 +10247,17 @@ public final class QueryOuterClass {
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9404,8 +10282,10 @@ public final class QueryOuterClass {
        * Data contains the json data returned from the smart contract
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return The data.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
@@ -9414,7 +10294,9 @@ public final class QueryOuterClass {
        * Data contains the json data returned from the smart contract
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -9430,7 +10312,8 @@ public final class QueryOuterClass {
        * Data contains the json data returned from the smart contract
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>bytes data = 1 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -9438,14 +10321,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9464,11 +10349,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QuerySmartContractStateResponse>
         PARSER = new com.google.protobuf.AbstractParser<QuerySmartContractStateResponse>() {
+      @java.lang.Override
       public QuerySmartContractStateResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QuerySmartContractStateResponse(input, extensionRegistry);
+        return new QuerySmartContractStateResponse(input, extensionRegistry);
       }
     };
 
@@ -9481,6 +10367,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QuerySmartContractStateResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9496,7 +10383,8 @@ public final class QueryOuterClass {
      * grpc-gateway_out does not support Go style CodID
      * </pre>
      *
-     * <code>optional uint64 code_id = 1;</code>
+     * <code>uint64 code_id = 1;</code>
+     * @return The codeId.
      */
     long getCodeId();
   }
@@ -9507,29 +10395,40 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryCodeRequest}
    */
-  public  static final class QueryCodeRequest extends
+  public static final class QueryCodeRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryCodeRequest)
       QueryCodeRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryCodeRequest.newBuilder() to construct.
     private QueryCodeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private QueryCodeRequest() {
-      codeId_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryCodeRequest();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryCodeRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -9538,15 +10437,16 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               codeId_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -9557,6 +10457,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -9565,6 +10466,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodeRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodeRequest_fieldAccessorTable
@@ -9579,13 +10481,16 @@ public final class QueryOuterClass {
      * grpc-gateway_out does not support Go style CodID
      * </pre>
      *
-     * <code>optional uint64 code_id = 1;</code>
+     * <code>uint64 code_id = 1;</code>
+     * @return The codeId.
      */
+    @java.lang.Override
     public long getCodeId() {
       return codeId_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9595,13 +10500,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (codeId_ != 0L) {
         output.writeUInt64(1, codeId_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9611,11 +10519,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, codeId_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -9626,10 +10534,10 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest) obj;
 
-      boolean result = true;
-      result = result && (getCodeId()
-          == other.getCodeId());
-      return result;
+      if (getCodeId()
+          != other.getCodeId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9638,7 +10546,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CODE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCodeId());
@@ -9647,6 +10555,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9706,6 +10625,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9713,6 +10633,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9740,6 +10661,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodeRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodeRequest_fieldAccessorTable
@@ -9762,6 +10684,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         codeId_ = 0L;
@@ -9769,15 +10692,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodeRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -9786,6 +10712,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest(this);
         result.codeId_ = codeId_;
@@ -9793,32 +10720,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest)other);
@@ -9833,14 +10767,17 @@ public final class QueryOuterClass {
         if (other.getCodeId() != 0L) {
           setCodeId(other.getCodeId());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9865,8 +10802,10 @@ public final class QueryOuterClass {
        * grpc-gateway_out does not support Go style CodID
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1;</code>
+       * @return The codeId.
        */
+      @java.lang.Override
       public long getCodeId() {
         return codeId_;
       }
@@ -9875,7 +10814,9 @@ public final class QueryOuterClass {
        * grpc-gateway_out does not support Go style CodID
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1;</code>
+       * @param value The codeId to set.
+       * @return This builder for chaining.
        */
       public Builder setCodeId(long value) {
         
@@ -9888,7 +10829,8 @@ public final class QueryOuterClass {
        * grpc-gateway_out does not support Go style CodID
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCodeId() {
         
@@ -9896,14 +10838,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9922,11 +10866,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryCodeRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryCodeRequest>() {
+      @java.lang.Override
       public QueryCodeRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryCodeRequest(input, extensionRegistry);
+        return new QueryCodeRequest(input, extensionRegistry);
       }
     };
 
@@ -9939,6 +10884,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9954,41 +10900,49 @@ public final class QueryOuterClass {
      * id for legacy support
      * </pre>
      *
-     * <code>optional uint64 code_id = 1;</code>
+     * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID", (.gogoproto.jsontag) = "id"];</code>
+     * @return The codeId.
      */
     long getCodeId();
 
     /**
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The creator.
      */
     java.lang.String getCreator();
     /**
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The bytes for creator.
      */
     com.google.protobuf.ByteString
         getCreatorBytes();
 
     /**
-     * <code>optional bytes data_hash = 3;</code>
+     * <code>bytes data_hash = 3 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+     * @return The dataHash.
      */
     com.google.protobuf.ByteString getDataHash();
 
     /**
-     * <code>optional string source = 4;</code>
+     * <code>string source = 4;</code>
+     * @return The source.
      */
     java.lang.String getSource();
     /**
-     * <code>optional string source = 4;</code>
+     * <code>string source = 4;</code>
+     * @return The bytes for source.
      */
     com.google.protobuf.ByteString
         getSourceBytes();
 
     /**
-     * <code>optional string builder = 5;</code>
+     * <code>string builder = 5;</code>
+     * @return The builder.
      */
     java.lang.String getBuilder();
     /**
-     * <code>optional string builder = 5;</code>
+     * <code>string builder = 5;</code>
+     * @return The bytes for builder.
      */
     com.google.protobuf.ByteString
         getBuilderBytes();
@@ -10000,16 +10954,16 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.CodeInfoResponse}
    */
-  public  static final class CodeInfoResponse extends
+  public static final class CodeInfoResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.CodeInfoResponse)
       CodeInfoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use CodeInfoResponse.newBuilder() to construct.
     private CodeInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private CodeInfoResponse() {
-      codeId_ = 0L;
       creator_ = "";
       dataHash_ = com.google.protobuf.ByteString.EMPTY;
       source_ = "";
@@ -10017,16 +10971,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CodeInfoResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private CodeInfoResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -10035,12 +11000,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               codeId_ = input.readUInt64();
@@ -10069,6 +11028,13 @@ public final class QueryOuterClass {
               builder_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -10077,6 +11043,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -10085,6 +11052,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_CodeInfoResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_CodeInfoResponse_fieldAccessorTable
@@ -10099,8 +11067,10 @@ public final class QueryOuterClass {
      * id for legacy support
      * </pre>
      *
-     * <code>optional uint64 code_id = 1;</code>
+     * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID", (.gogoproto.jsontag) = "id"];</code>
+     * @return The codeId.
      */
+    @java.lang.Override
     public long getCodeId() {
       return codeId_;
     }
@@ -10108,8 +11078,10 @@ public final class QueryOuterClass {
     public static final int CREATOR_FIELD_NUMBER = 2;
     private volatile java.lang.Object creator_;
     /**
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The creator.
      */
+    @java.lang.Override
     public java.lang.String getCreator() {
       java.lang.Object ref = creator_;
       if (ref instanceof java.lang.String) {
@@ -10123,8 +11095,10 @@ public final class QueryOuterClass {
       }
     }
     /**
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The bytes for creator.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCreatorBytes() {
       java.lang.Object ref = creator_;
@@ -10142,8 +11116,10 @@ public final class QueryOuterClass {
     public static final int DATA_HASH_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString dataHash_;
     /**
-     * <code>optional bytes data_hash = 3;</code>
+     * <code>bytes data_hash = 3 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+     * @return The dataHash.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDataHash() {
       return dataHash_;
     }
@@ -10151,8 +11127,10 @@ public final class QueryOuterClass {
     public static final int SOURCE_FIELD_NUMBER = 4;
     private volatile java.lang.Object source_;
     /**
-     * <code>optional string source = 4;</code>
+     * <code>string source = 4;</code>
+     * @return The source.
      */
+    @java.lang.Override
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
       if (ref instanceof java.lang.String) {
@@ -10166,8 +11144,10 @@ public final class QueryOuterClass {
       }
     }
     /**
-     * <code>optional string source = 4;</code>
+     * <code>string source = 4;</code>
+     * @return The bytes for source.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSourceBytes() {
       java.lang.Object ref = source_;
@@ -10185,8 +11165,10 @@ public final class QueryOuterClass {
     public static final int BUILDER_FIELD_NUMBER = 5;
     private volatile java.lang.Object builder_;
     /**
-     * <code>optional string builder = 5;</code>
+     * <code>string builder = 5;</code>
+     * @return The builder.
      */
+    @java.lang.Override
     public java.lang.String getBuilder() {
       java.lang.Object ref = builder_;
       if (ref instanceof java.lang.String) {
@@ -10200,8 +11182,10 @@ public final class QueryOuterClass {
       }
     }
     /**
-     * <code>optional string builder = 5;</code>
+     * <code>string builder = 5;</code>
+     * @return The bytes for builder.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getBuilderBytes() {
       java.lang.Object ref = builder_;
@@ -10217,6 +11201,7 @@ public final class QueryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10226,6 +11211,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (codeId_ != 0L) {
@@ -10243,8 +11229,10 @@ public final class QueryOuterClass {
       if (!getBuilderBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, builder_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10267,11 +11255,11 @@ public final class QueryOuterClass {
       if (!getBuilderBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, builder_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -10282,18 +11270,18 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse other = (cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse) obj;
 
-      boolean result = true;
-      result = result && (getCodeId()
-          == other.getCodeId());
-      result = result && getCreator()
-          .equals(other.getCreator());
-      result = result && getDataHash()
-          .equals(other.getDataHash());
-      result = result && getSource()
-          .equals(other.getSource());
-      result = result && getBuilder()
-          .equals(other.getBuilder());
-      return result;
+      if (getCodeId()
+          != other.getCodeId()) return false;
+      if (!getCreator()
+          .equals(other.getCreator())) return false;
+      if (!getDataHash()
+          .equals(other.getDataHash())) return false;
+      if (!getSource()
+          .equals(other.getSource())) return false;
+      if (!getBuilder()
+          .equals(other.getBuilder())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -10302,7 +11290,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CODE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCodeId());
@@ -10319,6 +11307,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10378,6 +11377,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10385,6 +11385,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10412,6 +11413,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_CodeInfoResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_CodeInfoResponse_fieldAccessorTable
@@ -10434,6 +11436,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         codeId_ = 0L;
@@ -10449,15 +11452,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_CodeInfoResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -10466,6 +11472,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse result = new cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse(this);
         result.codeId_ = codeId_;
@@ -10477,32 +11484,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse)other);
@@ -10532,14 +11546,17 @@ public final class QueryOuterClass {
           builder_ = other.builder_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10564,8 +11581,10 @@ public final class QueryOuterClass {
        * id for legacy support
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID", (.gogoproto.jsontag) = "id"];</code>
+       * @return The codeId.
        */
+      @java.lang.Override
       public long getCodeId() {
         return codeId_;
       }
@@ -10574,7 +11593,9 @@ public final class QueryOuterClass {
        * id for legacy support
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID", (.gogoproto.jsontag) = "id"];</code>
+       * @param value The codeId to set.
+       * @return This builder for chaining.
        */
       public Builder setCodeId(long value) {
         
@@ -10587,7 +11608,8 @@ public final class QueryOuterClass {
        * id for legacy support
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID", (.gogoproto.jsontag) = "id"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearCodeId() {
         
@@ -10598,7 +11620,8 @@ public final class QueryOuterClass {
 
       private java.lang.Object creator_ = "";
       /**
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @return The creator.
        */
       public java.lang.String getCreator() {
         java.lang.Object ref = creator_;
@@ -10613,7 +11636,8 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @return The bytes for creator.
        */
       public com.google.protobuf.ByteString
           getCreatorBytes() {
@@ -10629,7 +11653,9 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @param value The creator to set.
+       * @return This builder for chaining.
        */
       public Builder setCreator(
           java.lang.String value) {
@@ -10642,7 +11668,8 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCreator() {
         
@@ -10651,7 +11678,9 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @param value The bytes for creator to set.
+       * @return This builder for chaining.
        */
       public Builder setCreatorBytes(
           com.google.protobuf.ByteString value) {
@@ -10667,13 +11696,17 @@ public final class QueryOuterClass {
 
       private com.google.protobuf.ByteString dataHash_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes data_hash = 3;</code>
+       * <code>bytes data_hash = 3 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * @return The dataHash.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getDataHash() {
         return dataHash_;
       }
       /**
-       * <code>optional bytes data_hash = 3;</code>
+       * <code>bytes data_hash = 3 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * @param value The dataHash to set.
+       * @return This builder for chaining.
        */
       public Builder setDataHash(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -10685,7 +11718,8 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes data_hash = 3;</code>
+       * <code>bytes data_hash = 3 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearDataHash() {
         
@@ -10696,7 +11730,8 @@ public final class QueryOuterClass {
 
       private java.lang.Object source_ = "";
       /**
-       * <code>optional string source = 4;</code>
+       * <code>string source = 4;</code>
+       * @return The source.
        */
       public java.lang.String getSource() {
         java.lang.Object ref = source_;
@@ -10711,7 +11746,8 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional string source = 4;</code>
+       * <code>string source = 4;</code>
+       * @return The bytes for source.
        */
       public com.google.protobuf.ByteString
           getSourceBytes() {
@@ -10727,7 +11763,9 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional string source = 4;</code>
+       * <code>string source = 4;</code>
+       * @param value The source to set.
+       * @return This builder for chaining.
        */
       public Builder setSource(
           java.lang.String value) {
@@ -10740,7 +11778,8 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional string source = 4;</code>
+       * <code>string source = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSource() {
         
@@ -10749,7 +11788,9 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional string source = 4;</code>
+       * <code>string source = 4;</code>
+       * @param value The bytes for source to set.
+       * @return This builder for chaining.
        */
       public Builder setSourceBytes(
           com.google.protobuf.ByteString value) {
@@ -10765,7 +11806,8 @@ public final class QueryOuterClass {
 
       private java.lang.Object builder_ = "";
       /**
-       * <code>optional string builder = 5;</code>
+       * <code>string builder = 5;</code>
+       * @return The builder.
        */
       public java.lang.String getBuilder() {
         java.lang.Object ref = builder_;
@@ -10780,7 +11822,8 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional string builder = 5;</code>
+       * <code>string builder = 5;</code>
+       * @return The bytes for builder.
        */
       public com.google.protobuf.ByteString
           getBuilderBytes() {
@@ -10796,7 +11839,9 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional string builder = 5;</code>
+       * <code>string builder = 5;</code>
+       * @param value The builder to set.
+       * @return This builder for chaining.
        */
       public Builder setBuilder(
           java.lang.String value) {
@@ -10809,7 +11854,8 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional string builder = 5;</code>
+       * <code>string builder = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBuilder() {
         
@@ -10818,7 +11864,9 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional string builder = 5;</code>
+       * <code>string builder = 5;</code>
+       * @param value The bytes for builder to set.
+       * @return This builder for chaining.
        */
       public Builder setBuilderBytes(
           com.google.protobuf.ByteString value) {
@@ -10831,14 +11879,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -10857,11 +11907,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<CodeInfoResponse>
         PARSER = new com.google.protobuf.AbstractParser<CodeInfoResponse>() {
+      @java.lang.Override
       public CodeInfoResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CodeInfoResponse(input, extensionRegistry);
+        return new CodeInfoResponse(input, extensionRegistry);
       }
     };
 
@@ -10874,6 +11925,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10885,20 +11937,23 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return Whether the codeInfo field is set.
      */
     boolean hasCodeInfo();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return The codeInfo.
      */
     cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse getCodeInfo();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
      */
     cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder getCodeInfoOrBuilder();
 
     /**
-     * <code>optional bytes data = 2;</code>
+     * <code>bytes data = 2 [(.gogoproto.jsontag) = "data"];</code>
+     * @return The data.
      */
     com.google.protobuf.ByteString getData();
   }
@@ -10909,10 +11964,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryCodeResponse}
    */
-  public  static final class QueryCodeResponse extends
+  public static final class QueryCodeResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryCodeResponse)
       QueryCodeResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryCodeResponse.newBuilder() to construct.
     private QueryCodeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10922,16 +11978,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryCodeResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryCodeResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -10940,12 +12007,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder subBuilder = null;
               if (codeInfo_ != null) {
@@ -10964,6 +12025,13 @@ public final class QueryOuterClass {
               data_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -10972,6 +12040,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -10980,6 +12049,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodeResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodeResponse_fieldAccessorTable
@@ -10990,20 +12060,25 @@ public final class QueryOuterClass {
     public static final int CODE_INFO_FIELD_NUMBER = 1;
     private cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse codeInfo_;
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return Whether the codeInfo field is set.
      */
+    @java.lang.Override
     public boolean hasCodeInfo() {
       return codeInfo_ != null;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+     * @return The codeInfo.
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse getCodeInfo() {
       return codeInfo_ == null ? cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.getDefaultInstance() : codeInfo_;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder getCodeInfoOrBuilder() {
       return getCodeInfo();
     }
@@ -11011,13 +12086,16 @@ public final class QueryOuterClass {
     public static final int DATA_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString data_;
     /**
-     * <code>optional bytes data = 2;</code>
+     * <code>bytes data = 2 [(.gogoproto.jsontag) = "data"];</code>
+     * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -11027,6 +12105,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (codeInfo_ != null) {
@@ -11035,8 +12114,10 @@ public final class QueryOuterClass {
       if (!data_.isEmpty()) {
         output.writeBytes(2, data_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -11050,11 +12131,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, data_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -11065,15 +12146,15 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse) obj;
 
-      boolean result = true;
-      result = result && (hasCodeInfo() == other.hasCodeInfo());
+      if (hasCodeInfo() != other.hasCodeInfo()) return false;
       if (hasCodeInfo()) {
-        result = result && getCodeInfo()
-            .equals(other.getCodeInfo());
+        if (!getCodeInfo()
+            .equals(other.getCodeInfo())) return false;
       }
-      result = result && getData()
-          .equals(other.getData());
-      return result;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -11082,7 +12163,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasCodeInfo()) {
         hash = (37 * hash) + CODE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCodeInfo().hashCode();
@@ -11094,6 +12175,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11153,6 +12245,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11160,6 +12253,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11187,6 +12281,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodeResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodeResponse_fieldAccessorTable
@@ -11209,6 +12304,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (codeInfoBuilder_ == null) {
@@ -11222,15 +12318,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodeResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -11239,6 +12338,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse(this);
         if (codeInfoBuilder_ == null) {
@@ -11251,32 +12351,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse)other);
@@ -11294,14 +12401,17 @@ public final class QueryOuterClass {
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11320,17 +12430,19 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse codeInfo_ = null;
+      private cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse codeInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder> codeInfoBuilder_;
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+       * @return Whether the codeInfo field is set.
        */
       public boolean hasCodeInfo() {
         return codeInfoBuilder_ != null || codeInfo_ != null;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
+       * @return The codeInfo.
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse getCodeInfo() {
         if (codeInfoBuilder_ == null) {
@@ -11340,7 +12452,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder setCodeInfo(cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse value) {
         if (codeInfoBuilder_ == null) {
@@ -11356,7 +12468,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder setCodeInfo(
           cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder builderForValue) {
@@ -11370,7 +12482,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder mergeCodeInfo(cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse value) {
         if (codeInfoBuilder_ == null) {
@@ -11388,7 +12500,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public Builder clearCodeInfo() {
         if (codeInfoBuilder_ == null) {
@@ -11402,7 +12514,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder getCodeInfoBuilder() {
         
@@ -11410,7 +12522,7 @@ public final class QueryOuterClass {
         return getCodeInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder getCodeInfoOrBuilder() {
         if (codeInfoBuilder_ != null) {
@@ -11421,7 +12533,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.CodeInfoResponse code_info = 1 [(.gogoproto.embed) = true, (.gogoproto.jsontag) = ""];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder> 
@@ -11439,13 +12551,17 @@ public final class QueryOuterClass {
 
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes data = 2;</code>
+       * <code>bytes data = 2 [(.gogoproto.jsontag) = "data"];</code>
+       * @return The data.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
       /**
-       * <code>optional bytes data = 2;</code>
+       * <code>bytes data = 2 [(.gogoproto.jsontag) = "data"];</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -11457,7 +12573,8 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes data = 2;</code>
+       * <code>bytes data = 2 [(.gogoproto.jsontag) = "data"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -11465,14 +12582,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -11491,11 +12610,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryCodeResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryCodeResponse>() {
+      @java.lang.Override
       public QueryCodeResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryCodeResponse(input, extensionRegistry);
+        return new QueryCodeResponse(input, extensionRegistry);
       }
     };
 
@@ -11508,6 +12628,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodeResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11523,7 +12644,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -11531,7 +12653,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
@@ -11539,7 +12662,7 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
   }
@@ -11550,10 +12673,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryCodesRequest}
    */
-  public  static final class QueryCodesRequest extends
+  public static final class QueryCodesRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryCodesRequest)
       QueryCodesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryCodesRequest.newBuilder() to construct.
     private QueryCodesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11562,16 +12686,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryCodesRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryCodesRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -11580,12 +12715,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmos.base.query.v1beta1.Pagination.PageRequest.Builder subBuilder = null;
               if (pagination_ != null) {
@@ -11599,6 +12728,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -11607,6 +12743,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -11615,6 +12752,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodesRequest_fieldAccessorTable
@@ -11629,8 +12767,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -11639,8 +12779,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
     }
@@ -11649,13 +12791,15 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -11665,13 +12809,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pagination_ != null) {
         output.writeMessage(1, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -11681,11 +12828,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -11696,13 +12843,13 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest) obj;
 
-      boolean result = true;
-      result = result && (hasPagination() == other.hasPagination());
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -11711,7 +12858,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasPagination()) {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
@@ -11721,6 +12868,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11780,6 +12938,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11787,6 +12946,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11814,6 +12974,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodesRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodesRequest_fieldAccessorTable
@@ -11836,6 +12997,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (paginationBuilder_ == null) {
@@ -11847,15 +13009,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodesRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -11864,6 +13029,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest(this);
         if (paginationBuilder_ == null) {
@@ -11875,32 +13041,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest)other);
@@ -11915,14 +13088,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11941,7 +13117,7 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
       /**
@@ -11949,7 +13125,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -11959,7 +13136,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
         if (paginationBuilder_ == null) {
@@ -11973,7 +13151,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -11993,7 +13171,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
@@ -12011,7 +13189,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -12033,7 +13211,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -12051,7 +13229,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
         
@@ -12063,7 +13241,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -12078,7 +13256,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
@@ -12093,14 +13271,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -12119,11 +13299,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryCodesRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryCodesRequest>() {
+      @java.lang.Override
       public QueryCodesRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryCodesRequest(input, extensionRegistry);
+        return new QueryCodesRequest(input, extensionRegistry);
       }
     };
 
@@ -12136,6 +13317,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12147,25 +13329,25 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse> 
         getCodeInfosList();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse getCodeInfos(int index);
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
     int getCodeInfosCount();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder> 
         getCodeInfosOrBuilderList();
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder getCodeInfosOrBuilder(
         int index);
@@ -12175,7 +13357,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -12183,7 +13366,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
@@ -12191,7 +13375,7 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
   }
@@ -12202,10 +13386,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.QueryCodesResponse}
    */
-  public  static final class QueryCodesResponse extends
+  public static final class QueryCodesResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.QueryCodesResponse)
       QueryCodesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryCodesResponse.newBuilder() to construct.
     private QueryCodesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12215,16 +13400,28 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryCodesResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryCodesResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -12233,14 +13430,8 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 codeInfos_ = new java.util.ArrayList<cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -12261,6 +13452,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -12269,9 +13467,10 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           codeInfos_ = java.util.Collections.unmodifiableList(codeInfos_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -12280,6 +13479,7 @@ public final class QueryOuterClass {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodesResponse_fieldAccessorTable
@@ -12287,37 +13487,41 @@ public final class QueryOuterClass {
               cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse.class, cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int CODE_INFOS_FIELD_NUMBER = 1;
     private java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse> codeInfos_;
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse> getCodeInfosList() {
       return codeInfos_;
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder> 
         getCodeInfosOrBuilderList() {
       return codeInfos_;
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public int getCodeInfosCount() {
       return codeInfos_.size();
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse getCodeInfos(int index) {
       return codeInfos_.get(index);
     }
     /**
-     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+     * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder getCodeInfosOrBuilder(
         int index) {
       return codeInfos_.get(index);
@@ -12330,8 +13534,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -12340,8 +13546,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
@@ -12350,13 +13558,15 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -12366,6 +13576,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < codeInfos_.size(); i++) {
@@ -12374,8 +13585,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -12389,11 +13602,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -12404,15 +13617,15 @@ public final class QueryOuterClass {
       }
       cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse other = (cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse) obj;
 
-      boolean result = true;
-      result = result && getCodeInfosList()
-          .equals(other.getCodeInfosList());
-      result = result && (hasPagination() == other.hasPagination());
+      if (!getCodeInfosList()
+          .equals(other.getCodeInfosList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -12421,7 +13634,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getCodeInfosCount() > 0) {
         hash = (37 * hash) + CODE_INFOS_FIELD_NUMBER;
         hash = (53 * hash) + getCodeInfosList().hashCode();
@@ -12435,6 +13648,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12494,6 +13718,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -12501,6 +13726,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -12528,6 +13754,7 @@ public final class QueryOuterClass {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodesResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodesResponse_fieldAccessorTable
@@ -12551,6 +13778,7 @@ public final class QueryOuterClass {
           getCodeInfosFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (codeInfosBuilder_ == null) {
@@ -12568,15 +13796,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.internal_static_cosmwasm_wasm_v1beta1_QueryCodesResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse build() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -12585,12 +13816,12 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse buildPartial() {
         cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse result = new cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (codeInfosBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             codeInfos_ = java.util.Collections.unmodifiableList(codeInfos_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -12603,37 +13834,43 @@ public final class QueryOuterClass {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse) {
           return mergeFrom((cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse)other);
@@ -12674,14 +13911,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12704,7 +13944,7 @@ public final class QueryOuterClass {
       private java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse> codeInfos_ =
         java.util.Collections.emptyList();
       private void ensureCodeInfosIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           codeInfos_ = new java.util.ArrayList<cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse>(codeInfos_);
           bitField0_ |= 0x00000001;
          }
@@ -12714,7 +13954,7 @@ public final class QueryOuterClass {
           cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder> codeInfosBuilder_;
 
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse> getCodeInfosList() {
         if (codeInfosBuilder_ == null) {
@@ -12724,7 +13964,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public int getCodeInfosCount() {
         if (codeInfosBuilder_ == null) {
@@ -12734,7 +13974,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse getCodeInfos(int index) {
         if (codeInfosBuilder_ == null) {
@@ -12744,7 +13984,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setCodeInfos(
           int index, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse value) {
@@ -12761,7 +14001,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setCodeInfos(
           int index, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder builderForValue) {
@@ -12775,7 +14015,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addCodeInfos(cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse value) {
         if (codeInfosBuilder_ == null) {
@@ -12791,7 +14031,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addCodeInfos(
           int index, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse value) {
@@ -12808,7 +14048,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addCodeInfos(
           cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder builderForValue) {
@@ -12822,7 +14062,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addCodeInfos(
           int index, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder builderForValue) {
@@ -12836,7 +14076,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllCodeInfos(
           java.lang.Iterable<? extends cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse> values) {
@@ -12851,7 +14091,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearCodeInfos() {
         if (codeInfosBuilder_ == null) {
@@ -12864,7 +14104,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeCodeInfos(int index) {
         if (codeInfosBuilder_ == null) {
@@ -12877,14 +14117,14 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder getCodeInfosBuilder(
           int index) {
         return getCodeInfosFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder getCodeInfosOrBuilder(
           int index) {
@@ -12894,7 +14134,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder> 
            getCodeInfosOrBuilderList() {
@@ -12905,14 +14145,14 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder addCodeInfosBuilder() {
         return getCodeInfosFieldBuilder().addBuilder(
             cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder addCodeInfosBuilder(
           int index) {
@@ -12920,7 +14160,7 @@ public final class QueryOuterClass {
             index, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1;</code>
+       * <code>repeated .cosmwasm.wasm.v1beta1.CodeInfoResponse code_infos = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder> 
            getCodeInfosBuilderList() {
@@ -12933,7 +14173,7 @@ public final class QueryOuterClass {
           codeInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponse.Builder, cosmwasm.wasm.v1beta1.QueryOuterClass.CodeInfoResponseOrBuilder>(
                   codeInfos_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           codeInfos_ = null;
@@ -12941,7 +14181,7 @@ public final class QueryOuterClass {
         return codeInfosBuilder_;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
       /**
@@ -12949,7 +14189,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -12959,7 +14200,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
         if (paginationBuilder_ == null) {
@@ -12973,7 +14215,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -12993,7 +14235,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
@@ -13011,7 +14253,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -13033,7 +14275,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -13051,7 +14293,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
         
@@ -13063,7 +14305,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -13078,7 +14320,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
@@ -13093,14 +14335,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -13119,11 +14363,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryCodesResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryCodesResponse>() {
+      @java.lang.Override
       public QueryCodesResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryCodesResponse(input, extensionRegistry);
+        return new QueryCodesResponse(input, extensionRegistry);
       }
     };
 
@@ -13136,6 +14381,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.QueryOuterClass.QueryCodesResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -13250,7 +14496,7 @@ public final class QueryOuterClass {
       "eryContractInfoResponse\022\017\n\007address\030\001 \001(\t" +
       "\022D\n\rcontract_info\030\002 \001(\0132#.cosmwasm.wasm." +
       "v1beta1.ContractInfoB\010\320\336\037\001\352\336\037\000:\004\350\240\037\001\"j\n\033" +
-      "QueryContractHistoryRequest\022\017\n\007address\030\001",
+      "QueryContractHistoryRequest\022\017\n\007address\030\001" +
       " \001(\t\022:\n\npagination\030\002 \001(\0132&.cosmos.base.q" +
       "uery.v1beta1.PageRequest\"\243\001\n\034QueryContra" +
       "ctHistoryResponse\022F\n\007entries\030\001 \003(\0132/.cos" +
@@ -13260,7 +14506,7 @@ public final class QueryOuterClass {
       "ontractsByCodeRequest\022\017\n\007code_id\030\001 \001(\004\022:" +
       "\n\npagination\030\002 \001(\0132&.cosmos.base.query.v" +
       "1beta1.PageRequest\"v\n\027ContractInfoWithAd" +
-      "dress\022\017\n\007address\030\001 \001(\t\022D\n\rcontract_info\030",
+      "dress\022\017\n\007address\030\001 \001(\t\022D\n\rcontract_info\030" +
       "\002 \001(\0132#.cosmwasm.wasm.v1beta1.ContractIn" +
       "foB\010\320\336\037\001\352\336\037\000:\004\350\240\037\001\"\251\001\n\034QueryContractsByC" +
       "odeResponse\022L\n\016contract_infos\030\001 \003(\0132..co" +
@@ -13270,7 +14516,7 @@ public final class QueryOuterClass {
       "llContractStateRequest\022\017\n\007address\030\001 \001(\t\022" +
       ":\n\npagination\030\002 \001(\0132&.cosmos.base.query." +
       "v1beta1.PageRequest\"\220\001\n\035QueryAllContract" +
-      "StateResponse\0222\n\006models\030\001 \003(\0132\034.cosmwasm",
+      "StateResponse\0222\n\006models\030\001 \003(\0132\034.cosmwasm" +
       ".wasm.v1beta1.ModelB\004\310\336\037\000\022;\n\npagination\030" +
       "\002 \001(\0132\'.cosmos.base.query.v1beta1.PageRe" +
       "sponse\"C\n\034QueryRawContractStateRequest\022\017" +
@@ -13280,7 +14526,7 @@ public final class QueryOuterClass {
       "address\030\001 \001(\t\022\022\n\nquery_data\030\002 \001(\014\"M\n\037Que" +
       "rySmartContractStateResponse\022*\n\004data\030\001 \001" +
       "(\014B\034\372\336\037\030encoding/json.RawMessage\"#\n\020Quer" +
-      "yCodeRequest\022\017\n\007code_id\030\001 \001(\004\"\272\001\n\020CodeIn",
+      "yCodeRequest\022\017\n\007code_id\030\001 \001(\004\"\272\001\n\020CodeIn" +
       "foResponse\022!\n\007code_id\030\001 \001(\004B\020\342\336\037\006CodeID\352" +
       "\336\037\002id\022\017\n\007creator\030\002 \001(\t\022K\n\tdata_hash\030\003 \001(" +
       "\014B8\372\336\0374github.com/tendermint/tendermint/" +
@@ -13290,7 +14536,7 @@ public final class QueryOuterClass {
       "a1.CodeInfoResponseB\010\320\336\037\001\352\336\037\000\022\026\n\004data\030\002 " +
       "\001(\014B\010\352\336\037\004data:\004\350\240\037\001\"O\n\021QueryCodesRequest" +
       "\022:\n\npagination\030\001 \001(\0132&.cosmos.base.query" +
-      ".v1beta1.PageRequest\"\224\001\n\022QueryCodesRespo",
+      ".v1beta1.PageRequest\"\224\001\n\022QueryCodesRespo" +
       "nse\022A\n\ncode_infos\030\001 \003(\0132\'.cosmwasm.wasm." +
       "v1beta1.CodeInfoResponseB\004\310\336\037\000\022;\n\npagina" +
       "tion\030\002 \001(\0132\'.cosmos.base.query.v1beta1.P" +
@@ -13300,7 +14546,7 @@ public final class QueryOuterClass {
       "tractInfoResponse\"(\202\323\344\223\002\"\022 /wasm/v1beta1" +
       "/contract/{address}\022\254\001\n\017ContractHistory\022" +
       "2.cosmwasm.wasm.v1beta1.QueryContractHis" +
-      "toryRequest\0323.cosmwasm.wasm.v1beta1.Quer",
+      "toryRequest\0323.cosmwasm.wasm.v1beta1.Quer" +
       "yContractHistoryResponse\"0\202\323\344\223\002*\022(/wasm/" +
       "v1beta1/contract/{address}/history\022\252\001\n\017C" +
       "ontractsByCode\0222.cosmwasm.wasm.v1beta1.Q" +
@@ -13310,7 +14556,7 @@ public final class QueryOuterClass {
       "ntracts\022\255\001\n\020AllContractState\0223.cosmwasm." +
       "wasm.v1beta1.QueryAllContractStateReques" +
       "t\0324.cosmwasm.wasm.v1beta1.QueryAllContra" +
-      "ctStateResponse\".\202\323\344\223\002(\022&/wasm/v1beta1/c",
+      "ctStateResponse\".\202\323\344\223\002(\022&/wasm/v1beta1/c" +
       "ontract/{address}/state\022\270\001\n\020RawContractS" +
       "tate\0223.cosmwasm.wasm.v1beta1.QueryRawCon" +
       "tractStateRequest\0324.cosmwasm.wasm.v1beta" +
@@ -13320,7 +14566,7 @@ public final class QueryOuterClass {
       "wasm.wasm.v1beta1.QuerySmartContractStat" +
       "eRequest\0326.cosmwasm.wasm.v1beta1.QuerySm" +
       "artContractStateResponse\";\202\323\344\223\0025\0223/wasm/" +
-      "v1beta1/contract/{address}/smart/{query_",
+      "v1beta1/contract/{address}/smart/{query_" +
       "data}\022\177\n\004Code\022\'.cosmwasm.wasm.v1beta1.Qu" +
       "eryCodeRequest\032(.cosmwasm.wasm.v1beta1.Q" +
       "ueryCodeResponse\"$\202\323\344\223\002\036\022\034/wasm/v1beta1/" +
@@ -13331,22 +14577,14 @@ public final class QueryOuterClass {
       "wasmd/x/wasmd/internal/types\310\341\036\000\250\342\036\000b\006pr" +
       "oto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmwasm.wasm.v1beta1.Types.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmwasm_wasm_v1beta1_QueryContractInfoRequest_fieldAccessorTable = new

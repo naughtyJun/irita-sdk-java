@@ -19,30 +19,31 @@ public final class Keys {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint32 threshold = 1;</code>
+     * <code>uint32 threshold = 1 [(.gogoproto.moretags) = "yaml:&#92;"threshold&#92;""];</code>
+     * @return The threshold.
      */
     int getThreshold();
 
     /**
-     * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+     * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
      */
     java.util.List<com.google.protobuf.Any> 
         getPublicKeysList();
     /**
-     * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+     * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
      */
     com.google.protobuf.Any getPublicKeys(int index);
     /**
-     * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+     * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
      */
     int getPublicKeysCount();
     /**
-     * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+     * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
      */
     java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getPublicKeysOrBuilderList();
     /**
-     * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+     * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
      */
     com.google.protobuf.AnyOrBuilder getPublicKeysOrBuilder(
         int index);
@@ -56,30 +57,42 @@ public final class Keys {
    *
    * Protobuf type {@code cosmos.crypto.multisig.LegacyAminoPubKey}
    */
-  public  static final class LegacyAminoPubKey extends
+  public static final class LegacyAminoPubKey extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.crypto.multisig.LegacyAminoPubKey)
       LegacyAminoPubKeyOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use LegacyAminoPubKey.newBuilder() to construct.
     private LegacyAminoPubKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private LegacyAminoPubKey() {
-      threshold_ = 0;
       publicKeys_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LegacyAminoPubKey();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private LegacyAminoPubKey(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -88,24 +101,25 @@ public final class Keys {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               threshold_ = input.readUInt32();
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 publicKeys_ = new java.util.ArrayList<com.google.protobuf.Any>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               publicKeys_.add(
                   input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -116,9 +130,10 @@ public final class Keys {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           publicKeys_ = java.util.Collections.unmodifiableList(publicKeys_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -127,6 +142,7 @@ public final class Keys {
       return cosmos.crypto.multisig.Keys.internal_static_cosmos_crypto_multisig_LegacyAminoPubKey_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.crypto.multisig.Keys.internal_static_cosmos_crypto_multisig_LegacyAminoPubKey_fieldAccessorTable
@@ -134,12 +150,13 @@ public final class Keys {
               cosmos.crypto.multisig.Keys.LegacyAminoPubKey.class, cosmos.crypto.multisig.Keys.LegacyAminoPubKey.Builder.class);
     }
 
-    private int bitField0_;
     public static final int THRESHOLD_FIELD_NUMBER = 1;
     private int threshold_;
     /**
-     * <code>optional uint32 threshold = 1;</code>
+     * <code>uint32 threshold = 1 [(.gogoproto.moretags) = "yaml:&#92;"threshold&#92;""];</code>
+     * @return The threshold.
      */
+    @java.lang.Override
     public int getThreshold() {
       return threshold_;
     }
@@ -147,39 +164,45 @@ public final class Keys {
     public static final int PUBLIC_KEYS_FIELD_NUMBER = 2;
     private java.util.List<com.google.protobuf.Any> publicKeys_;
     /**
-     * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+     * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.Any> getPublicKeysList() {
       return publicKeys_;
     }
     /**
-     * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+     * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getPublicKeysOrBuilderList() {
       return publicKeys_;
     }
     /**
-     * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+     * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
      */
+    @java.lang.Override
     public int getPublicKeysCount() {
       return publicKeys_.size();
     }
     /**
-     * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+     * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Any getPublicKeys(int index) {
       return publicKeys_.get(index);
     }
     /**
-     * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+     * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
      */
+    @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getPublicKeysOrBuilder(
         int index) {
       return publicKeys_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -189,6 +212,7 @@ public final class Keys {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (threshold_ != 0) {
@@ -197,8 +221,10 @@ public final class Keys {
       for (int i = 0; i < publicKeys_.size(); i++) {
         output.writeMessage(2, publicKeys_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -212,11 +238,11 @@ public final class Keys {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, publicKeys_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -227,12 +253,12 @@ public final class Keys {
       }
       cosmos.crypto.multisig.Keys.LegacyAminoPubKey other = (cosmos.crypto.multisig.Keys.LegacyAminoPubKey) obj;
 
-      boolean result = true;
-      result = result && (getThreshold()
-          == other.getThreshold());
-      result = result && getPublicKeysList()
-          .equals(other.getPublicKeysList());
-      return result;
+      if (getThreshold()
+          != other.getThreshold()) return false;
+      if (!getPublicKeysList()
+          .equals(other.getPublicKeysList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -241,7 +267,7 @@ public final class Keys {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + THRESHOLD_FIELD_NUMBER;
       hash = (53 * hash) + getThreshold();
       if (getPublicKeysCount() > 0) {
@@ -253,6 +279,17 @@ public final class Keys {
       return hash;
     }
 
+    public static cosmos.crypto.multisig.Keys.LegacyAminoPubKey parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.crypto.multisig.Keys.LegacyAminoPubKey parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.crypto.multisig.Keys.LegacyAminoPubKey parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -312,6 +349,7 @@ public final class Keys {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -319,6 +357,7 @@ public final class Keys {
     public static Builder newBuilder(cosmos.crypto.multisig.Keys.LegacyAminoPubKey prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -348,6 +387,7 @@ public final class Keys {
         return cosmos.crypto.multisig.Keys.internal_static_cosmos_crypto_multisig_LegacyAminoPubKey_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.crypto.multisig.Keys.internal_static_cosmos_crypto_multisig_LegacyAminoPubKey_fieldAccessorTable
@@ -371,28 +411,32 @@ public final class Keys {
           getPublicKeysFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         threshold_ = 0;
 
         if (publicKeysBuilder_ == null) {
           publicKeys_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           publicKeysBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.crypto.multisig.Keys.internal_static_cosmos_crypto_multisig_LegacyAminoPubKey_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.crypto.multisig.Keys.LegacyAminoPubKey getDefaultInstanceForType() {
         return cosmos.crypto.multisig.Keys.LegacyAminoPubKey.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.crypto.multisig.Keys.LegacyAminoPubKey build() {
         cosmos.crypto.multisig.Keys.LegacyAminoPubKey result = buildPartial();
         if (!result.isInitialized()) {
@@ -401,51 +445,57 @@ public final class Keys {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.crypto.multisig.Keys.LegacyAminoPubKey buildPartial() {
         cosmos.crypto.multisig.Keys.LegacyAminoPubKey result = new cosmos.crypto.multisig.Keys.LegacyAminoPubKey(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.threshold_ = threshold_;
         if (publicKeysBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             publicKeys_ = java.util.Collections.unmodifiableList(publicKeys_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.publicKeys_ = publicKeys_;
         } else {
           result.publicKeys_ = publicKeysBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.crypto.multisig.Keys.LegacyAminoPubKey) {
           return mergeFrom((cosmos.crypto.multisig.Keys.LegacyAminoPubKey)other);
@@ -464,7 +514,7 @@ public final class Keys {
           if (!other.publicKeys_.isEmpty()) {
             if (publicKeys_.isEmpty()) {
               publicKeys_ = other.publicKeys_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensurePublicKeysIsMutable();
               publicKeys_.addAll(other.publicKeys_);
@@ -477,7 +527,7 @@ public final class Keys {
               publicKeysBuilder_.dispose();
               publicKeysBuilder_ = null;
               publicKeys_ = other.publicKeys_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               publicKeysBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPublicKeysFieldBuilder() : null;
@@ -486,14 +536,17 @@ public final class Keys {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -515,13 +568,17 @@ public final class Keys {
 
       private int threshold_ ;
       /**
-       * <code>optional uint32 threshold = 1;</code>
+       * <code>uint32 threshold = 1 [(.gogoproto.moretags) = "yaml:&#92;"threshold&#92;""];</code>
+       * @return The threshold.
        */
+      @java.lang.Override
       public int getThreshold() {
         return threshold_;
       }
       /**
-       * <code>optional uint32 threshold = 1;</code>
+       * <code>uint32 threshold = 1 [(.gogoproto.moretags) = "yaml:&#92;"threshold&#92;""];</code>
+       * @param value The threshold to set.
+       * @return This builder for chaining.
        */
       public Builder setThreshold(int value) {
         
@@ -530,7 +587,8 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>optional uint32 threshold = 1;</code>
+       * <code>uint32 threshold = 1 [(.gogoproto.moretags) = "yaml:&#92;"threshold&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearThreshold() {
         
@@ -542,9 +600,9 @@ public final class Keys {
       private java.util.List<com.google.protobuf.Any> publicKeys_ =
         java.util.Collections.emptyList();
       private void ensurePublicKeysIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           publicKeys_ = new java.util.ArrayList<com.google.protobuf.Any>(publicKeys_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -552,7 +610,7 @@ public final class Keys {
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> publicKeysBuilder_;
 
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public java.util.List<com.google.protobuf.Any> getPublicKeysList() {
         if (publicKeysBuilder_ == null) {
@@ -562,7 +620,7 @@ public final class Keys {
         }
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public int getPublicKeysCount() {
         if (publicKeysBuilder_ == null) {
@@ -572,7 +630,7 @@ public final class Keys {
         }
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public com.google.protobuf.Any getPublicKeys(int index) {
         if (publicKeysBuilder_ == null) {
@@ -582,7 +640,7 @@ public final class Keys {
         }
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public Builder setPublicKeys(
           int index, com.google.protobuf.Any value) {
@@ -599,7 +657,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public Builder setPublicKeys(
           int index, com.google.protobuf.Any.Builder builderForValue) {
@@ -613,7 +671,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public Builder addPublicKeys(com.google.protobuf.Any value) {
         if (publicKeysBuilder_ == null) {
@@ -629,7 +687,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public Builder addPublicKeys(
           int index, com.google.protobuf.Any value) {
@@ -646,7 +704,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public Builder addPublicKeys(
           com.google.protobuf.Any.Builder builderForValue) {
@@ -660,7 +718,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public Builder addPublicKeys(
           int index, com.google.protobuf.Any.Builder builderForValue) {
@@ -674,7 +732,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public Builder addAllPublicKeys(
           java.lang.Iterable<? extends com.google.protobuf.Any> values) {
@@ -689,12 +747,12 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public Builder clearPublicKeys() {
         if (publicKeysBuilder_ == null) {
           publicKeys_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           publicKeysBuilder_.clear();
@@ -702,7 +760,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public Builder removePublicKeys(int index) {
         if (publicKeysBuilder_ == null) {
@@ -715,14 +773,14 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public com.google.protobuf.Any.Builder getPublicKeysBuilder(
           int index) {
         return getPublicKeysFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public com.google.protobuf.AnyOrBuilder getPublicKeysOrBuilder(
           int index) {
@@ -732,7 +790,7 @@ public final class Keys {
         }
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
            getPublicKeysOrBuilderList() {
@@ -743,14 +801,14 @@ public final class Keys {
         }
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public com.google.protobuf.Any.Builder addPublicKeysBuilder() {
         return getPublicKeysFieldBuilder().addBuilder(
             com.google.protobuf.Any.getDefaultInstance());
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public com.google.protobuf.Any.Builder addPublicKeysBuilder(
           int index) {
@@ -758,7 +816,7 @@ public final class Keys {
             index, com.google.protobuf.Any.getDefaultInstance());
       }
       /**
-       * <code>repeated .google.protobuf.Any public_keys = 2;</code>
+       * <code>repeated .google.protobuf.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.gogoproto.moretags) = "yaml:&#92;"pubkeys&#92;""];</code>
        */
       public java.util.List<com.google.protobuf.Any.Builder> 
            getPublicKeysBuilderList() {
@@ -771,21 +829,23 @@ public final class Keys {
           publicKeysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   publicKeys_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           publicKeys_ = null;
         }
         return publicKeysBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -804,11 +864,12 @@ public final class Keys {
 
     private static final com.google.protobuf.Parser<LegacyAminoPubKey>
         PARSER = new com.google.protobuf.AbstractParser<LegacyAminoPubKey>() {
+      @java.lang.Override
       public LegacyAminoPubKey parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LegacyAminoPubKey(input, extensionRegistry);
+        return new LegacyAminoPubKey(input, extensionRegistry);
       }
     };
 
@@ -821,6 +882,7 @@ public final class Keys {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.crypto.multisig.Keys.LegacyAminoPubKey getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -850,20 +912,12 @@ public final class Keys {
       "keys\":\004\210\240\037\000B3Z1github.com/cosmos/cosmos-" +
       "sdk/crypto/keys/multisigb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_crypto_multisig_LegacyAminoPubKey_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_crypto_multisig_LegacyAminoPubKey_fieldAccessorTable = new

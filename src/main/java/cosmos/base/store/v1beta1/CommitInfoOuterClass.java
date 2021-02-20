@@ -19,30 +19,31 @@ public final class CommitInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int64 version = 1;</code>
+     * <code>int64 version = 1;</code>
+     * @return The version.
      */
     long getVersion();
 
     /**
-     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo> 
         getStoreInfosList();
     /**
-     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo getStoreInfos(int index);
     /**
-     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
      */
     int getStoreInfosCount();
     /**
-     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfoOrBuilder> 
         getStoreInfosOrBuilderList();
     /**
-     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfoOrBuilder getStoreInfosOrBuilder(
         int index);
@@ -55,30 +56,42 @@ public final class CommitInfoOuterClass {
    *
    * Protobuf type {@code cosmos.base.store.v1beta1.CommitInfo}
    */
-  public  static final class CommitInfo extends
+  public static final class CommitInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.store.v1beta1.CommitInfo)
       CommitInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use CommitInfo.newBuilder() to construct.
     private CommitInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private CommitInfo() {
-      version_ = 0L;
       storeInfos_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CommitInfo();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private CommitInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -87,24 +100,25 @@ public final class CommitInfoOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               version_ = input.readInt64();
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 storeInfos_ = new java.util.ArrayList<cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               storeInfos_.add(
                   input.readMessage(cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -115,9 +129,10 @@ public final class CommitInfoOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           storeInfos_ = java.util.Collections.unmodifiableList(storeInfos_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -126,6 +141,7 @@ public final class CommitInfoOuterClass {
       return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_CommitInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_CommitInfo_fieldAccessorTable
@@ -133,12 +149,13 @@ public final class CommitInfoOuterClass {
               cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo.class, cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo.Builder.class);
     }
 
-    private int bitField0_;
     public static final int VERSION_FIELD_NUMBER = 1;
     private long version_;
     /**
-     * <code>optional int64 version = 1;</code>
+     * <code>int64 version = 1;</code>
+     * @return The version.
      */
+    @java.lang.Override
     public long getVersion() {
       return version_;
     }
@@ -146,39 +163,45 @@ public final class CommitInfoOuterClass {
     public static final int STORE_INFOS_FIELD_NUMBER = 2;
     private java.util.List<cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo> storeInfos_;
     /**
-     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo> getStoreInfosList() {
       return storeInfos_;
     }
     /**
-     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfoOrBuilder> 
         getStoreInfosOrBuilderList() {
       return storeInfos_;
     }
     /**
-     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public int getStoreInfosCount() {
       return storeInfos_.size();
     }
     /**
-     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo getStoreInfos(int index) {
       return storeInfos_.get(index);
     }
     /**
-     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+     * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfoOrBuilder getStoreInfosOrBuilder(
         int index) {
       return storeInfos_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -188,6 +211,7 @@ public final class CommitInfoOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (version_ != 0L) {
@@ -196,8 +220,10 @@ public final class CommitInfoOuterClass {
       for (int i = 0; i < storeInfos_.size(); i++) {
         output.writeMessage(2, storeInfos_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -211,11 +237,11 @@ public final class CommitInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, storeInfos_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -226,12 +252,12 @@ public final class CommitInfoOuterClass {
       }
       cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo other = (cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo) obj;
 
-      boolean result = true;
-      result = result && (getVersion()
-          == other.getVersion());
-      result = result && getStoreInfosList()
-          .equals(other.getStoreInfosList());
-      return result;
+      if (getVersion()
+          != other.getVersion()) return false;
+      if (!getStoreInfosList()
+          .equals(other.getStoreInfosList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -240,7 +266,7 @@ public final class CommitInfoOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getVersion());
@@ -253,6 +279,17 @@ public final class CommitInfoOuterClass {
       return hash;
     }
 
+    public static cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -312,6 +349,7 @@ public final class CommitInfoOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -319,6 +357,7 @@ public final class CommitInfoOuterClass {
     public static Builder newBuilder(cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -347,6 +386,7 @@ public final class CommitInfoOuterClass {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_CommitInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_CommitInfo_fieldAccessorTable
@@ -370,28 +410,32 @@ public final class CommitInfoOuterClass {
           getStoreInfosFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         version_ = 0L;
 
         if (storeInfosBuilder_ == null) {
           storeInfos_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           storeInfosBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_CommitInfo_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo getDefaultInstanceForType() {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo build() {
         cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -400,51 +444,57 @@ public final class CommitInfoOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo buildPartial() {
         cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo result = new cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.version_ = version_;
         if (storeInfosBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             storeInfos_ = java.util.Collections.unmodifiableList(storeInfos_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.storeInfos_ = storeInfos_;
         } else {
           result.storeInfos_ = storeInfosBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo) {
           return mergeFrom((cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo)other);
@@ -463,7 +513,7 @@ public final class CommitInfoOuterClass {
           if (!other.storeInfos_.isEmpty()) {
             if (storeInfos_.isEmpty()) {
               storeInfos_ = other.storeInfos_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureStoreInfosIsMutable();
               storeInfos_.addAll(other.storeInfos_);
@@ -476,7 +526,7 @@ public final class CommitInfoOuterClass {
               storeInfosBuilder_.dispose();
               storeInfosBuilder_ = null;
               storeInfos_ = other.storeInfos_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               storeInfosBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStoreInfosFieldBuilder() : null;
@@ -485,14 +535,17 @@ public final class CommitInfoOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -514,13 +567,17 @@ public final class CommitInfoOuterClass {
 
       private long version_ ;
       /**
-       * <code>optional int64 version = 1;</code>
+       * <code>int64 version = 1;</code>
+       * @return The version.
        */
+      @java.lang.Override
       public long getVersion() {
         return version_;
       }
       /**
-       * <code>optional int64 version = 1;</code>
+       * <code>int64 version = 1;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
        */
       public Builder setVersion(long value) {
         
@@ -529,7 +586,8 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>optional int64 version = 1;</code>
+       * <code>int64 version = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVersion() {
         
@@ -541,9 +599,9 @@ public final class CommitInfoOuterClass {
       private java.util.List<cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo> storeInfos_ =
         java.util.Collections.emptyList();
       private void ensureStoreInfosIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           storeInfos_ = new java.util.ArrayList<cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo>(storeInfos_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -551,7 +609,7 @@ public final class CommitInfoOuterClass {
           cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo, cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.Builder, cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfoOrBuilder> storeInfosBuilder_;
 
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo> getStoreInfosList() {
         if (storeInfosBuilder_ == null) {
@@ -561,7 +619,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public int getStoreInfosCount() {
         if (storeInfosBuilder_ == null) {
@@ -571,7 +629,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo getStoreInfos(int index) {
         if (storeInfosBuilder_ == null) {
@@ -581,7 +639,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setStoreInfos(
           int index, cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo value) {
@@ -598,7 +656,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setStoreInfos(
           int index, cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.Builder builderForValue) {
@@ -612,7 +670,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addStoreInfos(cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo value) {
         if (storeInfosBuilder_ == null) {
@@ -628,7 +686,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addStoreInfos(
           int index, cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo value) {
@@ -645,7 +703,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addStoreInfos(
           cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.Builder builderForValue) {
@@ -659,7 +717,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addStoreInfos(
           int index, cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.Builder builderForValue) {
@@ -673,7 +731,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllStoreInfos(
           java.lang.Iterable<? extends cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo> values) {
@@ -688,12 +746,12 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearStoreInfos() {
         if (storeInfosBuilder_ == null) {
           storeInfos_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           storeInfosBuilder_.clear();
@@ -701,7 +759,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeStoreInfos(int index) {
         if (storeInfosBuilder_ == null) {
@@ -714,14 +772,14 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.Builder getStoreInfosBuilder(
           int index) {
         return getStoreInfosFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfoOrBuilder getStoreInfosOrBuilder(
           int index) {
@@ -731,7 +789,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfoOrBuilder> 
            getStoreInfosOrBuilderList() {
@@ -742,14 +800,14 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.Builder addStoreInfosBuilder() {
         return getStoreInfosFieldBuilder().addBuilder(
             cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.Builder addStoreInfosBuilder(
           int index) {
@@ -757,7 +815,7 @@ public final class CommitInfoOuterClass {
             index, cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2;</code>
+       * <code>repeated .cosmos.base.store.v1beta1.StoreInfo store_infos = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.Builder> 
            getStoreInfosBuilderList() {
@@ -770,21 +828,23 @@ public final class CommitInfoOuterClass {
           storeInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo, cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.Builder, cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfoOrBuilder>(
                   storeInfos_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           storeInfos_ = null;
         }
         return storeInfosBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -803,11 +863,12 @@ public final class CommitInfoOuterClass {
 
     private static final com.google.protobuf.Parser<CommitInfo>
         PARSER = new com.google.protobuf.AbstractParser<CommitInfo>() {
+      @java.lang.Override
       public CommitInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CommitInfo(input, extensionRegistry);
+        return new CommitInfo(input, extensionRegistry);
       }
     };
 
@@ -820,6 +881,7 @@ public final class CommitInfoOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -831,25 +893,29 @@ public final class CommitInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+     * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the commitId field is set.
      */
     boolean hasCommitId();
     /**
-     * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+     * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
+     * @return The commitId.
      */
     cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID getCommitId();
     /**
-     * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+     * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitIDOrBuilder getCommitIdOrBuilder();
   }
@@ -861,10 +927,11 @@ public final class CommitInfoOuterClass {
    *
    * Protobuf type {@code cosmos.base.store.v1beta1.StoreInfo}
    */
-  public  static final class StoreInfo extends
+  public static final class StoreInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.store.v1beta1.StoreInfo)
       StoreInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use StoreInfo.newBuilder() to construct.
     private StoreInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -874,16 +941,27 @@ public final class CommitInfoOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StoreInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private StoreInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -892,12 +970,6 @@ public final class CommitInfoOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -917,6 +989,13 @@ public final class CommitInfoOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -925,6 +1004,7 @@ public final class CommitInfoOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -933,6 +1013,7 @@ public final class CommitInfoOuterClass {
       return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_StoreInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_StoreInfo_fieldAccessorTable
@@ -943,8 +1024,10 @@ public final class CommitInfoOuterClass {
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -958,8 +1041,10 @@ public final class CommitInfoOuterClass {
       }
     }
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -977,25 +1062,31 @@ public final class CommitInfoOuterClass {
     public static final int COMMIT_ID_FIELD_NUMBER = 2;
     private cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID commitId_;
     /**
-     * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+     * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the commitId field is set.
      */
+    @java.lang.Override
     public boolean hasCommitId() {
       return commitId_ != null;
     }
     /**
-     * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+     * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
+     * @return The commitId.
      */
+    @java.lang.Override
     public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID getCommitId() {
       return commitId_ == null ? cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID.getDefaultInstance() : commitId_;
     }
     /**
-     * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+     * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitIDOrBuilder getCommitIdOrBuilder() {
       return getCommitId();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1005,6 +1096,7 @@ public final class CommitInfoOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
@@ -1013,8 +1105,10 @@ public final class CommitInfoOuterClass {
       if (commitId_ != null) {
         output.writeMessage(2, getCommitId());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1027,11 +1121,11 @@ public final class CommitInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getCommitId());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1042,15 +1136,15 @@ public final class CommitInfoOuterClass {
       }
       cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo other = (cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && (hasCommitId() == other.hasCommitId());
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (hasCommitId() != other.hasCommitId()) return false;
       if (hasCommitId()) {
-        result = result && getCommitId()
-            .equals(other.getCommitId());
+        if (!getCommitId()
+            .equals(other.getCommitId())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1059,7 +1153,7 @@ public final class CommitInfoOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       if (hasCommitId()) {
@@ -1071,6 +1165,17 @@ public final class CommitInfoOuterClass {
       return hash;
     }
 
+    public static cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1130,6 +1235,7 @@ public final class CommitInfoOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1137,6 +1243,7 @@ public final class CommitInfoOuterClass {
     public static Builder newBuilder(cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1165,6 +1272,7 @@ public final class CommitInfoOuterClass {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_StoreInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_StoreInfo_fieldAccessorTable
@@ -1187,6 +1295,7 @@ public final class CommitInfoOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -1200,15 +1309,18 @@ public final class CommitInfoOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_StoreInfo_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo getDefaultInstanceForType() {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo build() {
         cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -1217,6 +1329,7 @@ public final class CommitInfoOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo buildPartial() {
         cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo result = new cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo(this);
         result.name_ = name_;
@@ -1229,32 +1342,39 @@ public final class CommitInfoOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo) {
           return mergeFrom((cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo)other);
@@ -1273,14 +1393,17 @@ public final class CommitInfoOuterClass {
         if (other.hasCommitId()) {
           mergeCommitId(other.getCommitId());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1301,7 +1424,8 @@ public final class CommitInfoOuterClass {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1316,7 +1440,8 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1332,7 +1457,9 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1345,7 +1472,8 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1354,7 +1482,9 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1368,17 +1498,19 @@ public final class CommitInfoOuterClass {
         return this;
       }
 
-      private cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID commitId_ = null;
+      private cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID commitId_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID, cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID.Builder, cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitIDOrBuilder> commitIdBuilder_;
       /**
-       * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+       * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the commitId field is set.
        */
       public boolean hasCommitId() {
         return commitIdBuilder_ != null || commitId_ != null;
       }
       /**
-       * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+       * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
+       * @return The commitId.
        */
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID getCommitId() {
         if (commitIdBuilder_ == null) {
@@ -1388,7 +1520,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+       * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setCommitId(cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID value) {
         if (commitIdBuilder_ == null) {
@@ -1404,7 +1536,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+       * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setCommitId(
           cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID.Builder builderForValue) {
@@ -1418,7 +1550,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+       * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeCommitId(cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID value) {
         if (commitIdBuilder_ == null) {
@@ -1436,7 +1568,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+       * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearCommitId() {
         if (commitIdBuilder_ == null) {
@@ -1450,7 +1582,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+       * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID.Builder getCommitIdBuilder() {
         
@@ -1458,7 +1590,7 @@ public final class CommitInfoOuterClass {
         return getCommitIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+       * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitIDOrBuilder getCommitIdOrBuilder() {
         if (commitIdBuilder_ != null) {
@@ -1469,7 +1601,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>optional .cosmos.base.store.v1beta1.CommitID commit_id = 2;</code>
+       * <code>.cosmos.base.store.v1beta1.CommitID commit_id = 2 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID, cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID.Builder, cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitIDOrBuilder> 
@@ -1484,14 +1616,16 @@ public final class CommitInfoOuterClass {
         }
         return commitIdBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1510,11 +1644,12 @@ public final class CommitInfoOuterClass {
 
     private static final com.google.protobuf.Parser<StoreInfo>
         PARSER = new com.google.protobuf.AbstractParser<StoreInfo>() {
+      @java.lang.Override
       public StoreInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StoreInfo(input, extensionRegistry);
+        return new StoreInfo(input, extensionRegistry);
       }
     };
 
@@ -1527,6 +1662,7 @@ public final class CommitInfoOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.store.v1beta1.CommitInfoOuterClass.StoreInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1538,12 +1674,14 @@ public final class CommitInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int64 version = 1;</code>
+     * <code>int64 version = 1;</code>
+     * @return The version.
      */
     long getVersion();
 
     /**
-     * <code>optional bytes hash = 2;</code>
+     * <code>bytes hash = 2;</code>
+     * @return The hash.
      */
     com.google.protobuf.ByteString getHash();
   }
@@ -1555,30 +1693,41 @@ public final class CommitInfoOuterClass {
    *
    * Protobuf type {@code cosmos.base.store.v1beta1.CommitID}
    */
-  public  static final class CommitID extends
+  public static final class CommitID extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.store.v1beta1.CommitID)
       CommitIDOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use CommitID.newBuilder() to construct.
     private CommitID(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private CommitID() {
-      version_ = 0L;
       hash_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CommitID();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private CommitID(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1587,12 +1736,6 @@ public final class CommitInfoOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               version_ = input.readInt64();
@@ -1603,6 +1746,13 @@ public final class CommitInfoOuterClass {
               hash_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1611,6 +1761,7 @@ public final class CommitInfoOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1619,6 +1770,7 @@ public final class CommitInfoOuterClass {
       return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_CommitID_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_CommitID_fieldAccessorTable
@@ -1629,8 +1781,10 @@ public final class CommitInfoOuterClass {
     public static final int VERSION_FIELD_NUMBER = 1;
     private long version_;
     /**
-     * <code>optional int64 version = 1;</code>
+     * <code>int64 version = 1;</code>
+     * @return The version.
      */
+    @java.lang.Override
     public long getVersion() {
       return version_;
     }
@@ -1638,13 +1792,16 @@ public final class CommitInfoOuterClass {
     public static final int HASH_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString hash_;
     /**
-     * <code>optional bytes hash = 2;</code>
+     * <code>bytes hash = 2;</code>
+     * @return The hash.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getHash() {
       return hash_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1654,6 +1811,7 @@ public final class CommitInfoOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (version_ != 0L) {
@@ -1662,8 +1820,10 @@ public final class CommitInfoOuterClass {
       if (!hash_.isEmpty()) {
         output.writeBytes(2, hash_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1677,11 +1837,11 @@ public final class CommitInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, hash_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1692,12 +1852,12 @@ public final class CommitInfoOuterClass {
       }
       cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID other = (cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID) obj;
 
-      boolean result = true;
-      result = result && (getVersion()
-          == other.getVersion());
-      result = result && getHash()
-          .equals(other.getHash());
-      return result;
+      if (getVersion()
+          != other.getVersion()) return false;
+      if (!getHash()
+          .equals(other.getHash())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1706,7 +1866,7 @@ public final class CommitInfoOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getVersion());
@@ -1717,6 +1877,17 @@ public final class CommitInfoOuterClass {
       return hash;
     }
 
+    public static cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1776,6 +1947,7 @@ public final class CommitInfoOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1783,6 +1955,7 @@ public final class CommitInfoOuterClass {
     public static Builder newBuilder(cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1811,6 +1984,7 @@ public final class CommitInfoOuterClass {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_CommitID_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_CommitID_fieldAccessorTable
@@ -1833,6 +2007,7 @@ public final class CommitInfoOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         version_ = 0L;
@@ -1842,15 +2017,18 @@ public final class CommitInfoOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.internal_static_cosmos_base_store_v1beta1_CommitID_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID getDefaultInstanceForType() {
         return cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID build() {
         cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID result = buildPartial();
         if (!result.isInitialized()) {
@@ -1859,6 +2037,7 @@ public final class CommitInfoOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID buildPartial() {
         cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID result = new cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID(this);
         result.version_ = version_;
@@ -1867,32 +2046,39 @@ public final class CommitInfoOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID) {
           return mergeFrom((cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID)other);
@@ -1910,14 +2096,17 @@ public final class CommitInfoOuterClass {
         if (other.getHash() != com.google.protobuf.ByteString.EMPTY) {
           setHash(other.getHash());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1938,13 +2127,17 @@ public final class CommitInfoOuterClass {
 
       private long version_ ;
       /**
-       * <code>optional int64 version = 1;</code>
+       * <code>int64 version = 1;</code>
+       * @return The version.
        */
+      @java.lang.Override
       public long getVersion() {
         return version_;
       }
       /**
-       * <code>optional int64 version = 1;</code>
+       * <code>int64 version = 1;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
        */
       public Builder setVersion(long value) {
         
@@ -1953,7 +2146,8 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>optional int64 version = 1;</code>
+       * <code>int64 version = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVersion() {
         
@@ -1964,13 +2158,17 @@ public final class CommitInfoOuterClass {
 
       private com.google.protobuf.ByteString hash_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes hash = 2;</code>
+       * <code>bytes hash = 2;</code>
+       * @return The hash.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getHash() {
         return hash_;
       }
       /**
-       * <code>optional bytes hash = 2;</code>
+       * <code>bytes hash = 2;</code>
+       * @param value The hash to set.
+       * @return This builder for chaining.
        */
       public Builder setHash(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1982,7 +2180,8 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes hash = 2;</code>
+       * <code>bytes hash = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHash() {
         
@@ -1990,14 +2189,16 @@ public final class CommitInfoOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2016,11 +2217,12 @@ public final class CommitInfoOuterClass {
 
     private static final com.google.protobuf.Parser<CommitID>
         PARSER = new com.google.protobuf.AbstractParser<CommitID>() {
+      @java.lang.Override
       public CommitID parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CommitID(input, extensionRegistry);
+        return new CommitID(input, extensionRegistry);
       }
     };
 
@@ -2033,6 +2235,7 @@ public final class CommitInfoOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.store.v1beta1.CommitInfoOuterClass.CommitID getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2074,19 +2277,11 @@ public final class CommitInfoOuterClass {
       "(\014:\004\230\240\037\000B*Z(github.com/cosmos/cosmos-sdk" +
       "/store/typesb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_base_store_v1beta1_CommitInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_base_store_v1beta1_CommitInfo_fieldAccessorTable = new

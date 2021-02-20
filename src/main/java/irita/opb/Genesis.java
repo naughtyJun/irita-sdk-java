@@ -19,15 +19,17 @@ public final class Genesis {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The params.
      */
     irita.opb.Opb.Params getParams();
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
     irita.opb.Opb.ParamsOrBuilder getParamsOrBuilder();
   }
@@ -38,10 +40,11 @@ public final class Genesis {
    *
    * Protobuf type {@code irita.opb.GenesisState}
    */
-  public  static final class GenesisState extends
+  public static final class GenesisState extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:irita.opb.GenesisState)
       GenesisStateOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GenesisState.newBuilder() to construct.
     private GenesisState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -50,16 +53,27 @@ public final class Genesis {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GenesisState();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GenesisState(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -68,12 +82,6 @@ public final class Genesis {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               irita.opb.Opb.Params.Builder subBuilder = null;
               if (params_ != null) {
@@ -87,6 +95,13 @@ public final class Genesis {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -95,6 +110,7 @@ public final class Genesis {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -103,6 +119,7 @@ public final class Genesis {
       return irita.opb.Genesis.internal_static_irita_opb_GenesisState_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return irita.opb.Genesis.internal_static_irita_opb_GenesisState_fieldAccessorTable
@@ -113,25 +130,31 @@ public final class Genesis {
     public static final int PARAMS_FIELD_NUMBER = 1;
     private irita.opb.Opb.Params params_;
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the params field is set.
      */
+    @java.lang.Override
     public boolean hasParams() {
       return params_ != null;
     }
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The params.
      */
+    @java.lang.Override
     public irita.opb.Opb.Params getParams() {
       return params_ == null ? irita.opb.Opb.Params.getDefaultInstance() : params_;
     }
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public irita.opb.Opb.ParamsOrBuilder getParamsOrBuilder() {
       return getParams();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -141,13 +164,16 @@ public final class Genesis {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (params_ != null) {
         output.writeMessage(1, getParams());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -157,11 +183,11 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getParams());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -172,13 +198,13 @@ public final class Genesis {
       }
       irita.opb.Genesis.GenesisState other = (irita.opb.Genesis.GenesisState) obj;
 
-      boolean result = true;
-      result = result && (hasParams() == other.hasParams());
+      if (hasParams() != other.hasParams()) return false;
       if (hasParams()) {
-        result = result && getParams()
-            .equals(other.getParams());
+        if (!getParams()
+            .equals(other.getParams())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -187,7 +213,7 @@ public final class Genesis {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasParams()) {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParams().hashCode();
@@ -197,6 +223,17 @@ public final class Genesis {
       return hash;
     }
 
+    public static irita.opb.Genesis.GenesisState parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static irita.opb.Genesis.GenesisState parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static irita.opb.Genesis.GenesisState parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -256,6 +293,7 @@ public final class Genesis {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -263,6 +301,7 @@ public final class Genesis {
     public static Builder newBuilder(irita.opb.Genesis.GenesisState prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -290,6 +329,7 @@ public final class Genesis {
         return irita.opb.Genesis.internal_static_irita_opb_GenesisState_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return irita.opb.Genesis.internal_static_irita_opb_GenesisState_fieldAccessorTable
@@ -312,6 +352,7 @@ public final class Genesis {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (paramsBuilder_ == null) {
@@ -323,15 +364,18 @@ public final class Genesis {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return irita.opb.Genesis.internal_static_irita_opb_GenesisState_descriptor;
       }
 
+      @java.lang.Override
       public irita.opb.Genesis.GenesisState getDefaultInstanceForType() {
         return irita.opb.Genesis.GenesisState.getDefaultInstance();
       }
 
+      @java.lang.Override
       public irita.opb.Genesis.GenesisState build() {
         irita.opb.Genesis.GenesisState result = buildPartial();
         if (!result.isInitialized()) {
@@ -340,6 +384,7 @@ public final class Genesis {
         return result;
       }
 
+      @java.lang.Override
       public irita.opb.Genesis.GenesisState buildPartial() {
         irita.opb.Genesis.GenesisState result = new irita.opb.Genesis.GenesisState(this);
         if (paramsBuilder_ == null) {
@@ -351,32 +396,39 @@ public final class Genesis {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof irita.opb.Genesis.GenesisState) {
           return mergeFrom((irita.opb.Genesis.GenesisState)other);
@@ -391,14 +443,17 @@ public final class Genesis {
         if (other.hasParams()) {
           mergeParams(other.getParams());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -417,17 +472,19 @@ public final class Genesis {
         return this;
       }
 
-      private irita.opb.Opb.Params params_ = null;
+      private irita.opb.Opb.Params params_;
       private com.google.protobuf.SingleFieldBuilderV3<
           irita.opb.Opb.Params, irita.opb.Opb.Params.Builder, irita.opb.Opb.ParamsOrBuilder> paramsBuilder_;
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the params field is set.
        */
       public boolean hasParams() {
         return paramsBuilder_ != null || params_ != null;
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * @return The params.
        */
       public irita.opb.Opb.Params getParams() {
         if (paramsBuilder_ == null) {
@@ -437,7 +494,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(irita.opb.Opb.Params value) {
         if (paramsBuilder_ == null) {
@@ -453,7 +510,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(
           irita.opb.Opb.Params.Builder builderForValue) {
@@ -467,7 +524,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeParams(irita.opb.Opb.Params value) {
         if (paramsBuilder_ == null) {
@@ -485,7 +542,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -499,7 +556,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public irita.opb.Opb.Params.Builder getParamsBuilder() {
         
@@ -507,7 +564,7 @@ public final class Genesis {
         return getParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public irita.opb.Opb.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -518,7 +575,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           irita.opb.Opb.Params, irita.opb.Opb.Params.Builder, irita.opb.Opb.ParamsOrBuilder> 
@@ -533,14 +590,16 @@ public final class Genesis {
         }
         return paramsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -559,11 +618,12 @@ public final class Genesis {
 
     private static final com.google.protobuf.Parser<GenesisState>
         PARSER = new com.google.protobuf.AbstractParser<GenesisState>() {
+      @java.lang.Override
       public GenesisState parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GenesisState(input, extensionRegistry);
+        return new GenesisState(input, extensionRegistry);
       }
     };
 
@@ -576,6 +636,7 @@ public final class Genesis {
       return PARSER;
     }
 
+    @java.lang.Override
     public irita.opb.Genesis.GenesisState getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -602,20 +663,12 @@ public final class Genesis {
       "\310\336\037\000B.Z,github.com/bianjieai/irita/modul" +
       "es/opb/typesb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           irita.opb.Opb.getDescriptor(),
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_irita_opb_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_irita_opb_GenesisState_fieldAccessorTable = new

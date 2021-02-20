@@ -25,10 +25,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code irita.opb.QueryParamsRequest}
    */
-  public  static final class QueryParamsRequest extends
+  public static final class QueryParamsRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:irita.opb.QueryParamsRequest)
       QueryParamsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryParamsRequest.newBuilder() to construct.
     private QueryParamsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -37,15 +38,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryParamsRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryParamsRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -55,7 +68,8 @@ public final class QueryOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -68,6 +82,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -76,6 +91,7 @@ public final class QueryOuterClass {
       return irita.opb.QueryOuterClass.internal_static_irita_opb_QueryParamsRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return irita.opb.QueryOuterClass.internal_static_irita_opb_QueryParamsRequest_fieldAccessorTable
@@ -84,6 +100,7 @@ public final class QueryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -93,20 +110,23 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -117,8 +137,8 @@ public final class QueryOuterClass {
       }
       irita.opb.QueryOuterClass.QueryParamsRequest other = (irita.opb.QueryOuterClass.QueryParamsRequest) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -127,12 +147,23 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static irita.opb.QueryOuterClass.QueryParamsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static irita.opb.QueryOuterClass.QueryParamsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static irita.opb.QueryOuterClass.QueryParamsRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -192,6 +223,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -199,6 +231,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(irita.opb.QueryOuterClass.QueryParamsRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -226,6 +259,7 @@ public final class QueryOuterClass {
         return irita.opb.QueryOuterClass.internal_static_irita_opb_QueryParamsRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return irita.opb.QueryOuterClass.internal_static_irita_opb_QueryParamsRequest_fieldAccessorTable
@@ -248,20 +282,24 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return irita.opb.QueryOuterClass.internal_static_irita_opb_QueryParamsRequest_descriptor;
       }
 
+      @java.lang.Override
       public irita.opb.QueryOuterClass.QueryParamsRequest getDefaultInstanceForType() {
         return irita.opb.QueryOuterClass.QueryParamsRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public irita.opb.QueryOuterClass.QueryParamsRequest build() {
         irita.opb.QueryOuterClass.QueryParamsRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -270,38 +308,46 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public irita.opb.QueryOuterClass.QueryParamsRequest buildPartial() {
         irita.opb.QueryOuterClass.QueryParamsRequest result = new irita.opb.QueryOuterClass.QueryParamsRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof irita.opb.QueryOuterClass.QueryParamsRequest) {
           return mergeFrom((irita.opb.QueryOuterClass.QueryParamsRequest)other);
@@ -313,14 +359,17 @@ public final class QueryOuterClass {
 
       public Builder mergeFrom(irita.opb.QueryOuterClass.QueryParamsRequest other) {
         if (other == irita.opb.QueryOuterClass.QueryParamsRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -338,14 +387,16 @@ public final class QueryOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -364,11 +415,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryParamsRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryParamsRequest>() {
+      @java.lang.Override
       public QueryParamsRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryParamsRequest(input, extensionRegistry);
+        return new QueryParamsRequest(input, extensionRegistry);
       }
     };
 
@@ -381,6 +433,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public irita.opb.QueryOuterClass.QueryParamsRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -392,15 +445,17 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The params.
      */
     irita.opb.Opb.Params getParams();
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
     irita.opb.Opb.ParamsOrBuilder getParamsOrBuilder();
   }
@@ -411,10 +466,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code irita.opb.QueryParamsResponse}
    */
-  public  static final class QueryParamsResponse extends
+  public static final class QueryParamsResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:irita.opb.QueryParamsResponse)
       QueryParamsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryParamsResponse.newBuilder() to construct.
     private QueryParamsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -423,16 +479,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryParamsResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryParamsResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -441,12 +508,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               irita.opb.Opb.Params.Builder subBuilder = null;
               if (params_ != null) {
@@ -460,6 +521,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -468,6 +536,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -476,6 +545,7 @@ public final class QueryOuterClass {
       return irita.opb.QueryOuterClass.internal_static_irita_opb_QueryParamsResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return irita.opb.QueryOuterClass.internal_static_irita_opb_QueryParamsResponse_fieldAccessorTable
@@ -486,25 +556,31 @@ public final class QueryOuterClass {
     public static final int PARAMS_FIELD_NUMBER = 1;
     private irita.opb.Opb.Params params_;
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the params field is set.
      */
+    @java.lang.Override
     public boolean hasParams() {
       return params_ != null;
     }
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The params.
      */
+    @java.lang.Override
     public irita.opb.Opb.Params getParams() {
       return params_ == null ? irita.opb.Opb.Params.getDefaultInstance() : params_;
     }
     /**
-     * <code>optional .irita.opb.Params params = 1;</code>
+     * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public irita.opb.Opb.ParamsOrBuilder getParamsOrBuilder() {
       return getParams();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -514,13 +590,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (params_ != null) {
         output.writeMessage(1, getParams());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -530,11 +609,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getParams());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -545,13 +624,13 @@ public final class QueryOuterClass {
       }
       irita.opb.QueryOuterClass.QueryParamsResponse other = (irita.opb.QueryOuterClass.QueryParamsResponse) obj;
 
-      boolean result = true;
-      result = result && (hasParams() == other.hasParams());
+      if (hasParams() != other.hasParams()) return false;
       if (hasParams()) {
-        result = result && getParams()
-            .equals(other.getParams());
+        if (!getParams()
+            .equals(other.getParams())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -560,7 +639,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasParams()) {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParams().hashCode();
@@ -570,6 +649,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static irita.opb.QueryOuterClass.QueryParamsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static irita.opb.QueryOuterClass.QueryParamsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static irita.opb.QueryOuterClass.QueryParamsResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -629,6 +719,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -636,6 +727,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(irita.opb.QueryOuterClass.QueryParamsResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -663,6 +755,7 @@ public final class QueryOuterClass {
         return irita.opb.QueryOuterClass.internal_static_irita_opb_QueryParamsResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return irita.opb.QueryOuterClass.internal_static_irita_opb_QueryParamsResponse_fieldAccessorTable
@@ -685,6 +778,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (paramsBuilder_ == null) {
@@ -696,15 +790,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return irita.opb.QueryOuterClass.internal_static_irita_opb_QueryParamsResponse_descriptor;
       }
 
+      @java.lang.Override
       public irita.opb.QueryOuterClass.QueryParamsResponse getDefaultInstanceForType() {
         return irita.opb.QueryOuterClass.QueryParamsResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public irita.opb.QueryOuterClass.QueryParamsResponse build() {
         irita.opb.QueryOuterClass.QueryParamsResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -713,6 +810,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public irita.opb.QueryOuterClass.QueryParamsResponse buildPartial() {
         irita.opb.QueryOuterClass.QueryParamsResponse result = new irita.opb.QueryOuterClass.QueryParamsResponse(this);
         if (paramsBuilder_ == null) {
@@ -724,32 +822,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof irita.opb.QueryOuterClass.QueryParamsResponse) {
           return mergeFrom((irita.opb.QueryOuterClass.QueryParamsResponse)other);
@@ -764,14 +869,17 @@ public final class QueryOuterClass {
         if (other.hasParams()) {
           mergeParams(other.getParams());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -790,17 +898,19 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private irita.opb.Opb.Params params_ = null;
+      private irita.opb.Opb.Params params_;
       private com.google.protobuf.SingleFieldBuilderV3<
           irita.opb.Opb.Params, irita.opb.Opb.Params.Builder, irita.opb.Opb.ParamsOrBuilder> paramsBuilder_;
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the params field is set.
        */
       public boolean hasParams() {
         return paramsBuilder_ != null || params_ != null;
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * @return The params.
        */
       public irita.opb.Opb.Params getParams() {
         if (paramsBuilder_ == null) {
@@ -810,7 +920,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(irita.opb.Opb.Params value) {
         if (paramsBuilder_ == null) {
@@ -826,7 +936,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(
           irita.opb.Opb.Params.Builder builderForValue) {
@@ -840,7 +950,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeParams(irita.opb.Opb.Params value) {
         if (paramsBuilder_ == null) {
@@ -858,7 +968,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -872,7 +982,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public irita.opb.Opb.Params.Builder getParamsBuilder() {
         
@@ -880,7 +990,7 @@ public final class QueryOuterClass {
         return getParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public irita.opb.Opb.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -891,7 +1001,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional .irita.opb.Params params = 1;</code>
+       * <code>.irita.opb.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           irita.opb.Opb.Params, irita.opb.Opb.Params.Builder, irita.opb.Opb.ParamsOrBuilder> 
@@ -906,14 +1016,16 @@ public final class QueryOuterClass {
         }
         return paramsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -932,11 +1044,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryParamsResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryParamsResponse>() {
+      @java.lang.Override
       public QueryParamsResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryParamsResponse(input, extensionRegistry);
+        return new QueryParamsResponse(input, extensionRegistry);
       }
     };
 
@@ -949,6 +1062,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public irita.opb.QueryOuterClass.QueryParamsResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -984,21 +1098,13 @@ public final class QueryOuterClass {
       "opb/paramsB.Z,github.com/bianjieai/irita" +
       "/modules/opb/typesb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           irita.opb.Opb.getDescriptor(),
           com.google.protobuf.GoGoProtos.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_irita_opb_QueryParamsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_irita_opb_QueryParamsRequest_fieldAccessorTable = new

@@ -12,7 +12,8 @@ public interface HttpBodyOrBuilder extends
    * The HTTP Content-Type header value specifying the content type of the body.
    * </pre>
    *
-   * <code>optional string content_type = 1;</code>
+   * <code>string content_type = 1;</code>
+   * @return The contentType.
    */
   java.lang.String getContentType();
   /**
@@ -20,7 +21,8 @@ public interface HttpBodyOrBuilder extends
    * The HTTP Content-Type header value specifying the content type of the body.
    * </pre>
    *
-   * <code>optional string content_type = 1;</code>
+   * <code>string content_type = 1;</code>
+   * @return The bytes for contentType.
    */
   com.google.protobuf.ByteString
       getContentTypeBytes();
@@ -30,7 +32,8 @@ public interface HttpBodyOrBuilder extends
    * The HTTP request/response body as raw binary.
    * </pre>
    *
-   * <code>optional bytes data = 2;</code>
+   * <code>bytes data = 2;</code>
+   * @return The data.
    */
   com.google.protobuf.ByteString getData();
 

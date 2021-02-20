@@ -23,7 +23,8 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1;</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return A list containing the genTxs.
      */
     java.util.List<com.google.protobuf.ByteString> getGenTxsList();
     /**
@@ -31,7 +32,8 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1;</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The count of genTxs.
      */
     int getGenTxsCount();
     /**
@@ -39,7 +41,9 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1;</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @param index The index of the element to return.
+     * @return The genTxs at the given index.
      */
     com.google.protobuf.ByteString getGenTxs(int index);
   }
@@ -50,10 +54,11 @@ public final class Genesis {
    *
    * Protobuf type {@code cosmos.genutil.v1beta1.GenesisState}
    */
-  public  static final class GenesisState extends
+  public static final class GenesisState extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.genutil.v1beta1.GenesisState)
       GenesisStateOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GenesisState.newBuilder() to construct.
     private GenesisState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -63,16 +68,28 @@ public final class Genesis {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GenesisState();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GenesisState(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -81,18 +98,19 @@ public final class Genesis {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 genTxs_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
                 mutable_bitField0_ |= 0x00000001;
               }
               genTxs_.add(input.readBytes());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -103,9 +121,10 @@ public final class Genesis {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          genTxs_ = java.util.Collections.unmodifiableList(genTxs_);
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          genTxs_ = java.util.Collections.unmodifiableList(genTxs_); // C
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -114,6 +133,7 @@ public final class Genesis {
       return cosmos.genutil.v1beta1.Genesis.internal_static_cosmos_genutil_v1beta1_GenesisState_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.genutil.v1beta1.Genesis.internal_static_cosmos_genutil_v1beta1_GenesisState_fieldAccessorTable
@@ -128,8 +148,10 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1;</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return A list containing the genTxs.
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.ByteString>
         getGenTxsList() {
       return genTxs_;
@@ -139,7 +161,8 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1;</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The count of genTxs.
      */
     public int getGenTxsCount() {
       return genTxs_.size();
@@ -149,13 +172,16 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1;</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @param index The index of the element to return.
+     * @return The genTxs at the given index.
      */
     public com.google.protobuf.ByteString getGenTxs(int index) {
       return genTxs_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -165,13 +191,16 @@ public final class Genesis {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < genTxs_.size(); i++) {
         output.writeBytes(1, genTxs_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -186,11 +215,11 @@ public final class Genesis {
         size += dataSize;
         size += 1 * getGenTxsList().size();
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -201,10 +230,10 @@ public final class Genesis {
       }
       cosmos.genutil.v1beta1.Genesis.GenesisState other = (cosmos.genutil.v1beta1.Genesis.GenesisState) obj;
 
-      boolean result = true;
-      result = result && getGenTxsList()
-          .equals(other.getGenTxsList());
-      return result;
+      if (!getGenTxsList()
+          .equals(other.getGenTxsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -213,7 +242,7 @@ public final class Genesis {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getGenTxsCount() > 0) {
         hash = (37 * hash) + GEN_TXS_FIELD_NUMBER;
         hash = (53 * hash) + getGenTxsList().hashCode();
@@ -223,6 +252,17 @@ public final class Genesis {
       return hash;
     }
 
+    public static cosmos.genutil.v1beta1.Genesis.GenesisState parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.genutil.v1beta1.Genesis.GenesisState parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.genutil.v1beta1.Genesis.GenesisState parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -282,6 +322,7 @@ public final class Genesis {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -289,6 +330,7 @@ public final class Genesis {
     public static Builder newBuilder(cosmos.genutil.v1beta1.Genesis.GenesisState prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -316,6 +358,7 @@ public final class Genesis {
         return cosmos.genutil.v1beta1.Genesis.internal_static_cosmos_genutil_v1beta1_GenesisState_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.genutil.v1beta1.Genesis.internal_static_cosmos_genutil_v1beta1_GenesisState_fieldAccessorTable
@@ -338,6 +381,7 @@ public final class Genesis {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         genTxs_ = java.util.Collections.emptyList();
@@ -345,15 +389,18 @@ public final class Genesis {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.genutil.v1beta1.Genesis.internal_static_cosmos_genutil_v1beta1_GenesisState_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.genutil.v1beta1.Genesis.GenesisState getDefaultInstanceForType() {
         return cosmos.genutil.v1beta1.Genesis.GenesisState.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.genutil.v1beta1.Genesis.GenesisState build() {
         cosmos.genutil.v1beta1.Genesis.GenesisState result = buildPartial();
         if (!result.isInitialized()) {
@@ -362,10 +409,11 @@ public final class Genesis {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.genutil.v1beta1.Genesis.GenesisState buildPartial() {
         cosmos.genutil.v1beta1.Genesis.GenesisState result = new cosmos.genutil.v1beta1.Genesis.GenesisState(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           genTxs_ = java.util.Collections.unmodifiableList(genTxs_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -374,32 +422,39 @@ public final class Genesis {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.genutil.v1beta1.Genesis.GenesisState) {
           return mergeFrom((cosmos.genutil.v1beta1.Genesis.GenesisState)other);
@@ -421,14 +476,17 @@ public final class Genesis {
           }
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -450,7 +508,7 @@ public final class Genesis {
 
       private java.util.List<com.google.protobuf.ByteString> genTxs_ = java.util.Collections.emptyList();
       private void ensureGenTxsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           genTxs_ = new java.util.ArrayList<com.google.protobuf.ByteString>(genTxs_);
           bitField0_ |= 0x00000001;
          }
@@ -460,18 +518,21 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1;</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return A list containing the genTxs.
        */
       public java.util.List<com.google.protobuf.ByteString>
           getGenTxsList() {
-        return java.util.Collections.unmodifiableList(genTxs_);
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(genTxs_) : genTxs_;
       }
       /**
        * <pre>
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1;</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return The count of genTxs.
        */
       public int getGenTxsCount() {
         return genTxs_.size();
@@ -481,7 +542,9 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1;</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @param index The index of the element to return.
+       * @return The genTxs at the given index.
        */
       public com.google.protobuf.ByteString getGenTxs(int index) {
         return genTxs_.get(index);
@@ -491,7 +554,10 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1;</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @param index The index to set the value at.
+       * @param value The genTxs to set.
+       * @return This builder for chaining.
        */
       public Builder setGenTxs(
           int index, com.google.protobuf.ByteString value) {
@@ -508,7 +574,9 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1;</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @param value The genTxs to add.
+       * @return This builder for chaining.
        */
       public Builder addGenTxs(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -524,7 +592,9 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1;</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @param values The genTxs to add.
+       * @return This builder for chaining.
        */
       public Builder addAllGenTxs(
           java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -539,7 +609,8 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1;</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearGenTxs() {
         genTxs_ = java.util.Collections.emptyList();
@@ -547,14 +618,16 @@ public final class Genesis {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -573,11 +646,12 @@ public final class Genesis {
 
     private static final com.google.protobuf.Parser<GenesisState>
         PARSER = new com.google.protobuf.AbstractParser<GenesisState>() {
+      @java.lang.Override
       public GenesisState parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GenesisState(input, extensionRegistry);
+        return new GenesisState(input, extensionRegistry);
       }
     };
 
@@ -590,6 +664,7 @@ public final class Genesis {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.genutil.v1beta1.Genesis.GenesisState getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -617,19 +692,11 @@ public final class Genesis {
       "\ryaml:\"gentxs\"B.Z,github.com/cosmos/cosm" +
       "os-sdk/x/genutil/typesb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_genutil_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_genutil_v1beta1_GenesisState_fieldAccessorTable = new

@@ -183,10 +183,11 @@ package com.google.api;
  *
  * Protobuf type {@code google.api.HttpRule}
  */
-public  final class HttpRule extends
+public final class HttpRule extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.api.HttpRule)
     HttpRuleOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use HttpRule.newBuilder() to construct.
   private HttpRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -199,16 +200,28 @@ public  final class HttpRule extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new HttpRule();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private HttpRule(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -217,12 +230,6 @@ public  final class HttpRule extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -280,9 +287,9 @@ public  final class HttpRule extends
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               additionalBindings_ = new java.util.ArrayList<com.google.api.HttpRule>();
-              mutable_bitField0_ |= 0x00000200;
+              mutable_bitField0_ |= 0x00000001;
             }
             additionalBindings_.add(
                 input.readMessage(com.google.api.HttpRule.parser(), extensionRegistry));
@@ -294,6 +301,13 @@ public  final class HttpRule extends
             responseBody_ = s;
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -302,9 +316,10 @@ public  final class HttpRule extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         additionalBindings_ = java.util.Collections.unmodifiableList(additionalBindings_);
       }
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -313,6 +328,7 @@ public  final class HttpRule extends
     return com.google.api.HttpProto.internal_static_google_api_HttpRule_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.api.HttpProto.internal_static_google_api_HttpRule_fieldAccessorTable
@@ -320,11 +336,11 @@ public  final class HttpRule extends
             com.google.api.HttpRule.class, com.google.api.HttpRule.Builder.class);
   }
 
-  private int bitField0_;
   private int patternCase_ = 0;
   private java.lang.Object pattern_;
   public enum PatternCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GET(2),
     PUT(3),
     POST(4),
@@ -337,6 +353,8 @@ public  final class HttpRule extends
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -375,8 +393,10 @@ public  final class HttpRule extends
    * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
    * </pre>
    *
-   * <code>optional string selector = 1;</code>
+   * <code>string selector = 1;</code>
+   * @return The selector.
    */
+  @java.lang.Override
   public java.lang.String getSelector() {
     java.lang.Object ref = selector_;
     if (ref instanceof java.lang.String) {
@@ -395,8 +415,10 @@ public  final class HttpRule extends
    * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
    * </pre>
    *
-   * <code>optional string selector = 1;</code>
+   * <code>string selector = 1;</code>
+   * @return The bytes for selector.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getSelectorBytes() {
     java.lang.Object ref = selector_;
@@ -417,7 +439,8 @@ public  final class HttpRule extends
    * Used for listing and getting information about resources.
    * </pre>
    *
-   * <code>optional string get = 2;</code>
+   * <code>string get = 2;</code>
+   * @return The get.
    */
   public java.lang.String getGet() {
     java.lang.Object ref = "";
@@ -441,7 +464,8 @@ public  final class HttpRule extends
    * Used for listing and getting information about resources.
    * </pre>
    *
-   * <code>optional string get = 2;</code>
+   * <code>string get = 2;</code>
+   * @return The bytes for get.
    */
   public com.google.protobuf.ByteString
       getGetBytes() {
@@ -468,7 +492,8 @@ public  final class HttpRule extends
    * Used for updating a resource.
    * </pre>
    *
-   * <code>optional string put = 3;</code>
+   * <code>string put = 3;</code>
+   * @return The put.
    */
   public java.lang.String getPut() {
     java.lang.Object ref = "";
@@ -492,7 +517,8 @@ public  final class HttpRule extends
    * Used for updating a resource.
    * </pre>
    *
-   * <code>optional string put = 3;</code>
+   * <code>string put = 3;</code>
+   * @return The bytes for put.
    */
   public com.google.protobuf.ByteString
       getPutBytes() {
@@ -519,7 +545,8 @@ public  final class HttpRule extends
    * Used for creating a resource.
    * </pre>
    *
-   * <code>optional string post = 4;</code>
+   * <code>string post = 4;</code>
+   * @return The post.
    */
   public java.lang.String getPost() {
     java.lang.Object ref = "";
@@ -543,7 +570,8 @@ public  final class HttpRule extends
    * Used for creating a resource.
    * </pre>
    *
-   * <code>optional string post = 4;</code>
+   * <code>string post = 4;</code>
+   * @return The bytes for post.
    */
   public com.google.protobuf.ByteString
       getPostBytes() {
@@ -570,7 +598,8 @@ public  final class HttpRule extends
    * Used for deleting a resource.
    * </pre>
    *
-   * <code>optional string delete = 5;</code>
+   * <code>string delete = 5;</code>
+   * @return The delete.
    */
   public java.lang.String getDelete() {
     java.lang.Object ref = "";
@@ -594,7 +623,8 @@ public  final class HttpRule extends
    * Used for deleting a resource.
    * </pre>
    *
-   * <code>optional string delete = 5;</code>
+   * <code>string delete = 5;</code>
+   * @return The bytes for delete.
    */
   public com.google.protobuf.ByteString
       getDeleteBytes() {
@@ -621,7 +651,8 @@ public  final class HttpRule extends
    * Used for updating a resource.
    * </pre>
    *
-   * <code>optional string patch = 6;</code>
+   * <code>string patch = 6;</code>
+   * @return The patch.
    */
   public java.lang.String getPatch() {
     java.lang.Object ref = "";
@@ -645,7 +676,8 @@ public  final class HttpRule extends
    * Used for updating a resource.
    * </pre>
    *
-   * <code>optional string patch = 6;</code>
+   * <code>string patch = 6;</code>
+   * @return The bytes for patch.
    */
   public com.google.protobuf.ByteString
       getPatchBytes() {
@@ -675,8 +707,25 @@ public  final class HttpRule extends
    * for services that provide content to Web (HTML) clients.
    * </pre>
    *
-   * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+   * <code>.google.api.CustomHttpPattern custom = 8;</code>
+   * @return Whether the custom field is set.
    */
+  @java.lang.Override
+  public boolean hasCustom() {
+    return patternCase_ == 8;
+  }
+  /**
+   * <pre>
+   * The custom pattern is used for specifying an HTTP method that is not
+   * included in the `pattern` field, such as HEAD, or "*" to leave the
+   * HTTP method unspecified for this rule. The wild-card rule is useful
+   * for services that provide content to Web (HTML) clients.
+   * </pre>
+   *
+   * <code>.google.api.CustomHttpPattern custom = 8;</code>
+   * @return The custom.
+   */
+  @java.lang.Override
   public com.google.api.CustomHttpPattern getCustom() {
     if (patternCase_ == 8) {
        return (com.google.api.CustomHttpPattern) pattern_;
@@ -691,8 +740,9 @@ public  final class HttpRule extends
    * for services that provide content to Web (HTML) clients.
    * </pre>
    *
-   * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+   * <code>.google.api.CustomHttpPattern custom = 8;</code>
    */
+  @java.lang.Override
   public com.google.api.CustomHttpPatternOrBuilder getCustomOrBuilder() {
     if (patternCase_ == 8) {
        return (com.google.api.CustomHttpPattern) pattern_;
@@ -710,8 +760,10 @@ public  final class HttpRule extends
    * present at the top-level of request message type.
    * </pre>
    *
-   * <code>optional string body = 7;</code>
+   * <code>string body = 7;</code>
+   * @return The body.
    */
+  @java.lang.Override
   public java.lang.String getBody() {
     java.lang.Object ref = body_;
     if (ref instanceof java.lang.String) {
@@ -732,8 +784,10 @@ public  final class HttpRule extends
    * present at the top-level of request message type.
    * </pre>
    *
-   * <code>optional string body = 7;</code>
+   * <code>string body = 7;</code>
+   * @return The bytes for body.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getBodyBytes() {
     java.lang.Object ref = body_;
@@ -757,8 +811,10 @@ public  final class HttpRule extends
    * not set, the response message will be used as HTTP body of response.
    * </pre>
    *
-   * <code>optional string response_body = 12;</code>
+   * <code>string response_body = 12;</code>
+   * @return The responseBody.
    */
+  @java.lang.Override
   public java.lang.String getResponseBody() {
     java.lang.Object ref = responseBody_;
     if (ref instanceof java.lang.String) {
@@ -778,8 +834,10 @@ public  final class HttpRule extends
    * not set, the response message will be used as HTTP body of response.
    * </pre>
    *
-   * <code>optional string response_body = 12;</code>
+   * <code>string response_body = 12;</code>
+   * @return The bytes for responseBody.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getResponseBodyBytes() {
     java.lang.Object ref = responseBody_;
@@ -805,6 +863,7 @@ public  final class HttpRule extends
    *
    * <code>repeated .google.api.HttpRule additional_bindings = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.api.HttpRule> getAdditionalBindingsList() {
     return additionalBindings_;
   }
@@ -817,6 +876,7 @@ public  final class HttpRule extends
    *
    * <code>repeated .google.api.HttpRule additional_bindings = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.api.HttpRuleOrBuilder> 
       getAdditionalBindingsOrBuilderList() {
     return additionalBindings_;
@@ -830,6 +890,7 @@ public  final class HttpRule extends
    *
    * <code>repeated .google.api.HttpRule additional_bindings = 11;</code>
    */
+  @java.lang.Override
   public int getAdditionalBindingsCount() {
     return additionalBindings_.size();
   }
@@ -842,6 +903,7 @@ public  final class HttpRule extends
    *
    * <code>repeated .google.api.HttpRule additional_bindings = 11;</code>
    */
+  @java.lang.Override
   public com.google.api.HttpRule getAdditionalBindings(int index) {
     return additionalBindings_.get(index);
   }
@@ -854,12 +916,14 @@ public  final class HttpRule extends
    *
    * <code>repeated .google.api.HttpRule additional_bindings = 11;</code>
    */
+  @java.lang.Override
   public com.google.api.HttpRuleOrBuilder getAdditionalBindingsOrBuilder(
       int index) {
     return additionalBindings_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -869,6 +933,7 @@ public  final class HttpRule extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getSelectorBytes().isEmpty()) {
@@ -901,8 +966,10 @@ public  final class HttpRule extends
     if (!getResponseBodyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, responseBody_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -940,11 +1007,11 @@ public  final class HttpRule extends
     if (!getResponseBodyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, responseBody_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -955,47 +1022,45 @@ public  final class HttpRule extends
     }
     com.google.api.HttpRule other = (com.google.api.HttpRule) obj;
 
-    boolean result = true;
-    result = result && getSelector()
-        .equals(other.getSelector());
-    result = result && getBody()
-        .equals(other.getBody());
-    result = result && getResponseBody()
-        .equals(other.getResponseBody());
-    result = result && getAdditionalBindingsList()
-        .equals(other.getAdditionalBindingsList());
-    result = result && getPatternCase().equals(
-        other.getPatternCase());
-    if (!result) return false;
+    if (!getSelector()
+        .equals(other.getSelector())) return false;
+    if (!getBody()
+        .equals(other.getBody())) return false;
+    if (!getResponseBody()
+        .equals(other.getResponseBody())) return false;
+    if (!getAdditionalBindingsList()
+        .equals(other.getAdditionalBindingsList())) return false;
+    if (!getPatternCase().equals(other.getPatternCase())) return false;
     switch (patternCase_) {
       case 2:
-        result = result && getGet()
-            .equals(other.getGet());
+        if (!getGet()
+            .equals(other.getGet())) return false;
         break;
       case 3:
-        result = result && getPut()
-            .equals(other.getPut());
+        if (!getPut()
+            .equals(other.getPut())) return false;
         break;
       case 4:
-        result = result && getPost()
-            .equals(other.getPost());
+        if (!getPost()
+            .equals(other.getPost())) return false;
         break;
       case 5:
-        result = result && getDelete()
-            .equals(other.getDelete());
+        if (!getDelete()
+            .equals(other.getDelete())) return false;
         break;
       case 6:
-        result = result && getPatch()
-            .equals(other.getPatch());
+        if (!getPatch()
+            .equals(other.getPatch())) return false;
         break;
       case 8:
-        result = result && getCustom()
-            .equals(other.getCustom());
+        if (!getCustom()
+            .equals(other.getCustom())) return false;
         break;
       case 0:
       default:
     }
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1004,7 +1069,7 @@ public  final class HttpRule extends
       return memoizedHashCode;
     }
     int hash = 41;
-    hash = (19 * hash) + getDescriptorForType().hashCode();
+    hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SELECTOR_FIELD_NUMBER;
     hash = (53 * hash) + getSelector().hashCode();
     hash = (37 * hash) + BODY_FIELD_NUMBER;
@@ -1048,6 +1113,17 @@ public  final class HttpRule extends
     return hash;
   }
 
+  public static com.google.api.HttpRule parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.google.api.HttpRule parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static com.google.api.HttpRule parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1107,6 +1183,7 @@ public  final class HttpRule extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -1114,6 +1191,7 @@ public  final class HttpRule extends
   public static Builder newBuilder(com.google.api.HttpRule prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -1314,6 +1392,7 @@ public  final class HttpRule extends
       return com.google.api.HttpProto.internal_static_google_api_HttpRule_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.api.HttpProto.internal_static_google_api_HttpRule_fieldAccessorTable
@@ -1337,6 +1416,7 @@ public  final class HttpRule extends
         getAdditionalBindingsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       selector_ = "";
@@ -1347,7 +1427,7 @@ public  final class HttpRule extends
 
       if (additionalBindingsBuilder_ == null) {
         additionalBindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         additionalBindingsBuilder_.clear();
       }
@@ -1356,15 +1436,18 @@ public  final class HttpRule extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.api.HttpProto.internal_static_google_api_HttpRule_descriptor;
     }
 
+    @java.lang.Override
     public com.google.api.HttpRule getDefaultInstanceForType() {
       return com.google.api.HttpRule.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.api.HttpRule build() {
       com.google.api.HttpRule result = buildPartial();
       if (!result.isInitialized()) {
@@ -1373,10 +1456,10 @@ public  final class HttpRule extends
       return result;
     }
 
+    @java.lang.Override
     public com.google.api.HttpRule buildPartial() {
       com.google.api.HttpRule result = new com.google.api.HttpRule(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.selector_ = selector_;
       if (patternCase_ == 2) {
         result.pattern_ = pattern_;
@@ -1403,46 +1486,52 @@ public  final class HttpRule extends
       result.body_ = body_;
       result.responseBody_ = responseBody_;
       if (additionalBindingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           additionalBindings_ = java.util.Collections.unmodifiableList(additionalBindings_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.additionalBindings_ = additionalBindings_;
       } else {
         result.additionalBindings_ = additionalBindingsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.patternCase_ = patternCase_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.api.HttpRule) {
         return mergeFrom((com.google.api.HttpRule)other);
@@ -1470,7 +1559,7 @@ public  final class HttpRule extends
         if (!other.additionalBindings_.isEmpty()) {
           if (additionalBindings_.isEmpty()) {
             additionalBindings_ = other.additionalBindings_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAdditionalBindingsIsMutable();
             additionalBindings_.addAll(other.additionalBindings_);
@@ -1483,7 +1572,7 @@ public  final class HttpRule extends
             additionalBindingsBuilder_.dispose();
             additionalBindingsBuilder_ = null;
             additionalBindings_ = other.additionalBindings_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
             additionalBindingsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAdditionalBindingsFieldBuilder() : null;
@@ -1531,14 +1620,17 @@ public  final class HttpRule extends
           break;
         }
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1580,7 +1672,8 @@ public  final class HttpRule extends
      * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
      * </pre>
      *
-     * <code>optional string selector = 1;</code>
+     * <code>string selector = 1;</code>
+     * @return The selector.
      */
     public java.lang.String getSelector() {
       java.lang.Object ref = selector_;
@@ -1600,7 +1693,8 @@ public  final class HttpRule extends
      * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
      * </pre>
      *
-     * <code>optional string selector = 1;</code>
+     * <code>string selector = 1;</code>
+     * @return The bytes for selector.
      */
     public com.google.protobuf.ByteString
         getSelectorBytes() {
@@ -1621,7 +1715,9 @@ public  final class HttpRule extends
      * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
      * </pre>
      *
-     * <code>optional string selector = 1;</code>
+     * <code>string selector = 1;</code>
+     * @param value The selector to set.
+     * @return This builder for chaining.
      */
     public Builder setSelector(
         java.lang.String value) {
@@ -1639,7 +1735,8 @@ public  final class HttpRule extends
      * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
      * </pre>
      *
-     * <code>optional string selector = 1;</code>
+     * <code>string selector = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSelector() {
       
@@ -1653,7 +1750,9 @@ public  final class HttpRule extends
      * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
      * </pre>
      *
-     * <code>optional string selector = 1;</code>
+     * <code>string selector = 1;</code>
+     * @param value The bytes for selector to set.
+     * @return This builder for chaining.
      */
     public Builder setSelectorBytes(
         com.google.protobuf.ByteString value) {
@@ -1672,8 +1771,10 @@ public  final class HttpRule extends
      * Used for listing and getting information about resources.
      * </pre>
      *
-     * <code>optional string get = 2;</code>
+     * <code>string get = 2;</code>
+     * @return The get.
      */
+    @java.lang.Override
     public java.lang.String getGet() {
       java.lang.Object ref = "";
       if (patternCase_ == 2) {
@@ -1696,8 +1797,10 @@ public  final class HttpRule extends
      * Used for listing and getting information about resources.
      * </pre>
      *
-     * <code>optional string get = 2;</code>
+     * <code>string get = 2;</code>
+     * @return The bytes for get.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getGetBytes() {
       java.lang.Object ref = "";
@@ -1721,7 +1824,9 @@ public  final class HttpRule extends
      * Used for listing and getting information about resources.
      * </pre>
      *
-     * <code>optional string get = 2;</code>
+     * <code>string get = 2;</code>
+     * @param value The get to set.
+     * @return This builder for chaining.
      */
     public Builder setGet(
         java.lang.String value) {
@@ -1738,7 +1843,8 @@ public  final class HttpRule extends
      * Used for listing and getting information about resources.
      * </pre>
      *
-     * <code>optional string get = 2;</code>
+     * <code>string get = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearGet() {
       if (patternCase_ == 2) {
@@ -1753,7 +1859,9 @@ public  final class HttpRule extends
      * Used for listing and getting information about resources.
      * </pre>
      *
-     * <code>optional string get = 2;</code>
+     * <code>string get = 2;</code>
+     * @param value The bytes for get to set.
+     * @return This builder for chaining.
      */
     public Builder setGetBytes(
         com.google.protobuf.ByteString value) {
@@ -1772,8 +1880,10 @@ public  final class HttpRule extends
      * Used for updating a resource.
      * </pre>
      *
-     * <code>optional string put = 3;</code>
+     * <code>string put = 3;</code>
+     * @return The put.
      */
+    @java.lang.Override
     public java.lang.String getPut() {
       java.lang.Object ref = "";
       if (patternCase_ == 3) {
@@ -1796,8 +1906,10 @@ public  final class HttpRule extends
      * Used for updating a resource.
      * </pre>
      *
-     * <code>optional string put = 3;</code>
+     * <code>string put = 3;</code>
+     * @return The bytes for put.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPutBytes() {
       java.lang.Object ref = "";
@@ -1821,7 +1933,9 @@ public  final class HttpRule extends
      * Used for updating a resource.
      * </pre>
      *
-     * <code>optional string put = 3;</code>
+     * <code>string put = 3;</code>
+     * @param value The put to set.
+     * @return This builder for chaining.
      */
     public Builder setPut(
         java.lang.String value) {
@@ -1838,7 +1952,8 @@ public  final class HttpRule extends
      * Used for updating a resource.
      * </pre>
      *
-     * <code>optional string put = 3;</code>
+     * <code>string put = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPut() {
       if (patternCase_ == 3) {
@@ -1853,7 +1968,9 @@ public  final class HttpRule extends
      * Used for updating a resource.
      * </pre>
      *
-     * <code>optional string put = 3;</code>
+     * <code>string put = 3;</code>
+     * @param value The bytes for put to set.
+     * @return This builder for chaining.
      */
     public Builder setPutBytes(
         com.google.protobuf.ByteString value) {
@@ -1872,8 +1989,10 @@ public  final class HttpRule extends
      * Used for creating a resource.
      * </pre>
      *
-     * <code>optional string post = 4;</code>
+     * <code>string post = 4;</code>
+     * @return The post.
      */
+    @java.lang.Override
     public java.lang.String getPost() {
       java.lang.Object ref = "";
       if (patternCase_ == 4) {
@@ -1896,8 +2015,10 @@ public  final class HttpRule extends
      * Used for creating a resource.
      * </pre>
      *
-     * <code>optional string post = 4;</code>
+     * <code>string post = 4;</code>
+     * @return The bytes for post.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPostBytes() {
       java.lang.Object ref = "";
@@ -1921,7 +2042,9 @@ public  final class HttpRule extends
      * Used for creating a resource.
      * </pre>
      *
-     * <code>optional string post = 4;</code>
+     * <code>string post = 4;</code>
+     * @param value The post to set.
+     * @return This builder for chaining.
      */
     public Builder setPost(
         java.lang.String value) {
@@ -1938,7 +2061,8 @@ public  final class HttpRule extends
      * Used for creating a resource.
      * </pre>
      *
-     * <code>optional string post = 4;</code>
+     * <code>string post = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPost() {
       if (patternCase_ == 4) {
@@ -1953,7 +2077,9 @@ public  final class HttpRule extends
      * Used for creating a resource.
      * </pre>
      *
-     * <code>optional string post = 4;</code>
+     * <code>string post = 4;</code>
+     * @param value The bytes for post to set.
+     * @return This builder for chaining.
      */
     public Builder setPostBytes(
         com.google.protobuf.ByteString value) {
@@ -1972,8 +2098,10 @@ public  final class HttpRule extends
      * Used for deleting a resource.
      * </pre>
      *
-     * <code>optional string delete = 5;</code>
+     * <code>string delete = 5;</code>
+     * @return The delete.
      */
+    @java.lang.Override
     public java.lang.String getDelete() {
       java.lang.Object ref = "";
       if (patternCase_ == 5) {
@@ -1996,8 +2124,10 @@ public  final class HttpRule extends
      * Used for deleting a resource.
      * </pre>
      *
-     * <code>optional string delete = 5;</code>
+     * <code>string delete = 5;</code>
+     * @return The bytes for delete.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDeleteBytes() {
       java.lang.Object ref = "";
@@ -2021,7 +2151,9 @@ public  final class HttpRule extends
      * Used for deleting a resource.
      * </pre>
      *
-     * <code>optional string delete = 5;</code>
+     * <code>string delete = 5;</code>
+     * @param value The delete to set.
+     * @return This builder for chaining.
      */
     public Builder setDelete(
         java.lang.String value) {
@@ -2038,7 +2170,8 @@ public  final class HttpRule extends
      * Used for deleting a resource.
      * </pre>
      *
-     * <code>optional string delete = 5;</code>
+     * <code>string delete = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDelete() {
       if (patternCase_ == 5) {
@@ -2053,7 +2186,9 @@ public  final class HttpRule extends
      * Used for deleting a resource.
      * </pre>
      *
-     * <code>optional string delete = 5;</code>
+     * <code>string delete = 5;</code>
+     * @param value The bytes for delete to set.
+     * @return This builder for chaining.
      */
     public Builder setDeleteBytes(
         com.google.protobuf.ByteString value) {
@@ -2072,8 +2207,10 @@ public  final class HttpRule extends
      * Used for updating a resource.
      * </pre>
      *
-     * <code>optional string patch = 6;</code>
+     * <code>string patch = 6;</code>
+     * @return The patch.
      */
+    @java.lang.Override
     public java.lang.String getPatch() {
       java.lang.Object ref = "";
       if (patternCase_ == 6) {
@@ -2096,8 +2233,10 @@ public  final class HttpRule extends
      * Used for updating a resource.
      * </pre>
      *
-     * <code>optional string patch = 6;</code>
+     * <code>string patch = 6;</code>
+     * @return The bytes for patch.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPatchBytes() {
       java.lang.Object ref = "";
@@ -2121,7 +2260,9 @@ public  final class HttpRule extends
      * Used for updating a resource.
      * </pre>
      *
-     * <code>optional string patch = 6;</code>
+     * <code>string patch = 6;</code>
+     * @param value The patch to set.
+     * @return This builder for chaining.
      */
     public Builder setPatch(
         java.lang.String value) {
@@ -2138,7 +2279,8 @@ public  final class HttpRule extends
      * Used for updating a resource.
      * </pre>
      *
-     * <code>optional string patch = 6;</code>
+     * <code>string patch = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPatch() {
       if (patternCase_ == 6) {
@@ -2153,7 +2295,9 @@ public  final class HttpRule extends
      * Used for updating a resource.
      * </pre>
      *
-     * <code>optional string patch = 6;</code>
+     * <code>string patch = 6;</code>
+     * @param value The bytes for patch to set.
+     * @return This builder for chaining.
      */
     public Builder setPatchBytes(
         com.google.protobuf.ByteString value) {
@@ -2177,8 +2321,25 @@ public  final class HttpRule extends
      * for services that provide content to Web (HTML) clients.
      * </pre>
      *
-     * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+     * <code>.google.api.CustomHttpPattern custom = 8;</code>
+     * @return Whether the custom field is set.
      */
+    @java.lang.Override
+    public boolean hasCustom() {
+      return patternCase_ == 8;
+    }
+    /**
+     * <pre>
+     * The custom pattern is used for specifying an HTTP method that is not
+     * included in the `pattern` field, such as HEAD, or "*" to leave the
+     * HTTP method unspecified for this rule. The wild-card rule is useful
+     * for services that provide content to Web (HTML) clients.
+     * </pre>
+     *
+     * <code>.google.api.CustomHttpPattern custom = 8;</code>
+     * @return The custom.
+     */
+    @java.lang.Override
     public com.google.api.CustomHttpPattern getCustom() {
       if (customBuilder_ == null) {
         if (patternCase_ == 8) {
@@ -2200,7 +2361,7 @@ public  final class HttpRule extends
      * for services that provide content to Web (HTML) clients.
      * </pre>
      *
-     * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+     * <code>.google.api.CustomHttpPattern custom = 8;</code>
      */
     public Builder setCustom(com.google.api.CustomHttpPattern value) {
       if (customBuilder_ == null) {
@@ -2223,7 +2384,7 @@ public  final class HttpRule extends
      * for services that provide content to Web (HTML) clients.
      * </pre>
      *
-     * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+     * <code>.google.api.CustomHttpPattern custom = 8;</code>
      */
     public Builder setCustom(
         com.google.api.CustomHttpPattern.Builder builderForValue) {
@@ -2244,7 +2405,7 @@ public  final class HttpRule extends
      * for services that provide content to Web (HTML) clients.
      * </pre>
      *
-     * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+     * <code>.google.api.CustomHttpPattern custom = 8;</code>
      */
     public Builder mergeCustom(com.google.api.CustomHttpPattern value) {
       if (customBuilder_ == null) {
@@ -2273,7 +2434,7 @@ public  final class HttpRule extends
      * for services that provide content to Web (HTML) clients.
      * </pre>
      *
-     * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+     * <code>.google.api.CustomHttpPattern custom = 8;</code>
      */
     public Builder clearCustom() {
       if (customBuilder_ == null) {
@@ -2299,7 +2460,7 @@ public  final class HttpRule extends
      * for services that provide content to Web (HTML) clients.
      * </pre>
      *
-     * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+     * <code>.google.api.CustomHttpPattern custom = 8;</code>
      */
     public com.google.api.CustomHttpPattern.Builder getCustomBuilder() {
       return getCustomFieldBuilder().getBuilder();
@@ -2312,8 +2473,9 @@ public  final class HttpRule extends
      * for services that provide content to Web (HTML) clients.
      * </pre>
      *
-     * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+     * <code>.google.api.CustomHttpPattern custom = 8;</code>
      */
+    @java.lang.Override
     public com.google.api.CustomHttpPatternOrBuilder getCustomOrBuilder() {
       if ((patternCase_ == 8) && (customBuilder_ != null)) {
         return customBuilder_.getMessageOrBuilder();
@@ -2332,7 +2494,7 @@ public  final class HttpRule extends
      * for services that provide content to Web (HTML) clients.
      * </pre>
      *
-     * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+     * <code>.google.api.CustomHttpPattern custom = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.CustomHttpPattern, com.google.api.CustomHttpPattern.Builder, com.google.api.CustomHttpPatternOrBuilder> 
@@ -2362,7 +2524,8 @@ public  final class HttpRule extends
      * present at the top-level of request message type.
      * </pre>
      *
-     * <code>optional string body = 7;</code>
+     * <code>string body = 7;</code>
+     * @return The body.
      */
     public java.lang.String getBody() {
       java.lang.Object ref = body_;
@@ -2384,7 +2547,8 @@ public  final class HttpRule extends
      * present at the top-level of request message type.
      * </pre>
      *
-     * <code>optional string body = 7;</code>
+     * <code>string body = 7;</code>
+     * @return The bytes for body.
      */
     public com.google.protobuf.ByteString
         getBodyBytes() {
@@ -2407,7 +2571,9 @@ public  final class HttpRule extends
      * present at the top-level of request message type.
      * </pre>
      *
-     * <code>optional string body = 7;</code>
+     * <code>string body = 7;</code>
+     * @param value The body to set.
+     * @return This builder for chaining.
      */
     public Builder setBody(
         java.lang.String value) {
@@ -2427,7 +2593,8 @@ public  final class HttpRule extends
      * present at the top-level of request message type.
      * </pre>
      *
-     * <code>optional string body = 7;</code>
+     * <code>string body = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBody() {
       
@@ -2443,7 +2610,9 @@ public  final class HttpRule extends
      * present at the top-level of request message type.
      * </pre>
      *
-     * <code>optional string body = 7;</code>
+     * <code>string body = 7;</code>
+     * @param value The bytes for body to set.
+     * @return This builder for chaining.
      */
     public Builder setBodyBytes(
         com.google.protobuf.ByteString value) {
@@ -2465,7 +2634,8 @@ public  final class HttpRule extends
      * not set, the response message will be used as HTTP body of response.
      * </pre>
      *
-     * <code>optional string response_body = 12;</code>
+     * <code>string response_body = 12;</code>
+     * @return The responseBody.
      */
     public java.lang.String getResponseBody() {
       java.lang.Object ref = responseBody_;
@@ -2486,7 +2656,8 @@ public  final class HttpRule extends
      * not set, the response message will be used as HTTP body of response.
      * </pre>
      *
-     * <code>optional string response_body = 12;</code>
+     * <code>string response_body = 12;</code>
+     * @return The bytes for responseBody.
      */
     public com.google.protobuf.ByteString
         getResponseBodyBytes() {
@@ -2508,7 +2679,9 @@ public  final class HttpRule extends
      * not set, the response message will be used as HTTP body of response.
      * </pre>
      *
-     * <code>optional string response_body = 12;</code>
+     * <code>string response_body = 12;</code>
+     * @param value The responseBody to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseBody(
         java.lang.String value) {
@@ -2527,7 +2700,8 @@ public  final class HttpRule extends
      * not set, the response message will be used as HTTP body of response.
      * </pre>
      *
-     * <code>optional string response_body = 12;</code>
+     * <code>string response_body = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearResponseBody() {
       
@@ -2542,7 +2716,9 @@ public  final class HttpRule extends
      * not set, the response message will be used as HTTP body of response.
      * </pre>
      *
-     * <code>optional string response_body = 12;</code>
+     * <code>string response_body = 12;</code>
+     * @param value The bytes for responseBody to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseBodyBytes(
         com.google.protobuf.ByteString value) {
@@ -2559,9 +2735,9 @@ public  final class HttpRule extends
     private java.util.List<com.google.api.HttpRule> additionalBindings_ =
       java.util.Collections.emptyList();
     private void ensureAdditionalBindingsIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         additionalBindings_ = new java.util.ArrayList<com.google.api.HttpRule>(additionalBindings_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -2777,7 +2953,7 @@ public  final class HttpRule extends
     public Builder clearAdditionalBindings() {
       if (additionalBindingsBuilder_ == null) {
         additionalBindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         additionalBindingsBuilder_.clear();
@@ -2896,21 +3072,23 @@ public  final class HttpRule extends
         additionalBindingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.HttpRule, com.google.api.HttpRule.Builder, com.google.api.HttpRuleOrBuilder>(
                 additionalBindings_,
-                ((bitField0_ & 0x00000200) == 0x00000200),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         additionalBindings_ = null;
       }
       return additionalBindingsBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -2929,11 +3107,12 @@ public  final class HttpRule extends
 
   private static final com.google.protobuf.Parser<HttpRule>
       PARSER = new com.google.protobuf.AbstractParser<HttpRule>() {
+    @java.lang.Override
     public HttpRule parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HttpRule(input, extensionRegistry);
+      return new HttpRule(input, extensionRegistry);
     }
   };
 
@@ -2946,6 +3125,7 @@ public  final class HttpRule extends
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.api.HttpRule getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

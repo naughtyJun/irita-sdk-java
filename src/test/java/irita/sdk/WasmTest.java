@@ -42,7 +42,7 @@ public class WasmTest {
     @Test
     public void store() throws IOException {
         StoreRequest req = new StoreRequest();
-        req.setWasmFile("src/main/resources/test.wasm");
+        req.setWasmFile("src/test/resources/test.wasm");
 
         BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
         String codeId = wasmClient.store(req, baseTx);

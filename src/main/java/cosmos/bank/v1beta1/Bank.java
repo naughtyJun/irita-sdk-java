@@ -19,36 +19,38 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
      */
     java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> 
         getSendEnabledList();
     /**
-     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
      */
     cosmos.bank.v1beta1.Bank.SendEnabled getSendEnabled(int index);
     /**
-     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
      */
     int getSendEnabledCount();
     /**
-     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
      */
     java.util.List<? extends cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
         getSendEnabledOrBuilderList();
     /**
-     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
      */
     cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder getSendEnabledOrBuilder(
         int index);
 
     /**
-     * <code>optional bool default_send_enabled = 2;</code>
+     * <code>bool default_send_enabled = 2 [(.gogoproto.moretags) = "yaml:&#92;"default_send_enabled,omitempty&#92;""];</code>
+     * @return The defaultSendEnabled.
      */
     boolean getDefaultSendEnabled();
 
     /**
-     * <code>optional bool unrestricted_token_transfer = 3;</code>
+     * <code>bool unrestricted_token_transfer = 3 [(.gogoproto.moretags) = "yaml:&#92;"unrestricted_token_transfer,omitempty&#92;""];</code>
+     * @return The unrestrictedTokenTransfer.
      */
     boolean getUnrestrictedTokenTransfer();
   }
@@ -59,31 +61,42 @@ public final class Bank {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.Params}
    */
-  public  static final class Params extends
+  public static final class Params extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.Params)
       ParamsOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Params.newBuilder() to construct.
     private Params(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Params() {
       sendEnabled_ = java.util.Collections.emptyList();
-      defaultSendEnabled_ = false;
-      unrestrictedTokenTransfer_ = false;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Params();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Params(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -92,14 +105,8 @@ public final class Bank {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sendEnabled_ = new java.util.ArrayList<cosmos.bank.v1beta1.Bank.SendEnabled>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -117,6 +124,13 @@ public final class Bank {
               unrestrictedTokenTransfer_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -125,9 +139,10 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           sendEnabled_ = java.util.Collections.unmodifiableList(sendEnabled_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -136,6 +151,7 @@ public final class Bank {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Params_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Params_fieldAccessorTable
@@ -143,37 +159,41 @@ public final class Bank {
               cosmos.bank.v1beta1.Bank.Params.class, cosmos.bank.v1beta1.Bank.Params.Builder.class);
     }
 
-    private int bitField0_;
     public static final int SEND_ENABLED_FIELD_NUMBER = 1;
     private java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> sendEnabled_;
     /**
-     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> getSendEnabledList() {
       return sendEnabled_;
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
         getSendEnabledOrBuilderList() {
       return sendEnabled_;
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
      */
+    @java.lang.Override
     public int getSendEnabledCount() {
       return sendEnabled_.size();
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.SendEnabled getSendEnabled(int index) {
       return sendEnabled_.get(index);
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder getSendEnabledOrBuilder(
         int index) {
       return sendEnabled_.get(index);
@@ -182,8 +202,10 @@ public final class Bank {
     public static final int DEFAULT_SEND_ENABLED_FIELD_NUMBER = 2;
     private boolean defaultSendEnabled_;
     /**
-     * <code>optional bool default_send_enabled = 2;</code>
+     * <code>bool default_send_enabled = 2 [(.gogoproto.moretags) = "yaml:&#92;"default_send_enabled,omitempty&#92;""];</code>
+     * @return The defaultSendEnabled.
      */
+    @java.lang.Override
     public boolean getDefaultSendEnabled() {
       return defaultSendEnabled_;
     }
@@ -191,13 +213,16 @@ public final class Bank {
     public static final int UNRESTRICTED_TOKEN_TRANSFER_FIELD_NUMBER = 3;
     private boolean unrestrictedTokenTransfer_;
     /**
-     * <code>optional bool unrestricted_token_transfer = 3;</code>
+     * <code>bool unrestricted_token_transfer = 3 [(.gogoproto.moretags) = "yaml:&#92;"unrestricted_token_transfer,omitempty&#92;""];</code>
+     * @return The unrestrictedTokenTransfer.
      */
+    @java.lang.Override
     public boolean getUnrestrictedTokenTransfer() {
       return unrestrictedTokenTransfer_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -207,6 +232,7 @@ public final class Bank {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < sendEnabled_.size(); i++) {
@@ -218,8 +244,10 @@ public final class Bank {
       if (unrestrictedTokenTransfer_ != false) {
         output.writeBool(3, unrestrictedTokenTransfer_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -237,11 +265,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, unrestrictedTokenTransfer_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -252,14 +280,14 @@ public final class Bank {
       }
       cosmos.bank.v1beta1.Bank.Params other = (cosmos.bank.v1beta1.Bank.Params) obj;
 
-      boolean result = true;
-      result = result && getSendEnabledList()
-          .equals(other.getSendEnabledList());
-      result = result && (getDefaultSendEnabled()
-          == other.getDefaultSendEnabled());
-      result = result && (getUnrestrictedTokenTransfer()
-          == other.getUnrestrictedTokenTransfer());
-      return result;
+      if (!getSendEnabledList()
+          .equals(other.getSendEnabledList())) return false;
+      if (getDefaultSendEnabled()
+          != other.getDefaultSendEnabled()) return false;
+      if (getUnrestrictedTokenTransfer()
+          != other.getUnrestrictedTokenTransfer()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -268,7 +296,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getSendEnabledCount() > 0) {
         hash = (37 * hash) + SEND_ENABLED_FIELD_NUMBER;
         hash = (53 * hash) + getSendEnabledList().hashCode();
@@ -284,6 +312,17 @@ public final class Bank {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.Bank.Params parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Bank.Params parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.Bank.Params parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -343,6 +382,7 @@ public final class Bank {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -350,6 +390,7 @@ public final class Bank {
     public static Builder newBuilder(cosmos.bank.v1beta1.Bank.Params prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -377,6 +418,7 @@ public final class Bank {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Params_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Params_fieldAccessorTable
@@ -400,6 +442,7 @@ public final class Bank {
           getSendEnabledFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (sendEnabledBuilder_ == null) {
@@ -415,15 +458,18 @@ public final class Bank {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Params_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Params getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.Bank.Params.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Params build() {
         cosmos.bank.v1beta1.Bank.Params result = buildPartial();
         if (!result.isInitialized()) {
@@ -432,12 +478,12 @@ public final class Bank {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Params buildPartial() {
         cosmos.bank.v1beta1.Bank.Params result = new cosmos.bank.v1beta1.Bank.Params(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (sendEnabledBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             sendEnabled_ = java.util.Collections.unmodifiableList(sendEnabled_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -447,37 +493,43 @@ public final class Bank {
         }
         result.defaultSendEnabled_ = defaultSendEnabled_;
         result.unrestrictedTokenTransfer_ = unrestrictedTokenTransfer_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.Bank.Params) {
           return mergeFrom((cosmos.bank.v1beta1.Bank.Params)other);
@@ -521,14 +573,17 @@ public final class Bank {
         if (other.getUnrestrictedTokenTransfer() != false) {
           setUnrestrictedTokenTransfer(other.getUnrestrictedTokenTransfer());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -551,7 +606,7 @@ public final class Bank {
       private java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> sendEnabled_ =
         java.util.Collections.emptyList();
       private void ensureSendEnabledIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           sendEnabled_ = new java.util.ArrayList<cosmos.bank.v1beta1.Bank.SendEnabled>(sendEnabled_);
           bitField0_ |= 0x00000001;
          }
@@ -561,7 +616,7 @@ public final class Bank {
           cosmos.bank.v1beta1.Bank.SendEnabled, cosmos.bank.v1beta1.Bank.SendEnabled.Builder, cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> sendEnabledBuilder_;
 
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> getSendEnabledList() {
         if (sendEnabledBuilder_ == null) {
@@ -571,7 +626,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public int getSendEnabledCount() {
         if (sendEnabledBuilder_ == null) {
@@ -581,7 +636,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public cosmos.bank.v1beta1.Bank.SendEnabled getSendEnabled(int index) {
         if (sendEnabledBuilder_ == null) {
@@ -591,7 +646,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public Builder setSendEnabled(
           int index, cosmos.bank.v1beta1.Bank.SendEnabled value) {
@@ -608,7 +663,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public Builder setSendEnabled(
           int index, cosmos.bank.v1beta1.Bank.SendEnabled.Builder builderForValue) {
@@ -622,7 +677,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public Builder addSendEnabled(cosmos.bank.v1beta1.Bank.SendEnabled value) {
         if (sendEnabledBuilder_ == null) {
@@ -638,7 +693,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public Builder addSendEnabled(
           int index, cosmos.bank.v1beta1.Bank.SendEnabled value) {
@@ -655,7 +710,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public Builder addSendEnabled(
           cosmos.bank.v1beta1.Bank.SendEnabled.Builder builderForValue) {
@@ -669,7 +724,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public Builder addSendEnabled(
           int index, cosmos.bank.v1beta1.Bank.SendEnabled.Builder builderForValue) {
@@ -683,7 +738,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public Builder addAllSendEnabled(
           java.lang.Iterable<? extends cosmos.bank.v1beta1.Bank.SendEnabled> values) {
@@ -698,7 +753,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public Builder clearSendEnabled() {
         if (sendEnabledBuilder_ == null) {
@@ -711,7 +766,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public Builder removeSendEnabled(int index) {
         if (sendEnabledBuilder_ == null) {
@@ -724,14 +779,14 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public cosmos.bank.v1beta1.Bank.SendEnabled.Builder getSendEnabledBuilder(
           int index) {
         return getSendEnabledFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder getSendEnabledOrBuilder(
           int index) {
@@ -741,7 +796,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public java.util.List<? extends cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
            getSendEnabledOrBuilderList() {
@@ -752,14 +807,14 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public cosmos.bank.v1beta1.Bank.SendEnabled.Builder addSendEnabledBuilder() {
         return getSendEnabledFieldBuilder().addBuilder(
             cosmos.bank.v1beta1.Bank.SendEnabled.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public cosmos.bank.v1beta1.Bank.SendEnabled.Builder addSendEnabledBuilder(
           int index) {
@@ -767,7 +822,7 @@ public final class Bank {
             index, cosmos.bank.v1beta1.Bank.SendEnabled.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1 [(.gogoproto.moretags) = "yaml:&#92;"send_enabled,omitempty&#92;""];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled.Builder> 
            getSendEnabledBuilderList() {
@@ -780,7 +835,7 @@ public final class Bank {
           sendEnabledBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.bank.v1beta1.Bank.SendEnabled, cosmos.bank.v1beta1.Bank.SendEnabled.Builder, cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder>(
                   sendEnabled_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           sendEnabled_ = null;
@@ -790,13 +845,17 @@ public final class Bank {
 
       private boolean defaultSendEnabled_ ;
       /**
-       * <code>optional bool default_send_enabled = 2;</code>
+       * <code>bool default_send_enabled = 2 [(.gogoproto.moretags) = "yaml:&#92;"default_send_enabled,omitempty&#92;""];</code>
+       * @return The defaultSendEnabled.
        */
+      @java.lang.Override
       public boolean getDefaultSendEnabled() {
         return defaultSendEnabled_;
       }
       /**
-       * <code>optional bool default_send_enabled = 2;</code>
+       * <code>bool default_send_enabled = 2 [(.gogoproto.moretags) = "yaml:&#92;"default_send_enabled,omitempty&#92;""];</code>
+       * @param value The defaultSendEnabled to set.
+       * @return This builder for chaining.
        */
       public Builder setDefaultSendEnabled(boolean value) {
         
@@ -805,7 +864,8 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional bool default_send_enabled = 2;</code>
+       * <code>bool default_send_enabled = 2 [(.gogoproto.moretags) = "yaml:&#92;"default_send_enabled,omitempty&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearDefaultSendEnabled() {
         
@@ -816,13 +876,17 @@ public final class Bank {
 
       private boolean unrestrictedTokenTransfer_ ;
       /**
-       * <code>optional bool unrestricted_token_transfer = 3;</code>
+       * <code>bool unrestricted_token_transfer = 3 [(.gogoproto.moretags) = "yaml:&#92;"unrestricted_token_transfer,omitempty&#92;""];</code>
+       * @return The unrestrictedTokenTransfer.
        */
+      @java.lang.Override
       public boolean getUnrestrictedTokenTransfer() {
         return unrestrictedTokenTransfer_;
       }
       /**
-       * <code>optional bool unrestricted_token_transfer = 3;</code>
+       * <code>bool unrestricted_token_transfer = 3 [(.gogoproto.moretags) = "yaml:&#92;"unrestricted_token_transfer,omitempty&#92;""];</code>
+       * @param value The unrestrictedTokenTransfer to set.
+       * @return This builder for chaining.
        */
       public Builder setUnrestrictedTokenTransfer(boolean value) {
         
@@ -831,7 +895,8 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional bool unrestricted_token_transfer = 3;</code>
+       * <code>bool unrestricted_token_transfer = 3 [(.gogoproto.moretags) = "yaml:&#92;"unrestricted_token_transfer,omitempty&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearUnrestrictedTokenTransfer() {
         
@@ -839,14 +904,16 @@ public final class Bank {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -865,11 +932,12 @@ public final class Bank {
 
     private static final com.google.protobuf.Parser<Params>
         PARSER = new com.google.protobuf.AbstractParser<Params>() {
+      @java.lang.Override
       public Params parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Params(input, extensionRegistry);
+        return new Params(input, extensionRegistry);
       }
     };
 
@@ -882,6 +950,7 @@ public final class Bank {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Params getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -893,17 +962,20 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
     java.lang.String getDenom();
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
     com.google.protobuf.ByteString
         getDenomBytes();
 
     /**
-     * <code>optional bool enabled = 2;</code>
+     * <code>bool enabled = 2;</code>
+     * @return The enabled.
      */
     boolean getEnabled();
   }
@@ -915,30 +987,41 @@ public final class Bank {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.SendEnabled}
    */
-  public  static final class SendEnabled extends
+  public static final class SendEnabled extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.SendEnabled)
       SendEnabledOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use SendEnabled.newBuilder() to construct.
     private SendEnabled(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private SendEnabled() {
       denom_ = "";
-      enabled_ = false;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SendEnabled();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private SendEnabled(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -947,12 +1030,6 @@ public final class Bank {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -964,6 +1041,13 @@ public final class Bank {
               enabled_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -972,6 +1056,7 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -980,6 +1065,7 @@ public final class Bank {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_SendEnabled_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_SendEnabled_fieldAccessorTable
@@ -990,8 +1076,10 @@ public final class Bank {
     public static final int DENOM_FIELD_NUMBER = 1;
     private volatile java.lang.Object denom_;
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
+    @java.lang.Override
     public java.lang.String getDenom() {
       java.lang.Object ref = denom_;
       if (ref instanceof java.lang.String) {
@@ -1005,8 +1093,10 @@ public final class Bank {
       }
     }
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDenomBytes() {
       java.lang.Object ref = denom_;
@@ -1024,13 +1114,16 @@ public final class Bank {
     public static final int ENABLED_FIELD_NUMBER = 2;
     private boolean enabled_;
     /**
-     * <code>optional bool enabled = 2;</code>
+     * <code>bool enabled = 2;</code>
+     * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1040,6 +1133,7 @@ public final class Bank {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getDenomBytes().isEmpty()) {
@@ -1048,8 +1142,10 @@ public final class Bank {
       if (enabled_ != false) {
         output.writeBool(2, enabled_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1062,11 +1158,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, enabled_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1077,12 +1173,12 @@ public final class Bank {
       }
       cosmos.bank.v1beta1.Bank.SendEnabled other = (cosmos.bank.v1beta1.Bank.SendEnabled) obj;
 
-      boolean result = true;
-      result = result && getDenom()
-          .equals(other.getDenom());
-      result = result && (getEnabled()
-          == other.getEnabled());
-      return result;
+      if (!getDenom()
+          .equals(other.getDenom())) return false;
+      if (getEnabled()
+          != other.getEnabled()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1091,7 +1187,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DENOM_FIELD_NUMBER;
       hash = (53 * hash) + getDenom().hashCode();
       hash = (37 * hash) + ENABLED_FIELD_NUMBER;
@@ -1102,6 +1198,17 @@ public final class Bank {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.Bank.SendEnabled parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Bank.SendEnabled parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.Bank.SendEnabled parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1161,6 +1268,7 @@ public final class Bank {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1168,6 +1276,7 @@ public final class Bank {
     public static Builder newBuilder(cosmos.bank.v1beta1.Bank.SendEnabled prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1196,6 +1305,7 @@ public final class Bank {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_SendEnabled_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_SendEnabled_fieldAccessorTable
@@ -1218,6 +1328,7 @@ public final class Bank {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         denom_ = "";
@@ -1227,15 +1338,18 @@ public final class Bank {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_SendEnabled_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.SendEnabled getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.Bank.SendEnabled.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.SendEnabled build() {
         cosmos.bank.v1beta1.Bank.SendEnabled result = buildPartial();
         if (!result.isInitialized()) {
@@ -1244,6 +1358,7 @@ public final class Bank {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.SendEnabled buildPartial() {
         cosmos.bank.v1beta1.Bank.SendEnabled result = new cosmos.bank.v1beta1.Bank.SendEnabled(this);
         result.denom_ = denom_;
@@ -1252,32 +1367,39 @@ public final class Bank {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.Bank.SendEnabled) {
           return mergeFrom((cosmos.bank.v1beta1.Bank.SendEnabled)other);
@@ -1296,14 +1418,17 @@ public final class Bank {
         if (other.getEnabled() != false) {
           setEnabled(other.getEnabled());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1324,7 +1449,8 @@ public final class Bank {
 
       private java.lang.Object denom_ = "";
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The denom.
        */
       public java.lang.String getDenom() {
         java.lang.Object ref = denom_;
@@ -1339,7 +1465,8 @@ public final class Bank {
         }
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The bytes for denom.
        */
       public com.google.protobuf.ByteString
           getDenomBytes() {
@@ -1355,7 +1482,9 @@ public final class Bank {
         }
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenom(
           java.lang.String value) {
@@ -1368,7 +1497,8 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDenom() {
         
@@ -1377,7 +1507,9 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The bytes for denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenomBytes(
           com.google.protobuf.ByteString value) {
@@ -1393,13 +1525,17 @@ public final class Bank {
 
       private boolean enabled_ ;
       /**
-       * <code>optional bool enabled = 2;</code>
+       * <code>bool enabled = 2;</code>
+       * @return The enabled.
        */
+      @java.lang.Override
       public boolean getEnabled() {
         return enabled_;
       }
       /**
-       * <code>optional bool enabled = 2;</code>
+       * <code>bool enabled = 2;</code>
+       * @param value The enabled to set.
+       * @return This builder for chaining.
        */
       public Builder setEnabled(boolean value) {
         
@@ -1408,7 +1544,8 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional bool enabled = 2;</code>
+       * <code>bool enabled = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEnabled() {
         
@@ -1416,14 +1553,16 @@ public final class Bank {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1442,11 +1581,12 @@ public final class Bank {
 
     private static final com.google.protobuf.Parser<SendEnabled>
         PARSER = new com.google.protobuf.AbstractParser<SendEnabled>() {
+      @java.lang.Override
       public SendEnabled parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SendEnabled(input, extensionRegistry);
+        return new SendEnabled(input, extensionRegistry);
       }
     };
 
@@ -1459,6 +1599,7 @@ public final class Bank {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.SendEnabled getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1470,35 +1611,37 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
 
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getCoinsList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index);
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getCoinsCount();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getCoinsOrBuilderList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
         int index);
@@ -1510,10 +1653,11 @@ public final class Bank {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.Input}
    */
-  public  static final class Input extends
+  public static final class Input extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.Input)
       InputOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Input.newBuilder() to construct.
     private Input(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1524,16 +1668,28 @@ public final class Bank {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Input();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Input(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1542,12 +1698,6 @@ public final class Bank {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1555,12 +1705,19 @@ public final class Bank {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 coins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               coins_.add(
                   input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1571,9 +1728,10 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           coins_ = java.util.Collections.unmodifiableList(coins_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1582,6 +1740,7 @@ public final class Bank {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Input_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Input_fieldAccessorTable
@@ -1589,12 +1748,13 @@ public final class Bank {
               cosmos.bank.v1beta1.Bank.Input.class, cosmos.bank.v1beta1.Bank.Input.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object address_;
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -1608,8 +1768,10 @@ public final class Bank {
       }
     }
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -1627,39 +1789,45 @@ public final class Bank {
     public static final int COINS_FIELD_NUMBER = 2;
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> coins_;
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getCoinsList() {
       return coins_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getCoinsOrBuilderList() {
       return coins_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public int getCoinsCount() {
       return coins_.size();
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index) {
       return coins_.get(index);
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
         int index) {
       return coins_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1669,6 +1837,7 @@ public final class Bank {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -1677,8 +1846,10 @@ public final class Bank {
       for (int i = 0; i < coins_.size(); i++) {
         output.writeMessage(2, coins_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1691,11 +1862,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, coins_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1706,12 +1877,12 @@ public final class Bank {
       }
       cosmos.bank.v1beta1.Bank.Input other = (cosmos.bank.v1beta1.Bank.Input) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && getCoinsList()
-          .equals(other.getCoinsList());
-      return result;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!getCoinsList()
+          .equals(other.getCoinsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1720,7 +1891,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       if (getCoinsCount() > 0) {
@@ -1732,6 +1903,17 @@ public final class Bank {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.Bank.Input parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Bank.Input parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.Bank.Input parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1791,6 +1973,7 @@ public final class Bank {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1798,6 +1981,7 @@ public final class Bank {
     public static Builder newBuilder(cosmos.bank.v1beta1.Bank.Input prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1825,6 +2009,7 @@ public final class Bank {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Input_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Input_fieldAccessorTable
@@ -1848,28 +2033,32 @@ public final class Bank {
           getCoinsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
 
         if (coinsBuilder_ == null) {
           coins_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           coinsBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Input_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Input getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.Bank.Input.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Input build() {
         cosmos.bank.v1beta1.Bank.Input result = buildPartial();
         if (!result.isInitialized()) {
@@ -1878,51 +2067,57 @@ public final class Bank {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Input buildPartial() {
         cosmos.bank.v1beta1.Bank.Input result = new cosmos.bank.v1beta1.Bank.Input(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.address_ = address_;
         if (coinsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             coins_ = java.util.Collections.unmodifiableList(coins_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.coins_ = coins_;
         } else {
           result.coins_ = coinsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.Bank.Input) {
           return mergeFrom((cosmos.bank.v1beta1.Bank.Input)other);
@@ -1942,7 +2137,7 @@ public final class Bank {
           if (!other.coins_.isEmpty()) {
             if (coins_.isEmpty()) {
               coins_ = other.coins_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCoinsIsMutable();
               coins_.addAll(other.coins_);
@@ -1955,7 +2150,7 @@ public final class Bank {
               coinsBuilder_.dispose();
               coinsBuilder_ = null;
               coins_ = other.coins_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               coinsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCoinsFieldBuilder() : null;
@@ -1964,14 +2159,17 @@ public final class Bank {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1993,7 +2191,8 @@ public final class Bank {
 
       private java.lang.Object address_ = "";
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -2008,7 +2207,8 @@ public final class Bank {
         }
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -2024,7 +2224,9 @@ public final class Bank {
         }
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -2037,7 +2239,8 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -2046,7 +2249,9 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -2063,9 +2268,9 @@ public final class Bank {
       private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> coins_ =
         java.util.Collections.emptyList();
       private void ensureCoinsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           coins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(coins_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -2073,7 +2278,7 @@ public final class Bank {
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> coinsBuilder_;
 
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getCoinsList() {
         if (coinsBuilder_ == null) {
@@ -2083,7 +2288,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getCoinsCount() {
         if (coinsBuilder_ == null) {
@@ -2093,7 +2298,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index) {
         if (coinsBuilder_ == null) {
@@ -2103,7 +2308,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -2120,7 +2325,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2134,7 +2339,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (coinsBuilder_ == null) {
@@ -2150,7 +2355,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -2167,7 +2372,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2181,7 +2386,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2195,7 +2400,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllCoins(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -2210,12 +2415,12 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearCoins() {
         if (coinsBuilder_ == null) {
           coins_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           coinsBuilder_.clear();
@@ -2223,7 +2428,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeCoins(int index) {
         if (coinsBuilder_ == null) {
@@ -2236,14 +2441,14 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getCoinsBuilder(
           int index) {
         return getCoinsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
           int index) {
@@ -2253,7 +2458,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getCoinsOrBuilderList() {
@@ -2264,14 +2469,14 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addCoinsBuilder() {
         return getCoinsFieldBuilder().addBuilder(
             cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addCoinsBuilder(
           int index) {
@@ -2279,7 +2484,7 @@ public final class Bank {
             index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getCoinsBuilderList() {
@@ -2292,21 +2497,23 @@ public final class Bank {
           coinsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
                   coins_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           coins_ = null;
         }
         return coinsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2325,11 +2532,12 @@ public final class Bank {
 
     private static final com.google.protobuf.Parser<Input>
         PARSER = new com.google.protobuf.AbstractParser<Input>() {
+      @java.lang.Override
       public Input parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Input(input, extensionRegistry);
+        return new Input(input, extensionRegistry);
       }
     };
 
@@ -2342,6 +2550,7 @@ public final class Bank {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Input getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2353,35 +2562,37 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
 
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getCoinsList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index);
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getCoinsCount();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getCoinsOrBuilderList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
         int index);
@@ -2393,10 +2604,11 @@ public final class Bank {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.Output}
    */
-  public  static final class Output extends
+  public static final class Output extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.Output)
       OutputOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Output.newBuilder() to construct.
     private Output(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2407,16 +2619,28 @@ public final class Bank {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Output();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Output(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2425,12 +2649,6 @@ public final class Bank {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -2438,12 +2656,19 @@ public final class Bank {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 coins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               coins_.add(
                   input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2454,9 +2679,10 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           coins_ = java.util.Collections.unmodifiableList(coins_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2465,6 +2691,7 @@ public final class Bank {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Output_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Output_fieldAccessorTable
@@ -2472,12 +2699,13 @@ public final class Bank {
               cosmos.bank.v1beta1.Bank.Output.class, cosmos.bank.v1beta1.Bank.Output.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object address_;
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -2491,8 +2719,10 @@ public final class Bank {
       }
     }
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -2510,39 +2740,45 @@ public final class Bank {
     public static final int COINS_FIELD_NUMBER = 2;
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> coins_;
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getCoinsList() {
       return coins_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getCoinsOrBuilderList() {
       return coins_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public int getCoinsCount() {
       return coins_.size();
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index) {
       return coins_.get(index);
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
         int index) {
       return coins_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2552,6 +2788,7 @@ public final class Bank {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -2560,8 +2797,10 @@ public final class Bank {
       for (int i = 0; i < coins_.size(); i++) {
         output.writeMessage(2, coins_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2574,11 +2813,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, coins_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2589,12 +2828,12 @@ public final class Bank {
       }
       cosmos.bank.v1beta1.Bank.Output other = (cosmos.bank.v1beta1.Bank.Output) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && getCoinsList()
-          .equals(other.getCoinsList());
-      return result;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!getCoinsList()
+          .equals(other.getCoinsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2603,7 +2842,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       if (getCoinsCount() > 0) {
@@ -2615,6 +2854,17 @@ public final class Bank {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.Bank.Output parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Bank.Output parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.Bank.Output parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2674,6 +2924,7 @@ public final class Bank {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2681,6 +2932,7 @@ public final class Bank {
     public static Builder newBuilder(cosmos.bank.v1beta1.Bank.Output prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2708,6 +2960,7 @@ public final class Bank {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Output_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Output_fieldAccessorTable
@@ -2731,28 +2984,32 @@ public final class Bank {
           getCoinsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
 
         if (coinsBuilder_ == null) {
           coins_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           coinsBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Output_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Output getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.Bank.Output.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Output build() {
         cosmos.bank.v1beta1.Bank.Output result = buildPartial();
         if (!result.isInitialized()) {
@@ -2761,51 +3018,57 @@ public final class Bank {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Output buildPartial() {
         cosmos.bank.v1beta1.Bank.Output result = new cosmos.bank.v1beta1.Bank.Output(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.address_ = address_;
         if (coinsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             coins_ = java.util.Collections.unmodifiableList(coins_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.coins_ = coins_;
         } else {
           result.coins_ = coinsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.Bank.Output) {
           return mergeFrom((cosmos.bank.v1beta1.Bank.Output)other);
@@ -2825,7 +3088,7 @@ public final class Bank {
           if (!other.coins_.isEmpty()) {
             if (coins_.isEmpty()) {
               coins_ = other.coins_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCoinsIsMutable();
               coins_.addAll(other.coins_);
@@ -2838,7 +3101,7 @@ public final class Bank {
               coinsBuilder_.dispose();
               coinsBuilder_ = null;
               coins_ = other.coins_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               coinsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCoinsFieldBuilder() : null;
@@ -2847,14 +3110,17 @@ public final class Bank {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2876,7 +3142,8 @@ public final class Bank {
 
       private java.lang.Object address_ = "";
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -2891,7 +3158,8 @@ public final class Bank {
         }
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -2907,7 +3175,9 @@ public final class Bank {
         }
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -2920,7 +3190,8 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -2929,7 +3200,9 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -2946,9 +3219,9 @@ public final class Bank {
       private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> coins_ =
         java.util.Collections.emptyList();
       private void ensureCoinsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           coins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(coins_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -2956,7 +3229,7 @@ public final class Bank {
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> coinsBuilder_;
 
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getCoinsList() {
         if (coinsBuilder_ == null) {
@@ -2966,7 +3239,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getCoinsCount() {
         if (coinsBuilder_ == null) {
@@ -2976,7 +3249,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index) {
         if (coinsBuilder_ == null) {
@@ -2986,7 +3259,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -3003,7 +3276,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3017,7 +3290,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (coinsBuilder_ == null) {
@@ -3033,7 +3306,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -3050,7 +3323,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3064,7 +3337,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3078,7 +3351,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllCoins(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -3093,12 +3366,12 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearCoins() {
         if (coinsBuilder_ == null) {
           coins_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           coinsBuilder_.clear();
@@ -3106,7 +3379,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeCoins(int index) {
         if (coinsBuilder_ == null) {
@@ -3119,14 +3392,14 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getCoinsBuilder(
           int index) {
         return getCoinsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
           int index) {
@@ -3136,7 +3409,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getCoinsOrBuilderList() {
@@ -3147,14 +3420,14 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addCoinsBuilder() {
         return getCoinsFieldBuilder().addBuilder(
             cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addCoinsBuilder(
           int index) {
@@ -3162,7 +3435,7 @@ public final class Bank {
             index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getCoinsBuilderList() {
@@ -3175,21 +3448,23 @@ public final class Bank {
           coinsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
                   coins_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           coins_ = null;
         }
         return coinsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3208,11 +3483,12 @@ public final class Bank {
 
     private static final com.google.protobuf.Parser<Output>
         PARSER = new com.google.protobuf.AbstractParser<Output>() {
+      @java.lang.Override
       public Output parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Output(input, extensionRegistry);
+        return new Output(input, extensionRegistry);
       }
     };
 
@@ -3225,6 +3501,7 @@ public final class Bank {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Output getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3236,25 +3513,25 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getTotalList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getTotal(int index);
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getTotalCount();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getTotalOrBuilderList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTotalOrBuilder(
         int index);
@@ -3267,10 +3544,11 @@ public final class Bank {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.Supply}
    */
-  public  static final class Supply extends
+  public static final class Supply extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.Supply)
       SupplyOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Supply.newBuilder() to construct.
     private Supply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3280,16 +3558,28 @@ public final class Bank {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Supply();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Supply(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3298,19 +3588,20 @@ public final class Bank {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 total_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
                 mutable_bitField0_ |= 0x00000001;
               }
               total_.add(
                   input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3321,9 +3612,10 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           total_ = java.util.Collections.unmodifiableList(total_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3332,6 +3624,7 @@ public final class Bank {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Supply_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Supply_fieldAccessorTable
@@ -3342,39 +3635,45 @@ public final class Bank {
     public static final int TOTAL_FIELD_NUMBER = 1;
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> total_;
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getTotalList() {
       return total_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getTotalOrBuilderList() {
       return total_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public int getTotalCount() {
       return total_.size();
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getTotal(int index) {
       return total_.get(index);
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTotalOrBuilder(
         int index) {
       return total_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3384,13 +3683,16 @@ public final class Bank {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < total_.size(); i++) {
         output.writeMessage(1, total_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3400,11 +3702,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, total_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3415,10 +3717,10 @@ public final class Bank {
       }
       cosmos.bank.v1beta1.Bank.Supply other = (cosmos.bank.v1beta1.Bank.Supply) obj;
 
-      boolean result = true;
-      result = result && getTotalList()
-          .equals(other.getTotalList());
-      return result;
+      if (!getTotalList()
+          .equals(other.getTotalList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3427,7 +3729,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getTotalCount() > 0) {
         hash = (37 * hash) + TOTAL_FIELD_NUMBER;
         hash = (53 * hash) + getTotalList().hashCode();
@@ -3437,6 +3739,17 @@ public final class Bank {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.Bank.Supply parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Bank.Supply parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.Bank.Supply parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3496,6 +3809,7 @@ public final class Bank {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3503,6 +3817,7 @@ public final class Bank {
     public static Builder newBuilder(cosmos.bank.v1beta1.Bank.Supply prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3531,6 +3846,7 @@ public final class Bank {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Supply_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Supply_fieldAccessorTable
@@ -3554,6 +3870,7 @@ public final class Bank {
           getTotalFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (totalBuilder_ == null) {
@@ -3565,15 +3882,18 @@ public final class Bank {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Supply_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Supply getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.Bank.Supply.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Supply build() {
         cosmos.bank.v1beta1.Bank.Supply result = buildPartial();
         if (!result.isInitialized()) {
@@ -3582,11 +3902,12 @@ public final class Bank {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Supply buildPartial() {
         cosmos.bank.v1beta1.Bank.Supply result = new cosmos.bank.v1beta1.Bank.Supply(this);
         int from_bitField0_ = bitField0_;
         if (totalBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             total_ = java.util.Collections.unmodifiableList(total_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -3598,32 +3919,39 @@ public final class Bank {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.Bank.Supply) {
           return mergeFrom((cosmos.bank.v1beta1.Bank.Supply)other);
@@ -3661,14 +3989,17 @@ public final class Bank {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3691,7 +4022,7 @@ public final class Bank {
       private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> total_ =
         java.util.Collections.emptyList();
       private void ensureTotalIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           total_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(total_);
           bitField0_ |= 0x00000001;
          }
@@ -3701,7 +4032,7 @@ public final class Bank {
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> totalBuilder_;
 
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getTotalList() {
         if (totalBuilder_ == null) {
@@ -3711,7 +4042,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getTotalCount() {
         if (totalBuilder_ == null) {
@@ -3721,7 +4052,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getTotal(int index) {
         if (totalBuilder_ == null) {
@@ -3731,7 +4062,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setTotal(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -3748,7 +4079,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setTotal(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3762,7 +4093,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addTotal(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (totalBuilder_ == null) {
@@ -3778,7 +4109,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addTotal(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -3795,7 +4126,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addTotal(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3809,7 +4140,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addTotal(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3823,7 +4154,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllTotal(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -3838,7 +4169,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearTotal() {
         if (totalBuilder_ == null) {
@@ -3851,7 +4182,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeTotal(int index) {
         if (totalBuilder_ == null) {
@@ -3864,14 +4195,14 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getTotalBuilder(
           int index) {
         return getTotalFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTotalOrBuilder(
           int index) {
@@ -3881,7 +4212,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getTotalOrBuilderList() {
@@ -3892,14 +4223,14 @@ public final class Bank {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addTotalBuilder() {
         return getTotalFieldBuilder().addBuilder(
             cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addTotalBuilder(
           int index) {
@@ -3907,7 +4238,7 @@ public final class Bank {
             index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin total = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin total = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getTotalBuilderList() {
@@ -3920,21 +4251,23 @@ public final class Bank {
           totalBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
                   total_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           total_ = null;
         }
         return totalBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3953,11 +4286,12 @@ public final class Bank {
 
     private static final com.google.protobuf.Parser<Supply>
         PARSER = new com.google.protobuf.AbstractParser<Supply>() {
+      @java.lang.Override
       public Supply parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Supply(input, extensionRegistry);
+        return new Supply(input, extensionRegistry);
       }
     };
 
@@ -3970,6 +4304,7 @@ public final class Bank {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Supply getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3985,7 +4320,8 @@ public final class Bank {
      * denom represents the string name of the given denom unit (e.g uatom).
      * </pre>
      *
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
     java.lang.String getDenom();
     /**
@@ -3993,7 +4329,8 @@ public final class Bank {
      * denom represents the string name of the given denom unit (e.g uatom).
      * </pre>
      *
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
     com.google.protobuf.ByteString
         getDenomBytes();
@@ -4007,7 +4344,8 @@ public final class Bank {
      * exponent = 6, thus: 1 atom = 10^6 uatom).
      * </pre>
      *
-     * <code>optional uint32 exponent = 2;</code>
+     * <code>uint32 exponent = 2;</code>
+     * @return The exponent.
      */
     int getExponent();
 
@@ -4017,6 +4355,7 @@ public final class Bank {
      * </pre>
      *
      * <code>repeated string aliases = 3;</code>
+     * @return A list containing the aliases.
      */
     java.util.List<java.lang.String>
         getAliasesList();
@@ -4026,6 +4365,7 @@ public final class Bank {
      * </pre>
      *
      * <code>repeated string aliases = 3;</code>
+     * @return The count of aliases.
      */
     int getAliasesCount();
     /**
@@ -4034,6 +4374,8 @@ public final class Bank {
      * </pre>
      *
      * <code>repeated string aliases = 3;</code>
+     * @param index The index of the element to return.
+     * @return The aliases at the given index.
      */
     java.lang.String getAliases(int index);
     /**
@@ -4042,6 +4384,8 @@ public final class Bank {
      * </pre>
      *
      * <code>repeated string aliases = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the aliases at the given index.
      */
     com.google.protobuf.ByteString
         getAliasesBytes(int index);
@@ -4054,31 +4398,43 @@ public final class Bank {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.DenomUnit}
    */
-  public  static final class DenomUnit extends
+  public static final class DenomUnit extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.DenomUnit)
       DenomUnitOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use DenomUnit.newBuilder() to construct.
     private DenomUnit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private DenomUnit() {
       denom_ = "";
-      exponent_ = 0;
       aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DenomUnit();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private DenomUnit(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4087,12 +4443,6 @@ public final class Bank {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -4106,11 +4456,18 @@ public final class Bank {
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 aliases_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               aliases_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -4121,9 +4478,10 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           aliases_ = aliases_.getUnmodifiableView();
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4132,6 +4490,7 @@ public final class Bank {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_DenomUnit_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_DenomUnit_fieldAccessorTable
@@ -4139,7 +4498,6 @@ public final class Bank {
               cosmos.bank.v1beta1.Bank.DenomUnit.class, cosmos.bank.v1beta1.Bank.DenomUnit.Builder.class);
     }
 
-    private int bitField0_;
     public static final int DENOM_FIELD_NUMBER = 1;
     private volatile java.lang.Object denom_;
     /**
@@ -4147,8 +4505,10 @@ public final class Bank {
      * denom represents the string name of the given denom unit (e.g uatom).
      * </pre>
      *
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
+    @java.lang.Override
     public java.lang.String getDenom() {
       java.lang.Object ref = denom_;
       if (ref instanceof java.lang.String) {
@@ -4166,8 +4526,10 @@ public final class Bank {
      * denom represents the string name of the given denom unit (e.g uatom).
      * </pre>
      *
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDenomBytes() {
       java.lang.Object ref = denom_;
@@ -4193,8 +4555,10 @@ public final class Bank {
      * exponent = 6, thus: 1 atom = 10^6 uatom).
      * </pre>
      *
-     * <code>optional uint32 exponent = 2;</code>
+     * <code>uint32 exponent = 2;</code>
+     * @return The exponent.
      */
+    @java.lang.Override
     public int getExponent() {
       return exponent_;
     }
@@ -4207,6 +4571,7 @@ public final class Bank {
      * </pre>
      *
      * <code>repeated string aliases = 3;</code>
+     * @return A list containing the aliases.
      */
     public com.google.protobuf.ProtocolStringList
         getAliasesList() {
@@ -4218,6 +4583,7 @@ public final class Bank {
      * </pre>
      *
      * <code>repeated string aliases = 3;</code>
+     * @return The count of aliases.
      */
     public int getAliasesCount() {
       return aliases_.size();
@@ -4228,6 +4594,8 @@ public final class Bank {
      * </pre>
      *
      * <code>repeated string aliases = 3;</code>
+     * @param index The index of the element to return.
+     * @return The aliases at the given index.
      */
     public java.lang.String getAliases(int index) {
       return aliases_.get(index);
@@ -4238,6 +4606,8 @@ public final class Bank {
      * </pre>
      *
      * <code>repeated string aliases = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the aliases at the given index.
      */
     public com.google.protobuf.ByteString
         getAliasesBytes(int index) {
@@ -4245,6 +4615,7 @@ public final class Bank {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4254,6 +4625,7 @@ public final class Bank {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getDenomBytes().isEmpty()) {
@@ -4265,8 +4637,10 @@ public final class Bank {
       for (int i = 0; i < aliases_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, aliases_.getRaw(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4287,11 +4661,11 @@ public final class Bank {
         size += dataSize;
         size += 1 * getAliasesList().size();
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4302,14 +4676,14 @@ public final class Bank {
       }
       cosmos.bank.v1beta1.Bank.DenomUnit other = (cosmos.bank.v1beta1.Bank.DenomUnit) obj;
 
-      boolean result = true;
-      result = result && getDenom()
-          .equals(other.getDenom());
-      result = result && (getExponent()
-          == other.getExponent());
-      result = result && getAliasesList()
-          .equals(other.getAliasesList());
-      return result;
+      if (!getDenom()
+          .equals(other.getDenom())) return false;
+      if (getExponent()
+          != other.getExponent()) return false;
+      if (!getAliasesList()
+          .equals(other.getAliasesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4318,7 +4692,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DENOM_FIELD_NUMBER;
       hash = (53 * hash) + getDenom().hashCode();
       hash = (37 * hash) + EXPONENT_FIELD_NUMBER;
@@ -4332,6 +4706,17 @@ public final class Bank {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.Bank.DenomUnit parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Bank.DenomUnit parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.Bank.DenomUnit parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4391,6 +4776,7 @@ public final class Bank {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4398,6 +4784,7 @@ public final class Bank {
     public static Builder newBuilder(cosmos.bank.v1beta1.Bank.DenomUnit prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4426,6 +4813,7 @@ public final class Bank {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_DenomUnit_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_DenomUnit_fieldAccessorTable
@@ -4448,6 +4836,7 @@ public final class Bank {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         denom_ = "";
@@ -4455,19 +4844,22 @@ public final class Bank {
         exponent_ = 0;
 
         aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_DenomUnit_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.DenomUnit getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.Bank.DenomUnit.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.DenomUnit build() {
         cosmos.bank.v1beta1.Bank.DenomUnit result = buildPartial();
         if (!result.isInitialized()) {
@@ -4476,48 +4868,54 @@ public final class Bank {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.DenomUnit buildPartial() {
         cosmos.bank.v1beta1.Bank.DenomUnit result = new cosmos.bank.v1beta1.Bank.DenomUnit(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.denom_ = denom_;
         result.exponent_ = exponent_;
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           aliases_ = aliases_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.aliases_ = aliases_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.Bank.DenomUnit) {
           return mergeFrom((cosmos.bank.v1beta1.Bank.DenomUnit)other);
@@ -4539,21 +4937,24 @@ public final class Bank {
         if (!other.aliases_.isEmpty()) {
           if (aliases_.isEmpty()) {
             aliases_ = other.aliases_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAliasesIsMutable();
             aliases_.addAll(other.aliases_);
           }
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4579,7 +4980,8 @@ public final class Bank {
        * denom represents the string name of the given denom unit (e.g uatom).
        * </pre>
        *
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The denom.
        */
       public java.lang.String getDenom() {
         java.lang.Object ref = denom_;
@@ -4598,7 +5000,8 @@ public final class Bank {
        * denom represents the string name of the given denom unit (e.g uatom).
        * </pre>
        *
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The bytes for denom.
        */
       public com.google.protobuf.ByteString
           getDenomBytes() {
@@ -4618,7 +5021,9 @@ public final class Bank {
        * denom represents the string name of the given denom unit (e.g uatom).
        * </pre>
        *
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenom(
           java.lang.String value) {
@@ -4635,7 +5040,8 @@ public final class Bank {
        * denom represents the string name of the given denom unit (e.g uatom).
        * </pre>
        *
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDenom() {
         
@@ -4648,7 +5054,9 @@ public final class Bank {
        * denom represents the string name of the given denom unit (e.g uatom).
        * </pre>
        *
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The bytes for denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenomBytes(
           com.google.protobuf.ByteString value) {
@@ -4672,8 +5080,10 @@ public final class Bank {
        * exponent = 6, thus: 1 atom = 10^6 uatom).
        * </pre>
        *
-       * <code>optional uint32 exponent = 2;</code>
+       * <code>uint32 exponent = 2;</code>
+       * @return The exponent.
        */
+      @java.lang.Override
       public int getExponent() {
         return exponent_;
       }
@@ -4686,7 +5096,9 @@ public final class Bank {
        * exponent = 6, thus: 1 atom = 10^6 uatom).
        * </pre>
        *
-       * <code>optional uint32 exponent = 2;</code>
+       * <code>uint32 exponent = 2;</code>
+       * @param value The exponent to set.
+       * @return This builder for chaining.
        */
       public Builder setExponent(int value) {
         
@@ -4703,7 +5115,8 @@ public final class Bank {
        * exponent = 6, thus: 1 atom = 10^6 uatom).
        * </pre>
        *
-       * <code>optional uint32 exponent = 2;</code>
+       * <code>uint32 exponent = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearExponent() {
         
@@ -4714,9 +5127,9 @@ public final class Bank {
 
       private com.google.protobuf.LazyStringList aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureAliasesIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           aliases_ = new com.google.protobuf.LazyStringArrayList(aliases_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -4725,6 +5138,7 @@ public final class Bank {
        * </pre>
        *
        * <code>repeated string aliases = 3;</code>
+       * @return A list containing the aliases.
        */
       public com.google.protobuf.ProtocolStringList
           getAliasesList() {
@@ -4736,6 +5150,7 @@ public final class Bank {
        * </pre>
        *
        * <code>repeated string aliases = 3;</code>
+       * @return The count of aliases.
        */
       public int getAliasesCount() {
         return aliases_.size();
@@ -4746,6 +5161,8 @@ public final class Bank {
        * </pre>
        *
        * <code>repeated string aliases = 3;</code>
+       * @param index The index of the element to return.
+       * @return The aliases at the given index.
        */
       public java.lang.String getAliases(int index) {
         return aliases_.get(index);
@@ -4756,6 +5173,8 @@ public final class Bank {
        * </pre>
        *
        * <code>repeated string aliases = 3;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the aliases at the given index.
        */
       public com.google.protobuf.ByteString
           getAliasesBytes(int index) {
@@ -4767,6 +5186,9 @@ public final class Bank {
        * </pre>
        *
        * <code>repeated string aliases = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The aliases to set.
+       * @return This builder for chaining.
        */
       public Builder setAliases(
           int index, java.lang.String value) {
@@ -4784,6 +5206,8 @@ public final class Bank {
        * </pre>
        *
        * <code>repeated string aliases = 3;</code>
+       * @param value The aliases to add.
+       * @return This builder for chaining.
        */
       public Builder addAliases(
           java.lang.String value) {
@@ -4801,6 +5225,8 @@ public final class Bank {
        * </pre>
        *
        * <code>repeated string aliases = 3;</code>
+       * @param values The aliases to add.
+       * @return This builder for chaining.
        */
       public Builder addAllAliases(
           java.lang.Iterable<java.lang.String> values) {
@@ -4816,10 +5242,11 @@ public final class Bank {
        * </pre>
        *
        * <code>repeated string aliases = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAliases() {
         aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4829,6 +5256,8 @@ public final class Bank {
        * </pre>
        *
        * <code>repeated string aliases = 3;</code>
+       * @param value The bytes of the aliases to add.
+       * @return This builder for chaining.
        */
       public Builder addAliasesBytes(
           com.google.protobuf.ByteString value) {
@@ -4841,14 +5270,16 @@ public final class Bank {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4867,11 +5298,12 @@ public final class Bank {
 
     private static final com.google.protobuf.Parser<DenomUnit>
         PARSER = new com.google.protobuf.AbstractParser<DenomUnit>() {
+      @java.lang.Override
       public DenomUnit parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DenomUnit(input, extensionRegistry);
+        return new DenomUnit(input, extensionRegistry);
       }
     };
 
@@ -4884,6 +5316,7 @@ public final class Bank {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.DenomUnit getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4895,11 +5328,13 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string description = 1;</code>
+     * <code>string description = 1;</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
-     * <code>optional string description = 1;</code>
+     * <code>string description = 1;</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
@@ -4953,7 +5388,8 @@ public final class Bank {
      * base represents the base denom (should be the DenomUnit with exponent = 0).
      * </pre>
      *
-     * <code>optional string base = 3;</code>
+     * <code>string base = 3;</code>
+     * @return The base.
      */
     java.lang.String getBase();
     /**
@@ -4961,7 +5397,8 @@ public final class Bank {
      * base represents the base denom (should be the DenomUnit with exponent = 0).
      * </pre>
      *
-     * <code>optional string base = 3;</code>
+     * <code>string base = 3;</code>
+     * @return The bytes for base.
      */
     com.google.protobuf.ByteString
         getBaseBytes();
@@ -4972,7 +5409,8 @@ public final class Bank {
      * displayed in clients.
      * </pre>
      *
-     * <code>optional string display = 4;</code>
+     * <code>string display = 4;</code>
+     * @return The display.
      */
     java.lang.String getDisplay();
     /**
@@ -4981,7 +5419,8 @@ public final class Bank {
      * displayed in clients.
      * </pre>
      *
-     * <code>optional string display = 4;</code>
+     * <code>string display = 4;</code>
+     * @return The bytes for display.
      */
     com.google.protobuf.ByteString
         getDisplayBytes();
@@ -4994,10 +5433,11 @@ public final class Bank {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.Metadata}
    */
-  public  static final class Metadata extends
+  public static final class Metadata extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.Metadata)
       MetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Metadata.newBuilder() to construct.
     private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5010,16 +5450,28 @@ public final class Bank {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Metadata();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Metadata(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5028,12 +5480,6 @@ public final class Bank {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -5041,9 +5487,9 @@ public final class Bank {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 denomUnits_ = new java.util.ArrayList<cosmos.bank.v1beta1.Bank.DenomUnit>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               denomUnits_.add(
                   input.readMessage(cosmos.bank.v1beta1.Bank.DenomUnit.parser(), extensionRegistry));
@@ -5061,6 +5507,13 @@ public final class Bank {
               display_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5069,9 +5522,10 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           denomUnits_ = java.util.Collections.unmodifiableList(denomUnits_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5080,6 +5534,7 @@ public final class Bank {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Metadata_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Metadata_fieldAccessorTable
@@ -5087,12 +5542,13 @@ public final class Bank {
               cosmos.bank.v1beta1.Bank.Metadata.class, cosmos.bank.v1beta1.Bank.Metadata.Builder.class);
     }
 
-    private int bitField0_;
     public static final int DESCRIPTION_FIELD_NUMBER = 1;
     private volatile java.lang.Object description_;
     /**
-     * <code>optional string description = 1;</code>
+     * <code>string description = 1;</code>
+     * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -5106,8 +5562,10 @@ public final class Bank {
       }
     }
     /**
-     * <code>optional string description = 1;</code>
+     * <code>string description = 1;</code>
+     * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -5131,6 +5589,7 @@ public final class Bank {
      *
      * <code>repeated .cosmos.bank.v1beta1.DenomUnit denom_units = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.bank.v1beta1.Bank.DenomUnit> getDenomUnitsList() {
       return denomUnits_;
     }
@@ -5141,6 +5600,7 @@ public final class Bank {
      *
      * <code>repeated .cosmos.bank.v1beta1.DenomUnit denom_units = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.bank.v1beta1.Bank.DenomUnitOrBuilder> 
         getDenomUnitsOrBuilderList() {
       return denomUnits_;
@@ -5152,6 +5612,7 @@ public final class Bank {
      *
      * <code>repeated .cosmos.bank.v1beta1.DenomUnit denom_units = 2;</code>
      */
+    @java.lang.Override
     public int getDenomUnitsCount() {
       return denomUnits_.size();
     }
@@ -5162,6 +5623,7 @@ public final class Bank {
      *
      * <code>repeated .cosmos.bank.v1beta1.DenomUnit denom_units = 2;</code>
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.DenomUnit getDenomUnits(int index) {
       return denomUnits_.get(index);
     }
@@ -5172,6 +5634,7 @@ public final class Bank {
      *
      * <code>repeated .cosmos.bank.v1beta1.DenomUnit denom_units = 2;</code>
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.DenomUnitOrBuilder getDenomUnitsOrBuilder(
         int index) {
       return denomUnits_.get(index);
@@ -5184,8 +5647,10 @@ public final class Bank {
      * base represents the base denom (should be the DenomUnit with exponent = 0).
      * </pre>
      *
-     * <code>optional string base = 3;</code>
+     * <code>string base = 3;</code>
+     * @return The base.
      */
+    @java.lang.Override
     public java.lang.String getBase() {
       java.lang.Object ref = base_;
       if (ref instanceof java.lang.String) {
@@ -5203,8 +5668,10 @@ public final class Bank {
      * base represents the base denom (should be the DenomUnit with exponent = 0).
      * </pre>
      *
-     * <code>optional string base = 3;</code>
+     * <code>string base = 3;</code>
+     * @return The bytes for base.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getBaseBytes() {
       java.lang.Object ref = base_;
@@ -5227,8 +5694,10 @@ public final class Bank {
      * displayed in clients.
      * </pre>
      *
-     * <code>optional string display = 4;</code>
+     * <code>string display = 4;</code>
+     * @return The display.
      */
+    @java.lang.Override
     public java.lang.String getDisplay() {
       java.lang.Object ref = display_;
       if (ref instanceof java.lang.String) {
@@ -5247,8 +5716,10 @@ public final class Bank {
      * displayed in clients.
      * </pre>
      *
-     * <code>optional string display = 4;</code>
+     * <code>string display = 4;</code>
+     * @return The bytes for display.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDisplayBytes() {
       java.lang.Object ref = display_;
@@ -5264,6 +5735,7 @@ public final class Bank {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5273,6 +5745,7 @@ public final class Bank {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getDescriptionBytes().isEmpty()) {
@@ -5287,8 +5760,10 @@ public final class Bank {
       if (!getDisplayBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, display_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5307,11 +5782,11 @@ public final class Bank {
       if (!getDisplayBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, display_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5322,16 +5797,16 @@ public final class Bank {
       }
       cosmos.bank.v1beta1.Bank.Metadata other = (cosmos.bank.v1beta1.Bank.Metadata) obj;
 
-      boolean result = true;
-      result = result && getDescription()
-          .equals(other.getDescription());
-      result = result && getDenomUnitsList()
-          .equals(other.getDenomUnitsList());
-      result = result && getBase()
-          .equals(other.getBase());
-      result = result && getDisplay()
-          .equals(other.getDisplay());
-      return result;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getDenomUnitsList()
+          .equals(other.getDenomUnitsList())) return false;
+      if (!getBase()
+          .equals(other.getBase())) return false;
+      if (!getDisplay()
+          .equals(other.getDisplay())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5340,7 +5815,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
       if (getDenomUnitsCount() > 0) {
@@ -5356,6 +5831,17 @@ public final class Bank {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.Bank.Metadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Bank.Metadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.Bank.Metadata parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5415,6 +5901,7 @@ public final class Bank {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5422,6 +5909,7 @@ public final class Bank {
     public static Builder newBuilder(cosmos.bank.v1beta1.Bank.Metadata prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5450,6 +5938,7 @@ public final class Bank {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Metadata_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Metadata_fieldAccessorTable
@@ -5473,13 +5962,14 @@ public final class Bank {
           getDenomUnitsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         description_ = "";
 
         if (denomUnitsBuilder_ == null) {
           denomUnits_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           denomUnitsBuilder_.clear();
         }
@@ -5490,15 +5980,18 @@ public final class Bank {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.Bank.internal_static_cosmos_bank_v1beta1_Metadata_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Metadata getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.Bank.Metadata.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Metadata build() {
         cosmos.bank.v1beta1.Bank.Metadata result = buildPartial();
         if (!result.isInitialized()) {
@@ -5507,15 +6000,15 @@ public final class Bank {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Bank.Metadata buildPartial() {
         cosmos.bank.v1beta1.Bank.Metadata result = new cosmos.bank.v1beta1.Bank.Metadata(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.description_ = description_;
         if (denomUnitsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             denomUnits_ = java.util.Collections.unmodifiableList(denomUnits_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.denomUnits_ = denomUnits_;
         } else {
@@ -5523,37 +6016,43 @@ public final class Bank {
         }
         result.base_ = base_;
         result.display_ = display_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.Bank.Metadata) {
           return mergeFrom((cosmos.bank.v1beta1.Bank.Metadata)other);
@@ -5573,7 +6072,7 @@ public final class Bank {
           if (!other.denomUnits_.isEmpty()) {
             if (denomUnits_.isEmpty()) {
               denomUnits_ = other.denomUnits_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureDenomUnitsIsMutable();
               denomUnits_.addAll(other.denomUnits_);
@@ -5586,7 +6085,7 @@ public final class Bank {
               denomUnitsBuilder_.dispose();
               denomUnitsBuilder_ = null;
               denomUnits_ = other.denomUnits_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               denomUnitsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDenomUnitsFieldBuilder() : null;
@@ -5603,14 +6102,17 @@ public final class Bank {
           display_ = other.display_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5632,7 +6134,8 @@ public final class Bank {
 
       private java.lang.Object description_ = "";
       /**
-       * <code>optional string description = 1;</code>
+       * <code>string description = 1;</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -5647,7 +6150,8 @@ public final class Bank {
         }
       }
       /**
-       * <code>optional string description = 1;</code>
+       * <code>string description = 1;</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -5663,7 +6167,9 @@ public final class Bank {
         }
       }
       /**
-       * <code>optional string description = 1;</code>
+       * <code>string description = 1;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -5676,7 +6182,8 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional string description = 1;</code>
+       * <code>string description = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -5685,7 +6192,9 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>optional string description = 1;</code>
+       * <code>string description = 1;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -5702,9 +6211,9 @@ public final class Bank {
       private java.util.List<cosmos.bank.v1beta1.Bank.DenomUnit> denomUnits_ =
         java.util.Collections.emptyList();
       private void ensureDenomUnitsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           denomUnits_ = new java.util.ArrayList<cosmos.bank.v1beta1.Bank.DenomUnit>(denomUnits_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -5898,7 +6407,7 @@ public final class Bank {
       public Builder clearDenomUnits() {
         if (denomUnitsBuilder_ == null) {
           denomUnits_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           denomUnitsBuilder_.clear();
@@ -6003,7 +6512,7 @@ public final class Bank {
           denomUnitsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.bank.v1beta1.Bank.DenomUnit, cosmos.bank.v1beta1.Bank.DenomUnit.Builder, cosmos.bank.v1beta1.Bank.DenomUnitOrBuilder>(
                   denomUnits_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           denomUnits_ = null;
@@ -6017,7 +6526,8 @@ public final class Bank {
        * base represents the base denom (should be the DenomUnit with exponent = 0).
        * </pre>
        *
-       * <code>optional string base = 3;</code>
+       * <code>string base = 3;</code>
+       * @return The base.
        */
       public java.lang.String getBase() {
         java.lang.Object ref = base_;
@@ -6036,7 +6546,8 @@ public final class Bank {
        * base represents the base denom (should be the DenomUnit with exponent = 0).
        * </pre>
        *
-       * <code>optional string base = 3;</code>
+       * <code>string base = 3;</code>
+       * @return The bytes for base.
        */
       public com.google.protobuf.ByteString
           getBaseBytes() {
@@ -6056,7 +6567,9 @@ public final class Bank {
        * base represents the base denom (should be the DenomUnit with exponent = 0).
        * </pre>
        *
-       * <code>optional string base = 3;</code>
+       * <code>string base = 3;</code>
+       * @param value The base to set.
+       * @return This builder for chaining.
        */
       public Builder setBase(
           java.lang.String value) {
@@ -6073,7 +6586,8 @@ public final class Bank {
        * base represents the base denom (should be the DenomUnit with exponent = 0).
        * </pre>
        *
-       * <code>optional string base = 3;</code>
+       * <code>string base = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBase() {
         
@@ -6086,7 +6600,9 @@ public final class Bank {
        * base represents the base denom (should be the DenomUnit with exponent = 0).
        * </pre>
        *
-       * <code>optional string base = 3;</code>
+       * <code>string base = 3;</code>
+       * @param value The bytes for base to set.
+       * @return This builder for chaining.
        */
       public Builder setBaseBytes(
           com.google.protobuf.ByteString value) {
@@ -6107,7 +6623,8 @@ public final class Bank {
        * displayed in clients.
        * </pre>
        *
-       * <code>optional string display = 4;</code>
+       * <code>string display = 4;</code>
+       * @return The display.
        */
       public java.lang.String getDisplay() {
         java.lang.Object ref = display_;
@@ -6127,7 +6644,8 @@ public final class Bank {
        * displayed in clients.
        * </pre>
        *
-       * <code>optional string display = 4;</code>
+       * <code>string display = 4;</code>
+       * @return The bytes for display.
        */
       public com.google.protobuf.ByteString
           getDisplayBytes() {
@@ -6148,7 +6666,9 @@ public final class Bank {
        * displayed in clients.
        * </pre>
        *
-       * <code>optional string display = 4;</code>
+       * <code>string display = 4;</code>
+       * @param value The display to set.
+       * @return This builder for chaining.
        */
       public Builder setDisplay(
           java.lang.String value) {
@@ -6166,7 +6686,8 @@ public final class Bank {
        * displayed in clients.
        * </pre>
        *
-       * <code>optional string display = 4;</code>
+       * <code>string display = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDisplay() {
         
@@ -6180,7 +6701,9 @@ public final class Bank {
        * displayed in clients.
        * </pre>
        *
-       * <code>optional string display = 4;</code>
+       * <code>string display = 4;</code>
+       * @param value The bytes for display to set.
+       * @return This builder for chaining.
        */
       public Builder setDisplayBytes(
           com.google.protobuf.ByteString value) {
@@ -6193,14 +6716,16 @@ public final class Bank {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6219,11 +6744,12 @@ public final class Bank {
 
     private static final com.google.protobuf.Parser<Metadata>
         PARSER = new com.google.protobuf.AbstractParser<Metadata>() {
+      @java.lang.Override
       public Metadata parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Metadata(input, extensionRegistry);
+        return new Metadata(input, extensionRegistry);
       }
     };
 
@@ -6236,6 +6762,7 @@ public final class Bank {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Metadata getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6295,7 +6822,7 @@ public final class Bank {
       "default_send_enabled\030\002 \001(\010B)\362\336\037%yaml:\"de" +
       "fault_send_enabled,omitempty\"\022U\n\033unrestr" +
       "icted_token_transfer\030\003 \001(\010B0\362\336\037,yaml:\"un" +
-      "restricted_token_transfer,omitempty\":\004\230\240",
+      "restricted_token_transfer,omitempty\":\004\230\240" +
       "\037\000\"7\n\013SendEnabled\022\r\n\005denom\030\001 \001(\t\022\017\n\007enab" +
       "led\030\002 \001(\010:\010\350\240\037\001\230\240\037\000\"~\n\005Input\022\017\n\007address\030" +
       "\001 \001(\t\022Z\n\005coins\030\002 \003(\0132\031.cosmos.base.v1bet" +
@@ -6305,7 +6832,7 @@ public final class Bank {
       "ase.v1beta1.CoinB0\310\336\037\000\252\337\037(github.com/cos" +
       "mos/cosmos-sdk/types.Coins:\010\350\240\037\000\210\240\037\000\"\253\001\n" +
       "\006Supply\022Z\n\005total\030\001 \003(\0132\031.cosmos.base.v1b" +
-      "eta1.CoinB0\310\336\037\000\252\337\037(github.com/cosmos/cos",
+      "eta1.CoinB0\310\336\037\000\252\337\037(github.com/cosmos/cos" +
       "mos-sdk/types.Coins:E\350\240\037\001\210\240\037\000\230\240\037\000\322\264-5*gi" +
       "thub.com/cosmos/cosmos-sdk/x/bank/export" +
       "ed.SupplyI\"=\n\tDenomUnit\022\r\n\005denom\030\001 \001(\t\022\020" +
@@ -6316,21 +6843,13 @@ public final class Bank {
       ".com/cosmos/cosmos-sdk/x/bank/typesb\006pro" +
       "to3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_bank_v1beta1_Params_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_bank_v1beta1_Params_fieldAccessorTable = new

@@ -19,7 +19,8 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int64 height = 1;</code>
+     * <code>int64 height = 1;</code>
+     * @return The height.
      */
     long getHeight();
 
@@ -28,7 +29,8 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -36,7 +38,8 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
@@ -44,7 +47,7 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
   }
@@ -55,29 +58,40 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetValidatorSetByHeightRequest}
    */
-  public  static final class GetValidatorSetByHeightRequest extends
+  public static final class GetValidatorSetByHeightRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetValidatorSetByHeightRequest)
       GetValidatorSetByHeightRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetValidatorSetByHeightRequest.newBuilder() to construct.
     private GetValidatorSetByHeightRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private GetValidatorSetByHeightRequest() {
-      height_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetValidatorSetByHeightRequest();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetValidatorSetByHeightRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -86,12 +100,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               height_ = input.readInt64();
@@ -110,6 +118,13 @@ public final class Query {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -118,6 +133,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -126,6 +142,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightRequest_fieldAccessorTable
@@ -136,8 +153,10 @@ public final class Query {
     public static final int HEIGHT_FIELD_NUMBER = 1;
     private long height_;
     /**
-     * <code>optional int64 height = 1;</code>
+     * <code>int64 height = 1;</code>
+     * @return The height.
      */
+    @java.lang.Override
     public long getHeight() {
       return height_;
     }
@@ -149,8 +168,10 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -159,8 +180,10 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
     }
@@ -169,13 +192,15 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -185,6 +210,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (height_ != 0L) {
@@ -193,8 +219,10 @@ public final class Query {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -208,11 +236,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -223,15 +251,15 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest other = (cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest) obj;
 
-      boolean result = true;
-      result = result && (getHeight()
-          == other.getHeight());
-      result = result && (hasPagination() == other.hasPagination());
+      if (getHeight()
+          != other.getHeight()) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -240,7 +268,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getHeight());
@@ -253,6 +281,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -312,6 +351,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -319,6 +359,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -346,6 +387,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightRequest_fieldAccessorTable
@@ -368,6 +410,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         height_ = 0L;
@@ -381,15 +424,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest build() {
         cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -398,6 +444,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest result = new cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest(this);
         result.height_ = height_;
@@ -410,32 +457,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest)other);
@@ -453,14 +507,17 @@ public final class Query {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -481,13 +538,17 @@ public final class Query {
 
       private long height_ ;
       /**
-       * <code>optional int64 height = 1;</code>
+       * <code>int64 height = 1;</code>
+       * @return The height.
        */
+      @java.lang.Override
       public long getHeight() {
         return height_;
       }
       /**
-       * <code>optional int64 height = 1;</code>
+       * <code>int64 height = 1;</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
        */
       public Builder setHeight(long value) {
         
@@ -496,7 +557,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional int64 height = 1;</code>
+       * <code>int64 height = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHeight() {
         
@@ -505,7 +567,7 @@ public final class Query {
         return this;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
       /**
@@ -513,7 +575,8 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -523,7 +586,8 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
         if (paginationBuilder_ == null) {
@@ -537,7 +601,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -557,7 +621,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
@@ -575,7 +639,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -597,7 +661,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -615,7 +679,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
         
@@ -627,7 +691,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -642,7 +706,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
@@ -657,14 +721,16 @@ public final class Query {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -683,11 +749,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetValidatorSetByHeightRequest>
         PARSER = new com.google.protobuf.AbstractParser<GetValidatorSetByHeightRequest>() {
+      @java.lang.Override
       public GetValidatorSetByHeightRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetValidatorSetByHeightRequest(input, extensionRegistry);
+        return new GetValidatorSetByHeightRequest(input, extensionRegistry);
       }
     };
 
@@ -700,6 +767,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -711,7 +779,8 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int64 block_height = 1;</code>
+     * <code>int64 block_height = 1;</code>
+     * @return The blockHeight.
      */
     long getBlockHeight();
 
@@ -744,7 +813,8 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -752,7 +822,8 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
@@ -760,7 +831,7 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
   }
@@ -771,30 +842,42 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetValidatorSetByHeightResponse}
    */
-  public  static final class GetValidatorSetByHeightResponse extends
+  public static final class GetValidatorSetByHeightResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetValidatorSetByHeightResponse)
       GetValidatorSetByHeightResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetValidatorSetByHeightResponse.newBuilder() to construct.
     private GetValidatorSetByHeightResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private GetValidatorSetByHeightResponse() {
-      blockHeight_ = 0L;
       validators_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetValidatorSetByHeightResponse();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetValidatorSetByHeightResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -803,21 +886,15 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               blockHeight_ = input.readInt64();
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 validators_ = new java.util.ArrayList<cosmos.base.tendermint.v1beta1.Query.Validator>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               validators_.add(
                   input.readMessage(cosmos.base.tendermint.v1beta1.Query.Validator.parser(), extensionRegistry));
@@ -836,6 +913,13 @@ public final class Query {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -844,9 +928,10 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           validators_ = java.util.Collections.unmodifiableList(validators_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -855,6 +940,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightResponse_fieldAccessorTable
@@ -862,12 +948,13 @@ public final class Query {
               cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse.class, cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int BLOCK_HEIGHT_FIELD_NUMBER = 1;
     private long blockHeight_;
     /**
-     * <code>optional int64 block_height = 1;</code>
+     * <code>int64 block_height = 1;</code>
+     * @return The blockHeight.
      */
+    @java.lang.Override
     public long getBlockHeight() {
       return blockHeight_;
     }
@@ -877,12 +964,14 @@ public final class Query {
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Validator validators = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.tendermint.v1beta1.Query.Validator> getValidatorsList() {
       return validators_;
     }
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Validator validators = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.tendermint.v1beta1.Query.ValidatorOrBuilder> 
         getValidatorsOrBuilderList() {
       return validators_;
@@ -890,18 +979,21 @@ public final class Query {
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Validator validators = 2;</code>
      */
+    @java.lang.Override
     public int getValidatorsCount() {
       return validators_.size();
     }
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Validator validators = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.Validator getValidators(int index) {
       return validators_.get(index);
     }
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Validator validators = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.ValidatorOrBuilder getValidatorsOrBuilder(
         int index) {
       return validators_.get(index);
@@ -914,8 +1006,10 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -924,8 +1018,10 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
@@ -934,13 +1030,15 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -950,6 +1048,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (blockHeight_ != 0L) {
@@ -961,8 +1060,10 @@ public final class Query {
       if (pagination_ != null) {
         output.writeMessage(3, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -980,11 +1081,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -995,17 +1096,17 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse other = (cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse) obj;
 
-      boolean result = true;
-      result = result && (getBlockHeight()
-          == other.getBlockHeight());
-      result = result && getValidatorsList()
-          .equals(other.getValidatorsList());
-      result = result && (hasPagination() == other.hasPagination());
+      if (getBlockHeight()
+          != other.getBlockHeight()) return false;
+      if (!getValidatorsList()
+          .equals(other.getValidatorsList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1014,7 +1115,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BLOCK_HEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBlockHeight());
@@ -1031,6 +1132,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1090,6 +1202,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1097,6 +1210,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1124,6 +1238,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightResponse_fieldAccessorTable
@@ -1147,13 +1262,14 @@ public final class Query {
           getValidatorsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         blockHeight_ = 0L;
 
         if (validatorsBuilder_ == null) {
           validators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           validatorsBuilder_.clear();
         }
@@ -1166,15 +1282,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse build() {
         cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -1183,15 +1302,15 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse result = new cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.blockHeight_ = blockHeight_;
         if (validatorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             validators_ = java.util.Collections.unmodifiableList(validators_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.validators_ = validators_;
         } else {
@@ -1202,37 +1321,43 @@ public final class Query {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse)other);
@@ -1251,7 +1376,7 @@ public final class Query {
           if (!other.validators_.isEmpty()) {
             if (validators_.isEmpty()) {
               validators_ = other.validators_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureValidatorsIsMutable();
               validators_.addAll(other.validators_);
@@ -1264,7 +1389,7 @@ public final class Query {
               validatorsBuilder_.dispose();
               validatorsBuilder_ = null;
               validators_ = other.validators_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               validatorsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getValidatorsFieldBuilder() : null;
@@ -1276,14 +1401,17 @@ public final class Query {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1305,13 +1433,17 @@ public final class Query {
 
       private long blockHeight_ ;
       /**
-       * <code>optional int64 block_height = 1;</code>
+       * <code>int64 block_height = 1;</code>
+       * @return The blockHeight.
        */
+      @java.lang.Override
       public long getBlockHeight() {
         return blockHeight_;
       }
       /**
-       * <code>optional int64 block_height = 1;</code>
+       * <code>int64 block_height = 1;</code>
+       * @param value The blockHeight to set.
+       * @return This builder for chaining.
        */
       public Builder setBlockHeight(long value) {
         
@@ -1320,7 +1452,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional int64 block_height = 1;</code>
+       * <code>int64 block_height = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBlockHeight() {
         
@@ -1332,9 +1465,9 @@ public final class Query {
       private java.util.List<cosmos.base.tendermint.v1beta1.Query.Validator> validators_ =
         java.util.Collections.emptyList();
       private void ensureValidatorsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           validators_ = new java.util.ArrayList<cosmos.base.tendermint.v1beta1.Query.Validator>(validators_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1484,7 +1617,7 @@ public final class Query {
       public Builder clearValidators() {
         if (validatorsBuilder_ == null) {
           validators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           validatorsBuilder_.clear();
@@ -1561,7 +1694,7 @@ public final class Query {
           validatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.tendermint.v1beta1.Query.Validator, cosmos.base.tendermint.v1beta1.Query.Validator.Builder, cosmos.base.tendermint.v1beta1.Query.ValidatorOrBuilder>(
                   validators_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           validators_ = null;
@@ -1569,7 +1702,7 @@ public final class Query {
         return validatorsBuilder_;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
       /**
@@ -1577,7 +1710,8 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -1587,7 +1721,8 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
         if (paginationBuilder_ == null) {
@@ -1601,7 +1736,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -1621,7 +1756,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
@@ -1639,7 +1774,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -1661,7 +1796,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -1679,7 +1814,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
         
@@ -1691,7 +1826,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -1706,7 +1841,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
@@ -1721,14 +1856,16 @@ public final class Query {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1747,11 +1884,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetValidatorSetByHeightResponse>
         PARSER = new com.google.protobuf.AbstractParser<GetValidatorSetByHeightResponse>() {
+      @java.lang.Override
       public GetValidatorSetByHeightResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetValidatorSetByHeightResponse(input, extensionRegistry);
+        return new GetValidatorSetByHeightResponse(input, extensionRegistry);
       }
     };
 
@@ -1764,6 +1902,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1779,7 +1918,8 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -1787,7 +1927,8 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
@@ -1795,7 +1936,7 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
   }
@@ -1806,10 +1947,11 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetLatestValidatorSetRequest}
    */
-  public  static final class GetLatestValidatorSetRequest extends
+  public static final class GetLatestValidatorSetRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetLatestValidatorSetRequest)
       GetLatestValidatorSetRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetLatestValidatorSetRequest.newBuilder() to construct.
     private GetLatestValidatorSetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1818,16 +1960,27 @@ public final class Query {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetLatestValidatorSetRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetLatestValidatorSetRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1836,12 +1989,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmos.base.query.v1beta1.Pagination.PageRequest.Builder subBuilder = null;
               if (pagination_ != null) {
@@ -1855,6 +2002,13 @@ public final class Query {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1863,6 +2017,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1871,6 +2026,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestValidatorSetRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestValidatorSetRequest_fieldAccessorTable
@@ -1885,8 +2041,10 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -1895,8 +2053,10 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
     }
@@ -1905,13 +2065,15 @@ public final class Query {
      * pagination defines an pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1921,13 +2083,16 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pagination_ != null) {
         output.writeMessage(1, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1937,11 +2102,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1952,13 +2117,13 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest other = (cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest) obj;
 
-      boolean result = true;
-      result = result && (hasPagination() == other.hasPagination());
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1967,7 +2132,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasPagination()) {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
@@ -1977,6 +2142,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2036,6 +2212,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2043,6 +2220,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2070,6 +2248,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestValidatorSetRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestValidatorSetRequest_fieldAccessorTable
@@ -2092,6 +2271,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (paginationBuilder_ == null) {
@@ -2103,15 +2283,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestValidatorSetRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest build() {
         cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -2120,6 +2303,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest result = new cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest(this);
         if (paginationBuilder_ == null) {
@@ -2131,32 +2315,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest)other);
@@ -2171,14 +2362,17 @@ public final class Query {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2197,7 +2391,7 @@ public final class Query {
         return this;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
       /**
@@ -2205,7 +2399,8 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -2215,7 +2410,8 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
         if (paginationBuilder_ == null) {
@@ -2229,7 +2425,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -2249,7 +2445,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
@@ -2267,7 +2463,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -2289,7 +2485,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -2307,7 +2503,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
         
@@ -2319,7 +2515,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -2334,7 +2530,7 @@ public final class Query {
        * pagination defines an pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
@@ -2349,14 +2545,16 @@ public final class Query {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2375,11 +2573,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetLatestValidatorSetRequest>
         PARSER = new com.google.protobuf.AbstractParser<GetLatestValidatorSetRequest>() {
+      @java.lang.Override
       public GetLatestValidatorSetRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetLatestValidatorSetRequest(input, extensionRegistry);
+        return new GetLatestValidatorSetRequest(input, extensionRegistry);
       }
     };
 
@@ -2392,6 +2591,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2403,7 +2603,8 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int64 block_height = 1;</code>
+     * <code>int64 block_height = 1;</code>
+     * @return The blockHeight.
      */
     long getBlockHeight();
 
@@ -2436,7 +2637,8 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -2444,7 +2646,8 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
@@ -2452,7 +2655,7 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
   }
@@ -2463,30 +2666,42 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetLatestValidatorSetResponse}
    */
-  public  static final class GetLatestValidatorSetResponse extends
+  public static final class GetLatestValidatorSetResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetLatestValidatorSetResponse)
       GetLatestValidatorSetResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetLatestValidatorSetResponse.newBuilder() to construct.
     private GetLatestValidatorSetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private GetLatestValidatorSetResponse() {
-      blockHeight_ = 0L;
       validators_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetLatestValidatorSetResponse();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetLatestValidatorSetResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2495,21 +2710,15 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               blockHeight_ = input.readInt64();
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 validators_ = new java.util.ArrayList<cosmos.base.tendermint.v1beta1.Query.Validator>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               validators_.add(
                   input.readMessage(cosmos.base.tendermint.v1beta1.Query.Validator.parser(), extensionRegistry));
@@ -2528,6 +2737,13 @@ public final class Query {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2536,9 +2752,10 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           validators_ = java.util.Collections.unmodifiableList(validators_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2547,6 +2764,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestValidatorSetResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestValidatorSetResponse_fieldAccessorTable
@@ -2554,12 +2772,13 @@ public final class Query {
               cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse.class, cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int BLOCK_HEIGHT_FIELD_NUMBER = 1;
     private long blockHeight_;
     /**
-     * <code>optional int64 block_height = 1;</code>
+     * <code>int64 block_height = 1;</code>
+     * @return The blockHeight.
      */
+    @java.lang.Override
     public long getBlockHeight() {
       return blockHeight_;
     }
@@ -2569,12 +2788,14 @@ public final class Query {
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Validator validators = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.tendermint.v1beta1.Query.Validator> getValidatorsList() {
       return validators_;
     }
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Validator validators = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.tendermint.v1beta1.Query.ValidatorOrBuilder> 
         getValidatorsOrBuilderList() {
       return validators_;
@@ -2582,18 +2803,21 @@ public final class Query {
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Validator validators = 2;</code>
      */
+    @java.lang.Override
     public int getValidatorsCount() {
       return validators_.size();
     }
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Validator validators = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.Validator getValidators(int index) {
       return validators_.get(index);
     }
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Validator validators = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.ValidatorOrBuilder getValidatorsOrBuilder(
         int index) {
       return validators_.get(index);
@@ -2606,8 +2830,10 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -2616,8 +2842,10 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
@@ -2626,13 +2854,15 @@ public final class Query {
      * pagination defines an pagination for the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2642,6 +2872,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (blockHeight_ != 0L) {
@@ -2653,8 +2884,10 @@ public final class Query {
       if (pagination_ != null) {
         output.writeMessage(3, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2672,11 +2905,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2687,17 +2920,17 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse other = (cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse) obj;
 
-      boolean result = true;
-      result = result && (getBlockHeight()
-          == other.getBlockHeight());
-      result = result && getValidatorsList()
-          .equals(other.getValidatorsList());
-      result = result && (hasPagination() == other.hasPagination());
+      if (getBlockHeight()
+          != other.getBlockHeight()) return false;
+      if (!getValidatorsList()
+          .equals(other.getValidatorsList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2706,7 +2939,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BLOCK_HEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBlockHeight());
@@ -2723,6 +2956,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2782,6 +3026,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2789,6 +3034,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2816,6 +3062,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestValidatorSetResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestValidatorSetResponse_fieldAccessorTable
@@ -2839,13 +3086,14 @@ public final class Query {
           getValidatorsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         blockHeight_ = 0L;
 
         if (validatorsBuilder_ == null) {
           validators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           validatorsBuilder_.clear();
         }
@@ -2858,15 +3106,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestValidatorSetResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse build() {
         cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -2875,15 +3126,15 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse result = new cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.blockHeight_ = blockHeight_;
         if (validatorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             validators_ = java.util.Collections.unmodifiableList(validators_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.validators_ = validators_;
         } else {
@@ -2894,37 +3145,43 @@ public final class Query {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse)other);
@@ -2943,7 +3200,7 @@ public final class Query {
           if (!other.validators_.isEmpty()) {
             if (validators_.isEmpty()) {
               validators_ = other.validators_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureValidatorsIsMutable();
               validators_.addAll(other.validators_);
@@ -2956,7 +3213,7 @@ public final class Query {
               validatorsBuilder_.dispose();
               validatorsBuilder_ = null;
               validators_ = other.validators_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               validatorsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getValidatorsFieldBuilder() : null;
@@ -2968,14 +3225,17 @@ public final class Query {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2997,13 +3257,17 @@ public final class Query {
 
       private long blockHeight_ ;
       /**
-       * <code>optional int64 block_height = 1;</code>
+       * <code>int64 block_height = 1;</code>
+       * @return The blockHeight.
        */
+      @java.lang.Override
       public long getBlockHeight() {
         return blockHeight_;
       }
       /**
-       * <code>optional int64 block_height = 1;</code>
+       * <code>int64 block_height = 1;</code>
+       * @param value The blockHeight to set.
+       * @return This builder for chaining.
        */
       public Builder setBlockHeight(long value) {
         
@@ -3012,7 +3276,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional int64 block_height = 1;</code>
+       * <code>int64 block_height = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBlockHeight() {
         
@@ -3024,9 +3289,9 @@ public final class Query {
       private java.util.List<cosmos.base.tendermint.v1beta1.Query.Validator> validators_ =
         java.util.Collections.emptyList();
       private void ensureValidatorsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           validators_ = new java.util.ArrayList<cosmos.base.tendermint.v1beta1.Query.Validator>(validators_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -3176,7 +3441,7 @@ public final class Query {
       public Builder clearValidators() {
         if (validatorsBuilder_ == null) {
           validators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           validatorsBuilder_.clear();
@@ -3253,7 +3518,7 @@ public final class Query {
           validatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.tendermint.v1beta1.Query.Validator, cosmos.base.tendermint.v1beta1.Query.Validator.Builder, cosmos.base.tendermint.v1beta1.Query.ValidatorOrBuilder>(
                   validators_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           validators_ = null;
@@ -3261,7 +3526,7 @@ public final class Query {
         return validatorsBuilder_;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
       /**
@@ -3269,7 +3534,8 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -3279,7 +3545,8 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
         if (paginationBuilder_ == null) {
@@ -3293,7 +3560,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -3313,7 +3580,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
@@ -3331,7 +3598,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -3353,7 +3620,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -3371,7 +3638,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
         
@@ -3383,7 +3650,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -3398,7 +3665,7 @@ public final class Query {
        * pagination defines an pagination for the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
@@ -3413,14 +3680,16 @@ public final class Query {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3439,11 +3708,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetLatestValidatorSetResponse>
         PARSER = new com.google.protobuf.AbstractParser<GetLatestValidatorSetResponse>() {
+      @java.lang.Override
       public GetLatestValidatorSetResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetLatestValidatorSetResponse(input, extensionRegistry);
+        return new GetLatestValidatorSetResponse(input, extensionRegistry);
       }
     };
 
@@ -3456,6 +3726,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3467,35 +3738,41 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
 
     /**
-     * <code>optional .google.protobuf.Any pub_key = 2;</code>
+     * <code>.google.protobuf.Any pub_key = 2;</code>
+     * @return Whether the pubKey field is set.
      */
     boolean hasPubKey();
     /**
-     * <code>optional .google.protobuf.Any pub_key = 2;</code>
+     * <code>.google.protobuf.Any pub_key = 2;</code>
+     * @return The pubKey.
      */
     com.google.protobuf.Any getPubKey();
     /**
-     * <code>optional .google.protobuf.Any pub_key = 2;</code>
+     * <code>.google.protobuf.Any pub_key = 2;</code>
      */
     com.google.protobuf.AnyOrBuilder getPubKeyOrBuilder();
 
     /**
-     * <code>optional int64 voting_power = 3;</code>
+     * <code>int64 voting_power = 3;</code>
+     * @return The votingPower.
      */
     long getVotingPower();
 
     /**
-     * <code>optional int64 proposer_priority = 4;</code>
+     * <code>int64 proposer_priority = 4;</code>
+     * @return The proposerPriority.
      */
     long getProposerPriority();
   }
@@ -3506,31 +3783,41 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.Validator}
    */
-  public  static final class Validator extends
+  public static final class Validator extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.Validator)
       ValidatorOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Validator.newBuilder() to construct.
     private Validator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Validator() {
       address_ = "";
-      votingPower_ = 0L;
-      proposerPriority_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Validator();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Validator(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3539,12 +3826,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -3574,6 +3855,13 @@ public final class Query {
               proposerPriority_ = input.readInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3582,6 +3870,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3590,6 +3879,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_Validator_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_Validator_fieldAccessorTable
@@ -3600,8 +3890,10 @@ public final class Query {
     public static final int ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object address_;
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -3615,8 +3907,10 @@ public final class Query {
       }
     }
     /**
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -3634,20 +3928,25 @@ public final class Query {
     public static final int PUB_KEY_FIELD_NUMBER = 2;
     private com.google.protobuf.Any pubKey_;
     /**
-     * <code>optional .google.protobuf.Any pub_key = 2;</code>
+     * <code>.google.protobuf.Any pub_key = 2;</code>
+     * @return Whether the pubKey field is set.
      */
+    @java.lang.Override
     public boolean hasPubKey() {
       return pubKey_ != null;
     }
     /**
-     * <code>optional .google.protobuf.Any pub_key = 2;</code>
+     * <code>.google.protobuf.Any pub_key = 2;</code>
+     * @return The pubKey.
      */
+    @java.lang.Override
     public com.google.protobuf.Any getPubKey() {
       return pubKey_ == null ? com.google.protobuf.Any.getDefaultInstance() : pubKey_;
     }
     /**
-     * <code>optional .google.protobuf.Any pub_key = 2;</code>
+     * <code>.google.protobuf.Any pub_key = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getPubKeyOrBuilder() {
       return getPubKey();
     }
@@ -3655,8 +3954,10 @@ public final class Query {
     public static final int VOTING_POWER_FIELD_NUMBER = 3;
     private long votingPower_;
     /**
-     * <code>optional int64 voting_power = 3;</code>
+     * <code>int64 voting_power = 3;</code>
+     * @return The votingPower.
      */
+    @java.lang.Override
     public long getVotingPower() {
       return votingPower_;
     }
@@ -3664,13 +3965,16 @@ public final class Query {
     public static final int PROPOSER_PRIORITY_FIELD_NUMBER = 4;
     private long proposerPriority_;
     /**
-     * <code>optional int64 proposer_priority = 4;</code>
+     * <code>int64 proposer_priority = 4;</code>
+     * @return The proposerPriority.
      */
+    @java.lang.Override
     public long getProposerPriority() {
       return proposerPriority_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3680,6 +3984,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -3694,8 +3999,10 @@ public final class Query {
       if (proposerPriority_ != 0L) {
         output.writeInt64(4, proposerPriority_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3716,11 +4023,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, proposerPriority_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3731,19 +4038,19 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.Validator other = (cosmos.base.tendermint.v1beta1.Query.Validator) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && (hasPubKey() == other.hasPubKey());
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (hasPubKey() != other.hasPubKey()) return false;
       if (hasPubKey()) {
-        result = result && getPubKey()
-            .equals(other.getPubKey());
+        if (!getPubKey()
+            .equals(other.getPubKey())) return false;
       }
-      result = result && (getVotingPower()
-          == other.getVotingPower());
-      result = result && (getProposerPriority()
-          == other.getProposerPriority());
-      return result;
+      if (getVotingPower()
+          != other.getVotingPower()) return false;
+      if (getProposerPriority()
+          != other.getProposerPriority()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3752,7 +4059,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       if (hasPubKey()) {
@@ -3770,6 +4077,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.Validator parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.Validator parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.Validator parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3829,6 +4147,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3836,6 +4155,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.Validator prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3863,6 +4183,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_Validator_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_Validator_fieldAccessorTable
@@ -3885,6 +4206,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -3902,15 +4224,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_Validator_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.Validator getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.Validator.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.Validator build() {
         cosmos.base.tendermint.v1beta1.Query.Validator result = buildPartial();
         if (!result.isInitialized()) {
@@ -3919,6 +4244,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.Validator buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.Validator result = new cosmos.base.tendermint.v1beta1.Query.Validator(this);
         result.address_ = address_;
@@ -3933,32 +4259,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.Validator) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.Validator)other);
@@ -3983,14 +4316,17 @@ public final class Query {
         if (other.getProposerPriority() != 0L) {
           setProposerPriority(other.getProposerPriority());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4011,7 +4347,8 @@ public final class Query {
 
       private java.lang.Object address_ = "";
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -4026,7 +4363,8 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -4042,7 +4380,9 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -4055,7 +4395,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -4064,7 +4405,9 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -4078,17 +4421,19 @@ public final class Query {
         return this;
       }
 
-      private com.google.protobuf.Any pubKey_ = null;
+      private com.google.protobuf.Any pubKey_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> pubKeyBuilder_;
       /**
-       * <code>optional .google.protobuf.Any pub_key = 2;</code>
+       * <code>.google.protobuf.Any pub_key = 2;</code>
+       * @return Whether the pubKey field is set.
        */
       public boolean hasPubKey() {
         return pubKeyBuilder_ != null || pubKey_ != null;
       }
       /**
-       * <code>optional .google.protobuf.Any pub_key = 2;</code>
+       * <code>.google.protobuf.Any pub_key = 2;</code>
+       * @return The pubKey.
        */
       public com.google.protobuf.Any getPubKey() {
         if (pubKeyBuilder_ == null) {
@@ -4098,7 +4443,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .google.protobuf.Any pub_key = 2;</code>
+       * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       public Builder setPubKey(com.google.protobuf.Any value) {
         if (pubKeyBuilder_ == null) {
@@ -4114,7 +4459,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any pub_key = 2;</code>
+       * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       public Builder setPubKey(
           com.google.protobuf.Any.Builder builderForValue) {
@@ -4128,7 +4473,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any pub_key = 2;</code>
+       * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       public Builder mergePubKey(com.google.protobuf.Any value) {
         if (pubKeyBuilder_ == null) {
@@ -4146,7 +4491,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any pub_key = 2;</code>
+       * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       public Builder clearPubKey() {
         if (pubKeyBuilder_ == null) {
@@ -4160,7 +4505,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any pub_key = 2;</code>
+       * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       public com.google.protobuf.Any.Builder getPubKeyBuilder() {
         
@@ -4168,7 +4513,7 @@ public final class Query {
         return getPubKeyFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Any pub_key = 2;</code>
+       * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       public com.google.protobuf.AnyOrBuilder getPubKeyOrBuilder() {
         if (pubKeyBuilder_ != null) {
@@ -4179,7 +4524,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .google.protobuf.Any pub_key = 2;</code>
+       * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
@@ -4197,13 +4542,17 @@ public final class Query {
 
       private long votingPower_ ;
       /**
-       * <code>optional int64 voting_power = 3;</code>
+       * <code>int64 voting_power = 3;</code>
+       * @return The votingPower.
        */
+      @java.lang.Override
       public long getVotingPower() {
         return votingPower_;
       }
       /**
-       * <code>optional int64 voting_power = 3;</code>
+       * <code>int64 voting_power = 3;</code>
+       * @param value The votingPower to set.
+       * @return This builder for chaining.
        */
       public Builder setVotingPower(long value) {
         
@@ -4212,7 +4561,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional int64 voting_power = 3;</code>
+       * <code>int64 voting_power = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVotingPower() {
         
@@ -4223,13 +4573,17 @@ public final class Query {
 
       private long proposerPriority_ ;
       /**
-       * <code>optional int64 proposer_priority = 4;</code>
+       * <code>int64 proposer_priority = 4;</code>
+       * @return The proposerPriority.
        */
+      @java.lang.Override
       public long getProposerPriority() {
         return proposerPriority_;
       }
       /**
-       * <code>optional int64 proposer_priority = 4;</code>
+       * <code>int64 proposer_priority = 4;</code>
+       * @param value The proposerPriority to set.
+       * @return This builder for chaining.
        */
       public Builder setProposerPriority(long value) {
         
@@ -4238,7 +4592,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional int64 proposer_priority = 4;</code>
+       * <code>int64 proposer_priority = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearProposerPriority() {
         
@@ -4246,14 +4601,16 @@ public final class Query {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4272,11 +4629,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<Validator>
         PARSER = new com.google.protobuf.AbstractParser<Validator>() {
+      @java.lang.Override
       public Validator parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Validator(input, extensionRegistry);
+        return new Validator(input, extensionRegistry);
       }
     };
 
@@ -4289,6 +4647,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.Validator getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4300,7 +4659,8 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int64 height = 1;</code>
+     * <code>int64 height = 1;</code>
+     * @return The height.
      */
     long getHeight();
   }
@@ -4311,29 +4671,40 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetBlockByHeightRequest}
    */
-  public  static final class GetBlockByHeightRequest extends
+  public static final class GetBlockByHeightRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetBlockByHeightRequest)
       GetBlockByHeightRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetBlockByHeightRequest.newBuilder() to construct.
     private GetBlockByHeightRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private GetBlockByHeightRequest() {
-      height_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetBlockByHeightRequest();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetBlockByHeightRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4342,15 +4713,16 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               height_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -4361,6 +4733,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4369,6 +4742,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightRequest_fieldAccessorTable
@@ -4379,13 +4753,16 @@ public final class Query {
     public static final int HEIGHT_FIELD_NUMBER = 1;
     private long height_;
     /**
-     * <code>optional int64 height = 1;</code>
+     * <code>int64 height = 1;</code>
+     * @return The height.
      */
+    @java.lang.Override
     public long getHeight() {
       return height_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4395,13 +4772,16 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (height_ != 0L) {
         output.writeInt64(1, height_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4411,11 +4791,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, height_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4426,10 +4806,10 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest other = (cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest) obj;
 
-      boolean result = true;
-      result = result && (getHeight()
-          == other.getHeight());
-      return result;
+      if (getHeight()
+          != other.getHeight()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4438,7 +4818,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getHeight());
@@ -4447,6 +4827,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4506,6 +4897,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4513,6 +4905,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4540,6 +4933,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightRequest_fieldAccessorTable
@@ -4562,6 +4956,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         height_ = 0L;
@@ -4569,15 +4964,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest build() {
         cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -4586,6 +4984,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest result = new cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest(this);
         result.height_ = height_;
@@ -4593,32 +4992,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest)other);
@@ -4633,14 +5039,17 @@ public final class Query {
         if (other.getHeight() != 0L) {
           setHeight(other.getHeight());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4661,13 +5070,17 @@ public final class Query {
 
       private long height_ ;
       /**
-       * <code>optional int64 height = 1;</code>
+       * <code>int64 height = 1;</code>
+       * @return The height.
        */
+      @java.lang.Override
       public long getHeight() {
         return height_;
       }
       /**
-       * <code>optional int64 height = 1;</code>
+       * <code>int64 height = 1;</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
        */
       public Builder setHeight(long value) {
         
@@ -4676,7 +5089,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional int64 height = 1;</code>
+       * <code>int64 height = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHeight() {
         
@@ -4684,14 +5098,16 @@ public final class Query {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4710,11 +5126,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetBlockByHeightRequest>
         PARSER = new com.google.protobuf.AbstractParser<GetBlockByHeightRequest>() {
+      @java.lang.Override
       public GetBlockByHeightRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetBlockByHeightRequest(input, extensionRegistry);
+        return new GetBlockByHeightRequest(input, extensionRegistry);
       }
     };
 
@@ -4727,6 +5144,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4738,28 +5156,32 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
+     * @return Whether the blockId field is set.
      */
     boolean hasBlockId();
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
+     * @return The blockId.
      */
     tendermint.types.Types.BlockID getBlockId();
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
      */
     tendermint.types.Types.BlockIDOrBuilder getBlockIdOrBuilder();
 
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
+     * @return Whether the block field is set.
      */
     boolean hasBlock();
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
+     * @return The block.
      */
     tendermint.types.BlockOuterClass.Block getBlock();
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
      */
     tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder();
   }
@@ -4770,10 +5192,11 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetBlockByHeightResponse}
    */
-  public  static final class GetBlockByHeightResponse extends
+  public static final class GetBlockByHeightResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetBlockByHeightResponse)
       GetBlockByHeightResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetBlockByHeightResponse.newBuilder() to construct.
     private GetBlockByHeightResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4782,16 +5205,27 @@ public final class Query {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetBlockByHeightResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetBlockByHeightResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4800,12 +5234,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               tendermint.types.Types.BlockID.Builder subBuilder = null;
               if (blockId_ != null) {
@@ -4832,6 +5260,13 @@ public final class Query {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4840,6 +5275,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4848,6 +5284,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightResponse_fieldAccessorTable
@@ -4858,20 +5295,25 @@ public final class Query {
     public static final int BLOCK_ID_FIELD_NUMBER = 1;
     private tendermint.types.Types.BlockID blockId_;
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
+     * @return Whether the blockId field is set.
      */
+    @java.lang.Override
     public boolean hasBlockId() {
       return blockId_ != null;
     }
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
+     * @return The blockId.
      */
+    @java.lang.Override
     public tendermint.types.Types.BlockID getBlockId() {
       return blockId_ == null ? tendermint.types.Types.BlockID.getDefaultInstance() : blockId_;
     }
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
      */
+    @java.lang.Override
     public tendermint.types.Types.BlockIDOrBuilder getBlockIdOrBuilder() {
       return getBlockId();
     }
@@ -4879,25 +5321,31 @@ public final class Query {
     public static final int BLOCK_FIELD_NUMBER = 2;
     private tendermint.types.BlockOuterClass.Block block_;
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
+     * @return Whether the block field is set.
      */
+    @java.lang.Override
     public boolean hasBlock() {
       return block_ != null;
     }
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
+     * @return The block.
      */
+    @java.lang.Override
     public tendermint.types.BlockOuterClass.Block getBlock() {
       return block_ == null ? tendermint.types.BlockOuterClass.Block.getDefaultInstance() : block_;
     }
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
      */
+    @java.lang.Override
     public tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder() {
       return getBlock();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4907,6 +5355,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (blockId_ != null) {
@@ -4915,8 +5364,10 @@ public final class Query {
       if (block_ != null) {
         output.writeMessage(2, getBlock());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4930,11 +5381,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getBlock());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4945,18 +5396,18 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse other = (cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse) obj;
 
-      boolean result = true;
-      result = result && (hasBlockId() == other.hasBlockId());
+      if (hasBlockId() != other.hasBlockId()) return false;
       if (hasBlockId()) {
-        result = result && getBlockId()
-            .equals(other.getBlockId());
+        if (!getBlockId()
+            .equals(other.getBlockId())) return false;
       }
-      result = result && (hasBlock() == other.hasBlock());
+      if (hasBlock() != other.hasBlock()) return false;
       if (hasBlock()) {
-        result = result && getBlock()
-            .equals(other.getBlock());
+        if (!getBlock()
+            .equals(other.getBlock())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4965,7 +5416,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasBlockId()) {
         hash = (37 * hash) + BLOCK_ID_FIELD_NUMBER;
         hash = (53 * hash) + getBlockId().hashCode();
@@ -4979,6 +5430,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5038,6 +5500,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5045,6 +5508,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5072,6 +5536,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightResponse_fieldAccessorTable
@@ -5094,6 +5559,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (blockIdBuilder_ == null) {
@@ -5111,15 +5577,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse build() {
         cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -5128,6 +5597,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse result = new cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse(this);
         if (blockIdBuilder_ == null) {
@@ -5144,32 +5614,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse)other);
@@ -5187,14 +5664,17 @@ public final class Query {
         if (other.hasBlock()) {
           mergeBlock(other.getBlock());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5213,17 +5693,19 @@ public final class Query {
         return this;
       }
 
-      private tendermint.types.Types.BlockID blockId_ = null;
+      private tendermint.types.Types.BlockID blockId_;
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Types.BlockID, tendermint.types.Types.BlockID.Builder, tendermint.types.Types.BlockIDOrBuilder> blockIdBuilder_;
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
+       * @return Whether the blockId field is set.
        */
       public boolean hasBlockId() {
         return blockIdBuilder_ != null || blockId_ != null;
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
+       * @return The blockId.
        */
       public tendermint.types.Types.BlockID getBlockId() {
         if (blockIdBuilder_ == null) {
@@ -5233,7 +5715,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public Builder setBlockId(tendermint.types.Types.BlockID value) {
         if (blockIdBuilder_ == null) {
@@ -5249,7 +5731,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public Builder setBlockId(
           tendermint.types.Types.BlockID.Builder builderForValue) {
@@ -5263,7 +5745,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public Builder mergeBlockId(tendermint.types.Types.BlockID value) {
         if (blockIdBuilder_ == null) {
@@ -5281,7 +5763,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public Builder clearBlockId() {
         if (blockIdBuilder_ == null) {
@@ -5295,7 +5777,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public tendermint.types.Types.BlockID.Builder getBlockIdBuilder() {
         
@@ -5303,7 +5785,7 @@ public final class Query {
         return getBlockIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public tendermint.types.Types.BlockIDOrBuilder getBlockIdOrBuilder() {
         if (blockIdBuilder_ != null) {
@@ -5314,7 +5796,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Types.BlockID, tendermint.types.Types.BlockID.Builder, tendermint.types.Types.BlockIDOrBuilder> 
@@ -5330,17 +5812,19 @@ public final class Query {
         return blockIdBuilder_;
       }
 
-      private tendermint.types.BlockOuterClass.Block block_ = null;
+      private tendermint.types.BlockOuterClass.Block block_;
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.BlockOuterClass.Block, tendermint.types.BlockOuterClass.Block.Builder, tendermint.types.BlockOuterClass.BlockOrBuilder> blockBuilder_;
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
+       * @return Whether the block field is set.
        */
       public boolean hasBlock() {
         return blockBuilder_ != null || block_ != null;
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
+       * @return The block.
        */
       public tendermint.types.BlockOuterClass.Block getBlock() {
         if (blockBuilder_ == null) {
@@ -5350,7 +5834,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder setBlock(tendermint.types.BlockOuterClass.Block value) {
         if (blockBuilder_ == null) {
@@ -5366,7 +5850,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder setBlock(
           tendermint.types.BlockOuterClass.Block.Builder builderForValue) {
@@ -5380,7 +5864,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder mergeBlock(tendermint.types.BlockOuterClass.Block value) {
         if (blockBuilder_ == null) {
@@ -5398,7 +5882,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder clearBlock() {
         if (blockBuilder_ == null) {
@@ -5412,7 +5896,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public tendermint.types.BlockOuterClass.Block.Builder getBlockBuilder() {
         
@@ -5420,7 +5904,7 @@ public final class Query {
         return getBlockFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder() {
         if (blockBuilder_ != null) {
@@ -5431,7 +5915,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.BlockOuterClass.Block, tendermint.types.BlockOuterClass.Block.Builder, tendermint.types.BlockOuterClass.BlockOrBuilder> 
@@ -5446,14 +5930,16 @@ public final class Query {
         }
         return blockBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5472,11 +5958,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetBlockByHeightResponse>
         PARSER = new com.google.protobuf.AbstractParser<GetBlockByHeightResponse>() {
+      @java.lang.Override
       public GetBlockByHeightResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetBlockByHeightResponse(input, extensionRegistry);
+        return new GetBlockByHeightResponse(input, extensionRegistry);
       }
     };
 
@@ -5489,6 +5976,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetBlockByHeightResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5506,10 +5994,11 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetLatestBlockRequest}
    */
-  public  static final class GetLatestBlockRequest extends
+  public static final class GetLatestBlockRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetLatestBlockRequest)
       GetLatestBlockRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetLatestBlockRequest.newBuilder() to construct.
     private GetLatestBlockRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5518,15 +6007,27 @@ public final class Query {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetLatestBlockRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetLatestBlockRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5536,7 +6037,8 @@ public final class Query {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -5549,6 +6051,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5557,6 +6060,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockRequest_fieldAccessorTable
@@ -5565,6 +6069,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5574,20 +6079,23 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5598,8 +6106,8 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest other = (cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5608,12 +6116,23 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5673,6 +6192,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5680,6 +6200,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5707,6 +6228,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockRequest_fieldAccessorTable
@@ -5729,20 +6251,24 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest build() {
         cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -5751,38 +6277,46 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest result = new cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest)other);
@@ -5794,14 +6328,17 @@ public final class Query {
 
       public Builder mergeFrom(cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest other) {
         if (other == cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5819,14 +6356,16 @@ public final class Query {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5845,11 +6384,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetLatestBlockRequest>
         PARSER = new com.google.protobuf.AbstractParser<GetLatestBlockRequest>() {
+      @java.lang.Override
       public GetLatestBlockRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetLatestBlockRequest(input, extensionRegistry);
+        return new GetLatestBlockRequest(input, extensionRegistry);
       }
     };
 
@@ -5862,6 +6402,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetLatestBlockRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5873,28 +6414,32 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
+     * @return Whether the blockId field is set.
      */
     boolean hasBlockId();
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
+     * @return The blockId.
      */
     tendermint.types.Types.BlockID getBlockId();
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
      */
     tendermint.types.Types.BlockIDOrBuilder getBlockIdOrBuilder();
 
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
+     * @return Whether the block field is set.
      */
     boolean hasBlock();
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
+     * @return The block.
      */
     tendermint.types.BlockOuterClass.Block getBlock();
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
      */
     tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder();
   }
@@ -5905,10 +6450,11 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetLatestBlockResponse}
    */
-  public  static final class GetLatestBlockResponse extends
+  public static final class GetLatestBlockResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetLatestBlockResponse)
       GetLatestBlockResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetLatestBlockResponse.newBuilder() to construct.
     private GetLatestBlockResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5917,16 +6463,27 @@ public final class Query {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetLatestBlockResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetLatestBlockResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5935,12 +6492,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               tendermint.types.Types.BlockID.Builder subBuilder = null;
               if (blockId_ != null) {
@@ -5967,6 +6518,13 @@ public final class Query {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5975,6 +6533,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5983,6 +6542,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockResponse_fieldAccessorTable
@@ -5993,20 +6553,25 @@ public final class Query {
     public static final int BLOCK_ID_FIELD_NUMBER = 1;
     private tendermint.types.Types.BlockID blockId_;
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
+     * @return Whether the blockId field is set.
      */
+    @java.lang.Override
     public boolean hasBlockId() {
       return blockId_ != null;
     }
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
+     * @return The blockId.
      */
+    @java.lang.Override
     public tendermint.types.Types.BlockID getBlockId() {
       return blockId_ == null ? tendermint.types.Types.BlockID.getDefaultInstance() : blockId_;
     }
     /**
-     * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+     * <code>.tendermint.types.BlockID block_id = 1;</code>
      */
+    @java.lang.Override
     public tendermint.types.Types.BlockIDOrBuilder getBlockIdOrBuilder() {
       return getBlockId();
     }
@@ -6014,25 +6579,31 @@ public final class Query {
     public static final int BLOCK_FIELD_NUMBER = 2;
     private tendermint.types.BlockOuterClass.Block block_;
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
+     * @return Whether the block field is set.
      */
+    @java.lang.Override
     public boolean hasBlock() {
       return block_ != null;
     }
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
+     * @return The block.
      */
+    @java.lang.Override
     public tendermint.types.BlockOuterClass.Block getBlock() {
       return block_ == null ? tendermint.types.BlockOuterClass.Block.getDefaultInstance() : block_;
     }
     /**
-     * <code>optional .tendermint.types.Block block = 2;</code>
+     * <code>.tendermint.types.Block block = 2;</code>
      */
+    @java.lang.Override
     public tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder() {
       return getBlock();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6042,6 +6613,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (blockId_ != null) {
@@ -6050,8 +6622,10 @@ public final class Query {
       if (block_ != null) {
         output.writeMessage(2, getBlock());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6065,11 +6639,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getBlock());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6080,18 +6654,18 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse other = (cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse) obj;
 
-      boolean result = true;
-      result = result && (hasBlockId() == other.hasBlockId());
+      if (hasBlockId() != other.hasBlockId()) return false;
       if (hasBlockId()) {
-        result = result && getBlockId()
-            .equals(other.getBlockId());
+        if (!getBlockId()
+            .equals(other.getBlockId())) return false;
       }
-      result = result && (hasBlock() == other.hasBlock());
+      if (hasBlock() != other.hasBlock()) return false;
       if (hasBlock()) {
-        result = result && getBlock()
-            .equals(other.getBlock());
+        if (!getBlock()
+            .equals(other.getBlock())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6100,7 +6674,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasBlockId()) {
         hash = (37 * hash) + BLOCK_ID_FIELD_NUMBER;
         hash = (53 * hash) + getBlockId().hashCode();
@@ -6114,6 +6688,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6173,6 +6758,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6180,6 +6766,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6207,6 +6794,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockResponse_fieldAccessorTable
@@ -6229,6 +6817,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (blockIdBuilder_ == null) {
@@ -6246,15 +6835,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse build() {
         cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -6263,6 +6855,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse result = new cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse(this);
         if (blockIdBuilder_ == null) {
@@ -6279,32 +6872,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse)other);
@@ -6322,14 +6922,17 @@ public final class Query {
         if (other.hasBlock()) {
           mergeBlock(other.getBlock());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6348,17 +6951,19 @@ public final class Query {
         return this;
       }
 
-      private tendermint.types.Types.BlockID blockId_ = null;
+      private tendermint.types.Types.BlockID blockId_;
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Types.BlockID, tendermint.types.Types.BlockID.Builder, tendermint.types.Types.BlockIDOrBuilder> blockIdBuilder_;
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
+       * @return Whether the blockId field is set.
        */
       public boolean hasBlockId() {
         return blockIdBuilder_ != null || blockId_ != null;
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
+       * @return The blockId.
        */
       public tendermint.types.Types.BlockID getBlockId() {
         if (blockIdBuilder_ == null) {
@@ -6368,7 +6973,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public Builder setBlockId(tendermint.types.Types.BlockID value) {
         if (blockIdBuilder_ == null) {
@@ -6384,7 +6989,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public Builder setBlockId(
           tendermint.types.Types.BlockID.Builder builderForValue) {
@@ -6398,7 +7003,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public Builder mergeBlockId(tendermint.types.Types.BlockID value) {
         if (blockIdBuilder_ == null) {
@@ -6416,7 +7021,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public Builder clearBlockId() {
         if (blockIdBuilder_ == null) {
@@ -6430,7 +7035,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public tendermint.types.Types.BlockID.Builder getBlockIdBuilder() {
         
@@ -6438,7 +7043,7 @@ public final class Query {
         return getBlockIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       public tendermint.types.Types.BlockIDOrBuilder getBlockIdOrBuilder() {
         if (blockIdBuilder_ != null) {
@@ -6449,7 +7054,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .tendermint.types.BlockID block_id = 1;</code>
+       * <code>.tendermint.types.BlockID block_id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Types.BlockID, tendermint.types.Types.BlockID.Builder, tendermint.types.Types.BlockIDOrBuilder> 
@@ -6465,17 +7070,19 @@ public final class Query {
         return blockIdBuilder_;
       }
 
-      private tendermint.types.BlockOuterClass.Block block_ = null;
+      private tendermint.types.BlockOuterClass.Block block_;
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.BlockOuterClass.Block, tendermint.types.BlockOuterClass.Block.Builder, tendermint.types.BlockOuterClass.BlockOrBuilder> blockBuilder_;
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
+       * @return Whether the block field is set.
        */
       public boolean hasBlock() {
         return blockBuilder_ != null || block_ != null;
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
+       * @return The block.
        */
       public tendermint.types.BlockOuterClass.Block getBlock() {
         if (blockBuilder_ == null) {
@@ -6485,7 +7092,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder setBlock(tendermint.types.BlockOuterClass.Block value) {
         if (blockBuilder_ == null) {
@@ -6501,7 +7108,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder setBlock(
           tendermint.types.BlockOuterClass.Block.Builder builderForValue) {
@@ -6515,7 +7122,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder mergeBlock(tendermint.types.BlockOuterClass.Block value) {
         if (blockBuilder_ == null) {
@@ -6533,7 +7140,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder clearBlock() {
         if (blockBuilder_ == null) {
@@ -6547,7 +7154,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public tendermint.types.BlockOuterClass.Block.Builder getBlockBuilder() {
         
@@ -6555,7 +7162,7 @@ public final class Query {
         return getBlockFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       public tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder() {
         if (blockBuilder_ != null) {
@@ -6566,7 +7173,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .tendermint.types.Block block = 2;</code>
+       * <code>.tendermint.types.Block block = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.BlockOuterClass.Block, tendermint.types.BlockOuterClass.Block.Builder, tendermint.types.BlockOuterClass.BlockOrBuilder> 
@@ -6581,14 +7188,16 @@ public final class Query {
         }
         return blockBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6607,11 +7216,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetLatestBlockResponse>
         PARSER = new com.google.protobuf.AbstractParser<GetLatestBlockResponse>() {
+      @java.lang.Override
       public GetLatestBlockResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetLatestBlockResponse(input, extensionRegistry);
+        return new GetLatestBlockResponse(input, extensionRegistry);
       }
     };
 
@@ -6624,6 +7234,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetLatestBlockResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6641,10 +7252,11 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetSyncingRequest}
    */
-  public  static final class GetSyncingRequest extends
+  public static final class GetSyncingRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetSyncingRequest)
       GetSyncingRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetSyncingRequest.newBuilder() to construct.
     private GetSyncingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6653,15 +7265,27 @@ public final class Query {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetSyncingRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetSyncingRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6671,7 +7295,8 @@ public final class Query {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -6684,6 +7309,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6692,6 +7318,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetSyncingRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetSyncingRequest_fieldAccessorTable
@@ -6700,6 +7327,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6709,20 +7337,23 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6733,8 +7364,8 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest other = (cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6743,12 +7374,23 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6808,6 +7450,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6815,6 +7458,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6842,6 +7486,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetSyncingRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetSyncingRequest_fieldAccessorTable
@@ -6864,20 +7509,24 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetSyncingRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest build() {
         cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -6886,38 +7535,46 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest result = new cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest)other);
@@ -6929,14 +7586,17 @@ public final class Query {
 
       public Builder mergeFrom(cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest other) {
         if (other == cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6954,14 +7614,16 @@ public final class Query {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6980,11 +7642,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetSyncingRequest>
         PARSER = new com.google.protobuf.AbstractParser<GetSyncingRequest>() {
+      @java.lang.Override
       public GetSyncingRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetSyncingRequest(input, extensionRegistry);
+        return new GetSyncingRequest(input, extensionRegistry);
       }
     };
 
@@ -6997,6 +7660,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetSyncingRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7008,7 +7672,8 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional bool syncing = 1;</code>
+     * <code>bool syncing = 1;</code>
+     * @return The syncing.
      */
     boolean getSyncing();
   }
@@ -7019,29 +7684,40 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetSyncingResponse}
    */
-  public  static final class GetSyncingResponse extends
+  public static final class GetSyncingResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetSyncingResponse)
       GetSyncingResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetSyncingResponse.newBuilder() to construct.
     private GetSyncingResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private GetSyncingResponse() {
-      syncing_ = false;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetSyncingResponse();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetSyncingResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7050,15 +7726,16 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               syncing_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -7069,6 +7746,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7077,6 +7755,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetSyncingResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetSyncingResponse_fieldAccessorTable
@@ -7087,13 +7766,16 @@ public final class Query {
     public static final int SYNCING_FIELD_NUMBER = 1;
     private boolean syncing_;
     /**
-     * <code>optional bool syncing = 1;</code>
+     * <code>bool syncing = 1;</code>
+     * @return The syncing.
      */
+    @java.lang.Override
     public boolean getSyncing() {
       return syncing_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7103,13 +7785,16 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (syncing_ != false) {
         output.writeBool(1, syncing_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7119,11 +7804,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, syncing_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7134,10 +7819,10 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse other = (cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse) obj;
 
-      boolean result = true;
-      result = result && (getSyncing()
-          == other.getSyncing());
-      return result;
+      if (getSyncing()
+          != other.getSyncing()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7146,7 +7831,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SYNCING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getSyncing());
@@ -7155,6 +7840,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7214,6 +7910,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7221,6 +7918,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7248,6 +7946,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetSyncingResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetSyncingResponse_fieldAccessorTable
@@ -7270,6 +7969,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         syncing_ = false;
@@ -7277,15 +7977,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetSyncingResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse build() {
         cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -7294,6 +7997,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse result = new cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse(this);
         result.syncing_ = syncing_;
@@ -7301,32 +8005,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse)other);
@@ -7341,14 +8052,17 @@ public final class Query {
         if (other.getSyncing() != false) {
           setSyncing(other.getSyncing());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7369,13 +8083,17 @@ public final class Query {
 
       private boolean syncing_ ;
       /**
-       * <code>optional bool syncing = 1;</code>
+       * <code>bool syncing = 1;</code>
+       * @return The syncing.
        */
+      @java.lang.Override
       public boolean getSyncing() {
         return syncing_;
       }
       /**
-       * <code>optional bool syncing = 1;</code>
+       * <code>bool syncing = 1;</code>
+       * @param value The syncing to set.
+       * @return This builder for chaining.
        */
       public Builder setSyncing(boolean value) {
         
@@ -7384,7 +8102,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional bool syncing = 1;</code>
+       * <code>bool syncing = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSyncing() {
         
@@ -7392,14 +8111,16 @@ public final class Query {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7418,11 +8139,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetSyncingResponse>
         PARSER = new com.google.protobuf.AbstractParser<GetSyncingResponse>() {
+      @java.lang.Override
       public GetSyncingResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetSyncingResponse(input, extensionRegistry);
+        return new GetSyncingResponse(input, extensionRegistry);
       }
     };
 
@@ -7435,6 +8157,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetSyncingResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7452,10 +8175,11 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetNodeInfoRequest}
    */
-  public  static final class GetNodeInfoRequest extends
+  public static final class GetNodeInfoRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetNodeInfoRequest)
       GetNodeInfoRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetNodeInfoRequest.newBuilder() to construct.
     private GetNodeInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7464,15 +8188,27 @@ public final class Query {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetNodeInfoRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetNodeInfoRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7482,7 +8218,8 @@ public final class Query {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -7495,6 +8232,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7503,6 +8241,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoRequest_fieldAccessorTable
@@ -7511,6 +8250,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7520,20 +8260,23 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7544,8 +8287,8 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest other = (cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7554,12 +8297,23 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7619,6 +8373,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7626,6 +8381,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7653,6 +8409,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoRequest_fieldAccessorTable
@@ -7675,20 +8432,24 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest build() {
         cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -7697,38 +8458,46 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest result = new cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest)other);
@@ -7740,14 +8509,17 @@ public final class Query {
 
       public Builder mergeFrom(cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest other) {
         if (other == cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7765,14 +8537,16 @@ public final class Query {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7791,11 +8565,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetNodeInfoRequest>
         PARSER = new com.google.protobuf.AbstractParser<GetNodeInfoRequest>() {
+      @java.lang.Override
       public GetNodeInfoRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetNodeInfoRequest(input, extensionRegistry);
+        return new GetNodeInfoRequest(input, extensionRegistry);
       }
     };
 
@@ -7808,6 +8583,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetNodeInfoRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7819,28 +8595,32 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * @return Whether the defaultNodeInfo field is set.
      */
     boolean hasDefaultNodeInfo();
     /**
-     * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * @return The defaultNodeInfo.
      */
     tendermint.p2p.Types.DefaultNodeInfo getDefaultNodeInfo();
     /**
-     * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
      */
     tendermint.p2p.Types.DefaultNodeInfoOrBuilder getDefaultNodeInfoOrBuilder();
 
     /**
-     * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+     * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+     * @return Whether the applicationVersion field is set.
      */
     boolean hasApplicationVersion();
     /**
-     * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+     * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+     * @return The applicationVersion.
      */
     cosmos.base.tendermint.v1beta1.Query.VersionInfo getApplicationVersion();
     /**
-     * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+     * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
      */
     cosmos.base.tendermint.v1beta1.Query.VersionInfoOrBuilder getApplicationVersionOrBuilder();
   }
@@ -7851,10 +8631,11 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetNodeInfoResponse}
    */
-  public  static final class GetNodeInfoResponse extends
+  public static final class GetNodeInfoResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.GetNodeInfoResponse)
       GetNodeInfoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetNodeInfoResponse.newBuilder() to construct.
     private GetNodeInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7863,16 +8644,27 @@ public final class Query {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetNodeInfoResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetNodeInfoResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7881,12 +8673,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               tendermint.p2p.Types.DefaultNodeInfo.Builder subBuilder = null;
               if (defaultNodeInfo_ != null) {
@@ -7913,6 +8699,13 @@ public final class Query {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7921,6 +8714,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7929,6 +8723,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoResponse_fieldAccessorTable
@@ -7939,20 +8734,25 @@ public final class Query {
     public static final int DEFAULT_NODE_INFO_FIELD_NUMBER = 1;
     private tendermint.p2p.Types.DefaultNodeInfo defaultNodeInfo_;
     /**
-     * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * @return Whether the defaultNodeInfo field is set.
      */
+    @java.lang.Override
     public boolean hasDefaultNodeInfo() {
       return defaultNodeInfo_ != null;
     }
     /**
-     * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * @return The defaultNodeInfo.
      */
+    @java.lang.Override
     public tendermint.p2p.Types.DefaultNodeInfo getDefaultNodeInfo() {
       return defaultNodeInfo_ == null ? tendermint.p2p.Types.DefaultNodeInfo.getDefaultInstance() : defaultNodeInfo_;
     }
     /**
-     * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
      */
+    @java.lang.Override
     public tendermint.p2p.Types.DefaultNodeInfoOrBuilder getDefaultNodeInfoOrBuilder() {
       return getDefaultNodeInfo();
     }
@@ -7960,25 +8760,31 @@ public final class Query {
     public static final int APPLICATION_VERSION_FIELD_NUMBER = 2;
     private cosmos.base.tendermint.v1beta1.Query.VersionInfo applicationVersion_;
     /**
-     * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+     * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+     * @return Whether the applicationVersion field is set.
      */
+    @java.lang.Override
     public boolean hasApplicationVersion() {
       return applicationVersion_ != null;
     }
     /**
-     * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+     * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+     * @return The applicationVersion.
      */
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.VersionInfo getApplicationVersion() {
       return applicationVersion_ == null ? cosmos.base.tendermint.v1beta1.Query.VersionInfo.getDefaultInstance() : applicationVersion_;
     }
     /**
-     * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+     * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.VersionInfoOrBuilder getApplicationVersionOrBuilder() {
       return getApplicationVersion();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7988,6 +8794,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (defaultNodeInfo_ != null) {
@@ -7996,8 +8803,10 @@ public final class Query {
       if (applicationVersion_ != null) {
         output.writeMessage(2, getApplicationVersion());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8011,11 +8820,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getApplicationVersion());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8026,18 +8835,18 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse other = (cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse) obj;
 
-      boolean result = true;
-      result = result && (hasDefaultNodeInfo() == other.hasDefaultNodeInfo());
+      if (hasDefaultNodeInfo() != other.hasDefaultNodeInfo()) return false;
       if (hasDefaultNodeInfo()) {
-        result = result && getDefaultNodeInfo()
-            .equals(other.getDefaultNodeInfo());
+        if (!getDefaultNodeInfo()
+            .equals(other.getDefaultNodeInfo())) return false;
       }
-      result = result && (hasApplicationVersion() == other.hasApplicationVersion());
+      if (hasApplicationVersion() != other.hasApplicationVersion()) return false;
       if (hasApplicationVersion()) {
-        result = result && getApplicationVersion()
-            .equals(other.getApplicationVersion());
+        if (!getApplicationVersion()
+            .equals(other.getApplicationVersion())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8046,7 +8855,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasDefaultNodeInfo()) {
         hash = (37 * hash) + DEFAULT_NODE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getDefaultNodeInfo().hashCode();
@@ -8060,6 +8869,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8119,6 +8939,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8126,6 +8947,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8153,6 +8975,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoResponse_fieldAccessorTable
@@ -8175,6 +8998,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (defaultNodeInfoBuilder_ == null) {
@@ -8192,15 +9016,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse build() {
         cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -8209,6 +9036,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse result = new cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse(this);
         if (defaultNodeInfoBuilder_ == null) {
@@ -8225,32 +9053,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse)other);
@@ -8268,14 +9103,17 @@ public final class Query {
         if (other.hasApplicationVersion()) {
           mergeApplicationVersion(other.getApplicationVersion());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8294,17 +9132,19 @@ public final class Query {
         return this;
       }
 
-      private tendermint.p2p.Types.DefaultNodeInfo defaultNodeInfo_ = null;
+      private tendermint.p2p.Types.DefaultNodeInfo defaultNodeInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.p2p.Types.DefaultNodeInfo, tendermint.p2p.Types.DefaultNodeInfo.Builder, tendermint.p2p.Types.DefaultNodeInfoOrBuilder> defaultNodeInfoBuilder_;
       /**
-       * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * @return Whether the defaultNodeInfo field is set.
        */
       public boolean hasDefaultNodeInfo() {
         return defaultNodeInfoBuilder_ != null || defaultNodeInfo_ != null;
       }
       /**
-       * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * @return The defaultNodeInfo.
        */
       public tendermint.p2p.Types.DefaultNodeInfo getDefaultNodeInfo() {
         if (defaultNodeInfoBuilder_ == null) {
@@ -8314,7 +9154,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
       public Builder setDefaultNodeInfo(tendermint.p2p.Types.DefaultNodeInfo value) {
         if (defaultNodeInfoBuilder_ == null) {
@@ -8330,7 +9170,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
       public Builder setDefaultNodeInfo(
           tendermint.p2p.Types.DefaultNodeInfo.Builder builderForValue) {
@@ -8344,7 +9184,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
       public Builder mergeDefaultNodeInfo(tendermint.p2p.Types.DefaultNodeInfo value) {
         if (defaultNodeInfoBuilder_ == null) {
@@ -8362,7 +9202,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
       public Builder clearDefaultNodeInfo() {
         if (defaultNodeInfoBuilder_ == null) {
@@ -8376,7 +9216,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
       public tendermint.p2p.Types.DefaultNodeInfo.Builder getDefaultNodeInfoBuilder() {
         
@@ -8384,7 +9224,7 @@ public final class Query {
         return getDefaultNodeInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
       public tendermint.p2p.Types.DefaultNodeInfoOrBuilder getDefaultNodeInfoOrBuilder() {
         if (defaultNodeInfoBuilder_ != null) {
@@ -8395,7 +9235,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.p2p.Types.DefaultNodeInfo, tendermint.p2p.Types.DefaultNodeInfo.Builder, tendermint.p2p.Types.DefaultNodeInfoOrBuilder> 
@@ -8411,17 +9251,19 @@ public final class Query {
         return defaultNodeInfoBuilder_;
       }
 
-      private cosmos.base.tendermint.v1beta1.Query.VersionInfo applicationVersion_ = null;
+      private cosmos.base.tendermint.v1beta1.Query.VersionInfo applicationVersion_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.tendermint.v1beta1.Query.VersionInfo, cosmos.base.tendermint.v1beta1.Query.VersionInfo.Builder, cosmos.base.tendermint.v1beta1.Query.VersionInfoOrBuilder> applicationVersionBuilder_;
       /**
-       * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * @return Whether the applicationVersion field is set.
        */
       public boolean hasApplicationVersion() {
         return applicationVersionBuilder_ != null || applicationVersion_ != null;
       }
       /**
-       * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * @return The applicationVersion.
        */
       public cosmos.base.tendermint.v1beta1.Query.VersionInfo getApplicationVersion() {
         if (applicationVersionBuilder_ == null) {
@@ -8431,7 +9273,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
        */
       public Builder setApplicationVersion(cosmos.base.tendermint.v1beta1.Query.VersionInfo value) {
         if (applicationVersionBuilder_ == null) {
@@ -8447,7 +9289,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
        */
       public Builder setApplicationVersion(
           cosmos.base.tendermint.v1beta1.Query.VersionInfo.Builder builderForValue) {
@@ -8461,7 +9303,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
        */
       public Builder mergeApplicationVersion(cosmos.base.tendermint.v1beta1.Query.VersionInfo value) {
         if (applicationVersionBuilder_ == null) {
@@ -8479,7 +9321,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
        */
       public Builder clearApplicationVersion() {
         if (applicationVersionBuilder_ == null) {
@@ -8493,7 +9335,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
        */
       public cosmos.base.tendermint.v1beta1.Query.VersionInfo.Builder getApplicationVersionBuilder() {
         
@@ -8501,7 +9343,7 @@ public final class Query {
         return getApplicationVersionFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
        */
       public cosmos.base.tendermint.v1beta1.Query.VersionInfoOrBuilder getApplicationVersionOrBuilder() {
         if (applicationVersionBuilder_ != null) {
@@ -8512,7 +9354,7 @@ public final class Query {
         }
       }
       /**
-       * <code>optional .cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
+       * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.tendermint.v1beta1.Query.VersionInfo, cosmos.base.tendermint.v1beta1.Query.VersionInfo.Builder, cosmos.base.tendermint.v1beta1.Query.VersionInfoOrBuilder> 
@@ -8527,14 +9369,16 @@ public final class Query {
         }
         return applicationVersionBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8553,11 +9397,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<GetNodeInfoResponse>
         PARSER = new com.google.protobuf.AbstractParser<GetNodeInfoResponse>() {
+      @java.lang.Override
       public GetNodeInfoResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetNodeInfoResponse(input, extensionRegistry);
+        return new GetNodeInfoResponse(input, extensionRegistry);
       }
     };
 
@@ -8570,6 +9415,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8581,61 +9427,73 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>optional string app_name = 2;</code>
+     * <code>string app_name = 2;</code>
+     * @return The appName.
      */
     java.lang.String getAppName();
     /**
-     * <code>optional string app_name = 2;</code>
+     * <code>string app_name = 2;</code>
+     * @return The bytes for appName.
      */
     com.google.protobuf.ByteString
         getAppNameBytes();
 
     /**
-     * <code>optional string version = 3;</code>
+     * <code>string version = 3;</code>
+     * @return The version.
      */
     java.lang.String getVersion();
     /**
-     * <code>optional string version = 3;</code>
+     * <code>string version = 3;</code>
+     * @return The bytes for version.
      */
     com.google.protobuf.ByteString
         getVersionBytes();
 
     /**
-     * <code>optional string git_commit = 4;</code>
+     * <code>string git_commit = 4;</code>
+     * @return The gitCommit.
      */
     java.lang.String getGitCommit();
     /**
-     * <code>optional string git_commit = 4;</code>
+     * <code>string git_commit = 4;</code>
+     * @return The bytes for gitCommit.
      */
     com.google.protobuf.ByteString
         getGitCommitBytes();
 
     /**
-     * <code>optional string build_tags = 5;</code>
+     * <code>string build_tags = 5;</code>
+     * @return The buildTags.
      */
     java.lang.String getBuildTags();
     /**
-     * <code>optional string build_tags = 5;</code>
+     * <code>string build_tags = 5;</code>
+     * @return The bytes for buildTags.
      */
     com.google.protobuf.ByteString
         getBuildTagsBytes();
 
     /**
-     * <code>optional string go_version = 6;</code>
+     * <code>string go_version = 6;</code>
+     * @return The goVersion.
      */
     java.lang.String getGoVersion();
     /**
-     * <code>optional string go_version = 6;</code>
+     * <code>string go_version = 6;</code>
+     * @return The bytes for goVersion.
      */
     com.google.protobuf.ByteString
         getGoVersionBytes();
@@ -8671,10 +9529,11 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.VersionInfo}
    */
-  public  static final class VersionInfo extends
+  public static final class VersionInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.VersionInfo)
       VersionInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use VersionInfo.newBuilder() to construct.
     private VersionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8690,16 +9549,28 @@ public final class Query {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new VersionInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private VersionInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8708,12 +9579,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -8751,12 +9616,19 @@ public final class Query {
               break;
             }
             case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 buildDeps_ = new java.util.ArrayList<cosmos.base.tendermint.v1beta1.Query.Module>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               buildDeps_.add(
                   input.readMessage(cosmos.base.tendermint.v1beta1.Query.Module.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -8767,9 +9639,10 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           buildDeps_ = java.util.Collections.unmodifiableList(buildDeps_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8778,6 +9651,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_VersionInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_VersionInfo_fieldAccessorTable
@@ -8785,12 +9659,13 @@ public final class Query {
               cosmos.base.tendermint.v1beta1.Query.VersionInfo.class, cosmos.base.tendermint.v1beta1.Query.VersionInfo.Builder.class);
     }
 
-    private int bitField0_;
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -8804,8 +9679,10 @@ public final class Query {
       }
     }
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -8823,8 +9700,10 @@ public final class Query {
     public static final int APP_NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object appName_;
     /**
-     * <code>optional string app_name = 2;</code>
+     * <code>string app_name = 2;</code>
+     * @return The appName.
      */
+    @java.lang.Override
     public java.lang.String getAppName() {
       java.lang.Object ref = appName_;
       if (ref instanceof java.lang.String) {
@@ -8838,8 +9717,10 @@ public final class Query {
       }
     }
     /**
-     * <code>optional string app_name = 2;</code>
+     * <code>string app_name = 2;</code>
+     * @return The bytes for appName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAppNameBytes() {
       java.lang.Object ref = appName_;
@@ -8857,8 +9738,10 @@ public final class Query {
     public static final int VERSION_FIELD_NUMBER = 3;
     private volatile java.lang.Object version_;
     /**
-     * <code>optional string version = 3;</code>
+     * <code>string version = 3;</code>
+     * @return The version.
      */
+    @java.lang.Override
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
       if (ref instanceof java.lang.String) {
@@ -8872,8 +9755,10 @@ public final class Query {
       }
     }
     /**
-     * <code>optional string version = 3;</code>
+     * <code>string version = 3;</code>
+     * @return The bytes for version.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getVersionBytes() {
       java.lang.Object ref = version_;
@@ -8891,8 +9776,10 @@ public final class Query {
     public static final int GIT_COMMIT_FIELD_NUMBER = 4;
     private volatile java.lang.Object gitCommit_;
     /**
-     * <code>optional string git_commit = 4;</code>
+     * <code>string git_commit = 4;</code>
+     * @return The gitCommit.
      */
+    @java.lang.Override
     public java.lang.String getGitCommit() {
       java.lang.Object ref = gitCommit_;
       if (ref instanceof java.lang.String) {
@@ -8906,8 +9793,10 @@ public final class Query {
       }
     }
     /**
-     * <code>optional string git_commit = 4;</code>
+     * <code>string git_commit = 4;</code>
+     * @return The bytes for gitCommit.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getGitCommitBytes() {
       java.lang.Object ref = gitCommit_;
@@ -8925,8 +9814,10 @@ public final class Query {
     public static final int BUILD_TAGS_FIELD_NUMBER = 5;
     private volatile java.lang.Object buildTags_;
     /**
-     * <code>optional string build_tags = 5;</code>
+     * <code>string build_tags = 5;</code>
+     * @return The buildTags.
      */
+    @java.lang.Override
     public java.lang.String getBuildTags() {
       java.lang.Object ref = buildTags_;
       if (ref instanceof java.lang.String) {
@@ -8940,8 +9831,10 @@ public final class Query {
       }
     }
     /**
-     * <code>optional string build_tags = 5;</code>
+     * <code>string build_tags = 5;</code>
+     * @return The bytes for buildTags.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getBuildTagsBytes() {
       java.lang.Object ref = buildTags_;
@@ -8959,8 +9852,10 @@ public final class Query {
     public static final int GO_VERSION_FIELD_NUMBER = 6;
     private volatile java.lang.Object goVersion_;
     /**
-     * <code>optional string go_version = 6;</code>
+     * <code>string go_version = 6;</code>
+     * @return The goVersion.
      */
+    @java.lang.Override
     public java.lang.String getGoVersion() {
       java.lang.Object ref = goVersion_;
       if (ref instanceof java.lang.String) {
@@ -8974,8 +9869,10 @@ public final class Query {
       }
     }
     /**
-     * <code>optional string go_version = 6;</code>
+     * <code>string go_version = 6;</code>
+     * @return The bytes for goVersion.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getGoVersionBytes() {
       java.lang.Object ref = goVersion_;
@@ -8995,12 +9892,14 @@ public final class Query {
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Module build_deps = 7;</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.tendermint.v1beta1.Query.Module> getBuildDepsList() {
       return buildDeps_;
     }
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Module build_deps = 7;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.tendermint.v1beta1.Query.ModuleOrBuilder> 
         getBuildDepsOrBuilderList() {
       return buildDeps_;
@@ -9008,24 +9907,28 @@ public final class Query {
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Module build_deps = 7;</code>
      */
+    @java.lang.Override
     public int getBuildDepsCount() {
       return buildDeps_.size();
     }
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Module build_deps = 7;</code>
      */
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.Module getBuildDeps(int index) {
       return buildDeps_.get(index);
     }
     /**
      * <code>repeated .cosmos.base.tendermint.v1beta1.Module build_deps = 7;</code>
      */
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.ModuleOrBuilder getBuildDepsOrBuilder(
         int index) {
       return buildDeps_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9035,6 +9938,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
@@ -9058,8 +9962,10 @@ public final class Query {
       for (int i = 0; i < buildDeps_.size(); i++) {
         output.writeMessage(7, buildDeps_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9087,11 +9993,11 @@ public final class Query {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, buildDeps_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -9102,22 +10008,22 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.VersionInfo other = (cosmos.base.tendermint.v1beta1.Query.VersionInfo) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getAppName()
-          .equals(other.getAppName());
-      result = result && getVersion()
-          .equals(other.getVersion());
-      result = result && getGitCommit()
-          .equals(other.getGitCommit());
-      result = result && getBuildTags()
-          .equals(other.getBuildTags());
-      result = result && getGoVersion()
-          .equals(other.getGoVersion());
-      result = result && getBuildDepsList()
-          .equals(other.getBuildDepsList());
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getAppName()
+          .equals(other.getAppName())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (!getGitCommit()
+          .equals(other.getGitCommit())) return false;
+      if (!getBuildTags()
+          .equals(other.getBuildTags())) return false;
+      if (!getGoVersion()
+          .equals(other.getGoVersion())) return false;
+      if (!getBuildDepsList()
+          .equals(other.getBuildDepsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9126,7 +10032,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + APP_NAME_FIELD_NUMBER;
@@ -9148,6 +10054,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.VersionInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.VersionInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.VersionInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9207,6 +10124,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9214,6 +10132,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.VersionInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9241,6 +10160,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_VersionInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_VersionInfo_fieldAccessorTable
@@ -9264,6 +10184,7 @@ public final class Query {
           getBuildDepsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -9280,22 +10201,25 @@ public final class Query {
 
         if (buildDepsBuilder_ == null) {
           buildDeps_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           buildDepsBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_VersionInfo_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.VersionInfo getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.VersionInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.VersionInfo build() {
         cosmos.base.tendermint.v1beta1.Query.VersionInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -9304,10 +10228,10 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.VersionInfo buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.VersionInfo result = new cosmos.base.tendermint.v1beta1.Query.VersionInfo(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.name_ = name_;
         result.appName_ = appName_;
         result.version_ = version_;
@@ -9315,45 +10239,51 @@ public final class Query {
         result.buildTags_ = buildTags_;
         result.goVersion_ = goVersion_;
         if (buildDepsBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             buildDeps_ = java.util.Collections.unmodifiableList(buildDeps_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.buildDeps_ = buildDeps_;
         } else {
           result.buildDeps_ = buildDepsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.VersionInfo) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.VersionInfo)other);
@@ -9393,7 +10323,7 @@ public final class Query {
           if (!other.buildDeps_.isEmpty()) {
             if (buildDeps_.isEmpty()) {
               buildDeps_ = other.buildDeps_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureBuildDepsIsMutable();
               buildDeps_.addAll(other.buildDeps_);
@@ -9406,7 +10336,7 @@ public final class Query {
               buildDepsBuilder_.dispose();
               buildDepsBuilder_ = null;
               buildDeps_ = other.buildDeps_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000001);
               buildDepsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBuildDepsFieldBuilder() : null;
@@ -9415,14 +10345,17 @@ public final class Query {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9444,7 +10377,8 @@ public final class Query {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -9459,7 +10393,8 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -9475,7 +10410,9 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -9488,7 +10425,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -9497,7 +10435,9 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -9513,7 +10453,8 @@ public final class Query {
 
       private java.lang.Object appName_ = "";
       /**
-       * <code>optional string app_name = 2;</code>
+       * <code>string app_name = 2;</code>
+       * @return The appName.
        */
       public java.lang.String getAppName() {
         java.lang.Object ref = appName_;
@@ -9528,7 +10469,8 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string app_name = 2;</code>
+       * <code>string app_name = 2;</code>
+       * @return The bytes for appName.
        */
       public com.google.protobuf.ByteString
           getAppNameBytes() {
@@ -9544,7 +10486,9 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string app_name = 2;</code>
+       * <code>string app_name = 2;</code>
+       * @param value The appName to set.
+       * @return This builder for chaining.
        */
       public Builder setAppName(
           java.lang.String value) {
@@ -9557,7 +10501,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string app_name = 2;</code>
+       * <code>string app_name = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAppName() {
         
@@ -9566,7 +10511,9 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string app_name = 2;</code>
+       * <code>string app_name = 2;</code>
+       * @param value The bytes for appName to set.
+       * @return This builder for chaining.
        */
       public Builder setAppNameBytes(
           com.google.protobuf.ByteString value) {
@@ -9582,7 +10529,8 @@ public final class Query {
 
       private java.lang.Object version_ = "";
       /**
-       * <code>optional string version = 3;</code>
+       * <code>string version = 3;</code>
+       * @return The version.
        */
       public java.lang.String getVersion() {
         java.lang.Object ref = version_;
@@ -9597,7 +10545,8 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string version = 3;</code>
+       * <code>string version = 3;</code>
+       * @return The bytes for version.
        */
       public com.google.protobuf.ByteString
           getVersionBytes() {
@@ -9613,7 +10562,9 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string version = 3;</code>
+       * <code>string version = 3;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
        */
       public Builder setVersion(
           java.lang.String value) {
@@ -9626,7 +10577,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string version = 3;</code>
+       * <code>string version = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVersion() {
         
@@ -9635,7 +10587,9 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string version = 3;</code>
+       * <code>string version = 3;</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
        */
       public Builder setVersionBytes(
           com.google.protobuf.ByteString value) {
@@ -9651,7 +10605,8 @@ public final class Query {
 
       private java.lang.Object gitCommit_ = "";
       /**
-       * <code>optional string git_commit = 4;</code>
+       * <code>string git_commit = 4;</code>
+       * @return The gitCommit.
        */
       public java.lang.String getGitCommit() {
         java.lang.Object ref = gitCommit_;
@@ -9666,7 +10621,8 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string git_commit = 4;</code>
+       * <code>string git_commit = 4;</code>
+       * @return The bytes for gitCommit.
        */
       public com.google.protobuf.ByteString
           getGitCommitBytes() {
@@ -9682,7 +10638,9 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string git_commit = 4;</code>
+       * <code>string git_commit = 4;</code>
+       * @param value The gitCommit to set.
+       * @return This builder for chaining.
        */
       public Builder setGitCommit(
           java.lang.String value) {
@@ -9695,7 +10653,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string git_commit = 4;</code>
+       * <code>string git_commit = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGitCommit() {
         
@@ -9704,7 +10663,9 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string git_commit = 4;</code>
+       * <code>string git_commit = 4;</code>
+       * @param value The bytes for gitCommit to set.
+       * @return This builder for chaining.
        */
       public Builder setGitCommitBytes(
           com.google.protobuf.ByteString value) {
@@ -9720,7 +10681,8 @@ public final class Query {
 
       private java.lang.Object buildTags_ = "";
       /**
-       * <code>optional string build_tags = 5;</code>
+       * <code>string build_tags = 5;</code>
+       * @return The buildTags.
        */
       public java.lang.String getBuildTags() {
         java.lang.Object ref = buildTags_;
@@ -9735,7 +10697,8 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string build_tags = 5;</code>
+       * <code>string build_tags = 5;</code>
+       * @return The bytes for buildTags.
        */
       public com.google.protobuf.ByteString
           getBuildTagsBytes() {
@@ -9751,7 +10714,9 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string build_tags = 5;</code>
+       * <code>string build_tags = 5;</code>
+       * @param value The buildTags to set.
+       * @return This builder for chaining.
        */
       public Builder setBuildTags(
           java.lang.String value) {
@@ -9764,7 +10729,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string build_tags = 5;</code>
+       * <code>string build_tags = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBuildTags() {
         
@@ -9773,7 +10739,9 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string build_tags = 5;</code>
+       * <code>string build_tags = 5;</code>
+       * @param value The bytes for buildTags to set.
+       * @return This builder for chaining.
        */
       public Builder setBuildTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -9789,7 +10757,8 @@ public final class Query {
 
       private java.lang.Object goVersion_ = "";
       /**
-       * <code>optional string go_version = 6;</code>
+       * <code>string go_version = 6;</code>
+       * @return The goVersion.
        */
       public java.lang.String getGoVersion() {
         java.lang.Object ref = goVersion_;
@@ -9804,7 +10773,8 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string go_version = 6;</code>
+       * <code>string go_version = 6;</code>
+       * @return The bytes for goVersion.
        */
       public com.google.protobuf.ByteString
           getGoVersionBytes() {
@@ -9820,7 +10790,9 @@ public final class Query {
         }
       }
       /**
-       * <code>optional string go_version = 6;</code>
+       * <code>string go_version = 6;</code>
+       * @param value The goVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setGoVersion(
           java.lang.String value) {
@@ -9833,7 +10805,8 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string go_version = 6;</code>
+       * <code>string go_version = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGoVersion() {
         
@@ -9842,7 +10815,9 @@ public final class Query {
         return this;
       }
       /**
-       * <code>optional string go_version = 6;</code>
+       * <code>string go_version = 6;</code>
+       * @param value The bytes for goVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setGoVersionBytes(
           com.google.protobuf.ByteString value) {
@@ -9859,9 +10834,9 @@ public final class Query {
       private java.util.List<cosmos.base.tendermint.v1beta1.Query.Module> buildDeps_ =
         java.util.Collections.emptyList();
       private void ensureBuildDepsIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           buildDeps_ = new java.util.ArrayList<cosmos.base.tendermint.v1beta1.Query.Module>(buildDeps_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -10011,7 +10986,7 @@ public final class Query {
       public Builder clearBuildDeps() {
         if (buildDepsBuilder_ == null) {
           buildDeps_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           buildDepsBuilder_.clear();
@@ -10088,21 +11063,23 @@ public final class Query {
           buildDepsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.tendermint.v1beta1.Query.Module, cosmos.base.tendermint.v1beta1.Query.Module.Builder, cosmos.base.tendermint.v1beta1.Query.ModuleOrBuilder>(
                   buildDeps_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           buildDeps_ = null;
         }
         return buildDepsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -10121,11 +11098,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<VersionInfo>
         PARSER = new com.google.protobuf.AbstractParser<VersionInfo>() {
+      @java.lang.Override
       public VersionInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VersionInfo(input, extensionRegistry);
+        return new VersionInfo(input, extensionRegistry);
       }
     };
 
@@ -10138,6 +11116,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.VersionInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10153,7 +11132,8 @@ public final class Query {
      * module path
      * </pre>
      *
-     * <code>optional string path = 1;</code>
+     * <code>string path = 1;</code>
+     * @return The path.
      */
     java.lang.String getPath();
     /**
@@ -10161,7 +11141,8 @@ public final class Query {
      * module path
      * </pre>
      *
-     * <code>optional string path = 1;</code>
+     * <code>string path = 1;</code>
+     * @return The bytes for path.
      */
     com.google.protobuf.ByteString
         getPathBytes();
@@ -10171,7 +11152,8 @@ public final class Query {
      * module version
      * </pre>
      *
-     * <code>optional string version = 2;</code>
+     * <code>string version = 2;</code>
+     * @return The version.
      */
     java.lang.String getVersion();
     /**
@@ -10179,7 +11161,8 @@ public final class Query {
      * module version
      * </pre>
      *
-     * <code>optional string version = 2;</code>
+     * <code>string version = 2;</code>
+     * @return The bytes for version.
      */
     com.google.protobuf.ByteString
         getVersionBytes();
@@ -10189,7 +11172,8 @@ public final class Query {
      * checksum
      * </pre>
      *
-     * <code>optional string sum = 3;</code>
+     * <code>string sum = 3;</code>
+     * @return The sum.
      */
     java.lang.String getSum();
     /**
@@ -10197,7 +11181,8 @@ public final class Query {
      * checksum
      * </pre>
      *
-     * <code>optional string sum = 3;</code>
+     * <code>string sum = 3;</code>
+     * @return The bytes for sum.
      */
     com.google.protobuf.ByteString
         getSumBytes();
@@ -10209,10 +11194,11 @@ public final class Query {
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.Module}
    */
-  public  static final class Module extends
+  public static final class Module extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.Module)
       ModuleOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Module.newBuilder() to construct.
     private Module(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10224,16 +11210,27 @@ public final class Query {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Module();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Module(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -10242,12 +11239,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -10266,6 +11257,13 @@ public final class Query {
               sum_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -10274,6 +11272,7 @@ public final class Query {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -10282,6 +11281,7 @@ public final class Query {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_Module_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_Module_fieldAccessorTable
@@ -10296,8 +11296,10 @@ public final class Query {
      * module path
      * </pre>
      *
-     * <code>optional string path = 1;</code>
+     * <code>string path = 1;</code>
+     * @return The path.
      */
+    @java.lang.Override
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
       if (ref instanceof java.lang.String) {
@@ -10315,8 +11317,10 @@ public final class Query {
      * module path
      * </pre>
      *
-     * <code>optional string path = 1;</code>
+     * <code>string path = 1;</code>
+     * @return The bytes for path.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPathBytes() {
       java.lang.Object ref = path_;
@@ -10338,8 +11342,10 @@ public final class Query {
      * module version
      * </pre>
      *
-     * <code>optional string version = 2;</code>
+     * <code>string version = 2;</code>
+     * @return The version.
      */
+    @java.lang.Override
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
       if (ref instanceof java.lang.String) {
@@ -10357,8 +11363,10 @@ public final class Query {
      * module version
      * </pre>
      *
-     * <code>optional string version = 2;</code>
+     * <code>string version = 2;</code>
+     * @return The bytes for version.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getVersionBytes() {
       java.lang.Object ref = version_;
@@ -10380,8 +11388,10 @@ public final class Query {
      * checksum
      * </pre>
      *
-     * <code>optional string sum = 3;</code>
+     * <code>string sum = 3;</code>
+     * @return The sum.
      */
+    @java.lang.Override
     public java.lang.String getSum() {
       java.lang.Object ref = sum_;
       if (ref instanceof java.lang.String) {
@@ -10399,8 +11409,10 @@ public final class Query {
      * checksum
      * </pre>
      *
-     * <code>optional string sum = 3;</code>
+     * <code>string sum = 3;</code>
+     * @return The bytes for sum.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSumBytes() {
       java.lang.Object ref = sum_;
@@ -10416,6 +11428,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10425,6 +11438,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getPathBytes().isEmpty()) {
@@ -10436,8 +11450,10 @@ public final class Query {
       if (!getSumBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sum_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10452,11 +11468,11 @@ public final class Query {
       if (!getSumBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sum_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -10467,14 +11483,14 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.Module other = (cosmos.base.tendermint.v1beta1.Query.Module) obj;
 
-      boolean result = true;
-      result = result && getPath()
-          .equals(other.getPath());
-      result = result && getVersion()
-          .equals(other.getVersion());
-      result = result && getSum()
-          .equals(other.getSum());
-      return result;
+      if (!getPath()
+          .equals(other.getPath())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (!getSum()
+          .equals(other.getSum())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -10483,7 +11499,7 @@ public final class Query {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PATH_FIELD_NUMBER;
       hash = (53 * hash) + getPath().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -10495,6 +11511,17 @@ public final class Query {
       return hash;
     }
 
+    public static cosmos.base.tendermint.v1beta1.Query.Module parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.Module parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.tendermint.v1beta1.Query.Module parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10554,6 +11581,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10561,6 +11589,7 @@ public final class Query {
     public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.Module prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10588,6 +11617,7 @@ public final class Query {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_Module_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_Module_fieldAccessorTable
@@ -10610,6 +11640,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         path_ = "";
@@ -10621,15 +11652,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_Module_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.Module getDefaultInstanceForType() {
         return cosmos.base.tendermint.v1beta1.Query.Module.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.Module build() {
         cosmos.base.tendermint.v1beta1.Query.Module result = buildPartial();
         if (!result.isInitialized()) {
@@ -10638,6 +11672,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.Module buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.Module result = new cosmos.base.tendermint.v1beta1.Query.Module(this);
         result.path_ = path_;
@@ -10647,32 +11682,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.tendermint.v1beta1.Query.Module) {
           return mergeFrom((cosmos.base.tendermint.v1beta1.Query.Module)other);
@@ -10696,14 +11738,17 @@ public final class Query {
           sum_ = other.sum_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10728,7 +11773,8 @@ public final class Query {
        * module path
        * </pre>
        *
-       * <code>optional string path = 1;</code>
+       * <code>string path = 1;</code>
+       * @return The path.
        */
       public java.lang.String getPath() {
         java.lang.Object ref = path_;
@@ -10747,7 +11793,8 @@ public final class Query {
        * module path
        * </pre>
        *
-       * <code>optional string path = 1;</code>
+       * <code>string path = 1;</code>
+       * @return The bytes for path.
        */
       public com.google.protobuf.ByteString
           getPathBytes() {
@@ -10767,7 +11814,9 @@ public final class Query {
        * module path
        * </pre>
        *
-       * <code>optional string path = 1;</code>
+       * <code>string path = 1;</code>
+       * @param value The path to set.
+       * @return This builder for chaining.
        */
       public Builder setPath(
           java.lang.String value) {
@@ -10784,7 +11833,8 @@ public final class Query {
        * module path
        * </pre>
        *
-       * <code>optional string path = 1;</code>
+       * <code>string path = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPath() {
         
@@ -10797,7 +11847,9 @@ public final class Query {
        * module path
        * </pre>
        *
-       * <code>optional string path = 1;</code>
+       * <code>string path = 1;</code>
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
        */
       public Builder setPathBytes(
           com.google.protobuf.ByteString value) {
@@ -10817,7 +11869,8 @@ public final class Query {
        * module version
        * </pre>
        *
-       * <code>optional string version = 2;</code>
+       * <code>string version = 2;</code>
+       * @return The version.
        */
       public java.lang.String getVersion() {
         java.lang.Object ref = version_;
@@ -10836,7 +11889,8 @@ public final class Query {
        * module version
        * </pre>
        *
-       * <code>optional string version = 2;</code>
+       * <code>string version = 2;</code>
+       * @return The bytes for version.
        */
       public com.google.protobuf.ByteString
           getVersionBytes() {
@@ -10856,7 +11910,9 @@ public final class Query {
        * module version
        * </pre>
        *
-       * <code>optional string version = 2;</code>
+       * <code>string version = 2;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
        */
       public Builder setVersion(
           java.lang.String value) {
@@ -10873,7 +11929,8 @@ public final class Query {
        * module version
        * </pre>
        *
-       * <code>optional string version = 2;</code>
+       * <code>string version = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVersion() {
         
@@ -10886,7 +11943,9 @@ public final class Query {
        * module version
        * </pre>
        *
-       * <code>optional string version = 2;</code>
+       * <code>string version = 2;</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
        */
       public Builder setVersionBytes(
           com.google.protobuf.ByteString value) {
@@ -10906,7 +11965,8 @@ public final class Query {
        * checksum
        * </pre>
        *
-       * <code>optional string sum = 3;</code>
+       * <code>string sum = 3;</code>
+       * @return The sum.
        */
       public java.lang.String getSum() {
         java.lang.Object ref = sum_;
@@ -10925,7 +11985,8 @@ public final class Query {
        * checksum
        * </pre>
        *
-       * <code>optional string sum = 3;</code>
+       * <code>string sum = 3;</code>
+       * @return The bytes for sum.
        */
       public com.google.protobuf.ByteString
           getSumBytes() {
@@ -10945,7 +12006,9 @@ public final class Query {
        * checksum
        * </pre>
        *
-       * <code>optional string sum = 3;</code>
+       * <code>string sum = 3;</code>
+       * @param value The sum to set.
+       * @return This builder for chaining.
        */
       public Builder setSum(
           java.lang.String value) {
@@ -10962,7 +12025,8 @@ public final class Query {
        * checksum
        * </pre>
        *
-       * <code>optional string sum = 3;</code>
+       * <code>string sum = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSum() {
         
@@ -10975,7 +12039,9 @@ public final class Query {
        * checksum
        * </pre>
        *
-       * <code>optional string sum = 3;</code>
+       * <code>string sum = 3;</code>
+       * @param value The bytes for sum to set.
+       * @return This builder for chaining.
        */
       public Builder setSumBytes(
           com.google.protobuf.ByteString value) {
@@ -10988,14 +12054,16 @@ public final class Query {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -11014,11 +12082,12 @@ public final class Query {
 
     private static final com.google.protobuf.Parser<Module>
         PARSER = new com.google.protobuf.AbstractParser<Module>() {
+      @java.lang.Override
       public Module parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Module(input, extensionRegistry);
+        return new Module(input, extensionRegistry);
       }
     };
 
@@ -11031,6 +12100,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.tendermint.v1beta1.Query.Module getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11130,7 +12200,7 @@ public final class Query {
       "oto\032*cosmos/base/query/v1beta1/paginatio" +
       "n.proto\"l\n\036GetValidatorSetByHeightReques" +
       "t\022\016\n\006height\030\001 \001(\003\022:\n\npagination\030\002 \001(\0132&." +
-      "cosmos.base.query.v1beta1.PageRequest\"\263\001",
+      "cosmos.base.query.v1beta1.PageRequest\"\263\001" +
       "\n\037GetValidatorSetByHeightResponse\022\024\n\014blo" +
       "ck_height\030\001 \001(\003\022=\n\nvalidators\030\002 \003(\0132).co" +
       "smos.base.tendermint.v1beta1.Validator\022;" +
@@ -11140,7 +12210,7 @@ public final class Query {
       ".base.query.v1beta1.PageRequest\"\261\001\n\035GetL" +
       "atestValidatorSetResponse\022\024\n\014block_heigh" +
       "t\030\001 \001(\003\022=\n\nvalidators\030\002 \003(\0132).cosmos.bas" +
-      "e.tendermint.v1beta1.Validator\022;\n\npagina",
+      "e.tendermint.v1beta1.Validator\022;\n\npagina" +
       "tion\030\003 \001(\0132\'.cosmos.base.query.v1beta1.P" +
       "ageResponse\"t\n\tValidator\022\017\n\007address\030\001 \001(" +
       "\t\022%\n\007pub_key\030\002 \001(\0132\024.google.protobuf.Any" +
@@ -11150,7 +12220,7 @@ public final class Query {
       "\022+\n\010block_id\030\001 \001(\0132\031.tendermint.types.Bl" +
       "ockID\022&\n\005block\030\002 \001(\0132\027.tendermint.types." +
       "Block\"\027\n\025GetLatestBlockRequest\"m\n\026GetLat" +
-      "estBlockResponse\022+\n\010block_id\030\001 \001(\0132\031.ten",
+      "estBlockResponse\022+\n\010block_id\030\001 \001(\0132\031.ten" +
       "dermint.types.BlockID\022&\n\005block\030\002 \001(\0132\027.t" +
       "endermint.types.Block\"\023\n\021GetSyncingReque" +
       "st\"%\n\022GetSyncingResponse\022\017\n\007syncing\030\001 \001(" +
@@ -11160,7 +12230,7 @@ public final class Query {
       "on_version\030\002 \001(\0132+.cosmos.base.tendermin" +
       "t.v1beta1.VersionInfo\"\266\001\n\013VersionInfo\022\014\n" +
       "\004name\030\001 \001(\t\022\020\n\010app_name\030\002 \001(\t\022\017\n\007version" +
-      "\030\003 \001(\t\022\022\n\ngit_commit\030\004 \001(\t\022\022\n\nbuild_tags",
+      "\030\003 \001(\t\022\022\n\ngit_commit\030\004 \001(\t\022\022\n\nbuild_tags" +
       "\030\005 \001(\t\022\022\n\ngo_version\030\006 \001(\t\022:\n\nbuild_deps" +
       "\030\007 \003(\0132&.cosmos.base.tendermint.v1beta1." +
       "Module\"4\n\006Module\022\014\n\004path\030\001 \001(\t\022\017\n\007versio" +
@@ -11170,7 +12240,7 @@ public final class Query {
       "rmint.v1beta1.GetNodeInfoResponse\"1\202\323\344\223\002" +
       "+\022)/cosmos/base/tendermint/v1beta1/node_" +
       "info\022\244\001\n\nGetSyncing\0221.cosmos.base.tender" +
-      "mint.v1beta1.GetSyncingRequest\0322.cosmos.",
+      "mint.v1beta1.GetSyncingRequest\0322.cosmos." +
       "base.tendermint.v1beta1.GetSyncingRespon" +
       "se\"/\202\323\344\223\002)\022\'/cosmos/base/tendermint/v1be" +
       "ta1/syncing\022\266\001\n\016GetLatestBlock\0225.cosmos." +
@@ -11180,7 +12250,7 @@ public final class Query {
       "ase/tendermint/v1beta1/blocks/latest\022\276\001\n" +
       "\020GetBlockByHeight\0227.cosmos.base.tendermi" +
       "nt.v1beta1.GetBlockByHeightRequest\0328.cos" +
-      "mos.base.tendermint.v1beta1.GetBlockByHe",
+      "mos.base.tendermint.v1beta1.GetBlockByHe" +
       "ightResponse\"7\202\323\344\223\0021\022//cosmos/base/tende" +
       "rmint/v1beta1/blocks/{height}\022\322\001\n\025GetLat" +
       "estValidatorSet\022<.cosmos.base.tendermint" +
@@ -11190,22 +12260,14 @@ public final class Query {
       "se/tendermint/v1beta1/validatorsets/late" +
       "st\022\332\001\n\027GetValidatorSetByHeight\022>.cosmos." +
       "base.tendermint.v1beta1.GetValidatorSetB" +
-      "yHeightRequest\032?.cosmos.base.tendermint.",
+      "yHeightRequest\032?.cosmos.base.tendermint." +
       "v1beta1.GetValidatorSetByHeightResponse\"" +
       ">\202\323\344\223\0028\0226/cosmos/base/tendermint/v1beta1" +
       "/validatorsets/{height}B4Z2github.com/co" +
       "smos/cosmos-sdk/client/grpc/tmserviceb\006p" +
       "roto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
@@ -11215,7 +12277,7 @@ public final class Query {
           tendermint.types.BlockOuterClass.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightRequest_fieldAccessorTable = new

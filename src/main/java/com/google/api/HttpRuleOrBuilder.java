@@ -13,7 +13,8 @@ public interface HttpRuleOrBuilder extends
    * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
    * </pre>
    *
-   * <code>optional string selector = 1;</code>
+   * <code>string selector = 1;</code>
+   * @return The selector.
    */
   java.lang.String getSelector();
   /**
@@ -22,7 +23,8 @@ public interface HttpRuleOrBuilder extends
    * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
    * </pre>
    *
-   * <code>optional string selector = 1;</code>
+   * <code>string selector = 1;</code>
+   * @return The bytes for selector.
    */
   com.google.protobuf.ByteString
       getSelectorBytes();
@@ -32,7 +34,8 @@ public interface HttpRuleOrBuilder extends
    * Used for listing and getting information about resources.
    * </pre>
    *
-   * <code>optional string get = 2;</code>
+   * <code>string get = 2;</code>
+   * @return The get.
    */
   java.lang.String getGet();
   /**
@@ -40,7 +43,8 @@ public interface HttpRuleOrBuilder extends
    * Used for listing and getting information about resources.
    * </pre>
    *
-   * <code>optional string get = 2;</code>
+   * <code>string get = 2;</code>
+   * @return The bytes for get.
    */
   com.google.protobuf.ByteString
       getGetBytes();
@@ -50,7 +54,8 @@ public interface HttpRuleOrBuilder extends
    * Used for updating a resource.
    * </pre>
    *
-   * <code>optional string put = 3;</code>
+   * <code>string put = 3;</code>
+   * @return The put.
    */
   java.lang.String getPut();
   /**
@@ -58,7 +63,8 @@ public interface HttpRuleOrBuilder extends
    * Used for updating a resource.
    * </pre>
    *
-   * <code>optional string put = 3;</code>
+   * <code>string put = 3;</code>
+   * @return The bytes for put.
    */
   com.google.protobuf.ByteString
       getPutBytes();
@@ -68,7 +74,8 @@ public interface HttpRuleOrBuilder extends
    * Used for creating a resource.
    * </pre>
    *
-   * <code>optional string post = 4;</code>
+   * <code>string post = 4;</code>
+   * @return The post.
    */
   java.lang.String getPost();
   /**
@@ -76,7 +83,8 @@ public interface HttpRuleOrBuilder extends
    * Used for creating a resource.
    * </pre>
    *
-   * <code>optional string post = 4;</code>
+   * <code>string post = 4;</code>
+   * @return The bytes for post.
    */
   com.google.protobuf.ByteString
       getPostBytes();
@@ -86,7 +94,8 @@ public interface HttpRuleOrBuilder extends
    * Used for deleting a resource.
    * </pre>
    *
-   * <code>optional string delete = 5;</code>
+   * <code>string delete = 5;</code>
+   * @return The delete.
    */
   java.lang.String getDelete();
   /**
@@ -94,7 +103,8 @@ public interface HttpRuleOrBuilder extends
    * Used for deleting a resource.
    * </pre>
    *
-   * <code>optional string delete = 5;</code>
+   * <code>string delete = 5;</code>
+   * @return The bytes for delete.
    */
   com.google.protobuf.ByteString
       getDeleteBytes();
@@ -104,7 +114,8 @@ public interface HttpRuleOrBuilder extends
    * Used for updating a resource.
    * </pre>
    *
-   * <code>optional string patch = 6;</code>
+   * <code>string patch = 6;</code>
+   * @return The patch.
    */
   java.lang.String getPatch();
   /**
@@ -112,7 +123,8 @@ public interface HttpRuleOrBuilder extends
    * Used for updating a resource.
    * </pre>
    *
-   * <code>optional string patch = 6;</code>
+   * <code>string patch = 6;</code>
+   * @return The bytes for patch.
    */
   com.google.protobuf.ByteString
       getPatchBytes();
@@ -125,7 +137,20 @@ public interface HttpRuleOrBuilder extends
    * for services that provide content to Web (HTML) clients.
    * </pre>
    *
-   * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+   * <code>.google.api.CustomHttpPattern custom = 8;</code>
+   * @return Whether the custom field is set.
+   */
+  boolean hasCustom();
+  /**
+   * <pre>
+   * The custom pattern is used for specifying an HTTP method that is not
+   * included in the `pattern` field, such as HEAD, or "*" to leave the
+   * HTTP method unspecified for this rule. The wild-card rule is useful
+   * for services that provide content to Web (HTML) clients.
+   * </pre>
+   *
+   * <code>.google.api.CustomHttpPattern custom = 8;</code>
+   * @return The custom.
    */
   com.google.api.CustomHttpPattern getCustom();
   /**
@@ -136,7 +161,7 @@ public interface HttpRuleOrBuilder extends
    * for services that provide content to Web (HTML) clients.
    * </pre>
    *
-   * <code>optional .google.api.CustomHttpPattern custom = 8;</code>
+   * <code>.google.api.CustomHttpPattern custom = 8;</code>
    */
   com.google.api.CustomHttpPatternOrBuilder getCustomOrBuilder();
 
@@ -148,7 +173,8 @@ public interface HttpRuleOrBuilder extends
    * present at the top-level of request message type.
    * </pre>
    *
-   * <code>optional string body = 7;</code>
+   * <code>string body = 7;</code>
+   * @return The body.
    */
   java.lang.String getBody();
   /**
@@ -159,7 +185,8 @@ public interface HttpRuleOrBuilder extends
    * present at the top-level of request message type.
    * </pre>
    *
-   * <code>optional string body = 7;</code>
+   * <code>string body = 7;</code>
+   * @return The bytes for body.
    */
   com.google.protobuf.ByteString
       getBodyBytes();
@@ -171,7 +198,8 @@ public interface HttpRuleOrBuilder extends
    * not set, the response message will be used as HTTP body of response.
    * </pre>
    *
-   * <code>optional string response_body = 12;</code>
+   * <code>string response_body = 12;</code>
+   * @return The responseBody.
    */
   java.lang.String getResponseBody();
   /**
@@ -181,7 +209,8 @@ public interface HttpRuleOrBuilder extends
    * not set, the response message will be used as HTTP body of response.
    * </pre>
    *
-   * <code>optional string response_body = 12;</code>
+   * <code>string response_body = 12;</code>
+   * @return The bytes for responseBody.
    */
   com.google.protobuf.ByteString
       getResponseBodyBytes();

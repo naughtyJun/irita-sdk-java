@@ -25,10 +25,11 @@ public final class Reflection {
    *
    * Protobuf type {@code cosmos.base.reflection.v1beta1.ListAllInterfacesRequest}
    */
-  public  static final class ListAllInterfacesRequest extends
+  public static final class ListAllInterfacesRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.reflection.v1beta1.ListAllInterfacesRequest)
       ListAllInterfacesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ListAllInterfacesRequest.newBuilder() to construct.
     private ListAllInterfacesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -37,15 +38,27 @@ public final class Reflection {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListAllInterfacesRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ListAllInterfacesRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -55,7 +68,8 @@ public final class Reflection {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -68,6 +82,7 @@ public final class Reflection {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -76,6 +91,7 @@ public final class Reflection {
       return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesRequest_fieldAccessorTable
@@ -84,6 +100,7 @@ public final class Reflection {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -93,20 +110,23 @@ public final class Reflection {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -117,8 +137,8 @@ public final class Reflection {
       }
       cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest other = (cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -127,12 +147,23 @@ public final class Reflection {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -192,6 +223,7 @@ public final class Reflection {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -199,6 +231,7 @@ public final class Reflection {
     public static Builder newBuilder(cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -226,6 +259,7 @@ public final class Reflection {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesRequest_fieldAccessorTable
@@ -248,20 +282,24 @@ public final class Reflection {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest getDefaultInstanceForType() {
         return cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest build() {
         cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -270,38 +308,46 @@ public final class Reflection {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest buildPartial() {
         cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest result = new cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest) {
           return mergeFrom((cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest)other);
@@ -313,14 +359,17 @@ public final class Reflection {
 
       public Builder mergeFrom(cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest other) {
         if (other == cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -338,14 +387,16 @@ public final class Reflection {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -364,11 +415,12 @@ public final class Reflection {
 
     private static final com.google.protobuf.Parser<ListAllInterfacesRequest>
         PARSER = new com.google.protobuf.AbstractParser<ListAllInterfacesRequest>() {
+      @java.lang.Override
       public ListAllInterfacesRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListAllInterfacesRequest(input, extensionRegistry);
+        return new ListAllInterfacesRequest(input, extensionRegistry);
       }
     };
 
@@ -381,6 +433,7 @@ public final class Reflection {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -397,6 +450,7 @@ public final class Reflection {
      * </pre>
      *
      * <code>repeated string interface_names = 1;</code>
+     * @return A list containing the interfaceNames.
      */
     java.util.List<java.lang.String>
         getInterfaceNamesList();
@@ -406,6 +460,7 @@ public final class Reflection {
      * </pre>
      *
      * <code>repeated string interface_names = 1;</code>
+     * @return The count of interfaceNames.
      */
     int getInterfaceNamesCount();
     /**
@@ -414,6 +469,8 @@ public final class Reflection {
      * </pre>
      *
      * <code>repeated string interface_names = 1;</code>
+     * @param index The index of the element to return.
+     * @return The interfaceNames at the given index.
      */
     java.lang.String getInterfaceNames(int index);
     /**
@@ -422,6 +479,8 @@ public final class Reflection {
      * </pre>
      *
      * <code>repeated string interface_names = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the interfaceNames at the given index.
      */
     com.google.protobuf.ByteString
         getInterfaceNamesBytes(int index);
@@ -433,10 +492,11 @@ public final class Reflection {
    *
    * Protobuf type {@code cosmos.base.reflection.v1beta1.ListAllInterfacesResponse}
    */
-  public  static final class ListAllInterfacesResponse extends
+  public static final class ListAllInterfacesResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.reflection.v1beta1.ListAllInterfacesResponse)
       ListAllInterfacesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ListAllInterfacesResponse.newBuilder() to construct.
     private ListAllInterfacesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -446,16 +506,28 @@ public final class Reflection {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListAllInterfacesResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ListAllInterfacesResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -464,19 +536,20 @@ public final class Reflection {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 interfaceNames_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
               interfaceNames_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -487,9 +560,10 @@ public final class Reflection {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           interfaceNames_ = interfaceNames_.getUnmodifiableView();
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -498,6 +572,7 @@ public final class Reflection {
       return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesResponse_fieldAccessorTable
@@ -513,6 +588,7 @@ public final class Reflection {
      * </pre>
      *
      * <code>repeated string interface_names = 1;</code>
+     * @return A list containing the interfaceNames.
      */
     public com.google.protobuf.ProtocolStringList
         getInterfaceNamesList() {
@@ -524,6 +600,7 @@ public final class Reflection {
      * </pre>
      *
      * <code>repeated string interface_names = 1;</code>
+     * @return The count of interfaceNames.
      */
     public int getInterfaceNamesCount() {
       return interfaceNames_.size();
@@ -534,6 +611,8 @@ public final class Reflection {
      * </pre>
      *
      * <code>repeated string interface_names = 1;</code>
+     * @param index The index of the element to return.
+     * @return The interfaceNames at the given index.
      */
     public java.lang.String getInterfaceNames(int index) {
       return interfaceNames_.get(index);
@@ -544,6 +623,8 @@ public final class Reflection {
      * </pre>
      *
      * <code>repeated string interface_names = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the interfaceNames at the given index.
      */
     public com.google.protobuf.ByteString
         getInterfaceNamesBytes(int index) {
@@ -551,6 +632,7 @@ public final class Reflection {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -560,13 +642,16 @@ public final class Reflection {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < interfaceNames_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, interfaceNames_.getRaw(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -580,11 +665,11 @@ public final class Reflection {
         size += dataSize;
         size += 1 * getInterfaceNamesList().size();
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -595,10 +680,10 @@ public final class Reflection {
       }
       cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse other = (cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse) obj;
 
-      boolean result = true;
-      result = result && getInterfaceNamesList()
-          .equals(other.getInterfaceNamesList());
-      return result;
+      if (!getInterfaceNamesList()
+          .equals(other.getInterfaceNamesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -607,7 +692,7 @@ public final class Reflection {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getInterfaceNamesCount() > 0) {
         hash = (37 * hash) + INTERFACE_NAMES_FIELD_NUMBER;
         hash = (53 * hash) + getInterfaceNamesList().hashCode();
@@ -617,6 +702,17 @@ public final class Reflection {
       return hash;
     }
 
+    public static cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -676,6 +772,7 @@ public final class Reflection {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -683,6 +780,7 @@ public final class Reflection {
     public static Builder newBuilder(cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -710,6 +808,7 @@ public final class Reflection {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesResponse_fieldAccessorTable
@@ -732,6 +831,7 @@ public final class Reflection {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         interfaceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -739,15 +839,18 @@ public final class Reflection {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse getDefaultInstanceForType() {
         return cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse build() {
         cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -756,10 +859,11 @@ public final class Reflection {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse buildPartial() {
         cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse result = new cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           interfaceNames_ = interfaceNames_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -768,32 +872,39 @@ public final class Reflection {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse) {
           return mergeFrom((cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse)other);
@@ -815,14 +926,17 @@ public final class Reflection {
           }
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -844,7 +958,7 @@ public final class Reflection {
 
       private com.google.protobuf.LazyStringList interfaceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureInterfaceNamesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           interfaceNames_ = new com.google.protobuf.LazyStringArrayList(interfaceNames_);
           bitField0_ |= 0x00000001;
          }
@@ -855,6 +969,7 @@ public final class Reflection {
        * </pre>
        *
        * <code>repeated string interface_names = 1;</code>
+       * @return A list containing the interfaceNames.
        */
       public com.google.protobuf.ProtocolStringList
           getInterfaceNamesList() {
@@ -866,6 +981,7 @@ public final class Reflection {
        * </pre>
        *
        * <code>repeated string interface_names = 1;</code>
+       * @return The count of interfaceNames.
        */
       public int getInterfaceNamesCount() {
         return interfaceNames_.size();
@@ -876,6 +992,8 @@ public final class Reflection {
        * </pre>
        *
        * <code>repeated string interface_names = 1;</code>
+       * @param index The index of the element to return.
+       * @return The interfaceNames at the given index.
        */
       public java.lang.String getInterfaceNames(int index) {
         return interfaceNames_.get(index);
@@ -886,6 +1004,8 @@ public final class Reflection {
        * </pre>
        *
        * <code>repeated string interface_names = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the interfaceNames at the given index.
        */
       public com.google.protobuf.ByteString
           getInterfaceNamesBytes(int index) {
@@ -897,6 +1017,9 @@ public final class Reflection {
        * </pre>
        *
        * <code>repeated string interface_names = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The interfaceNames to set.
+       * @return This builder for chaining.
        */
       public Builder setInterfaceNames(
           int index, java.lang.String value) {
@@ -914,6 +1037,8 @@ public final class Reflection {
        * </pre>
        *
        * <code>repeated string interface_names = 1;</code>
+       * @param value The interfaceNames to add.
+       * @return This builder for chaining.
        */
       public Builder addInterfaceNames(
           java.lang.String value) {
@@ -931,6 +1056,8 @@ public final class Reflection {
        * </pre>
        *
        * <code>repeated string interface_names = 1;</code>
+       * @param values The interfaceNames to add.
+       * @return This builder for chaining.
        */
       public Builder addAllInterfaceNames(
           java.lang.Iterable<java.lang.String> values) {
@@ -946,6 +1073,7 @@ public final class Reflection {
        * </pre>
        *
        * <code>repeated string interface_names = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearInterfaceNames() {
         interfaceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -959,6 +1087,8 @@ public final class Reflection {
        * </pre>
        *
        * <code>repeated string interface_names = 1;</code>
+       * @param value The bytes of the interfaceNames to add.
+       * @return This builder for chaining.
        */
       public Builder addInterfaceNamesBytes(
           com.google.protobuf.ByteString value) {
@@ -971,14 +1101,16 @@ public final class Reflection {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -997,11 +1129,12 @@ public final class Reflection {
 
     private static final com.google.protobuf.Parser<ListAllInterfacesResponse>
         PARSER = new com.google.protobuf.AbstractParser<ListAllInterfacesResponse>() {
+      @java.lang.Override
       public ListAllInterfacesResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListAllInterfacesResponse(input, extensionRegistry);
+        return new ListAllInterfacesResponse(input, extensionRegistry);
       }
     };
 
@@ -1014,6 +1147,7 @@ public final class Reflection {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1029,7 +1163,8 @@ public final class Reflection {
      * interface_name defines the interface to query the implementations for.
      * </pre>
      *
-     * <code>optional string interface_name = 1;</code>
+     * <code>string interface_name = 1;</code>
+     * @return The interfaceName.
      */
     java.lang.String getInterfaceName();
     /**
@@ -1037,7 +1172,8 @@ public final class Reflection {
      * interface_name defines the interface to query the implementations for.
      * </pre>
      *
-     * <code>optional string interface_name = 1;</code>
+     * <code>string interface_name = 1;</code>
+     * @return The bytes for interfaceName.
      */
     com.google.protobuf.ByteString
         getInterfaceNameBytes();
@@ -1050,10 +1186,11 @@ public final class Reflection {
    *
    * Protobuf type {@code cosmos.base.reflection.v1beta1.ListImplementationsRequest}
    */
-  public  static final class ListImplementationsRequest extends
+  public static final class ListImplementationsRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.reflection.v1beta1.ListImplementationsRequest)
       ListImplementationsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ListImplementationsRequest.newBuilder() to construct.
     private ListImplementationsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1063,16 +1200,27 @@ public final class Reflection {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListImplementationsRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ListImplementationsRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1081,16 +1229,17 @@ public final class Reflection {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               interfaceName_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1101,6 +1250,7 @@ public final class Reflection {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1109,6 +1259,7 @@ public final class Reflection {
       return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListImplementationsRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListImplementationsRequest_fieldAccessorTable
@@ -1123,8 +1274,10 @@ public final class Reflection {
      * interface_name defines the interface to query the implementations for.
      * </pre>
      *
-     * <code>optional string interface_name = 1;</code>
+     * <code>string interface_name = 1;</code>
+     * @return The interfaceName.
      */
+    @java.lang.Override
     public java.lang.String getInterfaceName() {
       java.lang.Object ref = interfaceName_;
       if (ref instanceof java.lang.String) {
@@ -1142,8 +1295,10 @@ public final class Reflection {
      * interface_name defines the interface to query the implementations for.
      * </pre>
      *
-     * <code>optional string interface_name = 1;</code>
+     * <code>string interface_name = 1;</code>
+     * @return The bytes for interfaceName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getInterfaceNameBytes() {
       java.lang.Object ref = interfaceName_;
@@ -1159,6 +1314,7 @@ public final class Reflection {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1168,13 +1324,16 @@ public final class Reflection {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getInterfaceNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, interfaceName_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1183,11 +1342,11 @@ public final class Reflection {
       if (!getInterfaceNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, interfaceName_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1198,10 +1357,10 @@ public final class Reflection {
       }
       cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest other = (cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest) obj;
 
-      boolean result = true;
-      result = result && getInterfaceName()
-          .equals(other.getInterfaceName());
-      return result;
+      if (!getInterfaceName()
+          .equals(other.getInterfaceName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1210,7 +1369,7 @@ public final class Reflection {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + INTERFACE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getInterfaceName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1218,6 +1377,17 @@ public final class Reflection {
       return hash;
     }
 
+    public static cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1277,6 +1447,7 @@ public final class Reflection {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1284,6 +1455,7 @@ public final class Reflection {
     public static Builder newBuilder(cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1312,6 +1484,7 @@ public final class Reflection {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListImplementationsRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListImplementationsRequest_fieldAccessorTable
@@ -1334,6 +1507,7 @@ public final class Reflection {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         interfaceName_ = "";
@@ -1341,15 +1515,18 @@ public final class Reflection {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListImplementationsRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest getDefaultInstanceForType() {
         return cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest build() {
         cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -1358,6 +1535,7 @@ public final class Reflection {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest buildPartial() {
         cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest result = new cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest(this);
         result.interfaceName_ = interfaceName_;
@@ -1365,32 +1543,39 @@ public final class Reflection {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest) {
           return mergeFrom((cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest)other);
@@ -1406,14 +1591,17 @@ public final class Reflection {
           interfaceName_ = other.interfaceName_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1438,7 +1626,8 @@ public final class Reflection {
        * interface_name defines the interface to query the implementations for.
        * </pre>
        *
-       * <code>optional string interface_name = 1;</code>
+       * <code>string interface_name = 1;</code>
+       * @return The interfaceName.
        */
       public java.lang.String getInterfaceName() {
         java.lang.Object ref = interfaceName_;
@@ -1457,7 +1646,8 @@ public final class Reflection {
        * interface_name defines the interface to query the implementations for.
        * </pre>
        *
-       * <code>optional string interface_name = 1;</code>
+       * <code>string interface_name = 1;</code>
+       * @return The bytes for interfaceName.
        */
       public com.google.protobuf.ByteString
           getInterfaceNameBytes() {
@@ -1477,7 +1667,9 @@ public final class Reflection {
        * interface_name defines the interface to query the implementations for.
        * </pre>
        *
-       * <code>optional string interface_name = 1;</code>
+       * <code>string interface_name = 1;</code>
+       * @param value The interfaceName to set.
+       * @return This builder for chaining.
        */
       public Builder setInterfaceName(
           java.lang.String value) {
@@ -1494,7 +1686,8 @@ public final class Reflection {
        * interface_name defines the interface to query the implementations for.
        * </pre>
        *
-       * <code>optional string interface_name = 1;</code>
+       * <code>string interface_name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearInterfaceName() {
         
@@ -1507,7 +1700,9 @@ public final class Reflection {
        * interface_name defines the interface to query the implementations for.
        * </pre>
        *
-       * <code>optional string interface_name = 1;</code>
+       * <code>string interface_name = 1;</code>
+       * @param value The bytes for interfaceName to set.
+       * @return This builder for chaining.
        */
       public Builder setInterfaceNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1520,14 +1715,16 @@ public final class Reflection {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1546,11 +1743,12 @@ public final class Reflection {
 
     private static final com.google.protobuf.Parser<ListImplementationsRequest>
         PARSER = new com.google.protobuf.AbstractParser<ListImplementationsRequest>() {
+      @java.lang.Override
       public ListImplementationsRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListImplementationsRequest(input, extensionRegistry);
+        return new ListImplementationsRequest(input, extensionRegistry);
       }
     };
 
@@ -1563,6 +1761,7 @@ public final class Reflection {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1575,19 +1774,25 @@ public final class Reflection {
 
     /**
      * <code>repeated string implementation_message_names = 1;</code>
+     * @return A list containing the implementationMessageNames.
      */
     java.util.List<java.lang.String>
         getImplementationMessageNamesList();
     /**
      * <code>repeated string implementation_message_names = 1;</code>
+     * @return The count of implementationMessageNames.
      */
     int getImplementationMessageNamesCount();
     /**
      * <code>repeated string implementation_message_names = 1;</code>
+     * @param index The index of the element to return.
+     * @return The implementationMessageNames at the given index.
      */
     java.lang.String getImplementationMessageNames(int index);
     /**
      * <code>repeated string implementation_message_names = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the implementationMessageNames at the given index.
      */
     com.google.protobuf.ByteString
         getImplementationMessageNamesBytes(int index);
@@ -1600,10 +1805,11 @@ public final class Reflection {
    *
    * Protobuf type {@code cosmos.base.reflection.v1beta1.ListImplementationsResponse}
    */
-  public  static final class ListImplementationsResponse extends
+  public static final class ListImplementationsResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.reflection.v1beta1.ListImplementationsResponse)
       ListImplementationsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ListImplementationsResponse.newBuilder() to construct.
     private ListImplementationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1613,16 +1819,28 @@ public final class Reflection {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListImplementationsResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ListImplementationsResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1631,19 +1849,20 @@ public final class Reflection {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 implementationMessageNames_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
               implementationMessageNames_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1654,9 +1873,10 @@ public final class Reflection {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           implementationMessageNames_ = implementationMessageNames_.getUnmodifiableView();
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1665,6 +1885,7 @@ public final class Reflection {
       return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListImplementationsResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListImplementationsResponse_fieldAccessorTable
@@ -1676,6 +1897,7 @@ public final class Reflection {
     private com.google.protobuf.LazyStringList implementationMessageNames_;
     /**
      * <code>repeated string implementation_message_names = 1;</code>
+     * @return A list containing the implementationMessageNames.
      */
     public com.google.protobuf.ProtocolStringList
         getImplementationMessageNamesList() {
@@ -1683,18 +1905,23 @@ public final class Reflection {
     }
     /**
      * <code>repeated string implementation_message_names = 1;</code>
+     * @return The count of implementationMessageNames.
      */
     public int getImplementationMessageNamesCount() {
       return implementationMessageNames_.size();
     }
     /**
      * <code>repeated string implementation_message_names = 1;</code>
+     * @param index The index of the element to return.
+     * @return The implementationMessageNames at the given index.
      */
     public java.lang.String getImplementationMessageNames(int index) {
       return implementationMessageNames_.get(index);
     }
     /**
      * <code>repeated string implementation_message_names = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the implementationMessageNames at the given index.
      */
     public com.google.protobuf.ByteString
         getImplementationMessageNamesBytes(int index) {
@@ -1702,6 +1929,7 @@ public final class Reflection {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1711,13 +1939,16 @@ public final class Reflection {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < implementationMessageNames_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, implementationMessageNames_.getRaw(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1731,11 +1962,11 @@ public final class Reflection {
         size += dataSize;
         size += 1 * getImplementationMessageNamesList().size();
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1746,10 +1977,10 @@ public final class Reflection {
       }
       cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse other = (cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse) obj;
 
-      boolean result = true;
-      result = result && getImplementationMessageNamesList()
-          .equals(other.getImplementationMessageNamesList());
-      return result;
+      if (!getImplementationMessageNamesList()
+          .equals(other.getImplementationMessageNamesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1758,7 +1989,7 @@ public final class Reflection {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getImplementationMessageNamesCount() > 0) {
         hash = (37 * hash) + IMPLEMENTATION_MESSAGE_NAMES_FIELD_NUMBER;
         hash = (53 * hash) + getImplementationMessageNamesList().hashCode();
@@ -1768,6 +1999,17 @@ public final class Reflection {
       return hash;
     }
 
+    public static cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1827,6 +2069,7 @@ public final class Reflection {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1834,6 +2077,7 @@ public final class Reflection {
     public static Builder newBuilder(cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1862,6 +2106,7 @@ public final class Reflection {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListImplementationsResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListImplementationsResponse_fieldAccessorTable
@@ -1884,6 +2129,7 @@ public final class Reflection {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         implementationMessageNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1891,15 +2137,18 @@ public final class Reflection {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.reflection.v1beta1.Reflection.internal_static_cosmos_base_reflection_v1beta1_ListImplementationsResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse getDefaultInstanceForType() {
         return cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse build() {
         cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -1908,10 +2157,11 @@ public final class Reflection {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse buildPartial() {
         cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse result = new cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           implementationMessageNames_ = implementationMessageNames_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -1920,32 +2170,39 @@ public final class Reflection {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse) {
           return mergeFrom((cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse)other);
@@ -1967,14 +2224,17 @@ public final class Reflection {
           }
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1996,13 +2256,14 @@ public final class Reflection {
 
       private com.google.protobuf.LazyStringList implementationMessageNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureImplementationMessageNamesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           implementationMessageNames_ = new com.google.protobuf.LazyStringArrayList(implementationMessageNames_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated string implementation_message_names = 1;</code>
+       * @return A list containing the implementationMessageNames.
        */
       public com.google.protobuf.ProtocolStringList
           getImplementationMessageNamesList() {
@@ -2010,18 +2271,23 @@ public final class Reflection {
       }
       /**
        * <code>repeated string implementation_message_names = 1;</code>
+       * @return The count of implementationMessageNames.
        */
       public int getImplementationMessageNamesCount() {
         return implementationMessageNames_.size();
       }
       /**
        * <code>repeated string implementation_message_names = 1;</code>
+       * @param index The index of the element to return.
+       * @return The implementationMessageNames at the given index.
        */
       public java.lang.String getImplementationMessageNames(int index) {
         return implementationMessageNames_.get(index);
       }
       /**
        * <code>repeated string implementation_message_names = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the implementationMessageNames at the given index.
        */
       public com.google.protobuf.ByteString
           getImplementationMessageNamesBytes(int index) {
@@ -2029,6 +2295,9 @@ public final class Reflection {
       }
       /**
        * <code>repeated string implementation_message_names = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The implementationMessageNames to set.
+       * @return This builder for chaining.
        */
       public Builder setImplementationMessageNames(
           int index, java.lang.String value) {
@@ -2042,6 +2311,8 @@ public final class Reflection {
       }
       /**
        * <code>repeated string implementation_message_names = 1;</code>
+       * @param value The implementationMessageNames to add.
+       * @return This builder for chaining.
        */
       public Builder addImplementationMessageNames(
           java.lang.String value) {
@@ -2055,6 +2326,8 @@ public final class Reflection {
       }
       /**
        * <code>repeated string implementation_message_names = 1;</code>
+       * @param values The implementationMessageNames to add.
+       * @return This builder for chaining.
        */
       public Builder addAllImplementationMessageNames(
           java.lang.Iterable<java.lang.String> values) {
@@ -2066,6 +2339,7 @@ public final class Reflection {
       }
       /**
        * <code>repeated string implementation_message_names = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearImplementationMessageNames() {
         implementationMessageNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2075,6 +2349,8 @@ public final class Reflection {
       }
       /**
        * <code>repeated string implementation_message_names = 1;</code>
+       * @param value The bytes of the implementationMessageNames to add.
+       * @return This builder for chaining.
        */
       public Builder addImplementationMessageNamesBytes(
           com.google.protobuf.ByteString value) {
@@ -2087,14 +2363,16 @@ public final class Reflection {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2113,11 +2391,12 @@ public final class Reflection {
 
     private static final com.google.protobuf.Parser<ListImplementationsResponse>
         PARSER = new com.google.protobuf.AbstractParser<ListImplementationsResponse>() {
+      @java.lang.Override
       public ListImplementationsResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListImplementationsResponse(input, extensionRegistry);
+        return new ListImplementationsResponse(input, extensionRegistry);
       }
     };
 
@@ -2130,6 +2409,7 @@ public final class Reflection {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2174,7 +2454,7 @@ public final class Reflection {
       "e\030\001 \001(\t\"C\n\033ListImplementationsResponse\022$" +
       "\n\034implementation_message_names\030\001 \003(\t2\270\003\n" +
       "\021ReflectionService\022\274\001\n\021ListAllInterfaces" +
-      "\0228.cosmos.base.reflection.v1beta1.ListAl",
+      "\0228.cosmos.base.reflection.v1beta1.ListAl" +
       "lInterfacesRequest\0329.cosmos.base.reflect" +
       "ion.v1beta1.ListAllInterfacesResponse\"2\202" +
       "\323\344\223\002,\022*/cosmos/base/reflection/v1beta1/i" +
@@ -2184,22 +2464,14 @@ public final class Reflection {
       "1beta1.ListImplementationsResponse\"S\202\323\344\223" +
       "\002M\022K/cosmos/base/reflection/v1beta1/inte" +
       "rfaces/{interface_name}/implementationsB" +
-      "5Z3github.com/cosmos/cosmos-sdk/client/g",
+      "5Z3github.com/cosmos/cosmos-sdk/client/g" +
       "rpc/reflectionb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_base_reflection_v1beta1_ListAllInterfacesRequest_fieldAccessorTable = new

@@ -23,7 +23,8 @@ public final class QueryOuterClass {
      * address is the address to query balances for.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
@@ -31,7 +32,8 @@ public final class QueryOuterClass {
      * address is the address to query balances for.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -41,7 +43,8 @@ public final class QueryOuterClass {
      * denom is the coin denom to query balances for.
      * </pre>
      *
-     * <code>optional string denom = 2;</code>
+     * <code>string denom = 2;</code>
+     * @return The denom.
      */
     java.lang.String getDenom();
     /**
@@ -49,7 +52,8 @@ public final class QueryOuterClass {
      * denom is the coin denom to query balances for.
      * </pre>
      *
-     * <code>optional string denom = 2;</code>
+     * <code>string denom = 2;</code>
+     * @return The bytes for denom.
      */
     com.google.protobuf.ByteString
         getDenomBytes();
@@ -61,10 +65,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QueryBalanceRequest}
    */
-  public  static final class QueryBalanceRequest extends
+  public static final class QueryBalanceRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QueryBalanceRequest)
       QueryBalanceRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryBalanceRequest.newBuilder() to construct.
     private QueryBalanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -75,16 +80,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryBalanceRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryBalanceRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -93,12 +109,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -111,6 +121,13 @@ public final class QueryOuterClass {
               denom_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -119,6 +136,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -127,6 +145,7 @@ public final class QueryOuterClass {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryBalanceRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryBalanceRequest_fieldAccessorTable
@@ -141,8 +160,10 @@ public final class QueryOuterClass {
      * address is the address to query balances for.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -160,8 +181,10 @@ public final class QueryOuterClass {
      * address is the address to query balances for.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -183,8 +206,10 @@ public final class QueryOuterClass {
      * denom is the coin denom to query balances for.
      * </pre>
      *
-     * <code>optional string denom = 2;</code>
+     * <code>string denom = 2;</code>
+     * @return The denom.
      */
+    @java.lang.Override
     public java.lang.String getDenom() {
       java.lang.Object ref = denom_;
       if (ref instanceof java.lang.String) {
@@ -202,8 +227,10 @@ public final class QueryOuterClass {
      * denom is the coin denom to query balances for.
      * </pre>
      *
-     * <code>optional string denom = 2;</code>
+     * <code>string denom = 2;</code>
+     * @return The bytes for denom.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDenomBytes() {
       java.lang.Object ref = denom_;
@@ -219,6 +246,7 @@ public final class QueryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -228,6 +256,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -236,8 +265,10 @@ public final class QueryOuterClass {
       if (!getDenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, denom_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -249,11 +280,11 @@ public final class QueryOuterClass {
       if (!getDenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, denom_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -264,12 +295,12 @@ public final class QueryOuterClass {
       }
       cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest other = (cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && getDenom()
-          .equals(other.getDenom());
-      return result;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!getDenom()
+          .equals(other.getDenom())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -278,7 +309,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       hash = (37 * hash) + DENOM_FIELD_NUMBER;
@@ -288,6 +319,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -347,6 +389,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -354,6 +397,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -381,6 +425,7 @@ public final class QueryOuterClass {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryBalanceRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryBalanceRequest_fieldAccessorTable
@@ -403,6 +448,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -412,15 +458,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryBalanceRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest build() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -429,6 +478,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest buildPartial() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest result = new cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest(this);
         result.address_ = address_;
@@ -437,32 +487,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest) {
           return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest)other);
@@ -482,14 +539,17 @@ public final class QueryOuterClass {
           denom_ = other.denom_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -514,7 +574,8 @@ public final class QueryOuterClass {
        * address is the address to query balances for.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -533,7 +594,8 @@ public final class QueryOuterClass {
        * address is the address to query balances for.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -553,7 +615,9 @@ public final class QueryOuterClass {
        * address is the address to query balances for.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -570,7 +634,8 @@ public final class QueryOuterClass {
        * address is the address to query balances for.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -583,7 +648,9 @@ public final class QueryOuterClass {
        * address is the address to query balances for.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -603,7 +670,8 @@ public final class QueryOuterClass {
        * denom is the coin denom to query balances for.
        * </pre>
        *
-       * <code>optional string denom = 2;</code>
+       * <code>string denom = 2;</code>
+       * @return The denom.
        */
       public java.lang.String getDenom() {
         java.lang.Object ref = denom_;
@@ -622,7 +690,8 @@ public final class QueryOuterClass {
        * denom is the coin denom to query balances for.
        * </pre>
        *
-       * <code>optional string denom = 2;</code>
+       * <code>string denom = 2;</code>
+       * @return The bytes for denom.
        */
       public com.google.protobuf.ByteString
           getDenomBytes() {
@@ -642,7 +711,9 @@ public final class QueryOuterClass {
        * denom is the coin denom to query balances for.
        * </pre>
        *
-       * <code>optional string denom = 2;</code>
+       * <code>string denom = 2;</code>
+       * @param value The denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenom(
           java.lang.String value) {
@@ -659,7 +730,8 @@ public final class QueryOuterClass {
        * denom is the coin denom to query balances for.
        * </pre>
        *
-       * <code>optional string denom = 2;</code>
+       * <code>string denom = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDenom() {
         
@@ -672,7 +744,9 @@ public final class QueryOuterClass {
        * denom is the coin denom to query balances for.
        * </pre>
        *
-       * <code>optional string denom = 2;</code>
+       * <code>string denom = 2;</code>
+       * @param value The bytes for denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenomBytes(
           com.google.protobuf.ByteString value) {
@@ -685,14 +759,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -711,11 +787,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryBalanceRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryBalanceRequest>() {
+      @java.lang.Override
       public QueryBalanceRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryBalanceRequest(input, extensionRegistry);
+        return new QueryBalanceRequest(input, extensionRegistry);
       }
     };
 
@@ -728,6 +805,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -743,7 +821,8 @@ public final class QueryOuterClass {
      * balance is the balance of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+     * @return Whether the balance field is set.
      */
     boolean hasBalance();
     /**
@@ -751,7 +830,8 @@ public final class QueryOuterClass {
      * balance is the balance of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+     * @return The balance.
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getBalance();
     /**
@@ -759,7 +839,7 @@ public final class QueryOuterClass {
      * balance is the balance of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalanceOrBuilder();
   }
@@ -770,10 +850,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QueryBalanceResponse}
    */
-  public  static final class QueryBalanceResponse extends
+  public static final class QueryBalanceResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QueryBalanceResponse)
       QueryBalanceResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryBalanceResponse.newBuilder() to construct.
     private QueryBalanceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -782,16 +863,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryBalanceResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryBalanceResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -800,12 +892,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
               if (balance_ != null) {
@@ -819,6 +905,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -827,6 +920,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -835,6 +929,7 @@ public final class QueryOuterClass {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryBalanceResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryBalanceResponse_fieldAccessorTable
@@ -849,8 +944,10 @@ public final class QueryOuterClass {
      * balance is the balance of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+     * @return Whether the balance field is set.
      */
+    @java.lang.Override
     public boolean hasBalance() {
       return balance_ != null;
     }
@@ -859,8 +956,10 @@ public final class QueryOuterClass {
      * balance is the balance of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+     * @return The balance.
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getBalance() {
       return balance_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : balance_;
     }
@@ -869,13 +968,15 @@ public final class QueryOuterClass {
      * balance is the balance of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalanceOrBuilder() {
       return getBalance();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -885,13 +986,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (balance_ != null) {
         output.writeMessage(1, getBalance());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -901,11 +1005,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBalance());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -916,13 +1020,13 @@ public final class QueryOuterClass {
       }
       cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse other = (cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse) obj;
 
-      boolean result = true;
-      result = result && (hasBalance() == other.hasBalance());
+      if (hasBalance() != other.hasBalance()) return false;
       if (hasBalance()) {
-        result = result && getBalance()
-            .equals(other.getBalance());
+        if (!getBalance()
+            .equals(other.getBalance())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -931,7 +1035,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasBalance()) {
         hash = (37 * hash) + BALANCE_FIELD_NUMBER;
         hash = (53 * hash) + getBalance().hashCode();
@@ -941,6 +1045,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1000,6 +1115,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1007,6 +1123,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1034,6 +1151,7 @@ public final class QueryOuterClass {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryBalanceResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryBalanceResponse_fieldAccessorTable
@@ -1056,6 +1174,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (balanceBuilder_ == null) {
@@ -1067,15 +1186,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryBalanceResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse build() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -1084,6 +1206,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse buildPartial() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse result = new cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse(this);
         if (balanceBuilder_ == null) {
@@ -1095,32 +1218,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse) {
           return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse)other);
@@ -1135,14 +1265,17 @@ public final class QueryOuterClass {
         if (other.hasBalance()) {
           mergeBalance(other.getBalance());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1161,7 +1294,7 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmos.base.v1beta1.CoinOuterClass.Coin balance_ = null;
+      private cosmos.base.v1beta1.CoinOuterClass.Coin balance_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> balanceBuilder_;
       /**
@@ -1169,7 +1302,8 @@ public final class QueryOuterClass {
        * balance is the balance of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       * @return Whether the balance field is set.
        */
       public boolean hasBalance() {
         return balanceBuilder_ != null || balance_ != null;
@@ -1179,7 +1313,8 @@ public final class QueryOuterClass {
        * balance is the balance of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       * @return The balance.
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getBalance() {
         if (balanceBuilder_ == null) {
@@ -1193,7 +1328,7 @@ public final class QueryOuterClass {
        * balance is the balance of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
        */
       public Builder setBalance(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (balanceBuilder_ == null) {
@@ -1213,7 +1348,7 @@ public final class QueryOuterClass {
        * balance is the balance of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
        */
       public Builder setBalance(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -1231,7 +1366,7 @@ public final class QueryOuterClass {
        * balance is the balance of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
        */
       public Builder mergeBalance(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (balanceBuilder_ == null) {
@@ -1253,7 +1388,7 @@ public final class QueryOuterClass {
        * balance is the balance of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
        */
       public Builder clearBalance() {
         if (balanceBuilder_ == null) {
@@ -1271,7 +1406,7 @@ public final class QueryOuterClass {
        * balance is the balance of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getBalanceBuilder() {
         
@@ -1283,7 +1418,7 @@ public final class QueryOuterClass {
        * balance is the balance of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalanceOrBuilder() {
         if (balanceBuilder_ != null) {
@@ -1298,7 +1433,7 @@ public final class QueryOuterClass {
        * balance is the balance of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin balance = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -1313,14 +1448,16 @@ public final class QueryOuterClass {
         }
         return balanceBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1339,11 +1476,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryBalanceResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryBalanceResponse>() {
+      @java.lang.Override
       public QueryBalanceResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryBalanceResponse(input, extensionRegistry);
+        return new QueryBalanceResponse(input, extensionRegistry);
       }
     };
 
@@ -1356,6 +1494,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QueryBalanceResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1371,7 +1510,8 @@ public final class QueryOuterClass {
      * address is the address to query balances for.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
@@ -1379,7 +1519,8 @@ public final class QueryOuterClass {
      * address is the address to query balances for.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -1389,7 +1530,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -1397,7 +1539,8 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
@@ -1405,7 +1548,7 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
   }
@@ -1416,10 +1559,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QueryAllBalancesRequest}
    */
-  public  static final class QueryAllBalancesRequest extends
+  public static final class QueryAllBalancesRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QueryAllBalancesRequest)
       QueryAllBalancesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryAllBalancesRequest.newBuilder() to construct.
     private QueryAllBalancesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1429,16 +1573,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAllBalancesRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryAllBalancesRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1447,12 +1602,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1472,6 +1621,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1480,6 +1636,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1488,6 +1645,7 @@ public final class QueryOuterClass {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryAllBalancesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryAllBalancesRequest_fieldAccessorTable
@@ -1502,8 +1660,10 @@ public final class QueryOuterClass {
      * address is the address to query balances for.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -1521,8 +1681,10 @@ public final class QueryOuterClass {
      * address is the address to query balances for.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -1544,8 +1706,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -1554,8 +1718,10 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
     }
@@ -1564,13 +1730,15 @@ public final class QueryOuterClass {
      * pagination defines an optional pagination for the request.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1580,6 +1748,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -1588,8 +1757,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1602,11 +1773,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1617,15 +1788,15 @@ public final class QueryOuterClass {
       }
       cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest other = (cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && (hasPagination() == other.hasPagination());
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1634,7 +1805,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       if (hasPagination()) {
@@ -1646,6 +1817,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1705,6 +1887,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1712,6 +1895,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1739,6 +1923,7 @@ public final class QueryOuterClass {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryAllBalancesRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryAllBalancesRequest_fieldAccessorTable
@@ -1761,6 +1946,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
@@ -1774,15 +1960,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryAllBalancesRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest build() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -1791,6 +1980,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest buildPartial() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest result = new cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest(this);
         result.address_ = address_;
@@ -1803,32 +1993,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest) {
           return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest)other);
@@ -1847,14 +2044,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1879,7 +2079,8 @@ public final class QueryOuterClass {
        * address is the address to query balances for.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -1898,7 +2099,8 @@ public final class QueryOuterClass {
        * address is the address to query balances for.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -1918,7 +2120,9 @@ public final class QueryOuterClass {
        * address is the address to query balances for.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -1935,7 +2139,8 @@ public final class QueryOuterClass {
        * address is the address to query balances for.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -1948,7 +2153,9 @@ public final class QueryOuterClass {
        * address is the address to query balances for.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -1962,7 +2169,7 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
       /**
@@ -1970,7 +2177,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -1980,7 +2188,8 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
         if (paginationBuilder_ == null) {
@@ -1994,7 +2203,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -2014,7 +2223,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
@@ -2032,7 +2241,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
@@ -2054,7 +2263,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -2072,7 +2281,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
         
@@ -2084,7 +2293,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -2099,7 +2308,7 @@ public final class QueryOuterClass {
        * pagination defines an optional pagination for the request.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
@@ -2114,14 +2323,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2140,11 +2351,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryAllBalancesRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryAllBalancesRequest>() {
+      @java.lang.Override
       public QueryAllBalancesRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryAllBalancesRequest(input, extensionRegistry);
+        return new QueryAllBalancesRequest(input, extensionRegistry);
       }
     };
 
@@ -2157,6 +2369,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2172,7 +2385,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getBalancesList();
@@ -2181,7 +2394,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getBalances(int index);
     /**
@@ -2189,7 +2402,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getBalancesCount();
     /**
@@ -2197,7 +2410,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getBalancesOrBuilderList();
@@ -2206,7 +2419,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalancesOrBuilder(
         int index);
@@ -2216,7 +2429,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
@@ -2224,7 +2438,8 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
@@ -2232,7 +2447,7 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
   }
@@ -2244,10 +2459,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QueryAllBalancesResponse}
    */
-  public  static final class QueryAllBalancesResponse extends
+  public static final class QueryAllBalancesResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QueryAllBalancesResponse)
       QueryAllBalancesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryAllBalancesResponse.newBuilder() to construct.
     private QueryAllBalancesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2257,16 +2473,28 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAllBalancesResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryAllBalancesResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2275,14 +2503,8 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 balances_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -2303,6 +2525,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2311,9 +2540,10 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           balances_ = java.util.Collections.unmodifiableList(balances_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2322,6 +2552,7 @@ public final class QueryOuterClass {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryAllBalancesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryAllBalancesResponse_fieldAccessorTable
@@ -2329,7 +2560,6 @@ public final class QueryOuterClass {
               cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse.class, cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int BALANCES_FIELD_NUMBER = 1;
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> balances_;
     /**
@@ -2337,8 +2567,9 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getBalancesList() {
       return balances_;
     }
@@ -2347,8 +2578,9 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getBalancesOrBuilderList() {
       return balances_;
@@ -2358,8 +2590,9 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public int getBalancesCount() {
       return balances_.size();
     }
@@ -2368,8 +2601,9 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getBalances(int index) {
       return balances_.get(index);
     }
@@ -2378,8 +2612,9 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalancesOrBuilder(
         int index) {
       return balances_.get(index);
@@ -2392,8 +2627,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
      */
+    @java.lang.Override
     public boolean hasPagination() {
       return pagination_ != null;
     }
@@ -2402,8 +2639,10 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
@@ -2412,13 +2651,15 @@ public final class QueryOuterClass {
      * pagination defines the pagination in the response.
      * </pre>
      *
-     * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
+    @java.lang.Override
     public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2428,6 +2669,7 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < balances_.size(); i++) {
@@ -2436,8 +2678,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2451,11 +2695,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2466,15 +2710,15 @@ public final class QueryOuterClass {
       }
       cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse other = (cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse) obj;
 
-      boolean result = true;
-      result = result && getBalancesList()
-          .equals(other.getBalancesList());
-      result = result && (hasPagination() == other.hasPagination());
+      if (!getBalancesList()
+          .equals(other.getBalancesList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
       if (hasPagination()) {
-        result = result && getPagination()
-            .equals(other.getPagination());
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2483,7 +2727,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getBalancesCount() > 0) {
         hash = (37 * hash) + BALANCES_FIELD_NUMBER;
         hash = (53 * hash) + getBalancesList().hashCode();
@@ -2497,6 +2741,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2556,6 +2811,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2563,6 +2819,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2591,6 +2848,7 @@ public final class QueryOuterClass {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryAllBalancesResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryAllBalancesResponse_fieldAccessorTable
@@ -2614,6 +2872,7 @@ public final class QueryOuterClass {
           getBalancesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (balancesBuilder_ == null) {
@@ -2631,15 +2890,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryAllBalancesResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse build() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -2648,12 +2910,12 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse buildPartial() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse result = new cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (balancesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             balances_ = java.util.Collections.unmodifiableList(balances_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2666,37 +2928,43 @@ public final class QueryOuterClass {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse) {
           return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse)other);
@@ -2737,14 +3005,17 @@ public final class QueryOuterClass {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2767,7 +3038,7 @@ public final class QueryOuterClass {
       private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> balances_ =
         java.util.Collections.emptyList();
       private void ensureBalancesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           balances_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(balances_);
           bitField0_ |= 0x00000001;
          }
@@ -2781,7 +3052,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getBalancesList() {
         if (balancesBuilder_ == null) {
@@ -2795,7 +3066,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getBalancesCount() {
         if (balancesBuilder_ == null) {
@@ -2809,7 +3080,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getBalances(int index) {
         if (balancesBuilder_ == null) {
@@ -2823,7 +3094,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setBalances(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -2844,7 +3115,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setBalances(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2862,7 +3133,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addBalances(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (balancesBuilder_ == null) {
@@ -2882,7 +3153,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addBalances(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -2903,7 +3174,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addBalances(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2921,7 +3192,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addBalances(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2939,7 +3210,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllBalances(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -2958,7 +3229,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearBalances() {
         if (balancesBuilder_ == null) {
@@ -2975,7 +3246,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeBalances(int index) {
         if (balancesBuilder_ == null) {
@@ -2992,7 +3263,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getBalancesBuilder(
           int index) {
@@ -3003,7 +3274,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalancesOrBuilder(
           int index) {
@@ -3017,7 +3288,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getBalancesOrBuilderList() {
@@ -3032,7 +3303,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addBalancesBuilder() {
         return getBalancesFieldBuilder().addBuilder(
@@ -3043,7 +3314,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addBalancesBuilder(
           int index) {
@@ -3055,7 +3326,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getBalancesBuilderList() {
@@ -3068,7 +3339,7 @@ public final class QueryOuterClass {
           balancesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
                   balances_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           balances_ = null;
@@ -3076,7 +3347,7 @@ public final class QueryOuterClass {
         return balancesBuilder_;
       }
 
-      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_ = null;
+      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
       /**
@@ -3084,7 +3355,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return Whether the pagination field is set.
        */
       public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
@@ -3094,7 +3366,8 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return The pagination.
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
         if (paginationBuilder_ == null) {
@@ -3108,7 +3381,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -3128,7 +3401,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
@@ -3146,7 +3419,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
@@ -3168,7 +3441,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder clearPagination() {
         if (paginationBuilder_ == null) {
@@ -3186,7 +3459,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
         
@@ -3198,7 +3471,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
@@ -3213,7 +3486,7 @@ public final class QueryOuterClass {
        * pagination defines the pagination in the response.
        * </pre>
        *
-       * <code>optional .cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
@@ -3228,14 +3501,16 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3254,11 +3529,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryAllBalancesResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryAllBalancesResponse>() {
+      @java.lang.Override
       public QueryAllBalancesResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryAllBalancesResponse(input, extensionRegistry);
+        return new QueryAllBalancesResponse(input, extensionRegistry);
       }
     };
 
@@ -3271,6 +3547,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3289,10 +3566,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QueryTotalSupplyRequest}
    */
-  public  static final class QueryTotalSupplyRequest extends
+  public static final class QueryTotalSupplyRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QueryTotalSupplyRequest)
       QueryTotalSupplyRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryTotalSupplyRequest.newBuilder() to construct.
     private QueryTotalSupplyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3301,15 +3579,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryTotalSupplyRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryTotalSupplyRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3319,7 +3609,8 @@ public final class QueryOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -3332,6 +3623,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3340,6 +3632,7 @@ public final class QueryOuterClass {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryTotalSupplyRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryTotalSupplyRequest_fieldAccessorTable
@@ -3348,6 +3641,7 @@ public final class QueryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3357,20 +3651,23 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3381,8 +3678,8 @@ public final class QueryOuterClass {
       }
       cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest other = (cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3391,12 +3688,23 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3456,6 +3764,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3463,6 +3772,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3491,6 +3801,7 @@ public final class QueryOuterClass {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryTotalSupplyRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryTotalSupplyRequest_fieldAccessorTable
@@ -3513,20 +3824,24 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryTotalSupplyRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest build() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -3535,38 +3850,46 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest buildPartial() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest result = new cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest) {
           return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest)other);
@@ -3578,14 +3901,17 @@ public final class QueryOuterClass {
 
       public Builder mergeFrom(cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest other) {
         if (other == cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3603,14 +3929,16 @@ public final class QueryOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3629,11 +3957,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryTotalSupplyRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryTotalSupplyRequest>() {
+      @java.lang.Override
       public QueryTotalSupplyRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryTotalSupplyRequest(input, extensionRegistry);
+        return new QueryTotalSupplyRequest(input, extensionRegistry);
       }
     };
 
@@ -3646,6 +3975,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3661,7 +3991,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getSupplyList();
@@ -3670,7 +4000,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getSupply(int index);
     /**
@@ -3678,7 +4008,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getSupplyCount();
     /**
@@ -3686,7 +4016,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getSupplyOrBuilderList();
@@ -3695,7 +4025,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSupplyOrBuilder(
         int index);
@@ -3708,10 +4038,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QueryTotalSupplyResponse}
    */
-  public  static final class QueryTotalSupplyResponse extends
+  public static final class QueryTotalSupplyResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QueryTotalSupplyResponse)
       QueryTotalSupplyResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryTotalSupplyResponse.newBuilder() to construct.
     private QueryTotalSupplyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3721,16 +4052,28 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryTotalSupplyResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryTotalSupplyResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3739,19 +4082,20 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 supply_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
                 mutable_bitField0_ |= 0x00000001;
               }
               supply_.add(
                   input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3762,9 +4106,10 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           supply_ = java.util.Collections.unmodifiableList(supply_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3773,6 +4118,7 @@ public final class QueryOuterClass {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryTotalSupplyResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryTotalSupplyResponse_fieldAccessorTable
@@ -3787,8 +4133,9 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSupplyList() {
       return supply_;
     }
@@ -3797,8 +4144,9 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getSupplyOrBuilderList() {
       return supply_;
@@ -3808,8 +4156,9 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public int getSupplyCount() {
       return supply_.size();
     }
@@ -3818,8 +4167,9 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getSupply(int index) {
       return supply_.get(index);
     }
@@ -3828,14 +4178,16 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSupplyOrBuilder(
         int index) {
       return supply_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3845,13 +4197,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < supply_.size(); i++) {
         output.writeMessage(1, supply_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3861,11 +4216,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, supply_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3876,10 +4231,10 @@ public final class QueryOuterClass {
       }
       cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse other = (cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse) obj;
 
-      boolean result = true;
-      result = result && getSupplyList()
-          .equals(other.getSupplyList());
-      return result;
+      if (!getSupplyList()
+          .equals(other.getSupplyList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3888,7 +4243,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getSupplyCount() > 0) {
         hash = (37 * hash) + SUPPLY_FIELD_NUMBER;
         hash = (53 * hash) + getSupplyList().hashCode();
@@ -3898,6 +4253,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3957,6 +4323,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3964,6 +4331,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3992,6 +4360,7 @@ public final class QueryOuterClass {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryTotalSupplyResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryTotalSupplyResponse_fieldAccessorTable
@@ -4015,6 +4384,7 @@ public final class QueryOuterClass {
           getSupplyFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (supplyBuilder_ == null) {
@@ -4026,15 +4396,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryTotalSupplyResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse build() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -4043,11 +4416,12 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse buildPartial() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse result = new cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse(this);
         int from_bitField0_ = bitField0_;
         if (supplyBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             supply_ = java.util.Collections.unmodifiableList(supply_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -4059,32 +4433,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse) {
           return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse)other);
@@ -4122,14 +4503,17 @@ public final class QueryOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4152,7 +4536,7 @@ public final class QueryOuterClass {
       private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> supply_ =
         java.util.Collections.emptyList();
       private void ensureSupplyIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           supply_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(supply_);
           bitField0_ |= 0x00000001;
          }
@@ -4166,7 +4550,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSupplyList() {
         if (supplyBuilder_ == null) {
@@ -4180,7 +4564,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getSupplyCount() {
         if (supplyBuilder_ == null) {
@@ -4194,7 +4578,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getSupply(int index) {
         if (supplyBuilder_ == null) {
@@ -4208,7 +4592,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -4229,7 +4613,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -4247,7 +4631,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSupply(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (supplyBuilder_ == null) {
@@ -4267,7 +4651,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -4288,7 +4672,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSupply(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -4306,7 +4690,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -4324,7 +4708,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllSupply(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -4343,7 +4727,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearSupply() {
         if (supplyBuilder_ == null) {
@@ -4360,7 +4744,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeSupply(int index) {
         if (supplyBuilder_ == null) {
@@ -4377,7 +4761,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getSupplyBuilder(
           int index) {
@@ -4388,7 +4772,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSupplyOrBuilder(
           int index) {
@@ -4402,7 +4786,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getSupplyOrBuilderList() {
@@ -4417,7 +4801,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSupplyBuilder() {
         return getSupplyFieldBuilder().addBuilder(
@@ -4428,7 +4812,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSupplyBuilder(
           int index) {
@@ -4440,7 +4824,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getSupplyBuilderList() {
@@ -4453,21 +4837,23 @@ public final class QueryOuterClass {
           supplyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
                   supply_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           supply_ = null;
         }
         return supplyBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4486,11 +4872,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryTotalSupplyResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryTotalSupplyResponse>() {
+      @java.lang.Override
       public QueryTotalSupplyResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryTotalSupplyResponse(input, extensionRegistry);
+        return new QueryTotalSupplyResponse(input, extensionRegistry);
       }
     };
 
@@ -4503,6 +4890,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4518,7 +4906,8 @@ public final class QueryOuterClass {
      * denom is the coin denom to query balances for.
      * </pre>
      *
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
     java.lang.String getDenom();
     /**
@@ -4526,7 +4915,8 @@ public final class QueryOuterClass {
      * denom is the coin denom to query balances for.
      * </pre>
      *
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
     com.google.protobuf.ByteString
         getDenomBytes();
@@ -4538,10 +4928,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QuerySupplyOfRequest}
    */
-  public  static final class QuerySupplyOfRequest extends
+  public static final class QuerySupplyOfRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QuerySupplyOfRequest)
       QuerySupplyOfRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QuerySupplyOfRequest.newBuilder() to construct.
     private QuerySupplyOfRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4551,16 +4942,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuerySupplyOfRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QuerySupplyOfRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4569,16 +4971,17 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               denom_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -4589,6 +4992,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4597,6 +5001,7 @@ public final class QueryOuterClass {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySupplyOfRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySupplyOfRequest_fieldAccessorTable
@@ -4611,8 +5016,10 @@ public final class QueryOuterClass {
      * denom is the coin denom to query balances for.
      * </pre>
      *
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
+    @java.lang.Override
     public java.lang.String getDenom() {
       java.lang.Object ref = denom_;
       if (ref instanceof java.lang.String) {
@@ -4630,8 +5037,10 @@ public final class QueryOuterClass {
      * denom is the coin denom to query balances for.
      * </pre>
      *
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDenomBytes() {
       java.lang.Object ref = denom_;
@@ -4647,6 +5056,7 @@ public final class QueryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4656,13 +5066,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getDenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, denom_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4671,11 +5084,11 @@ public final class QueryOuterClass {
       if (!getDenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, denom_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4686,10 +5099,10 @@ public final class QueryOuterClass {
       }
       cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest other = (cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest) obj;
 
-      boolean result = true;
-      result = result && getDenom()
-          .equals(other.getDenom());
-      return result;
+      if (!getDenom()
+          .equals(other.getDenom())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4698,7 +5111,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DENOM_FIELD_NUMBER;
       hash = (53 * hash) + getDenom().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -4706,6 +5119,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4765,6 +5189,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4772,6 +5197,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4799,6 +5225,7 @@ public final class QueryOuterClass {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySupplyOfRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySupplyOfRequest_fieldAccessorTable
@@ -4821,6 +5248,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         denom_ = "";
@@ -4828,15 +5256,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySupplyOfRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest build() {
         cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -4845,6 +5276,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest buildPartial() {
         cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest result = new cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest(this);
         result.denom_ = denom_;
@@ -4852,32 +5284,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest) {
           return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest)other);
@@ -4893,14 +5332,17 @@ public final class QueryOuterClass {
           denom_ = other.denom_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4925,7 +5367,8 @@ public final class QueryOuterClass {
        * denom is the coin denom to query balances for.
        * </pre>
        *
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The denom.
        */
       public java.lang.String getDenom() {
         java.lang.Object ref = denom_;
@@ -4944,7 +5387,8 @@ public final class QueryOuterClass {
        * denom is the coin denom to query balances for.
        * </pre>
        *
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The bytes for denom.
        */
       public com.google.protobuf.ByteString
           getDenomBytes() {
@@ -4964,7 +5408,9 @@ public final class QueryOuterClass {
        * denom is the coin denom to query balances for.
        * </pre>
        *
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenom(
           java.lang.String value) {
@@ -4981,7 +5427,8 @@ public final class QueryOuterClass {
        * denom is the coin denom to query balances for.
        * </pre>
        *
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDenom() {
         
@@ -4994,7 +5441,9 @@ public final class QueryOuterClass {
        * denom is the coin denom to query balances for.
        * </pre>
        *
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The bytes for denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenomBytes(
           com.google.protobuf.ByteString value) {
@@ -5007,14 +5456,16 @@ public final class QueryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5033,11 +5484,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QuerySupplyOfRequest>
         PARSER = new com.google.protobuf.AbstractParser<QuerySupplyOfRequest>() {
+      @java.lang.Override
       public QuerySupplyOfRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QuerySupplyOfRequest(input, extensionRegistry);
+        return new QuerySupplyOfRequest(input, extensionRegistry);
       }
     };
 
@@ -5050,6 +5502,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5065,7 +5518,8 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the amount field is set.
      */
     boolean hasAmount();
     /**
@@ -5073,7 +5527,8 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The amount.
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
     /**
@@ -5081,7 +5536,7 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
   }
@@ -5092,10 +5547,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QuerySupplyOfResponse}
    */
-  public  static final class QuerySupplyOfResponse extends
+  public static final class QuerySupplyOfResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QuerySupplyOfResponse)
       QuerySupplyOfResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QuerySupplyOfResponse.newBuilder() to construct.
     private QuerySupplyOfResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5104,16 +5560,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuerySupplyOfResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QuerySupplyOfResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5122,12 +5589,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
               if (amount_ != null) {
@@ -5141,6 +5602,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5149,6 +5617,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5157,6 +5626,7 @@ public final class QueryOuterClass {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySupplyOfResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySupplyOfResponse_fieldAccessorTable
@@ -5171,8 +5641,10 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the amount field is set.
      */
+    @java.lang.Override
     public boolean hasAmount() {
       return amount_ != null;
     }
@@ -5181,8 +5653,10 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The amount.
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
       return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
     }
@@ -5191,13 +5665,15 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
       return getAmount();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5207,13 +5683,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (amount_ != null) {
         output.writeMessage(1, getAmount());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5223,11 +5702,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getAmount());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5238,13 +5717,13 @@ public final class QueryOuterClass {
       }
       cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse other = (cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse) obj;
 
-      boolean result = true;
-      result = result && (hasAmount() == other.hasAmount());
+      if (hasAmount() != other.hasAmount()) return false;
       if (hasAmount()) {
-        result = result && getAmount()
-            .equals(other.getAmount());
+        if (!getAmount()
+            .equals(other.getAmount())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5253,7 +5732,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasAmount()) {
         hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getAmount().hashCode();
@@ -5263,6 +5742,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5322,6 +5812,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5329,6 +5820,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5356,6 +5848,7 @@ public final class QueryOuterClass {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySupplyOfResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySupplyOfResponse_fieldAccessorTable
@@ -5378,6 +5871,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (amountBuilder_ == null) {
@@ -5389,15 +5883,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySupplyOfResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse build() {
         cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -5406,6 +5903,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse buildPartial() {
         cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse result = new cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse(this);
         if (amountBuilder_ == null) {
@@ -5417,32 +5915,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse) {
           return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse)other);
@@ -5457,14 +5962,17 @@ public final class QueryOuterClass {
         if (other.hasAmount()) {
           mergeAmount(other.getAmount());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5483,7 +5991,7 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmos.base.v1beta1.CoinOuterClass.Coin amount_ = null;
+      private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
       /**
@@ -5491,7 +5999,8 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the amount field is set.
        */
       public boolean hasAmount() {
         return amountBuilder_ != null || amount_ != null;
@@ -5501,7 +6010,8 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * @return The amount.
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
         if (amountBuilder_ == null) {
@@ -5515,7 +6025,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -5535,7 +6045,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAmount(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -5553,7 +6063,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -5575,7 +6085,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearAmount() {
         if (amountBuilder_ == null) {
@@ -5593,7 +6103,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
         
@@ -5605,7 +6115,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
         if (amountBuilder_ != null) {
@@ -5620,7 +6130,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>optional .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -5635,14 +6145,16 @@ public final class QueryOuterClass {
         }
         return amountBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5661,11 +6173,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QuerySupplyOfResponse>
         PARSER = new com.google.protobuf.AbstractParser<QuerySupplyOfResponse>() {
+      @java.lang.Override
       public QuerySupplyOfResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QuerySupplyOfResponse(input, extensionRegistry);
+        return new QuerySupplyOfResponse(input, extensionRegistry);
       }
     };
 
@@ -5678,6 +6191,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5695,10 +6209,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QueryParamsRequest}
    */
-  public  static final class QueryParamsRequest extends
+  public static final class QueryParamsRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QueryParamsRequest)
       QueryParamsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryParamsRequest.newBuilder() to construct.
     private QueryParamsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5707,15 +6222,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryParamsRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryParamsRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5725,7 +6252,8 @@ public final class QueryOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -5738,6 +6266,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5746,6 +6275,7 @@ public final class QueryOuterClass {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryParamsRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryParamsRequest_fieldAccessorTable
@@ -5754,6 +6284,7 @@ public final class QueryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5763,20 +6294,23 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5787,8 +6321,8 @@ public final class QueryOuterClass {
       }
       cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest other = (cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5797,12 +6331,23 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5862,6 +6407,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5869,6 +6415,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5896,6 +6443,7 @@ public final class QueryOuterClass {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryParamsRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryParamsRequest_fieldAccessorTable
@@ -5918,20 +6466,24 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryParamsRequest_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest build() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -5940,38 +6492,46 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest buildPartial() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest result = new cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest) {
           return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest)other);
@@ -5983,14 +6543,17 @@ public final class QueryOuterClass {
 
       public Builder mergeFrom(cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest other) {
         if (other == cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6008,14 +6571,16 @@ public final class QueryOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6034,11 +6599,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryParamsRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryParamsRequest>() {
+      @java.lang.Override
       public QueryParamsRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryParamsRequest(input, extensionRegistry);
+        return new QueryParamsRequest(input, extensionRegistry);
       }
     };
 
@@ -6051,6 +6617,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QueryParamsRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6062,15 +6629,17 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The params.
      */
     cosmos.bank.v1beta1.Bank.Params getParams();
     /**
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder();
   }
@@ -6081,10 +6650,11 @@ public final class QueryOuterClass {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QueryParamsResponse}
    */
-  public  static final class QueryParamsResponse extends
+  public static final class QueryParamsResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QueryParamsResponse)
       QueryParamsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryParamsResponse.newBuilder() to construct.
     private QueryParamsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6093,16 +6663,27 @@ public final class QueryOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryParamsResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryParamsResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6111,12 +6692,6 @@ public final class QueryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmos.bank.v1beta1.Bank.Params.Builder subBuilder = null;
               if (params_ != null) {
@@ -6130,6 +6705,13 @@ public final class QueryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6138,6 +6720,7 @@ public final class QueryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6146,6 +6729,7 @@ public final class QueryOuterClass {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryParamsResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryParamsResponse_fieldAccessorTable
@@ -6156,25 +6740,31 @@ public final class QueryOuterClass {
     public static final int PARAMS_FIELD_NUMBER = 1;
     private cosmos.bank.v1beta1.Bank.Params params_;
     /**
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the params field is set.
      */
+    @java.lang.Override
     public boolean hasParams() {
       return params_ != null;
     }
     /**
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The params.
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Params getParams() {
       return params_ == null ? cosmos.bank.v1beta1.Bank.Params.getDefaultInstance() : params_;
     }
     /**
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder() {
       return getParams();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6184,13 +6774,16 @@ public final class QueryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (params_ != null) {
         output.writeMessage(1, getParams());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6200,11 +6793,11 @@ public final class QueryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getParams());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6215,13 +6808,13 @@ public final class QueryOuterClass {
       }
       cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse other = (cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse) obj;
 
-      boolean result = true;
-      result = result && (hasParams() == other.hasParams());
+      if (hasParams() != other.hasParams()) return false;
       if (hasParams()) {
-        result = result && getParams()
-            .equals(other.getParams());
+        if (!getParams()
+            .equals(other.getParams())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6230,7 +6823,7 @@ public final class QueryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasParams()) {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParams().hashCode();
@@ -6240,6 +6833,17 @@ public final class QueryOuterClass {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6299,6 +6903,7 @@ public final class QueryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6306,6 +6911,7 @@ public final class QueryOuterClass {
     public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6333,6 +6939,7 @@ public final class QueryOuterClass {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryParamsResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryParamsResponse_fieldAccessorTable
@@ -6355,6 +6962,7 @@ public final class QueryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (paramsBuilder_ == null) {
@@ -6366,15 +6974,18 @@ public final class QueryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QueryParamsResponse_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse build() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -6383,6 +6994,7 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse buildPartial() {
         cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse result = new cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse(this);
         if (paramsBuilder_ == null) {
@@ -6394,32 +7006,39 @@ public final class QueryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse) {
           return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse)other);
@@ -6434,14 +7053,17 @@ public final class QueryOuterClass {
         if (other.hasParams()) {
           mergeParams(other.getParams());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6460,17 +7082,19 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private cosmos.bank.v1beta1.Bank.Params params_ = null;
+      private cosmos.bank.v1beta1.Bank.Params params_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.bank.v1beta1.Bank.Params, cosmos.bank.v1beta1.Bank.Params.Builder, cosmos.bank.v1beta1.Bank.ParamsOrBuilder> paramsBuilder_;
       /**
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the params field is set.
        */
       public boolean hasParams() {
         return paramsBuilder_ != null || params_ != null;
       }
       /**
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * @return The params.
        */
       public cosmos.bank.v1beta1.Bank.Params getParams() {
         if (paramsBuilder_ == null) {
@@ -6480,7 +7104,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(cosmos.bank.v1beta1.Bank.Params value) {
         if (paramsBuilder_ == null) {
@@ -6496,7 +7120,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(
           cosmos.bank.v1beta1.Bank.Params.Builder builderForValue) {
@@ -6510,7 +7134,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeParams(cosmos.bank.v1beta1.Bank.Params value) {
         if (paramsBuilder_ == null) {
@@ -6528,7 +7152,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -6542,7 +7166,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.bank.v1beta1.Bank.Params.Builder getParamsBuilder() {
         
@@ -6550,7 +7174,7 @@ public final class QueryOuterClass {
         return getParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -6561,7 +7185,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.bank.v1beta1.Bank.Params, cosmos.bank.v1beta1.Bank.Params.Builder, cosmos.bank.v1beta1.Bank.ParamsOrBuilder> 
@@ -6576,14 +7200,16 @@ public final class QueryOuterClass {
         }
         return paramsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6602,11 +7228,12 @@ public final class QueryOuterClass {
 
     private static final com.google.protobuf.Parser<QueryParamsResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryParamsResponse>() {
+      @java.lang.Override
       public QueryParamsResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryParamsResponse(input, extensionRegistry);
+        return new QueryParamsResponse(input, extensionRegistry);
       }
     };
 
@@ -6619,6 +7246,7 @@ public final class QueryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QueryParamsResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6693,7 +7321,7 @@ public final class QueryOuterClass {
       "\007address\030\001 \001(\t\022\r\n\005denom\030\002 \001(\t:\010\350\240\037\000\210\240\037\000\"" +
       "B\n\024QueryBalanceResponse\022*\n\007balance\030\001 \001(\013" +
       "2\031.cosmos.base.v1beta1.Coin\"p\n\027QueryAllB" +
-      "alancesRequest\022\017\n\007address\030\001 \001(\t\022:\n\npagin",
+      "alancesRequest\022\017\n\007address\030\001 \001(\t\022:\n\npagin" +
       "ation\030\002 \001(\0132&.cosmos.base.query.v1beta1." +
       "PageRequest:\010\350\240\037\000\210\240\037\000\"\266\001\n\030QueryAllBalanc" +
       "esResponse\022]\n\010balances\030\001 \003(\0132\031.cosmos.ba" +
@@ -6703,7 +7331,7 @@ public final class QueryOuterClass {
       "sponse\"\031\n\027QueryTotalSupplyRequest\"w\n\030Que" +
       "ryTotalSupplyResponse\022[\n\006supply\030\001 \003(\0132\031." +
       "cosmos.base.v1beta1.CoinB0\310\336\037\000\252\337\037(github" +
-      ".com/cosmos/cosmos-sdk/types.Coins\"%\n\024Qu",
+      ".com/cosmos/cosmos-sdk/types.Coins\"%\n\024Qu" +
       "erySupplyOfRequest\022\r\n\005denom\030\001 \001(\t\"H\n\025Que" +
       "rySupplyOfResponse\022/\n\006amount\030\001 \001(\0132\031.cos" +
       "mos.base.v1beta1.CoinB\004\310\336\037\000\"\024\n\022QueryPara" +
@@ -6713,7 +7341,7 @@ public final class QueryOuterClass {
       "v1beta1.QueryBalanceRequest\032).cosmos.ban" +
       "k.v1beta1.QueryBalanceResponse\"7\202\323\344\223\0021\022/" +
       "/cosmos/bank/v1beta1/balances/{address}/" +
-      "{denom}\022\233\001\n\013AllBalances\022,.cosmos.bank.v1",
+      "{denom}\022\233\001\n\013AllBalances\022,.cosmos.bank.v1" +
       "beta1.QueryAllBalancesRequest\032-.cosmos.b" +
       "ank.v1beta1.QueryAllBalancesResponse\"/\202\323" +
       "\344\223\002)\022\'/cosmos/bank/v1beta1/balances/{add" +
@@ -6723,22 +7351,14 @@ public final class QueryOuterClass {
       "\002\035\022\033/cosmos/bank/v1beta1/supply\022\216\001\n\010Supp" +
       "lyOf\022).cosmos.bank.v1beta1.QuerySupplyOf" +
       "Request\032*.cosmos.bank.v1beta1.QuerySuppl" +
-      "yOfResponse\"+\202\323\344\223\002%\022#/cosmos/bank/v1beta",
+      "yOfResponse\"+\202\323\344\223\002%\022#/cosmos/bank/v1beta" +
       "1/supply/{denom}\022\200\001\n\006Params\022\'.cosmos.ban" +
       "k.v1beta1.QueryParamsRequest\032(.cosmos.ba" +
       "nk.v1beta1.QueryParamsResponse\"#\202\323\344\223\002\035\022\033" +
       "/cosmos/bank/v1beta1/paramsB+Z)github.co" +
       "m/cosmos/cosmos-sdk/x/bank/typesb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
@@ -6746,7 +7366,7 @@ public final class QueryOuterClass {
           com.google.api.AnnotationsProto.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           cosmos.bank.v1beta1.Bank.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_bank_v1beta1_QueryBalanceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_bank_v1beta1_QueryBalanceRequest_fieldAccessorTable = new

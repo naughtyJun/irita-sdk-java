@@ -19,26 +19,31 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint64 amount = 1;</code>
+     * <code>uint64 amount = 1;</code>
+     * @return The amount.
      */
     long getAmount();
 
     /**
-     * <code>optional string recipient = 2;</code>
+     * <code>string recipient = 2;</code>
+     * @return The recipient.
      */
     java.lang.String getRecipient();
     /**
-     * <code>optional string recipient = 2;</code>
+     * <code>string recipient = 2;</code>
+     * @return The bytes for recipient.
      */
     com.google.protobuf.ByteString
         getRecipientBytes();
 
     /**
-     * <code>optional string operator = 3;</code>
+     * <code>string operator = 3;</code>
+     * @return The operator.
      */
     java.lang.String getOperator();
     /**
-     * <code>optional string operator = 3;</code>
+     * <code>string operator = 3;</code>
+     * @return The bytes for operator.
      */
     com.google.protobuf.ByteString
         getOperatorBytes();
@@ -50,31 +55,42 @@ public final class Tx {
    *
    * Protobuf type {@code irita.opb.MsgMint}
    */
-  public  static final class MsgMint extends
+  public static final class MsgMint extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:irita.opb.MsgMint)
       MsgMintOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgMint.newBuilder() to construct.
     private MsgMint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private MsgMint() {
-      amount_ = 0L;
       recipient_ = "";
       operator_ = "";
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgMint();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgMint(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -83,12 +99,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               amount_ = input.readUInt64();
@@ -106,6 +116,13 @@ public final class Tx {
               operator_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -114,6 +131,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -122,6 +140,7 @@ public final class Tx {
       return irita.opb.Tx.internal_static_irita_opb_MsgMint_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return irita.opb.Tx.internal_static_irita_opb_MsgMint_fieldAccessorTable
@@ -132,8 +151,10 @@ public final class Tx {
     public static final int AMOUNT_FIELD_NUMBER = 1;
     private long amount_;
     /**
-     * <code>optional uint64 amount = 1;</code>
+     * <code>uint64 amount = 1;</code>
+     * @return The amount.
      */
+    @java.lang.Override
     public long getAmount() {
       return amount_;
     }
@@ -141,8 +162,10 @@ public final class Tx {
     public static final int RECIPIENT_FIELD_NUMBER = 2;
     private volatile java.lang.Object recipient_;
     /**
-     * <code>optional string recipient = 2;</code>
+     * <code>string recipient = 2;</code>
+     * @return The recipient.
      */
+    @java.lang.Override
     public java.lang.String getRecipient() {
       java.lang.Object ref = recipient_;
       if (ref instanceof java.lang.String) {
@@ -156,8 +179,10 @@ public final class Tx {
       }
     }
     /**
-     * <code>optional string recipient = 2;</code>
+     * <code>string recipient = 2;</code>
+     * @return The bytes for recipient.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getRecipientBytes() {
       java.lang.Object ref = recipient_;
@@ -175,8 +200,10 @@ public final class Tx {
     public static final int OPERATOR_FIELD_NUMBER = 3;
     private volatile java.lang.Object operator_;
     /**
-     * <code>optional string operator = 3;</code>
+     * <code>string operator = 3;</code>
+     * @return The operator.
      */
+    @java.lang.Override
     public java.lang.String getOperator() {
       java.lang.Object ref = operator_;
       if (ref instanceof java.lang.String) {
@@ -190,8 +217,10 @@ public final class Tx {
       }
     }
     /**
-     * <code>optional string operator = 3;</code>
+     * <code>string operator = 3;</code>
+     * @return The bytes for operator.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOperatorBytes() {
       java.lang.Object ref = operator_;
@@ -207,6 +236,7 @@ public final class Tx {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -216,6 +246,7 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (amount_ != 0L) {
@@ -227,8 +258,10 @@ public final class Tx {
       if (!getOperatorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, operator_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -244,11 +277,11 @@ public final class Tx {
       if (!getOperatorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, operator_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -259,14 +292,14 @@ public final class Tx {
       }
       irita.opb.Tx.MsgMint other = (irita.opb.Tx.MsgMint) obj;
 
-      boolean result = true;
-      result = result && (getAmount()
-          == other.getAmount());
-      result = result && getRecipient()
-          .equals(other.getRecipient());
-      result = result && getOperator()
-          .equals(other.getOperator());
-      return result;
+      if (getAmount()
+          != other.getAmount()) return false;
+      if (!getRecipient()
+          .equals(other.getRecipient())) return false;
+      if (!getOperator()
+          .equals(other.getOperator())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -275,7 +308,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAmount());
@@ -288,6 +321,17 @@ public final class Tx {
       return hash;
     }
 
+    public static irita.opb.Tx.MsgMint parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static irita.opb.Tx.MsgMint parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static irita.opb.Tx.MsgMint parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -347,6 +391,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -354,6 +399,7 @@ public final class Tx {
     public static Builder newBuilder(irita.opb.Tx.MsgMint prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -381,6 +427,7 @@ public final class Tx {
         return irita.opb.Tx.internal_static_irita_opb_MsgMint_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return irita.opb.Tx.internal_static_irita_opb_MsgMint_fieldAccessorTable
@@ -403,6 +450,7 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         amount_ = 0L;
@@ -414,15 +462,18 @@ public final class Tx {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return irita.opb.Tx.internal_static_irita_opb_MsgMint_descriptor;
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgMint getDefaultInstanceForType() {
         return irita.opb.Tx.MsgMint.getDefaultInstance();
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgMint build() {
         irita.opb.Tx.MsgMint result = buildPartial();
         if (!result.isInitialized()) {
@@ -431,6 +482,7 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgMint buildPartial() {
         irita.opb.Tx.MsgMint result = new irita.opb.Tx.MsgMint(this);
         result.amount_ = amount_;
@@ -440,32 +492,39 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof irita.opb.Tx.MsgMint) {
           return mergeFrom((irita.opb.Tx.MsgMint)other);
@@ -488,14 +547,17 @@ public final class Tx {
           operator_ = other.operator_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -516,13 +578,17 @@ public final class Tx {
 
       private long amount_ ;
       /**
-       * <code>optional uint64 amount = 1;</code>
+       * <code>uint64 amount = 1;</code>
+       * @return The amount.
        */
+      @java.lang.Override
       public long getAmount() {
         return amount_;
       }
       /**
-       * <code>optional uint64 amount = 1;</code>
+       * <code>uint64 amount = 1;</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
        */
       public Builder setAmount(long value) {
         
@@ -531,7 +597,8 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional uint64 amount = 1;</code>
+       * <code>uint64 amount = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAmount() {
         
@@ -542,7 +609,8 @@ public final class Tx {
 
       private java.lang.Object recipient_ = "";
       /**
-       * <code>optional string recipient = 2;</code>
+       * <code>string recipient = 2;</code>
+       * @return The recipient.
        */
       public java.lang.String getRecipient() {
         java.lang.Object ref = recipient_;
@@ -557,7 +625,8 @@ public final class Tx {
         }
       }
       /**
-       * <code>optional string recipient = 2;</code>
+       * <code>string recipient = 2;</code>
+       * @return The bytes for recipient.
        */
       public com.google.protobuf.ByteString
           getRecipientBytes() {
@@ -573,7 +642,9 @@ public final class Tx {
         }
       }
       /**
-       * <code>optional string recipient = 2;</code>
+       * <code>string recipient = 2;</code>
+       * @param value The recipient to set.
+       * @return This builder for chaining.
        */
       public Builder setRecipient(
           java.lang.String value) {
@@ -586,7 +657,8 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional string recipient = 2;</code>
+       * <code>string recipient = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRecipient() {
         
@@ -595,7 +667,9 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional string recipient = 2;</code>
+       * <code>string recipient = 2;</code>
+       * @param value The bytes for recipient to set.
+       * @return This builder for chaining.
        */
       public Builder setRecipientBytes(
           com.google.protobuf.ByteString value) {
@@ -611,7 +685,8 @@ public final class Tx {
 
       private java.lang.Object operator_ = "";
       /**
-       * <code>optional string operator = 3;</code>
+       * <code>string operator = 3;</code>
+       * @return The operator.
        */
       public java.lang.String getOperator() {
         java.lang.Object ref = operator_;
@@ -626,7 +701,8 @@ public final class Tx {
         }
       }
       /**
-       * <code>optional string operator = 3;</code>
+       * <code>string operator = 3;</code>
+       * @return The bytes for operator.
        */
       public com.google.protobuf.ByteString
           getOperatorBytes() {
@@ -642,7 +718,9 @@ public final class Tx {
         }
       }
       /**
-       * <code>optional string operator = 3;</code>
+       * <code>string operator = 3;</code>
+       * @param value The operator to set.
+       * @return This builder for chaining.
        */
       public Builder setOperator(
           java.lang.String value) {
@@ -655,7 +733,8 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional string operator = 3;</code>
+       * <code>string operator = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOperator() {
         
@@ -664,7 +743,9 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional string operator = 3;</code>
+       * <code>string operator = 3;</code>
+       * @param value The bytes for operator to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatorBytes(
           com.google.protobuf.ByteString value) {
@@ -677,14 +758,16 @@ public final class Tx {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -703,11 +786,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgMint>
         PARSER = new com.google.protobuf.AbstractParser<MsgMint>() {
+      @java.lang.Override
       public MsgMint parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgMint(input, extensionRegistry);
+        return new MsgMint(input, extensionRegistry);
       }
     };
 
@@ -720,6 +804,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public irita.opb.Tx.MsgMint getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -737,10 +822,11 @@ public final class Tx {
    *
    * Protobuf type {@code irita.opb.MsgMintResponse}
    */
-  public  static final class MsgMintResponse extends
+  public static final class MsgMintResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:irita.opb.MsgMintResponse)
       MsgMintResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgMintResponse.newBuilder() to construct.
     private MsgMintResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -749,15 +835,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgMintResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgMintResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -767,7 +865,8 @@ public final class Tx {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -780,6 +879,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -788,6 +888,7 @@ public final class Tx {
       return irita.opb.Tx.internal_static_irita_opb_MsgMintResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return irita.opb.Tx.internal_static_irita_opb_MsgMintResponse_fieldAccessorTable
@@ -796,6 +897,7 @@ public final class Tx {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -805,20 +907,23 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -829,8 +934,8 @@ public final class Tx {
       }
       irita.opb.Tx.MsgMintResponse other = (irita.opb.Tx.MsgMintResponse) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -839,12 +944,23 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static irita.opb.Tx.MsgMintResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static irita.opb.Tx.MsgMintResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static irita.opb.Tx.MsgMintResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -904,6 +1020,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -911,6 +1028,7 @@ public final class Tx {
     public static Builder newBuilder(irita.opb.Tx.MsgMintResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -938,6 +1056,7 @@ public final class Tx {
         return irita.opb.Tx.internal_static_irita_opb_MsgMintResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return irita.opb.Tx.internal_static_irita_opb_MsgMintResponse_fieldAccessorTable
@@ -960,20 +1079,24 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return irita.opb.Tx.internal_static_irita_opb_MsgMintResponse_descriptor;
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgMintResponse getDefaultInstanceForType() {
         return irita.opb.Tx.MsgMintResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgMintResponse build() {
         irita.opb.Tx.MsgMintResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -982,38 +1105,46 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgMintResponse buildPartial() {
         irita.opb.Tx.MsgMintResponse result = new irita.opb.Tx.MsgMintResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof irita.opb.Tx.MsgMintResponse) {
           return mergeFrom((irita.opb.Tx.MsgMintResponse)other);
@@ -1025,14 +1156,17 @@ public final class Tx {
 
       public Builder mergeFrom(irita.opb.Tx.MsgMintResponse other) {
         if (other == irita.opb.Tx.MsgMintResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1050,14 +1184,16 @@ public final class Tx {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1076,11 +1212,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgMintResponse>
         PARSER = new com.google.protobuf.AbstractParser<MsgMintResponse>() {
+      @java.lang.Override
       public MsgMintResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgMintResponse(input, extensionRegistry);
+        return new MsgMintResponse(input, extensionRegistry);
       }
     };
 
@@ -1093,6 +1230,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public irita.opb.Tx.MsgMintResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1104,31 +1242,37 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
     java.lang.String getDenom();
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
     com.google.protobuf.ByteString
         getDenomBytes();
 
     /**
-     * <code>optional string recipient = 2;</code>
+     * <code>string recipient = 2;</code>
+     * @return The recipient.
      */
     java.lang.String getRecipient();
     /**
-     * <code>optional string recipient = 2;</code>
+     * <code>string recipient = 2;</code>
+     * @return The bytes for recipient.
      */
     com.google.protobuf.ByteString
         getRecipientBytes();
 
     /**
-     * <code>optional string operator = 3;</code>
+     * <code>string operator = 3;</code>
+     * @return The operator.
      */
     java.lang.String getOperator();
     /**
-     * <code>optional string operator = 3;</code>
+     * <code>string operator = 3;</code>
+     * @return The bytes for operator.
      */
     com.google.protobuf.ByteString
         getOperatorBytes();
@@ -1140,10 +1284,11 @@ public final class Tx {
    *
    * Protobuf type {@code irita.opb.MsgReclaim}
    */
-  public  static final class MsgReclaim extends
+  public static final class MsgReclaim extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:irita.opb.MsgReclaim)
       MsgReclaimOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgReclaim.newBuilder() to construct.
     private MsgReclaim(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1155,16 +1300,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgReclaim();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgReclaim(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1173,12 +1329,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1197,6 +1347,13 @@ public final class Tx {
               operator_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1205,6 +1362,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1213,6 +1371,7 @@ public final class Tx {
       return irita.opb.Tx.internal_static_irita_opb_MsgReclaim_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return irita.opb.Tx.internal_static_irita_opb_MsgReclaim_fieldAccessorTable
@@ -1223,8 +1382,10 @@ public final class Tx {
     public static final int DENOM_FIELD_NUMBER = 1;
     private volatile java.lang.Object denom_;
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
+    @java.lang.Override
     public java.lang.String getDenom() {
       java.lang.Object ref = denom_;
       if (ref instanceof java.lang.String) {
@@ -1238,8 +1399,10 @@ public final class Tx {
       }
     }
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDenomBytes() {
       java.lang.Object ref = denom_;
@@ -1257,8 +1420,10 @@ public final class Tx {
     public static final int RECIPIENT_FIELD_NUMBER = 2;
     private volatile java.lang.Object recipient_;
     /**
-     * <code>optional string recipient = 2;</code>
+     * <code>string recipient = 2;</code>
+     * @return The recipient.
      */
+    @java.lang.Override
     public java.lang.String getRecipient() {
       java.lang.Object ref = recipient_;
       if (ref instanceof java.lang.String) {
@@ -1272,8 +1437,10 @@ public final class Tx {
       }
     }
     /**
-     * <code>optional string recipient = 2;</code>
+     * <code>string recipient = 2;</code>
+     * @return The bytes for recipient.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getRecipientBytes() {
       java.lang.Object ref = recipient_;
@@ -1291,8 +1458,10 @@ public final class Tx {
     public static final int OPERATOR_FIELD_NUMBER = 3;
     private volatile java.lang.Object operator_;
     /**
-     * <code>optional string operator = 3;</code>
+     * <code>string operator = 3;</code>
+     * @return The operator.
      */
+    @java.lang.Override
     public java.lang.String getOperator() {
       java.lang.Object ref = operator_;
       if (ref instanceof java.lang.String) {
@@ -1306,8 +1475,10 @@ public final class Tx {
       }
     }
     /**
-     * <code>optional string operator = 3;</code>
+     * <code>string operator = 3;</code>
+     * @return The bytes for operator.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOperatorBytes() {
       java.lang.Object ref = operator_;
@@ -1323,6 +1494,7 @@ public final class Tx {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1332,6 +1504,7 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getDenomBytes().isEmpty()) {
@@ -1343,8 +1516,10 @@ public final class Tx {
       if (!getOperatorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, operator_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1359,11 +1534,11 @@ public final class Tx {
       if (!getOperatorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, operator_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1374,14 +1549,14 @@ public final class Tx {
       }
       irita.opb.Tx.MsgReclaim other = (irita.opb.Tx.MsgReclaim) obj;
 
-      boolean result = true;
-      result = result && getDenom()
-          .equals(other.getDenom());
-      result = result && getRecipient()
-          .equals(other.getRecipient());
-      result = result && getOperator()
-          .equals(other.getOperator());
-      return result;
+      if (!getDenom()
+          .equals(other.getDenom())) return false;
+      if (!getRecipient()
+          .equals(other.getRecipient())) return false;
+      if (!getOperator()
+          .equals(other.getOperator())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1390,7 +1565,7 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DENOM_FIELD_NUMBER;
       hash = (53 * hash) + getDenom().hashCode();
       hash = (37 * hash) + RECIPIENT_FIELD_NUMBER;
@@ -1402,6 +1577,17 @@ public final class Tx {
       return hash;
     }
 
+    public static irita.opb.Tx.MsgReclaim parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static irita.opb.Tx.MsgReclaim parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static irita.opb.Tx.MsgReclaim parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1461,6 +1647,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1468,6 +1655,7 @@ public final class Tx {
     public static Builder newBuilder(irita.opb.Tx.MsgReclaim prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1495,6 +1683,7 @@ public final class Tx {
         return irita.opb.Tx.internal_static_irita_opb_MsgReclaim_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return irita.opb.Tx.internal_static_irita_opb_MsgReclaim_fieldAccessorTable
@@ -1517,6 +1706,7 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         denom_ = "";
@@ -1528,15 +1718,18 @@ public final class Tx {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return irita.opb.Tx.internal_static_irita_opb_MsgReclaim_descriptor;
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgReclaim getDefaultInstanceForType() {
         return irita.opb.Tx.MsgReclaim.getDefaultInstance();
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgReclaim build() {
         irita.opb.Tx.MsgReclaim result = buildPartial();
         if (!result.isInitialized()) {
@@ -1545,6 +1738,7 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgReclaim buildPartial() {
         irita.opb.Tx.MsgReclaim result = new irita.opb.Tx.MsgReclaim(this);
         result.denom_ = denom_;
@@ -1554,32 +1748,39 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof irita.opb.Tx.MsgReclaim) {
           return mergeFrom((irita.opb.Tx.MsgReclaim)other);
@@ -1603,14 +1804,17 @@ public final class Tx {
           operator_ = other.operator_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1631,7 +1835,8 @@ public final class Tx {
 
       private java.lang.Object denom_ = "";
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The denom.
        */
       public java.lang.String getDenom() {
         java.lang.Object ref = denom_;
@@ -1646,7 +1851,8 @@ public final class Tx {
         }
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The bytes for denom.
        */
       public com.google.protobuf.ByteString
           getDenomBytes() {
@@ -1662,7 +1868,9 @@ public final class Tx {
         }
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenom(
           java.lang.String value) {
@@ -1675,7 +1883,8 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDenom() {
         
@@ -1684,7 +1893,9 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The bytes for denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenomBytes(
           com.google.protobuf.ByteString value) {
@@ -1700,7 +1911,8 @@ public final class Tx {
 
       private java.lang.Object recipient_ = "";
       /**
-       * <code>optional string recipient = 2;</code>
+       * <code>string recipient = 2;</code>
+       * @return The recipient.
        */
       public java.lang.String getRecipient() {
         java.lang.Object ref = recipient_;
@@ -1715,7 +1927,8 @@ public final class Tx {
         }
       }
       /**
-       * <code>optional string recipient = 2;</code>
+       * <code>string recipient = 2;</code>
+       * @return The bytes for recipient.
        */
       public com.google.protobuf.ByteString
           getRecipientBytes() {
@@ -1731,7 +1944,9 @@ public final class Tx {
         }
       }
       /**
-       * <code>optional string recipient = 2;</code>
+       * <code>string recipient = 2;</code>
+       * @param value The recipient to set.
+       * @return This builder for chaining.
        */
       public Builder setRecipient(
           java.lang.String value) {
@@ -1744,7 +1959,8 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional string recipient = 2;</code>
+       * <code>string recipient = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRecipient() {
         
@@ -1753,7 +1969,9 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional string recipient = 2;</code>
+       * <code>string recipient = 2;</code>
+       * @param value The bytes for recipient to set.
+       * @return This builder for chaining.
        */
       public Builder setRecipientBytes(
           com.google.protobuf.ByteString value) {
@@ -1769,7 +1987,8 @@ public final class Tx {
 
       private java.lang.Object operator_ = "";
       /**
-       * <code>optional string operator = 3;</code>
+       * <code>string operator = 3;</code>
+       * @return The operator.
        */
       public java.lang.String getOperator() {
         java.lang.Object ref = operator_;
@@ -1784,7 +2003,8 @@ public final class Tx {
         }
       }
       /**
-       * <code>optional string operator = 3;</code>
+       * <code>string operator = 3;</code>
+       * @return The bytes for operator.
        */
       public com.google.protobuf.ByteString
           getOperatorBytes() {
@@ -1800,7 +2020,9 @@ public final class Tx {
         }
       }
       /**
-       * <code>optional string operator = 3;</code>
+       * <code>string operator = 3;</code>
+       * @param value The operator to set.
+       * @return This builder for chaining.
        */
       public Builder setOperator(
           java.lang.String value) {
@@ -1813,7 +2035,8 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional string operator = 3;</code>
+       * <code>string operator = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOperator() {
         
@@ -1822,7 +2045,9 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>optional string operator = 3;</code>
+       * <code>string operator = 3;</code>
+       * @param value The bytes for operator to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatorBytes(
           com.google.protobuf.ByteString value) {
@@ -1835,14 +2060,16 @@ public final class Tx {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1861,11 +2088,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgReclaim>
         PARSER = new com.google.protobuf.AbstractParser<MsgReclaim>() {
+      @java.lang.Override
       public MsgReclaim parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgReclaim(input, extensionRegistry);
+        return new MsgReclaim(input, extensionRegistry);
       }
     };
 
@@ -1878,6 +2106,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public irita.opb.Tx.MsgReclaim getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1895,10 +2124,11 @@ public final class Tx {
    *
    * Protobuf type {@code irita.opb.MsgReclaimResponse}
    */
-  public  static final class MsgReclaimResponse extends
+  public static final class MsgReclaimResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:irita.opb.MsgReclaimResponse)
       MsgReclaimResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MsgReclaimResponse.newBuilder() to construct.
     private MsgReclaimResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1907,15 +2137,27 @@ public final class Tx {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgReclaimResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private MsgReclaimResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1925,7 +2167,8 @@ public final class Tx {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1938,6 +2181,7 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1946,6 +2190,7 @@ public final class Tx {
       return irita.opb.Tx.internal_static_irita_opb_MsgReclaimResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return irita.opb.Tx.internal_static_irita_opb_MsgReclaimResponse_fieldAccessorTable
@@ -1954,6 +2199,7 @@ public final class Tx {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1963,20 +2209,23 @@ public final class Tx {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1987,8 +2236,8 @@ public final class Tx {
       }
       irita.opb.Tx.MsgReclaimResponse other = (irita.opb.Tx.MsgReclaimResponse) obj;
 
-      boolean result = true;
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1997,12 +2246,23 @@ public final class Tx {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static irita.opb.Tx.MsgReclaimResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static irita.opb.Tx.MsgReclaimResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static irita.opb.Tx.MsgReclaimResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2062,6 +2322,7 @@ public final class Tx {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2069,6 +2330,7 @@ public final class Tx {
     public static Builder newBuilder(irita.opb.Tx.MsgReclaimResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2096,6 +2358,7 @@ public final class Tx {
         return irita.opb.Tx.internal_static_irita_opb_MsgReclaimResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return irita.opb.Tx.internal_static_irita_opb_MsgReclaimResponse_fieldAccessorTable
@@ -2118,20 +2381,24 @@ public final class Tx {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return irita.opb.Tx.internal_static_irita_opb_MsgReclaimResponse_descriptor;
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgReclaimResponse getDefaultInstanceForType() {
         return irita.opb.Tx.MsgReclaimResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgReclaimResponse build() {
         irita.opb.Tx.MsgReclaimResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -2140,38 +2407,46 @@ public final class Tx {
         return result;
       }
 
+      @java.lang.Override
       public irita.opb.Tx.MsgReclaimResponse buildPartial() {
         irita.opb.Tx.MsgReclaimResponse result = new irita.opb.Tx.MsgReclaimResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof irita.opb.Tx.MsgReclaimResponse) {
           return mergeFrom((irita.opb.Tx.MsgReclaimResponse)other);
@@ -2183,14 +2458,17 @@ public final class Tx {
 
       public Builder mergeFrom(irita.opb.Tx.MsgReclaimResponse other) {
         if (other == irita.opb.Tx.MsgReclaimResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2208,14 +2486,16 @@ public final class Tx {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2234,11 +2514,12 @@ public final class Tx {
 
     private static final com.google.protobuf.Parser<MsgReclaimResponse>
         PARSER = new com.google.protobuf.AbstractParser<MsgReclaimResponse>() {
+      @java.lang.Override
       public MsgReclaimResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MsgReclaimResponse(input, extensionRegistry);
+        return new MsgReclaimResponse(input, extensionRegistry);
       }
     };
 
@@ -2251,6 +2532,7 @@ public final class Tx {
       return PARSER;
     }
 
+    @java.lang.Override
     public irita.opb.Tx.MsgReclaimResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2295,22 +2577,14 @@ public final class Tx {
       "\004Mint\022\022.irita.opb.MsgMint\032\032.irita.opb.Ms" +
       "gMintResponse\022?\n\007Reclaim\022\025.irita.opb.Msg" +
       "Reclaim\032\035.irita.opb.MsgReclaimResponseB2" +
-      "Z,github.com/bianjieai/irita/modules/opb",
+      "Z,github.com/bianjieai/irita/modules/opb" +
       "/types\310\341\036\000b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_irita_opb_MsgMint_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_irita_opb_MsgMint_fieldAccessorTable = new

@@ -19,62 +19,80 @@ public final class ProofOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int64 total = 1;</code>
+     * <code>int64 total = 1;</code>
+     * @return The total.
      */
     long getTotal();
 
     /**
-     * <code>optional int64 index = 2;</code>
+     * <code>int64 index = 2;</code>
+     * @return The index.
      */
     long getIndex();
 
     /**
-     * <code>optional bytes leaf_hash = 3;</code>
+     * <code>bytes leaf_hash = 3;</code>
+     * @return The leafHash.
      */
     com.google.protobuf.ByteString getLeafHash();
 
     /**
      * <code>repeated bytes aunts = 4;</code>
+     * @return A list containing the aunts.
      */
     java.util.List<com.google.protobuf.ByteString> getAuntsList();
     /**
      * <code>repeated bytes aunts = 4;</code>
+     * @return The count of aunts.
      */
     int getAuntsCount();
     /**
      * <code>repeated bytes aunts = 4;</code>
+     * @param index The index of the element to return.
+     * @return The aunts at the given index.
      */
     com.google.protobuf.ByteString getAunts(int index);
   }
   /**
    * Protobuf type {@code tendermint.crypto.Proof}
    */
-  public  static final class Proof extends
+  public static final class Proof extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tendermint.crypto.Proof)
       ProofOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Proof.newBuilder() to construct.
     private Proof(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Proof() {
-      total_ = 0L;
-      index_ = 0L;
       leafHash_ = com.google.protobuf.ByteString.EMPTY;
       aunts_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Proof();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Proof(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -83,12 +101,6 @@ public final class ProofOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               total_ = input.readInt64();
@@ -105,11 +117,18 @@ public final class ProofOuterClass {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 aunts_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               aunts_.add(input.readBytes());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -120,9 +139,10 @@ public final class ProofOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          aunts_ = java.util.Collections.unmodifiableList(aunts_);
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          aunts_ = java.util.Collections.unmodifiableList(aunts_); // C
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -131,6 +151,7 @@ public final class ProofOuterClass {
       return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_Proof_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_Proof_fieldAccessorTable
@@ -138,12 +159,13 @@ public final class ProofOuterClass {
               tendermint.crypto.ProofOuterClass.Proof.class, tendermint.crypto.ProofOuterClass.Proof.Builder.class);
     }
 
-    private int bitField0_;
     public static final int TOTAL_FIELD_NUMBER = 1;
     private long total_;
     /**
-     * <code>optional int64 total = 1;</code>
+     * <code>int64 total = 1;</code>
+     * @return The total.
      */
+    @java.lang.Override
     public long getTotal() {
       return total_;
     }
@@ -151,8 +173,10 @@ public final class ProofOuterClass {
     public static final int INDEX_FIELD_NUMBER = 2;
     private long index_;
     /**
-     * <code>optional int64 index = 2;</code>
+     * <code>int64 index = 2;</code>
+     * @return The index.
      */
+    @java.lang.Override
     public long getIndex() {
       return index_;
     }
@@ -160,8 +184,10 @@ public final class ProofOuterClass {
     public static final int LEAF_HASH_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString leafHash_;
     /**
-     * <code>optional bytes leaf_hash = 3;</code>
+     * <code>bytes leaf_hash = 3;</code>
+     * @return The leafHash.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getLeafHash() {
       return leafHash_;
     }
@@ -170,25 +196,31 @@ public final class ProofOuterClass {
     private java.util.List<com.google.protobuf.ByteString> aunts_;
     /**
      * <code>repeated bytes aunts = 4;</code>
+     * @return A list containing the aunts.
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.ByteString>
         getAuntsList() {
       return aunts_;
     }
     /**
      * <code>repeated bytes aunts = 4;</code>
+     * @return The count of aunts.
      */
     public int getAuntsCount() {
       return aunts_.size();
     }
     /**
      * <code>repeated bytes aunts = 4;</code>
+     * @param index The index of the element to return.
+     * @return The aunts at the given index.
      */
     public com.google.protobuf.ByteString getAunts(int index) {
       return aunts_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -198,6 +230,7 @@ public final class ProofOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (total_ != 0L) {
@@ -212,8 +245,10 @@ public final class ProofOuterClass {
       for (int i = 0; i < aunts_.size(); i++) {
         output.writeBytes(4, aunts_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -240,11 +275,11 @@ public final class ProofOuterClass {
         size += dataSize;
         size += 1 * getAuntsList().size();
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -255,16 +290,16 @@ public final class ProofOuterClass {
       }
       tendermint.crypto.ProofOuterClass.Proof other = (tendermint.crypto.ProofOuterClass.Proof) obj;
 
-      boolean result = true;
-      result = result && (getTotal()
-          == other.getTotal());
-      result = result && (getIndex()
-          == other.getIndex());
-      result = result && getLeafHash()
-          .equals(other.getLeafHash());
-      result = result && getAuntsList()
-          .equals(other.getAuntsList());
-      return result;
+      if (getTotal()
+          != other.getTotal()) return false;
+      if (getIndex()
+          != other.getIndex()) return false;
+      if (!getLeafHash()
+          .equals(other.getLeafHash())) return false;
+      if (!getAuntsList()
+          .equals(other.getAuntsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -273,7 +308,7 @@ public final class ProofOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TOTAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTotal());
@@ -291,6 +326,17 @@ public final class ProofOuterClass {
       return hash;
     }
 
+    public static tendermint.crypto.ProofOuterClass.Proof parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static tendermint.crypto.ProofOuterClass.Proof parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static tendermint.crypto.ProofOuterClass.Proof parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -350,6 +396,7 @@ public final class ProofOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -357,6 +404,7 @@ public final class ProofOuterClass {
     public static Builder newBuilder(tendermint.crypto.ProofOuterClass.Proof prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -380,6 +428,7 @@ public final class ProofOuterClass {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_Proof_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_Proof_fieldAccessorTable
@@ -402,6 +451,7 @@ public final class ProofOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         total_ = 0L;
@@ -411,19 +461,22 @@ public final class ProofOuterClass {
         leafHash_ = com.google.protobuf.ByteString.EMPTY;
 
         aunts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_Proof_descriptor;
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.Proof getDefaultInstanceForType() {
         return tendermint.crypto.ProofOuterClass.Proof.getDefaultInstance();
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.Proof build() {
         tendermint.crypto.ProofOuterClass.Proof result = buildPartial();
         if (!result.isInitialized()) {
@@ -432,49 +485,55 @@ public final class ProofOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.Proof buildPartial() {
         tendermint.crypto.ProofOuterClass.Proof result = new tendermint.crypto.ProofOuterClass.Proof(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.total_ = total_;
         result.index_ = index_;
         result.leafHash_ = leafHash_;
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           aunts_ = java.util.Collections.unmodifiableList(aunts_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.aunts_ = aunts_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof tendermint.crypto.ProofOuterClass.Proof) {
           return mergeFrom((tendermint.crypto.ProofOuterClass.Proof)other);
@@ -498,21 +557,24 @@ public final class ProofOuterClass {
         if (!other.aunts_.isEmpty()) {
           if (aunts_.isEmpty()) {
             aunts_ = other.aunts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAuntsIsMutable();
             aunts_.addAll(other.aunts_);
           }
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -534,13 +596,17 @@ public final class ProofOuterClass {
 
       private long total_ ;
       /**
-       * <code>optional int64 total = 1;</code>
+       * <code>int64 total = 1;</code>
+       * @return The total.
        */
+      @java.lang.Override
       public long getTotal() {
         return total_;
       }
       /**
-       * <code>optional int64 total = 1;</code>
+       * <code>int64 total = 1;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
        */
       public Builder setTotal(long value) {
         
@@ -549,7 +615,8 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional int64 total = 1;</code>
+       * <code>int64 total = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTotal() {
         
@@ -560,13 +627,17 @@ public final class ProofOuterClass {
 
       private long index_ ;
       /**
-       * <code>optional int64 index = 2;</code>
+       * <code>int64 index = 2;</code>
+       * @return The index.
        */
+      @java.lang.Override
       public long getIndex() {
         return index_;
       }
       /**
-       * <code>optional int64 index = 2;</code>
+       * <code>int64 index = 2;</code>
+       * @param value The index to set.
+       * @return This builder for chaining.
        */
       public Builder setIndex(long value) {
         
@@ -575,7 +646,8 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional int64 index = 2;</code>
+       * <code>int64 index = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIndex() {
         
@@ -586,13 +658,17 @@ public final class ProofOuterClass {
 
       private com.google.protobuf.ByteString leafHash_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes leaf_hash = 3;</code>
+       * <code>bytes leaf_hash = 3;</code>
+       * @return The leafHash.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getLeafHash() {
         return leafHash_;
       }
       /**
-       * <code>optional bytes leaf_hash = 3;</code>
+       * <code>bytes leaf_hash = 3;</code>
+       * @param value The leafHash to set.
+       * @return This builder for chaining.
        */
       public Builder setLeafHash(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -604,7 +680,8 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes leaf_hash = 3;</code>
+       * <code>bytes leaf_hash = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLeafHash() {
         
@@ -615,32 +692,40 @@ public final class ProofOuterClass {
 
       private java.util.List<com.google.protobuf.ByteString> aunts_ = java.util.Collections.emptyList();
       private void ensureAuntsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           aunts_ = new java.util.ArrayList<com.google.protobuf.ByteString>(aunts_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated bytes aunts = 4;</code>
+       * @return A list containing the aunts.
        */
       public java.util.List<com.google.protobuf.ByteString>
           getAuntsList() {
-        return java.util.Collections.unmodifiableList(aunts_);
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(aunts_) : aunts_;
       }
       /**
        * <code>repeated bytes aunts = 4;</code>
+       * @return The count of aunts.
        */
       public int getAuntsCount() {
         return aunts_.size();
       }
       /**
        * <code>repeated bytes aunts = 4;</code>
+       * @param index The index of the element to return.
+       * @return The aunts at the given index.
        */
       public com.google.protobuf.ByteString getAunts(int index) {
         return aunts_.get(index);
       }
       /**
        * <code>repeated bytes aunts = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The aunts to set.
+       * @return This builder for chaining.
        */
       public Builder setAunts(
           int index, com.google.protobuf.ByteString value) {
@@ -654,6 +739,8 @@ public final class ProofOuterClass {
       }
       /**
        * <code>repeated bytes aunts = 4;</code>
+       * @param value The aunts to add.
+       * @return This builder for chaining.
        */
       public Builder addAunts(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -666,6 +753,8 @@ public final class ProofOuterClass {
       }
       /**
        * <code>repeated bytes aunts = 4;</code>
+       * @param values The aunts to add.
+       * @return This builder for chaining.
        */
       public Builder addAllAunts(
           java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -677,21 +766,24 @@ public final class ProofOuterClass {
       }
       /**
        * <code>repeated bytes aunts = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAunts() {
         aunts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -710,11 +802,12 @@ public final class ProofOuterClass {
 
     private static final com.google.protobuf.Parser<Proof>
         PARSER = new com.google.protobuf.AbstractParser<Proof>() {
+      @java.lang.Override
       public Proof parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Proof(input, extensionRegistry);
+        return new Proof(input, extensionRegistry);
       }
     };
 
@@ -727,6 +820,7 @@ public final class ProofOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public tendermint.crypto.ProofOuterClass.Proof getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -742,7 +836,8 @@ public final class ProofOuterClass {
      * Encoded in ProofOp.Key.
      * </pre>
      *
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
     com.google.protobuf.ByteString getKey();
 
@@ -751,7 +846,8 @@ public final class ProofOuterClass {
      * To encode in ProofOp.Data
      * </pre>
      *
-     * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+     * <code>.tendermint.crypto.Proof proof = 2;</code>
+     * @return Whether the proof field is set.
      */
     boolean hasProof();
     /**
@@ -759,7 +855,8 @@ public final class ProofOuterClass {
      * To encode in ProofOp.Data
      * </pre>
      *
-     * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+     * <code>.tendermint.crypto.Proof proof = 2;</code>
+     * @return The proof.
      */
     tendermint.crypto.ProofOuterClass.Proof getProof();
     /**
@@ -767,17 +864,18 @@ public final class ProofOuterClass {
      * To encode in ProofOp.Data
      * </pre>
      *
-     * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+     * <code>.tendermint.crypto.Proof proof = 2;</code>
      */
     tendermint.crypto.ProofOuterClass.ProofOrBuilder getProofOrBuilder();
   }
   /**
    * Protobuf type {@code tendermint.crypto.ValueOp}
    */
-  public  static final class ValueOp extends
+  public static final class ValueOp extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tendermint.crypto.ValueOp)
       ValueOpOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ValueOp.newBuilder() to construct.
     private ValueOp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -787,16 +885,27 @@ public final class ProofOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ValueOp();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ValueOp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -805,12 +914,6 @@ public final class ProofOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               key_ = input.readBytes();
@@ -829,6 +932,13 @@ public final class ProofOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -837,6 +947,7 @@ public final class ProofOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -845,6 +956,7 @@ public final class ProofOuterClass {
       return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ValueOp_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ValueOp_fieldAccessorTable
@@ -859,8 +971,10 @@ public final class ProofOuterClass {
      * Encoded in ProofOp.Key.
      * </pre>
      *
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
@@ -872,8 +986,10 @@ public final class ProofOuterClass {
      * To encode in ProofOp.Data
      * </pre>
      *
-     * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+     * <code>.tendermint.crypto.Proof proof = 2;</code>
+     * @return Whether the proof field is set.
      */
+    @java.lang.Override
     public boolean hasProof() {
       return proof_ != null;
     }
@@ -882,8 +998,10 @@ public final class ProofOuterClass {
      * To encode in ProofOp.Data
      * </pre>
      *
-     * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+     * <code>.tendermint.crypto.Proof proof = 2;</code>
+     * @return The proof.
      */
+    @java.lang.Override
     public tendermint.crypto.ProofOuterClass.Proof getProof() {
       return proof_ == null ? tendermint.crypto.ProofOuterClass.Proof.getDefaultInstance() : proof_;
     }
@@ -892,13 +1010,15 @@ public final class ProofOuterClass {
      * To encode in ProofOp.Data
      * </pre>
      *
-     * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+     * <code>.tendermint.crypto.Proof proof = 2;</code>
      */
+    @java.lang.Override
     public tendermint.crypto.ProofOuterClass.ProofOrBuilder getProofOrBuilder() {
       return getProof();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -908,6 +1028,7 @@ public final class ProofOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!key_.isEmpty()) {
@@ -916,8 +1037,10 @@ public final class ProofOuterClass {
       if (proof_ != null) {
         output.writeMessage(2, getProof());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -931,11 +1054,11 @@ public final class ProofOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getProof());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -946,15 +1069,15 @@ public final class ProofOuterClass {
       }
       tendermint.crypto.ProofOuterClass.ValueOp other = (tendermint.crypto.ProofOuterClass.ValueOp) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && (hasProof() == other.hasProof());
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (hasProof() != other.hasProof()) return false;
       if (hasProof()) {
-        result = result && getProof()
-            .equals(other.getProof());
+        if (!getProof()
+            .equals(other.getProof())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -963,7 +1086,7 @@ public final class ProofOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       if (hasProof()) {
@@ -975,6 +1098,17 @@ public final class ProofOuterClass {
       return hash;
     }
 
+    public static tendermint.crypto.ProofOuterClass.ValueOp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static tendermint.crypto.ProofOuterClass.ValueOp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static tendermint.crypto.ProofOuterClass.ValueOp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1034,6 +1168,7 @@ public final class ProofOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1041,6 +1176,7 @@ public final class ProofOuterClass {
     public static Builder newBuilder(tendermint.crypto.ProofOuterClass.ValueOp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1064,6 +1200,7 @@ public final class ProofOuterClass {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ValueOp_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ValueOp_fieldAccessorTable
@@ -1086,6 +1223,7 @@ public final class ProofOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = com.google.protobuf.ByteString.EMPTY;
@@ -1099,15 +1237,18 @@ public final class ProofOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ValueOp_descriptor;
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.ValueOp getDefaultInstanceForType() {
         return tendermint.crypto.ProofOuterClass.ValueOp.getDefaultInstance();
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.ValueOp build() {
         tendermint.crypto.ProofOuterClass.ValueOp result = buildPartial();
         if (!result.isInitialized()) {
@@ -1116,6 +1257,7 @@ public final class ProofOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.ValueOp buildPartial() {
         tendermint.crypto.ProofOuterClass.ValueOp result = new tendermint.crypto.ProofOuterClass.ValueOp(this);
         result.key_ = key_;
@@ -1128,32 +1270,39 @@ public final class ProofOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof tendermint.crypto.ProofOuterClass.ValueOp) {
           return mergeFrom((tendermint.crypto.ProofOuterClass.ValueOp)other);
@@ -1171,14 +1320,17 @@ public final class ProofOuterClass {
         if (other.hasProof()) {
           mergeProof(other.getProof());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1203,8 +1355,10 @@ public final class ProofOuterClass {
        * Encoded in ProofOp.Key.
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return The key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getKey() {
         return key_;
       }
@@ -1213,7 +1367,9 @@ public final class ProofOuterClass {
        * Encoded in ProofOp.Key.
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1229,7 +1385,8 @@ public final class ProofOuterClass {
        * Encoded in ProofOp.Key.
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -1238,7 +1395,7 @@ public final class ProofOuterClass {
         return this;
       }
 
-      private tendermint.crypto.ProofOuterClass.Proof proof_ = null;
+      private tendermint.crypto.ProofOuterClass.Proof proof_;
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.crypto.ProofOuterClass.Proof, tendermint.crypto.ProofOuterClass.Proof.Builder, tendermint.crypto.ProofOuterClass.ProofOrBuilder> proofBuilder_;
       /**
@@ -1246,7 +1403,8 @@ public final class ProofOuterClass {
        * To encode in ProofOp.Data
        * </pre>
        *
-       * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+       * <code>.tendermint.crypto.Proof proof = 2;</code>
+       * @return Whether the proof field is set.
        */
       public boolean hasProof() {
         return proofBuilder_ != null || proof_ != null;
@@ -1256,7 +1414,8 @@ public final class ProofOuterClass {
        * To encode in ProofOp.Data
        * </pre>
        *
-       * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+       * <code>.tendermint.crypto.Proof proof = 2;</code>
+       * @return The proof.
        */
       public tendermint.crypto.ProofOuterClass.Proof getProof() {
         if (proofBuilder_ == null) {
@@ -1270,7 +1429,7 @@ public final class ProofOuterClass {
        * To encode in ProofOp.Data
        * </pre>
        *
-       * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+       * <code>.tendermint.crypto.Proof proof = 2;</code>
        */
       public Builder setProof(tendermint.crypto.ProofOuterClass.Proof value) {
         if (proofBuilder_ == null) {
@@ -1290,7 +1449,7 @@ public final class ProofOuterClass {
        * To encode in ProofOp.Data
        * </pre>
        *
-       * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+       * <code>.tendermint.crypto.Proof proof = 2;</code>
        */
       public Builder setProof(
           tendermint.crypto.ProofOuterClass.Proof.Builder builderForValue) {
@@ -1308,7 +1467,7 @@ public final class ProofOuterClass {
        * To encode in ProofOp.Data
        * </pre>
        *
-       * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+       * <code>.tendermint.crypto.Proof proof = 2;</code>
        */
       public Builder mergeProof(tendermint.crypto.ProofOuterClass.Proof value) {
         if (proofBuilder_ == null) {
@@ -1330,7 +1489,7 @@ public final class ProofOuterClass {
        * To encode in ProofOp.Data
        * </pre>
        *
-       * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+       * <code>.tendermint.crypto.Proof proof = 2;</code>
        */
       public Builder clearProof() {
         if (proofBuilder_ == null) {
@@ -1348,7 +1507,7 @@ public final class ProofOuterClass {
        * To encode in ProofOp.Data
        * </pre>
        *
-       * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+       * <code>.tendermint.crypto.Proof proof = 2;</code>
        */
       public tendermint.crypto.ProofOuterClass.Proof.Builder getProofBuilder() {
         
@@ -1360,7 +1519,7 @@ public final class ProofOuterClass {
        * To encode in ProofOp.Data
        * </pre>
        *
-       * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+       * <code>.tendermint.crypto.Proof proof = 2;</code>
        */
       public tendermint.crypto.ProofOuterClass.ProofOrBuilder getProofOrBuilder() {
         if (proofBuilder_ != null) {
@@ -1375,7 +1534,7 @@ public final class ProofOuterClass {
        * To encode in ProofOp.Data
        * </pre>
        *
-       * <code>optional .tendermint.crypto.Proof proof = 2;</code>
+       * <code>.tendermint.crypto.Proof proof = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.crypto.ProofOuterClass.Proof, tendermint.crypto.ProofOuterClass.Proof.Builder, tendermint.crypto.ProofOuterClass.ProofOrBuilder> 
@@ -1390,14 +1549,16 @@ public final class ProofOuterClass {
         }
         return proofBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1416,11 +1577,12 @@ public final class ProofOuterClass {
 
     private static final com.google.protobuf.Parser<ValueOp>
         PARSER = new com.google.protobuf.AbstractParser<ValueOp>() {
+      @java.lang.Override
       public ValueOp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ValueOp(input, extensionRegistry);
+        return new ValueOp(input, extensionRegistry);
       }
     };
 
@@ -1433,6 +1595,7 @@ public final class ProofOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public tendermint.crypto.ProofOuterClass.ValueOp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1444,31 +1607,37 @@ public final class ProofOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
+     * @return The key.
      */
     java.lang.String getKey();
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
+     * @return The bytes for key.
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>optional string input = 2;</code>
+     * <code>string input = 2;</code>
+     * @return The input.
      */
     java.lang.String getInput();
     /**
-     * <code>optional string input = 2;</code>
+     * <code>string input = 2;</code>
+     * @return The bytes for input.
      */
     com.google.protobuf.ByteString
         getInputBytes();
 
     /**
-     * <code>optional string output = 3;</code>
+     * <code>string output = 3;</code>
+     * @return The output.
      */
     java.lang.String getOutput();
     /**
-     * <code>optional string output = 3;</code>
+     * <code>string output = 3;</code>
+     * @return The bytes for output.
      */
     com.google.protobuf.ByteString
         getOutputBytes();
@@ -1476,10 +1645,11 @@ public final class ProofOuterClass {
   /**
    * Protobuf type {@code tendermint.crypto.DominoOp}
    */
-  public  static final class DominoOp extends
+  public static final class DominoOp extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tendermint.crypto.DominoOp)
       DominoOpOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use DominoOp.newBuilder() to construct.
     private DominoOp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1491,16 +1661,27 @@ public final class ProofOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DominoOp();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private DominoOp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1509,12 +1690,6 @@ public final class ProofOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1533,6 +1708,13 @@ public final class ProofOuterClass {
               output_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1541,6 +1723,7 @@ public final class ProofOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1549,6 +1732,7 @@ public final class ProofOuterClass {
       return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_DominoOp_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_DominoOp_fieldAccessorTable
@@ -1559,8 +1743,10 @@ public final class ProofOuterClass {
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -1574,8 +1760,10 @@ public final class ProofOuterClass {
       }
     }
     /**
-     * <code>optional string key = 1;</code>
+     * <code>string key = 1;</code>
+     * @return The bytes for key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getKeyBytes() {
       java.lang.Object ref = key_;
@@ -1593,8 +1781,10 @@ public final class ProofOuterClass {
     public static final int INPUT_FIELD_NUMBER = 2;
     private volatile java.lang.Object input_;
     /**
-     * <code>optional string input = 2;</code>
+     * <code>string input = 2;</code>
+     * @return The input.
      */
+    @java.lang.Override
     public java.lang.String getInput() {
       java.lang.Object ref = input_;
       if (ref instanceof java.lang.String) {
@@ -1608,8 +1798,10 @@ public final class ProofOuterClass {
       }
     }
     /**
-     * <code>optional string input = 2;</code>
+     * <code>string input = 2;</code>
+     * @return The bytes for input.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getInputBytes() {
       java.lang.Object ref = input_;
@@ -1627,8 +1819,10 @@ public final class ProofOuterClass {
     public static final int OUTPUT_FIELD_NUMBER = 3;
     private volatile java.lang.Object output_;
     /**
-     * <code>optional string output = 3;</code>
+     * <code>string output = 3;</code>
+     * @return The output.
      */
+    @java.lang.Override
     public java.lang.String getOutput() {
       java.lang.Object ref = output_;
       if (ref instanceof java.lang.String) {
@@ -1642,8 +1836,10 @@ public final class ProofOuterClass {
       }
     }
     /**
-     * <code>optional string output = 3;</code>
+     * <code>string output = 3;</code>
+     * @return The bytes for output.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOutputBytes() {
       java.lang.Object ref = output_;
@@ -1659,6 +1855,7 @@ public final class ProofOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1668,6 +1865,7 @@ public final class ProofOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getKeyBytes().isEmpty()) {
@@ -1679,8 +1877,10 @@ public final class ProofOuterClass {
       if (!getOutputBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, output_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1695,11 +1895,11 @@ public final class ProofOuterClass {
       if (!getOutputBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, output_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1710,14 +1910,14 @@ public final class ProofOuterClass {
       }
       tendermint.crypto.ProofOuterClass.DominoOp other = (tendermint.crypto.ProofOuterClass.DominoOp) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && getInput()
-          .equals(other.getInput());
-      result = result && getOutput()
-          .equals(other.getOutput());
-      return result;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getInput()
+          .equals(other.getInput())) return false;
+      if (!getOutput()
+          .equals(other.getOutput())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1726,7 +1926,7 @@ public final class ProofOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + INPUT_FIELD_NUMBER;
@@ -1738,6 +1938,17 @@ public final class ProofOuterClass {
       return hash;
     }
 
+    public static tendermint.crypto.ProofOuterClass.DominoOp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static tendermint.crypto.ProofOuterClass.DominoOp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static tendermint.crypto.ProofOuterClass.DominoOp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1797,6 +2008,7 @@ public final class ProofOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1804,6 +2016,7 @@ public final class ProofOuterClass {
     public static Builder newBuilder(tendermint.crypto.ProofOuterClass.DominoOp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1827,6 +2040,7 @@ public final class ProofOuterClass {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_DominoOp_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_DominoOp_fieldAccessorTable
@@ -1849,6 +2063,7 @@ public final class ProofOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = "";
@@ -1860,15 +2075,18 @@ public final class ProofOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_DominoOp_descriptor;
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.DominoOp getDefaultInstanceForType() {
         return tendermint.crypto.ProofOuterClass.DominoOp.getDefaultInstance();
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.DominoOp build() {
         tendermint.crypto.ProofOuterClass.DominoOp result = buildPartial();
         if (!result.isInitialized()) {
@@ -1877,6 +2095,7 @@ public final class ProofOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.DominoOp buildPartial() {
         tendermint.crypto.ProofOuterClass.DominoOp result = new tendermint.crypto.ProofOuterClass.DominoOp(this);
         result.key_ = key_;
@@ -1886,32 +2105,39 @@ public final class ProofOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof tendermint.crypto.ProofOuterClass.DominoOp) {
           return mergeFrom((tendermint.crypto.ProofOuterClass.DominoOp)other);
@@ -1935,14 +2161,17 @@ public final class ProofOuterClass {
           output_ = other.output_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1963,7 +2192,8 @@ public final class ProofOuterClass {
 
       private java.lang.Object key_ = "";
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
+       * @return The key.
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -1978,7 +2208,8 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
+       * @return The bytes for key.
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -1994,7 +2225,9 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(
           java.lang.String value) {
@@ -2007,7 +2240,8 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -2016,7 +2250,9 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional string key = 1;</code>
+       * <code>string key = 1;</code>
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -2032,7 +2268,8 @@ public final class ProofOuterClass {
 
       private java.lang.Object input_ = "";
       /**
-       * <code>optional string input = 2;</code>
+       * <code>string input = 2;</code>
+       * @return The input.
        */
       public java.lang.String getInput() {
         java.lang.Object ref = input_;
@@ -2047,7 +2284,8 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>optional string input = 2;</code>
+       * <code>string input = 2;</code>
+       * @return The bytes for input.
        */
       public com.google.protobuf.ByteString
           getInputBytes() {
@@ -2063,7 +2301,9 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>optional string input = 2;</code>
+       * <code>string input = 2;</code>
+       * @param value The input to set.
+       * @return This builder for chaining.
        */
       public Builder setInput(
           java.lang.String value) {
@@ -2076,7 +2316,8 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional string input = 2;</code>
+       * <code>string input = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearInput() {
         
@@ -2085,7 +2326,9 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional string input = 2;</code>
+       * <code>string input = 2;</code>
+       * @param value The bytes for input to set.
+       * @return This builder for chaining.
        */
       public Builder setInputBytes(
           com.google.protobuf.ByteString value) {
@@ -2101,7 +2344,8 @@ public final class ProofOuterClass {
 
       private java.lang.Object output_ = "";
       /**
-       * <code>optional string output = 3;</code>
+       * <code>string output = 3;</code>
+       * @return The output.
        */
       public java.lang.String getOutput() {
         java.lang.Object ref = output_;
@@ -2116,7 +2360,8 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>optional string output = 3;</code>
+       * <code>string output = 3;</code>
+       * @return The bytes for output.
        */
       public com.google.protobuf.ByteString
           getOutputBytes() {
@@ -2132,7 +2377,9 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>optional string output = 3;</code>
+       * <code>string output = 3;</code>
+       * @param value The output to set.
+       * @return This builder for chaining.
        */
       public Builder setOutput(
           java.lang.String value) {
@@ -2145,7 +2392,8 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional string output = 3;</code>
+       * <code>string output = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOutput() {
         
@@ -2154,7 +2402,9 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional string output = 3;</code>
+       * <code>string output = 3;</code>
+       * @param value The bytes for output to set.
+       * @return This builder for chaining.
        */
       public Builder setOutputBytes(
           com.google.protobuf.ByteString value) {
@@ -2167,14 +2417,16 @@ public final class ProofOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2193,11 +2445,12 @@ public final class ProofOuterClass {
 
     private static final com.google.protobuf.Parser<DominoOp>
         PARSER = new com.google.protobuf.AbstractParser<DominoOp>() {
+      @java.lang.Override
       public DominoOp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DominoOp(input, extensionRegistry);
+        return new DominoOp(input, extensionRegistry);
       }
     };
 
@@ -2210,6 +2463,7 @@ public final class ProofOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public tendermint.crypto.ProofOuterClass.DominoOp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2221,22 +2475,26 @@ public final class ProofOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string type = 1;</code>
+     * <code>string type = 1;</code>
+     * @return The type.
      */
     java.lang.String getType();
     /**
-     * <code>optional string type = 1;</code>
+     * <code>string type = 1;</code>
+     * @return The bytes for type.
      */
     com.google.protobuf.ByteString
         getTypeBytes();
 
     /**
-     * <code>optional bytes key = 2;</code>
+     * <code>bytes key = 2;</code>
+     * @return The key.
      */
     com.google.protobuf.ByteString getKey();
 
     /**
-     * <code>optional bytes data = 3;</code>
+     * <code>bytes data = 3;</code>
+     * @return The data.
      */
     com.google.protobuf.ByteString getData();
   }
@@ -2249,10 +2507,11 @@ public final class ProofOuterClass {
    *
    * Protobuf type {@code tendermint.crypto.ProofOp}
    */
-  public  static final class ProofOp extends
+  public static final class ProofOp extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tendermint.crypto.ProofOp)
       ProofOpOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ProofOp.newBuilder() to construct.
     private ProofOp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2264,16 +2523,27 @@ public final class ProofOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProofOp();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ProofOp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2282,12 +2552,6 @@ public final class ProofOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -2304,6 +2568,13 @@ public final class ProofOuterClass {
               data_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2312,6 +2583,7 @@ public final class ProofOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2320,6 +2592,7 @@ public final class ProofOuterClass {
       return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ProofOp_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ProofOp_fieldAccessorTable
@@ -2330,8 +2603,10 @@ public final class ProofOuterClass {
     public static final int TYPE_FIELD_NUMBER = 1;
     private volatile java.lang.Object type_;
     /**
-     * <code>optional string type = 1;</code>
+     * <code>string type = 1;</code>
+     * @return The type.
      */
+    @java.lang.Override
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
@@ -2345,8 +2620,10 @@ public final class ProofOuterClass {
       }
     }
     /**
-     * <code>optional string type = 1;</code>
+     * <code>string type = 1;</code>
+     * @return The bytes for type.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTypeBytes() {
       java.lang.Object ref = type_;
@@ -2364,8 +2641,10 @@ public final class ProofOuterClass {
     public static final int KEY_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString key_;
     /**
-     * <code>optional bytes key = 2;</code>
+     * <code>bytes key = 2;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
@@ -2373,13 +2652,16 @@ public final class ProofOuterClass {
     public static final int DATA_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString data_;
     /**
-     * <code>optional bytes data = 3;</code>
+     * <code>bytes data = 3;</code>
+     * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2389,6 +2671,7 @@ public final class ProofOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getTypeBytes().isEmpty()) {
@@ -2400,8 +2683,10 @@ public final class ProofOuterClass {
       if (!data_.isEmpty()) {
         output.writeBytes(3, data_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2418,11 +2703,11 @@ public final class ProofOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, data_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2433,14 +2718,14 @@ public final class ProofOuterClass {
       }
       tendermint.crypto.ProofOuterClass.ProofOp other = (tendermint.crypto.ProofOuterClass.ProofOp) obj;
 
-      boolean result = true;
-      result = result && getType()
-          .equals(other.getType());
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && getData()
-          .equals(other.getData());
-      return result;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2449,7 +2734,7 @@ public final class ProofOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
@@ -2461,6 +2746,17 @@ public final class ProofOuterClass {
       return hash;
     }
 
+    public static tendermint.crypto.ProofOuterClass.ProofOp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static tendermint.crypto.ProofOuterClass.ProofOp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static tendermint.crypto.ProofOuterClass.ProofOp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2520,6 +2816,7 @@ public final class ProofOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2527,6 +2824,7 @@ public final class ProofOuterClass {
     public static Builder newBuilder(tendermint.crypto.ProofOuterClass.ProofOp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2556,6 +2854,7 @@ public final class ProofOuterClass {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ProofOp_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ProofOp_fieldAccessorTable
@@ -2578,6 +2877,7 @@ public final class ProofOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         type_ = "";
@@ -2589,15 +2889,18 @@ public final class ProofOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ProofOp_descriptor;
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.ProofOp getDefaultInstanceForType() {
         return tendermint.crypto.ProofOuterClass.ProofOp.getDefaultInstance();
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.ProofOp build() {
         tendermint.crypto.ProofOuterClass.ProofOp result = buildPartial();
         if (!result.isInitialized()) {
@@ -2606,6 +2909,7 @@ public final class ProofOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.ProofOp buildPartial() {
         tendermint.crypto.ProofOuterClass.ProofOp result = new tendermint.crypto.ProofOuterClass.ProofOp(this);
         result.type_ = type_;
@@ -2615,32 +2919,39 @@ public final class ProofOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof tendermint.crypto.ProofOuterClass.ProofOp) {
           return mergeFrom((tendermint.crypto.ProofOuterClass.ProofOp)other);
@@ -2662,14 +2973,17 @@ public final class ProofOuterClass {
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2690,7 +3004,8 @@ public final class ProofOuterClass {
 
       private java.lang.Object type_ = "";
       /**
-       * <code>optional string type = 1;</code>
+       * <code>string type = 1;</code>
+       * @return The type.
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -2705,7 +3020,8 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>optional string type = 1;</code>
+       * <code>string type = 1;</code>
+       * @return The bytes for type.
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
@@ -2721,7 +3037,9 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>optional string type = 1;</code>
+       * <code>string type = 1;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(
           java.lang.String value) {
@@ -2734,7 +3052,8 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional string type = 1;</code>
+       * <code>string type = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
         
@@ -2743,7 +3062,9 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional string type = 1;</code>
+       * <code>string type = 1;</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -2759,13 +3080,17 @@ public final class ProofOuterClass {
 
       private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes key = 2;</code>
+       * <code>bytes key = 2;</code>
+       * @return The key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getKey() {
         return key_;
       }
       /**
-       * <code>optional bytes key = 2;</code>
+       * <code>bytes key = 2;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2777,7 +3102,8 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes key = 2;</code>
+       * <code>bytes key = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -2788,13 +3114,17 @@ public final class ProofOuterClass {
 
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes data = 3;</code>
+       * <code>bytes data = 3;</code>
+       * @return The data.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
       /**
-       * <code>optional bytes data = 3;</code>
+       * <code>bytes data = 3;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2806,7 +3136,8 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes data = 3;</code>
+       * <code>bytes data = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -2814,14 +3145,16 @@ public final class ProofOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2840,11 +3173,12 @@ public final class ProofOuterClass {
 
     private static final com.google.protobuf.Parser<ProofOp>
         PARSER = new com.google.protobuf.AbstractParser<ProofOp>() {
+      @java.lang.Override
       public ProofOp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ProofOp(input, extensionRegistry);
+        return new ProofOp(input, extensionRegistry);
       }
     };
 
@@ -2857,6 +3191,7 @@ public final class ProofOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public tendermint.crypto.ProofOuterClass.ProofOp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2868,25 +3203,25 @@ public final class ProofOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+     * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<tendermint.crypto.ProofOuterClass.ProofOp> 
         getOpsList();
     /**
-     * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+     * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
      */
     tendermint.crypto.ProofOuterClass.ProofOp getOps(int index);
     /**
-     * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+     * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
      */
     int getOpsCount();
     /**
-     * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+     * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends tendermint.crypto.ProofOuterClass.ProofOpOrBuilder> 
         getOpsOrBuilderList();
     /**
-     * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+     * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
      */
     tendermint.crypto.ProofOuterClass.ProofOpOrBuilder getOpsOrBuilder(
         int index);
@@ -2898,10 +3233,11 @@ public final class ProofOuterClass {
    *
    * Protobuf type {@code tendermint.crypto.ProofOps}
    */
-  public  static final class ProofOps extends
+  public static final class ProofOps extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tendermint.crypto.ProofOps)
       ProofOpsOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ProofOps.newBuilder() to construct.
     private ProofOps(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2911,16 +3247,28 @@ public final class ProofOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProofOps();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ProofOps(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2929,19 +3277,20 @@ public final class ProofOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 ops_ = new java.util.ArrayList<tendermint.crypto.ProofOuterClass.ProofOp>();
                 mutable_bitField0_ |= 0x00000001;
               }
               ops_.add(
                   input.readMessage(tendermint.crypto.ProofOuterClass.ProofOp.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2952,9 +3301,10 @@ public final class ProofOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           ops_ = java.util.Collections.unmodifiableList(ops_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2963,6 +3313,7 @@ public final class ProofOuterClass {
       return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ProofOps_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ProofOps_fieldAccessorTable
@@ -2973,39 +3324,45 @@ public final class ProofOuterClass {
     public static final int OPS_FIELD_NUMBER = 1;
     private java.util.List<tendermint.crypto.ProofOuterClass.ProofOp> ops_;
     /**
-     * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+     * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<tendermint.crypto.ProofOuterClass.ProofOp> getOpsList() {
       return ops_;
     }
     /**
-     * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+     * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends tendermint.crypto.ProofOuterClass.ProofOpOrBuilder> 
         getOpsOrBuilderList() {
       return ops_;
     }
     /**
-     * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+     * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public int getOpsCount() {
       return ops_.size();
     }
     /**
-     * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+     * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public tendermint.crypto.ProofOuterClass.ProofOp getOps(int index) {
       return ops_.get(index);
     }
     /**
-     * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+     * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public tendermint.crypto.ProofOuterClass.ProofOpOrBuilder getOpsOrBuilder(
         int index) {
       return ops_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3015,13 +3372,16 @@ public final class ProofOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < ops_.size(); i++) {
         output.writeMessage(1, ops_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3031,11 +3391,11 @@ public final class ProofOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, ops_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3046,10 +3406,10 @@ public final class ProofOuterClass {
       }
       tendermint.crypto.ProofOuterClass.ProofOps other = (tendermint.crypto.ProofOuterClass.ProofOps) obj;
 
-      boolean result = true;
-      result = result && getOpsList()
-          .equals(other.getOpsList());
-      return result;
+      if (!getOpsList()
+          .equals(other.getOpsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3058,7 +3418,7 @@ public final class ProofOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getOpsCount() > 0) {
         hash = (37 * hash) + OPS_FIELD_NUMBER;
         hash = (53 * hash) + getOpsList().hashCode();
@@ -3068,6 +3428,17 @@ public final class ProofOuterClass {
       return hash;
     }
 
+    public static tendermint.crypto.ProofOuterClass.ProofOps parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static tendermint.crypto.ProofOuterClass.ProofOps parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static tendermint.crypto.ProofOuterClass.ProofOps parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3127,6 +3498,7 @@ public final class ProofOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3134,6 +3506,7 @@ public final class ProofOuterClass {
     public static Builder newBuilder(tendermint.crypto.ProofOuterClass.ProofOps prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3161,6 +3534,7 @@ public final class ProofOuterClass {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ProofOps_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ProofOps_fieldAccessorTable
@@ -3184,6 +3558,7 @@ public final class ProofOuterClass {
           getOpsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (opsBuilder_ == null) {
@@ -3195,15 +3570,18 @@ public final class ProofOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return tendermint.crypto.ProofOuterClass.internal_static_tendermint_crypto_ProofOps_descriptor;
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.ProofOps getDefaultInstanceForType() {
         return tendermint.crypto.ProofOuterClass.ProofOps.getDefaultInstance();
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.ProofOps build() {
         tendermint.crypto.ProofOuterClass.ProofOps result = buildPartial();
         if (!result.isInitialized()) {
@@ -3212,11 +3590,12 @@ public final class ProofOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public tendermint.crypto.ProofOuterClass.ProofOps buildPartial() {
         tendermint.crypto.ProofOuterClass.ProofOps result = new tendermint.crypto.ProofOuterClass.ProofOps(this);
         int from_bitField0_ = bitField0_;
         if (opsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             ops_ = java.util.Collections.unmodifiableList(ops_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -3228,32 +3607,39 @@ public final class ProofOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof tendermint.crypto.ProofOuterClass.ProofOps) {
           return mergeFrom((tendermint.crypto.ProofOuterClass.ProofOps)other);
@@ -3291,14 +3677,17 @@ public final class ProofOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3321,7 +3710,7 @@ public final class ProofOuterClass {
       private java.util.List<tendermint.crypto.ProofOuterClass.ProofOp> ops_ =
         java.util.Collections.emptyList();
       private void ensureOpsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           ops_ = new java.util.ArrayList<tendermint.crypto.ProofOuterClass.ProofOp>(ops_);
           bitField0_ |= 0x00000001;
          }
@@ -3331,7 +3720,7 @@ public final class ProofOuterClass {
           tendermint.crypto.ProofOuterClass.ProofOp, tendermint.crypto.ProofOuterClass.ProofOp.Builder, tendermint.crypto.ProofOuterClass.ProofOpOrBuilder> opsBuilder_;
 
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<tendermint.crypto.ProofOuterClass.ProofOp> getOpsList() {
         if (opsBuilder_ == null) {
@@ -3341,7 +3730,7 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public int getOpsCount() {
         if (opsBuilder_ == null) {
@@ -3351,7 +3740,7 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public tendermint.crypto.ProofOuterClass.ProofOp getOps(int index) {
         if (opsBuilder_ == null) {
@@ -3361,7 +3750,7 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setOps(
           int index, tendermint.crypto.ProofOuterClass.ProofOp value) {
@@ -3378,7 +3767,7 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setOps(
           int index, tendermint.crypto.ProofOuterClass.ProofOp.Builder builderForValue) {
@@ -3392,7 +3781,7 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addOps(tendermint.crypto.ProofOuterClass.ProofOp value) {
         if (opsBuilder_ == null) {
@@ -3408,7 +3797,7 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addOps(
           int index, tendermint.crypto.ProofOuterClass.ProofOp value) {
@@ -3425,7 +3814,7 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addOps(
           tendermint.crypto.ProofOuterClass.ProofOp.Builder builderForValue) {
@@ -3439,7 +3828,7 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addOps(
           int index, tendermint.crypto.ProofOuterClass.ProofOp.Builder builderForValue) {
@@ -3453,7 +3842,7 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllOps(
           java.lang.Iterable<? extends tendermint.crypto.ProofOuterClass.ProofOp> values) {
@@ -3468,7 +3857,7 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearOps() {
         if (opsBuilder_ == null) {
@@ -3481,7 +3870,7 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeOps(int index) {
         if (opsBuilder_ == null) {
@@ -3494,14 +3883,14 @@ public final class ProofOuterClass {
         return this;
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public tendermint.crypto.ProofOuterClass.ProofOp.Builder getOpsBuilder(
           int index) {
         return getOpsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public tendermint.crypto.ProofOuterClass.ProofOpOrBuilder getOpsOrBuilder(
           int index) {
@@ -3511,7 +3900,7 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends tendermint.crypto.ProofOuterClass.ProofOpOrBuilder> 
            getOpsOrBuilderList() {
@@ -3522,14 +3911,14 @@ public final class ProofOuterClass {
         }
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public tendermint.crypto.ProofOuterClass.ProofOp.Builder addOpsBuilder() {
         return getOpsFieldBuilder().addBuilder(
             tendermint.crypto.ProofOuterClass.ProofOp.getDefaultInstance());
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public tendermint.crypto.ProofOuterClass.ProofOp.Builder addOpsBuilder(
           int index) {
@@ -3537,7 +3926,7 @@ public final class ProofOuterClass {
             index, tendermint.crypto.ProofOuterClass.ProofOp.getDefaultInstance());
       }
       /**
-       * <code>repeated .tendermint.crypto.ProofOp ops = 1;</code>
+       * <code>repeated .tendermint.crypto.ProofOp ops = 1 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<tendermint.crypto.ProofOuterClass.ProofOp.Builder> 
            getOpsBuilderList() {
@@ -3550,21 +3939,23 @@ public final class ProofOuterClass {
           opsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               tendermint.crypto.ProofOuterClass.ProofOp, tendermint.crypto.ProofOuterClass.ProofOp.Builder, tendermint.crypto.ProofOuterClass.ProofOpOrBuilder>(
                   ops_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           ops_ = null;
         }
         return opsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3583,11 +3974,12 @@ public final class ProofOuterClass {
 
     private static final com.google.protobuf.Parser<ProofOps>
         PARSER = new com.google.protobuf.AbstractParser<ProofOps>() {
+      @java.lang.Override
       public ProofOps parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ProofOps(input, extensionRegistry);
+        return new ProofOps(input, extensionRegistry);
       }
     };
 
@@ -3600,6 +3992,7 @@ public final class ProofOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public tendermint.crypto.ProofOuterClass.ProofOps getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3649,23 +4042,15 @@ public final class ProofOuterClass {
       "nput\030\002 \001(\t\022\016\n\006output\030\003 \001(\t\"2\n\007ProofOp\022\014\n" +
       "\004type\030\001 \001(\t\022\013\n\003key\030\002 \001(\014\022\014\n\004data\030\003 \001(\014\"9" +
       "\n\010ProofOps\022-\n\003ops\030\001 \003(\0132\032.tendermint.cry" +
-      "pto.ProofOpB\004\310\336\037\000B:Z8github.com/tendermi",
+      "pto.ProofOpB\004\310\336\037\000B:Z8github.com/tendermi" +
       "nt/tendermint/proto/tendermint/cryptob\006p" +
       "roto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_tendermint_crypto_Proof_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_tendermint_crypto_Proof_fieldAccessorTable = new

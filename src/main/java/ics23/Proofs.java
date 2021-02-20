@@ -97,6 +97,8 @@ public final class Proofs {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -104,6 +106,10 @@ public final class Proofs {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static HashOp forNumber(int value) {
       switch (value) {
         case 0: return NO_HASH;
@@ -130,6 +136,10 @@ public final class Proofs {
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -335,6 +345,8 @@ public final class Proofs {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -342,6 +354,10 @@ public final class Proofs {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static LengthOp forNumber(int value) {
       switch (value) {
         case 0: return NO_PREFIX;
@@ -371,6 +387,10 @@ public final class Proofs {
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -410,25 +430,29 @@ public final class Proofs {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
     com.google.protobuf.ByteString getKey();
 
     /**
-     * <code>optional bytes value = 2;</code>
+     * <code>bytes value = 2;</code>
+     * @return The value.
      */
     com.google.protobuf.ByteString getValue();
 
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
+     * @return Whether the leaf field is set.
      */
     boolean hasLeaf();
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
+     * @return The leaf.
      */
     ics23.Proofs.LeafOp getLeaf();
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
      */
     ics23.Proofs.LeafOpOrBuilder getLeafOrBuilder();
 
@@ -479,10 +503,11 @@ public final class Proofs {
    *
    * Protobuf type {@code ics23.ExistenceProof}
    */
-  public  static final class ExistenceProof extends
+  public static final class ExistenceProof extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.ExistenceProof)
       ExistenceProofOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ExistenceProof.newBuilder() to construct.
     private ExistenceProof(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -494,16 +519,28 @@ public final class Proofs {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ExistenceProof();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ExistenceProof(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -512,12 +549,6 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               key_ = input.readBytes();
@@ -542,12 +573,19 @@ public final class Proofs {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 path_ = new java.util.ArrayList<ics23.Proofs.InnerOp>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               path_.add(
                   input.readMessage(ics23.Proofs.InnerOp.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -558,9 +596,10 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           path_ = java.util.Collections.unmodifiableList(path_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -569,6 +608,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_ExistenceProof_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_ExistenceProof_fieldAccessorTable
@@ -576,12 +616,13 @@ public final class Proofs {
               ics23.Proofs.ExistenceProof.class, ics23.Proofs.ExistenceProof.Builder.class);
     }
 
-    private int bitField0_;
     public static final int KEY_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString key_;
     /**
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
@@ -589,8 +630,10 @@ public final class Proofs {
     public static final int VALUE_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString value_;
     /**
-     * <code>optional bytes value = 2;</code>
+     * <code>bytes value = 2;</code>
+     * @return The value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
@@ -598,20 +641,25 @@ public final class Proofs {
     public static final int LEAF_FIELD_NUMBER = 3;
     private ics23.Proofs.LeafOp leaf_;
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
+     * @return Whether the leaf field is set.
      */
+    @java.lang.Override
     public boolean hasLeaf() {
       return leaf_ != null;
     }
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
+     * @return The leaf.
      */
+    @java.lang.Override
     public ics23.Proofs.LeafOp getLeaf() {
       return leaf_ == null ? ics23.Proofs.LeafOp.getDefaultInstance() : leaf_;
     }
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.LeafOpOrBuilder getLeafOrBuilder() {
       return getLeaf();
     }
@@ -621,12 +669,14 @@ public final class Proofs {
     /**
      * <code>repeated .ics23.InnerOp path = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<ics23.Proofs.InnerOp> getPathList() {
       return path_;
     }
     /**
      * <code>repeated .ics23.InnerOp path = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ics23.Proofs.InnerOpOrBuilder> 
         getPathOrBuilderList() {
       return path_;
@@ -634,24 +684,28 @@ public final class Proofs {
     /**
      * <code>repeated .ics23.InnerOp path = 4;</code>
      */
+    @java.lang.Override
     public int getPathCount() {
       return path_.size();
     }
     /**
      * <code>repeated .ics23.InnerOp path = 4;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.InnerOp getPath(int index) {
       return path_.get(index);
     }
     /**
      * <code>repeated .ics23.InnerOp path = 4;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.InnerOpOrBuilder getPathOrBuilder(
         int index) {
       return path_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -661,6 +715,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!key_.isEmpty()) {
@@ -675,8 +730,10 @@ public final class Proofs {
       for (int i = 0; i < path_.size(); i++) {
         output.writeMessage(4, path_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -698,11 +755,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, path_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -713,19 +770,19 @@ public final class Proofs {
       }
       ics23.Proofs.ExistenceProof other = (ics23.Proofs.ExistenceProof) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && getValue()
-          .equals(other.getValue());
-      result = result && (hasLeaf() == other.hasLeaf());
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
+      if (hasLeaf() != other.hasLeaf()) return false;
       if (hasLeaf()) {
-        result = result && getLeaf()
-            .equals(other.getLeaf());
+        if (!getLeaf()
+            .equals(other.getLeaf())) return false;
       }
-      result = result && getPathList()
-          .equals(other.getPathList());
-      return result;
+      if (!getPathList()
+          .equals(other.getPathList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -734,7 +791,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -752,6 +809,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.ExistenceProof parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.ExistenceProof parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.ExistenceProof parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -811,6 +879,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -818,6 +887,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.ExistenceProof prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -861,6 +931,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_ExistenceProof_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_ExistenceProof_fieldAccessorTable
@@ -884,6 +955,7 @@ public final class Proofs {
           getPathFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = com.google.protobuf.ByteString.EMPTY;
@@ -898,22 +970,25 @@ public final class Proofs {
         }
         if (pathBuilder_ == null) {
           path_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           pathBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_ExistenceProof_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.ExistenceProof getDefaultInstanceForType() {
         return ics23.Proofs.ExistenceProof.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.ExistenceProof build() {
         ics23.Proofs.ExistenceProof result = buildPartial();
         if (!result.isInitialized()) {
@@ -922,10 +997,10 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.ExistenceProof buildPartial() {
         ics23.Proofs.ExistenceProof result = new ics23.Proofs.ExistenceProof(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.key_ = key_;
         result.value_ = value_;
         if (leafBuilder_ == null) {
@@ -934,45 +1009,51 @@ public final class Proofs {
           result.leaf_ = leafBuilder_.build();
         }
         if (pathBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             path_ = java.util.Collections.unmodifiableList(path_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.path_ = path_;
         } else {
           result.path_ = pathBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.ExistenceProof) {
           return mergeFrom((ics23.Proofs.ExistenceProof)other);
@@ -997,7 +1078,7 @@ public final class Proofs {
           if (!other.path_.isEmpty()) {
             if (path_.isEmpty()) {
               path_ = other.path_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensurePathIsMutable();
               path_.addAll(other.path_);
@@ -1010,7 +1091,7 @@ public final class Proofs {
               pathBuilder_.dispose();
               pathBuilder_ = null;
               path_ = other.path_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               pathBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPathFieldBuilder() : null;
@@ -1019,14 +1100,17 @@ public final class Proofs {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1048,13 +1132,17 @@ public final class Proofs {
 
       private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return The key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getKey() {
         return key_;
       }
       /**
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1066,7 +1154,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -1077,13 +1166,17 @@ public final class Proofs {
 
       private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @return The value.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getValue() {
         return value_;
       }
       /**
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1095,7 +1188,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
         
@@ -1104,17 +1198,19 @@ public final class Proofs {
         return this;
       }
 
-      private ics23.Proofs.LeafOp leaf_ = null;
+      private ics23.Proofs.LeafOp leaf_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.LeafOp, ics23.Proofs.LeafOp.Builder, ics23.Proofs.LeafOpOrBuilder> leafBuilder_;
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
+       * @return Whether the leaf field is set.
        */
       public boolean hasLeaf() {
         return leafBuilder_ != null || leaf_ != null;
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
+       * @return The leaf.
        */
       public ics23.Proofs.LeafOp getLeaf() {
         if (leafBuilder_ == null) {
@@ -1124,7 +1220,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public Builder setLeaf(ics23.Proofs.LeafOp value) {
         if (leafBuilder_ == null) {
@@ -1140,7 +1236,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public Builder setLeaf(
           ics23.Proofs.LeafOp.Builder builderForValue) {
@@ -1154,7 +1250,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public Builder mergeLeaf(ics23.Proofs.LeafOp value) {
         if (leafBuilder_ == null) {
@@ -1172,7 +1268,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public Builder clearLeaf() {
         if (leafBuilder_ == null) {
@@ -1186,7 +1282,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public ics23.Proofs.LeafOp.Builder getLeafBuilder() {
         
@@ -1194,7 +1290,7 @@ public final class Proofs {
         return getLeafFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public ics23.Proofs.LeafOpOrBuilder getLeafOrBuilder() {
         if (leafBuilder_ != null) {
@@ -1205,7 +1301,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.LeafOp, ics23.Proofs.LeafOp.Builder, ics23.Proofs.LeafOpOrBuilder> 
@@ -1224,9 +1320,9 @@ public final class Proofs {
       private java.util.List<ics23.Proofs.InnerOp> path_ =
         java.util.Collections.emptyList();
       private void ensurePathIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           path_ = new java.util.ArrayList<ics23.Proofs.InnerOp>(path_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1376,7 +1472,7 @@ public final class Proofs {
       public Builder clearPath() {
         if (pathBuilder_ == null) {
           path_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           pathBuilder_.clear();
@@ -1453,21 +1549,23 @@ public final class Proofs {
           pathBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ics23.Proofs.InnerOp, ics23.Proofs.InnerOp.Builder, ics23.Proofs.InnerOpOrBuilder>(
                   path_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           path_ = null;
         }
         return pathBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1486,11 +1584,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<ExistenceProof>
         PARSER = new com.google.protobuf.AbstractParser<ExistenceProof>() {
+      @java.lang.Override
       public ExistenceProof parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ExistenceProof(input, extensionRegistry);
+        return new ExistenceProof(input, extensionRegistry);
       }
     };
 
@@ -1503,6 +1602,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.ExistenceProof getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1518,33 +1618,38 @@ public final class Proofs {
      * TODO: remove this as unnecessary??? we prove a range
      * </pre>
      *
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
     com.google.protobuf.ByteString getKey();
 
     /**
-     * <code>optional .ics23.ExistenceProof left = 2;</code>
+     * <code>.ics23.ExistenceProof left = 2;</code>
+     * @return Whether the left field is set.
      */
     boolean hasLeft();
     /**
-     * <code>optional .ics23.ExistenceProof left = 2;</code>
+     * <code>.ics23.ExistenceProof left = 2;</code>
+     * @return The left.
      */
     ics23.Proofs.ExistenceProof getLeft();
     /**
-     * <code>optional .ics23.ExistenceProof left = 2;</code>
+     * <code>.ics23.ExistenceProof left = 2;</code>
      */
     ics23.Proofs.ExistenceProofOrBuilder getLeftOrBuilder();
 
     /**
-     * <code>optional .ics23.ExistenceProof right = 3;</code>
+     * <code>.ics23.ExistenceProof right = 3;</code>
+     * @return Whether the right field is set.
      */
     boolean hasRight();
     /**
-     * <code>optional .ics23.ExistenceProof right = 3;</code>
+     * <code>.ics23.ExistenceProof right = 3;</code>
+     * @return The right.
      */
     ics23.Proofs.ExistenceProof getRight();
     /**
-     * <code>optional .ics23.ExistenceProof right = 3;</code>
+     * <code>.ics23.ExistenceProof right = 3;</code>
      */
     ics23.Proofs.ExistenceProofOrBuilder getRightOrBuilder();
   }
@@ -1557,10 +1662,11 @@ public final class Proofs {
    *
    * Protobuf type {@code ics23.NonExistenceProof}
    */
-  public  static final class NonExistenceProof extends
+  public static final class NonExistenceProof extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.NonExistenceProof)
       NonExistenceProofOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use NonExistenceProof.newBuilder() to construct.
     private NonExistenceProof(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1570,16 +1676,27 @@ public final class Proofs {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NonExistenceProof();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private NonExistenceProof(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1588,12 +1705,6 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               key_ = input.readBytes();
@@ -1625,6 +1736,13 @@ public final class Proofs {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1633,6 +1751,7 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1641,6 +1760,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_NonExistenceProof_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_NonExistenceProof_fieldAccessorTable
@@ -1655,8 +1775,10 @@ public final class Proofs {
      * TODO: remove this as unnecessary??? we prove a range
      * </pre>
      *
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
@@ -1664,20 +1786,25 @@ public final class Proofs {
     public static final int LEFT_FIELD_NUMBER = 2;
     private ics23.Proofs.ExistenceProof left_;
     /**
-     * <code>optional .ics23.ExistenceProof left = 2;</code>
+     * <code>.ics23.ExistenceProof left = 2;</code>
+     * @return Whether the left field is set.
      */
+    @java.lang.Override
     public boolean hasLeft() {
       return left_ != null;
     }
     /**
-     * <code>optional .ics23.ExistenceProof left = 2;</code>
+     * <code>.ics23.ExistenceProof left = 2;</code>
+     * @return The left.
      */
+    @java.lang.Override
     public ics23.Proofs.ExistenceProof getLeft() {
       return left_ == null ? ics23.Proofs.ExistenceProof.getDefaultInstance() : left_;
     }
     /**
-     * <code>optional .ics23.ExistenceProof left = 2;</code>
+     * <code>.ics23.ExistenceProof left = 2;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.ExistenceProofOrBuilder getLeftOrBuilder() {
       return getLeft();
     }
@@ -1685,25 +1812,31 @@ public final class Proofs {
     public static final int RIGHT_FIELD_NUMBER = 3;
     private ics23.Proofs.ExistenceProof right_;
     /**
-     * <code>optional .ics23.ExistenceProof right = 3;</code>
+     * <code>.ics23.ExistenceProof right = 3;</code>
+     * @return Whether the right field is set.
      */
+    @java.lang.Override
     public boolean hasRight() {
       return right_ != null;
     }
     /**
-     * <code>optional .ics23.ExistenceProof right = 3;</code>
+     * <code>.ics23.ExistenceProof right = 3;</code>
+     * @return The right.
      */
+    @java.lang.Override
     public ics23.Proofs.ExistenceProof getRight() {
       return right_ == null ? ics23.Proofs.ExistenceProof.getDefaultInstance() : right_;
     }
     /**
-     * <code>optional .ics23.ExistenceProof right = 3;</code>
+     * <code>.ics23.ExistenceProof right = 3;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.ExistenceProofOrBuilder getRightOrBuilder() {
       return getRight();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1713,6 +1846,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!key_.isEmpty()) {
@@ -1724,8 +1858,10 @@ public final class Proofs {
       if (right_ != null) {
         output.writeMessage(3, getRight());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1743,11 +1879,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getRight());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1758,20 +1894,20 @@ public final class Proofs {
       }
       ics23.Proofs.NonExistenceProof other = (ics23.Proofs.NonExistenceProof) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && (hasLeft() == other.hasLeft());
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (hasLeft() != other.hasLeft()) return false;
       if (hasLeft()) {
-        result = result && getLeft()
-            .equals(other.getLeft());
+        if (!getLeft()
+            .equals(other.getLeft())) return false;
       }
-      result = result && (hasRight() == other.hasRight());
+      if (hasRight() != other.hasRight()) return false;
       if (hasRight()) {
-        result = result && getRight()
-            .equals(other.getRight());
+        if (!getRight()
+            .equals(other.getRight())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1780,7 +1916,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       if (hasLeft()) {
@@ -1796,6 +1932,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.NonExistenceProof parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.NonExistenceProof parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.NonExistenceProof parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1855,6 +2002,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1862,6 +2010,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.NonExistenceProof prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1891,6 +2040,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_NonExistenceProof_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_NonExistenceProof_fieldAccessorTable
@@ -1913,6 +2063,7 @@ public final class Proofs {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = com.google.protobuf.ByteString.EMPTY;
@@ -1932,15 +2083,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_NonExistenceProof_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.NonExistenceProof getDefaultInstanceForType() {
         return ics23.Proofs.NonExistenceProof.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.NonExistenceProof build() {
         ics23.Proofs.NonExistenceProof result = buildPartial();
         if (!result.isInitialized()) {
@@ -1949,6 +2103,7 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.NonExistenceProof buildPartial() {
         ics23.Proofs.NonExistenceProof result = new ics23.Proofs.NonExistenceProof(this);
         result.key_ = key_;
@@ -1966,32 +2121,39 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.NonExistenceProof) {
           return mergeFrom((ics23.Proofs.NonExistenceProof)other);
@@ -2012,14 +2174,17 @@ public final class Proofs {
         if (other.hasRight()) {
           mergeRight(other.getRight());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2044,8 +2209,10 @@ public final class Proofs {
        * TODO: remove this as unnecessary??? we prove a range
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return The key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getKey() {
         return key_;
       }
@@ -2054,7 +2221,9 @@ public final class Proofs {
        * TODO: remove this as unnecessary??? we prove a range
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2070,7 +2239,8 @@ public final class Proofs {
        * TODO: remove this as unnecessary??? we prove a range
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -2079,17 +2249,19 @@ public final class Proofs {
         return this;
       }
 
-      private ics23.Proofs.ExistenceProof left_ = null;
+      private ics23.Proofs.ExistenceProof left_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.ExistenceProof, ics23.Proofs.ExistenceProof.Builder, ics23.Proofs.ExistenceProofOrBuilder> leftBuilder_;
       /**
-       * <code>optional .ics23.ExistenceProof left = 2;</code>
+       * <code>.ics23.ExistenceProof left = 2;</code>
+       * @return Whether the left field is set.
        */
       public boolean hasLeft() {
         return leftBuilder_ != null || left_ != null;
       }
       /**
-       * <code>optional .ics23.ExistenceProof left = 2;</code>
+       * <code>.ics23.ExistenceProof left = 2;</code>
+       * @return The left.
        */
       public ics23.Proofs.ExistenceProof getLeft() {
         if (leftBuilder_ == null) {
@@ -2099,7 +2271,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.ExistenceProof left = 2;</code>
+       * <code>.ics23.ExistenceProof left = 2;</code>
        */
       public Builder setLeft(ics23.Proofs.ExistenceProof value) {
         if (leftBuilder_ == null) {
@@ -2115,7 +2287,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof left = 2;</code>
+       * <code>.ics23.ExistenceProof left = 2;</code>
        */
       public Builder setLeft(
           ics23.Proofs.ExistenceProof.Builder builderForValue) {
@@ -2129,7 +2301,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof left = 2;</code>
+       * <code>.ics23.ExistenceProof left = 2;</code>
        */
       public Builder mergeLeft(ics23.Proofs.ExistenceProof value) {
         if (leftBuilder_ == null) {
@@ -2147,7 +2319,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof left = 2;</code>
+       * <code>.ics23.ExistenceProof left = 2;</code>
        */
       public Builder clearLeft() {
         if (leftBuilder_ == null) {
@@ -2161,7 +2333,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof left = 2;</code>
+       * <code>.ics23.ExistenceProof left = 2;</code>
        */
       public ics23.Proofs.ExistenceProof.Builder getLeftBuilder() {
         
@@ -2169,7 +2341,7 @@ public final class Proofs {
         return getLeftFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.ExistenceProof left = 2;</code>
+       * <code>.ics23.ExistenceProof left = 2;</code>
        */
       public ics23.Proofs.ExistenceProofOrBuilder getLeftOrBuilder() {
         if (leftBuilder_ != null) {
@@ -2180,7 +2352,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.ExistenceProof left = 2;</code>
+       * <code>.ics23.ExistenceProof left = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.ExistenceProof, ics23.Proofs.ExistenceProof.Builder, ics23.Proofs.ExistenceProofOrBuilder> 
@@ -2196,17 +2368,19 @@ public final class Proofs {
         return leftBuilder_;
       }
 
-      private ics23.Proofs.ExistenceProof right_ = null;
+      private ics23.Proofs.ExistenceProof right_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.ExistenceProof, ics23.Proofs.ExistenceProof.Builder, ics23.Proofs.ExistenceProofOrBuilder> rightBuilder_;
       /**
-       * <code>optional .ics23.ExistenceProof right = 3;</code>
+       * <code>.ics23.ExistenceProof right = 3;</code>
+       * @return Whether the right field is set.
        */
       public boolean hasRight() {
         return rightBuilder_ != null || right_ != null;
       }
       /**
-       * <code>optional .ics23.ExistenceProof right = 3;</code>
+       * <code>.ics23.ExistenceProof right = 3;</code>
+       * @return The right.
        */
       public ics23.Proofs.ExistenceProof getRight() {
         if (rightBuilder_ == null) {
@@ -2216,7 +2390,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.ExistenceProof right = 3;</code>
+       * <code>.ics23.ExistenceProof right = 3;</code>
        */
       public Builder setRight(ics23.Proofs.ExistenceProof value) {
         if (rightBuilder_ == null) {
@@ -2232,7 +2406,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof right = 3;</code>
+       * <code>.ics23.ExistenceProof right = 3;</code>
        */
       public Builder setRight(
           ics23.Proofs.ExistenceProof.Builder builderForValue) {
@@ -2246,7 +2420,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof right = 3;</code>
+       * <code>.ics23.ExistenceProof right = 3;</code>
        */
       public Builder mergeRight(ics23.Proofs.ExistenceProof value) {
         if (rightBuilder_ == null) {
@@ -2264,7 +2438,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof right = 3;</code>
+       * <code>.ics23.ExistenceProof right = 3;</code>
        */
       public Builder clearRight() {
         if (rightBuilder_ == null) {
@@ -2278,7 +2452,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof right = 3;</code>
+       * <code>.ics23.ExistenceProof right = 3;</code>
        */
       public ics23.Proofs.ExistenceProof.Builder getRightBuilder() {
         
@@ -2286,7 +2460,7 @@ public final class Proofs {
         return getRightFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.ExistenceProof right = 3;</code>
+       * <code>.ics23.ExistenceProof right = 3;</code>
        */
       public ics23.Proofs.ExistenceProofOrBuilder getRightOrBuilder() {
         if (rightBuilder_ != null) {
@@ -2297,7 +2471,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.ExistenceProof right = 3;</code>
+       * <code>.ics23.ExistenceProof right = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.ExistenceProof, ics23.Proofs.ExistenceProof.Builder, ics23.Proofs.ExistenceProofOrBuilder> 
@@ -2312,14 +2486,16 @@ public final class Proofs {
         }
         return rightBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2338,11 +2514,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<NonExistenceProof>
         PARSER = new com.google.protobuf.AbstractParser<NonExistenceProof>() {
+      @java.lang.Override
       public NonExistenceProof parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NonExistenceProof(input, extensionRegistry);
+        return new NonExistenceProof(input, extensionRegistry);
       }
     };
 
@@ -2355,6 +2532,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.NonExistenceProof getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2366,38 +2544,62 @@ public final class Proofs {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .ics23.ExistenceProof exist = 1;</code>
+     * <code>.ics23.ExistenceProof exist = 1;</code>
+     * @return Whether the exist field is set.
+     */
+    boolean hasExist();
+    /**
+     * <code>.ics23.ExistenceProof exist = 1;</code>
+     * @return The exist.
      */
     ics23.Proofs.ExistenceProof getExist();
     /**
-     * <code>optional .ics23.ExistenceProof exist = 1;</code>
+     * <code>.ics23.ExistenceProof exist = 1;</code>
      */
     ics23.Proofs.ExistenceProofOrBuilder getExistOrBuilder();
 
     /**
-     * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+     * @return Whether the nonexist field is set.
+     */
+    boolean hasNonexist();
+    /**
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+     * @return The nonexist.
      */
     ics23.Proofs.NonExistenceProof getNonexist();
     /**
-     * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
      */
     ics23.Proofs.NonExistenceProofOrBuilder getNonexistOrBuilder();
 
     /**
-     * <code>optional .ics23.BatchProof batch = 3;</code>
+     * <code>.ics23.BatchProof batch = 3;</code>
+     * @return Whether the batch field is set.
+     */
+    boolean hasBatch();
+    /**
+     * <code>.ics23.BatchProof batch = 3;</code>
+     * @return The batch.
      */
     ics23.Proofs.BatchProof getBatch();
     /**
-     * <code>optional .ics23.BatchProof batch = 3;</code>
+     * <code>.ics23.BatchProof batch = 3;</code>
      */
     ics23.Proofs.BatchProofOrBuilder getBatchOrBuilder();
 
     /**
-     * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+     * <code>.ics23.CompressedBatchProof compressed = 4;</code>
+     * @return Whether the compressed field is set.
+     */
+    boolean hasCompressed();
+    /**
+     * <code>.ics23.CompressedBatchProof compressed = 4;</code>
+     * @return The compressed.
      */
     ics23.Proofs.CompressedBatchProof getCompressed();
     /**
-     * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+     * <code>.ics23.CompressedBatchProof compressed = 4;</code>
      */
     ics23.Proofs.CompressedBatchProofOrBuilder getCompressedOrBuilder();
 
@@ -2410,10 +2612,11 @@ public final class Proofs {
    *
    * Protobuf type {@code ics23.CommitmentProof}
    */
-  public  static final class CommitmentProof extends
+  public static final class CommitmentProof extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.CommitmentProof)
       CommitmentProofOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use CommitmentProof.newBuilder() to construct.
     private CommitmentProof(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2422,16 +2625,27 @@ public final class Proofs {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CommitmentProof();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private CommitmentProof(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2440,12 +2654,6 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               ics23.Proofs.ExistenceProof.Builder subBuilder = null;
               if (proofCase_ == 1) {
@@ -2502,6 +2710,13 @@ public final class Proofs {
               proofCase_ = 4;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2510,6 +2725,7 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2518,6 +2734,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_CommitmentProof_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_CommitmentProof_fieldAccessorTable
@@ -2528,7 +2745,8 @@ public final class Proofs {
     private int proofCase_ = 0;
     private java.lang.Object proof_;
     public enum ProofCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       EXIST(1),
       NONEXIST(2),
       BATCH(3),
@@ -2539,6 +2757,8 @@ public final class Proofs {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2569,8 +2789,18 @@ public final class Proofs {
 
     public static final int EXIST_FIELD_NUMBER = 1;
     /**
-     * <code>optional .ics23.ExistenceProof exist = 1;</code>
+     * <code>.ics23.ExistenceProof exist = 1;</code>
+     * @return Whether the exist field is set.
      */
+    @java.lang.Override
+    public boolean hasExist() {
+      return proofCase_ == 1;
+    }
+    /**
+     * <code>.ics23.ExistenceProof exist = 1;</code>
+     * @return The exist.
+     */
+    @java.lang.Override
     public ics23.Proofs.ExistenceProof getExist() {
       if (proofCase_ == 1) {
          return (ics23.Proofs.ExistenceProof) proof_;
@@ -2578,8 +2808,9 @@ public final class Proofs {
       return ics23.Proofs.ExistenceProof.getDefaultInstance();
     }
     /**
-     * <code>optional .ics23.ExistenceProof exist = 1;</code>
+     * <code>.ics23.ExistenceProof exist = 1;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.ExistenceProofOrBuilder getExistOrBuilder() {
       if (proofCase_ == 1) {
          return (ics23.Proofs.ExistenceProof) proof_;
@@ -2589,8 +2820,18 @@ public final class Proofs {
 
     public static final int NONEXIST_FIELD_NUMBER = 2;
     /**
-     * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+     * @return Whether the nonexist field is set.
      */
+    @java.lang.Override
+    public boolean hasNonexist() {
+      return proofCase_ == 2;
+    }
+    /**
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+     * @return The nonexist.
+     */
+    @java.lang.Override
     public ics23.Proofs.NonExistenceProof getNonexist() {
       if (proofCase_ == 2) {
          return (ics23.Proofs.NonExistenceProof) proof_;
@@ -2598,8 +2839,9 @@ public final class Proofs {
       return ics23.Proofs.NonExistenceProof.getDefaultInstance();
     }
     /**
-     * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.NonExistenceProofOrBuilder getNonexistOrBuilder() {
       if (proofCase_ == 2) {
          return (ics23.Proofs.NonExistenceProof) proof_;
@@ -2609,8 +2851,18 @@ public final class Proofs {
 
     public static final int BATCH_FIELD_NUMBER = 3;
     /**
-     * <code>optional .ics23.BatchProof batch = 3;</code>
+     * <code>.ics23.BatchProof batch = 3;</code>
+     * @return Whether the batch field is set.
      */
+    @java.lang.Override
+    public boolean hasBatch() {
+      return proofCase_ == 3;
+    }
+    /**
+     * <code>.ics23.BatchProof batch = 3;</code>
+     * @return The batch.
+     */
+    @java.lang.Override
     public ics23.Proofs.BatchProof getBatch() {
       if (proofCase_ == 3) {
          return (ics23.Proofs.BatchProof) proof_;
@@ -2618,8 +2870,9 @@ public final class Proofs {
       return ics23.Proofs.BatchProof.getDefaultInstance();
     }
     /**
-     * <code>optional .ics23.BatchProof batch = 3;</code>
+     * <code>.ics23.BatchProof batch = 3;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.BatchProofOrBuilder getBatchOrBuilder() {
       if (proofCase_ == 3) {
          return (ics23.Proofs.BatchProof) proof_;
@@ -2629,8 +2882,18 @@ public final class Proofs {
 
     public static final int COMPRESSED_FIELD_NUMBER = 4;
     /**
-     * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+     * <code>.ics23.CompressedBatchProof compressed = 4;</code>
+     * @return Whether the compressed field is set.
      */
+    @java.lang.Override
+    public boolean hasCompressed() {
+      return proofCase_ == 4;
+    }
+    /**
+     * <code>.ics23.CompressedBatchProof compressed = 4;</code>
+     * @return The compressed.
+     */
+    @java.lang.Override
     public ics23.Proofs.CompressedBatchProof getCompressed() {
       if (proofCase_ == 4) {
          return (ics23.Proofs.CompressedBatchProof) proof_;
@@ -2638,8 +2901,9 @@ public final class Proofs {
       return ics23.Proofs.CompressedBatchProof.getDefaultInstance();
     }
     /**
-     * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+     * <code>.ics23.CompressedBatchProof compressed = 4;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.CompressedBatchProofOrBuilder getCompressedOrBuilder() {
       if (proofCase_ == 4) {
          return (ics23.Proofs.CompressedBatchProof) proof_;
@@ -2648,6 +2912,7 @@ public final class Proofs {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2657,6 +2922,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (proofCase_ == 1) {
@@ -2671,8 +2937,10 @@ public final class Proofs {
       if (proofCase_ == 4) {
         output.writeMessage(4, (ics23.Proofs.CompressedBatchProof) proof_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2694,11 +2962,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, (ics23.Proofs.CompressedBatchProof) proof_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2709,31 +2977,29 @@ public final class Proofs {
       }
       ics23.Proofs.CommitmentProof other = (ics23.Proofs.CommitmentProof) obj;
 
-      boolean result = true;
-      result = result && getProofCase().equals(
-          other.getProofCase());
-      if (!result) return false;
+      if (!getProofCase().equals(other.getProofCase())) return false;
       switch (proofCase_) {
         case 1:
-          result = result && getExist()
-              .equals(other.getExist());
+          if (!getExist()
+              .equals(other.getExist())) return false;
           break;
         case 2:
-          result = result && getNonexist()
-              .equals(other.getNonexist());
+          if (!getNonexist()
+              .equals(other.getNonexist())) return false;
           break;
         case 3:
-          result = result && getBatch()
-              .equals(other.getBatch());
+          if (!getBatch()
+              .equals(other.getBatch())) return false;
           break;
         case 4:
-          result = result && getCompressed()
-              .equals(other.getCompressed());
+          if (!getCompressed()
+              .equals(other.getCompressed())) return false;
           break;
         case 0:
         default:
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2742,7 +3008,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       switch (proofCase_) {
         case 1:
           hash = (37 * hash) + EXIST_FIELD_NUMBER;
@@ -2768,6 +3034,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.CommitmentProof parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.CommitmentProof parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.CommitmentProof parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2827,6 +3104,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2834,6 +3112,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.CommitmentProof prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2861,6 +3140,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_CommitmentProof_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_CommitmentProof_fieldAccessorTable
@@ -2883,6 +3163,7 @@ public final class Proofs {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         proofCase_ = 0;
@@ -2890,15 +3171,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_CommitmentProof_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.CommitmentProof getDefaultInstanceForType() {
         return ics23.Proofs.CommitmentProof.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.CommitmentProof build() {
         ics23.Proofs.CommitmentProof result = buildPartial();
         if (!result.isInitialized()) {
@@ -2907,6 +3191,7 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.CommitmentProof buildPartial() {
         ics23.Proofs.CommitmentProof result = new ics23.Proofs.CommitmentProof(this);
         if (proofCase_ == 1) {
@@ -2942,32 +3227,39 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.CommitmentProof) {
           return mergeFrom((ics23.Proofs.CommitmentProof)other);
@@ -3000,14 +3292,17 @@ public final class Proofs {
             break;
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3044,8 +3339,18 @@ public final class Proofs {
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.ExistenceProof, ics23.Proofs.ExistenceProof.Builder, ics23.Proofs.ExistenceProofOrBuilder> existBuilder_;
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
+       * @return Whether the exist field is set.
        */
+      @java.lang.Override
+      public boolean hasExist() {
+        return proofCase_ == 1;
+      }
+      /**
+       * <code>.ics23.ExistenceProof exist = 1;</code>
+       * @return The exist.
+       */
+      @java.lang.Override
       public ics23.Proofs.ExistenceProof getExist() {
         if (existBuilder_ == null) {
           if (proofCase_ == 1) {
@@ -3060,7 +3365,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       public Builder setExist(ics23.Proofs.ExistenceProof value) {
         if (existBuilder_ == null) {
@@ -3076,7 +3381,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       public Builder setExist(
           ics23.Proofs.ExistenceProof.Builder builderForValue) {
@@ -3090,7 +3395,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       public Builder mergeExist(ics23.Proofs.ExistenceProof value) {
         if (existBuilder_ == null) {
@@ -3112,7 +3417,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       public Builder clearExist() {
         if (existBuilder_ == null) {
@@ -3131,14 +3436,15 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       public ics23.Proofs.ExistenceProof.Builder getExistBuilder() {
         return getExistFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
+      @java.lang.Override
       public ics23.Proofs.ExistenceProofOrBuilder getExistOrBuilder() {
         if ((proofCase_ == 1) && (existBuilder_ != null)) {
           return existBuilder_.getMessageOrBuilder();
@@ -3150,7 +3456,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.ExistenceProof, ics23.Proofs.ExistenceProof.Builder, ics23.Proofs.ExistenceProofOrBuilder> 
@@ -3174,8 +3480,18 @@ public final class Proofs {
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.NonExistenceProof, ics23.Proofs.NonExistenceProof.Builder, ics23.Proofs.NonExistenceProofOrBuilder> nonexistBuilder_;
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+       * @return Whether the nonexist field is set.
        */
+      @java.lang.Override
+      public boolean hasNonexist() {
+        return proofCase_ == 2;
+      }
+      /**
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+       * @return The nonexist.
+       */
+      @java.lang.Override
       public ics23.Proofs.NonExistenceProof getNonexist() {
         if (nonexistBuilder_ == null) {
           if (proofCase_ == 2) {
@@ -3190,7 +3506,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       public Builder setNonexist(ics23.Proofs.NonExistenceProof value) {
         if (nonexistBuilder_ == null) {
@@ -3206,7 +3522,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       public Builder setNonexist(
           ics23.Proofs.NonExistenceProof.Builder builderForValue) {
@@ -3220,7 +3536,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       public Builder mergeNonexist(ics23.Proofs.NonExistenceProof value) {
         if (nonexistBuilder_ == null) {
@@ -3242,7 +3558,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       public Builder clearNonexist() {
         if (nonexistBuilder_ == null) {
@@ -3261,14 +3577,15 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       public ics23.Proofs.NonExistenceProof.Builder getNonexistBuilder() {
         return getNonexistFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
+      @java.lang.Override
       public ics23.Proofs.NonExistenceProofOrBuilder getNonexistOrBuilder() {
         if ((proofCase_ == 2) && (nonexistBuilder_ != null)) {
           return nonexistBuilder_.getMessageOrBuilder();
@@ -3280,7 +3597,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.NonExistenceProof, ics23.Proofs.NonExistenceProof.Builder, ics23.Proofs.NonExistenceProofOrBuilder> 
@@ -3304,8 +3621,18 @@ public final class Proofs {
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.BatchProof, ics23.Proofs.BatchProof.Builder, ics23.Proofs.BatchProofOrBuilder> batchBuilder_;
       /**
-       * <code>optional .ics23.BatchProof batch = 3;</code>
+       * <code>.ics23.BatchProof batch = 3;</code>
+       * @return Whether the batch field is set.
        */
+      @java.lang.Override
+      public boolean hasBatch() {
+        return proofCase_ == 3;
+      }
+      /**
+       * <code>.ics23.BatchProof batch = 3;</code>
+       * @return The batch.
+       */
+      @java.lang.Override
       public ics23.Proofs.BatchProof getBatch() {
         if (batchBuilder_ == null) {
           if (proofCase_ == 3) {
@@ -3320,7 +3647,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.BatchProof batch = 3;</code>
+       * <code>.ics23.BatchProof batch = 3;</code>
        */
       public Builder setBatch(ics23.Proofs.BatchProof value) {
         if (batchBuilder_ == null) {
@@ -3336,7 +3663,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.BatchProof batch = 3;</code>
+       * <code>.ics23.BatchProof batch = 3;</code>
        */
       public Builder setBatch(
           ics23.Proofs.BatchProof.Builder builderForValue) {
@@ -3350,7 +3677,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.BatchProof batch = 3;</code>
+       * <code>.ics23.BatchProof batch = 3;</code>
        */
       public Builder mergeBatch(ics23.Proofs.BatchProof value) {
         if (batchBuilder_ == null) {
@@ -3372,7 +3699,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.BatchProof batch = 3;</code>
+       * <code>.ics23.BatchProof batch = 3;</code>
        */
       public Builder clearBatch() {
         if (batchBuilder_ == null) {
@@ -3391,14 +3718,15 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.BatchProof batch = 3;</code>
+       * <code>.ics23.BatchProof batch = 3;</code>
        */
       public ics23.Proofs.BatchProof.Builder getBatchBuilder() {
         return getBatchFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.BatchProof batch = 3;</code>
+       * <code>.ics23.BatchProof batch = 3;</code>
        */
+      @java.lang.Override
       public ics23.Proofs.BatchProofOrBuilder getBatchOrBuilder() {
         if ((proofCase_ == 3) && (batchBuilder_ != null)) {
           return batchBuilder_.getMessageOrBuilder();
@@ -3410,7 +3738,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.BatchProof batch = 3;</code>
+       * <code>.ics23.BatchProof batch = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.BatchProof, ics23.Proofs.BatchProof.Builder, ics23.Proofs.BatchProofOrBuilder> 
@@ -3434,8 +3762,18 @@ public final class Proofs {
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.CompressedBatchProof, ics23.Proofs.CompressedBatchProof.Builder, ics23.Proofs.CompressedBatchProofOrBuilder> compressedBuilder_;
       /**
-       * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+       * <code>.ics23.CompressedBatchProof compressed = 4;</code>
+       * @return Whether the compressed field is set.
        */
+      @java.lang.Override
+      public boolean hasCompressed() {
+        return proofCase_ == 4;
+      }
+      /**
+       * <code>.ics23.CompressedBatchProof compressed = 4;</code>
+       * @return The compressed.
+       */
+      @java.lang.Override
       public ics23.Proofs.CompressedBatchProof getCompressed() {
         if (compressedBuilder_ == null) {
           if (proofCase_ == 4) {
@@ -3450,7 +3788,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+       * <code>.ics23.CompressedBatchProof compressed = 4;</code>
        */
       public Builder setCompressed(ics23.Proofs.CompressedBatchProof value) {
         if (compressedBuilder_ == null) {
@@ -3466,7 +3804,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+       * <code>.ics23.CompressedBatchProof compressed = 4;</code>
        */
       public Builder setCompressed(
           ics23.Proofs.CompressedBatchProof.Builder builderForValue) {
@@ -3480,7 +3818,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+       * <code>.ics23.CompressedBatchProof compressed = 4;</code>
        */
       public Builder mergeCompressed(ics23.Proofs.CompressedBatchProof value) {
         if (compressedBuilder_ == null) {
@@ -3502,7 +3840,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+       * <code>.ics23.CompressedBatchProof compressed = 4;</code>
        */
       public Builder clearCompressed() {
         if (compressedBuilder_ == null) {
@@ -3521,14 +3859,15 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+       * <code>.ics23.CompressedBatchProof compressed = 4;</code>
        */
       public ics23.Proofs.CompressedBatchProof.Builder getCompressedBuilder() {
         return getCompressedFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+       * <code>.ics23.CompressedBatchProof compressed = 4;</code>
        */
+      @java.lang.Override
       public ics23.Proofs.CompressedBatchProofOrBuilder getCompressedOrBuilder() {
         if ((proofCase_ == 4) && (compressedBuilder_ != null)) {
           return compressedBuilder_.getMessageOrBuilder();
@@ -3540,7 +3879,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.CompressedBatchProof compressed = 4;</code>
+       * <code>.ics23.CompressedBatchProof compressed = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.CompressedBatchProof, ics23.Proofs.CompressedBatchProof.Builder, ics23.Proofs.CompressedBatchProofOrBuilder> 
@@ -3560,14 +3899,16 @@ public final class Proofs {
         onChanged();;
         return compressedBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3586,11 +3927,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<CommitmentProof>
         PARSER = new com.google.protobuf.AbstractParser<CommitmentProof>() {
+      @java.lang.Override
       public CommitmentProof parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CommitmentProof(input, extensionRegistry);
+        return new CommitmentProof(input, extensionRegistry);
       }
     };
 
@@ -3603,6 +3945,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.CommitmentProof getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3614,38 +3957,46 @@ public final class Proofs {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .ics23.HashOp hash = 1;</code>
+     * <code>.ics23.HashOp hash = 1;</code>
+     * @return The enum numeric value on the wire for hash.
      */
     int getHashValue();
     /**
-     * <code>optional .ics23.HashOp hash = 1;</code>
+     * <code>.ics23.HashOp hash = 1;</code>
+     * @return The hash.
      */
     ics23.Proofs.HashOp getHash();
 
     /**
-     * <code>optional .ics23.HashOp prehash_key = 2;</code>
+     * <code>.ics23.HashOp prehash_key = 2;</code>
+     * @return The enum numeric value on the wire for prehashKey.
      */
     int getPrehashKeyValue();
     /**
-     * <code>optional .ics23.HashOp prehash_key = 2;</code>
+     * <code>.ics23.HashOp prehash_key = 2;</code>
+     * @return The prehashKey.
      */
     ics23.Proofs.HashOp getPrehashKey();
 
     /**
-     * <code>optional .ics23.HashOp prehash_value = 3;</code>
+     * <code>.ics23.HashOp prehash_value = 3;</code>
+     * @return The enum numeric value on the wire for prehashValue.
      */
     int getPrehashValueValue();
     /**
-     * <code>optional .ics23.HashOp prehash_value = 3;</code>
+     * <code>.ics23.HashOp prehash_value = 3;</code>
+     * @return The prehashValue.
      */
     ics23.Proofs.HashOp getPrehashValue();
 
     /**
-     * <code>optional .ics23.LengthOp length = 4;</code>
+     * <code>.ics23.LengthOp length = 4;</code>
+     * @return The enum numeric value on the wire for length.
      */
     int getLengthValue();
     /**
-     * <code>optional .ics23.LengthOp length = 4;</code>
+     * <code>.ics23.LengthOp length = 4;</code>
+     * @return The length.
      */
     ics23.Proofs.LengthOp getLength();
 
@@ -3655,7 +4006,8 @@ public final class Proofs {
      * a leaf node from an inner node.
      * </pre>
      *
-     * <code>optional bytes prefix = 5;</code>
+     * <code>bytes prefix = 5;</code>
+     * @return The prefix.
      */
     com.google.protobuf.ByteString getPrefix();
   }
@@ -3677,10 +4029,11 @@ public final class Proofs {
    *
    * Protobuf type {@code ics23.LeafOp}
    */
-  public  static final class LeafOp extends
+  public static final class LeafOp extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.LeafOp)
       LeafOpOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use LeafOp.newBuilder() to construct.
     private LeafOp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3694,16 +4047,27 @@ public final class Proofs {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LeafOp();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private LeafOp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3712,12 +4076,6 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
 
@@ -3747,6 +4105,13 @@ public final class Proofs {
               prefix_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3755,6 +4120,7 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3763,6 +4129,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_LeafOp_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_LeafOp_fieldAccessorTable
@@ -3773,15 +4140,18 @@ public final class Proofs {
     public static final int HASH_FIELD_NUMBER = 1;
     private int hash_;
     /**
-     * <code>optional .ics23.HashOp hash = 1;</code>
+     * <code>.ics23.HashOp hash = 1;</code>
+     * @return The enum numeric value on the wire for hash.
      */
-    public int getHashValue() {
+    @java.lang.Override public int getHashValue() {
       return hash_;
     }
     /**
-     * <code>optional .ics23.HashOp hash = 1;</code>
+     * <code>.ics23.HashOp hash = 1;</code>
+     * @return The hash.
      */
-    public ics23.Proofs.HashOp getHash() {
+    @java.lang.Override public ics23.Proofs.HashOp getHash() {
+      @SuppressWarnings("deprecation")
       ics23.Proofs.HashOp result = ics23.Proofs.HashOp.valueOf(hash_);
       return result == null ? ics23.Proofs.HashOp.UNRECOGNIZED : result;
     }
@@ -3789,15 +4159,18 @@ public final class Proofs {
     public static final int PREHASH_KEY_FIELD_NUMBER = 2;
     private int prehashKey_;
     /**
-     * <code>optional .ics23.HashOp prehash_key = 2;</code>
+     * <code>.ics23.HashOp prehash_key = 2;</code>
+     * @return The enum numeric value on the wire for prehashKey.
      */
-    public int getPrehashKeyValue() {
+    @java.lang.Override public int getPrehashKeyValue() {
       return prehashKey_;
     }
     /**
-     * <code>optional .ics23.HashOp prehash_key = 2;</code>
+     * <code>.ics23.HashOp prehash_key = 2;</code>
+     * @return The prehashKey.
      */
-    public ics23.Proofs.HashOp getPrehashKey() {
+    @java.lang.Override public ics23.Proofs.HashOp getPrehashKey() {
+      @SuppressWarnings("deprecation")
       ics23.Proofs.HashOp result = ics23.Proofs.HashOp.valueOf(prehashKey_);
       return result == null ? ics23.Proofs.HashOp.UNRECOGNIZED : result;
     }
@@ -3805,15 +4178,18 @@ public final class Proofs {
     public static final int PREHASH_VALUE_FIELD_NUMBER = 3;
     private int prehashValue_;
     /**
-     * <code>optional .ics23.HashOp prehash_value = 3;</code>
+     * <code>.ics23.HashOp prehash_value = 3;</code>
+     * @return The enum numeric value on the wire for prehashValue.
      */
-    public int getPrehashValueValue() {
+    @java.lang.Override public int getPrehashValueValue() {
       return prehashValue_;
     }
     /**
-     * <code>optional .ics23.HashOp prehash_value = 3;</code>
+     * <code>.ics23.HashOp prehash_value = 3;</code>
+     * @return The prehashValue.
      */
-    public ics23.Proofs.HashOp getPrehashValue() {
+    @java.lang.Override public ics23.Proofs.HashOp getPrehashValue() {
+      @SuppressWarnings("deprecation")
       ics23.Proofs.HashOp result = ics23.Proofs.HashOp.valueOf(prehashValue_);
       return result == null ? ics23.Proofs.HashOp.UNRECOGNIZED : result;
     }
@@ -3821,15 +4197,18 @@ public final class Proofs {
     public static final int LENGTH_FIELD_NUMBER = 4;
     private int length_;
     /**
-     * <code>optional .ics23.LengthOp length = 4;</code>
+     * <code>.ics23.LengthOp length = 4;</code>
+     * @return The enum numeric value on the wire for length.
      */
-    public int getLengthValue() {
+    @java.lang.Override public int getLengthValue() {
       return length_;
     }
     /**
-     * <code>optional .ics23.LengthOp length = 4;</code>
+     * <code>.ics23.LengthOp length = 4;</code>
+     * @return The length.
      */
-    public ics23.Proofs.LengthOp getLength() {
+    @java.lang.Override public ics23.Proofs.LengthOp getLength() {
+      @SuppressWarnings("deprecation")
       ics23.Proofs.LengthOp result = ics23.Proofs.LengthOp.valueOf(length_);
       return result == null ? ics23.Proofs.LengthOp.UNRECOGNIZED : result;
     }
@@ -3842,13 +4221,16 @@ public final class Proofs {
      * a leaf node from an inner node.
      * </pre>
      *
-     * <code>optional bytes prefix = 5;</code>
+     * <code>bytes prefix = 5;</code>
+     * @return The prefix.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPrefix() {
       return prefix_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3858,6 +4240,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (hash_ != ics23.Proofs.HashOp.NO_HASH.getNumber()) {
@@ -3875,8 +4258,10 @@ public final class Proofs {
       if (!prefix_.isEmpty()) {
         output.writeBytes(5, prefix_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3902,11 +4287,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, prefix_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3917,14 +4302,14 @@ public final class Proofs {
       }
       ics23.Proofs.LeafOp other = (ics23.Proofs.LeafOp) obj;
 
-      boolean result = true;
-      result = result && hash_ == other.hash_;
-      result = result && prehashKey_ == other.prehashKey_;
-      result = result && prehashValue_ == other.prehashValue_;
-      result = result && length_ == other.length_;
-      result = result && getPrefix()
-          .equals(other.getPrefix());
-      return result;
+      if (hash_ != other.hash_) return false;
+      if (prehashKey_ != other.prehashKey_) return false;
+      if (prehashValue_ != other.prehashValue_) return false;
+      if (length_ != other.length_) return false;
+      if (!getPrefix()
+          .equals(other.getPrefix())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3933,7 +4318,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + HASH_FIELD_NUMBER;
       hash = (53 * hash) + hash_;
       hash = (37 * hash) + PREHASH_KEY_FIELD_NUMBER;
@@ -3949,6 +4334,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.LeafOp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.LeafOp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.LeafOp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4008,6 +4404,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4015,6 +4412,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.LeafOp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4053,6 +4451,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_LeafOp_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_LeafOp_fieldAccessorTable
@@ -4075,6 +4474,7 @@ public final class Proofs {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         hash_ = 0;
@@ -4090,15 +4490,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_LeafOp_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.LeafOp getDefaultInstanceForType() {
         return ics23.Proofs.LeafOp.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.LeafOp build() {
         ics23.Proofs.LeafOp result = buildPartial();
         if (!result.isInitialized()) {
@@ -4107,6 +4510,7 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.LeafOp buildPartial() {
         ics23.Proofs.LeafOp result = new ics23.Proofs.LeafOp(this);
         result.hash_ = hash_;
@@ -4118,32 +4522,39 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.LeafOp) {
           return mergeFrom((ics23.Proofs.LeafOp)other);
@@ -4170,14 +4581,17 @@ public final class Proofs {
         if (other.getPrefix() != com.google.protobuf.ByteString.EMPTY) {
           setPrefix(other.getPrefix());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4198,28 +4612,37 @@ public final class Proofs {
 
       private int hash_ = 0;
       /**
-       * <code>optional .ics23.HashOp hash = 1;</code>
+       * <code>.ics23.HashOp hash = 1;</code>
+       * @return The enum numeric value on the wire for hash.
        */
-      public int getHashValue() {
+      @java.lang.Override public int getHashValue() {
         return hash_;
       }
       /**
-       * <code>optional .ics23.HashOp hash = 1;</code>
+       * <code>.ics23.HashOp hash = 1;</code>
+       * @param value The enum numeric value on the wire for hash to set.
+       * @return This builder for chaining.
        */
       public Builder setHashValue(int value) {
+        
         hash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .ics23.HashOp hash = 1;</code>
+       * <code>.ics23.HashOp hash = 1;</code>
+       * @return The hash.
        */
+      @java.lang.Override
       public ics23.Proofs.HashOp getHash() {
+        @SuppressWarnings("deprecation")
         ics23.Proofs.HashOp result = ics23.Proofs.HashOp.valueOf(hash_);
         return result == null ? ics23.Proofs.HashOp.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .ics23.HashOp hash = 1;</code>
+       * <code>.ics23.HashOp hash = 1;</code>
+       * @param value The hash to set.
+       * @return This builder for chaining.
        */
       public Builder setHash(ics23.Proofs.HashOp value) {
         if (value == null) {
@@ -4231,7 +4654,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.HashOp hash = 1;</code>
+       * <code>.ics23.HashOp hash = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHash() {
         
@@ -4242,28 +4666,37 @@ public final class Proofs {
 
       private int prehashKey_ = 0;
       /**
-       * <code>optional .ics23.HashOp prehash_key = 2;</code>
+       * <code>.ics23.HashOp prehash_key = 2;</code>
+       * @return The enum numeric value on the wire for prehashKey.
        */
-      public int getPrehashKeyValue() {
+      @java.lang.Override public int getPrehashKeyValue() {
         return prehashKey_;
       }
       /**
-       * <code>optional .ics23.HashOp prehash_key = 2;</code>
+       * <code>.ics23.HashOp prehash_key = 2;</code>
+       * @param value The enum numeric value on the wire for prehashKey to set.
+       * @return This builder for chaining.
        */
       public Builder setPrehashKeyValue(int value) {
+        
         prehashKey_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .ics23.HashOp prehash_key = 2;</code>
+       * <code>.ics23.HashOp prehash_key = 2;</code>
+       * @return The prehashKey.
        */
+      @java.lang.Override
       public ics23.Proofs.HashOp getPrehashKey() {
+        @SuppressWarnings("deprecation")
         ics23.Proofs.HashOp result = ics23.Proofs.HashOp.valueOf(prehashKey_);
         return result == null ? ics23.Proofs.HashOp.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .ics23.HashOp prehash_key = 2;</code>
+       * <code>.ics23.HashOp prehash_key = 2;</code>
+       * @param value The prehashKey to set.
+       * @return This builder for chaining.
        */
       public Builder setPrehashKey(ics23.Proofs.HashOp value) {
         if (value == null) {
@@ -4275,7 +4708,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.HashOp prehash_key = 2;</code>
+       * <code>.ics23.HashOp prehash_key = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPrehashKey() {
         
@@ -4286,28 +4720,37 @@ public final class Proofs {
 
       private int prehashValue_ = 0;
       /**
-       * <code>optional .ics23.HashOp prehash_value = 3;</code>
+       * <code>.ics23.HashOp prehash_value = 3;</code>
+       * @return The enum numeric value on the wire for prehashValue.
        */
-      public int getPrehashValueValue() {
+      @java.lang.Override public int getPrehashValueValue() {
         return prehashValue_;
       }
       /**
-       * <code>optional .ics23.HashOp prehash_value = 3;</code>
+       * <code>.ics23.HashOp prehash_value = 3;</code>
+       * @param value The enum numeric value on the wire for prehashValue to set.
+       * @return This builder for chaining.
        */
       public Builder setPrehashValueValue(int value) {
+        
         prehashValue_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .ics23.HashOp prehash_value = 3;</code>
+       * <code>.ics23.HashOp prehash_value = 3;</code>
+       * @return The prehashValue.
        */
+      @java.lang.Override
       public ics23.Proofs.HashOp getPrehashValue() {
+        @SuppressWarnings("deprecation")
         ics23.Proofs.HashOp result = ics23.Proofs.HashOp.valueOf(prehashValue_);
         return result == null ? ics23.Proofs.HashOp.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .ics23.HashOp prehash_value = 3;</code>
+       * <code>.ics23.HashOp prehash_value = 3;</code>
+       * @param value The prehashValue to set.
+       * @return This builder for chaining.
        */
       public Builder setPrehashValue(ics23.Proofs.HashOp value) {
         if (value == null) {
@@ -4319,7 +4762,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.HashOp prehash_value = 3;</code>
+       * <code>.ics23.HashOp prehash_value = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPrehashValue() {
         
@@ -4330,28 +4774,37 @@ public final class Proofs {
 
       private int length_ = 0;
       /**
-       * <code>optional .ics23.LengthOp length = 4;</code>
+       * <code>.ics23.LengthOp length = 4;</code>
+       * @return The enum numeric value on the wire for length.
        */
-      public int getLengthValue() {
+      @java.lang.Override public int getLengthValue() {
         return length_;
       }
       /**
-       * <code>optional .ics23.LengthOp length = 4;</code>
+       * <code>.ics23.LengthOp length = 4;</code>
+       * @param value The enum numeric value on the wire for length to set.
+       * @return This builder for chaining.
        */
       public Builder setLengthValue(int value) {
+        
         length_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .ics23.LengthOp length = 4;</code>
+       * <code>.ics23.LengthOp length = 4;</code>
+       * @return The length.
        */
+      @java.lang.Override
       public ics23.Proofs.LengthOp getLength() {
+        @SuppressWarnings("deprecation")
         ics23.Proofs.LengthOp result = ics23.Proofs.LengthOp.valueOf(length_);
         return result == null ? ics23.Proofs.LengthOp.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .ics23.LengthOp length = 4;</code>
+       * <code>.ics23.LengthOp length = 4;</code>
+       * @param value The length to set.
+       * @return This builder for chaining.
        */
       public Builder setLength(ics23.Proofs.LengthOp value) {
         if (value == null) {
@@ -4363,7 +4816,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.LengthOp length = 4;</code>
+       * <code>.ics23.LengthOp length = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLength() {
         
@@ -4379,8 +4833,10 @@ public final class Proofs {
        * a leaf node from an inner node.
        * </pre>
        *
-       * <code>optional bytes prefix = 5;</code>
+       * <code>bytes prefix = 5;</code>
+       * @return The prefix.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getPrefix() {
         return prefix_;
       }
@@ -4390,7 +4846,9 @@ public final class Proofs {
        * a leaf node from an inner node.
        * </pre>
        *
-       * <code>optional bytes prefix = 5;</code>
+       * <code>bytes prefix = 5;</code>
+       * @param value The prefix to set.
+       * @return This builder for chaining.
        */
       public Builder setPrefix(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4407,7 +4865,8 @@ public final class Proofs {
        * a leaf node from an inner node.
        * </pre>
        *
-       * <code>optional bytes prefix = 5;</code>
+       * <code>bytes prefix = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPrefix() {
         
@@ -4415,14 +4874,16 @@ public final class Proofs {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4441,11 +4902,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<LeafOp>
         PARSER = new com.google.protobuf.AbstractParser<LeafOp>() {
+      @java.lang.Override
       public LeafOp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LeafOp(input, extensionRegistry);
+        return new LeafOp(input, extensionRegistry);
       }
     };
 
@@ -4458,6 +4920,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.LeafOp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4469,21 +4932,25 @@ public final class Proofs {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .ics23.HashOp hash = 1;</code>
+     * <code>.ics23.HashOp hash = 1;</code>
+     * @return The enum numeric value on the wire for hash.
      */
     int getHashValue();
     /**
-     * <code>optional .ics23.HashOp hash = 1;</code>
+     * <code>.ics23.HashOp hash = 1;</code>
+     * @return The hash.
      */
     ics23.Proofs.HashOp getHash();
 
     /**
-     * <code>optional bytes prefix = 2;</code>
+     * <code>bytes prefix = 2;</code>
+     * @return The prefix.
      */
     com.google.protobuf.ByteString getPrefix();
 
     /**
-     * <code>optional bytes suffix = 3;</code>
+     * <code>bytes suffix = 3;</code>
+     * @return The suffix.
      */
     com.google.protobuf.ByteString getSuffix();
   }
@@ -4505,10 +4972,11 @@ public final class Proofs {
    *
    * Protobuf type {@code ics23.InnerOp}
    */
-  public  static final class InnerOp extends
+  public static final class InnerOp extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.InnerOp)
       InnerOpOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use InnerOp.newBuilder() to construct.
     private InnerOp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4520,16 +4988,27 @@ public final class Proofs {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InnerOp();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private InnerOp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4538,12 +5017,6 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
 
@@ -4560,6 +5033,13 @@ public final class Proofs {
               suffix_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4568,6 +5048,7 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4576,6 +5057,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_InnerOp_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_InnerOp_fieldAccessorTable
@@ -4586,15 +5068,18 @@ public final class Proofs {
     public static final int HASH_FIELD_NUMBER = 1;
     private int hash_;
     /**
-     * <code>optional .ics23.HashOp hash = 1;</code>
+     * <code>.ics23.HashOp hash = 1;</code>
+     * @return The enum numeric value on the wire for hash.
      */
-    public int getHashValue() {
+    @java.lang.Override public int getHashValue() {
       return hash_;
     }
     /**
-     * <code>optional .ics23.HashOp hash = 1;</code>
+     * <code>.ics23.HashOp hash = 1;</code>
+     * @return The hash.
      */
-    public ics23.Proofs.HashOp getHash() {
+    @java.lang.Override public ics23.Proofs.HashOp getHash() {
+      @SuppressWarnings("deprecation")
       ics23.Proofs.HashOp result = ics23.Proofs.HashOp.valueOf(hash_);
       return result == null ? ics23.Proofs.HashOp.UNRECOGNIZED : result;
     }
@@ -4602,8 +5087,10 @@ public final class Proofs {
     public static final int PREFIX_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString prefix_;
     /**
-     * <code>optional bytes prefix = 2;</code>
+     * <code>bytes prefix = 2;</code>
+     * @return The prefix.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPrefix() {
       return prefix_;
     }
@@ -4611,13 +5098,16 @@ public final class Proofs {
     public static final int SUFFIX_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString suffix_;
     /**
-     * <code>optional bytes suffix = 3;</code>
+     * <code>bytes suffix = 3;</code>
+     * @return The suffix.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSuffix() {
       return suffix_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4627,6 +5117,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (hash_ != ics23.Proofs.HashOp.NO_HASH.getNumber()) {
@@ -4638,8 +5129,10 @@ public final class Proofs {
       if (!suffix_.isEmpty()) {
         output.writeBytes(3, suffix_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4657,11 +5150,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, suffix_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4672,13 +5165,13 @@ public final class Proofs {
       }
       ics23.Proofs.InnerOp other = (ics23.Proofs.InnerOp) obj;
 
-      boolean result = true;
-      result = result && hash_ == other.hash_;
-      result = result && getPrefix()
-          .equals(other.getPrefix());
-      result = result && getSuffix()
-          .equals(other.getSuffix());
-      return result;
+      if (hash_ != other.hash_) return false;
+      if (!getPrefix()
+          .equals(other.getPrefix())) return false;
+      if (!getSuffix()
+          .equals(other.getSuffix())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4687,7 +5180,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + HASH_FIELD_NUMBER;
       hash = (53 * hash) + hash_;
       hash = (37 * hash) + PREFIX_FIELD_NUMBER;
@@ -4699,6 +5192,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.InnerOp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.InnerOp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.InnerOp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4758,6 +5262,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4765,6 +5270,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.InnerOp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4803,6 +5309,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_InnerOp_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_InnerOp_fieldAccessorTable
@@ -4825,6 +5332,7 @@ public final class Proofs {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         hash_ = 0;
@@ -4836,15 +5344,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_InnerOp_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.InnerOp getDefaultInstanceForType() {
         return ics23.Proofs.InnerOp.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.InnerOp build() {
         ics23.Proofs.InnerOp result = buildPartial();
         if (!result.isInitialized()) {
@@ -4853,6 +5364,7 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.InnerOp buildPartial() {
         ics23.Proofs.InnerOp result = new ics23.Proofs.InnerOp(this);
         result.hash_ = hash_;
@@ -4862,32 +5374,39 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.InnerOp) {
           return mergeFrom((ics23.Proofs.InnerOp)other);
@@ -4908,14 +5427,17 @@ public final class Proofs {
         if (other.getSuffix() != com.google.protobuf.ByteString.EMPTY) {
           setSuffix(other.getSuffix());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4936,28 +5458,37 @@ public final class Proofs {
 
       private int hash_ = 0;
       /**
-       * <code>optional .ics23.HashOp hash = 1;</code>
+       * <code>.ics23.HashOp hash = 1;</code>
+       * @return The enum numeric value on the wire for hash.
        */
-      public int getHashValue() {
+      @java.lang.Override public int getHashValue() {
         return hash_;
       }
       /**
-       * <code>optional .ics23.HashOp hash = 1;</code>
+       * <code>.ics23.HashOp hash = 1;</code>
+       * @param value The enum numeric value on the wire for hash to set.
+       * @return This builder for chaining.
        */
       public Builder setHashValue(int value) {
+        
         hash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .ics23.HashOp hash = 1;</code>
+       * <code>.ics23.HashOp hash = 1;</code>
+       * @return The hash.
        */
+      @java.lang.Override
       public ics23.Proofs.HashOp getHash() {
+        @SuppressWarnings("deprecation")
         ics23.Proofs.HashOp result = ics23.Proofs.HashOp.valueOf(hash_);
         return result == null ? ics23.Proofs.HashOp.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .ics23.HashOp hash = 1;</code>
+       * <code>.ics23.HashOp hash = 1;</code>
+       * @param value The hash to set.
+       * @return This builder for chaining.
        */
       public Builder setHash(ics23.Proofs.HashOp value) {
         if (value == null) {
@@ -4969,7 +5500,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.HashOp hash = 1;</code>
+       * <code>.ics23.HashOp hash = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHash() {
         
@@ -4980,13 +5512,17 @@ public final class Proofs {
 
       private com.google.protobuf.ByteString prefix_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes prefix = 2;</code>
+       * <code>bytes prefix = 2;</code>
+       * @return The prefix.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getPrefix() {
         return prefix_;
       }
       /**
-       * <code>optional bytes prefix = 2;</code>
+       * <code>bytes prefix = 2;</code>
+       * @param value The prefix to set.
+       * @return This builder for chaining.
        */
       public Builder setPrefix(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4998,7 +5534,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional bytes prefix = 2;</code>
+       * <code>bytes prefix = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPrefix() {
         
@@ -5009,13 +5546,17 @@ public final class Proofs {
 
       private com.google.protobuf.ByteString suffix_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes suffix = 3;</code>
+       * <code>bytes suffix = 3;</code>
+       * @return The suffix.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSuffix() {
         return suffix_;
       }
       /**
-       * <code>optional bytes suffix = 3;</code>
+       * <code>bytes suffix = 3;</code>
+       * @param value The suffix to set.
+       * @return This builder for chaining.
        */
       public Builder setSuffix(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5027,7 +5568,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional bytes suffix = 3;</code>
+       * <code>bytes suffix = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSuffix() {
         
@@ -5035,14 +5577,16 @@ public final class Proofs {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5061,11 +5605,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<InnerOp>
         PARSER = new com.google.protobuf.AbstractParser<InnerOp>() {
+      @java.lang.Override
       public InnerOp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InnerOp(input, extensionRegistry);
+        return new InnerOp(input, extensionRegistry);
       }
     };
 
@@ -5078,6 +5623,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.InnerOp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5094,7 +5640,8 @@ public final class Proofs {
      * except Prefix, which is just the first bytes of prefix (spec can be longer) 
      * </pre>
      *
-     * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+     * <code>.ics23.LeafOp leaf_spec = 1;</code>
+     * @return Whether the leafSpec field is set.
      */
     boolean hasLeafSpec();
     /**
@@ -5103,7 +5650,8 @@ public final class Proofs {
      * except Prefix, which is just the first bytes of prefix (spec can be longer) 
      * </pre>
      *
-     * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+     * <code>.ics23.LeafOp leaf_spec = 1;</code>
+     * @return The leafSpec.
      */
     ics23.Proofs.LeafOp getLeafSpec();
     /**
@@ -5112,20 +5660,22 @@ public final class Proofs {
      * except Prefix, which is just the first bytes of prefix (spec can be longer) 
      * </pre>
      *
-     * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+     * <code>.ics23.LeafOp leaf_spec = 1;</code>
      */
     ics23.Proofs.LeafOpOrBuilder getLeafSpecOrBuilder();
 
     /**
-     * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+     * <code>.ics23.InnerSpec inner_spec = 2;</code>
+     * @return Whether the innerSpec field is set.
      */
     boolean hasInnerSpec();
     /**
-     * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+     * <code>.ics23.InnerSpec inner_spec = 2;</code>
+     * @return The innerSpec.
      */
     ics23.Proofs.InnerSpec getInnerSpec();
     /**
-     * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+     * <code>.ics23.InnerSpec inner_spec = 2;</code>
      */
     ics23.Proofs.InnerSpecOrBuilder getInnerSpecOrBuilder();
 
@@ -5134,7 +5684,8 @@ public final class Proofs {
      * max_depth (if &gt; 0) is the maximum number of InnerOps allowed (mainly for fixed-depth tries)
      * </pre>
      *
-     * <code>optional int32 max_depth = 3;</code>
+     * <code>int32 max_depth = 3;</code>
+     * @return The maxDepth.
      */
     int getMaxDepth();
 
@@ -5143,7 +5694,8 @@ public final class Proofs {
      * min_depth (if &gt; 0) is the minimum number of InnerOps allowed (mainly for fixed-depth tries)
      * </pre>
      *
-     * <code>optional int32 min_depth = 4;</code>
+     * <code>int32 min_depth = 4;</code>
+     * @return The minDepth.
      */
     int getMinDepth();
   }
@@ -5162,30 +5714,40 @@ public final class Proofs {
    *
    * Protobuf type {@code ics23.ProofSpec}
    */
-  public  static final class ProofSpec extends
+  public static final class ProofSpec extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.ProofSpec)
       ProofSpecOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ProofSpec.newBuilder() to construct.
     private ProofSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private ProofSpec() {
-      maxDepth_ = 0;
-      minDepth_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProofSpec();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ProofSpec(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5194,12 +5756,6 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               ics23.Proofs.LeafOp.Builder subBuilder = null;
               if (leafSpec_ != null) {
@@ -5236,6 +5792,13 @@ public final class Proofs {
               minDepth_ = input.readInt32();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5244,6 +5807,7 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5252,6 +5816,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_ProofSpec_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_ProofSpec_fieldAccessorTable
@@ -5267,8 +5832,10 @@ public final class Proofs {
      * except Prefix, which is just the first bytes of prefix (spec can be longer) 
      * </pre>
      *
-     * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+     * <code>.ics23.LeafOp leaf_spec = 1;</code>
+     * @return Whether the leafSpec field is set.
      */
+    @java.lang.Override
     public boolean hasLeafSpec() {
       return leafSpec_ != null;
     }
@@ -5278,8 +5845,10 @@ public final class Proofs {
      * except Prefix, which is just the first bytes of prefix (spec can be longer) 
      * </pre>
      *
-     * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+     * <code>.ics23.LeafOp leaf_spec = 1;</code>
+     * @return The leafSpec.
      */
+    @java.lang.Override
     public ics23.Proofs.LeafOp getLeafSpec() {
       return leafSpec_ == null ? ics23.Proofs.LeafOp.getDefaultInstance() : leafSpec_;
     }
@@ -5289,8 +5858,9 @@ public final class Proofs {
      * except Prefix, which is just the first bytes of prefix (spec can be longer) 
      * </pre>
      *
-     * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+     * <code>.ics23.LeafOp leaf_spec = 1;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.LeafOpOrBuilder getLeafSpecOrBuilder() {
       return getLeafSpec();
     }
@@ -5298,20 +5868,25 @@ public final class Proofs {
     public static final int INNER_SPEC_FIELD_NUMBER = 2;
     private ics23.Proofs.InnerSpec innerSpec_;
     /**
-     * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+     * <code>.ics23.InnerSpec inner_spec = 2;</code>
+     * @return Whether the innerSpec field is set.
      */
+    @java.lang.Override
     public boolean hasInnerSpec() {
       return innerSpec_ != null;
     }
     /**
-     * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+     * <code>.ics23.InnerSpec inner_spec = 2;</code>
+     * @return The innerSpec.
      */
+    @java.lang.Override
     public ics23.Proofs.InnerSpec getInnerSpec() {
       return innerSpec_ == null ? ics23.Proofs.InnerSpec.getDefaultInstance() : innerSpec_;
     }
     /**
-     * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+     * <code>.ics23.InnerSpec inner_spec = 2;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.InnerSpecOrBuilder getInnerSpecOrBuilder() {
       return getInnerSpec();
     }
@@ -5323,8 +5898,10 @@ public final class Proofs {
      * max_depth (if &gt; 0) is the maximum number of InnerOps allowed (mainly for fixed-depth tries)
      * </pre>
      *
-     * <code>optional int32 max_depth = 3;</code>
+     * <code>int32 max_depth = 3;</code>
+     * @return The maxDepth.
      */
+    @java.lang.Override
     public int getMaxDepth() {
       return maxDepth_;
     }
@@ -5336,13 +5913,16 @@ public final class Proofs {
      * min_depth (if &gt; 0) is the minimum number of InnerOps allowed (mainly for fixed-depth tries)
      * </pre>
      *
-     * <code>optional int32 min_depth = 4;</code>
+     * <code>int32 min_depth = 4;</code>
+     * @return The minDepth.
      */
+    @java.lang.Override
     public int getMinDepth() {
       return minDepth_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5352,6 +5932,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (leafSpec_ != null) {
@@ -5366,8 +5947,10 @@ public final class Proofs {
       if (minDepth_ != 0) {
         output.writeInt32(4, minDepth_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5389,11 +5972,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, minDepth_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5404,22 +5987,22 @@ public final class Proofs {
       }
       ics23.Proofs.ProofSpec other = (ics23.Proofs.ProofSpec) obj;
 
-      boolean result = true;
-      result = result && (hasLeafSpec() == other.hasLeafSpec());
+      if (hasLeafSpec() != other.hasLeafSpec()) return false;
       if (hasLeafSpec()) {
-        result = result && getLeafSpec()
-            .equals(other.getLeafSpec());
+        if (!getLeafSpec()
+            .equals(other.getLeafSpec())) return false;
       }
-      result = result && (hasInnerSpec() == other.hasInnerSpec());
+      if (hasInnerSpec() != other.hasInnerSpec()) return false;
       if (hasInnerSpec()) {
-        result = result && getInnerSpec()
-            .equals(other.getInnerSpec());
+        if (!getInnerSpec()
+            .equals(other.getInnerSpec())) return false;
       }
-      result = result && (getMaxDepth()
-          == other.getMaxDepth());
-      result = result && (getMinDepth()
-          == other.getMinDepth());
-      return result;
+      if (getMaxDepth()
+          != other.getMaxDepth()) return false;
+      if (getMinDepth()
+          != other.getMinDepth()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5428,7 +6011,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasLeafSpec()) {
         hash = (37 * hash) + LEAF_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getLeafSpec().hashCode();
@@ -5446,6 +6029,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.ProofSpec parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.ProofSpec parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.ProofSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5505,6 +6099,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5512,6 +6107,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.ProofSpec prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5547,6 +6143,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_ProofSpec_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_ProofSpec_fieldAccessorTable
@@ -5569,6 +6166,7 @@ public final class Proofs {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (leafSpecBuilder_ == null) {
@@ -5590,15 +6188,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_ProofSpec_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.ProofSpec getDefaultInstanceForType() {
         return ics23.Proofs.ProofSpec.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.ProofSpec build() {
         ics23.Proofs.ProofSpec result = buildPartial();
         if (!result.isInitialized()) {
@@ -5607,6 +6208,7 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.ProofSpec buildPartial() {
         ics23.Proofs.ProofSpec result = new ics23.Proofs.ProofSpec(this);
         if (leafSpecBuilder_ == null) {
@@ -5625,32 +6227,39 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.ProofSpec) {
           return mergeFrom((ics23.Proofs.ProofSpec)other);
@@ -5674,14 +6283,17 @@ public final class Proofs {
         if (other.getMinDepth() != 0) {
           setMinDepth(other.getMinDepth());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5700,7 +6312,7 @@ public final class Proofs {
         return this;
       }
 
-      private ics23.Proofs.LeafOp leafSpec_ = null;
+      private ics23.Proofs.LeafOp leafSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.LeafOp, ics23.Proofs.LeafOp.Builder, ics23.Proofs.LeafOpOrBuilder> leafSpecBuilder_;
       /**
@@ -5709,7 +6321,8 @@ public final class Proofs {
        * except Prefix, which is just the first bytes of prefix (spec can be longer) 
        * </pre>
        *
-       * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+       * <code>.ics23.LeafOp leaf_spec = 1;</code>
+       * @return Whether the leafSpec field is set.
        */
       public boolean hasLeafSpec() {
         return leafSpecBuilder_ != null || leafSpec_ != null;
@@ -5720,7 +6333,8 @@ public final class Proofs {
        * except Prefix, which is just the first bytes of prefix (spec can be longer) 
        * </pre>
        *
-       * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+       * <code>.ics23.LeafOp leaf_spec = 1;</code>
+       * @return The leafSpec.
        */
       public ics23.Proofs.LeafOp getLeafSpec() {
         if (leafSpecBuilder_ == null) {
@@ -5735,7 +6349,7 @@ public final class Proofs {
        * except Prefix, which is just the first bytes of prefix (spec can be longer) 
        * </pre>
        *
-       * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+       * <code>.ics23.LeafOp leaf_spec = 1;</code>
        */
       public Builder setLeafSpec(ics23.Proofs.LeafOp value) {
         if (leafSpecBuilder_ == null) {
@@ -5756,7 +6370,7 @@ public final class Proofs {
        * except Prefix, which is just the first bytes of prefix (spec can be longer) 
        * </pre>
        *
-       * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+       * <code>.ics23.LeafOp leaf_spec = 1;</code>
        */
       public Builder setLeafSpec(
           ics23.Proofs.LeafOp.Builder builderForValue) {
@@ -5775,7 +6389,7 @@ public final class Proofs {
        * except Prefix, which is just the first bytes of prefix (spec can be longer) 
        * </pre>
        *
-       * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+       * <code>.ics23.LeafOp leaf_spec = 1;</code>
        */
       public Builder mergeLeafSpec(ics23.Proofs.LeafOp value) {
         if (leafSpecBuilder_ == null) {
@@ -5798,7 +6412,7 @@ public final class Proofs {
        * except Prefix, which is just the first bytes of prefix (spec can be longer) 
        * </pre>
        *
-       * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+       * <code>.ics23.LeafOp leaf_spec = 1;</code>
        */
       public Builder clearLeafSpec() {
         if (leafSpecBuilder_ == null) {
@@ -5817,7 +6431,7 @@ public final class Proofs {
        * except Prefix, which is just the first bytes of prefix (spec can be longer) 
        * </pre>
        *
-       * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+       * <code>.ics23.LeafOp leaf_spec = 1;</code>
        */
       public ics23.Proofs.LeafOp.Builder getLeafSpecBuilder() {
         
@@ -5830,7 +6444,7 @@ public final class Proofs {
        * except Prefix, which is just the first bytes of prefix (spec can be longer) 
        * </pre>
        *
-       * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+       * <code>.ics23.LeafOp leaf_spec = 1;</code>
        */
       public ics23.Proofs.LeafOpOrBuilder getLeafSpecOrBuilder() {
         if (leafSpecBuilder_ != null) {
@@ -5846,7 +6460,7 @@ public final class Proofs {
        * except Prefix, which is just the first bytes of prefix (spec can be longer) 
        * </pre>
        *
-       * <code>optional .ics23.LeafOp leaf_spec = 1;</code>
+       * <code>.ics23.LeafOp leaf_spec = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.LeafOp, ics23.Proofs.LeafOp.Builder, ics23.Proofs.LeafOpOrBuilder> 
@@ -5862,17 +6476,19 @@ public final class Proofs {
         return leafSpecBuilder_;
       }
 
-      private ics23.Proofs.InnerSpec innerSpec_ = null;
+      private ics23.Proofs.InnerSpec innerSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.InnerSpec, ics23.Proofs.InnerSpec.Builder, ics23.Proofs.InnerSpecOrBuilder> innerSpecBuilder_;
       /**
-       * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+       * <code>.ics23.InnerSpec inner_spec = 2;</code>
+       * @return Whether the innerSpec field is set.
        */
       public boolean hasInnerSpec() {
         return innerSpecBuilder_ != null || innerSpec_ != null;
       }
       /**
-       * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+       * <code>.ics23.InnerSpec inner_spec = 2;</code>
+       * @return The innerSpec.
        */
       public ics23.Proofs.InnerSpec getInnerSpec() {
         if (innerSpecBuilder_ == null) {
@@ -5882,7 +6498,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+       * <code>.ics23.InnerSpec inner_spec = 2;</code>
        */
       public Builder setInnerSpec(ics23.Proofs.InnerSpec value) {
         if (innerSpecBuilder_ == null) {
@@ -5898,7 +6514,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+       * <code>.ics23.InnerSpec inner_spec = 2;</code>
        */
       public Builder setInnerSpec(
           ics23.Proofs.InnerSpec.Builder builderForValue) {
@@ -5912,7 +6528,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+       * <code>.ics23.InnerSpec inner_spec = 2;</code>
        */
       public Builder mergeInnerSpec(ics23.Proofs.InnerSpec value) {
         if (innerSpecBuilder_ == null) {
@@ -5930,7 +6546,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+       * <code>.ics23.InnerSpec inner_spec = 2;</code>
        */
       public Builder clearInnerSpec() {
         if (innerSpecBuilder_ == null) {
@@ -5944,7 +6560,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+       * <code>.ics23.InnerSpec inner_spec = 2;</code>
        */
       public ics23.Proofs.InnerSpec.Builder getInnerSpecBuilder() {
         
@@ -5952,7 +6568,7 @@ public final class Proofs {
         return getInnerSpecFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+       * <code>.ics23.InnerSpec inner_spec = 2;</code>
        */
       public ics23.Proofs.InnerSpecOrBuilder getInnerSpecOrBuilder() {
         if (innerSpecBuilder_ != null) {
@@ -5963,7 +6579,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.InnerSpec inner_spec = 2;</code>
+       * <code>.ics23.InnerSpec inner_spec = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.InnerSpec, ics23.Proofs.InnerSpec.Builder, ics23.Proofs.InnerSpecOrBuilder> 
@@ -5985,8 +6601,10 @@ public final class Proofs {
        * max_depth (if &gt; 0) is the maximum number of InnerOps allowed (mainly for fixed-depth tries)
        * </pre>
        *
-       * <code>optional int32 max_depth = 3;</code>
+       * <code>int32 max_depth = 3;</code>
+       * @return The maxDepth.
        */
+      @java.lang.Override
       public int getMaxDepth() {
         return maxDepth_;
       }
@@ -5995,7 +6613,9 @@ public final class Proofs {
        * max_depth (if &gt; 0) is the maximum number of InnerOps allowed (mainly for fixed-depth tries)
        * </pre>
        *
-       * <code>optional int32 max_depth = 3;</code>
+       * <code>int32 max_depth = 3;</code>
+       * @param value The maxDepth to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxDepth(int value) {
         
@@ -6008,7 +6628,8 @@ public final class Proofs {
        * max_depth (if &gt; 0) is the maximum number of InnerOps allowed (mainly for fixed-depth tries)
        * </pre>
        *
-       * <code>optional int32 max_depth = 3;</code>
+       * <code>int32 max_depth = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMaxDepth() {
         
@@ -6023,8 +6644,10 @@ public final class Proofs {
        * min_depth (if &gt; 0) is the minimum number of InnerOps allowed (mainly for fixed-depth tries)
        * </pre>
        *
-       * <code>optional int32 min_depth = 4;</code>
+       * <code>int32 min_depth = 4;</code>
+       * @return The minDepth.
        */
+      @java.lang.Override
       public int getMinDepth() {
         return minDepth_;
       }
@@ -6033,7 +6656,9 @@ public final class Proofs {
        * min_depth (if &gt; 0) is the minimum number of InnerOps allowed (mainly for fixed-depth tries)
        * </pre>
        *
-       * <code>optional int32 min_depth = 4;</code>
+       * <code>int32 min_depth = 4;</code>
+       * @param value The minDepth to set.
+       * @return This builder for chaining.
        */
       public Builder setMinDepth(int value) {
         
@@ -6046,7 +6671,8 @@ public final class Proofs {
        * min_depth (if &gt; 0) is the minimum number of InnerOps allowed (mainly for fixed-depth tries)
        * </pre>
        *
-       * <code>optional int32 min_depth = 4;</code>
+       * <code>int32 min_depth = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMinDepth() {
         
@@ -6054,14 +6680,16 @@ public final class Proofs {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6080,11 +6708,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<ProofSpec>
         PARSER = new com.google.protobuf.AbstractParser<ProofSpec>() {
+      @java.lang.Override
       public ProofSpec parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ProofSpec(input, extensionRegistry);
+        return new ProofSpec(input, extensionRegistry);
       }
     };
 
@@ -6097,6 +6726,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.ProofSpec getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6115,6 +6745,7 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 child_order = 1;</code>
+     * @return A list containing the childOrder.
      */
     java.util.List<java.lang.Integer> getChildOrderList();
     /**
@@ -6125,6 +6756,7 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 child_order = 1;</code>
+     * @return The count of childOrder.
      */
     int getChildOrderCount();
     /**
@@ -6135,21 +6767,26 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 child_order = 1;</code>
+     * @param index The index of the element to return.
+     * @return The childOrder at the given index.
      */
     int getChildOrder(int index);
 
     /**
-     * <code>optional int32 child_size = 2;</code>
+     * <code>int32 child_size = 2;</code>
+     * @return The childSize.
      */
     int getChildSize();
 
     /**
-     * <code>optional int32 min_prefix_length = 3;</code>
+     * <code>int32 min_prefix_length = 3;</code>
+     * @return The minPrefixLength.
      */
     int getMinPrefixLength();
 
     /**
-     * <code>optional int32 max_prefix_length = 4;</code>
+     * <code>int32 max_prefix_length = 4;</code>
+     * @return The maxPrefixLength.
      */
     int getMaxPrefixLength();
 
@@ -6158,7 +6795,8 @@ public final class Proofs {
      * empty child is the prehash image that is used when one child is nil (eg. 20 bytes of 0)
      * </pre>
      *
-     * <code>optional bytes empty_child = 5;</code>
+     * <code>bytes empty_child = 5;</code>
+     * @return The emptyChild.
      */
     com.google.protobuf.ByteString getEmptyChild();
 
@@ -6167,7 +6805,8 @@ public final class Proofs {
      * hash is the algorithm that must be used for each InnerOp
      * </pre>
      *
-     * <code>optional .ics23.HashOp hash = 6;</code>
+     * <code>.ics23.HashOp hash = 6;</code>
+     * @return The enum numeric value on the wire for hash.
      */
     int getHashValue();
     /**
@@ -6175,7 +6814,8 @@ public final class Proofs {
      * hash is the algorithm that must be used for each InnerOp
      * </pre>
      *
-     * <code>optional .ics23.HashOp hash = 6;</code>
+     * <code>.ics23.HashOp hash = 6;</code>
+     * @return The hash.
      */
     ics23.Proofs.HashOp getHash();
   }
@@ -6191,34 +6831,44 @@ public final class Proofs {
    *
    * Protobuf type {@code ics23.InnerSpec}
    */
-  public  static final class InnerSpec extends
+  public static final class InnerSpec extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.InnerSpec)
       InnerSpecOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use InnerSpec.newBuilder() to construct.
     private InnerSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private InnerSpec() {
-      childOrder_ = java.util.Collections.emptyList();
-      childSize_ = 0;
-      minPrefixLength_ = 0;
-      maxPrefixLength_ = 0;
+      childOrder_ = emptyIntList();
       emptyChild_ = com.google.protobuf.ByteString.EMPTY;
       hash_ = 0;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InnerSpec();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private InnerSpec(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6227,29 +6877,23 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                childOrder_ = new java.util.ArrayList<java.lang.Integer>();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                childOrder_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              childOrder_.add(input.readInt32());
+              childOrder_.addInt(input.readInt32());
               break;
             }
             case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
-                childOrder_ = new java.util.ArrayList<java.lang.Integer>();
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                childOrder_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                childOrder_.add(input.readInt32());
+                childOrder_.addInt(input.readInt32());
               }
               input.popLimit(limit);
               break;
@@ -6280,6 +6924,13 @@ public final class Proofs {
               hash_ = rawValue;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6288,9 +6939,10 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          childOrder_ = java.util.Collections.unmodifiableList(childOrder_);
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          childOrder_.makeImmutable(); // C
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6299,6 +6951,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_InnerSpec_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_InnerSpec_fieldAccessorTable
@@ -6306,9 +6959,8 @@ public final class Proofs {
               ics23.Proofs.InnerSpec.class, ics23.Proofs.InnerSpec.Builder.class);
     }
 
-    private int bitField0_;
     public static final int CHILD_ORDER_FIELD_NUMBER = 1;
-    private java.util.List<java.lang.Integer> childOrder_;
+    private com.google.protobuf.Internal.IntList childOrder_;
     /**
      * <pre>
      * Child order is the ordering of the children node, must count from 0
@@ -6317,7 +6969,9 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 child_order = 1;</code>
+     * @return A list containing the childOrder.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getChildOrderList() {
       return childOrder_;
@@ -6330,6 +6984,7 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 child_order = 1;</code>
+     * @return The count of childOrder.
      */
     public int getChildOrderCount() {
       return childOrder_.size();
@@ -6342,17 +6997,21 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 child_order = 1;</code>
+     * @param index The index of the element to return.
+     * @return The childOrder at the given index.
      */
     public int getChildOrder(int index) {
-      return childOrder_.get(index);
+      return childOrder_.getInt(index);
     }
     private int childOrderMemoizedSerializedSize = -1;
 
     public static final int CHILD_SIZE_FIELD_NUMBER = 2;
     private int childSize_;
     /**
-     * <code>optional int32 child_size = 2;</code>
+     * <code>int32 child_size = 2;</code>
+     * @return The childSize.
      */
+    @java.lang.Override
     public int getChildSize() {
       return childSize_;
     }
@@ -6360,8 +7019,10 @@ public final class Proofs {
     public static final int MIN_PREFIX_LENGTH_FIELD_NUMBER = 3;
     private int minPrefixLength_;
     /**
-     * <code>optional int32 min_prefix_length = 3;</code>
+     * <code>int32 min_prefix_length = 3;</code>
+     * @return The minPrefixLength.
      */
+    @java.lang.Override
     public int getMinPrefixLength() {
       return minPrefixLength_;
     }
@@ -6369,8 +7030,10 @@ public final class Proofs {
     public static final int MAX_PREFIX_LENGTH_FIELD_NUMBER = 4;
     private int maxPrefixLength_;
     /**
-     * <code>optional int32 max_prefix_length = 4;</code>
+     * <code>int32 max_prefix_length = 4;</code>
+     * @return The maxPrefixLength.
      */
+    @java.lang.Override
     public int getMaxPrefixLength() {
       return maxPrefixLength_;
     }
@@ -6382,8 +7045,10 @@ public final class Proofs {
      * empty child is the prehash image that is used when one child is nil (eg. 20 bytes of 0)
      * </pre>
      *
-     * <code>optional bytes empty_child = 5;</code>
+     * <code>bytes empty_child = 5;</code>
+     * @return The emptyChild.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEmptyChild() {
       return emptyChild_;
     }
@@ -6395,9 +7060,10 @@ public final class Proofs {
      * hash is the algorithm that must be used for each InnerOp
      * </pre>
      *
-     * <code>optional .ics23.HashOp hash = 6;</code>
+     * <code>.ics23.HashOp hash = 6;</code>
+     * @return The enum numeric value on the wire for hash.
      */
-    public int getHashValue() {
+    @java.lang.Override public int getHashValue() {
       return hash_;
     }
     /**
@@ -6405,14 +7071,17 @@ public final class Proofs {
      * hash is the algorithm that must be used for each InnerOp
      * </pre>
      *
-     * <code>optional .ics23.HashOp hash = 6;</code>
+     * <code>.ics23.HashOp hash = 6;</code>
+     * @return The hash.
      */
-    public ics23.Proofs.HashOp getHash() {
+    @java.lang.Override public ics23.Proofs.HashOp getHash() {
+      @SuppressWarnings("deprecation")
       ics23.Proofs.HashOp result = ics23.Proofs.HashOp.valueOf(hash_);
       return result == null ? ics23.Proofs.HashOp.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6422,6 +7091,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -6430,7 +7100,7 @@ public final class Proofs {
         output.writeUInt32NoTag(childOrderMemoizedSerializedSize);
       }
       for (int i = 0; i < childOrder_.size(); i++) {
-        output.writeInt32NoTag(childOrder_.get(i));
+        output.writeInt32NoTag(childOrder_.getInt(i));
       }
       if (childSize_ != 0) {
         output.writeInt32(2, childSize_);
@@ -6447,8 +7117,10 @@ public final class Proofs {
       if (hash_ != ics23.Proofs.HashOp.NO_HASH.getNumber()) {
         output.writeEnum(6, hash_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6458,7 +7130,7 @@ public final class Proofs {
         int dataSize = 0;
         for (int i = 0; i < childOrder_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(childOrder_.get(i));
+            .computeInt32SizeNoTag(childOrder_.getInt(i));
         }
         size += dataSize;
         if (!getChildOrderList().isEmpty()) {
@@ -6488,11 +7160,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, hash_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6503,19 +7175,19 @@ public final class Proofs {
       }
       ics23.Proofs.InnerSpec other = (ics23.Proofs.InnerSpec) obj;
 
-      boolean result = true;
-      result = result && getChildOrderList()
-          .equals(other.getChildOrderList());
-      result = result && (getChildSize()
-          == other.getChildSize());
-      result = result && (getMinPrefixLength()
-          == other.getMinPrefixLength());
-      result = result && (getMaxPrefixLength()
-          == other.getMaxPrefixLength());
-      result = result && getEmptyChild()
-          .equals(other.getEmptyChild());
-      result = result && hash_ == other.hash_;
-      return result;
+      if (!getChildOrderList()
+          .equals(other.getChildOrderList())) return false;
+      if (getChildSize()
+          != other.getChildSize()) return false;
+      if (getMinPrefixLength()
+          != other.getMinPrefixLength()) return false;
+      if (getMaxPrefixLength()
+          != other.getMaxPrefixLength()) return false;
+      if (!getEmptyChild()
+          .equals(other.getEmptyChild())) return false;
+      if (hash_ != other.hash_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6524,7 +7196,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getChildOrderCount() > 0) {
         hash = (37 * hash) + CHILD_ORDER_FIELD_NUMBER;
         hash = (53 * hash) + getChildOrderList().hashCode();
@@ -6544,6 +7216,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.InnerSpec parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.InnerSpec parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.InnerSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6603,6 +7286,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6610,6 +7294,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.InnerSpec prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6642,6 +7327,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_InnerSpec_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_InnerSpec_fieldAccessorTable
@@ -6664,9 +7350,10 @@ public final class Proofs {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
-        childOrder_ = java.util.Collections.emptyList();
+        childOrder_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         childSize_ = 0;
 
@@ -6681,15 +7368,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_InnerSpec_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.InnerSpec getDefaultInstanceForType() {
         return ics23.Proofs.InnerSpec.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.InnerSpec build() {
         ics23.Proofs.InnerSpec result = buildPartial();
         if (!result.isInitialized()) {
@@ -6698,12 +7388,12 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.InnerSpec buildPartial() {
         ics23.Proofs.InnerSpec result = new ics23.Proofs.InnerSpec(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          childOrder_ = java.util.Collections.unmodifiableList(childOrder_);
+        if (((bitField0_ & 0x00000001) != 0)) {
+          childOrder_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.childOrder_ = childOrder_;
@@ -6712,37 +7402,43 @@ public final class Proofs {
         result.maxPrefixLength_ = maxPrefixLength_;
         result.emptyChild_ = emptyChild_;
         result.hash_ = hash_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.InnerSpec) {
           return mergeFrom((ics23.Proofs.InnerSpec)other);
@@ -6779,14 +7475,17 @@ public final class Proofs {
         if (other.hash_ != 0) {
           setHashValue(other.getHashValue());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6806,10 +7505,10 @@ public final class Proofs {
       }
       private int bitField0_;
 
-      private java.util.List<java.lang.Integer> childOrder_ = java.util.Collections.emptyList();
+      private com.google.protobuf.Internal.IntList childOrder_ = emptyIntList();
       private void ensureChildOrderIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          childOrder_ = new java.util.ArrayList<java.lang.Integer>(childOrder_);
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          childOrder_ = mutableCopy(childOrder_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -6821,10 +7520,12 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 child_order = 1;</code>
+       * @return A list containing the childOrder.
        */
       public java.util.List<java.lang.Integer>
           getChildOrderList() {
-        return java.util.Collections.unmodifiableList(childOrder_);
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(childOrder_) : childOrder_;
       }
       /**
        * <pre>
@@ -6834,6 +7535,7 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 child_order = 1;</code>
+       * @return The count of childOrder.
        */
       public int getChildOrderCount() {
         return childOrder_.size();
@@ -6846,9 +7548,11 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 child_order = 1;</code>
+       * @param index The index of the element to return.
+       * @return The childOrder at the given index.
        */
       public int getChildOrder(int index) {
-        return childOrder_.get(index);
+        return childOrder_.getInt(index);
       }
       /**
        * <pre>
@@ -6858,11 +7562,14 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 child_order = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The childOrder to set.
+       * @return This builder for chaining.
        */
       public Builder setChildOrder(
           int index, int value) {
         ensureChildOrderIsMutable();
-        childOrder_.set(index, value);
+        childOrder_.setInt(index, value);
         onChanged();
         return this;
       }
@@ -6874,10 +7581,12 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 child_order = 1;</code>
+       * @param value The childOrder to add.
+       * @return This builder for chaining.
        */
       public Builder addChildOrder(int value) {
         ensureChildOrderIsMutable();
-        childOrder_.add(value);
+        childOrder_.addInt(value);
         onChanged();
         return this;
       }
@@ -6889,6 +7598,8 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 child_order = 1;</code>
+       * @param values The childOrder to add.
+       * @return This builder for chaining.
        */
       public Builder addAllChildOrder(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -6906,9 +7617,10 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 child_order = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearChildOrder() {
-        childOrder_ = java.util.Collections.emptyList();
+        childOrder_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -6916,13 +7628,17 @@ public final class Proofs {
 
       private int childSize_ ;
       /**
-       * <code>optional int32 child_size = 2;</code>
+       * <code>int32 child_size = 2;</code>
+       * @return The childSize.
        */
+      @java.lang.Override
       public int getChildSize() {
         return childSize_;
       }
       /**
-       * <code>optional int32 child_size = 2;</code>
+       * <code>int32 child_size = 2;</code>
+       * @param value The childSize to set.
+       * @return This builder for chaining.
        */
       public Builder setChildSize(int value) {
         
@@ -6931,7 +7647,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional int32 child_size = 2;</code>
+       * <code>int32 child_size = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearChildSize() {
         
@@ -6942,13 +7659,17 @@ public final class Proofs {
 
       private int minPrefixLength_ ;
       /**
-       * <code>optional int32 min_prefix_length = 3;</code>
+       * <code>int32 min_prefix_length = 3;</code>
+       * @return The minPrefixLength.
        */
+      @java.lang.Override
       public int getMinPrefixLength() {
         return minPrefixLength_;
       }
       /**
-       * <code>optional int32 min_prefix_length = 3;</code>
+       * <code>int32 min_prefix_length = 3;</code>
+       * @param value The minPrefixLength to set.
+       * @return This builder for chaining.
        */
       public Builder setMinPrefixLength(int value) {
         
@@ -6957,7 +7678,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional int32 min_prefix_length = 3;</code>
+       * <code>int32 min_prefix_length = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMinPrefixLength() {
         
@@ -6968,13 +7690,17 @@ public final class Proofs {
 
       private int maxPrefixLength_ ;
       /**
-       * <code>optional int32 max_prefix_length = 4;</code>
+       * <code>int32 max_prefix_length = 4;</code>
+       * @return The maxPrefixLength.
        */
+      @java.lang.Override
       public int getMaxPrefixLength() {
         return maxPrefixLength_;
       }
       /**
-       * <code>optional int32 max_prefix_length = 4;</code>
+       * <code>int32 max_prefix_length = 4;</code>
+       * @param value The maxPrefixLength to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxPrefixLength(int value) {
         
@@ -6983,7 +7709,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional int32 max_prefix_length = 4;</code>
+       * <code>int32 max_prefix_length = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMaxPrefixLength() {
         
@@ -6998,8 +7725,10 @@ public final class Proofs {
        * empty child is the prehash image that is used when one child is nil (eg. 20 bytes of 0)
        * </pre>
        *
-       * <code>optional bytes empty_child = 5;</code>
+       * <code>bytes empty_child = 5;</code>
+       * @return The emptyChild.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getEmptyChild() {
         return emptyChild_;
       }
@@ -7008,7 +7737,9 @@ public final class Proofs {
        * empty child is the prehash image that is used when one child is nil (eg. 20 bytes of 0)
        * </pre>
        *
-       * <code>optional bytes empty_child = 5;</code>
+       * <code>bytes empty_child = 5;</code>
+       * @param value The emptyChild to set.
+       * @return This builder for chaining.
        */
       public Builder setEmptyChild(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -7024,7 +7755,8 @@ public final class Proofs {
        * empty child is the prehash image that is used when one child is nil (eg. 20 bytes of 0)
        * </pre>
        *
-       * <code>optional bytes empty_child = 5;</code>
+       * <code>bytes empty_child = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEmptyChild() {
         
@@ -7039,9 +7771,10 @@ public final class Proofs {
        * hash is the algorithm that must be used for each InnerOp
        * </pre>
        *
-       * <code>optional .ics23.HashOp hash = 6;</code>
+       * <code>.ics23.HashOp hash = 6;</code>
+       * @return The enum numeric value on the wire for hash.
        */
-      public int getHashValue() {
+      @java.lang.Override public int getHashValue() {
         return hash_;
       }
       /**
@@ -7049,9 +7782,12 @@ public final class Proofs {
        * hash is the algorithm that must be used for each InnerOp
        * </pre>
        *
-       * <code>optional .ics23.HashOp hash = 6;</code>
+       * <code>.ics23.HashOp hash = 6;</code>
+       * @param value The enum numeric value on the wire for hash to set.
+       * @return This builder for chaining.
        */
       public Builder setHashValue(int value) {
+        
         hash_ = value;
         onChanged();
         return this;
@@ -7061,9 +7797,12 @@ public final class Proofs {
        * hash is the algorithm that must be used for each InnerOp
        * </pre>
        *
-       * <code>optional .ics23.HashOp hash = 6;</code>
+       * <code>.ics23.HashOp hash = 6;</code>
+       * @return The hash.
        */
+      @java.lang.Override
       public ics23.Proofs.HashOp getHash() {
+        @SuppressWarnings("deprecation")
         ics23.Proofs.HashOp result = ics23.Proofs.HashOp.valueOf(hash_);
         return result == null ? ics23.Proofs.HashOp.UNRECOGNIZED : result;
       }
@@ -7072,7 +7811,9 @@ public final class Proofs {
        * hash is the algorithm that must be used for each InnerOp
        * </pre>
        *
-       * <code>optional .ics23.HashOp hash = 6;</code>
+       * <code>.ics23.HashOp hash = 6;</code>
+       * @param value The hash to set.
+       * @return This builder for chaining.
        */
       public Builder setHash(ics23.Proofs.HashOp value) {
         if (value == null) {
@@ -7088,7 +7829,8 @@ public final class Proofs {
        * hash is the algorithm that must be used for each InnerOp
        * </pre>
        *
-       * <code>optional .ics23.HashOp hash = 6;</code>
+       * <code>.ics23.HashOp hash = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHash() {
         
@@ -7096,14 +7838,16 @@ public final class Proofs {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7122,11 +7866,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<InnerSpec>
         PARSER = new com.google.protobuf.AbstractParser<InnerSpec>() {
+      @java.lang.Override
       public InnerSpec parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InnerSpec(input, extensionRegistry);
+        return new InnerSpec(input, extensionRegistry);
       }
     };
 
@@ -7139,6 +7884,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.InnerSpec getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7180,10 +7926,11 @@ public final class Proofs {
    *
    * Protobuf type {@code ics23.BatchProof}
    */
-  public  static final class BatchProof extends
+  public static final class BatchProof extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.BatchProof)
       BatchProofOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use BatchProof.newBuilder() to construct.
     private BatchProof(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7193,16 +7940,28 @@ public final class Proofs {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BatchProof();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private BatchProof(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7211,19 +7970,20 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entries_ = new java.util.ArrayList<ics23.Proofs.BatchEntry>();
                 mutable_bitField0_ |= 0x00000001;
               }
               entries_.add(
                   input.readMessage(ics23.Proofs.BatchEntry.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -7234,9 +7994,10 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7245,6 +8006,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_BatchProof_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_BatchProof_fieldAccessorTable
@@ -7257,12 +8019,14 @@ public final class Proofs {
     /**
      * <code>repeated .ics23.BatchEntry entries = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ics23.Proofs.BatchEntry> getEntriesList() {
       return entries_;
     }
     /**
      * <code>repeated .ics23.BatchEntry entries = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ics23.Proofs.BatchEntryOrBuilder> 
         getEntriesOrBuilderList() {
       return entries_;
@@ -7270,24 +8034,28 @@ public final class Proofs {
     /**
      * <code>repeated .ics23.BatchEntry entries = 1;</code>
      */
+    @java.lang.Override
     public int getEntriesCount() {
       return entries_.size();
     }
     /**
      * <code>repeated .ics23.BatchEntry entries = 1;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.BatchEntry getEntries(int index) {
       return entries_.get(index);
     }
     /**
      * <code>repeated .ics23.BatchEntry entries = 1;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.BatchEntryOrBuilder getEntriesOrBuilder(
         int index) {
       return entries_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7297,13 +8065,16 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < entries_.size(); i++) {
         output.writeMessage(1, entries_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7313,11 +8084,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, entries_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7328,10 +8099,10 @@ public final class Proofs {
       }
       ics23.Proofs.BatchProof other = (ics23.Proofs.BatchProof) obj;
 
-      boolean result = true;
-      result = result && getEntriesList()
-          .equals(other.getEntriesList());
-      return result;
+      if (!getEntriesList()
+          .equals(other.getEntriesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7340,7 +8111,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getEntriesCount() > 0) {
         hash = (37 * hash) + ENTRIES_FIELD_NUMBER;
         hash = (53 * hash) + getEntriesList().hashCode();
@@ -7350,6 +8121,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.BatchProof parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.BatchProof parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.BatchProof parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7409,6 +8191,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7416,6 +8199,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.BatchProof prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7443,6 +8227,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_BatchProof_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_BatchProof_fieldAccessorTable
@@ -7466,6 +8251,7 @@ public final class Proofs {
           getEntriesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (entriesBuilder_ == null) {
@@ -7477,15 +8263,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_BatchProof_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.BatchProof getDefaultInstanceForType() {
         return ics23.Proofs.BatchProof.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.BatchProof build() {
         ics23.Proofs.BatchProof result = buildPartial();
         if (!result.isInitialized()) {
@@ -7494,11 +8283,12 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.BatchProof buildPartial() {
         ics23.Proofs.BatchProof result = new ics23.Proofs.BatchProof(this);
         int from_bitField0_ = bitField0_;
         if (entriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             entries_ = java.util.Collections.unmodifiableList(entries_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -7510,32 +8300,39 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.BatchProof) {
           return mergeFrom((ics23.Proofs.BatchProof)other);
@@ -7573,14 +8370,17 @@ public final class Proofs {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7603,7 +8403,7 @@ public final class Proofs {
       private java.util.List<ics23.Proofs.BatchEntry> entries_ =
         java.util.Collections.emptyList();
       private void ensureEntriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           entries_ = new java.util.ArrayList<ics23.Proofs.BatchEntry>(entries_);
           bitField0_ |= 0x00000001;
          }
@@ -7832,21 +8632,23 @@ public final class Proofs {
           entriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ics23.Proofs.BatchEntry, ics23.Proofs.BatchEntry.Builder, ics23.Proofs.BatchEntryOrBuilder>(
                   entries_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           entries_ = null;
         }
         return entriesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7865,11 +8667,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<BatchProof>
         PARSER = new com.google.protobuf.AbstractParser<BatchProof>() {
+      @java.lang.Override
       public BatchProof parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchProof(input, extensionRegistry);
+        return new BatchProof(input, extensionRegistry);
       }
     };
 
@@ -7882,6 +8685,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.BatchProof getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7893,20 +8697,32 @@ public final class Proofs {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .ics23.ExistenceProof exist = 1;</code>
+     * <code>.ics23.ExistenceProof exist = 1;</code>
+     * @return Whether the exist field is set.
+     */
+    boolean hasExist();
+    /**
+     * <code>.ics23.ExistenceProof exist = 1;</code>
+     * @return The exist.
      */
     ics23.Proofs.ExistenceProof getExist();
     /**
-     * <code>optional .ics23.ExistenceProof exist = 1;</code>
+     * <code>.ics23.ExistenceProof exist = 1;</code>
      */
     ics23.Proofs.ExistenceProofOrBuilder getExistOrBuilder();
 
     /**
-     * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+     * @return Whether the nonexist field is set.
+     */
+    boolean hasNonexist();
+    /**
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+     * @return The nonexist.
      */
     ics23.Proofs.NonExistenceProof getNonexist();
     /**
-     * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
      */
     ics23.Proofs.NonExistenceProofOrBuilder getNonexistOrBuilder();
 
@@ -7919,10 +8735,11 @@ public final class Proofs {
    *
    * Protobuf type {@code ics23.BatchEntry}
    */
-  public  static final class BatchEntry extends
+  public static final class BatchEntry extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.BatchEntry)
       BatchEntryOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use BatchEntry.newBuilder() to construct.
     private BatchEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7931,16 +8748,27 @@ public final class Proofs {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BatchEntry();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private BatchEntry(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7949,12 +8777,6 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               ics23.Proofs.ExistenceProof.Builder subBuilder = null;
               if (proofCase_ == 1) {
@@ -7983,6 +8805,13 @@ public final class Proofs {
               proofCase_ = 2;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7991,6 +8820,7 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7999,6 +8829,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_BatchEntry_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_BatchEntry_fieldAccessorTable
@@ -8009,7 +8840,8 @@ public final class Proofs {
     private int proofCase_ = 0;
     private java.lang.Object proof_;
     public enum ProofCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       EXIST(1),
       NONEXIST(2),
       PROOF_NOT_SET(0);
@@ -8018,6 +8850,8 @@ public final class Proofs {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -8046,8 +8880,18 @@ public final class Proofs {
 
     public static final int EXIST_FIELD_NUMBER = 1;
     /**
-     * <code>optional .ics23.ExistenceProof exist = 1;</code>
+     * <code>.ics23.ExistenceProof exist = 1;</code>
+     * @return Whether the exist field is set.
      */
+    @java.lang.Override
+    public boolean hasExist() {
+      return proofCase_ == 1;
+    }
+    /**
+     * <code>.ics23.ExistenceProof exist = 1;</code>
+     * @return The exist.
+     */
+    @java.lang.Override
     public ics23.Proofs.ExistenceProof getExist() {
       if (proofCase_ == 1) {
          return (ics23.Proofs.ExistenceProof) proof_;
@@ -8055,8 +8899,9 @@ public final class Proofs {
       return ics23.Proofs.ExistenceProof.getDefaultInstance();
     }
     /**
-     * <code>optional .ics23.ExistenceProof exist = 1;</code>
+     * <code>.ics23.ExistenceProof exist = 1;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.ExistenceProofOrBuilder getExistOrBuilder() {
       if (proofCase_ == 1) {
          return (ics23.Proofs.ExistenceProof) proof_;
@@ -8066,8 +8911,18 @@ public final class Proofs {
 
     public static final int NONEXIST_FIELD_NUMBER = 2;
     /**
-     * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+     * @return Whether the nonexist field is set.
      */
+    @java.lang.Override
+    public boolean hasNonexist() {
+      return proofCase_ == 2;
+    }
+    /**
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+     * @return The nonexist.
+     */
+    @java.lang.Override
     public ics23.Proofs.NonExistenceProof getNonexist() {
       if (proofCase_ == 2) {
          return (ics23.Proofs.NonExistenceProof) proof_;
@@ -8075,8 +8930,9 @@ public final class Proofs {
       return ics23.Proofs.NonExistenceProof.getDefaultInstance();
     }
     /**
-     * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.NonExistenceProof nonexist = 2;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.NonExistenceProofOrBuilder getNonexistOrBuilder() {
       if (proofCase_ == 2) {
          return (ics23.Proofs.NonExistenceProof) proof_;
@@ -8085,6 +8941,7 @@ public final class Proofs {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8094,6 +8951,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (proofCase_ == 1) {
@@ -8102,8 +8960,10 @@ public final class Proofs {
       if (proofCase_ == 2) {
         output.writeMessage(2, (ics23.Proofs.NonExistenceProof) proof_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8117,11 +8977,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, (ics23.Proofs.NonExistenceProof) proof_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8132,23 +8992,21 @@ public final class Proofs {
       }
       ics23.Proofs.BatchEntry other = (ics23.Proofs.BatchEntry) obj;
 
-      boolean result = true;
-      result = result && getProofCase().equals(
-          other.getProofCase());
-      if (!result) return false;
+      if (!getProofCase().equals(other.getProofCase())) return false;
       switch (proofCase_) {
         case 1:
-          result = result && getExist()
-              .equals(other.getExist());
+          if (!getExist()
+              .equals(other.getExist())) return false;
           break;
         case 2:
-          result = result && getNonexist()
-              .equals(other.getNonexist());
+          if (!getNonexist()
+              .equals(other.getNonexist())) return false;
           break;
         case 0:
         default:
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8157,7 +9015,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       switch (proofCase_) {
         case 1:
           hash = (37 * hash) + EXIST_FIELD_NUMBER;
@@ -8175,6 +9033,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.BatchEntry parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.BatchEntry parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.BatchEntry parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8234,6 +9103,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8241,6 +9111,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.BatchEntry prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8268,6 +9139,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_BatchEntry_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_BatchEntry_fieldAccessorTable
@@ -8290,6 +9162,7 @@ public final class Proofs {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         proofCase_ = 0;
@@ -8297,15 +9170,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_BatchEntry_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.BatchEntry getDefaultInstanceForType() {
         return ics23.Proofs.BatchEntry.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.BatchEntry build() {
         ics23.Proofs.BatchEntry result = buildPartial();
         if (!result.isInitialized()) {
@@ -8314,6 +9190,7 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.BatchEntry buildPartial() {
         ics23.Proofs.BatchEntry result = new ics23.Proofs.BatchEntry(this);
         if (proofCase_ == 1) {
@@ -8335,32 +9212,39 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.BatchEntry) {
           return mergeFrom((ics23.Proofs.BatchEntry)other);
@@ -8385,14 +9269,17 @@ public final class Proofs {
             break;
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8429,8 +9316,18 @@ public final class Proofs {
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.ExistenceProof, ics23.Proofs.ExistenceProof.Builder, ics23.Proofs.ExistenceProofOrBuilder> existBuilder_;
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
+       * @return Whether the exist field is set.
        */
+      @java.lang.Override
+      public boolean hasExist() {
+        return proofCase_ == 1;
+      }
+      /**
+       * <code>.ics23.ExistenceProof exist = 1;</code>
+       * @return The exist.
+       */
+      @java.lang.Override
       public ics23.Proofs.ExistenceProof getExist() {
         if (existBuilder_ == null) {
           if (proofCase_ == 1) {
@@ -8445,7 +9342,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       public Builder setExist(ics23.Proofs.ExistenceProof value) {
         if (existBuilder_ == null) {
@@ -8461,7 +9358,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       public Builder setExist(
           ics23.Proofs.ExistenceProof.Builder builderForValue) {
@@ -8475,7 +9372,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       public Builder mergeExist(ics23.Proofs.ExistenceProof value) {
         if (existBuilder_ == null) {
@@ -8497,7 +9394,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       public Builder clearExist() {
         if (existBuilder_ == null) {
@@ -8516,14 +9413,15 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       public ics23.Proofs.ExistenceProof.Builder getExistBuilder() {
         return getExistFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
+      @java.lang.Override
       public ics23.Proofs.ExistenceProofOrBuilder getExistOrBuilder() {
         if ((proofCase_ == 1) && (existBuilder_ != null)) {
           return existBuilder_.getMessageOrBuilder();
@@ -8535,7 +9433,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.ExistenceProof exist = 1;</code>
+       * <code>.ics23.ExistenceProof exist = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.ExistenceProof, ics23.Proofs.ExistenceProof.Builder, ics23.Proofs.ExistenceProofOrBuilder> 
@@ -8559,8 +9457,18 @@ public final class Proofs {
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.NonExistenceProof, ics23.Proofs.NonExistenceProof.Builder, ics23.Proofs.NonExistenceProofOrBuilder> nonexistBuilder_;
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+       * @return Whether the nonexist field is set.
        */
+      @java.lang.Override
+      public boolean hasNonexist() {
+        return proofCase_ == 2;
+      }
+      /**
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
+       * @return The nonexist.
+       */
+      @java.lang.Override
       public ics23.Proofs.NonExistenceProof getNonexist() {
         if (nonexistBuilder_ == null) {
           if (proofCase_ == 2) {
@@ -8575,7 +9483,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       public Builder setNonexist(ics23.Proofs.NonExistenceProof value) {
         if (nonexistBuilder_ == null) {
@@ -8591,7 +9499,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       public Builder setNonexist(
           ics23.Proofs.NonExistenceProof.Builder builderForValue) {
@@ -8605,7 +9513,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       public Builder mergeNonexist(ics23.Proofs.NonExistenceProof value) {
         if (nonexistBuilder_ == null) {
@@ -8627,7 +9535,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       public Builder clearNonexist() {
         if (nonexistBuilder_ == null) {
@@ -8646,14 +9554,15 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       public ics23.Proofs.NonExistenceProof.Builder getNonexistBuilder() {
         return getNonexistFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
+      @java.lang.Override
       public ics23.Proofs.NonExistenceProofOrBuilder getNonexistOrBuilder() {
         if ((proofCase_ == 2) && (nonexistBuilder_ != null)) {
           return nonexistBuilder_.getMessageOrBuilder();
@@ -8665,7 +9574,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.NonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.NonExistenceProof nonexist = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.NonExistenceProof, ics23.Proofs.NonExistenceProof.Builder, ics23.Proofs.NonExistenceProofOrBuilder> 
@@ -8685,14 +9594,16 @@ public final class Proofs {
         onChanged();;
         return nonexistBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8711,11 +9622,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<BatchEntry>
         PARSER = new com.google.protobuf.AbstractParser<BatchEntry>() {
+      @java.lang.Override
       public BatchEntry parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchEntry(input, extensionRegistry);
+        return new BatchEntry(input, extensionRegistry);
       }
     };
 
@@ -8728,6 +9640,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.BatchEntry getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8789,10 +9702,11 @@ public final class Proofs {
   /**
    * Protobuf type {@code ics23.CompressedBatchProof}
    */
-  public  static final class CompressedBatchProof extends
+  public static final class CompressedBatchProof extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.CompressedBatchProof)
       CompressedBatchProofOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use CompressedBatchProof.newBuilder() to construct.
     private CompressedBatchProof(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8803,16 +9717,28 @@ public final class Proofs {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CompressedBatchProof();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private CompressedBatchProof(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8821,14 +9747,8 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entries_ = new java.util.ArrayList<ics23.Proofs.CompressedBatchEntry>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -8837,12 +9757,19 @@ public final class Proofs {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 lookupInners_ = new java.util.ArrayList<ics23.Proofs.InnerOp>();
                 mutable_bitField0_ |= 0x00000002;
               }
               lookupInners_.add(
                   input.readMessage(ics23.Proofs.InnerOp.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -8853,12 +9780,13 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
         }
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           lookupInners_ = java.util.Collections.unmodifiableList(lookupInners_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8867,6 +9795,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_CompressedBatchProof_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_CompressedBatchProof_fieldAccessorTable
@@ -8879,12 +9808,14 @@ public final class Proofs {
     /**
      * <code>repeated .ics23.CompressedBatchEntry entries = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ics23.Proofs.CompressedBatchEntry> getEntriesList() {
       return entries_;
     }
     /**
      * <code>repeated .ics23.CompressedBatchEntry entries = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ics23.Proofs.CompressedBatchEntryOrBuilder> 
         getEntriesOrBuilderList() {
       return entries_;
@@ -8892,18 +9823,21 @@ public final class Proofs {
     /**
      * <code>repeated .ics23.CompressedBatchEntry entries = 1;</code>
      */
+    @java.lang.Override
     public int getEntriesCount() {
       return entries_.size();
     }
     /**
      * <code>repeated .ics23.CompressedBatchEntry entries = 1;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.CompressedBatchEntry getEntries(int index) {
       return entries_.get(index);
     }
     /**
      * <code>repeated .ics23.CompressedBatchEntry entries = 1;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.CompressedBatchEntryOrBuilder getEntriesOrBuilder(
         int index) {
       return entries_.get(index);
@@ -8914,12 +9848,14 @@ public final class Proofs {
     /**
      * <code>repeated .ics23.InnerOp lookup_inners = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<ics23.Proofs.InnerOp> getLookupInnersList() {
       return lookupInners_;
     }
     /**
      * <code>repeated .ics23.InnerOp lookup_inners = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ics23.Proofs.InnerOpOrBuilder> 
         getLookupInnersOrBuilderList() {
       return lookupInners_;
@@ -8927,24 +9863,28 @@ public final class Proofs {
     /**
      * <code>repeated .ics23.InnerOp lookup_inners = 2;</code>
      */
+    @java.lang.Override
     public int getLookupInnersCount() {
       return lookupInners_.size();
     }
     /**
      * <code>repeated .ics23.InnerOp lookup_inners = 2;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.InnerOp getLookupInners(int index) {
       return lookupInners_.get(index);
     }
     /**
      * <code>repeated .ics23.InnerOp lookup_inners = 2;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.InnerOpOrBuilder getLookupInnersOrBuilder(
         int index) {
       return lookupInners_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8954,6 +9894,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < entries_.size(); i++) {
@@ -8962,8 +9903,10 @@ public final class Proofs {
       for (int i = 0; i < lookupInners_.size(); i++) {
         output.writeMessage(2, lookupInners_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8977,11 +9920,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, lookupInners_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8992,12 +9935,12 @@ public final class Proofs {
       }
       ics23.Proofs.CompressedBatchProof other = (ics23.Proofs.CompressedBatchProof) obj;
 
-      boolean result = true;
-      result = result && getEntriesList()
-          .equals(other.getEntriesList());
-      result = result && getLookupInnersList()
-          .equals(other.getLookupInnersList());
-      return result;
+      if (!getEntriesList()
+          .equals(other.getEntriesList())) return false;
+      if (!getLookupInnersList()
+          .equals(other.getLookupInnersList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9006,7 +9949,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getEntriesCount() > 0) {
         hash = (37 * hash) + ENTRIES_FIELD_NUMBER;
         hash = (53 * hash) + getEntriesList().hashCode();
@@ -9020,6 +9963,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.CompressedBatchProof parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.CompressedBatchProof parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.CompressedBatchProof parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9079,6 +10033,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9086,6 +10041,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.CompressedBatchProof prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9109,6 +10065,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_CompressedBatchProof_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_CompressedBatchProof_fieldAccessorTable
@@ -9133,6 +10090,7 @@ public final class Proofs {
           getLookupInnersFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (entriesBuilder_ == null) {
@@ -9150,15 +10108,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_CompressedBatchProof_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedBatchProof getDefaultInstanceForType() {
         return ics23.Proofs.CompressedBatchProof.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedBatchProof build() {
         ics23.Proofs.CompressedBatchProof result = buildPartial();
         if (!result.isInitialized()) {
@@ -9167,11 +10128,12 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedBatchProof buildPartial() {
         ics23.Proofs.CompressedBatchProof result = new ics23.Proofs.CompressedBatchProof(this);
         int from_bitField0_ = bitField0_;
         if (entriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             entries_ = java.util.Collections.unmodifiableList(entries_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -9180,7 +10142,7 @@ public final class Proofs {
           result.entries_ = entriesBuilder_.build();
         }
         if (lookupInnersBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             lookupInners_ = java.util.Collections.unmodifiableList(lookupInners_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -9192,32 +10154,39 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.CompressedBatchProof) {
           return mergeFrom((ics23.Proofs.CompressedBatchProof)other);
@@ -9281,14 +10250,17 @@ public final class Proofs {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9311,7 +10283,7 @@ public final class Proofs {
       private java.util.List<ics23.Proofs.CompressedBatchEntry> entries_ =
         java.util.Collections.emptyList();
       private void ensureEntriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           entries_ = new java.util.ArrayList<ics23.Proofs.CompressedBatchEntry>(entries_);
           bitField0_ |= 0x00000001;
          }
@@ -9540,7 +10512,7 @@ public final class Proofs {
           entriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ics23.Proofs.CompressedBatchEntry, ics23.Proofs.CompressedBatchEntry.Builder, ics23.Proofs.CompressedBatchEntryOrBuilder>(
                   entries_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           entries_ = null;
@@ -9551,7 +10523,7 @@ public final class Proofs {
       private java.util.List<ics23.Proofs.InnerOp> lookupInners_ =
         java.util.Collections.emptyList();
       private void ensureLookupInnersIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           lookupInners_ = new java.util.ArrayList<ics23.Proofs.InnerOp>(lookupInners_);
           bitField0_ |= 0x00000002;
          }
@@ -9780,21 +10752,23 @@ public final class Proofs {
           lookupInnersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ics23.Proofs.InnerOp, ics23.Proofs.InnerOp.Builder, ics23.Proofs.InnerOpOrBuilder>(
                   lookupInners_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           lookupInners_ = null;
         }
         return lookupInnersBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9813,11 +10787,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<CompressedBatchProof>
         PARSER = new com.google.protobuf.AbstractParser<CompressedBatchProof>() {
+      @java.lang.Override
       public CompressedBatchProof parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CompressedBatchProof(input, extensionRegistry);
+        return new CompressedBatchProof(input, extensionRegistry);
       }
     };
 
@@ -9830,6 +10805,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.CompressedBatchProof getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9841,20 +10817,32 @@ public final class Proofs {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+     * <code>.ics23.CompressedExistenceProof exist = 1;</code>
+     * @return Whether the exist field is set.
+     */
+    boolean hasExist();
+    /**
+     * <code>.ics23.CompressedExistenceProof exist = 1;</code>
+     * @return The exist.
      */
     ics23.Proofs.CompressedExistenceProof getExist();
     /**
-     * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+     * <code>.ics23.CompressedExistenceProof exist = 1;</code>
      */
     ics23.Proofs.CompressedExistenceProofOrBuilder getExistOrBuilder();
 
     /**
-     * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
+     * @return Whether the nonexist field is set.
+     */
+    boolean hasNonexist();
+    /**
+     * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
+     * @return The nonexist.
      */
     ics23.Proofs.CompressedNonExistenceProof getNonexist();
     /**
-     * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
      */
     ics23.Proofs.CompressedNonExistenceProofOrBuilder getNonexistOrBuilder();
 
@@ -9867,10 +10855,11 @@ public final class Proofs {
    *
    * Protobuf type {@code ics23.CompressedBatchEntry}
    */
-  public  static final class CompressedBatchEntry extends
+  public static final class CompressedBatchEntry extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.CompressedBatchEntry)
       CompressedBatchEntryOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use CompressedBatchEntry.newBuilder() to construct.
     private CompressedBatchEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9879,16 +10868,27 @@ public final class Proofs {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CompressedBatchEntry();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private CompressedBatchEntry(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -9897,12 +10897,6 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               ics23.Proofs.CompressedExistenceProof.Builder subBuilder = null;
               if (proofCase_ == 1) {
@@ -9931,6 +10925,13 @@ public final class Proofs {
               proofCase_ = 2;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -9939,6 +10940,7 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -9947,6 +10949,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_CompressedBatchEntry_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_CompressedBatchEntry_fieldAccessorTable
@@ -9957,7 +10960,8 @@ public final class Proofs {
     private int proofCase_ = 0;
     private java.lang.Object proof_;
     public enum ProofCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       EXIST(1),
       NONEXIST(2),
       PROOF_NOT_SET(0);
@@ -9966,6 +10970,8 @@ public final class Proofs {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -9994,8 +11000,18 @@ public final class Proofs {
 
     public static final int EXIST_FIELD_NUMBER = 1;
     /**
-     * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+     * <code>.ics23.CompressedExistenceProof exist = 1;</code>
+     * @return Whether the exist field is set.
      */
+    @java.lang.Override
+    public boolean hasExist() {
+      return proofCase_ == 1;
+    }
+    /**
+     * <code>.ics23.CompressedExistenceProof exist = 1;</code>
+     * @return The exist.
+     */
+    @java.lang.Override
     public ics23.Proofs.CompressedExistenceProof getExist() {
       if (proofCase_ == 1) {
          return (ics23.Proofs.CompressedExistenceProof) proof_;
@@ -10003,8 +11019,9 @@ public final class Proofs {
       return ics23.Proofs.CompressedExistenceProof.getDefaultInstance();
     }
     /**
-     * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+     * <code>.ics23.CompressedExistenceProof exist = 1;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.CompressedExistenceProofOrBuilder getExistOrBuilder() {
       if (proofCase_ == 1) {
          return (ics23.Proofs.CompressedExistenceProof) proof_;
@@ -10014,8 +11031,18 @@ public final class Proofs {
 
     public static final int NONEXIST_FIELD_NUMBER = 2;
     /**
-     * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
+     * @return Whether the nonexist field is set.
      */
+    @java.lang.Override
+    public boolean hasNonexist() {
+      return proofCase_ == 2;
+    }
+    /**
+     * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
+     * @return The nonexist.
+     */
+    @java.lang.Override
     public ics23.Proofs.CompressedNonExistenceProof getNonexist() {
       if (proofCase_ == 2) {
          return (ics23.Proofs.CompressedNonExistenceProof) proof_;
@@ -10023,8 +11050,9 @@ public final class Proofs {
       return ics23.Proofs.CompressedNonExistenceProof.getDefaultInstance();
     }
     /**
-     * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+     * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.CompressedNonExistenceProofOrBuilder getNonexistOrBuilder() {
       if (proofCase_ == 2) {
          return (ics23.Proofs.CompressedNonExistenceProof) proof_;
@@ -10033,6 +11061,7 @@ public final class Proofs {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10042,6 +11071,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (proofCase_ == 1) {
@@ -10050,8 +11080,10 @@ public final class Proofs {
       if (proofCase_ == 2) {
         output.writeMessage(2, (ics23.Proofs.CompressedNonExistenceProof) proof_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10065,11 +11097,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, (ics23.Proofs.CompressedNonExistenceProof) proof_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -10080,23 +11112,21 @@ public final class Proofs {
       }
       ics23.Proofs.CompressedBatchEntry other = (ics23.Proofs.CompressedBatchEntry) obj;
 
-      boolean result = true;
-      result = result && getProofCase().equals(
-          other.getProofCase());
-      if (!result) return false;
+      if (!getProofCase().equals(other.getProofCase())) return false;
       switch (proofCase_) {
         case 1:
-          result = result && getExist()
-              .equals(other.getExist());
+          if (!getExist()
+              .equals(other.getExist())) return false;
           break;
         case 2:
-          result = result && getNonexist()
-              .equals(other.getNonexist());
+          if (!getNonexist()
+              .equals(other.getNonexist())) return false;
           break;
         case 0:
         default:
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -10105,7 +11135,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       switch (proofCase_) {
         case 1:
           hash = (37 * hash) + EXIST_FIELD_NUMBER;
@@ -10123,6 +11153,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.CompressedBatchEntry parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.CompressedBatchEntry parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.CompressedBatchEntry parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10182,6 +11223,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10189,6 +11231,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.CompressedBatchEntry prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10216,6 +11259,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_CompressedBatchEntry_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_CompressedBatchEntry_fieldAccessorTable
@@ -10238,6 +11282,7 @@ public final class Proofs {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         proofCase_ = 0;
@@ -10245,15 +11290,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_CompressedBatchEntry_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedBatchEntry getDefaultInstanceForType() {
         return ics23.Proofs.CompressedBatchEntry.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedBatchEntry build() {
         ics23.Proofs.CompressedBatchEntry result = buildPartial();
         if (!result.isInitialized()) {
@@ -10262,6 +11310,7 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedBatchEntry buildPartial() {
         ics23.Proofs.CompressedBatchEntry result = new ics23.Proofs.CompressedBatchEntry(this);
         if (proofCase_ == 1) {
@@ -10283,32 +11332,39 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.CompressedBatchEntry) {
           return mergeFrom((ics23.Proofs.CompressedBatchEntry)other);
@@ -10333,14 +11389,17 @@ public final class Proofs {
             break;
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10377,8 +11436,18 @@ public final class Proofs {
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.CompressedExistenceProof, ics23.Proofs.CompressedExistenceProof.Builder, ics23.Proofs.CompressedExistenceProofOrBuilder> existBuilder_;
       /**
-       * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+       * <code>.ics23.CompressedExistenceProof exist = 1;</code>
+       * @return Whether the exist field is set.
        */
+      @java.lang.Override
+      public boolean hasExist() {
+        return proofCase_ == 1;
+      }
+      /**
+       * <code>.ics23.CompressedExistenceProof exist = 1;</code>
+       * @return The exist.
+       */
+      @java.lang.Override
       public ics23.Proofs.CompressedExistenceProof getExist() {
         if (existBuilder_ == null) {
           if (proofCase_ == 1) {
@@ -10393,7 +11462,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+       * <code>.ics23.CompressedExistenceProof exist = 1;</code>
        */
       public Builder setExist(ics23.Proofs.CompressedExistenceProof value) {
         if (existBuilder_ == null) {
@@ -10409,7 +11478,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+       * <code>.ics23.CompressedExistenceProof exist = 1;</code>
        */
       public Builder setExist(
           ics23.Proofs.CompressedExistenceProof.Builder builderForValue) {
@@ -10423,7 +11492,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+       * <code>.ics23.CompressedExistenceProof exist = 1;</code>
        */
       public Builder mergeExist(ics23.Proofs.CompressedExistenceProof value) {
         if (existBuilder_ == null) {
@@ -10445,7 +11514,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+       * <code>.ics23.CompressedExistenceProof exist = 1;</code>
        */
       public Builder clearExist() {
         if (existBuilder_ == null) {
@@ -10464,14 +11533,15 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+       * <code>.ics23.CompressedExistenceProof exist = 1;</code>
        */
       public ics23.Proofs.CompressedExistenceProof.Builder getExistBuilder() {
         return getExistFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+       * <code>.ics23.CompressedExistenceProof exist = 1;</code>
        */
+      @java.lang.Override
       public ics23.Proofs.CompressedExistenceProofOrBuilder getExistOrBuilder() {
         if ((proofCase_ == 1) && (existBuilder_ != null)) {
           return existBuilder_.getMessageOrBuilder();
@@ -10483,7 +11553,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof exist = 1;</code>
+       * <code>.ics23.CompressedExistenceProof exist = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.CompressedExistenceProof, ics23.Proofs.CompressedExistenceProof.Builder, ics23.Proofs.CompressedExistenceProofOrBuilder> 
@@ -10507,8 +11577,18 @@ public final class Proofs {
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.CompressedNonExistenceProof, ics23.Proofs.CompressedNonExistenceProof.Builder, ics23.Proofs.CompressedNonExistenceProofOrBuilder> nonexistBuilder_;
       /**
-       * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
+       * @return Whether the nonexist field is set.
        */
+      @java.lang.Override
+      public boolean hasNonexist() {
+        return proofCase_ == 2;
+      }
+      /**
+       * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
+       * @return The nonexist.
+       */
+      @java.lang.Override
       public ics23.Proofs.CompressedNonExistenceProof getNonexist() {
         if (nonexistBuilder_ == null) {
           if (proofCase_ == 2) {
@@ -10523,7 +11603,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
        */
       public Builder setNonexist(ics23.Proofs.CompressedNonExistenceProof value) {
         if (nonexistBuilder_ == null) {
@@ -10539,7 +11619,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
        */
       public Builder setNonexist(
           ics23.Proofs.CompressedNonExistenceProof.Builder builderForValue) {
@@ -10553,7 +11633,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
        */
       public Builder mergeNonexist(ics23.Proofs.CompressedNonExistenceProof value) {
         if (nonexistBuilder_ == null) {
@@ -10575,7 +11655,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
        */
       public Builder clearNonexist() {
         if (nonexistBuilder_ == null) {
@@ -10594,14 +11674,15 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
        */
       public ics23.Proofs.CompressedNonExistenceProof.Builder getNonexistBuilder() {
         return getNonexistFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
        */
+      @java.lang.Override
       public ics23.Proofs.CompressedNonExistenceProofOrBuilder getNonexistOrBuilder() {
         if ((proofCase_ == 2) && (nonexistBuilder_ != null)) {
           return nonexistBuilder_.getMessageOrBuilder();
@@ -10613,7 +11694,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.CompressedNonExistenceProof nonexist = 2;</code>
+       * <code>.ics23.CompressedNonExistenceProof nonexist = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.CompressedNonExistenceProof, ics23.Proofs.CompressedNonExistenceProof.Builder, ics23.Proofs.CompressedNonExistenceProofOrBuilder> 
@@ -10633,14 +11714,16 @@ public final class Proofs {
         onChanged();;
         return nonexistBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -10659,11 +11742,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<CompressedBatchEntry>
         PARSER = new com.google.protobuf.AbstractParser<CompressedBatchEntry>() {
+      @java.lang.Override
       public CompressedBatchEntry parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CompressedBatchEntry(input, extensionRegistry);
+        return new CompressedBatchEntry(input, extensionRegistry);
       }
     };
 
@@ -10676,6 +11760,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.CompressedBatchEntry getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10687,25 +11772,29 @@ public final class Proofs {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
     com.google.protobuf.ByteString getKey();
 
     /**
-     * <code>optional bytes value = 2;</code>
+     * <code>bytes value = 2;</code>
+     * @return The value.
      */
     com.google.protobuf.ByteString getValue();
 
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
+     * @return Whether the leaf field is set.
      */
     boolean hasLeaf();
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
+     * @return The leaf.
      */
     ics23.Proofs.LeafOp getLeaf();
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
      */
     ics23.Proofs.LeafOpOrBuilder getLeafOrBuilder();
 
@@ -10715,6 +11804,7 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 path = 4;</code>
+     * @return A list containing the path.
      */
     java.util.List<java.lang.Integer> getPathList();
     /**
@@ -10723,6 +11813,7 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 path = 4;</code>
+     * @return The count of path.
      */
     int getPathCount();
     /**
@@ -10731,16 +11822,19 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 path = 4;</code>
+     * @param index The index of the element to return.
+     * @return The path at the given index.
      */
     int getPath(int index);
   }
   /**
    * Protobuf type {@code ics23.CompressedExistenceProof}
    */
-  public  static final class CompressedExistenceProof extends
+  public static final class CompressedExistenceProof extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.CompressedExistenceProof)
       CompressedExistenceProofOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use CompressedExistenceProof.newBuilder() to construct.
     private CompressedExistenceProof(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10748,20 +11842,32 @@ public final class Proofs {
     private CompressedExistenceProof() {
       key_ = com.google.protobuf.ByteString.EMPTY;
       value_ = com.google.protobuf.ByteString.EMPTY;
-      path_ = java.util.Collections.emptyList();
+      path_ = emptyIntList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CompressedExistenceProof();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private CompressedExistenceProof(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -10770,12 +11876,6 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               key_ = input.readBytes();
@@ -10800,24 +11900,31 @@ public final class Proofs {
               break;
             }
             case 32: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                path_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                path_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
               }
-              path_.add(input.readInt32());
+              path_.addInt(input.readInt32());
               break;
             }
             case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                path_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                path_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                path_.add(input.readInt32());
+                path_.addInt(input.readInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -10828,9 +11935,10 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          path_ = java.util.Collections.unmodifiableList(path_);
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          path_.makeImmutable(); // C
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -10839,6 +11947,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_CompressedExistenceProof_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_CompressedExistenceProof_fieldAccessorTable
@@ -10846,12 +11955,13 @@ public final class Proofs {
               ics23.Proofs.CompressedExistenceProof.class, ics23.Proofs.CompressedExistenceProof.Builder.class);
     }
 
-    private int bitField0_;
     public static final int KEY_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString key_;
     /**
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
@@ -10859,8 +11969,10 @@ public final class Proofs {
     public static final int VALUE_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString value_;
     /**
-     * <code>optional bytes value = 2;</code>
+     * <code>bytes value = 2;</code>
+     * @return The value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
@@ -10868,33 +11980,40 @@ public final class Proofs {
     public static final int LEAF_FIELD_NUMBER = 3;
     private ics23.Proofs.LeafOp leaf_;
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
+     * @return Whether the leaf field is set.
      */
+    @java.lang.Override
     public boolean hasLeaf() {
       return leaf_ != null;
     }
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
+     * @return The leaf.
      */
+    @java.lang.Override
     public ics23.Proofs.LeafOp getLeaf() {
       return leaf_ == null ? ics23.Proofs.LeafOp.getDefaultInstance() : leaf_;
     }
     /**
-     * <code>optional .ics23.LeafOp leaf = 3;</code>
+     * <code>.ics23.LeafOp leaf = 3;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.LeafOpOrBuilder getLeafOrBuilder() {
       return getLeaf();
     }
 
     public static final int PATH_FIELD_NUMBER = 4;
-    private java.util.List<java.lang.Integer> path_;
+    private com.google.protobuf.Internal.IntList path_;
     /**
      * <pre>
      * these are indexes into the lookup_inners table in CompressedBatchProof
      * </pre>
      *
      * <code>repeated int32 path = 4;</code>
+     * @return A list containing the path.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getPathList() {
       return path_;
@@ -10905,6 +12024,7 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 path = 4;</code>
+     * @return The count of path.
      */
     public int getPathCount() {
       return path_.size();
@@ -10915,13 +12035,16 @@ public final class Proofs {
      * </pre>
      *
      * <code>repeated int32 path = 4;</code>
+     * @param index The index of the element to return.
+     * @return The path at the given index.
      */
     public int getPath(int index) {
-      return path_.get(index);
+      return path_.getInt(index);
     }
     private int pathMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10931,6 +12054,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -10948,10 +12072,12 @@ public final class Proofs {
         output.writeUInt32NoTag(pathMemoizedSerializedSize);
       }
       for (int i = 0; i < path_.size(); i++) {
-        output.writeInt32NoTag(path_.get(i));
+        output.writeInt32NoTag(path_.getInt(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10973,7 +12099,7 @@ public final class Proofs {
         int dataSize = 0;
         for (int i = 0; i < path_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(path_.get(i));
+            .computeInt32SizeNoTag(path_.getInt(i));
         }
         size += dataSize;
         if (!getPathList().isEmpty()) {
@@ -10983,11 +12109,11 @@ public final class Proofs {
         }
         pathMemoizedSerializedSize = dataSize;
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -10998,19 +12124,19 @@ public final class Proofs {
       }
       ics23.Proofs.CompressedExistenceProof other = (ics23.Proofs.CompressedExistenceProof) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && getValue()
-          .equals(other.getValue());
-      result = result && (hasLeaf() == other.hasLeaf());
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
+      if (hasLeaf() != other.hasLeaf()) return false;
       if (hasLeaf()) {
-        result = result && getLeaf()
-            .equals(other.getLeaf());
+        if (!getLeaf()
+            .equals(other.getLeaf())) return false;
       }
-      result = result && getPathList()
-          .equals(other.getPathList());
-      return result;
+      if (!getPathList()
+          .equals(other.getPathList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -11019,7 +12145,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -11037,6 +12163,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.CompressedExistenceProof parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.CompressedExistenceProof parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.CompressedExistenceProof parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11096,6 +12233,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11103,6 +12241,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.CompressedExistenceProof prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11126,6 +12265,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_CompressedExistenceProof_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_CompressedExistenceProof_fieldAccessorTable
@@ -11148,6 +12288,7 @@ public final class Proofs {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = com.google.protobuf.ByteString.EMPTY;
@@ -11160,20 +12301,23 @@ public final class Proofs {
           leaf_ = null;
           leafBuilder_ = null;
         }
-        path_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        path_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_CompressedExistenceProof_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedExistenceProof getDefaultInstanceForType() {
         return ics23.Proofs.CompressedExistenceProof.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedExistenceProof build() {
         ics23.Proofs.CompressedExistenceProof result = buildPartial();
         if (!result.isInitialized()) {
@@ -11182,10 +12326,10 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedExistenceProof buildPartial() {
         ics23.Proofs.CompressedExistenceProof result = new ics23.Proofs.CompressedExistenceProof(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.key_ = key_;
         result.value_ = value_;
         if (leafBuilder_ == null) {
@@ -11193,42 +12337,48 @@ public final class Proofs {
         } else {
           result.leaf_ = leafBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          path_ = java.util.Collections.unmodifiableList(path_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+        if (((bitField0_ & 0x00000001) != 0)) {
+          path_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.path_ = path_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.CompressedExistenceProof) {
           return mergeFrom((ics23.Proofs.CompressedExistenceProof)other);
@@ -11252,21 +12402,24 @@ public final class Proofs {
         if (!other.path_.isEmpty()) {
           if (path_.isEmpty()) {
             path_ = other.path_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePathIsMutable();
             path_.addAll(other.path_);
           }
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11288,13 +12441,17 @@ public final class Proofs {
 
       private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return The key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getKey() {
         return key_;
       }
       /**
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -11306,7 +12463,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -11317,13 +12475,17 @@ public final class Proofs {
 
       private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @return The value.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getValue() {
         return value_;
       }
       /**
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -11335,7 +12497,8 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
         
@@ -11344,17 +12507,19 @@ public final class Proofs {
         return this;
       }
 
-      private ics23.Proofs.LeafOp leaf_ = null;
+      private ics23.Proofs.LeafOp leaf_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.LeafOp, ics23.Proofs.LeafOp.Builder, ics23.Proofs.LeafOpOrBuilder> leafBuilder_;
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
+       * @return Whether the leaf field is set.
        */
       public boolean hasLeaf() {
         return leafBuilder_ != null || leaf_ != null;
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
+       * @return The leaf.
        */
       public ics23.Proofs.LeafOp getLeaf() {
         if (leafBuilder_ == null) {
@@ -11364,7 +12529,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public Builder setLeaf(ics23.Proofs.LeafOp value) {
         if (leafBuilder_ == null) {
@@ -11380,7 +12545,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public Builder setLeaf(
           ics23.Proofs.LeafOp.Builder builderForValue) {
@@ -11394,7 +12559,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public Builder mergeLeaf(ics23.Proofs.LeafOp value) {
         if (leafBuilder_ == null) {
@@ -11412,7 +12577,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public Builder clearLeaf() {
         if (leafBuilder_ == null) {
@@ -11426,7 +12591,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public ics23.Proofs.LeafOp.Builder getLeafBuilder() {
         
@@ -11434,7 +12599,7 @@ public final class Proofs {
         return getLeafFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       public ics23.Proofs.LeafOpOrBuilder getLeafOrBuilder() {
         if (leafBuilder_ != null) {
@@ -11445,7 +12610,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.LeafOp leaf = 3;</code>
+       * <code>.ics23.LeafOp leaf = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.LeafOp, ics23.Proofs.LeafOp.Builder, ics23.Proofs.LeafOpOrBuilder> 
@@ -11461,11 +12626,11 @@ public final class Proofs {
         return leafBuilder_;
       }
 
-      private java.util.List<java.lang.Integer> path_ = java.util.Collections.emptyList();
+      private com.google.protobuf.Internal.IntList path_ = emptyIntList();
       private void ensurePathIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          path_ = new java.util.ArrayList<java.lang.Integer>(path_);
-          bitField0_ |= 0x00000008;
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          path_ = mutableCopy(path_);
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -11474,10 +12639,12 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 path = 4;</code>
+       * @return A list containing the path.
        */
       public java.util.List<java.lang.Integer>
           getPathList() {
-        return java.util.Collections.unmodifiableList(path_);
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(path_) : path_;
       }
       /**
        * <pre>
@@ -11485,6 +12652,7 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 path = 4;</code>
+       * @return The count of path.
        */
       public int getPathCount() {
         return path_.size();
@@ -11495,9 +12663,11 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 path = 4;</code>
+       * @param index The index of the element to return.
+       * @return The path at the given index.
        */
       public int getPath(int index) {
-        return path_.get(index);
+        return path_.getInt(index);
       }
       /**
        * <pre>
@@ -11505,11 +12675,14 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 path = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The path to set.
+       * @return This builder for chaining.
        */
       public Builder setPath(
           int index, int value) {
         ensurePathIsMutable();
-        path_.set(index, value);
+        path_.setInt(index, value);
         onChanged();
         return this;
       }
@@ -11519,10 +12692,12 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 path = 4;</code>
+       * @param value The path to add.
+       * @return This builder for chaining.
        */
       public Builder addPath(int value) {
         ensurePathIsMutable();
-        path_.add(value);
+        path_.addInt(value);
         onChanged();
         return this;
       }
@@ -11532,6 +12707,8 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 path = 4;</code>
+       * @param values The path to add.
+       * @return This builder for chaining.
        */
       public Builder addAllPath(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -11547,21 +12724,24 @@ public final class Proofs {
        * </pre>
        *
        * <code>repeated int32 path = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPath() {
-        path_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        path_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -11580,11 +12760,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<CompressedExistenceProof>
         PARSER = new com.google.protobuf.AbstractParser<CompressedExistenceProof>() {
+      @java.lang.Override
       public CompressedExistenceProof parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CompressedExistenceProof(input, extensionRegistry);
+        return new CompressedExistenceProof(input, extensionRegistry);
       }
     };
 
@@ -11597,6 +12778,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.CompressedExistenceProof getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11612,43 +12794,49 @@ public final class Proofs {
      * TODO: remove this as unnecessary??? we prove a range
      * </pre>
      *
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
     com.google.protobuf.ByteString getKey();
 
     /**
-     * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+     * <code>.ics23.CompressedExistenceProof left = 2;</code>
+     * @return Whether the left field is set.
      */
     boolean hasLeft();
     /**
-     * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+     * <code>.ics23.CompressedExistenceProof left = 2;</code>
+     * @return The left.
      */
     ics23.Proofs.CompressedExistenceProof getLeft();
     /**
-     * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+     * <code>.ics23.CompressedExistenceProof left = 2;</code>
      */
     ics23.Proofs.CompressedExistenceProofOrBuilder getLeftOrBuilder();
 
     /**
-     * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+     * <code>.ics23.CompressedExistenceProof right = 3;</code>
+     * @return Whether the right field is set.
      */
     boolean hasRight();
     /**
-     * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+     * <code>.ics23.CompressedExistenceProof right = 3;</code>
+     * @return The right.
      */
     ics23.Proofs.CompressedExistenceProof getRight();
     /**
-     * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+     * <code>.ics23.CompressedExistenceProof right = 3;</code>
      */
     ics23.Proofs.CompressedExistenceProofOrBuilder getRightOrBuilder();
   }
   /**
    * Protobuf type {@code ics23.CompressedNonExistenceProof}
    */
-  public  static final class CompressedNonExistenceProof extends
+  public static final class CompressedNonExistenceProof extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ics23.CompressedNonExistenceProof)
       CompressedNonExistenceProofOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use CompressedNonExistenceProof.newBuilder() to construct.
     private CompressedNonExistenceProof(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11658,16 +12846,27 @@ public final class Proofs {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CompressedNonExistenceProof();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private CompressedNonExistenceProof(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -11676,12 +12875,6 @@ public final class Proofs {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               key_ = input.readBytes();
@@ -11713,6 +12906,13 @@ public final class Proofs {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -11721,6 +12921,7 @@ public final class Proofs {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -11729,6 +12930,7 @@ public final class Proofs {
       return ics23.Proofs.internal_static_ics23_CompressedNonExistenceProof_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ics23.Proofs.internal_static_ics23_CompressedNonExistenceProof_fieldAccessorTable
@@ -11743,8 +12945,10 @@ public final class Proofs {
      * TODO: remove this as unnecessary??? we prove a range
      * </pre>
      *
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
@@ -11752,20 +12956,25 @@ public final class Proofs {
     public static final int LEFT_FIELD_NUMBER = 2;
     private ics23.Proofs.CompressedExistenceProof left_;
     /**
-     * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+     * <code>.ics23.CompressedExistenceProof left = 2;</code>
+     * @return Whether the left field is set.
      */
+    @java.lang.Override
     public boolean hasLeft() {
       return left_ != null;
     }
     /**
-     * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+     * <code>.ics23.CompressedExistenceProof left = 2;</code>
+     * @return The left.
      */
+    @java.lang.Override
     public ics23.Proofs.CompressedExistenceProof getLeft() {
       return left_ == null ? ics23.Proofs.CompressedExistenceProof.getDefaultInstance() : left_;
     }
     /**
-     * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+     * <code>.ics23.CompressedExistenceProof left = 2;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.CompressedExistenceProofOrBuilder getLeftOrBuilder() {
       return getLeft();
     }
@@ -11773,25 +12982,31 @@ public final class Proofs {
     public static final int RIGHT_FIELD_NUMBER = 3;
     private ics23.Proofs.CompressedExistenceProof right_;
     /**
-     * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+     * <code>.ics23.CompressedExistenceProof right = 3;</code>
+     * @return Whether the right field is set.
      */
+    @java.lang.Override
     public boolean hasRight() {
       return right_ != null;
     }
     /**
-     * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+     * <code>.ics23.CompressedExistenceProof right = 3;</code>
+     * @return The right.
      */
+    @java.lang.Override
     public ics23.Proofs.CompressedExistenceProof getRight() {
       return right_ == null ? ics23.Proofs.CompressedExistenceProof.getDefaultInstance() : right_;
     }
     /**
-     * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+     * <code>.ics23.CompressedExistenceProof right = 3;</code>
      */
+    @java.lang.Override
     public ics23.Proofs.CompressedExistenceProofOrBuilder getRightOrBuilder() {
       return getRight();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -11801,6 +13016,7 @@ public final class Proofs {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!key_.isEmpty()) {
@@ -11812,8 +13028,10 @@ public final class Proofs {
       if (right_ != null) {
         output.writeMessage(3, getRight());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -11831,11 +13049,11 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getRight());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -11846,20 +13064,20 @@ public final class Proofs {
       }
       ics23.Proofs.CompressedNonExistenceProof other = (ics23.Proofs.CompressedNonExistenceProof) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && (hasLeft() == other.hasLeft());
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (hasLeft() != other.hasLeft()) return false;
       if (hasLeft()) {
-        result = result && getLeft()
-            .equals(other.getLeft());
+        if (!getLeft()
+            .equals(other.getLeft())) return false;
       }
-      result = result && (hasRight() == other.hasRight());
+      if (hasRight() != other.hasRight()) return false;
       if (hasRight()) {
-        result = result && getRight()
-            .equals(other.getRight());
+        if (!getRight()
+            .equals(other.getRight())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -11868,7 +13086,7 @@ public final class Proofs {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       if (hasLeft()) {
@@ -11884,6 +13102,17 @@ public final class Proofs {
       return hash;
     }
 
+    public static ics23.Proofs.CompressedNonExistenceProof parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ics23.Proofs.CompressedNonExistenceProof parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ics23.Proofs.CompressedNonExistenceProof parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11943,6 +13172,7 @@ public final class Proofs {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11950,6 +13180,7 @@ public final class Proofs {
     public static Builder newBuilder(ics23.Proofs.CompressedNonExistenceProof prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11973,6 +13204,7 @@ public final class Proofs {
         return ics23.Proofs.internal_static_ics23_CompressedNonExistenceProof_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ics23.Proofs.internal_static_ics23_CompressedNonExistenceProof_fieldAccessorTable
@@ -11995,6 +13227,7 @@ public final class Proofs {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = com.google.protobuf.ByteString.EMPTY;
@@ -12014,15 +13247,18 @@ public final class Proofs {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ics23.Proofs.internal_static_ics23_CompressedNonExistenceProof_descriptor;
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedNonExistenceProof getDefaultInstanceForType() {
         return ics23.Proofs.CompressedNonExistenceProof.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedNonExistenceProof build() {
         ics23.Proofs.CompressedNonExistenceProof result = buildPartial();
         if (!result.isInitialized()) {
@@ -12031,6 +13267,7 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public ics23.Proofs.CompressedNonExistenceProof buildPartial() {
         ics23.Proofs.CompressedNonExistenceProof result = new ics23.Proofs.CompressedNonExistenceProof(this);
         result.key_ = key_;
@@ -12048,32 +13285,39 @@ public final class Proofs {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ics23.Proofs.CompressedNonExistenceProof) {
           return mergeFrom((ics23.Proofs.CompressedNonExistenceProof)other);
@@ -12094,14 +13338,17 @@ public final class Proofs {
         if (other.hasRight()) {
           mergeRight(other.getRight());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12126,8 +13373,10 @@ public final class Proofs {
        * TODO: remove this as unnecessary??? we prove a range
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return The key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getKey() {
         return key_;
       }
@@ -12136,7 +13385,9 @@ public final class Proofs {
        * TODO: remove this as unnecessary??? we prove a range
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -12152,7 +13403,8 @@ public final class Proofs {
        * TODO: remove this as unnecessary??? we prove a range
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -12161,17 +13413,19 @@ public final class Proofs {
         return this;
       }
 
-      private ics23.Proofs.CompressedExistenceProof left_ = null;
+      private ics23.Proofs.CompressedExistenceProof left_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.CompressedExistenceProof, ics23.Proofs.CompressedExistenceProof.Builder, ics23.Proofs.CompressedExistenceProofOrBuilder> leftBuilder_;
       /**
-       * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+       * <code>.ics23.CompressedExistenceProof left = 2;</code>
+       * @return Whether the left field is set.
        */
       public boolean hasLeft() {
         return leftBuilder_ != null || left_ != null;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+       * <code>.ics23.CompressedExistenceProof left = 2;</code>
+       * @return The left.
        */
       public ics23.Proofs.CompressedExistenceProof getLeft() {
         if (leftBuilder_ == null) {
@@ -12181,7 +13435,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+       * <code>.ics23.CompressedExistenceProof left = 2;</code>
        */
       public Builder setLeft(ics23.Proofs.CompressedExistenceProof value) {
         if (leftBuilder_ == null) {
@@ -12197,7 +13451,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+       * <code>.ics23.CompressedExistenceProof left = 2;</code>
        */
       public Builder setLeft(
           ics23.Proofs.CompressedExistenceProof.Builder builderForValue) {
@@ -12211,7 +13465,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+       * <code>.ics23.CompressedExistenceProof left = 2;</code>
        */
       public Builder mergeLeft(ics23.Proofs.CompressedExistenceProof value) {
         if (leftBuilder_ == null) {
@@ -12229,7 +13483,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+       * <code>.ics23.CompressedExistenceProof left = 2;</code>
        */
       public Builder clearLeft() {
         if (leftBuilder_ == null) {
@@ -12243,7 +13497,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+       * <code>.ics23.CompressedExistenceProof left = 2;</code>
        */
       public ics23.Proofs.CompressedExistenceProof.Builder getLeftBuilder() {
         
@@ -12251,7 +13505,7 @@ public final class Proofs {
         return getLeftFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+       * <code>.ics23.CompressedExistenceProof left = 2;</code>
        */
       public ics23.Proofs.CompressedExistenceProofOrBuilder getLeftOrBuilder() {
         if (leftBuilder_ != null) {
@@ -12262,7 +13516,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof left = 2;</code>
+       * <code>.ics23.CompressedExistenceProof left = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.CompressedExistenceProof, ics23.Proofs.CompressedExistenceProof.Builder, ics23.Proofs.CompressedExistenceProofOrBuilder> 
@@ -12278,17 +13532,19 @@ public final class Proofs {
         return leftBuilder_;
       }
 
-      private ics23.Proofs.CompressedExistenceProof right_ = null;
+      private ics23.Proofs.CompressedExistenceProof right_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.CompressedExistenceProof, ics23.Proofs.CompressedExistenceProof.Builder, ics23.Proofs.CompressedExistenceProofOrBuilder> rightBuilder_;
       /**
-       * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+       * <code>.ics23.CompressedExistenceProof right = 3;</code>
+       * @return Whether the right field is set.
        */
       public boolean hasRight() {
         return rightBuilder_ != null || right_ != null;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+       * <code>.ics23.CompressedExistenceProof right = 3;</code>
+       * @return The right.
        */
       public ics23.Proofs.CompressedExistenceProof getRight() {
         if (rightBuilder_ == null) {
@@ -12298,7 +13554,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+       * <code>.ics23.CompressedExistenceProof right = 3;</code>
        */
       public Builder setRight(ics23.Proofs.CompressedExistenceProof value) {
         if (rightBuilder_ == null) {
@@ -12314,7 +13570,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+       * <code>.ics23.CompressedExistenceProof right = 3;</code>
        */
       public Builder setRight(
           ics23.Proofs.CompressedExistenceProof.Builder builderForValue) {
@@ -12328,7 +13584,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+       * <code>.ics23.CompressedExistenceProof right = 3;</code>
        */
       public Builder mergeRight(ics23.Proofs.CompressedExistenceProof value) {
         if (rightBuilder_ == null) {
@@ -12346,7 +13602,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+       * <code>.ics23.CompressedExistenceProof right = 3;</code>
        */
       public Builder clearRight() {
         if (rightBuilder_ == null) {
@@ -12360,7 +13616,7 @@ public final class Proofs {
         return this;
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+       * <code>.ics23.CompressedExistenceProof right = 3;</code>
        */
       public ics23.Proofs.CompressedExistenceProof.Builder getRightBuilder() {
         
@@ -12368,7 +13624,7 @@ public final class Proofs {
         return getRightFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+       * <code>.ics23.CompressedExistenceProof right = 3;</code>
        */
       public ics23.Proofs.CompressedExistenceProofOrBuilder getRightOrBuilder() {
         if (rightBuilder_ != null) {
@@ -12379,7 +13635,7 @@ public final class Proofs {
         }
       }
       /**
-       * <code>optional .ics23.CompressedExistenceProof right = 3;</code>
+       * <code>.ics23.CompressedExistenceProof right = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ics23.Proofs.CompressedExistenceProof, ics23.Proofs.CompressedExistenceProof.Builder, ics23.Proofs.CompressedExistenceProofOrBuilder> 
@@ -12394,14 +13650,16 @@ public final class Proofs {
         }
         return rightBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -12420,11 +13678,12 @@ public final class Proofs {
 
     private static final com.google.protobuf.Parser<CompressedNonExistenceProof>
         PARSER = new com.google.protobuf.AbstractParser<CompressedNonExistenceProof>() {
+      @java.lang.Override
       public CompressedNonExistenceProof parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CompressedNonExistenceProof(input, extensionRegistry);
+        return new CompressedNonExistenceProof(input, extensionRegistry);
       }
     };
 
@@ -12437,6 +13696,7 @@ public final class Proofs {
       return PARSER;
     }
 
+    @java.lang.Override
     public ics23.Proofs.CompressedNonExistenceProof getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12526,7 +13786,7 @@ public final class Proofs {
       "of\"\307\001\n\017CommitmentProof\022&\n\005exist\030\001 \001(\0132\025." +
       "ics23.ExistenceProofH\000\022,\n\010nonexist\030\002 \001(\013" +
       "2\030.ics23.NonExistenceProofH\000\022\"\n\005batch\030\003 " +
-      "\001(\0132\021.ics23.BatchProofH\000\0221\n\ncompressed\030\004",
+      "\001(\0132\021.ics23.BatchProofH\000\0221\n\ncompressed\030\004" +
       " \001(\0132\033.ics23.CompressedBatchProofH\000B\007\n\005p" +
       "roof\"\240\001\n\006LeafOp\022\033\n\004hash\030\001 \001(\0162\r.ics23.Ha" +
       "shOp\022\"\n\013prehash_key\030\002 \001(\0162\r.ics23.HashOp" +
@@ -12536,7 +13796,7 @@ public final class Proofs {
       ".HashOp\022\016\n\006prefix\030\002 \001(\014\022\016\n\006suffix\030\003 \001(\014\"" +
       "y\n\tProofSpec\022 \n\tleaf_spec\030\001 \001(\0132\r.ics23." +
       "LeafOp\022$\n\ninner_spec\030\002 \001(\0132\020.ics23.Inner" +
-      "Spec\022\021\n\tmax_depth\030\003 \001(\005\022\021\n\tmin_depth\030\004 \001",
+      "Spec\022\021\n\tmax_depth\030\003 \001(\005\022\021\n\tmin_depth\030\004 \001" +
       "(\005\"\234\001\n\tInnerSpec\022\023\n\013child_order\030\001 \003(\005\022\022\n" +
       "\nchild_size\030\002 \001(\005\022\031\n\021min_prefix_length\030\003" +
       " \001(\005\022\031\n\021max_prefix_length\030\004 \001(\005\022\023\n\013empty" +
@@ -12546,7 +13806,7 @@ public final class Proofs {
       "2\025.ics23.ExistenceProofH\000\022,\n\010nonexist\030\002 " +
       "\001(\0132\030.ics23.NonExistenceProofH\000B\007\n\005proof" +
       "\"k\n\024CompressedBatchProof\022,\n\007entries\030\001 \003(" +
-      "\0132\033.ics23.CompressedBatchEntry\022%\n\rlookup",
+      "\0132\033.ics23.CompressedBatchEntry\022%\n\rlookup" +
       "_inners\030\002 \003(\0132\016.ics23.InnerOp\"\211\001\n\024Compre" +
       "ssedBatchEntry\0220\n\005exist\030\001 \001(\0132\037.ics23.Co" +
       "mpressedExistenceProofH\000\0226\n\010nonexist\030\002 \001" +
@@ -12556,7 +13816,7 @@ public final class Proofs {
       "\r.ics23.LeafOp\022\014\n\004path\030\004 \003(\005\"\211\001\n\033Compres" +
       "sedNonExistenceProof\022\013\n\003key\030\001 \001(\014\022-\n\004lef" +
       "t\030\002 \001(\0132\037.ics23.CompressedExistenceProof" +
-      "\022.\n\005right\030\003 \001(\0132\037.ics23.CompressedExiste",
+      "\022.\n\005right\030\003 \001(\0132\037.ics23.CompressedExiste" +
       "nceProof*U\n\006HashOp\022\013\n\007NO_HASH\020\000\022\n\n\006SHA25" +
       "6\020\001\022\n\n\006SHA512\020\002\022\n\n\006KECCAK\020\003\022\r\n\tRIPEMD160" +
       "\020\004\022\013\n\007BITCOIN\020\005*\253\001\n\010LengthOp\022\r\n\tNO_PREFI" +
@@ -12566,18 +13826,10 @@ public final class Proofs {
       "BYTES\020\007\022\024\n\020REQUIRE_64_BYTES\020\010B\034Z\032github." +
       "com/confio/ics23/gob\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ics23_ExistenceProof_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ics23_ExistenceProof_fieldAccessorTable = new

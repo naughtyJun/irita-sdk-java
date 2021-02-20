@@ -65,7 +65,8 @@ public interface HttpOrBuilder extends
    * segment matches.
    * </pre>
    *
-   * <code>optional bool fully_decode_reserved_expansion = 2;</code>
+   * <code>bool fully_decode_reserved_expansion = 2;</code>
+   * @return The fullyDecodeReservedExpansion.
    */
   boolean getFullyDecodeReservedExpansion();
 }

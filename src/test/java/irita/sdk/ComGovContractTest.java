@@ -52,7 +52,7 @@ public class ComGovContractTest {
     public void newContract() throws IOException {
         // store contract
         StoreRequest storeReq = new StoreRequest();
-        storeReq.setWasmFile("src/main/resources/community_governance.wasm");
+        storeReq.setWasmFile("src/test/resources/community_governance.wasm");
         BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
 
         String codeId = wasmClient.store(storeReq, baseTx);

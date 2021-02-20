@@ -38,10 +38,11 @@ package com.google.api;
  *
  * Protobuf type {@code google.api.HttpBody}
  */
-public  final class HttpBody extends
+public final class HttpBody extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.api.HttpBody)
     HttpBodyOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use HttpBody.newBuilder() to construct.
   private HttpBody(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -53,16 +54,28 @@ public  final class HttpBody extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new HttpBody();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private HttpBody(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -71,12 +84,6 @@ public  final class HttpBody extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -89,12 +96,19 @@ public  final class HttpBody extends
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               extensions_ = new java.util.ArrayList<com.google.protobuf.Any>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             extensions_.add(
                 input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -105,9 +119,10 @@ public  final class HttpBody extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         extensions_ = java.util.Collections.unmodifiableList(extensions_);
       }
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -116,6 +131,7 @@ public  final class HttpBody extends
     return com.google.api.HttpBodyProto.internal_static_google_api_HttpBody_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.api.HttpBodyProto.internal_static_google_api_HttpBody_fieldAccessorTable
@@ -123,7 +139,6 @@ public  final class HttpBody extends
             com.google.api.HttpBody.class, com.google.api.HttpBody.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CONTENT_TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object contentType_;
   /**
@@ -131,8 +146,10 @@ public  final class HttpBody extends
    * The HTTP Content-Type header value specifying the content type of the body.
    * </pre>
    *
-   * <code>optional string content_type = 1;</code>
+   * <code>string content_type = 1;</code>
+   * @return The contentType.
    */
+  @java.lang.Override
   public java.lang.String getContentType() {
     java.lang.Object ref = contentType_;
     if (ref instanceof java.lang.String) {
@@ -150,8 +167,10 @@ public  final class HttpBody extends
    * The HTTP Content-Type header value specifying the content type of the body.
    * </pre>
    *
-   * <code>optional string content_type = 1;</code>
+   * <code>string content_type = 1;</code>
+   * @return The bytes for contentType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getContentTypeBytes() {
     java.lang.Object ref = contentType_;
@@ -173,8 +192,10 @@ public  final class HttpBody extends
    * The HTTP request/response body as raw binary.
    * </pre>
    *
-   * <code>optional bytes data = 2;</code>
+   * <code>bytes data = 2;</code>
+   * @return The data.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getData() {
     return data_;
   }
@@ -189,6 +210,7 @@ public  final class HttpBody extends
    *
    * <code>repeated .google.protobuf.Any extensions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.protobuf.Any> getExtensionsList() {
     return extensions_;
   }
@@ -200,6 +222,7 @@ public  final class HttpBody extends
    *
    * <code>repeated .google.protobuf.Any extensions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
       getExtensionsOrBuilderList() {
     return extensions_;
@@ -212,6 +235,7 @@ public  final class HttpBody extends
    *
    * <code>repeated .google.protobuf.Any extensions = 3;</code>
    */
+  @java.lang.Override
   public int getExtensionsCount() {
     return extensions_.size();
   }
@@ -223,6 +247,7 @@ public  final class HttpBody extends
    *
    * <code>repeated .google.protobuf.Any extensions = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Any getExtensions(int index) {
     return extensions_.get(index);
   }
@@ -234,12 +259,14 @@ public  final class HttpBody extends
    *
    * <code>repeated .google.protobuf.Any extensions = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.AnyOrBuilder getExtensionsOrBuilder(
       int index) {
     return extensions_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -249,6 +276,7 @@ public  final class HttpBody extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getContentTypeBytes().isEmpty()) {
@@ -260,8 +288,10 @@ public  final class HttpBody extends
     for (int i = 0; i < extensions_.size(); i++) {
       output.writeMessage(3, extensions_.get(i));
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -278,11 +308,11 @@ public  final class HttpBody extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, extensions_.get(i));
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -293,14 +323,14 @@ public  final class HttpBody extends
     }
     com.google.api.HttpBody other = (com.google.api.HttpBody) obj;
 
-    boolean result = true;
-    result = result && getContentType()
-        .equals(other.getContentType());
-    result = result && getData()
-        .equals(other.getData());
-    result = result && getExtensionsList()
-        .equals(other.getExtensionsList());
-    return result;
+    if (!getContentType()
+        .equals(other.getContentType())) return false;
+    if (!getData()
+        .equals(other.getData())) return false;
+    if (!getExtensionsList()
+        .equals(other.getExtensionsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -309,7 +339,7 @@ public  final class HttpBody extends
       return memoizedHashCode;
     }
     int hash = 41;
-    hash = (19 * hash) + getDescriptorForType().hashCode();
+    hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getContentType().hashCode();
     hash = (37 * hash) + DATA_FIELD_NUMBER;
@@ -323,6 +353,17 @@ public  final class HttpBody extends
     return hash;
   }
 
+  public static com.google.api.HttpBody parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.google.api.HttpBody parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static com.google.api.HttpBody parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -382,6 +423,7 @@ public  final class HttpBody extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -389,6 +431,7 @@ public  final class HttpBody extends
   public static Builder newBuilder(com.google.api.HttpBody prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -444,6 +487,7 @@ public  final class HttpBody extends
       return com.google.api.HttpBodyProto.internal_static_google_api_HttpBody_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.api.HttpBodyProto.internal_static_google_api_HttpBody_fieldAccessorTable
@@ -467,6 +511,7 @@ public  final class HttpBody extends
         getExtensionsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       contentType_ = "";
@@ -475,22 +520,25 @@ public  final class HttpBody extends
 
       if (extensionsBuilder_ == null) {
         extensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         extensionsBuilder_.clear();
       }
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.api.HttpBodyProto.internal_static_google_api_HttpBody_descriptor;
     }
 
+    @java.lang.Override
     public com.google.api.HttpBody getDefaultInstanceForType() {
       return com.google.api.HttpBody.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.api.HttpBody build() {
       com.google.api.HttpBody result = buildPartial();
       if (!result.isInitialized()) {
@@ -499,52 +547,58 @@ public  final class HttpBody extends
       return result;
     }
 
+    @java.lang.Override
     public com.google.api.HttpBody buildPartial() {
       com.google.api.HttpBody result = new com.google.api.HttpBody(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.contentType_ = contentType_;
       result.data_ = data_;
       if (extensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           extensions_ = java.util.Collections.unmodifiableList(extensions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.extensions_ = extensions_;
       } else {
         result.extensions_ = extensionsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.api.HttpBody) {
         return mergeFrom((com.google.api.HttpBody)other);
@@ -567,7 +621,7 @@ public  final class HttpBody extends
         if (!other.extensions_.isEmpty()) {
           if (extensions_.isEmpty()) {
             extensions_ = other.extensions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureExtensionsIsMutable();
             extensions_.addAll(other.extensions_);
@@ -580,7 +634,7 @@ public  final class HttpBody extends
             extensionsBuilder_.dispose();
             extensionsBuilder_ = null;
             extensions_ = other.extensions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             extensionsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getExtensionsFieldBuilder() : null;
@@ -589,14 +643,17 @@ public  final class HttpBody extends
           }
         }
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -622,7 +679,8 @@ public  final class HttpBody extends
      * The HTTP Content-Type header value specifying the content type of the body.
      * </pre>
      *
-     * <code>optional string content_type = 1;</code>
+     * <code>string content_type = 1;</code>
+     * @return The contentType.
      */
     public java.lang.String getContentType() {
       java.lang.Object ref = contentType_;
@@ -641,7 +699,8 @@ public  final class HttpBody extends
      * The HTTP Content-Type header value specifying the content type of the body.
      * </pre>
      *
-     * <code>optional string content_type = 1;</code>
+     * <code>string content_type = 1;</code>
+     * @return The bytes for contentType.
      */
     public com.google.protobuf.ByteString
         getContentTypeBytes() {
@@ -661,7 +720,9 @@ public  final class HttpBody extends
      * The HTTP Content-Type header value specifying the content type of the body.
      * </pre>
      *
-     * <code>optional string content_type = 1;</code>
+     * <code>string content_type = 1;</code>
+     * @param value The contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentType(
         java.lang.String value) {
@@ -678,7 +739,8 @@ public  final class HttpBody extends
      * The HTTP Content-Type header value specifying the content type of the body.
      * </pre>
      *
-     * <code>optional string content_type = 1;</code>
+     * <code>string content_type = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearContentType() {
       
@@ -691,7 +753,9 @@ public  final class HttpBody extends
      * The HTTP Content-Type header value specifying the content type of the body.
      * </pre>
      *
-     * <code>optional string content_type = 1;</code>
+     * <code>string content_type = 1;</code>
+     * @param value The bytes for contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentTypeBytes(
         com.google.protobuf.ByteString value) {
@@ -711,8 +775,10 @@ public  final class HttpBody extends
      * The HTTP request/response body as raw binary.
      * </pre>
      *
-     * <code>optional bytes data = 2;</code>
+     * <code>bytes data = 2;</code>
+     * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
@@ -721,7 +787,9 @@ public  final class HttpBody extends
      * The HTTP request/response body as raw binary.
      * </pre>
      *
-     * <code>optional bytes data = 2;</code>
+     * <code>bytes data = 2;</code>
+     * @param value The data to set.
+     * @return This builder for chaining.
      */
     public Builder setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -737,7 +805,8 @@ public  final class HttpBody extends
      * The HTTP request/response body as raw binary.
      * </pre>
      *
-     * <code>optional bytes data = 2;</code>
+     * <code>bytes data = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearData() {
       
@@ -749,9 +818,9 @@ public  final class HttpBody extends
     private java.util.List<com.google.protobuf.Any> extensions_ =
       java.util.Collections.emptyList();
     private void ensureExtensionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         extensions_ = new java.util.ArrayList<com.google.protobuf.Any>(extensions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -956,7 +1025,7 @@ public  final class HttpBody extends
     public Builder clearExtensions() {
       if (extensionsBuilder_ == null) {
         extensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         extensionsBuilder_.clear();
@@ -1068,21 +1137,23 @@ public  final class HttpBody extends
         extensionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                 extensions_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         extensions_ = null;
       }
       return extensionsBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -1101,11 +1172,12 @@ public  final class HttpBody extends
 
   private static final com.google.protobuf.Parser<HttpBody>
       PARSER = new com.google.protobuf.AbstractParser<HttpBody>() {
+    @java.lang.Override
     public HttpBody parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HttpBody(input, extensionRegistry);
+      return new HttpBody(input, extensionRegistry);
     }
   };
 
@@ -1118,6 +1190,7 @@ public  final class HttpBody extends
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.api.HttpBody getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

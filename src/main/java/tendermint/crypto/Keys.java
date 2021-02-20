@@ -19,12 +19,14 @@ public final class Keys {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional bytes ed25519 = 1;</code>
+     * <code>bytes ed25519 = 1;</code>
+     * @return The ed25519.
      */
     com.google.protobuf.ByteString getEd25519();
 
     /**
-     * <code>optional bytes secp256k1 = 2;</code>
+     * <code>bytes secp256k1 = 2;</code>
+     * @return The secp256k1.
      */
     com.google.protobuf.ByteString getSecp256K1();
 
@@ -37,10 +39,11 @@ public final class Keys {
    *
    * Protobuf type {@code tendermint.crypto.PublicKey}
    */
-  public  static final class PublicKey extends
+  public static final class PublicKey extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tendermint.crypto.PublicKey)
       PublicKeyOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use PublicKey.newBuilder() to construct.
     private PublicKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -49,16 +52,27 @@ public final class Keys {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PublicKey();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private PublicKey(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -67,12 +81,6 @@ public final class Keys {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               sumCase_ = 1;
               sum_ = input.readBytes();
@@ -83,6 +91,13 @@ public final class Keys {
               sum_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -91,6 +106,7 @@ public final class Keys {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -99,6 +115,7 @@ public final class Keys {
       return tendermint.crypto.Keys.internal_static_tendermint_crypto_PublicKey_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return tendermint.crypto.Keys.internal_static_tendermint_crypto_PublicKey_fieldAccessorTable
@@ -109,7 +126,8 @@ public final class Keys {
     private int sumCase_ = 0;
     private java.lang.Object sum_;
     public enum SumCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       ED25519(1),
       SECP256K1(2),
       SUM_NOT_SET(0);
@@ -118,6 +136,8 @@ public final class Keys {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -146,8 +166,10 @@ public final class Keys {
 
     public static final int ED25519_FIELD_NUMBER = 1;
     /**
-     * <code>optional bytes ed25519 = 1;</code>
+     * <code>bytes ed25519 = 1;</code>
+     * @return The ed25519.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEd25519() {
       if (sumCase_ == 1) {
         return (com.google.protobuf.ByteString) sum_;
@@ -157,8 +179,10 @@ public final class Keys {
 
     public static final int SECP256K1_FIELD_NUMBER = 2;
     /**
-     * <code>optional bytes secp256k1 = 2;</code>
+     * <code>bytes secp256k1 = 2;</code>
+     * @return The secp256k1.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSecp256K1() {
       if (sumCase_ == 2) {
         return (com.google.protobuf.ByteString) sum_;
@@ -167,6 +191,7 @@ public final class Keys {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -176,18 +201,21 @@ public final class Keys {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sumCase_ == 1) {
         output.writeBytes(
-            1, (com.google.protobuf.ByteString)((com.google.protobuf.ByteString) sum_));
+            1, (com.google.protobuf.ByteString) sum_);
       }
       if (sumCase_ == 2) {
         output.writeBytes(
-            2, (com.google.protobuf.ByteString)((com.google.protobuf.ByteString) sum_));
+            2, (com.google.protobuf.ByteString) sum_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -196,18 +224,18 @@ public final class Keys {
       if (sumCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(
-              1, (com.google.protobuf.ByteString)((com.google.protobuf.ByteString) sum_));
+              1, (com.google.protobuf.ByteString) sum_);
       }
       if (sumCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(
-              2, (com.google.protobuf.ByteString)((com.google.protobuf.ByteString) sum_));
+              2, (com.google.protobuf.ByteString) sum_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -218,23 +246,21 @@ public final class Keys {
       }
       tendermint.crypto.Keys.PublicKey other = (tendermint.crypto.Keys.PublicKey) obj;
 
-      boolean result = true;
-      result = result && getSumCase().equals(
-          other.getSumCase());
-      if (!result) return false;
+      if (!getSumCase().equals(other.getSumCase())) return false;
       switch (sumCase_) {
         case 1:
-          result = result && getEd25519()
-              .equals(other.getEd25519());
+          if (!getEd25519()
+              .equals(other.getEd25519())) return false;
           break;
         case 2:
-          result = result && getSecp256K1()
-              .equals(other.getSecp256K1());
+          if (!getSecp256K1()
+              .equals(other.getSecp256K1())) return false;
           break;
         case 0:
         default:
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -243,7 +269,7 @@ public final class Keys {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       switch (sumCase_) {
         case 1:
           hash = (37 * hash) + ED25519_FIELD_NUMBER;
@@ -261,6 +287,17 @@ public final class Keys {
       return hash;
     }
 
+    public static tendermint.crypto.Keys.PublicKey parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static tendermint.crypto.Keys.PublicKey parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static tendermint.crypto.Keys.PublicKey parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -320,6 +357,7 @@ public final class Keys {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -327,6 +365,7 @@ public final class Keys {
     public static Builder newBuilder(tendermint.crypto.Keys.PublicKey prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -354,6 +393,7 @@ public final class Keys {
         return tendermint.crypto.Keys.internal_static_tendermint_crypto_PublicKey_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return tendermint.crypto.Keys.internal_static_tendermint_crypto_PublicKey_fieldAccessorTable
@@ -376,6 +416,7 @@ public final class Keys {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         sumCase_ = 0;
@@ -383,15 +424,18 @@ public final class Keys {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return tendermint.crypto.Keys.internal_static_tendermint_crypto_PublicKey_descriptor;
       }
 
+      @java.lang.Override
       public tendermint.crypto.Keys.PublicKey getDefaultInstanceForType() {
         return tendermint.crypto.Keys.PublicKey.getDefaultInstance();
       }
 
+      @java.lang.Override
       public tendermint.crypto.Keys.PublicKey build() {
         tendermint.crypto.Keys.PublicKey result = buildPartial();
         if (!result.isInitialized()) {
@@ -400,6 +444,7 @@ public final class Keys {
         return result;
       }
 
+      @java.lang.Override
       public tendermint.crypto.Keys.PublicKey buildPartial() {
         tendermint.crypto.Keys.PublicKey result = new tendermint.crypto.Keys.PublicKey(this);
         if (sumCase_ == 1) {
@@ -413,32 +458,39 @@ public final class Keys {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof tendermint.crypto.Keys.PublicKey) {
           return mergeFrom((tendermint.crypto.Keys.PublicKey)other);
@@ -463,14 +515,17 @@ public final class Keys {
             break;
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -505,7 +560,8 @@ public final class Keys {
 
 
       /**
-       * <code>optional bytes ed25519 = 1;</code>
+       * <code>bytes ed25519 = 1;</code>
+       * @return The ed25519.
        */
       public com.google.protobuf.ByteString getEd25519() {
         if (sumCase_ == 1) {
@@ -514,7 +570,9 @@ public final class Keys {
         return com.google.protobuf.ByteString.EMPTY;
       }
       /**
-       * <code>optional bytes ed25519 = 1;</code>
+       * <code>bytes ed25519 = 1;</code>
+       * @param value The ed25519 to set.
+       * @return This builder for chaining.
        */
       public Builder setEd25519(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -526,7 +584,8 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>optional bytes ed25519 = 1;</code>
+       * <code>bytes ed25519 = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEd25519() {
         if (sumCase_ == 1) {
@@ -538,7 +597,8 @@ public final class Keys {
       }
 
       /**
-       * <code>optional bytes secp256k1 = 2;</code>
+       * <code>bytes secp256k1 = 2;</code>
+       * @return The secp256k1.
        */
       public com.google.protobuf.ByteString getSecp256K1() {
         if (sumCase_ == 2) {
@@ -547,7 +607,9 @@ public final class Keys {
         return com.google.protobuf.ByteString.EMPTY;
       }
       /**
-       * <code>optional bytes secp256k1 = 2;</code>
+       * <code>bytes secp256k1 = 2;</code>
+       * @param value The secp256k1 to set.
+       * @return This builder for chaining.
        */
       public Builder setSecp256K1(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -559,7 +621,8 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>optional bytes secp256k1 = 2;</code>
+       * <code>bytes secp256k1 = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSecp256K1() {
         if (sumCase_ == 2) {
@@ -569,14 +632,16 @@ public final class Keys {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -595,11 +660,12 @@ public final class Keys {
 
     private static final com.google.protobuf.Parser<PublicKey>
         PARSER = new com.google.protobuf.AbstractParser<PublicKey>() {
+      @java.lang.Override
       public PublicKey parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PublicKey(input, extensionRegistry);
+        return new PublicKey(input, extensionRegistry);
       }
     };
 
@@ -612,6 +678,7 @@ public final class Keys {
       return PARSER;
     }
 
+    @java.lang.Override
     public tendermint.crypto.Keys.PublicKey getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -639,19 +706,11 @@ public final class Keys {
       "ermint/tendermint/proto/tendermint/crypt" +
       "ob\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_tendermint_crypto_PublicKey_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_tendermint_crypto_PublicKey_fieldAccessorTable = new

@@ -23,7 +23,8 @@ public final class TxOuterClass {
      * body is the processable content of the transaction
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+     * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
+     * @return Whether the body field is set.
      */
     boolean hasBody();
     /**
@@ -31,7 +32,8 @@ public final class TxOuterClass {
      * body is the processable content of the transaction
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+     * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
+     * @return The body.
      */
     cosmos.tx.v1beta1.TxOuterClass.TxBody getBody();
     /**
@@ -39,7 +41,7 @@ public final class TxOuterClass {
      * body is the processable content of the transaction
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+     * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
      */
     cosmos.tx.v1beta1.TxOuterClass.TxBodyOrBuilder getBodyOrBuilder();
 
@@ -49,7 +51,8 @@ public final class TxOuterClass {
      * specifically signers, signer modes and fee
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+     * @return Whether the authInfo field is set.
      */
     boolean hasAuthInfo();
     /**
@@ -58,7 +61,8 @@ public final class TxOuterClass {
      * specifically signers, signer modes and fee
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+     * @return The authInfo.
      */
     cosmos.tx.v1beta1.TxOuterClass.AuthInfo getAuthInfo();
     /**
@@ -67,7 +71,7 @@ public final class TxOuterClass {
      * specifically signers, signer modes and fee
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
      */
     cosmos.tx.v1beta1.TxOuterClass.AuthInfoOrBuilder getAuthInfoOrBuilder();
 
@@ -79,6 +83,7 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @return A list containing the signatures.
      */
     java.util.List<com.google.protobuf.ByteString> getSignaturesList();
     /**
@@ -89,6 +94,7 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @return The count of signatures.
      */
     int getSignaturesCount();
     /**
@@ -99,6 +105,8 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @param index The index of the element to return.
+     * @return The signatures at the given index.
      */
     com.google.protobuf.ByteString getSignatures(int index);
   }
@@ -109,10 +117,11 @@ public final class TxOuterClass {
    *
    * Protobuf type {@code cosmos.tx.v1beta1.Tx}
    */
-  public  static final class Tx extends
+  public static final class Tx extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.Tx)
       TxOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Tx.newBuilder() to construct.
     private Tx(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -122,16 +131,28 @@ public final class TxOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Tx();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Tx(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -140,12 +161,6 @@ public final class TxOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmos.tx.v1beta1.TxOuterClass.TxBody.Builder subBuilder = null;
               if (body_ != null) {
@@ -173,11 +188,18 @@ public final class TxOuterClass {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 signatures_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               signatures_.add(input.readBytes());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -188,9 +210,10 @@ public final class TxOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          signatures_ = java.util.Collections.unmodifiableList(signatures_);
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          signatures_ = java.util.Collections.unmodifiableList(signatures_); // C
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -199,6 +222,7 @@ public final class TxOuterClass {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tx_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tx_fieldAccessorTable
@@ -206,7 +230,6 @@ public final class TxOuterClass {
               cosmos.tx.v1beta1.TxOuterClass.Tx.class, cosmos.tx.v1beta1.TxOuterClass.Tx.Builder.class);
     }
 
-    private int bitField0_;
     public static final int BODY_FIELD_NUMBER = 1;
     private cosmos.tx.v1beta1.TxOuterClass.TxBody body_;
     /**
@@ -214,8 +237,10 @@ public final class TxOuterClass {
      * body is the processable content of the transaction
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+     * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
+     * @return Whether the body field is set.
      */
+    @java.lang.Override
     public boolean hasBody() {
       return body_ != null;
     }
@@ -224,8 +249,10 @@ public final class TxOuterClass {
      * body is the processable content of the transaction
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+     * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
+     * @return The body.
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.TxBody getBody() {
       return body_ == null ? cosmos.tx.v1beta1.TxOuterClass.TxBody.getDefaultInstance() : body_;
     }
@@ -234,8 +261,9 @@ public final class TxOuterClass {
      * body is the processable content of the transaction
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+     * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.TxBodyOrBuilder getBodyOrBuilder() {
       return getBody();
     }
@@ -248,8 +276,10 @@ public final class TxOuterClass {
      * specifically signers, signer modes and fee
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+     * @return Whether the authInfo field is set.
      */
+    @java.lang.Override
     public boolean hasAuthInfo() {
       return authInfo_ != null;
     }
@@ -259,8 +289,10 @@ public final class TxOuterClass {
      * specifically signers, signer modes and fee
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+     * @return The authInfo.
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.AuthInfo getAuthInfo() {
       return authInfo_ == null ? cosmos.tx.v1beta1.TxOuterClass.AuthInfo.getDefaultInstance() : authInfo_;
     }
@@ -270,8 +302,9 @@ public final class TxOuterClass {
      * specifically signers, signer modes and fee
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.AuthInfoOrBuilder getAuthInfoOrBuilder() {
       return getAuthInfo();
     }
@@ -286,7 +319,9 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @return A list containing the signatures.
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.ByteString>
         getSignaturesList() {
       return signatures_;
@@ -299,6 +334,7 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @return The count of signatures.
      */
     public int getSignaturesCount() {
       return signatures_.size();
@@ -311,12 +347,15 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @param index The index of the element to return.
+     * @return The signatures at the given index.
      */
     public com.google.protobuf.ByteString getSignatures(int index) {
       return signatures_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -326,6 +365,7 @@ public final class TxOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (body_ != null) {
@@ -337,8 +377,10 @@ public final class TxOuterClass {
       for (int i = 0; i < signatures_.size(); i++) {
         output.writeBytes(3, signatures_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -361,11 +403,11 @@ public final class TxOuterClass {
         size += dataSize;
         size += 1 * getSignaturesList().size();
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -376,20 +418,20 @@ public final class TxOuterClass {
       }
       cosmos.tx.v1beta1.TxOuterClass.Tx other = (cosmos.tx.v1beta1.TxOuterClass.Tx) obj;
 
-      boolean result = true;
-      result = result && (hasBody() == other.hasBody());
+      if (hasBody() != other.hasBody()) return false;
       if (hasBody()) {
-        result = result && getBody()
-            .equals(other.getBody());
+        if (!getBody()
+            .equals(other.getBody())) return false;
       }
-      result = result && (hasAuthInfo() == other.hasAuthInfo());
+      if (hasAuthInfo() != other.hasAuthInfo()) return false;
       if (hasAuthInfo()) {
-        result = result && getAuthInfo()
-            .equals(other.getAuthInfo());
+        if (!getAuthInfo()
+            .equals(other.getAuthInfo())) return false;
       }
-      result = result && getSignaturesList()
-          .equals(other.getSignaturesList());
-      return result;
+      if (!getSignaturesList()
+          .equals(other.getSignaturesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -398,7 +440,7 @@ public final class TxOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasBody()) {
         hash = (37 * hash) + BODY_FIELD_NUMBER;
         hash = (53 * hash) + getBody().hashCode();
@@ -416,6 +458,17 @@ public final class TxOuterClass {
       return hash;
     }
 
+    public static cosmos.tx.v1beta1.TxOuterClass.Tx parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tx parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.tx.v1beta1.TxOuterClass.Tx parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -475,6 +528,7 @@ public final class TxOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -482,6 +536,7 @@ public final class TxOuterClass {
     public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.Tx prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -509,6 +564,7 @@ public final class TxOuterClass {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tx_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tx_fieldAccessorTable
@@ -531,6 +587,7 @@ public final class TxOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (bodyBuilder_ == null) {
@@ -546,19 +603,22 @@ public final class TxOuterClass {
           authInfoBuilder_ = null;
         }
         signatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tx_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.Tx getDefaultInstanceForType() {
         return cosmos.tx.v1beta1.TxOuterClass.Tx.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.Tx build() {
         cosmos.tx.v1beta1.TxOuterClass.Tx result = buildPartial();
         if (!result.isInitialized()) {
@@ -567,10 +627,10 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.Tx buildPartial() {
         cosmos.tx.v1beta1.TxOuterClass.Tx result = new cosmos.tx.v1beta1.TxOuterClass.Tx(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (bodyBuilder_ == null) {
           result.body_ = body_;
         } else {
@@ -581,42 +641,48 @@ public final class TxOuterClass {
         } else {
           result.authInfo_ = authInfoBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           signatures_ = java.util.Collections.unmodifiableList(signatures_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.signatures_ = signatures_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.tx.v1beta1.TxOuterClass.Tx) {
           return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.Tx)other);
@@ -637,21 +703,24 @@ public final class TxOuterClass {
         if (!other.signatures_.isEmpty()) {
           if (signatures_.isEmpty()) {
             signatures_ = other.signatures_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSignaturesIsMutable();
             signatures_.addAll(other.signatures_);
           }
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -671,7 +740,7 @@ public final class TxOuterClass {
       }
       private int bitField0_;
 
-      private cosmos.tx.v1beta1.TxOuterClass.TxBody body_ = null;
+      private cosmos.tx.v1beta1.TxOuterClass.TxBody body_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.tx.v1beta1.TxOuterClass.TxBody, cosmos.tx.v1beta1.TxOuterClass.TxBody.Builder, cosmos.tx.v1beta1.TxOuterClass.TxBodyOrBuilder> bodyBuilder_;
       /**
@@ -679,7 +748,8 @@ public final class TxOuterClass {
        * body is the processable content of the transaction
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * @return Whether the body field is set.
        */
       public boolean hasBody() {
         return bodyBuilder_ != null || body_ != null;
@@ -689,7 +759,8 @@ public final class TxOuterClass {
        * body is the processable content of the transaction
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * @return The body.
        */
       public cosmos.tx.v1beta1.TxOuterClass.TxBody getBody() {
         if (bodyBuilder_ == null) {
@@ -703,7 +774,7 @@ public final class TxOuterClass {
        * body is the processable content of the transaction
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
        */
       public Builder setBody(cosmos.tx.v1beta1.TxOuterClass.TxBody value) {
         if (bodyBuilder_ == null) {
@@ -723,7 +794,7 @@ public final class TxOuterClass {
        * body is the processable content of the transaction
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
        */
       public Builder setBody(
           cosmos.tx.v1beta1.TxOuterClass.TxBody.Builder builderForValue) {
@@ -741,7 +812,7 @@ public final class TxOuterClass {
        * body is the processable content of the transaction
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
        */
       public Builder mergeBody(cosmos.tx.v1beta1.TxOuterClass.TxBody value) {
         if (bodyBuilder_ == null) {
@@ -763,7 +834,7 @@ public final class TxOuterClass {
        * body is the processable content of the transaction
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
        */
       public Builder clearBody() {
         if (bodyBuilder_ == null) {
@@ -781,7 +852,7 @@ public final class TxOuterClass {
        * body is the processable content of the transaction
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
        */
       public cosmos.tx.v1beta1.TxOuterClass.TxBody.Builder getBodyBuilder() {
         
@@ -793,7 +864,7 @@ public final class TxOuterClass {
        * body is the processable content of the transaction
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
        */
       public cosmos.tx.v1beta1.TxOuterClass.TxBodyOrBuilder getBodyOrBuilder() {
         if (bodyBuilder_ != null) {
@@ -808,7 +879,7 @@ public final class TxOuterClass {
        * body is the processable content of the transaction
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.TxBody body = 1;</code>
+       * <code>.cosmos.tx.v1beta1.TxBody body = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.tx.v1beta1.TxOuterClass.TxBody, cosmos.tx.v1beta1.TxOuterClass.TxBody.Builder, cosmos.tx.v1beta1.TxOuterClass.TxBodyOrBuilder> 
@@ -824,7 +895,7 @@ public final class TxOuterClass {
         return bodyBuilder_;
       }
 
-      private cosmos.tx.v1beta1.TxOuterClass.AuthInfo authInfo_ = null;
+      private cosmos.tx.v1beta1.TxOuterClass.AuthInfo authInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.tx.v1beta1.TxOuterClass.AuthInfo, cosmos.tx.v1beta1.TxOuterClass.AuthInfo.Builder, cosmos.tx.v1beta1.TxOuterClass.AuthInfoOrBuilder> authInfoBuilder_;
       /**
@@ -833,7 +904,8 @@ public final class TxOuterClass {
        * specifically signers, signer modes and fee
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * @return Whether the authInfo field is set.
        */
       public boolean hasAuthInfo() {
         return authInfoBuilder_ != null || authInfo_ != null;
@@ -844,7 +916,8 @@ public final class TxOuterClass {
        * specifically signers, signer modes and fee
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * @return The authInfo.
        */
       public cosmos.tx.v1beta1.TxOuterClass.AuthInfo getAuthInfo() {
         if (authInfoBuilder_ == null) {
@@ -859,7 +932,7 @@ public final class TxOuterClass {
        * specifically signers, signer modes and fee
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
        */
       public Builder setAuthInfo(cosmos.tx.v1beta1.TxOuterClass.AuthInfo value) {
         if (authInfoBuilder_ == null) {
@@ -880,7 +953,7 @@ public final class TxOuterClass {
        * specifically signers, signer modes and fee
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
        */
       public Builder setAuthInfo(
           cosmos.tx.v1beta1.TxOuterClass.AuthInfo.Builder builderForValue) {
@@ -899,7 +972,7 @@ public final class TxOuterClass {
        * specifically signers, signer modes and fee
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
        */
       public Builder mergeAuthInfo(cosmos.tx.v1beta1.TxOuterClass.AuthInfo value) {
         if (authInfoBuilder_ == null) {
@@ -922,7 +995,7 @@ public final class TxOuterClass {
        * specifically signers, signer modes and fee
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
        */
       public Builder clearAuthInfo() {
         if (authInfoBuilder_ == null) {
@@ -941,7 +1014,7 @@ public final class TxOuterClass {
        * specifically signers, signer modes and fee
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
        */
       public cosmos.tx.v1beta1.TxOuterClass.AuthInfo.Builder getAuthInfoBuilder() {
         
@@ -954,7 +1027,7 @@ public final class TxOuterClass {
        * specifically signers, signer modes and fee
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
        */
       public cosmos.tx.v1beta1.TxOuterClass.AuthInfoOrBuilder getAuthInfoOrBuilder() {
         if (authInfoBuilder_ != null) {
@@ -970,7 +1043,7 @@ public final class TxOuterClass {
        * specifically signers, signer modes and fee
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.AuthInfo auth_info = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.tx.v1beta1.TxOuterClass.AuthInfo, cosmos.tx.v1beta1.TxOuterClass.AuthInfo.Builder, cosmos.tx.v1beta1.TxOuterClass.AuthInfoOrBuilder> 
@@ -988,9 +1061,9 @@ public final class TxOuterClass {
 
       private java.util.List<com.google.protobuf.ByteString> signatures_ = java.util.Collections.emptyList();
       private void ensureSignaturesIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           signatures_ = new java.util.ArrayList<com.google.protobuf.ByteString>(signatures_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -1001,10 +1074,12 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @return A list containing the signatures.
        */
       public java.util.List<com.google.protobuf.ByteString>
           getSignaturesList() {
-        return java.util.Collections.unmodifiableList(signatures_);
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(signatures_) : signatures_;
       }
       /**
        * <pre>
@@ -1014,6 +1089,7 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @return The count of signatures.
        */
       public int getSignaturesCount() {
         return signatures_.size();
@@ -1026,6 +1102,8 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @param index The index of the element to return.
+       * @return The signatures at the given index.
        */
       public com.google.protobuf.ByteString getSignatures(int index) {
         return signatures_.get(index);
@@ -1038,6 +1116,9 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The signatures to set.
+       * @return This builder for chaining.
        */
       public Builder setSignatures(
           int index, com.google.protobuf.ByteString value) {
@@ -1057,6 +1138,8 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @param value The signatures to add.
+       * @return This builder for chaining.
        */
       public Builder addSignatures(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1075,6 +1158,8 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @param values The signatures to add.
+       * @return This builder for chaining.
        */
       public Builder addAllSignatures(
           java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -1092,21 +1177,24 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSignatures() {
         signatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1125,11 +1213,12 @@ public final class TxOuterClass {
 
     private static final com.google.protobuf.Parser<Tx>
         PARSER = new com.google.protobuf.AbstractParser<Tx>() {
+      @java.lang.Override
       public Tx parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Tx(input, extensionRegistry);
+        return new Tx(input, extensionRegistry);
       }
     };
 
@@ -1142,6 +1231,7 @@ public final class TxOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.Tx getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1158,7 +1248,8 @@ public final class TxOuterClass {
      * representation in SignDoc.
      * </pre>
      *
-     * <code>optional bytes body_bytes = 1;</code>
+     * <code>bytes body_bytes = 1;</code>
+     * @return The bodyBytes.
      */
     com.google.protobuf.ByteString getBodyBytes();
 
@@ -1168,7 +1259,8 @@ public final class TxOuterClass {
      * representation in SignDoc.
      * </pre>
      *
-     * <code>optional bytes auth_info_bytes = 2;</code>
+     * <code>bytes auth_info_bytes = 2;</code>
+     * @return The authInfoBytes.
      */
     com.google.protobuf.ByteString getAuthInfoBytes();
 
@@ -1180,6 +1272,7 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @return A list containing the signatures.
      */
     java.util.List<com.google.protobuf.ByteString> getSignaturesList();
     /**
@@ -1190,6 +1283,7 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @return The count of signatures.
      */
     int getSignaturesCount();
     /**
@@ -1200,6 +1294,8 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @param index The index of the element to return.
+     * @return The signatures at the given index.
      */
     com.google.protobuf.ByteString getSignatures(int index);
   }
@@ -1214,10 +1310,11 @@ public final class TxOuterClass {
    *
    * Protobuf type {@code cosmos.tx.v1beta1.TxRaw}
    */
-  public  static final class TxRaw extends
+  public static final class TxRaw extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.TxRaw)
       TxRawOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use TxRaw.newBuilder() to construct.
     private TxRaw(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1229,16 +1326,28 @@ public final class TxOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxRaw();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private TxRaw(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1247,12 +1356,6 @@ public final class TxOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               bodyBytes_ = input.readBytes();
@@ -1264,11 +1367,18 @@ public final class TxOuterClass {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 signatures_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               signatures_.add(input.readBytes());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1279,9 +1389,10 @@ public final class TxOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          signatures_ = java.util.Collections.unmodifiableList(signatures_);
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          signatures_ = java.util.Collections.unmodifiableList(signatures_); // C
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1290,6 +1401,7 @@ public final class TxOuterClass {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxRaw_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxRaw_fieldAccessorTable
@@ -1297,7 +1409,6 @@ public final class TxOuterClass {
               cosmos.tx.v1beta1.TxOuterClass.TxRaw.class, cosmos.tx.v1beta1.TxOuterClass.TxRaw.Builder.class);
     }
 
-    private int bitField0_;
     public static final int BODY_BYTES_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString bodyBytes_;
     /**
@@ -1306,8 +1417,10 @@ public final class TxOuterClass {
      * representation in SignDoc.
      * </pre>
      *
-     * <code>optional bytes body_bytes = 1;</code>
+     * <code>bytes body_bytes = 1;</code>
+     * @return The bodyBytes.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBodyBytes() {
       return bodyBytes_;
     }
@@ -1320,8 +1433,10 @@ public final class TxOuterClass {
      * representation in SignDoc.
      * </pre>
      *
-     * <code>optional bytes auth_info_bytes = 2;</code>
+     * <code>bytes auth_info_bytes = 2;</code>
+     * @return The authInfoBytes.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAuthInfoBytes() {
       return authInfoBytes_;
     }
@@ -1336,7 +1451,9 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @return A list containing the signatures.
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.ByteString>
         getSignaturesList() {
       return signatures_;
@@ -1349,6 +1466,7 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @return The count of signatures.
      */
     public int getSignaturesCount() {
       return signatures_.size();
@@ -1361,12 +1479,15 @@ public final class TxOuterClass {
      * </pre>
      *
      * <code>repeated bytes signatures = 3;</code>
+     * @param index The index of the element to return.
+     * @return The signatures at the given index.
      */
     public com.google.protobuf.ByteString getSignatures(int index) {
       return signatures_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1376,6 +1497,7 @@ public final class TxOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!bodyBytes_.isEmpty()) {
@@ -1387,8 +1509,10 @@ public final class TxOuterClass {
       for (int i = 0; i < signatures_.size(); i++) {
         output.writeBytes(3, signatures_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1411,11 +1535,11 @@ public final class TxOuterClass {
         size += dataSize;
         size += 1 * getSignaturesList().size();
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1426,14 +1550,14 @@ public final class TxOuterClass {
       }
       cosmos.tx.v1beta1.TxOuterClass.TxRaw other = (cosmos.tx.v1beta1.TxOuterClass.TxRaw) obj;
 
-      boolean result = true;
-      result = result && getBodyBytes()
-          .equals(other.getBodyBytes());
-      result = result && getAuthInfoBytes()
-          .equals(other.getAuthInfoBytes());
-      result = result && getSignaturesList()
-          .equals(other.getSignaturesList());
-      return result;
+      if (!getBodyBytes()
+          .equals(other.getBodyBytes())) return false;
+      if (!getAuthInfoBytes()
+          .equals(other.getAuthInfoBytes())) return false;
+      if (!getSignaturesList()
+          .equals(other.getSignaturesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1442,7 +1566,7 @@ public final class TxOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BODY_BYTES_FIELD_NUMBER;
       hash = (53 * hash) + getBodyBytes().hashCode();
       hash = (37 * hash) + AUTH_INFO_BYTES_FIELD_NUMBER;
@@ -1456,6 +1580,17 @@ public final class TxOuterClass {
       return hash;
     }
 
+    public static cosmos.tx.v1beta1.TxOuterClass.TxRaw parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.TxRaw parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.tx.v1beta1.TxOuterClass.TxRaw parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1515,6 +1650,7 @@ public final class TxOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1522,6 +1658,7 @@ public final class TxOuterClass {
     public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.TxRaw prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1553,6 +1690,7 @@ public final class TxOuterClass {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxRaw_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxRaw_fieldAccessorTable
@@ -1575,6 +1713,7 @@ public final class TxOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bodyBytes_ = com.google.protobuf.ByteString.EMPTY;
@@ -1582,19 +1721,22 @@ public final class TxOuterClass {
         authInfoBytes_ = com.google.protobuf.ByteString.EMPTY;
 
         signatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxRaw_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.TxRaw getDefaultInstanceForType() {
         return cosmos.tx.v1beta1.TxOuterClass.TxRaw.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.TxRaw build() {
         cosmos.tx.v1beta1.TxOuterClass.TxRaw result = buildPartial();
         if (!result.isInitialized()) {
@@ -1603,48 +1745,54 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.TxRaw buildPartial() {
         cosmos.tx.v1beta1.TxOuterClass.TxRaw result = new cosmos.tx.v1beta1.TxOuterClass.TxRaw(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.bodyBytes_ = bodyBytes_;
         result.authInfoBytes_ = authInfoBytes_;
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           signatures_ = java.util.Collections.unmodifiableList(signatures_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.signatures_ = signatures_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.tx.v1beta1.TxOuterClass.TxRaw) {
           return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.TxRaw)other);
@@ -1665,21 +1813,24 @@ public final class TxOuterClass {
         if (!other.signatures_.isEmpty()) {
           if (signatures_.isEmpty()) {
             signatures_ = other.signatures_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSignaturesIsMutable();
             signatures_.addAll(other.signatures_);
           }
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1706,8 +1857,10 @@ public final class TxOuterClass {
        * representation in SignDoc.
        * </pre>
        *
-       * <code>optional bytes body_bytes = 1;</code>
+       * <code>bytes body_bytes = 1;</code>
+       * @return The bodyBytes.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getBodyBytes() {
         return bodyBytes_;
       }
@@ -1717,7 +1870,9 @@ public final class TxOuterClass {
        * representation in SignDoc.
        * </pre>
        *
-       * <code>optional bytes body_bytes = 1;</code>
+       * <code>bytes body_bytes = 1;</code>
+       * @param value The bodyBytes to set.
+       * @return This builder for chaining.
        */
       public Builder setBodyBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1734,7 +1889,8 @@ public final class TxOuterClass {
        * representation in SignDoc.
        * </pre>
        *
-       * <code>optional bytes body_bytes = 1;</code>
+       * <code>bytes body_bytes = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBodyBytes() {
         
@@ -1750,8 +1906,10 @@ public final class TxOuterClass {
        * representation in SignDoc.
        * </pre>
        *
-       * <code>optional bytes auth_info_bytes = 2;</code>
+       * <code>bytes auth_info_bytes = 2;</code>
+       * @return The authInfoBytes.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getAuthInfoBytes() {
         return authInfoBytes_;
       }
@@ -1761,7 +1919,9 @@ public final class TxOuterClass {
        * representation in SignDoc.
        * </pre>
        *
-       * <code>optional bytes auth_info_bytes = 2;</code>
+       * <code>bytes auth_info_bytes = 2;</code>
+       * @param value The authInfoBytes to set.
+       * @return This builder for chaining.
        */
       public Builder setAuthInfoBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1778,7 +1938,8 @@ public final class TxOuterClass {
        * representation in SignDoc.
        * </pre>
        *
-       * <code>optional bytes auth_info_bytes = 2;</code>
+       * <code>bytes auth_info_bytes = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAuthInfoBytes() {
         
@@ -1789,9 +1950,9 @@ public final class TxOuterClass {
 
       private java.util.List<com.google.protobuf.ByteString> signatures_ = java.util.Collections.emptyList();
       private void ensureSignaturesIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           signatures_ = new java.util.ArrayList<com.google.protobuf.ByteString>(signatures_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -1802,10 +1963,12 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @return A list containing the signatures.
        */
       public java.util.List<com.google.protobuf.ByteString>
           getSignaturesList() {
-        return java.util.Collections.unmodifiableList(signatures_);
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(signatures_) : signatures_;
       }
       /**
        * <pre>
@@ -1815,6 +1978,7 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @return The count of signatures.
        */
       public int getSignaturesCount() {
         return signatures_.size();
@@ -1827,6 +1991,8 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @param index The index of the element to return.
+       * @return The signatures at the given index.
        */
       public com.google.protobuf.ByteString getSignatures(int index) {
         return signatures_.get(index);
@@ -1839,6 +2005,9 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The signatures to set.
+       * @return This builder for chaining.
        */
       public Builder setSignatures(
           int index, com.google.protobuf.ByteString value) {
@@ -1858,6 +2027,8 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @param value The signatures to add.
+       * @return This builder for chaining.
        */
       public Builder addSignatures(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1876,6 +2047,8 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @param values The signatures to add.
+       * @return This builder for chaining.
        */
       public Builder addAllSignatures(
           java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -1893,21 +2066,24 @@ public final class TxOuterClass {
        * </pre>
        *
        * <code>repeated bytes signatures = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSignatures() {
         signatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1926,11 +2102,12 @@ public final class TxOuterClass {
 
     private static final com.google.protobuf.Parser<TxRaw>
         PARSER = new com.google.protobuf.AbstractParser<TxRaw>() {
+      @java.lang.Override
       public TxRaw parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TxRaw(input, extensionRegistry);
+        return new TxRaw(input, extensionRegistry);
       }
     };
 
@@ -1943,6 +2120,7 @@ public final class TxOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.TxRaw getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1959,7 +2137,8 @@ public final class TxOuterClass {
      * representation in TxRaw.
      * </pre>
      *
-     * <code>optional bytes body_bytes = 1;</code>
+     * <code>bytes body_bytes = 1;</code>
+     * @return The bodyBytes.
      */
     com.google.protobuf.ByteString getBodyBytes();
 
@@ -1969,7 +2148,8 @@ public final class TxOuterClass {
      * representation in TxRaw.
      * </pre>
      *
-     * <code>optional bytes auth_info_bytes = 2;</code>
+     * <code>bytes auth_info_bytes = 2;</code>
+     * @return The authInfoBytes.
      */
     com.google.protobuf.ByteString getAuthInfoBytes();
 
@@ -1980,7 +2160,8 @@ public final class TxOuterClass {
      * attacker
      * </pre>
      *
-     * <code>optional string chain_id = 3;</code>
+     * <code>string chain_id = 3;</code>
+     * @return The chainId.
      */
     java.lang.String getChainId();
     /**
@@ -1990,7 +2171,8 @@ public final class TxOuterClass {
      * attacker
      * </pre>
      *
-     * <code>optional string chain_id = 3;</code>
+     * <code>string chain_id = 3;</code>
+     * @return The bytes for chainId.
      */
     com.google.protobuf.ByteString
         getChainIdBytes();
@@ -2000,7 +2182,8 @@ public final class TxOuterClass {
      * account_number is the account number of the account in state
      * </pre>
      *
-     * <code>optional uint64 account_number = 4;</code>
+     * <code>uint64 account_number = 4;</code>
+     * @return The accountNumber.
      */
     long getAccountNumber();
   }
@@ -2011,10 +2194,11 @@ public final class TxOuterClass {
    *
    * Protobuf type {@code cosmos.tx.v1beta1.SignDoc}
    */
-  public  static final class SignDoc extends
+  public static final class SignDoc extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.SignDoc)
       SignDocOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use SignDoc.newBuilder() to construct.
     private SignDoc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2023,20 +2207,30 @@ public final class TxOuterClass {
       bodyBytes_ = com.google.protobuf.ByteString.EMPTY;
       authInfoBytes_ = com.google.protobuf.ByteString.EMPTY;
       chainId_ = "";
-      accountNumber_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SignDoc();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private SignDoc(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2045,12 +2239,6 @@ public final class TxOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               bodyBytes_ = input.readBytes();
@@ -2072,6 +2260,13 @@ public final class TxOuterClass {
               accountNumber_ = input.readUInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2080,6 +2275,7 @@ public final class TxOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2088,6 +2284,7 @@ public final class TxOuterClass {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignDoc_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignDoc_fieldAccessorTable
@@ -2103,8 +2300,10 @@ public final class TxOuterClass {
      * representation in TxRaw.
      * </pre>
      *
-     * <code>optional bytes body_bytes = 1;</code>
+     * <code>bytes body_bytes = 1;</code>
+     * @return The bodyBytes.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBodyBytes() {
       return bodyBytes_;
     }
@@ -2117,8 +2316,10 @@ public final class TxOuterClass {
      * representation in TxRaw.
      * </pre>
      *
-     * <code>optional bytes auth_info_bytes = 2;</code>
+     * <code>bytes auth_info_bytes = 2;</code>
+     * @return The authInfoBytes.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAuthInfoBytes() {
       return authInfoBytes_;
     }
@@ -2132,8 +2333,10 @@ public final class TxOuterClass {
      * attacker
      * </pre>
      *
-     * <code>optional string chain_id = 3;</code>
+     * <code>string chain_id = 3;</code>
+     * @return The chainId.
      */
+    @java.lang.Override
     public java.lang.String getChainId() {
       java.lang.Object ref = chainId_;
       if (ref instanceof java.lang.String) {
@@ -2153,8 +2356,10 @@ public final class TxOuterClass {
      * attacker
      * </pre>
      *
-     * <code>optional string chain_id = 3;</code>
+     * <code>string chain_id = 3;</code>
+     * @return The bytes for chainId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getChainIdBytes() {
       java.lang.Object ref = chainId_;
@@ -2176,13 +2381,16 @@ public final class TxOuterClass {
      * account_number is the account number of the account in state
      * </pre>
      *
-     * <code>optional uint64 account_number = 4;</code>
+     * <code>uint64 account_number = 4;</code>
+     * @return The accountNumber.
      */
+    @java.lang.Override
     public long getAccountNumber() {
       return accountNumber_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2192,6 +2400,7 @@ public final class TxOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!bodyBytes_.isEmpty()) {
@@ -2206,8 +2415,10 @@ public final class TxOuterClass {
       if (accountNumber_ != 0L) {
         output.writeUInt64(4, accountNumber_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2228,11 +2439,11 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, accountNumber_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2243,16 +2454,16 @@ public final class TxOuterClass {
       }
       cosmos.tx.v1beta1.TxOuterClass.SignDoc other = (cosmos.tx.v1beta1.TxOuterClass.SignDoc) obj;
 
-      boolean result = true;
-      result = result && getBodyBytes()
-          .equals(other.getBodyBytes());
-      result = result && getAuthInfoBytes()
-          .equals(other.getAuthInfoBytes());
-      result = result && getChainId()
-          .equals(other.getChainId());
-      result = result && (getAccountNumber()
-          == other.getAccountNumber());
-      return result;
+      if (!getBodyBytes()
+          .equals(other.getBodyBytes())) return false;
+      if (!getAuthInfoBytes()
+          .equals(other.getAuthInfoBytes())) return false;
+      if (!getChainId()
+          .equals(other.getChainId())) return false;
+      if (getAccountNumber()
+          != other.getAccountNumber()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2261,7 +2472,7 @@ public final class TxOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BODY_BYTES_FIELD_NUMBER;
       hash = (53 * hash) + getBodyBytes().hashCode();
       hash = (37 * hash) + AUTH_INFO_BYTES_FIELD_NUMBER;
@@ -2276,6 +2487,17 @@ public final class TxOuterClass {
       return hash;
     }
 
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDoc parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDoc parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.tx.v1beta1.TxOuterClass.SignDoc parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2335,6 +2557,7 @@ public final class TxOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2342,6 +2565,7 @@ public final class TxOuterClass {
     public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.SignDoc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2369,6 +2593,7 @@ public final class TxOuterClass {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignDoc_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignDoc_fieldAccessorTable
@@ -2391,6 +2616,7 @@ public final class TxOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bodyBytes_ = com.google.protobuf.ByteString.EMPTY;
@@ -2404,15 +2630,18 @@ public final class TxOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignDoc_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.SignDoc getDefaultInstanceForType() {
         return cosmos.tx.v1beta1.TxOuterClass.SignDoc.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.SignDoc build() {
         cosmos.tx.v1beta1.TxOuterClass.SignDoc result = buildPartial();
         if (!result.isInitialized()) {
@@ -2421,6 +2650,7 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.SignDoc buildPartial() {
         cosmos.tx.v1beta1.TxOuterClass.SignDoc result = new cosmos.tx.v1beta1.TxOuterClass.SignDoc(this);
         result.bodyBytes_ = bodyBytes_;
@@ -2431,32 +2661,39 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.tx.v1beta1.TxOuterClass.SignDoc) {
           return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.SignDoc)other);
@@ -2481,14 +2718,17 @@ public final class TxOuterClass {
         if (other.getAccountNumber() != 0L) {
           setAccountNumber(other.getAccountNumber());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2514,8 +2754,10 @@ public final class TxOuterClass {
        * representation in TxRaw.
        * </pre>
        *
-       * <code>optional bytes body_bytes = 1;</code>
+       * <code>bytes body_bytes = 1;</code>
+       * @return The bodyBytes.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getBodyBytes() {
         return bodyBytes_;
       }
@@ -2525,7 +2767,9 @@ public final class TxOuterClass {
        * representation in TxRaw.
        * </pre>
        *
-       * <code>optional bytes body_bytes = 1;</code>
+       * <code>bytes body_bytes = 1;</code>
+       * @param value The bodyBytes to set.
+       * @return This builder for chaining.
        */
       public Builder setBodyBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2542,7 +2786,8 @@ public final class TxOuterClass {
        * representation in TxRaw.
        * </pre>
        *
-       * <code>optional bytes body_bytes = 1;</code>
+       * <code>bytes body_bytes = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBodyBytes() {
         
@@ -2558,8 +2803,10 @@ public final class TxOuterClass {
        * representation in TxRaw.
        * </pre>
        *
-       * <code>optional bytes auth_info_bytes = 2;</code>
+       * <code>bytes auth_info_bytes = 2;</code>
+       * @return The authInfoBytes.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getAuthInfoBytes() {
         return authInfoBytes_;
       }
@@ -2569,7 +2816,9 @@ public final class TxOuterClass {
        * representation in TxRaw.
        * </pre>
        *
-       * <code>optional bytes auth_info_bytes = 2;</code>
+       * <code>bytes auth_info_bytes = 2;</code>
+       * @param value The authInfoBytes to set.
+       * @return This builder for chaining.
        */
       public Builder setAuthInfoBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2586,7 +2835,8 @@ public final class TxOuterClass {
        * representation in TxRaw.
        * </pre>
        *
-       * <code>optional bytes auth_info_bytes = 2;</code>
+       * <code>bytes auth_info_bytes = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAuthInfoBytes() {
         
@@ -2603,7 +2853,8 @@ public final class TxOuterClass {
        * attacker
        * </pre>
        *
-       * <code>optional string chain_id = 3;</code>
+       * <code>string chain_id = 3;</code>
+       * @return The chainId.
        */
       public java.lang.String getChainId() {
         java.lang.Object ref = chainId_;
@@ -2624,7 +2875,8 @@ public final class TxOuterClass {
        * attacker
        * </pre>
        *
-       * <code>optional string chain_id = 3;</code>
+       * <code>string chain_id = 3;</code>
+       * @return The bytes for chainId.
        */
       public com.google.protobuf.ByteString
           getChainIdBytes() {
@@ -2646,7 +2898,9 @@ public final class TxOuterClass {
        * attacker
        * </pre>
        *
-       * <code>optional string chain_id = 3;</code>
+       * <code>string chain_id = 3;</code>
+       * @param value The chainId to set.
+       * @return This builder for chaining.
        */
       public Builder setChainId(
           java.lang.String value) {
@@ -2665,7 +2919,8 @@ public final class TxOuterClass {
        * attacker
        * </pre>
        *
-       * <code>optional string chain_id = 3;</code>
+       * <code>string chain_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearChainId() {
         
@@ -2680,7 +2935,9 @@ public final class TxOuterClass {
        * attacker
        * </pre>
        *
-       * <code>optional string chain_id = 3;</code>
+       * <code>string chain_id = 3;</code>
+       * @param value The bytes for chainId to set.
+       * @return This builder for chaining.
        */
       public Builder setChainIdBytes(
           com.google.protobuf.ByteString value) {
@@ -2700,8 +2957,10 @@ public final class TxOuterClass {
        * account_number is the account number of the account in state
        * </pre>
        *
-       * <code>optional uint64 account_number = 4;</code>
+       * <code>uint64 account_number = 4;</code>
+       * @return The accountNumber.
        */
+      @java.lang.Override
       public long getAccountNumber() {
         return accountNumber_;
       }
@@ -2710,7 +2969,9 @@ public final class TxOuterClass {
        * account_number is the account number of the account in state
        * </pre>
        *
-       * <code>optional uint64 account_number = 4;</code>
+       * <code>uint64 account_number = 4;</code>
+       * @param value The accountNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setAccountNumber(long value) {
         
@@ -2723,7 +2984,8 @@ public final class TxOuterClass {
        * account_number is the account number of the account in state
        * </pre>
        *
-       * <code>optional uint64 account_number = 4;</code>
+       * <code>uint64 account_number = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAccountNumber() {
         
@@ -2731,14 +2993,16 @@ public final class TxOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2757,11 +3021,12 @@ public final class TxOuterClass {
 
     private static final com.google.protobuf.Parser<SignDoc>
         PARSER = new com.google.protobuf.AbstractParser<SignDoc>() {
+      @java.lang.Override
       public SignDoc parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SignDoc(input, extensionRegistry);
+        return new SignDoc(input, extensionRegistry);
       }
     };
 
@@ -2774,6 +3039,7 @@ public final class TxOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.SignDoc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2863,7 +3129,8 @@ public final class TxOuterClass {
      * memo is any arbitrary memo to be added to the transaction
      * </pre>
      *
-     * <code>optional string memo = 2;</code>
+     * <code>string memo = 2;</code>
+     * @return The memo.
      */
     java.lang.String getMemo();
     /**
@@ -2871,7 +3138,8 @@ public final class TxOuterClass {
      * memo is any arbitrary memo to be added to the transaction
      * </pre>
      *
-     * <code>optional string memo = 2;</code>
+     * <code>string memo = 2;</code>
+     * @return The bytes for memo.
      */
     com.google.protobuf.ByteString
         getMemoBytes();
@@ -2882,7 +3150,8 @@ public final class TxOuterClass {
      * be processed by the chain
      * </pre>
      *
-     * <code>optional uint64 timeout_height = 3;</code>
+     * <code>uint64 timeout_height = 3;</code>
+     * @return The timeoutHeight.
      */
     long getTimeoutHeight();
 
@@ -3001,10 +3270,11 @@ public final class TxOuterClass {
    *
    * Protobuf type {@code cosmos.tx.v1beta1.TxBody}
    */
-  public  static final class TxBody extends
+  public static final class TxBody extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.TxBody)
       TxBodyOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use TxBody.newBuilder() to construct.
     private TxBody(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3012,22 +3282,33 @@ public final class TxOuterClass {
     private TxBody() {
       messages_ = java.util.Collections.emptyList();
       memo_ = "";
-      timeoutHeight_ = 0L;
       extensionOptions_ = java.util.Collections.emptyList();
       nonCriticalExtensionOptions_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxBody();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private TxBody(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3036,14 +3317,8 @@ public final class TxOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 messages_ = new java.util.ArrayList<com.google.protobuf.Any>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -3063,21 +3338,28 @@ public final class TxOuterClass {
               break;
             }
             case 8186: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 extensionOptions_ = new java.util.ArrayList<com.google.protobuf.Any>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               extensionOptions_.add(
                   input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
               break;
             }
             case 16378: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 nonCriticalExtensionOptions_ = new java.util.ArrayList<com.google.protobuf.Any>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000004;
               }
               nonCriticalExtensionOptions_.add(
                   input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3088,15 +3370,16 @@ public final class TxOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
         }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           extensionOptions_ = java.util.Collections.unmodifiableList(extensionOptions_);
         }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           nonCriticalExtensionOptions_ = java.util.Collections.unmodifiableList(nonCriticalExtensionOptions_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3105,6 +3388,7 @@ public final class TxOuterClass {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxBody_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxBody_fieldAccessorTable
@@ -3112,7 +3396,6 @@ public final class TxOuterClass {
               cosmos.tx.v1beta1.TxOuterClass.TxBody.class, cosmos.tx.v1beta1.TxOuterClass.TxBody.Builder.class);
     }
 
-    private int bitField0_;
     public static final int MESSAGES_FIELD_NUMBER = 1;
     private java.util.List<com.google.protobuf.Any> messages_;
     /**
@@ -3128,6 +3411,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.Any> getMessagesList() {
       return messages_;
     }
@@ -3144,6 +3428,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getMessagesOrBuilderList() {
       return messages_;
@@ -3161,6 +3446,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
+    @java.lang.Override
     public int getMessagesCount() {
       return messages_.size();
     }
@@ -3177,6 +3463,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Any getMessages(int index) {
       return messages_.get(index);
     }
@@ -3193,6 +3480,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getMessagesOrBuilder(
         int index) {
       return messages_.get(index);
@@ -3205,8 +3493,10 @@ public final class TxOuterClass {
      * memo is any arbitrary memo to be added to the transaction
      * </pre>
      *
-     * <code>optional string memo = 2;</code>
+     * <code>string memo = 2;</code>
+     * @return The memo.
      */
+    @java.lang.Override
     public java.lang.String getMemo() {
       java.lang.Object ref = memo_;
       if (ref instanceof java.lang.String) {
@@ -3224,8 +3514,10 @@ public final class TxOuterClass {
      * memo is any arbitrary memo to be added to the transaction
      * </pre>
      *
-     * <code>optional string memo = 2;</code>
+     * <code>string memo = 2;</code>
+     * @return The bytes for memo.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMemoBytes() {
       java.lang.Object ref = memo_;
@@ -3248,8 +3540,10 @@ public final class TxOuterClass {
      * be processed by the chain
      * </pre>
      *
-     * <code>optional uint64 timeout_height = 3;</code>
+     * <code>uint64 timeout_height = 3;</code>
+     * @return The timeoutHeight.
      */
+    @java.lang.Override
     public long getTimeoutHeight() {
       return timeoutHeight_;
     }
@@ -3265,6 +3559,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.Any> getExtensionOptionsList() {
       return extensionOptions_;
     }
@@ -3277,6 +3572,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getExtensionOptionsOrBuilderList() {
       return extensionOptions_;
@@ -3290,6 +3586,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
+    @java.lang.Override
     public int getExtensionOptionsCount() {
       return extensionOptions_.size();
     }
@@ -3302,6 +3599,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Any getExtensionOptions(int index) {
       return extensionOptions_.get(index);
     }
@@ -3314,6 +3612,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getExtensionOptionsOrBuilder(
         int index) {
       return extensionOptions_.get(index);
@@ -3330,6 +3629,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.Any> getNonCriticalExtensionOptionsList() {
       return nonCriticalExtensionOptions_;
     }
@@ -3342,6 +3642,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getNonCriticalExtensionOptionsOrBuilderList() {
       return nonCriticalExtensionOptions_;
@@ -3355,6 +3656,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
+    @java.lang.Override
     public int getNonCriticalExtensionOptionsCount() {
       return nonCriticalExtensionOptions_.size();
     }
@@ -3367,6 +3669,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Any getNonCriticalExtensionOptions(int index) {
       return nonCriticalExtensionOptions_.get(index);
     }
@@ -3379,12 +3682,14 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getNonCriticalExtensionOptionsOrBuilder(
         int index) {
       return nonCriticalExtensionOptions_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3394,6 +3699,7 @@ public final class TxOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < messages_.size(); i++) {
@@ -3411,8 +3717,10 @@ public final class TxOuterClass {
       for (int i = 0; i < nonCriticalExtensionOptions_.size(); i++) {
         output.writeMessage(2047, nonCriticalExtensionOptions_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3437,11 +3745,11 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2047, nonCriticalExtensionOptions_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3452,18 +3760,18 @@ public final class TxOuterClass {
       }
       cosmos.tx.v1beta1.TxOuterClass.TxBody other = (cosmos.tx.v1beta1.TxOuterClass.TxBody) obj;
 
-      boolean result = true;
-      result = result && getMessagesList()
-          .equals(other.getMessagesList());
-      result = result && getMemo()
-          .equals(other.getMemo());
-      result = result && (getTimeoutHeight()
-          == other.getTimeoutHeight());
-      result = result && getExtensionOptionsList()
-          .equals(other.getExtensionOptionsList());
-      result = result && getNonCriticalExtensionOptionsList()
-          .equals(other.getNonCriticalExtensionOptionsList());
-      return result;
+      if (!getMessagesList()
+          .equals(other.getMessagesList())) return false;
+      if (!getMemo()
+          .equals(other.getMemo())) return false;
+      if (getTimeoutHeight()
+          != other.getTimeoutHeight()) return false;
+      if (!getExtensionOptionsList()
+          .equals(other.getExtensionOptionsList())) return false;
+      if (!getNonCriticalExtensionOptionsList()
+          .equals(other.getNonCriticalExtensionOptionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3472,7 +3780,7 @@ public final class TxOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getMessagesCount() > 0) {
         hash = (37 * hash) + MESSAGES_FIELD_NUMBER;
         hash = (53 * hash) + getMessagesList().hashCode();
@@ -3495,6 +3803,17 @@ public final class TxOuterClass {
       return hash;
     }
 
+    public static cosmos.tx.v1beta1.TxOuterClass.TxBody parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.TxBody parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.tx.v1beta1.TxOuterClass.TxBody parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3554,6 +3873,7 @@ public final class TxOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3561,6 +3881,7 @@ public final class TxOuterClass {
     public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.TxBody prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3588,6 +3909,7 @@ public final class TxOuterClass {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxBody_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxBody_fieldAccessorTable
@@ -3613,6 +3935,7 @@ public final class TxOuterClass {
           getNonCriticalExtensionOptionsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (messagesBuilder_ == null) {
@@ -3627,28 +3950,31 @@ public final class TxOuterClass {
 
         if (extensionOptionsBuilder_ == null) {
           extensionOptions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           extensionOptionsBuilder_.clear();
         }
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           nonCriticalExtensionOptions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           nonCriticalExtensionOptionsBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxBody_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.TxBody getDefaultInstanceForType() {
         return cosmos.tx.v1beta1.TxOuterClass.TxBody.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.TxBody build() {
         cosmos.tx.v1beta1.TxOuterClass.TxBody result = buildPartial();
         if (!result.isInitialized()) {
@@ -3657,12 +3983,12 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.TxBody buildPartial() {
         cosmos.tx.v1beta1.TxOuterClass.TxBody result = new cosmos.tx.v1beta1.TxOuterClass.TxBody(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (messagesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             messages_ = java.util.Collections.unmodifiableList(messages_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -3673,54 +3999,60 @@ public final class TxOuterClass {
         result.memo_ = memo_;
         result.timeoutHeight_ = timeoutHeight_;
         if (extensionOptionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             extensionOptions_ = java.util.Collections.unmodifiableList(extensionOptions_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.extensionOptions_ = extensionOptions_;
         } else {
           result.extensionOptions_ = extensionOptionsBuilder_.build();
         }
         if (nonCriticalExtensionOptionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             nonCriticalExtensionOptions_ = java.util.Collections.unmodifiableList(nonCriticalExtensionOptions_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.nonCriticalExtensionOptions_ = nonCriticalExtensionOptions_;
         } else {
           result.nonCriticalExtensionOptions_ = nonCriticalExtensionOptionsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.tx.v1beta1.TxOuterClass.TxBody) {
           return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.TxBody)other);
@@ -3769,7 +4101,7 @@ public final class TxOuterClass {
           if (!other.extensionOptions_.isEmpty()) {
             if (extensionOptions_.isEmpty()) {
               extensionOptions_ = other.extensionOptions_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureExtensionOptionsIsMutable();
               extensionOptions_.addAll(other.extensionOptions_);
@@ -3782,7 +4114,7 @@ public final class TxOuterClass {
               extensionOptionsBuilder_.dispose();
               extensionOptionsBuilder_ = null;
               extensionOptions_ = other.extensionOptions_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
               extensionOptionsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getExtensionOptionsFieldBuilder() : null;
@@ -3795,7 +4127,7 @@ public final class TxOuterClass {
           if (!other.nonCriticalExtensionOptions_.isEmpty()) {
             if (nonCriticalExtensionOptions_.isEmpty()) {
               nonCriticalExtensionOptions_ = other.nonCriticalExtensionOptions_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureNonCriticalExtensionOptionsIsMutable();
               nonCriticalExtensionOptions_.addAll(other.nonCriticalExtensionOptions_);
@@ -3808,7 +4140,7 @@ public final class TxOuterClass {
               nonCriticalExtensionOptionsBuilder_.dispose();
               nonCriticalExtensionOptionsBuilder_ = null;
               nonCriticalExtensionOptions_ = other.nonCriticalExtensionOptions_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000004);
               nonCriticalExtensionOptionsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getNonCriticalExtensionOptionsFieldBuilder() : null;
@@ -3817,14 +4149,17 @@ public final class TxOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3847,7 +4182,7 @@ public final class TxOuterClass {
       private java.util.List<com.google.protobuf.Any> messages_ =
         java.util.Collections.emptyList();
       private void ensureMessagesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           messages_ = new java.util.ArrayList<com.google.protobuf.Any>(messages_);
           bitField0_ |= 0x00000001;
          }
@@ -4256,7 +4591,7 @@ public final class TxOuterClass {
           messagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   messages_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           messages_ = null;
@@ -4270,7 +4605,8 @@ public final class TxOuterClass {
        * memo is any arbitrary memo to be added to the transaction
        * </pre>
        *
-       * <code>optional string memo = 2;</code>
+       * <code>string memo = 2;</code>
+       * @return The memo.
        */
       public java.lang.String getMemo() {
         java.lang.Object ref = memo_;
@@ -4289,7 +4625,8 @@ public final class TxOuterClass {
        * memo is any arbitrary memo to be added to the transaction
        * </pre>
        *
-       * <code>optional string memo = 2;</code>
+       * <code>string memo = 2;</code>
+       * @return The bytes for memo.
        */
       public com.google.protobuf.ByteString
           getMemoBytes() {
@@ -4309,7 +4646,9 @@ public final class TxOuterClass {
        * memo is any arbitrary memo to be added to the transaction
        * </pre>
        *
-       * <code>optional string memo = 2;</code>
+       * <code>string memo = 2;</code>
+       * @param value The memo to set.
+       * @return This builder for chaining.
        */
       public Builder setMemo(
           java.lang.String value) {
@@ -4326,7 +4665,8 @@ public final class TxOuterClass {
        * memo is any arbitrary memo to be added to the transaction
        * </pre>
        *
-       * <code>optional string memo = 2;</code>
+       * <code>string memo = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMemo() {
         
@@ -4339,7 +4679,9 @@ public final class TxOuterClass {
        * memo is any arbitrary memo to be added to the transaction
        * </pre>
        *
-       * <code>optional string memo = 2;</code>
+       * <code>string memo = 2;</code>
+       * @param value The bytes for memo to set.
+       * @return This builder for chaining.
        */
       public Builder setMemoBytes(
           com.google.protobuf.ByteString value) {
@@ -4360,8 +4702,10 @@ public final class TxOuterClass {
        * be processed by the chain
        * </pre>
        *
-       * <code>optional uint64 timeout_height = 3;</code>
+       * <code>uint64 timeout_height = 3;</code>
+       * @return The timeoutHeight.
        */
+      @java.lang.Override
       public long getTimeoutHeight() {
         return timeoutHeight_;
       }
@@ -4371,7 +4715,9 @@ public final class TxOuterClass {
        * be processed by the chain
        * </pre>
        *
-       * <code>optional uint64 timeout_height = 3;</code>
+       * <code>uint64 timeout_height = 3;</code>
+       * @param value The timeoutHeight to set.
+       * @return This builder for chaining.
        */
       public Builder setTimeoutHeight(long value) {
         
@@ -4385,7 +4731,8 @@ public final class TxOuterClass {
        * be processed by the chain
        * </pre>
        *
-       * <code>optional uint64 timeout_height = 3;</code>
+       * <code>uint64 timeout_height = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTimeoutHeight() {
         
@@ -4397,9 +4744,9 @@ public final class TxOuterClass {
       private java.util.List<com.google.protobuf.Any> extensionOptions_ =
         java.util.Collections.emptyList();
       private void ensureExtensionOptionsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           extensionOptions_ = new java.util.ArrayList<com.google.protobuf.Any>(extensionOptions_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -4615,7 +4962,7 @@ public final class TxOuterClass {
       public Builder clearExtensionOptions() {
         if (extensionOptionsBuilder_ == null) {
           extensionOptions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           extensionOptionsBuilder_.clear();
@@ -4734,7 +5081,7 @@ public final class TxOuterClass {
           extensionOptionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   extensionOptions_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           extensionOptions_ = null;
@@ -4745,9 +5092,9 @@ public final class TxOuterClass {
       private java.util.List<com.google.protobuf.Any> nonCriticalExtensionOptions_ =
         java.util.Collections.emptyList();
       private void ensureNonCriticalExtensionOptionsIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           nonCriticalExtensionOptions_ = new java.util.ArrayList<com.google.protobuf.Any>(nonCriticalExtensionOptions_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -4963,7 +5310,7 @@ public final class TxOuterClass {
       public Builder clearNonCriticalExtensionOptions() {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           nonCriticalExtensionOptions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           nonCriticalExtensionOptionsBuilder_.clear();
@@ -5082,21 +5429,23 @@ public final class TxOuterClass {
           nonCriticalExtensionOptionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   nonCriticalExtensionOptions_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           nonCriticalExtensionOptions_ = null;
         }
         return nonCriticalExtensionOptionsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5115,11 +5464,12 @@ public final class TxOuterClass {
 
     private static final com.google.protobuf.Parser<TxBody>
         PARSER = new com.google.protobuf.AbstractParser<TxBody>() {
+      @java.lang.Override
       public TxBody parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TxBody(input, extensionRegistry);
+        return new TxBody(input, extensionRegistry);
       }
     };
 
@@ -5132,6 +5482,7 @@ public final class TxOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.TxBody getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5209,7 +5560,8 @@ public final class TxOuterClass {
      * of the signers. This can be estimated via simulation.
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+     * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
+     * @return Whether the fee field is set.
      */
     boolean hasFee();
     /**
@@ -5220,7 +5572,8 @@ public final class TxOuterClass {
      * of the signers. This can be estimated via simulation.
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+     * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
+     * @return The fee.
      */
     cosmos.tx.v1beta1.TxOuterClass.Fee getFee();
     /**
@@ -5231,7 +5584,7 @@ public final class TxOuterClass {
      * of the signers. This can be estimated via simulation.
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+     * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
      */
     cosmos.tx.v1beta1.TxOuterClass.FeeOrBuilder getFeeOrBuilder();
   }
@@ -5243,10 +5596,11 @@ public final class TxOuterClass {
    *
    * Protobuf type {@code cosmos.tx.v1beta1.AuthInfo}
    */
-  public  static final class AuthInfo extends
+  public static final class AuthInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.AuthInfo)
       AuthInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AuthInfo.newBuilder() to construct.
     private AuthInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5256,16 +5610,28 @@ public final class TxOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AuthInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private AuthInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5274,14 +5640,8 @@ public final class TxOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 signerInfos_ = new java.util.ArrayList<cosmos.tx.v1beta1.TxOuterClass.SignerInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -5302,6 +5662,13 @@ public final class TxOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5310,9 +5677,10 @@ public final class TxOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           signerInfos_ = java.util.Collections.unmodifiableList(signerInfos_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5321,6 +5689,7 @@ public final class TxOuterClass {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_AuthInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_AuthInfo_fieldAccessorTable
@@ -5328,7 +5697,6 @@ public final class TxOuterClass {
               cosmos.tx.v1beta1.TxOuterClass.AuthInfo.class, cosmos.tx.v1beta1.TxOuterClass.AuthInfo.Builder.class);
     }
 
-    private int bitField0_;
     public static final int SIGNER_INFOS_FIELD_NUMBER = 1;
     private java.util.List<cosmos.tx.v1beta1.TxOuterClass.SignerInfo> signerInfos_;
     /**
@@ -5341,6 +5709,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .cosmos.tx.v1beta1.SignerInfo signer_infos = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.tx.v1beta1.TxOuterClass.SignerInfo> getSignerInfosList() {
       return signerInfos_;
     }
@@ -5354,6 +5723,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .cosmos.tx.v1beta1.SignerInfo signer_infos = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.tx.v1beta1.TxOuterClass.SignerInfoOrBuilder> 
         getSignerInfosOrBuilderList() {
       return signerInfos_;
@@ -5368,6 +5738,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .cosmos.tx.v1beta1.SignerInfo signer_infos = 1;</code>
      */
+    @java.lang.Override
     public int getSignerInfosCount() {
       return signerInfos_.size();
     }
@@ -5381,6 +5752,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .cosmos.tx.v1beta1.SignerInfo signer_infos = 1;</code>
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.SignerInfo getSignerInfos(int index) {
       return signerInfos_.get(index);
     }
@@ -5394,6 +5766,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .cosmos.tx.v1beta1.SignerInfo signer_infos = 1;</code>
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.SignerInfoOrBuilder getSignerInfosOrBuilder(
         int index) {
       return signerInfos_.get(index);
@@ -5409,8 +5782,10 @@ public final class TxOuterClass {
      * of the signers. This can be estimated via simulation.
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+     * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
+     * @return Whether the fee field is set.
      */
+    @java.lang.Override
     public boolean hasFee() {
       return fee_ != null;
     }
@@ -5422,8 +5797,10 @@ public final class TxOuterClass {
      * of the signers. This can be estimated via simulation.
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+     * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
+     * @return The fee.
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.Fee getFee() {
       return fee_ == null ? cosmos.tx.v1beta1.TxOuterClass.Fee.getDefaultInstance() : fee_;
     }
@@ -5435,13 +5812,15 @@ public final class TxOuterClass {
      * of the signers. This can be estimated via simulation.
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+     * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.FeeOrBuilder getFeeOrBuilder() {
       return getFee();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5451,6 +5830,7 @@ public final class TxOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < signerInfos_.size(); i++) {
@@ -5459,8 +5839,10 @@ public final class TxOuterClass {
       if (fee_ != null) {
         output.writeMessage(2, getFee());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5474,11 +5856,11 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getFee());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5489,15 +5871,15 @@ public final class TxOuterClass {
       }
       cosmos.tx.v1beta1.TxOuterClass.AuthInfo other = (cosmos.tx.v1beta1.TxOuterClass.AuthInfo) obj;
 
-      boolean result = true;
-      result = result && getSignerInfosList()
-          .equals(other.getSignerInfosList());
-      result = result && (hasFee() == other.hasFee());
+      if (!getSignerInfosList()
+          .equals(other.getSignerInfosList())) return false;
+      if (hasFee() != other.hasFee()) return false;
       if (hasFee()) {
-        result = result && getFee()
-            .equals(other.getFee());
+        if (!getFee()
+            .equals(other.getFee())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5506,7 +5888,7 @@ public final class TxOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getSignerInfosCount() > 0) {
         hash = (37 * hash) + SIGNER_INFOS_FIELD_NUMBER;
         hash = (53 * hash) + getSignerInfosList().hashCode();
@@ -5520,6 +5902,17 @@ public final class TxOuterClass {
       return hash;
     }
 
+    public static cosmos.tx.v1beta1.TxOuterClass.AuthInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuthInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.tx.v1beta1.TxOuterClass.AuthInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5579,6 +5972,7 @@ public final class TxOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5586,6 +5980,7 @@ public final class TxOuterClass {
     public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.AuthInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5614,6 +6009,7 @@ public final class TxOuterClass {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_AuthInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_AuthInfo_fieldAccessorTable
@@ -5637,6 +6033,7 @@ public final class TxOuterClass {
           getSignerInfosFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (signerInfosBuilder_ == null) {
@@ -5654,15 +6051,18 @@ public final class TxOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_AuthInfo_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.AuthInfo getDefaultInstanceForType() {
         return cosmos.tx.v1beta1.TxOuterClass.AuthInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.AuthInfo build() {
         cosmos.tx.v1beta1.TxOuterClass.AuthInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -5671,12 +6071,12 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.AuthInfo buildPartial() {
         cosmos.tx.v1beta1.TxOuterClass.AuthInfo result = new cosmos.tx.v1beta1.TxOuterClass.AuthInfo(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (signerInfosBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             signerInfos_ = java.util.Collections.unmodifiableList(signerInfos_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -5689,37 +6089,43 @@ public final class TxOuterClass {
         } else {
           result.fee_ = feeBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.tx.v1beta1.TxOuterClass.AuthInfo) {
           return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.AuthInfo)other);
@@ -5760,14 +6166,17 @@ public final class TxOuterClass {
         if (other.hasFee()) {
           mergeFee(other.getFee());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5790,7 +6199,7 @@ public final class TxOuterClass {
       private java.util.List<cosmos.tx.v1beta1.TxOuterClass.SignerInfo> signerInfos_ =
         java.util.Collections.emptyList();
       private void ensureSignerInfosIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           signerInfos_ = new java.util.ArrayList<cosmos.tx.v1beta1.TxOuterClass.SignerInfo>(signerInfos_);
           bitField0_ |= 0x00000001;
          }
@@ -6145,7 +6554,7 @@ public final class TxOuterClass {
           signerInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.tx.v1beta1.TxOuterClass.SignerInfo, cosmos.tx.v1beta1.TxOuterClass.SignerInfo.Builder, cosmos.tx.v1beta1.TxOuterClass.SignerInfoOrBuilder>(
                   signerInfos_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           signerInfos_ = null;
@@ -6153,7 +6562,7 @@ public final class TxOuterClass {
         return signerInfosBuilder_;
       }
 
-      private cosmos.tx.v1beta1.TxOuterClass.Fee fee_ = null;
+      private cosmos.tx.v1beta1.TxOuterClass.Fee fee_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.tx.v1beta1.TxOuterClass.Fee, cosmos.tx.v1beta1.TxOuterClass.Fee.Builder, cosmos.tx.v1beta1.TxOuterClass.FeeOrBuilder> feeBuilder_;
       /**
@@ -6164,7 +6573,8 @@ public final class TxOuterClass {
        * of the signers. This can be estimated via simulation.
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * @return Whether the fee field is set.
        */
       public boolean hasFee() {
         return feeBuilder_ != null || fee_ != null;
@@ -6177,7 +6587,8 @@ public final class TxOuterClass {
        * of the signers. This can be estimated via simulation.
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * @return The fee.
        */
       public cosmos.tx.v1beta1.TxOuterClass.Fee getFee() {
         if (feeBuilder_ == null) {
@@ -6194,7 +6605,7 @@ public final class TxOuterClass {
        * of the signers. This can be estimated via simulation.
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
        */
       public Builder setFee(cosmos.tx.v1beta1.TxOuterClass.Fee value) {
         if (feeBuilder_ == null) {
@@ -6217,7 +6628,7 @@ public final class TxOuterClass {
        * of the signers. This can be estimated via simulation.
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
        */
       public Builder setFee(
           cosmos.tx.v1beta1.TxOuterClass.Fee.Builder builderForValue) {
@@ -6238,7 +6649,7 @@ public final class TxOuterClass {
        * of the signers. This can be estimated via simulation.
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
        */
       public Builder mergeFee(cosmos.tx.v1beta1.TxOuterClass.Fee value) {
         if (feeBuilder_ == null) {
@@ -6263,7 +6674,7 @@ public final class TxOuterClass {
        * of the signers. This can be estimated via simulation.
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
        */
       public Builder clearFee() {
         if (feeBuilder_ == null) {
@@ -6284,7 +6695,7 @@ public final class TxOuterClass {
        * of the signers. This can be estimated via simulation.
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
        */
       public cosmos.tx.v1beta1.TxOuterClass.Fee.Builder getFeeBuilder() {
         
@@ -6299,7 +6710,7 @@ public final class TxOuterClass {
        * of the signers. This can be estimated via simulation.
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
        */
       public cosmos.tx.v1beta1.TxOuterClass.FeeOrBuilder getFeeOrBuilder() {
         if (feeBuilder_ != null) {
@@ -6317,7 +6728,7 @@ public final class TxOuterClass {
        * of the signers. This can be estimated via simulation.
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.Fee fee = 2;</code>
+       * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.tx.v1beta1.TxOuterClass.Fee, cosmos.tx.v1beta1.TxOuterClass.Fee.Builder, cosmos.tx.v1beta1.TxOuterClass.FeeOrBuilder> 
@@ -6332,14 +6743,16 @@ public final class TxOuterClass {
         }
         return feeBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6358,11 +6771,12 @@ public final class TxOuterClass {
 
     private static final com.google.protobuf.Parser<AuthInfo>
         PARSER = new com.google.protobuf.AbstractParser<AuthInfo>() {
+      @java.lang.Override
       public AuthInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AuthInfo(input, extensionRegistry);
+        return new AuthInfo(input, extensionRegistry);
       }
     };
 
@@ -6375,6 +6789,7 @@ public final class TxOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.AuthInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6392,7 +6807,8 @@ public final class TxOuterClass {
      * signer address for this position and lookup the public key.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any public_key = 1;</code>
+     * <code>.google.protobuf.Any public_key = 1;</code>
+     * @return Whether the publicKey field is set.
      */
     boolean hasPublicKey();
     /**
@@ -6402,7 +6818,8 @@ public final class TxOuterClass {
      * signer address for this position and lookup the public key.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any public_key = 1;</code>
+     * <code>.google.protobuf.Any public_key = 1;</code>
+     * @return The publicKey.
      */
     com.google.protobuf.Any getPublicKey();
     /**
@@ -6412,7 +6829,7 @@ public final class TxOuterClass {
      * signer address for this position and lookup the public key.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any public_key = 1;</code>
+     * <code>.google.protobuf.Any public_key = 1;</code>
      */
     com.google.protobuf.AnyOrBuilder getPublicKeyOrBuilder();
 
@@ -6422,7 +6839,8 @@ public final class TxOuterClass {
      * structure to support nested multisig pubkey's
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+     * @return Whether the modeInfo field is set.
      */
     boolean hasModeInfo();
     /**
@@ -6431,7 +6849,8 @@ public final class TxOuterClass {
      * structure to support nested multisig pubkey's
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+     * @return The modeInfo.
      */
     cosmos.tx.v1beta1.TxOuterClass.ModeInfo getModeInfo();
     /**
@@ -6440,7 +6859,7 @@ public final class TxOuterClass {
      * structure to support nested multisig pubkey's
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
      */
     cosmos.tx.v1beta1.TxOuterClass.ModeInfoOrBuilder getModeInfoOrBuilder();
 
@@ -6451,7 +6870,8 @@ public final class TxOuterClass {
      * prevent replay attacks.
      * </pre>
      *
-     * <code>optional uint64 sequence = 3;</code>
+     * <code>uint64 sequence = 3;</code>
+     * @return The sequence.
      */
     long getSequence();
   }
@@ -6463,29 +6883,40 @@ public final class TxOuterClass {
    *
    * Protobuf type {@code cosmos.tx.v1beta1.SignerInfo}
    */
-  public  static final class SignerInfo extends
+  public static final class SignerInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.SignerInfo)
       SignerInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use SignerInfo.newBuilder() to construct.
     private SignerInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private SignerInfo() {
-      sequence_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SignerInfo();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private SignerInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6494,12 +6925,6 @@ public final class TxOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.Any.Builder subBuilder = null;
               if (publicKey_ != null) {
@@ -6531,6 +6956,13 @@ public final class TxOuterClass {
               sequence_ = input.readUInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6539,6 +6971,7 @@ public final class TxOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6547,6 +6980,7 @@ public final class TxOuterClass {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignerInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignerInfo_fieldAccessorTable
@@ -6563,8 +6997,10 @@ public final class TxOuterClass {
      * signer address for this position and lookup the public key.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any public_key = 1;</code>
+     * <code>.google.protobuf.Any public_key = 1;</code>
+     * @return Whether the publicKey field is set.
      */
+    @java.lang.Override
     public boolean hasPublicKey() {
       return publicKey_ != null;
     }
@@ -6575,8 +7011,10 @@ public final class TxOuterClass {
      * signer address for this position and lookup the public key.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any public_key = 1;</code>
+     * <code>.google.protobuf.Any public_key = 1;</code>
+     * @return The publicKey.
      */
+    @java.lang.Override
     public com.google.protobuf.Any getPublicKey() {
       return publicKey_ == null ? com.google.protobuf.Any.getDefaultInstance() : publicKey_;
     }
@@ -6587,8 +7025,9 @@ public final class TxOuterClass {
      * signer address for this position and lookup the public key.
      * </pre>
      *
-     * <code>optional .google.protobuf.Any public_key = 1;</code>
+     * <code>.google.protobuf.Any public_key = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getPublicKeyOrBuilder() {
       return getPublicKey();
     }
@@ -6601,8 +7040,10 @@ public final class TxOuterClass {
      * structure to support nested multisig pubkey's
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+     * @return Whether the modeInfo field is set.
      */
+    @java.lang.Override
     public boolean hasModeInfo() {
       return modeInfo_ != null;
     }
@@ -6612,8 +7053,10 @@ public final class TxOuterClass {
      * structure to support nested multisig pubkey's
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+     * @return The modeInfo.
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.ModeInfo getModeInfo() {
       return modeInfo_ == null ? cosmos.tx.v1beta1.TxOuterClass.ModeInfo.getDefaultInstance() : modeInfo_;
     }
@@ -6623,8 +7066,9 @@ public final class TxOuterClass {
      * structure to support nested multisig pubkey's
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.ModeInfoOrBuilder getModeInfoOrBuilder() {
       return getModeInfo();
     }
@@ -6638,13 +7082,16 @@ public final class TxOuterClass {
      * prevent replay attacks.
      * </pre>
      *
-     * <code>optional uint64 sequence = 3;</code>
+     * <code>uint64 sequence = 3;</code>
+     * @return The sequence.
      */
+    @java.lang.Override
     public long getSequence() {
       return sequence_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6654,6 +7101,7 @@ public final class TxOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (publicKey_ != null) {
@@ -6665,8 +7113,10 @@ public final class TxOuterClass {
       if (sequence_ != 0L) {
         output.writeUInt64(3, sequence_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6684,11 +7134,11 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, sequence_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6699,20 +7149,20 @@ public final class TxOuterClass {
       }
       cosmos.tx.v1beta1.TxOuterClass.SignerInfo other = (cosmos.tx.v1beta1.TxOuterClass.SignerInfo) obj;
 
-      boolean result = true;
-      result = result && (hasPublicKey() == other.hasPublicKey());
+      if (hasPublicKey() != other.hasPublicKey()) return false;
       if (hasPublicKey()) {
-        result = result && getPublicKey()
-            .equals(other.getPublicKey());
+        if (!getPublicKey()
+            .equals(other.getPublicKey())) return false;
       }
-      result = result && (hasModeInfo() == other.hasModeInfo());
+      if (hasModeInfo() != other.hasModeInfo()) return false;
       if (hasModeInfo()) {
-        result = result && getModeInfo()
-            .equals(other.getModeInfo());
+        if (!getModeInfo()
+            .equals(other.getModeInfo())) return false;
       }
-      result = result && (getSequence()
-          == other.getSequence());
-      return result;
+      if (getSequence()
+          != other.getSequence()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6721,7 +7171,7 @@ public final class TxOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasPublicKey()) {
         hash = (37 * hash) + PUBLIC_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getPublicKey().hashCode();
@@ -6738,6 +7188,17 @@ public final class TxOuterClass {
       return hash;
     }
 
+    public static cosmos.tx.v1beta1.TxOuterClass.SignerInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignerInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.tx.v1beta1.TxOuterClass.SignerInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6797,6 +7258,7 @@ public final class TxOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6804,6 +7266,7 @@ public final class TxOuterClass {
     public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.SignerInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6832,6 +7295,7 @@ public final class TxOuterClass {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignerInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignerInfo_fieldAccessorTable
@@ -6854,6 +7318,7 @@ public final class TxOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (publicKeyBuilder_ == null) {
@@ -6873,15 +7338,18 @@ public final class TxOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignerInfo_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.SignerInfo getDefaultInstanceForType() {
         return cosmos.tx.v1beta1.TxOuterClass.SignerInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.SignerInfo build() {
         cosmos.tx.v1beta1.TxOuterClass.SignerInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -6890,6 +7358,7 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.SignerInfo buildPartial() {
         cosmos.tx.v1beta1.TxOuterClass.SignerInfo result = new cosmos.tx.v1beta1.TxOuterClass.SignerInfo(this);
         if (publicKeyBuilder_ == null) {
@@ -6907,32 +7376,39 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.tx.v1beta1.TxOuterClass.SignerInfo) {
           return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.SignerInfo)other);
@@ -6953,14 +7429,17 @@ public final class TxOuterClass {
         if (other.getSequence() != 0L) {
           setSequence(other.getSequence());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6979,7 +7458,7 @@ public final class TxOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Any publicKey_ = null;
+      private com.google.protobuf.Any publicKey_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> publicKeyBuilder_;
       /**
@@ -6989,7 +7468,8 @@ public final class TxOuterClass {
        * signer address for this position and lookup the public key.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any public_key = 1;</code>
+       * <code>.google.protobuf.Any public_key = 1;</code>
+       * @return Whether the publicKey field is set.
        */
       public boolean hasPublicKey() {
         return publicKeyBuilder_ != null || publicKey_ != null;
@@ -7001,7 +7481,8 @@ public final class TxOuterClass {
        * signer address for this position and lookup the public key.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any public_key = 1;</code>
+       * <code>.google.protobuf.Any public_key = 1;</code>
+       * @return The publicKey.
        */
       public com.google.protobuf.Any getPublicKey() {
         if (publicKeyBuilder_ == null) {
@@ -7017,7 +7498,7 @@ public final class TxOuterClass {
        * signer address for this position and lookup the public key.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any public_key = 1;</code>
+       * <code>.google.protobuf.Any public_key = 1;</code>
        */
       public Builder setPublicKey(com.google.protobuf.Any value) {
         if (publicKeyBuilder_ == null) {
@@ -7039,7 +7520,7 @@ public final class TxOuterClass {
        * signer address for this position and lookup the public key.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any public_key = 1;</code>
+       * <code>.google.protobuf.Any public_key = 1;</code>
        */
       public Builder setPublicKey(
           com.google.protobuf.Any.Builder builderForValue) {
@@ -7059,7 +7540,7 @@ public final class TxOuterClass {
        * signer address for this position and lookup the public key.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any public_key = 1;</code>
+       * <code>.google.protobuf.Any public_key = 1;</code>
        */
       public Builder mergePublicKey(com.google.protobuf.Any value) {
         if (publicKeyBuilder_ == null) {
@@ -7083,7 +7564,7 @@ public final class TxOuterClass {
        * signer address for this position and lookup the public key.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any public_key = 1;</code>
+       * <code>.google.protobuf.Any public_key = 1;</code>
        */
       public Builder clearPublicKey() {
         if (publicKeyBuilder_ == null) {
@@ -7103,7 +7584,7 @@ public final class TxOuterClass {
        * signer address for this position and lookup the public key.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any public_key = 1;</code>
+       * <code>.google.protobuf.Any public_key = 1;</code>
        */
       public com.google.protobuf.Any.Builder getPublicKeyBuilder() {
         
@@ -7117,7 +7598,7 @@ public final class TxOuterClass {
        * signer address for this position and lookup the public key.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any public_key = 1;</code>
+       * <code>.google.protobuf.Any public_key = 1;</code>
        */
       public com.google.protobuf.AnyOrBuilder getPublicKeyOrBuilder() {
         if (publicKeyBuilder_ != null) {
@@ -7134,7 +7615,7 @@ public final class TxOuterClass {
        * signer address for this position and lookup the public key.
        * </pre>
        *
-       * <code>optional .google.protobuf.Any public_key = 1;</code>
+       * <code>.google.protobuf.Any public_key = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
@@ -7150,7 +7631,7 @@ public final class TxOuterClass {
         return publicKeyBuilder_;
       }
 
-      private cosmos.tx.v1beta1.TxOuterClass.ModeInfo modeInfo_ = null;
+      private cosmos.tx.v1beta1.TxOuterClass.ModeInfo modeInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo, cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Builder, cosmos.tx.v1beta1.TxOuterClass.ModeInfoOrBuilder> modeInfoBuilder_;
       /**
@@ -7159,7 +7640,8 @@ public final class TxOuterClass {
        * structure to support nested multisig pubkey's
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * @return Whether the modeInfo field is set.
        */
       public boolean hasModeInfo() {
         return modeInfoBuilder_ != null || modeInfo_ != null;
@@ -7170,7 +7652,8 @@ public final class TxOuterClass {
        * structure to support nested multisig pubkey's
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * @return The modeInfo.
        */
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo getModeInfo() {
         if (modeInfoBuilder_ == null) {
@@ -7185,7 +7668,7 @@ public final class TxOuterClass {
        * structure to support nested multisig pubkey's
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
        */
       public Builder setModeInfo(cosmos.tx.v1beta1.TxOuterClass.ModeInfo value) {
         if (modeInfoBuilder_ == null) {
@@ -7206,7 +7689,7 @@ public final class TxOuterClass {
        * structure to support nested multisig pubkey's
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
        */
       public Builder setModeInfo(
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Builder builderForValue) {
@@ -7225,7 +7708,7 @@ public final class TxOuterClass {
        * structure to support nested multisig pubkey's
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
        */
       public Builder mergeModeInfo(cosmos.tx.v1beta1.TxOuterClass.ModeInfo value) {
         if (modeInfoBuilder_ == null) {
@@ -7248,7 +7731,7 @@ public final class TxOuterClass {
        * structure to support nested multisig pubkey's
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
        */
       public Builder clearModeInfo() {
         if (modeInfoBuilder_ == null) {
@@ -7267,7 +7750,7 @@ public final class TxOuterClass {
        * structure to support nested multisig pubkey's
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
        */
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Builder getModeInfoBuilder() {
         
@@ -7280,7 +7763,7 @@ public final class TxOuterClass {
        * structure to support nested multisig pubkey's
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
        */
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfoOrBuilder getModeInfoOrBuilder() {
         if (modeInfoBuilder_ != null) {
@@ -7296,7 +7779,7 @@ public final class TxOuterClass {
        * structure to support nested multisig pubkey's
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo mode_info = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo, cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Builder, cosmos.tx.v1beta1.TxOuterClass.ModeInfoOrBuilder> 
@@ -7320,8 +7803,10 @@ public final class TxOuterClass {
        * prevent replay attacks.
        * </pre>
        *
-       * <code>optional uint64 sequence = 3;</code>
+       * <code>uint64 sequence = 3;</code>
+       * @return The sequence.
        */
+      @java.lang.Override
       public long getSequence() {
         return sequence_;
       }
@@ -7332,7 +7817,9 @@ public final class TxOuterClass {
        * prevent replay attacks.
        * </pre>
        *
-       * <code>optional uint64 sequence = 3;</code>
+       * <code>uint64 sequence = 3;</code>
+       * @param value The sequence to set.
+       * @return This builder for chaining.
        */
       public Builder setSequence(long value) {
         
@@ -7347,7 +7834,8 @@ public final class TxOuterClass {
        * prevent replay attacks.
        * </pre>
        *
-       * <code>optional uint64 sequence = 3;</code>
+       * <code>uint64 sequence = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSequence() {
         
@@ -7355,14 +7843,16 @@ public final class TxOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7381,11 +7871,12 @@ public final class TxOuterClass {
 
     private static final com.google.protobuf.Parser<SignerInfo>
         PARSER = new com.google.protobuf.AbstractParser<SignerInfo>() {
+      @java.lang.Override
       public SignerInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SignerInfo(input, extensionRegistry);
+        return new SignerInfo(input, extensionRegistry);
       }
     };
 
@@ -7398,6 +7889,7 @@ public final class TxOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.SignerInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7413,7 +7905,17 @@ public final class TxOuterClass {
      * single represents a single signer
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+     * @return Whether the single field is set.
+     */
+    boolean hasSingle();
+    /**
+     * <pre>
+     * single represents a single signer
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+     * @return The single.
      */
     cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single getSingle();
     /**
@@ -7421,7 +7923,7 @@ public final class TxOuterClass {
      * single represents a single signer
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
      */
     cosmos.tx.v1beta1.TxOuterClass.ModeInfo.SingleOrBuilder getSingleOrBuilder();
 
@@ -7430,7 +7932,17 @@ public final class TxOuterClass {
      * multi represents a nested multisig signer
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+     * @return Whether the multi field is set.
+     */
+    boolean hasMulti();
+    /**
+     * <pre>
+     * multi represents a nested multisig signer
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+     * @return The multi.
      */
     cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi getMulti();
     /**
@@ -7438,7 +7950,7 @@ public final class TxOuterClass {
      * multi represents a nested multisig signer
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
      */
     cosmos.tx.v1beta1.TxOuterClass.ModeInfo.MultiOrBuilder getMultiOrBuilder();
 
@@ -7451,10 +7963,11 @@ public final class TxOuterClass {
    *
    * Protobuf type {@code cosmos.tx.v1beta1.ModeInfo}
    */
-  public  static final class ModeInfo extends
+  public static final class ModeInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.ModeInfo)
       ModeInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ModeInfo.newBuilder() to construct.
     private ModeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7463,16 +7976,27 @@ public final class TxOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ModeInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ModeInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7481,12 +8005,6 @@ public final class TxOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single.Builder subBuilder = null;
               if (sumCase_ == 1) {
@@ -7515,6 +8033,13 @@ public final class TxOuterClass {
               sumCase_ = 2;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7523,6 +8048,7 @@ public final class TxOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7531,6 +8057,7 @@ public final class TxOuterClass {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_fieldAccessorTable
@@ -7547,7 +8074,8 @@ public final class TxOuterClass {
        * mode is the signing mode of the single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+       * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+       * @return The enum numeric value on the wire for mode.
        */
       int getModeValue();
       /**
@@ -7555,7 +8083,8 @@ public final class TxOuterClass {
        * mode is the signing mode of the single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+       * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+       * @return The mode.
        */
       cosmos.tx.signing.v1beta1.Signing.SignMode getMode();
     }
@@ -7568,10 +8097,11 @@ public final class TxOuterClass {
      *
      * Protobuf type {@code cosmos.tx.v1beta1.ModeInfo.Single}
      */
-    public  static final class Single extends
+    public static final class Single extends
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.ModeInfo.Single)
         SingleOrBuilder {
+    private static final long serialVersionUID = 0L;
       // Use Single.newBuilder() to construct.
       private Single(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -7581,16 +8111,27 @@ public final class TxOuterClass {
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Single();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        return this.unknownFields;
       }
       private Single(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        int mutable_bitField0_ = 0;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -7599,16 +8140,17 @@ public final class TxOuterClass {
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 8: {
                 int rawValue = input.readEnum();
 
                 mode_ = rawValue;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -7619,6 +8161,7 @@ public final class TxOuterClass {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
+          this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
@@ -7627,6 +8170,7 @@ public final class TxOuterClass {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Single_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Single_fieldAccessorTable
@@ -7641,9 +8185,10 @@ public final class TxOuterClass {
        * mode is the signing mode of the single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+       * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+       * @return The enum numeric value on the wire for mode.
        */
-      public int getModeValue() {
+      @java.lang.Override public int getModeValue() {
         return mode_;
       }
       /**
@@ -7651,14 +8196,17 @@ public final class TxOuterClass {
        * mode is the signing mode of the single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+       * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+       * @return The mode.
        */
-      public cosmos.tx.signing.v1beta1.Signing.SignMode getMode() {
+      @java.lang.Override public cosmos.tx.signing.v1beta1.Signing.SignMode getMode() {
+        @SuppressWarnings("deprecation")
         cosmos.tx.signing.v1beta1.Signing.SignMode result = cosmos.tx.signing.v1beta1.Signing.SignMode.valueOf(mode_);
         return result == null ? cosmos.tx.signing.v1beta1.Signing.SignMode.UNRECOGNIZED : result;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -7668,13 +8216,16 @@ public final class TxOuterClass {
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (mode_ != cosmos.tx.signing.v1beta1.Signing.SignMode.SIGN_MODE_UNSPECIFIED.getNumber()) {
           output.writeEnum(1, mode_);
         }
+        unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -7684,11 +8235,11 @@ public final class TxOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(1, mode_);
         }
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
 
-      private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
@@ -7699,9 +8250,9 @@ public final class TxOuterClass {
         }
         cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single other = (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single) obj;
 
-        boolean result = true;
-        result = result && mode_ == other.mode_;
-        return result;
+        if (mode_ != other.mode_) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -7710,7 +8261,7 @@ public final class TxOuterClass {
           return memoizedHashCode;
         }
         int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + MODE_FIELD_NUMBER;
         hash = (53 * hash) + mode_;
         hash = (29 * hash) + unknownFields.hashCode();
@@ -7718,6 +8269,17 @@ public final class TxOuterClass {
         return hash;
       }
 
+      public static cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7777,6 +8339,7 @@ public final class TxOuterClass {
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -7784,6 +8347,7 @@ public final class TxOuterClass {
       public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -7813,6 +8377,7 @@ public final class TxOuterClass {
           return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Single_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Single_fieldAccessorTable
@@ -7835,6 +8400,7 @@ public final class TxOuterClass {
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           mode_ = 0;
@@ -7842,15 +8408,18 @@ public final class TxOuterClass {
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Single_descriptor;
         }
 
+        @java.lang.Override
         public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single getDefaultInstanceForType() {
           return cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single.getDefaultInstance();
         }
 
+        @java.lang.Override
         public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single build() {
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single result = buildPartial();
           if (!result.isInitialized()) {
@@ -7859,6 +8428,7 @@ public final class TxOuterClass {
           return result;
         }
 
+        @java.lang.Override
         public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single buildPartial() {
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single result = new cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single(this);
           result.mode_ = mode_;
@@ -7866,32 +8436,39 @@ public final class TxOuterClass {
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
+            java.lang.Object value) {
+          return super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single) {
             return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single)other);
@@ -7906,14 +8483,17 @@ public final class TxOuterClass {
           if (other.mode_ != 0) {
             setModeValue(other.getModeValue());
           }
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7938,9 +8518,10 @@ public final class TxOuterClass {
          * mode is the signing mode of the single signer
          * </pre>
          *
-         * <code>optional .cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+         * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+         * @return The enum numeric value on the wire for mode.
          */
-        public int getModeValue() {
+        @java.lang.Override public int getModeValue() {
           return mode_;
         }
         /**
@@ -7948,9 +8529,12 @@ public final class TxOuterClass {
          * mode is the signing mode of the single signer
          * </pre>
          *
-         * <code>optional .cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+         * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+         * @param value The enum numeric value on the wire for mode to set.
+         * @return This builder for chaining.
          */
         public Builder setModeValue(int value) {
+          
           mode_ = value;
           onChanged();
           return this;
@@ -7960,9 +8544,12 @@ public final class TxOuterClass {
          * mode is the signing mode of the single signer
          * </pre>
          *
-         * <code>optional .cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+         * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+         * @return The mode.
          */
+        @java.lang.Override
         public cosmos.tx.signing.v1beta1.Signing.SignMode getMode() {
+          @SuppressWarnings("deprecation")
           cosmos.tx.signing.v1beta1.Signing.SignMode result = cosmos.tx.signing.v1beta1.Signing.SignMode.valueOf(mode_);
           return result == null ? cosmos.tx.signing.v1beta1.Signing.SignMode.UNRECOGNIZED : result;
         }
@@ -7971,7 +8558,9 @@ public final class TxOuterClass {
          * mode is the signing mode of the single signer
          * </pre>
          *
-         * <code>optional .cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+         * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+         * @param value The mode to set.
+         * @return This builder for chaining.
          */
         public Builder setMode(cosmos.tx.signing.v1beta1.Signing.SignMode value) {
           if (value == null) {
@@ -7987,7 +8576,8 @@ public final class TxOuterClass {
          * mode is the signing mode of the single signer
          * </pre>
          *
-         * <code>optional .cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+         * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearMode() {
           
@@ -7995,14 +8585,16 @@ public final class TxOuterClass {
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
+          return super.setUnknownFields(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
+          return super.mergeUnknownFields(unknownFields);
         }
 
 
@@ -8021,11 +8613,12 @@ public final class TxOuterClass {
 
       private static final com.google.protobuf.Parser<Single>
           PARSER = new com.google.protobuf.AbstractParser<Single>() {
+        @java.lang.Override
         public Single parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Single(input, extensionRegistry);
+          return new Single(input, extensionRegistry);
         }
       };
 
@@ -8038,6 +8631,7 @@ public final class TxOuterClass {
         return PARSER;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -8053,7 +8647,8 @@ public final class TxOuterClass {
        * bitarray specifies which keys within the multisig are signing
        * </pre>
        *
-       * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+       * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+       * @return Whether the bitarray field is set.
        */
       boolean hasBitarray();
       /**
@@ -8061,7 +8656,8 @@ public final class TxOuterClass {
        * bitarray specifies which keys within the multisig are signing
        * </pre>
        *
-       * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+       * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+       * @return The bitarray.
        */
       cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray getBitarray();
       /**
@@ -8069,7 +8665,7 @@ public final class TxOuterClass {
        * bitarray specifies which keys within the multisig are signing
        * </pre>
        *
-       * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+       * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
        */
       cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArrayOrBuilder getBitarrayOrBuilder();
 
@@ -8129,10 +8725,11 @@ public final class TxOuterClass {
      *
      * Protobuf type {@code cosmos.tx.v1beta1.ModeInfo.Multi}
      */
-    public  static final class Multi extends
+    public static final class Multi extends
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.ModeInfo.Multi)
         MultiOrBuilder {
+    private static final long serialVersionUID = 0L;
       // Use Multi.newBuilder() to construct.
       private Multi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -8142,16 +8739,28 @@ public final class TxOuterClass {
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Multi();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        return this.unknownFields;
       }
       private Multi(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -8160,12 +8769,6 @@ public final class TxOuterClass {
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray.Builder subBuilder = null;
                 if (bitarray_ != null) {
@@ -8180,12 +8783,19 @@ public final class TxOuterClass {
                 break;
               }
               case 18: {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   modeInfos_ = new java.util.ArrayList<cosmos.tx.v1beta1.TxOuterClass.ModeInfo>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 modeInfos_.add(
                     input.readMessage(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.parser(), extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -8196,9 +8806,10 @@ public final class TxOuterClass {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             modeInfos_ = java.util.Collections.unmodifiableList(modeInfos_);
           }
+          this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
@@ -8207,6 +8818,7 @@ public final class TxOuterClass {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Multi_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Multi_fieldAccessorTable
@@ -8214,7 +8826,6 @@ public final class TxOuterClass {
                 cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi.class, cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi.Builder.class);
       }
 
-      private int bitField0_;
       public static final int BITARRAY_FIELD_NUMBER = 1;
       private cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray bitarray_;
       /**
@@ -8222,8 +8833,10 @@ public final class TxOuterClass {
        * bitarray specifies which keys within the multisig are signing
        * </pre>
        *
-       * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+       * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+       * @return Whether the bitarray field is set.
        */
+      @java.lang.Override
       public boolean hasBitarray() {
         return bitarray_ != null;
       }
@@ -8232,8 +8845,10 @@ public final class TxOuterClass {
        * bitarray specifies which keys within the multisig are signing
        * </pre>
        *
-       * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+       * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+       * @return The bitarray.
        */
+      @java.lang.Override
       public cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray getBitarray() {
         return bitarray_ == null ? cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray.getDefaultInstance() : bitarray_;
       }
@@ -8242,8 +8857,9 @@ public final class TxOuterClass {
        * bitarray specifies which keys within the multisig are signing
        * </pre>
        *
-       * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+       * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
        */
+      @java.lang.Override
       public cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArrayOrBuilder getBitarrayOrBuilder() {
         return getBitarray();
       }
@@ -8258,6 +8874,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .cosmos.tx.v1beta1.ModeInfo mode_infos = 2;</code>
        */
+      @java.lang.Override
       public java.util.List<cosmos.tx.v1beta1.TxOuterClass.ModeInfo> getModeInfosList() {
         return modeInfos_;
       }
@@ -8269,6 +8886,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .cosmos.tx.v1beta1.ModeInfo mode_infos = 2;</code>
        */
+      @java.lang.Override
       public java.util.List<? extends cosmos.tx.v1beta1.TxOuterClass.ModeInfoOrBuilder> 
           getModeInfosOrBuilderList() {
         return modeInfos_;
@@ -8281,6 +8899,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .cosmos.tx.v1beta1.ModeInfo mode_infos = 2;</code>
        */
+      @java.lang.Override
       public int getModeInfosCount() {
         return modeInfos_.size();
       }
@@ -8292,6 +8911,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .cosmos.tx.v1beta1.ModeInfo mode_infos = 2;</code>
        */
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo getModeInfos(int index) {
         return modeInfos_.get(index);
       }
@@ -8303,12 +8923,14 @@ public final class TxOuterClass {
        *
        * <code>repeated .cosmos.tx.v1beta1.ModeInfo mode_infos = 2;</code>
        */
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfoOrBuilder getModeInfosOrBuilder(
           int index) {
         return modeInfos_.get(index);
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -8318,6 +8940,7 @@ public final class TxOuterClass {
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (bitarray_ != null) {
@@ -8326,8 +8949,10 @@ public final class TxOuterClass {
         for (int i = 0; i < modeInfos_.size(); i++) {
           output.writeMessage(2, modeInfos_.get(i));
         }
+        unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -8341,11 +8966,11 @@ public final class TxOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, modeInfos_.get(i));
         }
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
 
-      private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
@@ -8356,15 +8981,15 @@ public final class TxOuterClass {
         }
         cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi other = (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) obj;
 
-        boolean result = true;
-        result = result && (hasBitarray() == other.hasBitarray());
+        if (hasBitarray() != other.hasBitarray()) return false;
         if (hasBitarray()) {
-          result = result && getBitarray()
-              .equals(other.getBitarray());
+          if (!getBitarray()
+              .equals(other.getBitarray())) return false;
         }
-        result = result && getModeInfosList()
-            .equals(other.getModeInfosList());
-        return result;
+        if (!getModeInfosList()
+            .equals(other.getModeInfosList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -8373,7 +8998,7 @@ public final class TxOuterClass {
           return memoizedHashCode;
         }
         int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (19 * hash) + getDescriptor().hashCode();
         if (hasBitarray()) {
           hash = (37 * hash) + BITARRAY_FIELD_NUMBER;
           hash = (53 * hash) + getBitarray().hashCode();
@@ -8387,6 +9012,17 @@ public final class TxOuterClass {
         return hash;
       }
 
+      public static cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8446,6 +9082,7 @@ public final class TxOuterClass {
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -8453,6 +9090,7 @@ public final class TxOuterClass {
       public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -8480,6 +9118,7 @@ public final class TxOuterClass {
           return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Multi_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Multi_fieldAccessorTable
@@ -8503,6 +9142,7 @@ public final class TxOuterClass {
             getModeInfosFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           if (bitarrayBuilder_ == null) {
@@ -8513,22 +9153,25 @@ public final class TxOuterClass {
           }
           if (modeInfosBuilder_ == null) {
             modeInfos_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             modeInfosBuilder_.clear();
           }
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Multi_descriptor;
         }
 
+        @java.lang.Override
         public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi getDefaultInstanceForType() {
           return cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi.getDefaultInstance();
         }
 
+        @java.lang.Override
         public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi build() {
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi result = buildPartial();
           if (!result.isInitialized()) {
@@ -8537,55 +9180,61 @@ public final class TxOuterClass {
           return result;
         }
 
+        @java.lang.Override
         public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi buildPartial() {
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi result = new cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (bitarrayBuilder_ == null) {
             result.bitarray_ = bitarray_;
           } else {
             result.bitarray_ = bitarrayBuilder_.build();
           }
           if (modeInfosBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               modeInfos_ = java.util.Collections.unmodifiableList(modeInfos_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.modeInfos_ = modeInfos_;
           } else {
             result.modeInfos_ = modeInfosBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
+            java.lang.Object value) {
+          return super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) {
             return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi)other);
@@ -8604,7 +9253,7 @@ public final class TxOuterClass {
             if (!other.modeInfos_.isEmpty()) {
               if (modeInfos_.isEmpty()) {
                 modeInfos_ = other.modeInfos_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureModeInfosIsMutable();
                 modeInfos_.addAll(other.modeInfos_);
@@ -8617,7 +9266,7 @@ public final class TxOuterClass {
                 modeInfosBuilder_.dispose();
                 modeInfosBuilder_ = null;
                 modeInfos_ = other.modeInfos_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 modeInfosBuilder_ = 
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                      getModeInfosFieldBuilder() : null;
@@ -8626,14 +9275,17 @@ public final class TxOuterClass {
               }
             }
           }
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8653,7 +9305,7 @@ public final class TxOuterClass {
         }
         private int bitField0_;
 
-        private cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray bitarray_ = null;
+        private cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray bitarray_;
         private com.google.protobuf.SingleFieldBuilderV3<
             cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray, cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray.Builder, cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArrayOrBuilder> bitarrayBuilder_;
         /**
@@ -8661,7 +9313,8 @@ public final class TxOuterClass {
          * bitarray specifies which keys within the multisig are signing
          * </pre>
          *
-         * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * @return Whether the bitarray field is set.
          */
         public boolean hasBitarray() {
           return bitarrayBuilder_ != null || bitarray_ != null;
@@ -8671,7 +9324,8 @@ public final class TxOuterClass {
          * bitarray specifies which keys within the multisig are signing
          * </pre>
          *
-         * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * @return The bitarray.
          */
         public cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray getBitarray() {
           if (bitarrayBuilder_ == null) {
@@ -8685,7 +9339,7 @@ public final class TxOuterClass {
          * bitarray specifies which keys within the multisig are signing
          * </pre>
          *
-         * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
          */
         public Builder setBitarray(cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray value) {
           if (bitarrayBuilder_ == null) {
@@ -8705,7 +9359,7 @@ public final class TxOuterClass {
          * bitarray specifies which keys within the multisig are signing
          * </pre>
          *
-         * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
          */
         public Builder setBitarray(
             cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray.Builder builderForValue) {
@@ -8723,7 +9377,7 @@ public final class TxOuterClass {
          * bitarray specifies which keys within the multisig are signing
          * </pre>
          *
-         * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
          */
         public Builder mergeBitarray(cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray value) {
           if (bitarrayBuilder_ == null) {
@@ -8745,7 +9399,7 @@ public final class TxOuterClass {
          * bitarray specifies which keys within the multisig are signing
          * </pre>
          *
-         * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
          */
         public Builder clearBitarray() {
           if (bitarrayBuilder_ == null) {
@@ -8763,7 +9417,7 @@ public final class TxOuterClass {
          * bitarray specifies which keys within the multisig are signing
          * </pre>
          *
-         * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
          */
         public cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray.Builder getBitarrayBuilder() {
           
@@ -8775,7 +9429,7 @@ public final class TxOuterClass {
          * bitarray specifies which keys within the multisig are signing
          * </pre>
          *
-         * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
          */
         public cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArrayOrBuilder getBitarrayOrBuilder() {
           if (bitarrayBuilder_ != null) {
@@ -8790,7 +9444,7 @@ public final class TxOuterClass {
          * bitarray specifies which keys within the multisig are signing
          * </pre>
          *
-         * <code>optional .cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
+         * <code>.cosmos.crypto.multisig.v1beta1.CompactBitArray bitarray = 1;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray, cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray.Builder, cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArrayOrBuilder> 
@@ -8809,9 +9463,9 @@ public final class TxOuterClass {
         private java.util.List<cosmos.tx.v1beta1.TxOuterClass.ModeInfo> modeInfos_ =
           java.util.Collections.emptyList();
         private void ensureModeInfosIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             modeInfos_ = new java.util.ArrayList<cosmos.tx.v1beta1.TxOuterClass.ModeInfo>(modeInfos_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
            }
         }
 
@@ -9016,7 +9670,7 @@ public final class TxOuterClass {
         public Builder clearModeInfos() {
           if (modeInfosBuilder_ == null) {
             modeInfos_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             modeInfosBuilder_.clear();
@@ -9128,21 +9782,23 @@ public final class TxOuterClass {
             modeInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 cosmos.tx.v1beta1.TxOuterClass.ModeInfo, cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Builder, cosmos.tx.v1beta1.TxOuterClass.ModeInfoOrBuilder>(
                     modeInfos_,
-                    ((bitField0_ & 0x00000002) == 0x00000002),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             modeInfos_ = null;
           }
           return modeInfosBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
+          return super.setUnknownFields(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
+          return super.mergeUnknownFields(unknownFields);
         }
 
 
@@ -9161,11 +9817,12 @@ public final class TxOuterClass {
 
       private static final com.google.protobuf.Parser<Multi>
           PARSER = new com.google.protobuf.AbstractParser<Multi>() {
+        @java.lang.Override
         public Multi parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Multi(input, extensionRegistry);
+          return new Multi(input, extensionRegistry);
         }
       };
 
@@ -9178,6 +9835,7 @@ public final class TxOuterClass {
         return PARSER;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -9187,7 +9845,8 @@ public final class TxOuterClass {
     private int sumCase_ = 0;
     private java.lang.Object sum_;
     public enum SumCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       SINGLE(1),
       MULTI(2),
       SUM_NOT_SET(0);
@@ -9196,6 +9855,8 @@ public final class TxOuterClass {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -9228,8 +9889,22 @@ public final class TxOuterClass {
      * single represents a single signer
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+     * @return Whether the single field is set.
      */
+    @java.lang.Override
+    public boolean hasSingle() {
+      return sumCase_ == 1;
+    }
+    /**
+     * <pre>
+     * single represents a single signer
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+     * @return The single.
+     */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single getSingle() {
       if (sumCase_ == 1) {
          return (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single) sum_;
@@ -9241,8 +9916,9 @@ public final class TxOuterClass {
      * single represents a single signer
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.SingleOrBuilder getSingleOrBuilder() {
       if (sumCase_ == 1) {
          return (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single) sum_;
@@ -9256,8 +9932,22 @@ public final class TxOuterClass {
      * multi represents a nested multisig signer
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+     * @return Whether the multi field is set.
      */
+    @java.lang.Override
+    public boolean hasMulti() {
+      return sumCase_ == 2;
+    }
+    /**
+     * <pre>
+     * multi represents a nested multisig signer
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+     * @return The multi.
+     */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi getMulti() {
       if (sumCase_ == 2) {
          return (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) sum_;
@@ -9269,8 +9959,9 @@ public final class TxOuterClass {
      * multi represents a nested multisig signer
      * </pre>
      *
-     * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+     * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
      */
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.MultiOrBuilder getMultiOrBuilder() {
       if (sumCase_ == 2) {
          return (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) sum_;
@@ -9279,6 +9970,7 @@ public final class TxOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9288,6 +9980,7 @@ public final class TxOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sumCase_ == 1) {
@@ -9296,8 +9989,10 @@ public final class TxOuterClass {
       if (sumCase_ == 2) {
         output.writeMessage(2, (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) sum_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9311,11 +10006,11 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) sum_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -9326,23 +10021,21 @@ public final class TxOuterClass {
       }
       cosmos.tx.v1beta1.TxOuterClass.ModeInfo other = (cosmos.tx.v1beta1.TxOuterClass.ModeInfo) obj;
 
-      boolean result = true;
-      result = result && getSumCase().equals(
-          other.getSumCase());
-      if (!result) return false;
+      if (!getSumCase().equals(other.getSumCase())) return false;
       switch (sumCase_) {
         case 1:
-          result = result && getSingle()
-              .equals(other.getSingle());
+          if (!getSingle()
+              .equals(other.getSingle())) return false;
           break;
         case 2:
-          result = result && getMulti()
-              .equals(other.getMulti());
+          if (!getMulti()
+              .equals(other.getMulti())) return false;
           break;
         case 0:
         default:
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9351,7 +10044,7 @@ public final class TxOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       switch (sumCase_) {
         case 1:
           hash = (37 * hash) + SINGLE_FIELD_NUMBER;
@@ -9369,6 +10062,17 @@ public final class TxOuterClass {
       return hash;
     }
 
+    public static cosmos.tx.v1beta1.TxOuterClass.ModeInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.ModeInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.tx.v1beta1.TxOuterClass.ModeInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9428,6 +10132,7 @@ public final class TxOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9435,6 +10140,7 @@ public final class TxOuterClass {
     public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.ModeInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9462,6 +10168,7 @@ public final class TxOuterClass {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_fieldAccessorTable
@@ -9484,6 +10191,7 @@ public final class TxOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         sumCase_ = 0;
@@ -9491,15 +10199,18 @@ public final class TxOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo getDefaultInstanceForType() {
         return cosmos.tx.v1beta1.TxOuterClass.ModeInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo build() {
         cosmos.tx.v1beta1.TxOuterClass.ModeInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -9508,6 +10219,7 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo buildPartial() {
         cosmos.tx.v1beta1.TxOuterClass.ModeInfo result = new cosmos.tx.v1beta1.TxOuterClass.ModeInfo(this);
         if (sumCase_ == 1) {
@@ -9529,32 +10241,39 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.tx.v1beta1.TxOuterClass.ModeInfo) {
           return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.ModeInfo)other);
@@ -9579,14 +10298,17 @@ public final class TxOuterClass {
             break;
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9627,8 +10349,22 @@ public final class TxOuterClass {
        * single represents a single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+       * @return Whether the single field is set.
        */
+      @java.lang.Override
+      public boolean hasSingle() {
+        return sumCase_ == 1;
+      }
+      /**
+       * <pre>
+       * single represents a single signer
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+       * @return The single.
+       */
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single getSingle() {
         if (singleBuilder_ == null) {
           if (sumCase_ == 1) {
@@ -9647,7 +10383,7 @@ public final class TxOuterClass {
        * single represents a single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
        */
       public Builder setSingle(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single value) {
         if (singleBuilder_ == null) {
@@ -9667,7 +10403,7 @@ public final class TxOuterClass {
        * single represents a single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
        */
       public Builder setSingle(
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single.Builder builderForValue) {
@@ -9685,7 +10421,7 @@ public final class TxOuterClass {
        * single represents a single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
        */
       public Builder mergeSingle(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single value) {
         if (singleBuilder_ == null) {
@@ -9711,7 +10447,7 @@ public final class TxOuterClass {
        * single represents a single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
        */
       public Builder clearSingle() {
         if (singleBuilder_ == null) {
@@ -9734,7 +10470,7 @@ public final class TxOuterClass {
        * single represents a single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
        */
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single.Builder getSingleBuilder() {
         return getSingleFieldBuilder().getBuilder();
@@ -9744,8 +10480,9 @@ public final class TxOuterClass {
        * single represents a single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
        */
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.SingleOrBuilder getSingleOrBuilder() {
         if ((sumCase_ == 1) && (singleBuilder_ != null)) {
           return singleBuilder_.getMessageOrBuilder();
@@ -9761,7 +10498,7 @@ public final class TxOuterClass {
        * single represents a single signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Single single = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single, cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single.Builder, cosmos.tx.v1beta1.TxOuterClass.ModeInfo.SingleOrBuilder> 
@@ -9789,8 +10526,22 @@ public final class TxOuterClass {
        * multi represents a nested multisig signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+       * @return Whether the multi field is set.
        */
+      @java.lang.Override
+      public boolean hasMulti() {
+        return sumCase_ == 2;
+      }
+      /**
+       * <pre>
+       * multi represents a nested multisig signer
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+       * @return The multi.
+       */
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi getMulti() {
         if (multiBuilder_ == null) {
           if (sumCase_ == 2) {
@@ -9809,7 +10560,7 @@ public final class TxOuterClass {
        * multi represents a nested multisig signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
        */
       public Builder setMulti(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi value) {
         if (multiBuilder_ == null) {
@@ -9829,7 +10580,7 @@ public final class TxOuterClass {
        * multi represents a nested multisig signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
        */
       public Builder setMulti(
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi.Builder builderForValue) {
@@ -9847,7 +10598,7 @@ public final class TxOuterClass {
        * multi represents a nested multisig signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
        */
       public Builder mergeMulti(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi value) {
         if (multiBuilder_ == null) {
@@ -9873,7 +10624,7 @@ public final class TxOuterClass {
        * multi represents a nested multisig signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
        */
       public Builder clearMulti() {
         if (multiBuilder_ == null) {
@@ -9896,7 +10647,7 @@ public final class TxOuterClass {
        * multi represents a nested multisig signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
        */
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi.Builder getMultiBuilder() {
         return getMultiFieldBuilder().getBuilder();
@@ -9906,8 +10657,9 @@ public final class TxOuterClass {
        * multi represents a nested multisig signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
        */
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.ModeInfo.MultiOrBuilder getMultiOrBuilder() {
         if ((sumCase_ == 2) && (multiBuilder_ != null)) {
           return multiBuilder_.getMessageOrBuilder();
@@ -9923,7 +10675,7 @@ public final class TxOuterClass {
        * multi represents a nested multisig signer
        * </pre>
        *
-       * <code>optional .cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
+       * <code>.cosmos.tx.v1beta1.ModeInfo.Multi multi = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi, cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi.Builder, cosmos.tx.v1beta1.TxOuterClass.ModeInfo.MultiOrBuilder> 
@@ -9943,14 +10695,16 @@ public final class TxOuterClass {
         onChanged();;
         return multiBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9969,11 +10723,12 @@ public final class TxOuterClass {
 
     private static final com.google.protobuf.Parser<ModeInfo>
         PARSER = new com.google.protobuf.AbstractParser<ModeInfo>() {
+      @java.lang.Override
       public ModeInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ModeInfo(input, extensionRegistry);
+        return new ModeInfo(input, extensionRegistry);
       }
     };
 
@@ -9986,6 +10741,7 @@ public final class TxOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.ModeInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10001,7 +10757,7 @@ public final class TxOuterClass {
      * amount is the amount of coins to be paid as a fee
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getAmountList();
@@ -10010,7 +10766,7 @@ public final class TxOuterClass {
      * amount is the amount of coins to be paid as a fee
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getAmount(int index);
     /**
@@ -10018,7 +10774,7 @@ public final class TxOuterClass {
      * amount is the amount of coins to be paid as a fee
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getAmountCount();
     /**
@@ -10026,7 +10782,7 @@ public final class TxOuterClass {
      * amount is the amount of coins to be paid as a fee
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getAmountOrBuilderList();
@@ -10035,7 +10791,7 @@ public final class TxOuterClass {
      * amount is the amount of coins to be paid as a fee
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder(
         int index);
@@ -10046,7 +10802,8 @@ public final class TxOuterClass {
      * before an out of gas error occurs
      * </pre>
      *
-     * <code>optional uint64 gas_limit = 2;</code>
+     * <code>uint64 gas_limit = 2;</code>
+     * @return The gasLimit.
      */
     long getGasLimit();
 
@@ -10057,7 +10814,8 @@ public final class TxOuterClass {
      * setting this field does *not* change the ordering of required signers for the transaction.
      * </pre>
      *
-     * <code>optional string payer = 3;</code>
+     * <code>string payer = 3;</code>
+     * @return The payer.
      */
     java.lang.String getPayer();
     /**
@@ -10067,7 +10825,8 @@ public final class TxOuterClass {
      * setting this field does *not* change the ordering of required signers for the transaction.
      * </pre>
      *
-     * <code>optional string payer = 3;</code>
+     * <code>string payer = 3;</code>
+     * @return The bytes for payer.
      */
     com.google.protobuf.ByteString
         getPayerBytes();
@@ -10079,7 +10838,8 @@ public final class TxOuterClass {
      * not support fee grants, this will fail
      * </pre>
      *
-     * <code>optional string granter = 4;</code>
+     * <code>string granter = 4;</code>
+     * @return The granter.
      */
     java.lang.String getGranter();
     /**
@@ -10089,7 +10849,8 @@ public final class TxOuterClass {
      * not support fee grants, this will fail
      * </pre>
      *
-     * <code>optional string granter = 4;</code>
+     * <code>string granter = 4;</code>
+     * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
         getGranterBytes();
@@ -10103,32 +10864,44 @@ public final class TxOuterClass {
    *
    * Protobuf type {@code cosmos.tx.v1beta1.Fee}
    */
-  public  static final class Fee extends
+  public static final class Fee extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.Fee)
       FeeOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Fee.newBuilder() to construct.
     private Fee(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Fee() {
       amount_ = java.util.Collections.emptyList();
-      gasLimit_ = 0L;
       payer_ = "";
       granter_ = "";
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Fee();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Fee(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -10137,14 +10910,8 @@ public final class TxOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 amount_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -10169,6 +10936,13 @@ public final class TxOuterClass {
               granter_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -10177,9 +10951,10 @@ public final class TxOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           amount_ = java.util.Collections.unmodifiableList(amount_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -10188,6 +10963,7 @@ public final class TxOuterClass {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Fee_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Fee_fieldAccessorTable
@@ -10195,7 +10971,6 @@ public final class TxOuterClass {
               cosmos.tx.v1beta1.TxOuterClass.Fee.class, cosmos.tx.v1beta1.TxOuterClass.Fee.Builder.class);
     }
 
-    private int bitField0_;
     public static final int AMOUNT_FIELD_NUMBER = 1;
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> amount_;
     /**
@@ -10203,8 +10978,9 @@ public final class TxOuterClass {
      * amount is the amount of coins to be paid as a fee
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getAmountList() {
       return amount_;
     }
@@ -10213,8 +10989,9 @@ public final class TxOuterClass {
      * amount is the amount of coins to be paid as a fee
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getAmountOrBuilderList() {
       return amount_;
@@ -10224,8 +11001,9 @@ public final class TxOuterClass {
      * amount is the amount of coins to be paid as a fee
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public int getAmountCount() {
       return amount_.size();
     }
@@ -10234,8 +11012,9 @@ public final class TxOuterClass {
      * amount is the amount of coins to be paid as a fee
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount(int index) {
       return amount_.get(index);
     }
@@ -10244,8 +11023,9 @@ public final class TxOuterClass {
      * amount is the amount of coins to be paid as a fee
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder(
         int index) {
       return amount_.get(index);
@@ -10259,8 +11039,10 @@ public final class TxOuterClass {
      * before an out of gas error occurs
      * </pre>
      *
-     * <code>optional uint64 gas_limit = 2;</code>
+     * <code>uint64 gas_limit = 2;</code>
+     * @return The gasLimit.
      */
+    @java.lang.Override
     public long getGasLimit() {
       return gasLimit_;
     }
@@ -10274,8 +11056,10 @@ public final class TxOuterClass {
      * setting this field does *not* change the ordering of required signers for the transaction.
      * </pre>
      *
-     * <code>optional string payer = 3;</code>
+     * <code>string payer = 3;</code>
+     * @return The payer.
      */
+    @java.lang.Override
     public java.lang.String getPayer() {
       java.lang.Object ref = payer_;
       if (ref instanceof java.lang.String) {
@@ -10295,8 +11079,10 @@ public final class TxOuterClass {
      * setting this field does *not* change the ordering of required signers for the transaction.
      * </pre>
      *
-     * <code>optional string payer = 3;</code>
+     * <code>string payer = 3;</code>
+     * @return The bytes for payer.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPayerBytes() {
       java.lang.Object ref = payer_;
@@ -10320,8 +11106,10 @@ public final class TxOuterClass {
      * not support fee grants, this will fail
      * </pre>
      *
-     * <code>optional string granter = 4;</code>
+     * <code>string granter = 4;</code>
+     * @return The granter.
      */
+    @java.lang.Override
     public java.lang.String getGranter() {
       java.lang.Object ref = granter_;
       if (ref instanceof java.lang.String) {
@@ -10341,8 +11129,10 @@ public final class TxOuterClass {
      * not support fee grants, this will fail
      * </pre>
      *
-     * <code>optional string granter = 4;</code>
+     * <code>string granter = 4;</code>
+     * @return The bytes for granter.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getGranterBytes() {
       java.lang.Object ref = granter_;
@@ -10358,6 +11148,7 @@ public final class TxOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10367,6 +11158,7 @@ public final class TxOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < amount_.size(); i++) {
@@ -10381,8 +11173,10 @@ public final class TxOuterClass {
       if (!getGranterBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, granter_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10402,11 +11196,11 @@ public final class TxOuterClass {
       if (!getGranterBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, granter_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -10417,16 +11211,16 @@ public final class TxOuterClass {
       }
       cosmos.tx.v1beta1.TxOuterClass.Fee other = (cosmos.tx.v1beta1.TxOuterClass.Fee) obj;
 
-      boolean result = true;
-      result = result && getAmountList()
-          .equals(other.getAmountList());
-      result = result && (getGasLimit()
-          == other.getGasLimit());
-      result = result && getPayer()
-          .equals(other.getPayer());
-      result = result && getGranter()
-          .equals(other.getGranter());
-      return result;
+      if (!getAmountList()
+          .equals(other.getAmountList())) return false;
+      if (getGasLimit()
+          != other.getGasLimit()) return false;
+      if (!getPayer()
+          .equals(other.getPayer())) return false;
+      if (!getGranter()
+          .equals(other.getGranter())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -10435,7 +11229,7 @@ public final class TxOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getAmountCount() > 0) {
         hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getAmountList().hashCode();
@@ -10452,6 +11246,17 @@ public final class TxOuterClass {
       return hash;
     }
 
+    public static cosmos.tx.v1beta1.TxOuterClass.Fee parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Fee parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.tx.v1beta1.TxOuterClass.Fee parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10511,6 +11316,7 @@ public final class TxOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10518,6 +11324,7 @@ public final class TxOuterClass {
     public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.Fee prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10547,6 +11354,7 @@ public final class TxOuterClass {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Fee_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Fee_fieldAccessorTable
@@ -10570,6 +11378,7 @@ public final class TxOuterClass {
           getAmountFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (amountBuilder_ == null) {
@@ -10587,15 +11396,18 @@ public final class TxOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Fee_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.Fee getDefaultInstanceForType() {
         return cosmos.tx.v1beta1.TxOuterClass.Fee.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.Fee build() {
         cosmos.tx.v1beta1.TxOuterClass.Fee result = buildPartial();
         if (!result.isInitialized()) {
@@ -10604,12 +11416,12 @@ public final class TxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.tx.v1beta1.TxOuterClass.Fee buildPartial() {
         cosmos.tx.v1beta1.TxOuterClass.Fee result = new cosmos.tx.v1beta1.TxOuterClass.Fee(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (amountBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             amount_ = java.util.Collections.unmodifiableList(amount_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -10620,37 +11432,43 @@ public final class TxOuterClass {
         result.gasLimit_ = gasLimit_;
         result.payer_ = payer_;
         result.granter_ = granter_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.tx.v1beta1.TxOuterClass.Fee) {
           return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.Fee)other);
@@ -10699,14 +11517,17 @@ public final class TxOuterClass {
           granter_ = other.granter_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10729,7 +11550,7 @@ public final class TxOuterClass {
       private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> amount_ =
         java.util.Collections.emptyList();
       private void ensureAmountIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           amount_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(amount_);
           bitField0_ |= 0x00000001;
          }
@@ -10743,7 +11564,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getAmountList() {
         if (amountBuilder_ == null) {
@@ -10757,7 +11578,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getAmountCount() {
         if (amountBuilder_ == null) {
@@ -10771,7 +11592,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount(int index) {
         if (amountBuilder_ == null) {
@@ -10785,7 +11606,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setAmount(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -10806,7 +11627,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setAmount(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -10824,7 +11645,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -10844,7 +11665,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAmount(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -10865,7 +11686,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAmount(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -10883,7 +11704,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAmount(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -10901,7 +11722,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllAmount(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -10920,7 +11741,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearAmount() {
         if (amountBuilder_ == null) {
@@ -10937,7 +11758,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeAmount(int index) {
         if (amountBuilder_ == null) {
@@ -10954,7 +11775,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder(
           int index) {
@@ -10965,7 +11786,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder(
           int index) {
@@ -10979,7 +11800,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getAmountOrBuilderList() {
@@ -10994,7 +11815,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addAmountBuilder() {
         return getAmountFieldBuilder().addBuilder(
@@ -11005,7 +11826,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addAmountBuilder(
           int index) {
@@ -11017,7 +11838,7 @@ public final class TxOuterClass {
        * amount is the amount of coins to be paid as a fee
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getAmountBuilderList() {
@@ -11030,7 +11851,7 @@ public final class TxOuterClass {
           amountBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
                   amount_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           amount_ = null;
@@ -11045,8 +11866,10 @@ public final class TxOuterClass {
        * before an out of gas error occurs
        * </pre>
        *
-       * <code>optional uint64 gas_limit = 2;</code>
+       * <code>uint64 gas_limit = 2;</code>
+       * @return The gasLimit.
        */
+      @java.lang.Override
       public long getGasLimit() {
         return gasLimit_;
       }
@@ -11056,7 +11879,9 @@ public final class TxOuterClass {
        * before an out of gas error occurs
        * </pre>
        *
-       * <code>optional uint64 gas_limit = 2;</code>
+       * <code>uint64 gas_limit = 2;</code>
+       * @param value The gasLimit to set.
+       * @return This builder for chaining.
        */
       public Builder setGasLimit(long value) {
         
@@ -11070,7 +11895,8 @@ public final class TxOuterClass {
        * before an out of gas error occurs
        * </pre>
        *
-       * <code>optional uint64 gas_limit = 2;</code>
+       * <code>uint64 gas_limit = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGasLimit() {
         
@@ -11087,7 +11913,8 @@ public final class TxOuterClass {
        * setting this field does *not* change the ordering of required signers for the transaction.
        * </pre>
        *
-       * <code>optional string payer = 3;</code>
+       * <code>string payer = 3;</code>
+       * @return The payer.
        */
       public java.lang.String getPayer() {
         java.lang.Object ref = payer_;
@@ -11108,7 +11935,8 @@ public final class TxOuterClass {
        * setting this field does *not* change the ordering of required signers for the transaction.
        * </pre>
        *
-       * <code>optional string payer = 3;</code>
+       * <code>string payer = 3;</code>
+       * @return The bytes for payer.
        */
       public com.google.protobuf.ByteString
           getPayerBytes() {
@@ -11130,7 +11958,9 @@ public final class TxOuterClass {
        * setting this field does *not* change the ordering of required signers for the transaction.
        * </pre>
        *
-       * <code>optional string payer = 3;</code>
+       * <code>string payer = 3;</code>
+       * @param value The payer to set.
+       * @return This builder for chaining.
        */
       public Builder setPayer(
           java.lang.String value) {
@@ -11149,7 +11979,8 @@ public final class TxOuterClass {
        * setting this field does *not* change the ordering of required signers for the transaction.
        * </pre>
        *
-       * <code>optional string payer = 3;</code>
+       * <code>string payer = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPayer() {
         
@@ -11164,7 +11995,9 @@ public final class TxOuterClass {
        * setting this field does *not* change the ordering of required signers for the transaction.
        * </pre>
        *
-       * <code>optional string payer = 3;</code>
+       * <code>string payer = 3;</code>
+       * @param value The bytes for payer to set.
+       * @return This builder for chaining.
        */
       public Builder setPayerBytes(
           com.google.protobuf.ByteString value) {
@@ -11186,7 +12019,8 @@ public final class TxOuterClass {
        * not support fee grants, this will fail
        * </pre>
        *
-       * <code>optional string granter = 4;</code>
+       * <code>string granter = 4;</code>
+       * @return The granter.
        */
       public java.lang.String getGranter() {
         java.lang.Object ref = granter_;
@@ -11207,7 +12041,8 @@ public final class TxOuterClass {
        * not support fee grants, this will fail
        * </pre>
        *
-       * <code>optional string granter = 4;</code>
+       * <code>string granter = 4;</code>
+       * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
           getGranterBytes() {
@@ -11229,7 +12064,9 @@ public final class TxOuterClass {
        * not support fee grants, this will fail
        * </pre>
        *
-       * <code>optional string granter = 4;</code>
+       * <code>string granter = 4;</code>
+       * @param value The granter to set.
+       * @return This builder for chaining.
        */
       public Builder setGranter(
           java.lang.String value) {
@@ -11248,7 +12085,8 @@ public final class TxOuterClass {
        * not support fee grants, this will fail
        * </pre>
        *
-       * <code>optional string granter = 4;</code>
+       * <code>string granter = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGranter() {
         
@@ -11263,7 +12101,9 @@ public final class TxOuterClass {
        * not support fee grants, this will fail
        * </pre>
        *
-       * <code>optional string granter = 4;</code>
+       * <code>string granter = 4;</code>
+       * @param value The bytes for granter to set.
+       * @return This builder for chaining.
        */
       public Builder setGranterBytes(
           com.google.protobuf.ByteString value) {
@@ -11276,14 +12116,16 @@ public final class TxOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -11302,11 +12144,12 @@ public final class TxOuterClass {
 
     private static final com.google.protobuf.Parser<Fee>
         PARSER = new com.google.protobuf.AbstractParser<Fee>() {
+      @java.lang.Override
       public Fee parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Fee(input, extensionRegistry);
+        return new Fee(input, extensionRegistry);
       }
     };
 
@@ -11319,6 +12162,7 @@ public final class TxOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.tx.v1beta1.TxOuterClass.Fee getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11393,7 +12237,7 @@ public final class TxOuterClass {
       "osmos.tx.v1beta1.TxBody\022.\n\tauth_info\030\002 \001" +
       "(\0132\033.cosmos.tx.v1beta1.AuthInfo\022\022\n\nsigna" +
       "tures\030\003 \003(\014\"H\n\005TxRaw\022\022\n\nbody_bytes\030\001 \001(\014" +
-      "\022\027\n\017auth_info_bytes\030\002 \001(\014\022\022\n\nsignatures\030",
+      "\022\027\n\017auth_info_bytes\030\002 \001(\014\022\022\n\nsignatures\030" +
       "\003 \003(\014\"`\n\007SignDoc\022\022\n\nbody_bytes\030\001 \001(\014\022\027\n\017" +
       "auth_info_bytes\030\002 \001(\014\022\020\n\010chain_id\030\003 \001(\t\022" +
       "\026\n\016account_number\030\004 \001(\004\"\307\001\n\006TxBody\022&\n\010me" +
@@ -11403,7 +12247,7 @@ public final class TxOuterClass {
       "ny\022=\n\036non_critical_extension_options\030\377\017 " +
       "\003(\0132\024.google.protobuf.Any\"d\n\010AuthInfo\0223\n" +
       "\014signer_infos\030\001 \003(\0132\035.cosmos.tx.v1beta1." +
-      "SignerInfo\022#\n\003fee\030\002 \001(\0132\026.cosmos.tx.v1be",
+      "SignerInfo\022#\n\003fee\030\002 \001(\0132\026.cosmos.tx.v1be" +
       "ta1.Fee\"x\n\nSignerInfo\022(\n\npublic_key\030\001 \001(" +
       "\0132\024.google.protobuf.Any\022.\n\tmode_info\030\002 \001" +
       "(\0132\033.cosmos.tx.v1beta1.ModeInfo\022\020\n\010seque" +
@@ -11413,7 +12257,7 @@ public final class TxOuterClass {
       ".MultiH\000\032;\n\006Single\0221\n\004mode\030\001 \001(\0162#.cosmo" +
       "s.tx.signing.v1beta1.SignMode\032{\n\005Multi\022A" +
       "\n\010bitarray\030\001 \001(\0132/.cosmos.crypto.multisi" +
-      "g.v1beta1.CompactBitArray\022/\n\nmode_infos\030",
+      "g.v1beta1.CompactBitArray\022/\n\nmode_infos\030" +
       "\002 \003(\0132\033.cosmos.tx.v1beta1.ModeInfoB\005\n\003su" +
       "m\"\225\001\n\003Fee\022[\n\006amount\030\001 \003(\0132\031.cosmos.base." +
       "v1beta1.CoinB0\310\336\037\000\252\337\037(github.com/cosmos/" +
@@ -11422,15 +12266,7 @@ public final class TxOuterClass {
       "hub.com/cosmos/cosmos-sdk/types/txb\006prot" +
       "o3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
@@ -11438,7 +12274,7 @@ public final class TxOuterClass {
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           cosmos.tx.signing.v1beta1.Signing.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_tx_v1beta1_Tx_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_tx_v1beta1_Tx_fieldAccessorTable = new

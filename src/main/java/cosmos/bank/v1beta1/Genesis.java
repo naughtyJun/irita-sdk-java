@@ -23,7 +23,8 @@ public final class Genesis {
      * params defines all the paramaters of the module.
      * </pre>
      *
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
@@ -31,7 +32,8 @@ public final class Genesis {
      * params defines all the paramaters of the module.
      * </pre>
      *
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The params.
      */
     cosmos.bank.v1beta1.Bank.Params getParams();
     /**
@@ -39,7 +41,7 @@ public final class Genesis {
      * params defines all the paramaters of the module.
      * </pre>
      *
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder();
 
@@ -48,7 +50,7 @@ public final class Genesis {
      * balances is an array containing the balances of all the accounts.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<cosmos.bank.v1beta1.Genesis.Balance> 
         getBalancesList();
@@ -57,7 +59,7 @@ public final class Genesis {
      * balances is an array containing the balances of all the accounts.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.bank.v1beta1.Genesis.Balance getBalances(int index);
     /**
@@ -65,7 +67,7 @@ public final class Genesis {
      * balances is an array containing the balances of all the accounts.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
      */
     int getBalancesCount();
     /**
@@ -73,7 +75,7 @@ public final class Genesis {
      * balances is an array containing the balances of all the accounts.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends cosmos.bank.v1beta1.Genesis.BalanceOrBuilder> 
         getBalancesOrBuilderList();
@@ -82,7 +84,7 @@ public final class Genesis {
      * balances is an array containing the balances of all the accounts.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.bank.v1beta1.Genesis.BalanceOrBuilder getBalancesOrBuilder(
         int index);
@@ -92,7 +94,7 @@ public final class Genesis {
      * supply represents the total supply.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getSupplyList();
@@ -101,7 +103,7 @@ public final class Genesis {
      * supply represents the total supply.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getSupply(int index);
     /**
@@ -109,7 +111,7 @@ public final class Genesis {
      * supply represents the total supply.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getSupplyCount();
     /**
@@ -117,7 +119,7 @@ public final class Genesis {
      * supply represents the total supply.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getSupplyOrBuilderList();
@@ -126,7 +128,7 @@ public final class Genesis {
      * supply represents the total supply.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSupplyOrBuilder(
         int index);
@@ -136,7 +138,7 @@ public final class Genesis {
      * denom_metadata defines the metadata of the differents coins.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
      */
     java.util.List<cosmos.bank.v1beta1.Bank.Metadata> 
         getDenomMetadataList();
@@ -145,7 +147,7 @@ public final class Genesis {
      * denom_metadata defines the metadata of the differents coins.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
      */
     cosmos.bank.v1beta1.Bank.Metadata getDenomMetadata(int index);
     /**
@@ -153,7 +155,7 @@ public final class Genesis {
      * denom_metadata defines the metadata of the differents coins.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
      */
     int getDenomMetadataCount();
     /**
@@ -161,7 +163,7 @@ public final class Genesis {
      * denom_metadata defines the metadata of the differents coins.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
      */
     java.util.List<? extends cosmos.bank.v1beta1.Bank.MetadataOrBuilder> 
         getDenomMetadataOrBuilderList();
@@ -170,7 +172,7 @@ public final class Genesis {
      * denom_metadata defines the metadata of the differents coins.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
      */
     cosmos.bank.v1beta1.Bank.MetadataOrBuilder getDenomMetadataOrBuilder(
         int index);
@@ -182,10 +184,11 @@ public final class Genesis {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.GenesisState}
    */
-  public  static final class GenesisState extends
+  public static final class GenesisState extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.GenesisState)
       GenesisStateOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GenesisState.newBuilder() to construct.
     private GenesisState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -197,16 +200,28 @@ public final class Genesis {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GenesisState();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GenesisState(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -215,12 +230,6 @@ public final class Genesis {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmos.bank.v1beta1.Bank.Params.Builder subBuilder = null;
               if (params_ != null) {
@@ -235,30 +244,37 @@ public final class Genesis {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 balances_ = new java.util.ArrayList<cosmos.bank.v1beta1.Genesis.Balance>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               balances_.add(
                   input.readMessage(cosmos.bank.v1beta1.Genesis.Balance.parser(), extensionRegistry));
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 supply_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               supply_.add(
                   input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 denomMetadata_ = new java.util.ArrayList<cosmos.bank.v1beta1.Bank.Metadata>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               denomMetadata_.add(
                   input.readMessage(cosmos.bank.v1beta1.Bank.Metadata.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -269,15 +285,16 @@ public final class Genesis {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           balances_ = java.util.Collections.unmodifiableList(balances_);
         }
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           supply_ = java.util.Collections.unmodifiableList(supply_);
         }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           denomMetadata_ = java.util.Collections.unmodifiableList(denomMetadata_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -286,6 +303,7 @@ public final class Genesis {
       return cosmos.bank.v1beta1.Genesis.internal_static_cosmos_bank_v1beta1_GenesisState_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.Genesis.internal_static_cosmos_bank_v1beta1_GenesisState_fieldAccessorTable
@@ -293,7 +311,6 @@ public final class Genesis {
               cosmos.bank.v1beta1.Genesis.GenesisState.class, cosmos.bank.v1beta1.Genesis.GenesisState.Builder.class);
     }
 
-    private int bitField0_;
     public static final int PARAMS_FIELD_NUMBER = 1;
     private cosmos.bank.v1beta1.Bank.Params params_;
     /**
@@ -301,8 +318,10 @@ public final class Genesis {
      * params defines all the paramaters of the module.
      * </pre>
      *
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the params field is set.
      */
+    @java.lang.Override
     public boolean hasParams() {
       return params_ != null;
     }
@@ -311,8 +330,10 @@ public final class Genesis {
      * params defines all the paramaters of the module.
      * </pre>
      *
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The params.
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Params getParams() {
       return params_ == null ? cosmos.bank.v1beta1.Bank.Params.getDefaultInstance() : params_;
     }
@@ -321,8 +342,9 @@ public final class Genesis {
      * params defines all the paramaters of the module.
      * </pre>
      *
-     * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder() {
       return getParams();
     }
@@ -334,8 +356,9 @@ public final class Genesis {
      * balances is an array containing the balances of all the accounts.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.bank.v1beta1.Genesis.Balance> getBalancesList() {
       return balances_;
     }
@@ -344,8 +367,9 @@ public final class Genesis {
      * balances is an array containing the balances of all the accounts.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.bank.v1beta1.Genesis.BalanceOrBuilder> 
         getBalancesOrBuilderList() {
       return balances_;
@@ -355,8 +379,9 @@ public final class Genesis {
      * balances is an array containing the balances of all the accounts.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public int getBalancesCount() {
       return balances_.size();
     }
@@ -365,8 +390,9 @@ public final class Genesis {
      * balances is an array containing the balances of all the accounts.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Genesis.Balance getBalances(int index) {
       return balances_.get(index);
     }
@@ -375,8 +401,9 @@ public final class Genesis {
      * balances is an array containing the balances of all the accounts.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Genesis.BalanceOrBuilder getBalancesOrBuilder(
         int index) {
       return balances_.get(index);
@@ -389,8 +416,9 @@ public final class Genesis {
      * supply represents the total supply.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSupplyList() {
       return supply_;
     }
@@ -399,8 +427,9 @@ public final class Genesis {
      * supply represents the total supply.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getSupplyOrBuilderList() {
       return supply_;
@@ -410,8 +439,9 @@ public final class Genesis {
      * supply represents the total supply.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public int getSupplyCount() {
       return supply_.size();
     }
@@ -420,8 +450,9 @@ public final class Genesis {
      * supply represents the total supply.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getSupply(int index) {
       return supply_.get(index);
     }
@@ -430,8 +461,9 @@ public final class Genesis {
      * supply represents the total supply.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSupplyOrBuilder(
         int index) {
       return supply_.get(index);
@@ -444,8 +476,9 @@ public final class Genesis {
      * denom_metadata defines the metadata of the differents coins.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.bank.v1beta1.Bank.Metadata> getDenomMetadataList() {
       return denomMetadata_;
     }
@@ -454,8 +487,9 @@ public final class Genesis {
      * denom_metadata defines the metadata of the differents coins.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.bank.v1beta1.Bank.MetadataOrBuilder> 
         getDenomMetadataOrBuilderList() {
       return denomMetadata_;
@@ -465,8 +499,9 @@ public final class Genesis {
      * denom_metadata defines the metadata of the differents coins.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
      */
+    @java.lang.Override
     public int getDenomMetadataCount() {
       return denomMetadata_.size();
     }
@@ -475,8 +510,9 @@ public final class Genesis {
      * denom_metadata defines the metadata of the differents coins.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Metadata getDenomMetadata(int index) {
       return denomMetadata_.get(index);
     }
@@ -485,14 +521,16 @@ public final class Genesis {
      * denom_metadata defines the metadata of the differents coins.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
      */
+    @java.lang.Override
     public cosmos.bank.v1beta1.Bank.MetadataOrBuilder getDenomMetadataOrBuilder(
         int index) {
       return denomMetadata_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -502,6 +540,7 @@ public final class Genesis {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (params_ != null) {
@@ -516,8 +555,10 @@ public final class Genesis {
       for (int i = 0; i < denomMetadata_.size(); i++) {
         output.writeMessage(4, denomMetadata_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -539,11 +580,11 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, denomMetadata_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -554,19 +595,19 @@ public final class Genesis {
       }
       cosmos.bank.v1beta1.Genesis.GenesisState other = (cosmos.bank.v1beta1.Genesis.GenesisState) obj;
 
-      boolean result = true;
-      result = result && (hasParams() == other.hasParams());
+      if (hasParams() != other.hasParams()) return false;
       if (hasParams()) {
-        result = result && getParams()
-            .equals(other.getParams());
+        if (!getParams()
+            .equals(other.getParams())) return false;
       }
-      result = result && getBalancesList()
-          .equals(other.getBalancesList());
-      result = result && getSupplyList()
-          .equals(other.getSupplyList());
-      result = result && getDenomMetadataList()
-          .equals(other.getDenomMetadataList());
-      return result;
+      if (!getBalancesList()
+          .equals(other.getBalancesList())) return false;
+      if (!getSupplyList()
+          .equals(other.getSupplyList())) return false;
+      if (!getDenomMetadataList()
+          .equals(other.getDenomMetadataList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -575,7 +616,7 @@ public final class Genesis {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasParams()) {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParams().hashCode();
@@ -597,6 +638,17 @@ public final class Genesis {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.Genesis.GenesisState parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Genesis.GenesisState parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.Genesis.GenesisState parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -656,6 +708,7 @@ public final class Genesis {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -663,6 +716,7 @@ public final class Genesis {
     public static Builder newBuilder(cosmos.bank.v1beta1.Genesis.GenesisState prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -690,6 +744,7 @@ public final class Genesis {
         return cosmos.bank.v1beta1.Genesis.internal_static_cosmos_bank_v1beta1_GenesisState_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.Genesis.internal_static_cosmos_bank_v1beta1_GenesisState_fieldAccessorTable
@@ -715,6 +770,7 @@ public final class Genesis {
           getDenomMetadataFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (paramsBuilder_ == null) {
@@ -725,34 +781,37 @@ public final class Genesis {
         }
         if (balancesBuilder_ == null) {
           balances_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           balancesBuilder_.clear();
         }
         if (supplyBuilder_ == null) {
           supply_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           supplyBuilder_.clear();
         }
         if (denomMetadataBuilder_ == null) {
           denomMetadata_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           denomMetadataBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.Genesis.internal_static_cosmos_bank_v1beta1_GenesisState_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Genesis.GenesisState getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.Genesis.GenesisState.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Genesis.GenesisState build() {
         cosmos.bank.v1beta1.Genesis.GenesisState result = buildPartial();
         if (!result.isInitialized()) {
@@ -761,73 +820,79 @@ public final class Genesis {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Genesis.GenesisState buildPartial() {
         cosmos.bank.v1beta1.Genesis.GenesisState result = new cosmos.bank.v1beta1.Genesis.GenesisState(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (paramsBuilder_ == null) {
           result.params_ = params_;
         } else {
           result.params_ = paramsBuilder_.build();
         }
         if (balancesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             balances_ = java.util.Collections.unmodifiableList(balances_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.balances_ = balances_;
         } else {
           result.balances_ = balancesBuilder_.build();
         }
         if (supplyBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             supply_ = java.util.Collections.unmodifiableList(supply_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.supply_ = supply_;
         } else {
           result.supply_ = supplyBuilder_.build();
         }
         if (denomMetadataBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             denomMetadata_ = java.util.Collections.unmodifiableList(denomMetadata_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.denomMetadata_ = denomMetadata_;
         } else {
           result.denomMetadata_ = denomMetadataBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.Genesis.GenesisState) {
           return mergeFrom((cosmos.bank.v1beta1.Genesis.GenesisState)other);
@@ -846,7 +911,7 @@ public final class Genesis {
           if (!other.balances_.isEmpty()) {
             if (balances_.isEmpty()) {
               balances_ = other.balances_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureBalancesIsMutable();
               balances_.addAll(other.balances_);
@@ -859,7 +924,7 @@ public final class Genesis {
               balancesBuilder_.dispose();
               balancesBuilder_ = null;
               balances_ = other.balances_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               balancesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBalancesFieldBuilder() : null;
@@ -872,7 +937,7 @@ public final class Genesis {
           if (!other.supply_.isEmpty()) {
             if (supply_.isEmpty()) {
               supply_ = other.supply_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureSupplyIsMutable();
               supply_.addAll(other.supply_);
@@ -885,7 +950,7 @@ public final class Genesis {
               supplyBuilder_.dispose();
               supplyBuilder_ = null;
               supply_ = other.supply_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               supplyBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSupplyFieldBuilder() : null;
@@ -898,7 +963,7 @@ public final class Genesis {
           if (!other.denomMetadata_.isEmpty()) {
             if (denomMetadata_.isEmpty()) {
               denomMetadata_ = other.denomMetadata_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureDenomMetadataIsMutable();
               denomMetadata_.addAll(other.denomMetadata_);
@@ -911,7 +976,7 @@ public final class Genesis {
               denomMetadataBuilder_.dispose();
               denomMetadataBuilder_ = null;
               denomMetadata_ = other.denomMetadata_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
               denomMetadataBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDenomMetadataFieldBuilder() : null;
@@ -920,14 +985,17 @@ public final class Genesis {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -947,7 +1015,7 @@ public final class Genesis {
       }
       private int bitField0_;
 
-      private cosmos.bank.v1beta1.Bank.Params params_ = null;
+      private cosmos.bank.v1beta1.Bank.Params params_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.bank.v1beta1.Bank.Params, cosmos.bank.v1beta1.Bank.Params.Builder, cosmos.bank.v1beta1.Bank.ParamsOrBuilder> paramsBuilder_;
       /**
@@ -955,7 +1023,8 @@ public final class Genesis {
        * params defines all the paramaters of the module.
        * </pre>
        *
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the params field is set.
        */
       public boolean hasParams() {
         return paramsBuilder_ != null || params_ != null;
@@ -965,7 +1034,8 @@ public final class Genesis {
        * params defines all the paramaters of the module.
        * </pre>
        *
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * @return The params.
        */
       public cosmos.bank.v1beta1.Bank.Params getParams() {
         if (paramsBuilder_ == null) {
@@ -979,7 +1049,7 @@ public final class Genesis {
        * params defines all the paramaters of the module.
        * </pre>
        *
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(cosmos.bank.v1beta1.Bank.Params value) {
         if (paramsBuilder_ == null) {
@@ -999,7 +1069,7 @@ public final class Genesis {
        * params defines all the paramaters of the module.
        * </pre>
        *
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(
           cosmos.bank.v1beta1.Bank.Params.Builder builderForValue) {
@@ -1017,7 +1087,7 @@ public final class Genesis {
        * params defines all the paramaters of the module.
        * </pre>
        *
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeParams(cosmos.bank.v1beta1.Bank.Params value) {
         if (paramsBuilder_ == null) {
@@ -1039,7 +1109,7 @@ public final class Genesis {
        * params defines all the paramaters of the module.
        * </pre>
        *
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -1057,7 +1127,7 @@ public final class Genesis {
        * params defines all the paramaters of the module.
        * </pre>
        *
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.bank.v1beta1.Bank.Params.Builder getParamsBuilder() {
         
@@ -1069,7 +1139,7 @@ public final class Genesis {
        * params defines all the paramaters of the module.
        * </pre>
        *
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -1084,7 +1154,7 @@ public final class Genesis {
        * params defines all the paramaters of the module.
        * </pre>
        *
-       * <code>optional .cosmos.bank.v1beta1.Params params = 1;</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.bank.v1beta1.Bank.Params, cosmos.bank.v1beta1.Bank.Params.Builder, cosmos.bank.v1beta1.Bank.ParamsOrBuilder> 
@@ -1103,9 +1173,9 @@ public final class Genesis {
       private java.util.List<cosmos.bank.v1beta1.Genesis.Balance> balances_ =
         java.util.Collections.emptyList();
       private void ensureBalancesIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           balances_ = new java.util.ArrayList<cosmos.bank.v1beta1.Genesis.Balance>(balances_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1117,7 +1187,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Genesis.Balance> getBalancesList() {
         if (balancesBuilder_ == null) {
@@ -1131,7 +1201,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public int getBalancesCount() {
         if (balancesBuilder_ == null) {
@@ -1145,7 +1215,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.bank.v1beta1.Genesis.Balance getBalances(int index) {
         if (balancesBuilder_ == null) {
@@ -1159,7 +1229,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setBalances(
           int index, cosmos.bank.v1beta1.Genesis.Balance value) {
@@ -1180,7 +1250,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setBalances(
           int index, cosmos.bank.v1beta1.Genesis.Balance.Builder builderForValue) {
@@ -1198,7 +1268,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addBalances(cosmos.bank.v1beta1.Genesis.Balance value) {
         if (balancesBuilder_ == null) {
@@ -1218,7 +1288,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addBalances(
           int index, cosmos.bank.v1beta1.Genesis.Balance value) {
@@ -1239,7 +1309,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addBalances(
           cosmos.bank.v1beta1.Genesis.Balance.Builder builderForValue) {
@@ -1257,7 +1327,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addBalances(
           int index, cosmos.bank.v1beta1.Genesis.Balance.Builder builderForValue) {
@@ -1275,7 +1345,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllBalances(
           java.lang.Iterable<? extends cosmos.bank.v1beta1.Genesis.Balance> values) {
@@ -1294,12 +1364,12 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearBalances() {
         if (balancesBuilder_ == null) {
           balances_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           balancesBuilder_.clear();
@@ -1311,7 +1381,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeBalances(int index) {
         if (balancesBuilder_ == null) {
@@ -1328,7 +1398,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.bank.v1beta1.Genesis.Balance.Builder getBalancesBuilder(
           int index) {
@@ -1339,7 +1409,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.bank.v1beta1.Genesis.BalanceOrBuilder getBalancesOrBuilder(
           int index) {
@@ -1353,7 +1423,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends cosmos.bank.v1beta1.Genesis.BalanceOrBuilder> 
            getBalancesOrBuilderList() {
@@ -1368,7 +1438,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.bank.v1beta1.Genesis.Balance.Builder addBalancesBuilder() {
         return getBalancesFieldBuilder().addBuilder(
@@ -1379,7 +1449,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.bank.v1beta1.Genesis.Balance.Builder addBalancesBuilder(
           int index) {
@@ -1391,7 +1461,7 @@ public final class Genesis {
        * balances is an array containing the balances of all the accounts.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Balance balances = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Genesis.Balance.Builder> 
            getBalancesBuilderList() {
@@ -1404,7 +1474,7 @@ public final class Genesis {
           balancesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.bank.v1beta1.Genesis.Balance, cosmos.bank.v1beta1.Genesis.Balance.Builder, cosmos.bank.v1beta1.Genesis.BalanceOrBuilder>(
                   balances_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           balances_ = null;
@@ -1415,9 +1485,9 @@ public final class Genesis {
       private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> supply_ =
         java.util.Collections.emptyList();
       private void ensureSupplyIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           supply_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(supply_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1429,7 +1499,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSupplyList() {
         if (supplyBuilder_ == null) {
@@ -1443,7 +1513,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getSupplyCount() {
         if (supplyBuilder_ == null) {
@@ -1457,7 +1527,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getSupply(int index) {
         if (supplyBuilder_ == null) {
@@ -1471,7 +1541,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -1492,7 +1562,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -1510,7 +1580,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSupply(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (supplyBuilder_ == null) {
@@ -1530,7 +1600,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -1551,7 +1621,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSupply(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -1569,7 +1639,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -1587,7 +1657,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllSupply(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -1606,12 +1676,12 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearSupply() {
         if (supplyBuilder_ == null) {
           supply_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           supplyBuilder_.clear();
@@ -1623,7 +1693,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeSupply(int index) {
         if (supplyBuilder_ == null) {
@@ -1640,7 +1710,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getSupplyBuilder(
           int index) {
@@ -1651,7 +1721,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSupplyOrBuilder(
           int index) {
@@ -1665,7 +1735,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getSupplyOrBuilderList() {
@@ -1680,7 +1750,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSupplyBuilder() {
         return getSupplyFieldBuilder().addBuilder(
@@ -1691,7 +1761,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSupplyBuilder(
           int index) {
@@ -1703,7 +1773,7 @@ public final class Genesis {
        * supply represents the total supply.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getSupplyBuilderList() {
@@ -1716,7 +1786,7 @@ public final class Genesis {
           supplyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
                   supply_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           supply_ = null;
@@ -1727,9 +1797,9 @@ public final class Genesis {
       private java.util.List<cosmos.bank.v1beta1.Bank.Metadata> denomMetadata_ =
         java.util.Collections.emptyList();
       private void ensureDenomMetadataIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           denomMetadata_ = new java.util.ArrayList<cosmos.bank.v1beta1.Bank.Metadata>(denomMetadata_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1741,7 +1811,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Bank.Metadata> getDenomMetadataList() {
         if (denomMetadataBuilder_ == null) {
@@ -1755,7 +1825,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public int getDenomMetadataCount() {
         if (denomMetadataBuilder_ == null) {
@@ -1769,7 +1839,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public cosmos.bank.v1beta1.Bank.Metadata getDenomMetadata(int index) {
         if (denomMetadataBuilder_ == null) {
@@ -1783,7 +1853,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public Builder setDenomMetadata(
           int index, cosmos.bank.v1beta1.Bank.Metadata value) {
@@ -1804,7 +1874,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public Builder setDenomMetadata(
           int index, cosmos.bank.v1beta1.Bank.Metadata.Builder builderForValue) {
@@ -1822,7 +1892,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public Builder addDenomMetadata(cosmos.bank.v1beta1.Bank.Metadata value) {
         if (denomMetadataBuilder_ == null) {
@@ -1842,7 +1912,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public Builder addDenomMetadata(
           int index, cosmos.bank.v1beta1.Bank.Metadata value) {
@@ -1863,7 +1933,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public Builder addDenomMetadata(
           cosmos.bank.v1beta1.Bank.Metadata.Builder builderForValue) {
@@ -1881,7 +1951,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public Builder addDenomMetadata(
           int index, cosmos.bank.v1beta1.Bank.Metadata.Builder builderForValue) {
@@ -1899,7 +1969,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public Builder addAllDenomMetadata(
           java.lang.Iterable<? extends cosmos.bank.v1beta1.Bank.Metadata> values) {
@@ -1918,12 +1988,12 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public Builder clearDenomMetadata() {
         if (denomMetadataBuilder_ == null) {
           denomMetadata_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           denomMetadataBuilder_.clear();
@@ -1935,7 +2005,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public Builder removeDenomMetadata(int index) {
         if (denomMetadataBuilder_ == null) {
@@ -1952,7 +2022,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public cosmos.bank.v1beta1.Bank.Metadata.Builder getDenomMetadataBuilder(
           int index) {
@@ -1963,7 +2033,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public cosmos.bank.v1beta1.Bank.MetadataOrBuilder getDenomMetadataOrBuilder(
           int index) {
@@ -1977,7 +2047,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public java.util.List<? extends cosmos.bank.v1beta1.Bank.MetadataOrBuilder> 
            getDenomMetadataOrBuilderList() {
@@ -1992,7 +2062,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public cosmos.bank.v1beta1.Bank.Metadata.Builder addDenomMetadataBuilder() {
         return getDenomMetadataFieldBuilder().addBuilder(
@@ -2003,7 +2073,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public cosmos.bank.v1beta1.Bank.Metadata.Builder addDenomMetadataBuilder(
           int index) {
@@ -2015,7 +2085,7 @@ public final class Genesis {
        * denom_metadata defines the metadata of the differents coins.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4;</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata denom_metadata = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"denom_metadata&#92;""];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Bank.Metadata.Builder> 
            getDenomMetadataBuilderList() {
@@ -2028,21 +2098,23 @@ public final class Genesis {
           denomMetadataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.bank.v1beta1.Bank.Metadata, cosmos.bank.v1beta1.Bank.Metadata.Builder, cosmos.bank.v1beta1.Bank.MetadataOrBuilder>(
                   denomMetadata_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           denomMetadata_ = null;
         }
         return denomMetadataBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2061,11 +2133,12 @@ public final class Genesis {
 
     private static final com.google.protobuf.Parser<GenesisState>
         PARSER = new com.google.protobuf.AbstractParser<GenesisState>() {
+      @java.lang.Override
       public GenesisState parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GenesisState(input, extensionRegistry);
+        return new GenesisState(input, extensionRegistry);
       }
     };
 
@@ -2078,6 +2151,7 @@ public final class Genesis {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.Genesis.GenesisState getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2093,7 +2167,8 @@ public final class Genesis {
      * address is the address of the balance holder.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
@@ -2101,7 +2176,8 @@ public final class Genesis {
      * address is the address of the balance holder.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -2111,7 +2187,7 @@ public final class Genesis {
      * coins defines the different coins this balance holds.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getCoinsList();
@@ -2120,7 +2196,7 @@ public final class Genesis {
      * coins defines the different coins this balance holds.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index);
     /**
@@ -2128,7 +2204,7 @@ public final class Genesis {
      * coins defines the different coins this balance holds.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getCoinsCount();
     /**
@@ -2136,7 +2212,7 @@ public final class Genesis {
      * coins defines the different coins this balance holds.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getCoinsOrBuilderList();
@@ -2145,7 +2221,7 @@ public final class Genesis {
      * coins defines the different coins this balance holds.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
         int index);
@@ -2158,10 +2234,11 @@ public final class Genesis {
    *
    * Protobuf type {@code cosmos.bank.v1beta1.Balance}
    */
-  public  static final class Balance extends
+  public static final class Balance extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.Balance)
       BalanceOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Balance.newBuilder() to construct.
     private Balance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2172,16 +2249,28 @@ public final class Genesis {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Balance();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Balance(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2190,12 +2279,6 @@ public final class Genesis {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -2203,12 +2286,19 @@ public final class Genesis {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 coins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               coins_.add(
                   input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2219,9 +2309,10 @@ public final class Genesis {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           coins_ = java.util.Collections.unmodifiableList(coins_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2230,6 +2321,7 @@ public final class Genesis {
       return cosmos.bank.v1beta1.Genesis.internal_static_cosmos_bank_v1beta1_Balance_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.bank.v1beta1.Genesis.internal_static_cosmos_bank_v1beta1_Balance_fieldAccessorTable
@@ -2237,7 +2329,6 @@ public final class Genesis {
               cosmos.bank.v1beta1.Genesis.Balance.class, cosmos.bank.v1beta1.Genesis.Balance.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object address_;
     /**
@@ -2245,8 +2336,10 @@ public final class Genesis {
      * address is the address of the balance holder.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -2264,8 +2357,10 @@ public final class Genesis {
      * address is the address of the balance holder.
      * </pre>
      *
-     * <code>optional string address = 1;</code>
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -2287,8 +2382,9 @@ public final class Genesis {
      * coins defines the different coins this balance holds.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getCoinsList() {
       return coins_;
     }
@@ -2297,8 +2393,9 @@ public final class Genesis {
      * coins defines the different coins this balance holds.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getCoinsOrBuilderList() {
       return coins_;
@@ -2308,8 +2405,9 @@ public final class Genesis {
      * coins defines the different coins this balance holds.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public int getCoinsCount() {
       return coins_.size();
     }
@@ -2318,8 +2416,9 @@ public final class Genesis {
      * coins defines the different coins this balance holds.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index) {
       return coins_.get(index);
     }
@@ -2328,14 +2427,16 @@ public final class Genesis {
      * coins defines the different coins this balance holds.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
         int index) {
       return coins_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2345,6 +2446,7 @@ public final class Genesis {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAddressBytes().isEmpty()) {
@@ -2353,8 +2455,10 @@ public final class Genesis {
       for (int i = 0; i < coins_.size(); i++) {
         output.writeMessage(2, coins_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2367,11 +2471,11 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, coins_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2382,12 +2486,12 @@ public final class Genesis {
       }
       cosmos.bank.v1beta1.Genesis.Balance other = (cosmos.bank.v1beta1.Genesis.Balance) obj;
 
-      boolean result = true;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && getCoinsList()
-          .equals(other.getCoinsList());
-      return result;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!getCoinsList()
+          .equals(other.getCoinsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2396,7 +2500,7 @@ public final class Genesis {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       if (getCoinsCount() > 0) {
@@ -2408,6 +2512,17 @@ public final class Genesis {
       return hash;
     }
 
+    public static cosmos.bank.v1beta1.Genesis.Balance parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Genesis.Balance parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.bank.v1beta1.Genesis.Balance parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2467,6 +2582,7 @@ public final class Genesis {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2474,6 +2590,7 @@ public final class Genesis {
     public static Builder newBuilder(cosmos.bank.v1beta1.Genesis.Balance prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2502,6 +2619,7 @@ public final class Genesis {
         return cosmos.bank.v1beta1.Genesis.internal_static_cosmos_bank_v1beta1_Balance_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.bank.v1beta1.Genesis.internal_static_cosmos_bank_v1beta1_Balance_fieldAccessorTable
@@ -2525,28 +2643,32 @@ public final class Genesis {
           getCoinsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = "";
 
         if (coinsBuilder_ == null) {
           coins_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           coinsBuilder_.clear();
         }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.bank.v1beta1.Genesis.internal_static_cosmos_bank_v1beta1_Balance_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Genesis.Balance getDefaultInstanceForType() {
         return cosmos.bank.v1beta1.Genesis.Balance.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Genesis.Balance build() {
         cosmos.bank.v1beta1.Genesis.Balance result = buildPartial();
         if (!result.isInitialized()) {
@@ -2555,51 +2677,57 @@ public final class Genesis {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.bank.v1beta1.Genesis.Balance buildPartial() {
         cosmos.bank.v1beta1.Genesis.Balance result = new cosmos.bank.v1beta1.Genesis.Balance(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.address_ = address_;
         if (coinsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             coins_ = java.util.Collections.unmodifiableList(coins_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.coins_ = coins_;
         } else {
           result.coins_ = coinsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.bank.v1beta1.Genesis.Balance) {
           return mergeFrom((cosmos.bank.v1beta1.Genesis.Balance)other);
@@ -2619,7 +2747,7 @@ public final class Genesis {
           if (!other.coins_.isEmpty()) {
             if (coins_.isEmpty()) {
               coins_ = other.coins_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCoinsIsMutable();
               coins_.addAll(other.coins_);
@@ -2632,7 +2760,7 @@ public final class Genesis {
               coinsBuilder_.dispose();
               coinsBuilder_ = null;
               coins_ = other.coins_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               coinsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCoinsFieldBuilder() : null;
@@ -2641,14 +2769,17 @@ public final class Genesis {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2674,7 +2805,8 @@ public final class Genesis {
        * address is the address of the balance holder.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -2693,7 +2825,8 @@ public final class Genesis {
        * address is the address of the balance holder.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -2713,7 +2846,9 @@ public final class Genesis {
        * address is the address of the balance holder.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -2730,7 +2865,8 @@ public final class Genesis {
        * address is the address of the balance holder.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -2743,7 +2879,9 @@ public final class Genesis {
        * address is the address of the balance holder.
        * </pre>
        *
-       * <code>optional string address = 1;</code>
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -2760,9 +2898,9 @@ public final class Genesis {
       private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> coins_ =
         java.util.Collections.emptyList();
       private void ensureCoinsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           coins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(coins_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -2774,7 +2912,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getCoinsList() {
         if (coinsBuilder_ == null) {
@@ -2788,7 +2926,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getCoinsCount() {
         if (coinsBuilder_ == null) {
@@ -2802,7 +2940,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index) {
         if (coinsBuilder_ == null) {
@@ -2816,7 +2954,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -2837,7 +2975,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2855,7 +2993,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (coinsBuilder_ == null) {
@@ -2875,7 +3013,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -2896,7 +3034,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2914,7 +3052,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2932,7 +3070,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllCoins(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -2951,12 +3089,12 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearCoins() {
         if (coinsBuilder_ == null) {
           coins_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           coinsBuilder_.clear();
@@ -2968,7 +3106,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeCoins(int index) {
         if (coinsBuilder_ == null) {
@@ -2985,7 +3123,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getCoinsBuilder(
           int index) {
@@ -2996,7 +3134,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
           int index) {
@@ -3010,7 +3148,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getCoinsOrBuilderList() {
@@ -3025,7 +3163,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addCoinsBuilder() {
         return getCoinsFieldBuilder().addBuilder(
@@ -3036,7 +3174,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addCoinsBuilder(
           int index) {
@@ -3048,7 +3186,7 @@ public final class Genesis {
        * coins defines the different coins this balance holds.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2;</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin coins = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getCoinsBuilderList() {
@@ -3061,21 +3199,23 @@ public final class Genesis {
           coinsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
                   coins_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           coins_ = null;
         }
         return coinsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3094,11 +3234,12 @@ public final class Genesis {
 
     private static final com.google.protobuf.Parser<Balance>
         PARSER = new com.google.protobuf.AbstractParser<Balance>() {
+      @java.lang.Override
       public Balance parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Balance(input, extensionRegistry);
+        return new Balance(input, extensionRegistry);
       }
     };
 
@@ -3111,6 +3252,7 @@ public final class Genesis {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.bank.v1beta1.Genesis.Balance getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3145,7 +3287,7 @@ public final class Genesis {
       "nk.v1beta1.BalanceB\004\310\336\037\000\022[\n\006supply\030\003 \003(\013" +
       "2\031.cosmos.base.v1beta1.CoinB0\252\337\037(github." +
       "com/cosmos/cosmos-sdk/types.Coins\310\336\037\000\022T\n" +
-      "\016denom_metadata\030\004 \003(\0132\035.cosmos.bank.v1be",
+      "\016denom_metadata\030\004 \003(\0132\035.cosmos.bank.v1be" +
       "ta1.MetadataB\035\362\336\037\025yaml:\"denom_metadata\"\310" +
       "\336\037\000\"\200\001\n\007Balance\022\017\n\007address\030\001 \001(\t\022Z\n\005coin" +
       "s\030\002 \003(\0132\031.cosmos.base.v1beta1.CoinB0\252\337\037(" +
@@ -3153,21 +3295,13 @@ public final class Genesis {
       "\310\336\037\000:\010\350\240\037\000\210\240\037\000B+Z)github.com/cosmos/cosm" +
       "os-sdk/x/bank/typesb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           cosmos.bank.v1beta1.Bank.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_bank_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_bank_v1beta1_GenesisState_fieldAccessorTable = new

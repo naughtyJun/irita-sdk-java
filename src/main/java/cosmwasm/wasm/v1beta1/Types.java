@@ -28,7 +28,7 @@ public final class Types {
      * AccessTypeUnspecified placeholder for empty value
      * </pre>
      *
-     * <code>ACCESS_TYPE_UNSPECIFIED = 0;</code>
+     * <code>ACCESS_TYPE_UNSPECIFIED = 0 [(.gogoproto.enumvalue_customname) = "AccessTypeUnspecified"];</code>
      */
     ACCESS_TYPE_UNSPECIFIED(0),
     /**
@@ -36,7 +36,7 @@ public final class Types {
      * AccessTypeNobody forbidden
      * </pre>
      *
-     * <code>ACCESS_TYPE_NOBODY = 1;</code>
+     * <code>ACCESS_TYPE_NOBODY = 1 [(.gogoproto.enumvalue_customname) = "AccessTypeNobody"];</code>
      */
     ACCESS_TYPE_NOBODY(1),
     /**
@@ -44,7 +44,7 @@ public final class Types {
      * AccessTypeOnlyAddress restricted to an address
      * </pre>
      *
-     * <code>ACCESS_TYPE_ONLY_ADDRESS = 2;</code>
+     * <code>ACCESS_TYPE_ONLY_ADDRESS = 2 [(.gogoproto.enumvalue_customname) = "AccessTypeOnlyAddress"];</code>
      */
     ACCESS_TYPE_ONLY_ADDRESS(2),
     /**
@@ -52,7 +52,7 @@ public final class Types {
      * AccessTypeEverybody unrestricted
      * </pre>
      *
-     * <code>ACCESS_TYPE_EVERYBODY = 3;</code>
+     * <code>ACCESS_TYPE_EVERYBODY = 3 [(.gogoproto.enumvalue_customname) = "AccessTypeEverybody"];</code>
      */
     ACCESS_TYPE_EVERYBODY(3),
     UNRECOGNIZED(-1),
@@ -63,7 +63,7 @@ public final class Types {
      * AccessTypeUnspecified placeholder for empty value
      * </pre>
      *
-     * <code>ACCESS_TYPE_UNSPECIFIED = 0;</code>
+     * <code>ACCESS_TYPE_UNSPECIFIED = 0 [(.gogoproto.enumvalue_customname) = "AccessTypeUnspecified"];</code>
      */
     public static final int ACCESS_TYPE_UNSPECIFIED_VALUE = 0;
     /**
@@ -71,7 +71,7 @@ public final class Types {
      * AccessTypeNobody forbidden
      * </pre>
      *
-     * <code>ACCESS_TYPE_NOBODY = 1;</code>
+     * <code>ACCESS_TYPE_NOBODY = 1 [(.gogoproto.enumvalue_customname) = "AccessTypeNobody"];</code>
      */
     public static final int ACCESS_TYPE_NOBODY_VALUE = 1;
     /**
@@ -79,7 +79,7 @@ public final class Types {
      * AccessTypeOnlyAddress restricted to an address
      * </pre>
      *
-     * <code>ACCESS_TYPE_ONLY_ADDRESS = 2;</code>
+     * <code>ACCESS_TYPE_ONLY_ADDRESS = 2 [(.gogoproto.enumvalue_customname) = "AccessTypeOnlyAddress"];</code>
      */
     public static final int ACCESS_TYPE_ONLY_ADDRESS_VALUE = 2;
     /**
@@ -87,7 +87,7 @@ public final class Types {
      * AccessTypeEverybody unrestricted
      * </pre>
      *
-     * <code>ACCESS_TYPE_EVERYBODY = 3;</code>
+     * <code>ACCESS_TYPE_EVERYBODY = 3 [(.gogoproto.enumvalue_customname) = "AccessTypeEverybody"];</code>
      */
     public static final int ACCESS_TYPE_EVERYBODY_VALUE = 3;
 
@@ -101,6 +101,8 @@ public final class Types {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -108,6 +110,10 @@ public final class Types {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static AccessType forNumber(int value) {
       switch (value) {
         case 0: return ACCESS_TYPE_UNSPECIFIED;
@@ -132,6 +138,10 @@ public final class Types {
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -180,7 +190,7 @@ public final class Types {
      * ContractCodeHistoryOperationTypeUnspecified placeholder for empty value
      * </pre>
      *
-     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIFIED = 0;</code>
+     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIFIED = 0 [(.gogoproto.enumvalue_customname) = "ContractCodeHistoryOperationTypeUnspecified"];</code>
      */
     CONTRACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIFIED(0),
     /**
@@ -188,7 +198,7 @@ public final class Types {
      * ContractCodeHistoryOperationTypeInit on chain contract instantiation
      * </pre>
      *
-     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_INIT = 1;</code>
+     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_INIT = 1 [(.gogoproto.enumvalue_customname) = "ContractCodeHistoryOperationTypeInit"];</code>
      */
     CONTRACT_CODE_HISTORY_OPERATION_TYPE_INIT(1),
     /**
@@ -196,7 +206,7 @@ public final class Types {
      * ContractCodeHistoryOperationTypeMigrate code migration
      * </pre>
      *
-     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_MIGRATE = 2;</code>
+     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_MIGRATE = 2 [(.gogoproto.enumvalue_customname) = "ContractCodeHistoryOperationTypeMigrate"];</code>
      */
     CONTRACT_CODE_HISTORY_OPERATION_TYPE_MIGRATE(2),
     /**
@@ -204,7 +214,7 @@ public final class Types {
      * ContractCodeHistoryOperationTypeGenesis based on genesis data
      * </pre>
      *
-     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_GENESIS = 3;</code>
+     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_GENESIS = 3 [(.gogoproto.enumvalue_customname) = "ContractCodeHistoryOperationTypeGenesis"];</code>
      */
     CONTRACT_CODE_HISTORY_OPERATION_TYPE_GENESIS(3),
     UNRECOGNIZED(-1),
@@ -215,7 +225,7 @@ public final class Types {
      * ContractCodeHistoryOperationTypeUnspecified placeholder for empty value
      * </pre>
      *
-     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIFIED = 0;</code>
+     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIFIED = 0 [(.gogoproto.enumvalue_customname) = "ContractCodeHistoryOperationTypeUnspecified"];</code>
      */
     public static final int CONTRACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIFIED_VALUE = 0;
     /**
@@ -223,7 +233,7 @@ public final class Types {
      * ContractCodeHistoryOperationTypeInit on chain contract instantiation
      * </pre>
      *
-     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_INIT = 1;</code>
+     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_INIT = 1 [(.gogoproto.enumvalue_customname) = "ContractCodeHistoryOperationTypeInit"];</code>
      */
     public static final int CONTRACT_CODE_HISTORY_OPERATION_TYPE_INIT_VALUE = 1;
     /**
@@ -231,7 +241,7 @@ public final class Types {
      * ContractCodeHistoryOperationTypeMigrate code migration
      * </pre>
      *
-     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_MIGRATE = 2;</code>
+     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_MIGRATE = 2 [(.gogoproto.enumvalue_customname) = "ContractCodeHistoryOperationTypeMigrate"];</code>
      */
     public static final int CONTRACT_CODE_HISTORY_OPERATION_TYPE_MIGRATE_VALUE = 2;
     /**
@@ -239,7 +249,7 @@ public final class Types {
      * ContractCodeHistoryOperationTypeGenesis based on genesis data
      * </pre>
      *
-     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_GENESIS = 3;</code>
+     * <code>CONTRACT_CODE_HISTORY_OPERATION_TYPE_GENESIS = 3 [(.gogoproto.enumvalue_customname) = "ContractCodeHistoryOperationTypeGenesis"];</code>
      */
     public static final int CONTRACT_CODE_HISTORY_OPERATION_TYPE_GENESIS_VALUE = 3;
 
@@ -253,6 +263,8 @@ public final class Types {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -260,6 +272,10 @@ public final class Types {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ContractCodeHistoryOperationType forNumber(int value) {
       switch (value) {
         case 0: return CONTRACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIFIED;
@@ -284,6 +300,10 @@ public final class Types {
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -323,11 +343,13 @@ public final class Types {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType value = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType value = 1 [(.gogoproto.moretags) = "yaml:&#92;"value&#92;""];</code>
+     * @return The enum numeric value on the wire for value.
      */
     int getValueValue();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType value = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType value = 1 [(.gogoproto.moretags) = "yaml:&#92;"value&#92;""];</code>
+     * @return The value.
      */
     cosmwasm.wasm.v1beta1.Types.AccessType getValue();
   }
@@ -338,10 +360,11 @@ public final class Types {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.AccessTypeParam}
    */
-  public  static final class AccessTypeParam extends
+  public static final class AccessTypeParam extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.AccessTypeParam)
       AccessTypeParamOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AccessTypeParam.newBuilder() to construct.
     private AccessTypeParam(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -351,16 +374,27 @@ public final class Types {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AccessTypeParam();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private AccessTypeParam(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -369,16 +403,17 @@ public final class Types {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
 
               value_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -389,6 +424,7 @@ public final class Types {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -397,6 +433,7 @@ public final class Types {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AccessTypeParam_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AccessTypeParam_fieldAccessorTable
@@ -407,20 +444,24 @@ public final class Types {
     public static final int VALUE_FIELD_NUMBER = 1;
     private int value_;
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType value = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType value = 1 [(.gogoproto.moretags) = "yaml:&#92;"value&#92;""];</code>
+     * @return The enum numeric value on the wire for value.
      */
-    public int getValueValue() {
+    @java.lang.Override public int getValueValue() {
       return value_;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType value = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType value = 1 [(.gogoproto.moretags) = "yaml:&#92;"value&#92;""];</code>
+     * @return The value.
      */
-    public cosmwasm.wasm.v1beta1.Types.AccessType getValue() {
+    @java.lang.Override public cosmwasm.wasm.v1beta1.Types.AccessType getValue() {
+      @SuppressWarnings("deprecation")
       cosmwasm.wasm.v1beta1.Types.AccessType result = cosmwasm.wasm.v1beta1.Types.AccessType.valueOf(value_);
       return result == null ? cosmwasm.wasm.v1beta1.Types.AccessType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -430,13 +471,16 @@ public final class Types {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (value_ != cosmwasm.wasm.v1beta1.Types.AccessType.ACCESS_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, value_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -446,11 +490,11 @@ public final class Types {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, value_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -461,9 +505,9 @@ public final class Types {
       }
       cosmwasm.wasm.v1beta1.Types.AccessTypeParam other = (cosmwasm.wasm.v1beta1.Types.AccessTypeParam) obj;
 
-      boolean result = true;
-      result = result && value_ == other.value_;
-      return result;
+      if (value_ != other.value_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -472,7 +516,7 @@ public final class Types {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + value_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -480,6 +524,17 @@ public final class Types {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Types.AccessTypeParam parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Types.AccessTypeParam parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Types.AccessTypeParam parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -539,6 +594,7 @@ public final class Types {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -546,6 +602,7 @@ public final class Types {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Types.AccessTypeParam prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -573,6 +630,7 @@ public final class Types {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AccessTypeParam_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AccessTypeParam_fieldAccessorTable
@@ -595,6 +653,7 @@ public final class Types {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         value_ = 0;
@@ -602,15 +661,18 @@ public final class Types {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AccessTypeParam_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AccessTypeParam getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Types.AccessTypeParam.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AccessTypeParam build() {
         cosmwasm.wasm.v1beta1.Types.AccessTypeParam result = buildPartial();
         if (!result.isInitialized()) {
@@ -619,6 +681,7 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AccessTypeParam buildPartial() {
         cosmwasm.wasm.v1beta1.Types.AccessTypeParam result = new cosmwasm.wasm.v1beta1.Types.AccessTypeParam(this);
         result.value_ = value_;
@@ -626,32 +689,39 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Types.AccessTypeParam) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Types.AccessTypeParam)other);
@@ -666,14 +736,17 @@ public final class Types {
         if (other.value_ != 0) {
           setValueValue(other.getValueValue());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -694,28 +767,37 @@ public final class Types {
 
       private int value_ = 0;
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType value = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType value = 1 [(.gogoproto.moretags) = "yaml:&#92;"value&#92;""];</code>
+       * @return The enum numeric value on the wire for value.
        */
-      public int getValueValue() {
+      @java.lang.Override public int getValueValue() {
         return value_;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType value = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType value = 1 [(.gogoproto.moretags) = "yaml:&#92;"value&#92;""];</code>
+       * @param value The enum numeric value on the wire for value to set.
+       * @return This builder for chaining.
        */
       public Builder setValueValue(int value) {
+        
         value_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType value = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType value = 1 [(.gogoproto.moretags) = "yaml:&#92;"value&#92;""];</code>
+       * @return The value.
        */
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AccessType getValue() {
+        @SuppressWarnings("deprecation")
         cosmwasm.wasm.v1beta1.Types.AccessType result = cosmwasm.wasm.v1beta1.Types.AccessType.valueOf(value_);
         return result == null ? cosmwasm.wasm.v1beta1.Types.AccessType.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType value = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType value = 1 [(.gogoproto.moretags) = "yaml:&#92;"value&#92;""];</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(cosmwasm.wasm.v1beta1.Types.AccessType value) {
         if (value == null) {
@@ -727,7 +809,8 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType value = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType value = 1 [(.gogoproto.moretags) = "yaml:&#92;"value&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
         
@@ -735,14 +818,16 @@ public final class Types {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -761,11 +846,12 @@ public final class Types {
 
     private static final com.google.protobuf.Parser<AccessTypeParam>
         PARSER = new com.google.protobuf.AbstractParser<AccessTypeParam>() {
+      @java.lang.Override
       public AccessTypeParam parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AccessTypeParam(input, extensionRegistry);
+        return new AccessTypeParam(input, extensionRegistry);
       }
     };
 
@@ -778,6 +864,7 @@ public final class Types {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AccessTypeParam getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -789,20 +876,24 @@ public final class Types {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType permission = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType permission = 1 [(.gogoproto.moretags) = "yaml:&#92;"permission&#92;""];</code>
+     * @return The enum numeric value on the wire for permission.
      */
     int getPermissionValue();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType permission = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType permission = 1 [(.gogoproto.moretags) = "yaml:&#92;"permission&#92;""];</code>
+     * @return The permission.
      */
     cosmwasm.wasm.v1beta1.Types.AccessType getPermission();
 
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -814,10 +905,11 @@ public final class Types {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.AccessConfig}
    */
-  public  static final class AccessConfig extends
+  public static final class AccessConfig extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.AccessConfig)
       AccessConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AccessConfig.newBuilder() to construct.
     private AccessConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -828,16 +920,27 @@ public final class Types {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AccessConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private AccessConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -846,12 +949,6 @@ public final class Types {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
 
@@ -864,6 +961,13 @@ public final class Types {
               address_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -872,6 +976,7 @@ public final class Types {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -880,6 +985,7 @@ public final class Types {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AccessConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AccessConfig_fieldAccessorTable
@@ -890,15 +996,18 @@ public final class Types {
     public static final int PERMISSION_FIELD_NUMBER = 1;
     private int permission_;
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType permission = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType permission = 1 [(.gogoproto.moretags) = "yaml:&#92;"permission&#92;""];</code>
+     * @return The enum numeric value on the wire for permission.
      */
-    public int getPermissionValue() {
+    @java.lang.Override public int getPermissionValue() {
       return permission_;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType permission = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType permission = 1 [(.gogoproto.moretags) = "yaml:&#92;"permission&#92;""];</code>
+     * @return The permission.
      */
-    public cosmwasm.wasm.v1beta1.Types.AccessType getPermission() {
+    @java.lang.Override public cosmwasm.wasm.v1beta1.Types.AccessType getPermission() {
+      @SuppressWarnings("deprecation")
       cosmwasm.wasm.v1beta1.Types.AccessType result = cosmwasm.wasm.v1beta1.Types.AccessType.valueOf(permission_);
       return result == null ? cosmwasm.wasm.v1beta1.Types.AccessType.UNRECOGNIZED : result;
     }
@@ -906,8 +1015,10 @@ public final class Types {
     public static final int ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object address_;
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+     * @return The address.
      */
+    @java.lang.Override
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
@@ -921,8 +1032,10 @@ public final class Types {
       }
     }
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+     * @return The bytes for address.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAddressBytes() {
       java.lang.Object ref = address_;
@@ -938,6 +1051,7 @@ public final class Types {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -947,6 +1061,7 @@ public final class Types {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (permission_ != cosmwasm.wasm.v1beta1.Types.AccessType.ACCESS_TYPE_UNSPECIFIED.getNumber()) {
@@ -955,8 +1070,10 @@ public final class Types {
       if (!getAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, address_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -969,11 +1086,11 @@ public final class Types {
       if (!getAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, address_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -984,11 +1101,11 @@ public final class Types {
       }
       cosmwasm.wasm.v1beta1.Types.AccessConfig other = (cosmwasm.wasm.v1beta1.Types.AccessConfig) obj;
 
-      boolean result = true;
-      result = result && permission_ == other.permission_;
-      result = result && getAddress()
-          .equals(other.getAddress());
-      return result;
+      if (permission_ != other.permission_) return false;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -997,7 +1114,7 @@ public final class Types {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
       hash = (53 * hash) + permission_;
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
@@ -1007,6 +1124,17 @@ public final class Types {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Types.AccessConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Types.AccessConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Types.AccessConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1066,6 +1194,7 @@ public final class Types {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1073,6 +1202,7 @@ public final class Types {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Types.AccessConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1100,6 +1230,7 @@ public final class Types {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AccessConfig_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AccessConfig_fieldAccessorTable
@@ -1122,6 +1253,7 @@ public final class Types {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         permission_ = 0;
@@ -1131,15 +1263,18 @@ public final class Types {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AccessConfig_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AccessConfig getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Types.AccessConfig.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AccessConfig build() {
         cosmwasm.wasm.v1beta1.Types.AccessConfig result = buildPartial();
         if (!result.isInitialized()) {
@@ -1148,6 +1283,7 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AccessConfig buildPartial() {
         cosmwasm.wasm.v1beta1.Types.AccessConfig result = new cosmwasm.wasm.v1beta1.Types.AccessConfig(this);
         result.permission_ = permission_;
@@ -1156,32 +1292,39 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Types.AccessConfig) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Types.AccessConfig)other);
@@ -1200,14 +1343,17 @@ public final class Types {
           address_ = other.address_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1228,28 +1374,37 @@ public final class Types {
 
       private int permission_ = 0;
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType permission = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType permission = 1 [(.gogoproto.moretags) = "yaml:&#92;"permission&#92;""];</code>
+       * @return The enum numeric value on the wire for permission.
        */
-      public int getPermissionValue() {
+      @java.lang.Override public int getPermissionValue() {
         return permission_;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType permission = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType permission = 1 [(.gogoproto.moretags) = "yaml:&#92;"permission&#92;""];</code>
+       * @param value The enum numeric value on the wire for permission to set.
+       * @return This builder for chaining.
        */
       public Builder setPermissionValue(int value) {
+        
         permission_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType permission = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType permission = 1 [(.gogoproto.moretags) = "yaml:&#92;"permission&#92;""];</code>
+       * @return The permission.
        */
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AccessType getPermission() {
+        @SuppressWarnings("deprecation")
         cosmwasm.wasm.v1beta1.Types.AccessType result = cosmwasm.wasm.v1beta1.Types.AccessType.valueOf(permission_);
         return result == null ? cosmwasm.wasm.v1beta1.Types.AccessType.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType permission = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType permission = 1 [(.gogoproto.moretags) = "yaml:&#92;"permission&#92;""];</code>
+       * @param value The permission to set.
+       * @return This builder for chaining.
        */
       public Builder setPermission(cosmwasm.wasm.v1beta1.Types.AccessType value) {
         if (value == null) {
@@ -1261,7 +1416,8 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType permission = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType permission = 1 [(.gogoproto.moretags) = "yaml:&#92;"permission&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearPermission() {
         
@@ -1272,7 +1428,8 @@ public final class Types {
 
       private java.lang.Object address_ = "";
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -1287,7 +1444,8 @@ public final class Types {
         }
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -1303,7 +1461,9 @@ public final class Types {
         }
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -1316,7 +1476,8 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         
@@ -1325,7 +1486,9 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -1338,14 +1501,16 @@ public final class Types {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1364,11 +1529,12 @@ public final class Types {
 
     private static final com.google.protobuf.Parser<AccessConfig>
         PARSER = new com.google.protobuf.AbstractParser<AccessConfig>() {
+      @java.lang.Override
       public AccessConfig parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AccessConfig(input, extensionRegistry);
+        return new AccessConfig(input, extensionRegistry);
       }
     };
 
@@ -1381,6 +1547,7 @@ public final class Types {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AccessConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1392,29 +1559,34 @@ public final class Types {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
+     * @return Whether the codeUploadAccess field is set.
      */
     boolean hasCodeUploadAccess();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
+     * @return The codeUploadAccess.
      */
     cosmwasm.wasm.v1beta1.Types.AccessConfig getCodeUploadAccess();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
      */
     cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder getCodeUploadAccessOrBuilder();
 
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2 [(.gogoproto.moretags) = "yaml:&#92;"instantiate_default_permission&#92;""];</code>
+     * @return The enum numeric value on the wire for instantiateDefaultPermission.
      */
     int getInstantiateDefaultPermissionValue();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2 [(.gogoproto.moretags) = "yaml:&#92;"instantiate_default_permission&#92;""];</code>
+     * @return The instantiateDefaultPermission.
      */
     cosmwasm.wasm.v1beta1.Types.AccessType getInstantiateDefaultPermission();
 
     /**
-     * <code>optional uint64 max_wasm_code_size = 3;</code>
+     * <code>uint64 max_wasm_code_size = 3 [(.gogoproto.moretags) = "yaml:&#92;"max_wasm_code_size&#92;""];</code>
+     * @return The maxWasmCodeSize.
      */
     long getMaxWasmCodeSize();
   }
@@ -1425,30 +1597,41 @@ public final class Types {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.Params}
    */
-  public  static final class Params extends
+  public static final class Params extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.Params)
       ParamsOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Params.newBuilder() to construct.
     private Params(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Params() {
       instantiateDefaultPermission_ = 0;
-      maxWasmCodeSize_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Params();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Params(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1457,12 +1640,6 @@ public final class Types {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder subBuilder = null;
               if (codeUploadAccess_ != null) {
@@ -1487,6 +1664,13 @@ public final class Types {
               maxWasmCodeSize_ = input.readUInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1495,6 +1679,7 @@ public final class Types {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1503,6 +1688,7 @@ public final class Types {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_Params_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_Params_fieldAccessorTable
@@ -1513,20 +1699,25 @@ public final class Types {
     public static final int CODE_UPLOAD_ACCESS_FIELD_NUMBER = 1;
     private cosmwasm.wasm.v1beta1.Types.AccessConfig codeUploadAccess_;
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
+     * @return Whether the codeUploadAccess field is set.
      */
+    @java.lang.Override
     public boolean hasCodeUploadAccess() {
       return codeUploadAccess_ != null;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
+     * @return The codeUploadAccess.
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AccessConfig getCodeUploadAccess() {
       return codeUploadAccess_ == null ? cosmwasm.wasm.v1beta1.Types.AccessConfig.getDefaultInstance() : codeUploadAccess_;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder getCodeUploadAccessOrBuilder() {
       return getCodeUploadAccess();
     }
@@ -1534,15 +1725,18 @@ public final class Types {
     public static final int INSTANTIATE_DEFAULT_PERMISSION_FIELD_NUMBER = 2;
     private int instantiateDefaultPermission_;
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2 [(.gogoproto.moretags) = "yaml:&#92;"instantiate_default_permission&#92;""];</code>
+     * @return The enum numeric value on the wire for instantiateDefaultPermission.
      */
-    public int getInstantiateDefaultPermissionValue() {
+    @java.lang.Override public int getInstantiateDefaultPermissionValue() {
       return instantiateDefaultPermission_;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2 [(.gogoproto.moretags) = "yaml:&#92;"instantiate_default_permission&#92;""];</code>
+     * @return The instantiateDefaultPermission.
      */
-    public cosmwasm.wasm.v1beta1.Types.AccessType getInstantiateDefaultPermission() {
+    @java.lang.Override public cosmwasm.wasm.v1beta1.Types.AccessType getInstantiateDefaultPermission() {
+      @SuppressWarnings("deprecation")
       cosmwasm.wasm.v1beta1.Types.AccessType result = cosmwasm.wasm.v1beta1.Types.AccessType.valueOf(instantiateDefaultPermission_);
       return result == null ? cosmwasm.wasm.v1beta1.Types.AccessType.UNRECOGNIZED : result;
     }
@@ -1550,13 +1744,16 @@ public final class Types {
     public static final int MAX_WASM_CODE_SIZE_FIELD_NUMBER = 3;
     private long maxWasmCodeSize_;
     /**
-     * <code>optional uint64 max_wasm_code_size = 3;</code>
+     * <code>uint64 max_wasm_code_size = 3 [(.gogoproto.moretags) = "yaml:&#92;"max_wasm_code_size&#92;""];</code>
+     * @return The maxWasmCodeSize.
      */
+    @java.lang.Override
     public long getMaxWasmCodeSize() {
       return maxWasmCodeSize_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1566,6 +1763,7 @@ public final class Types {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (codeUploadAccess_ != null) {
@@ -1577,8 +1775,10 @@ public final class Types {
       if (maxWasmCodeSize_ != 0L) {
         output.writeUInt64(3, maxWasmCodeSize_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1596,11 +1796,11 @@ public final class Types {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, maxWasmCodeSize_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1611,16 +1811,16 @@ public final class Types {
       }
       cosmwasm.wasm.v1beta1.Types.Params other = (cosmwasm.wasm.v1beta1.Types.Params) obj;
 
-      boolean result = true;
-      result = result && (hasCodeUploadAccess() == other.hasCodeUploadAccess());
+      if (hasCodeUploadAccess() != other.hasCodeUploadAccess()) return false;
       if (hasCodeUploadAccess()) {
-        result = result && getCodeUploadAccess()
-            .equals(other.getCodeUploadAccess());
+        if (!getCodeUploadAccess()
+            .equals(other.getCodeUploadAccess())) return false;
       }
-      result = result && instantiateDefaultPermission_ == other.instantiateDefaultPermission_;
-      result = result && (getMaxWasmCodeSize()
-          == other.getMaxWasmCodeSize());
-      return result;
+      if (instantiateDefaultPermission_ != other.instantiateDefaultPermission_) return false;
+      if (getMaxWasmCodeSize()
+          != other.getMaxWasmCodeSize()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1629,7 +1829,7 @@ public final class Types {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasCodeUploadAccess()) {
         hash = (37 * hash) + CODE_UPLOAD_ACCESS_FIELD_NUMBER;
         hash = (53 * hash) + getCodeUploadAccess().hashCode();
@@ -1644,6 +1844,17 @@ public final class Types {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Types.Params parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Types.Params parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Types.Params parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1703,6 +1914,7 @@ public final class Types {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1710,6 +1922,7 @@ public final class Types {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Types.Params prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1737,6 +1950,7 @@ public final class Types {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_Params_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_Params_fieldAccessorTable
@@ -1759,6 +1973,7 @@ public final class Types {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (codeUploadAccessBuilder_ == null) {
@@ -1774,15 +1989,18 @@ public final class Types {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_Params_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.Params getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Types.Params.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.Params build() {
         cosmwasm.wasm.v1beta1.Types.Params result = buildPartial();
         if (!result.isInitialized()) {
@@ -1791,6 +2009,7 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.Params buildPartial() {
         cosmwasm.wasm.v1beta1.Types.Params result = new cosmwasm.wasm.v1beta1.Types.Params(this);
         if (codeUploadAccessBuilder_ == null) {
@@ -1804,32 +2023,39 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Types.Params) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Types.Params)other);
@@ -1850,14 +2076,17 @@ public final class Types {
         if (other.getMaxWasmCodeSize() != 0L) {
           setMaxWasmCodeSize(other.getMaxWasmCodeSize());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1876,17 +2105,19 @@ public final class Types {
         return this;
       }
 
-      private cosmwasm.wasm.v1beta1.Types.AccessConfig codeUploadAccess_ = null;
+      private cosmwasm.wasm.v1beta1.Types.AccessConfig codeUploadAccess_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.AccessConfig, cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder, cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder> codeUploadAccessBuilder_;
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
+       * @return Whether the codeUploadAccess field is set.
        */
       public boolean hasCodeUploadAccess() {
         return codeUploadAccessBuilder_ != null || codeUploadAccess_ != null;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
+       * @return The codeUploadAccess.
        */
       public cosmwasm.wasm.v1beta1.Types.AccessConfig getCodeUploadAccess() {
         if (codeUploadAccessBuilder_ == null) {
@@ -1896,7 +2127,7 @@ public final class Types {
         }
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
        */
       public Builder setCodeUploadAccess(cosmwasm.wasm.v1beta1.Types.AccessConfig value) {
         if (codeUploadAccessBuilder_ == null) {
@@ -1912,7 +2143,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
        */
       public Builder setCodeUploadAccess(
           cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder builderForValue) {
@@ -1926,7 +2157,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
        */
       public Builder mergeCodeUploadAccess(cosmwasm.wasm.v1beta1.Types.AccessConfig value) {
         if (codeUploadAccessBuilder_ == null) {
@@ -1944,7 +2175,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
        */
       public Builder clearCodeUploadAccess() {
         if (codeUploadAccessBuilder_ == null) {
@@ -1958,7 +2189,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder getCodeUploadAccessBuilder() {
         
@@ -1966,7 +2197,7 @@ public final class Types {
         return getCodeUploadAccessFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder getCodeUploadAccessOrBuilder() {
         if (codeUploadAccessBuilder_ != null) {
@@ -1977,7 +2208,7 @@ public final class Types {
         }
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig code_upload_access = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"code_upload_access&#92;""];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.AccessConfig, cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder, cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder> 
@@ -1995,28 +2226,37 @@ public final class Types {
 
       private int instantiateDefaultPermission_ = 0;
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2 [(.gogoproto.moretags) = "yaml:&#92;"instantiate_default_permission&#92;""];</code>
+       * @return The enum numeric value on the wire for instantiateDefaultPermission.
        */
-      public int getInstantiateDefaultPermissionValue() {
+      @java.lang.Override public int getInstantiateDefaultPermissionValue() {
         return instantiateDefaultPermission_;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2 [(.gogoproto.moretags) = "yaml:&#92;"instantiate_default_permission&#92;""];</code>
+       * @param value The enum numeric value on the wire for instantiateDefaultPermission to set.
+       * @return This builder for chaining.
        */
       public Builder setInstantiateDefaultPermissionValue(int value) {
+        
         instantiateDefaultPermission_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2 [(.gogoproto.moretags) = "yaml:&#92;"instantiate_default_permission&#92;""];</code>
+       * @return The instantiateDefaultPermission.
        */
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AccessType getInstantiateDefaultPermission() {
+        @SuppressWarnings("deprecation")
         cosmwasm.wasm.v1beta1.Types.AccessType result = cosmwasm.wasm.v1beta1.Types.AccessType.valueOf(instantiateDefaultPermission_);
         return result == null ? cosmwasm.wasm.v1beta1.Types.AccessType.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2 [(.gogoproto.moretags) = "yaml:&#92;"instantiate_default_permission&#92;""];</code>
+       * @param value The instantiateDefaultPermission to set.
+       * @return This builder for chaining.
        */
       public Builder setInstantiateDefaultPermission(cosmwasm.wasm.v1beta1.Types.AccessType value) {
         if (value == null) {
@@ -2028,7 +2268,8 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessType instantiate_default_permission = 2 [(.gogoproto.moretags) = "yaml:&#92;"instantiate_default_permission&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearInstantiateDefaultPermission() {
         
@@ -2039,13 +2280,17 @@ public final class Types {
 
       private long maxWasmCodeSize_ ;
       /**
-       * <code>optional uint64 max_wasm_code_size = 3;</code>
+       * <code>uint64 max_wasm_code_size = 3 [(.gogoproto.moretags) = "yaml:&#92;"max_wasm_code_size&#92;""];</code>
+       * @return The maxWasmCodeSize.
        */
+      @java.lang.Override
       public long getMaxWasmCodeSize() {
         return maxWasmCodeSize_;
       }
       /**
-       * <code>optional uint64 max_wasm_code_size = 3;</code>
+       * <code>uint64 max_wasm_code_size = 3 [(.gogoproto.moretags) = "yaml:&#92;"max_wasm_code_size&#92;""];</code>
+       * @param value The maxWasmCodeSize to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxWasmCodeSize(long value) {
         
@@ -2054,7 +2299,8 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional uint64 max_wasm_code_size = 3;</code>
+       * <code>uint64 max_wasm_code_size = 3 [(.gogoproto.moretags) = "yaml:&#92;"max_wasm_code_size&#92;""];</code>
+       * @return This builder for chaining.
        */
       public Builder clearMaxWasmCodeSize() {
         
@@ -2062,14 +2308,16 @@ public final class Types {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2088,11 +2336,12 @@ public final class Types {
 
     private static final com.google.protobuf.Parser<Params>
         PARSER = new com.google.protobuf.AbstractParser<Params>() {
+      @java.lang.Override
       public Params parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Params(input, extensionRegistry);
+        return new Params(input, extensionRegistry);
       }
     };
 
@@ -2105,6 +2354,7 @@ public final class Types {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.Params getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2120,7 +2370,8 @@ public final class Types {
      * CodeHash is the unique CodeID
      * </pre>
      *
-     * <code>optional bytes code_hash = 1;</code>
+     * <code>bytes code_hash = 1;</code>
+     * @return The codeHash.
      */
     com.google.protobuf.ByteString getCodeHash();
 
@@ -2129,7 +2380,8 @@ public final class Types {
      * Creator address who initially stored the code
      * </pre>
      *
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The creator.
      */
     java.lang.String getCreator();
     /**
@@ -2137,7 +2389,8 @@ public final class Types {
      * Creator address who initially stored the code
      * </pre>
      *
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The bytes for creator.
      */
     com.google.protobuf.ByteString
         getCreatorBytes();
@@ -2147,7 +2400,8 @@ public final class Types {
      * Source is a valid absolute HTTPS URI to the contract's source code, optional
      * </pre>
      *
-     * <code>optional string source = 3;</code>
+     * <code>string source = 3;</code>
+     * @return The source.
      */
     java.lang.String getSource();
     /**
@@ -2155,7 +2409,8 @@ public final class Types {
      * Source is a valid absolute HTTPS URI to the contract's source code, optional
      * </pre>
      *
-     * <code>optional string source = 3;</code>
+     * <code>string source = 3;</code>
+     * @return The bytes for source.
      */
     com.google.protobuf.ByteString
         getSourceBytes();
@@ -2165,7 +2420,8 @@ public final class Types {
      * Builder is a valid docker image name with tag, optional
      * </pre>
      *
-     * <code>optional string builder = 4;</code>
+     * <code>string builder = 4;</code>
+     * @return The builder.
      */
     java.lang.String getBuilder();
     /**
@@ -2173,7 +2429,8 @@ public final class Types {
      * Builder is a valid docker image name with tag, optional
      * </pre>
      *
-     * <code>optional string builder = 4;</code>
+     * <code>string builder = 4;</code>
+     * @return The bytes for builder.
      */
     com.google.protobuf.ByteString
         getBuilderBytes();
@@ -2183,7 +2440,8 @@ public final class Types {
      * InstantiateConfig access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the instantiateConfig field is set.
      */
     boolean hasInstantiateConfig();
     /**
@@ -2191,7 +2449,8 @@ public final class Types {
      * InstantiateConfig access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
+     * @return The instantiateConfig.
      */
     cosmwasm.wasm.v1beta1.Types.AccessConfig getInstantiateConfig();
     /**
@@ -2199,7 +2458,7 @@ public final class Types {
      * InstantiateConfig access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
      */
     cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder getInstantiateConfigOrBuilder();
   }
@@ -2210,10 +2469,11 @@ public final class Types {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.CodeInfo}
    */
-  public  static final class CodeInfo extends
+  public static final class CodeInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.CodeInfo)
       CodeInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use CodeInfo.newBuilder() to construct.
     private CodeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2226,16 +2486,27 @@ public final class Types {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CodeInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private CodeInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2244,12 +2515,6 @@ public final class Types {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               codeHash_ = input.readBytes();
@@ -2286,6 +2551,13 @@ public final class Types {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2294,6 +2566,7 @@ public final class Types {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2302,6 +2575,7 @@ public final class Types {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_CodeInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_CodeInfo_fieldAccessorTable
@@ -2316,8 +2590,10 @@ public final class Types {
      * CodeHash is the unique CodeID
      * </pre>
      *
-     * <code>optional bytes code_hash = 1;</code>
+     * <code>bytes code_hash = 1;</code>
+     * @return The codeHash.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCodeHash() {
       return codeHash_;
     }
@@ -2329,8 +2605,10 @@ public final class Types {
      * Creator address who initially stored the code
      * </pre>
      *
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The creator.
      */
+    @java.lang.Override
     public java.lang.String getCreator() {
       java.lang.Object ref = creator_;
       if (ref instanceof java.lang.String) {
@@ -2348,8 +2626,10 @@ public final class Types {
      * Creator address who initially stored the code
      * </pre>
      *
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The bytes for creator.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCreatorBytes() {
       java.lang.Object ref = creator_;
@@ -2371,8 +2651,10 @@ public final class Types {
      * Source is a valid absolute HTTPS URI to the contract's source code, optional
      * </pre>
      *
-     * <code>optional string source = 3;</code>
+     * <code>string source = 3;</code>
+     * @return The source.
      */
+    @java.lang.Override
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
       if (ref instanceof java.lang.String) {
@@ -2390,8 +2672,10 @@ public final class Types {
      * Source is a valid absolute HTTPS URI to the contract's source code, optional
      * </pre>
      *
-     * <code>optional string source = 3;</code>
+     * <code>string source = 3;</code>
+     * @return The bytes for source.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSourceBytes() {
       java.lang.Object ref = source_;
@@ -2413,8 +2697,10 @@ public final class Types {
      * Builder is a valid docker image name with tag, optional
      * </pre>
      *
-     * <code>optional string builder = 4;</code>
+     * <code>string builder = 4;</code>
+     * @return The builder.
      */
+    @java.lang.Override
     public java.lang.String getBuilder() {
       java.lang.Object ref = builder_;
       if (ref instanceof java.lang.String) {
@@ -2432,8 +2718,10 @@ public final class Types {
      * Builder is a valid docker image name with tag, optional
      * </pre>
      *
-     * <code>optional string builder = 4;</code>
+     * <code>string builder = 4;</code>
+     * @return The bytes for builder.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getBuilderBytes() {
       java.lang.Object ref = builder_;
@@ -2455,8 +2743,10 @@ public final class Types {
      * InstantiateConfig access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the instantiateConfig field is set.
      */
+    @java.lang.Override
     public boolean hasInstantiateConfig() {
       return instantiateConfig_ != null;
     }
@@ -2465,8 +2755,10 @@ public final class Types {
      * InstantiateConfig access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
+     * @return The instantiateConfig.
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AccessConfig getInstantiateConfig() {
       return instantiateConfig_ == null ? cosmwasm.wasm.v1beta1.Types.AccessConfig.getDefaultInstance() : instantiateConfig_;
     }
@@ -2475,13 +2767,15 @@ public final class Types {
      * InstantiateConfig access control to apply on contract creation, optional
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder getInstantiateConfigOrBuilder() {
       return getInstantiateConfig();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2491,6 +2785,7 @@ public final class Types {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!codeHash_.isEmpty()) {
@@ -2508,8 +2803,10 @@ public final class Types {
       if (instantiateConfig_ != null) {
         output.writeMessage(5, getInstantiateConfig());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2532,11 +2829,11 @@ public final class Types {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getInstantiateConfig());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2547,21 +2844,21 @@ public final class Types {
       }
       cosmwasm.wasm.v1beta1.Types.CodeInfo other = (cosmwasm.wasm.v1beta1.Types.CodeInfo) obj;
 
-      boolean result = true;
-      result = result && getCodeHash()
-          .equals(other.getCodeHash());
-      result = result && getCreator()
-          .equals(other.getCreator());
-      result = result && getSource()
-          .equals(other.getSource());
-      result = result && getBuilder()
-          .equals(other.getBuilder());
-      result = result && (hasInstantiateConfig() == other.hasInstantiateConfig());
+      if (!getCodeHash()
+          .equals(other.getCodeHash())) return false;
+      if (!getCreator()
+          .equals(other.getCreator())) return false;
+      if (!getSource()
+          .equals(other.getSource())) return false;
+      if (!getBuilder()
+          .equals(other.getBuilder())) return false;
+      if (hasInstantiateConfig() != other.hasInstantiateConfig()) return false;
       if (hasInstantiateConfig()) {
-        result = result && getInstantiateConfig()
-            .equals(other.getInstantiateConfig());
+        if (!getInstantiateConfig()
+            .equals(other.getInstantiateConfig())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2570,7 +2867,7 @@ public final class Types {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CODE_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getCodeHash().hashCode();
       hash = (37 * hash) + CREATOR_FIELD_NUMBER;
@@ -2588,6 +2885,17 @@ public final class Types {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Types.CodeInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Types.CodeInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Types.CodeInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2647,6 +2955,7 @@ public final class Types {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2654,6 +2963,7 @@ public final class Types {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Types.CodeInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2681,6 +2991,7 @@ public final class Types {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_CodeInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_CodeInfo_fieldAccessorTable
@@ -2703,6 +3014,7 @@ public final class Types {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         codeHash_ = com.google.protobuf.ByteString.EMPTY;
@@ -2722,15 +3034,18 @@ public final class Types {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_CodeInfo_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.CodeInfo getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Types.CodeInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.CodeInfo build() {
         cosmwasm.wasm.v1beta1.Types.CodeInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -2739,6 +3054,7 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.CodeInfo buildPartial() {
         cosmwasm.wasm.v1beta1.Types.CodeInfo result = new cosmwasm.wasm.v1beta1.Types.CodeInfo(this);
         result.codeHash_ = codeHash_;
@@ -2754,32 +3070,39 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Types.CodeInfo) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Types.CodeInfo)other);
@@ -2809,14 +3132,17 @@ public final class Types {
         if (other.hasInstantiateConfig()) {
           mergeInstantiateConfig(other.getInstantiateConfig());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2841,8 +3167,10 @@ public final class Types {
        * CodeHash is the unique CodeID
        * </pre>
        *
-       * <code>optional bytes code_hash = 1;</code>
+       * <code>bytes code_hash = 1;</code>
+       * @return The codeHash.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getCodeHash() {
         return codeHash_;
       }
@@ -2851,7 +3179,9 @@ public final class Types {
        * CodeHash is the unique CodeID
        * </pre>
        *
-       * <code>optional bytes code_hash = 1;</code>
+       * <code>bytes code_hash = 1;</code>
+       * @param value The codeHash to set.
+       * @return This builder for chaining.
        */
       public Builder setCodeHash(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2867,7 +3197,8 @@ public final class Types {
        * CodeHash is the unique CodeID
        * </pre>
        *
-       * <code>optional bytes code_hash = 1;</code>
+       * <code>bytes code_hash = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCodeHash() {
         
@@ -2882,7 +3213,8 @@ public final class Types {
        * Creator address who initially stored the code
        * </pre>
        *
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @return The creator.
        */
       public java.lang.String getCreator() {
         java.lang.Object ref = creator_;
@@ -2901,7 +3233,8 @@ public final class Types {
        * Creator address who initially stored the code
        * </pre>
        *
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @return The bytes for creator.
        */
       public com.google.protobuf.ByteString
           getCreatorBytes() {
@@ -2921,7 +3254,9 @@ public final class Types {
        * Creator address who initially stored the code
        * </pre>
        *
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @param value The creator to set.
+       * @return This builder for chaining.
        */
       public Builder setCreator(
           java.lang.String value) {
@@ -2938,7 +3273,8 @@ public final class Types {
        * Creator address who initially stored the code
        * </pre>
        *
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCreator() {
         
@@ -2951,7 +3287,9 @@ public final class Types {
        * Creator address who initially stored the code
        * </pre>
        *
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @param value The bytes for creator to set.
+       * @return This builder for chaining.
        */
       public Builder setCreatorBytes(
           com.google.protobuf.ByteString value) {
@@ -2971,7 +3309,8 @@ public final class Types {
        * Source is a valid absolute HTTPS URI to the contract's source code, optional
        * </pre>
        *
-       * <code>optional string source = 3;</code>
+       * <code>string source = 3;</code>
+       * @return The source.
        */
       public java.lang.String getSource() {
         java.lang.Object ref = source_;
@@ -2990,7 +3329,8 @@ public final class Types {
        * Source is a valid absolute HTTPS URI to the contract's source code, optional
        * </pre>
        *
-       * <code>optional string source = 3;</code>
+       * <code>string source = 3;</code>
+       * @return The bytes for source.
        */
       public com.google.protobuf.ByteString
           getSourceBytes() {
@@ -3010,7 +3350,9 @@ public final class Types {
        * Source is a valid absolute HTTPS URI to the contract's source code, optional
        * </pre>
        *
-       * <code>optional string source = 3;</code>
+       * <code>string source = 3;</code>
+       * @param value The source to set.
+       * @return This builder for chaining.
        */
       public Builder setSource(
           java.lang.String value) {
@@ -3027,7 +3369,8 @@ public final class Types {
        * Source is a valid absolute HTTPS URI to the contract's source code, optional
        * </pre>
        *
-       * <code>optional string source = 3;</code>
+       * <code>string source = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSource() {
         
@@ -3040,7 +3383,9 @@ public final class Types {
        * Source is a valid absolute HTTPS URI to the contract's source code, optional
        * </pre>
        *
-       * <code>optional string source = 3;</code>
+       * <code>string source = 3;</code>
+       * @param value The bytes for source to set.
+       * @return This builder for chaining.
        */
       public Builder setSourceBytes(
           com.google.protobuf.ByteString value) {
@@ -3060,7 +3405,8 @@ public final class Types {
        * Builder is a valid docker image name with tag, optional
        * </pre>
        *
-       * <code>optional string builder = 4;</code>
+       * <code>string builder = 4;</code>
+       * @return The builder.
        */
       public java.lang.String getBuilder() {
         java.lang.Object ref = builder_;
@@ -3079,7 +3425,8 @@ public final class Types {
        * Builder is a valid docker image name with tag, optional
        * </pre>
        *
-       * <code>optional string builder = 4;</code>
+       * <code>string builder = 4;</code>
+       * @return The bytes for builder.
        */
       public com.google.protobuf.ByteString
           getBuilderBytes() {
@@ -3099,7 +3446,9 @@ public final class Types {
        * Builder is a valid docker image name with tag, optional
        * </pre>
        *
-       * <code>optional string builder = 4;</code>
+       * <code>string builder = 4;</code>
+       * @param value The builder to set.
+       * @return This builder for chaining.
        */
       public Builder setBuilder(
           java.lang.String value) {
@@ -3116,7 +3465,8 @@ public final class Types {
        * Builder is a valid docker image name with tag, optional
        * </pre>
        *
-       * <code>optional string builder = 4;</code>
+       * <code>string builder = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBuilder() {
         
@@ -3129,7 +3479,9 @@ public final class Types {
        * Builder is a valid docker image name with tag, optional
        * </pre>
        *
-       * <code>optional string builder = 4;</code>
+       * <code>string builder = 4;</code>
+       * @param value The bytes for builder to set.
+       * @return This builder for chaining.
        */
       public Builder setBuilderBytes(
           com.google.protobuf.ByteString value) {
@@ -3143,7 +3495,7 @@ public final class Types {
         return this;
       }
 
-      private cosmwasm.wasm.v1beta1.Types.AccessConfig instantiateConfig_ = null;
+      private cosmwasm.wasm.v1beta1.Types.AccessConfig instantiateConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.AccessConfig, cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder, cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder> instantiateConfigBuilder_;
       /**
@@ -3151,7 +3503,8 @@ public final class Types {
        * InstantiateConfig access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the instantiateConfig field is set.
        */
       public boolean hasInstantiateConfig() {
         return instantiateConfigBuilder_ != null || instantiateConfig_ != null;
@@ -3161,7 +3514,8 @@ public final class Types {
        * InstantiateConfig access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
+       * @return The instantiateConfig.
        */
       public cosmwasm.wasm.v1beta1.Types.AccessConfig getInstantiateConfig() {
         if (instantiateConfigBuilder_ == null) {
@@ -3175,7 +3529,7 @@ public final class Types {
        * InstantiateConfig access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setInstantiateConfig(cosmwasm.wasm.v1beta1.Types.AccessConfig value) {
         if (instantiateConfigBuilder_ == null) {
@@ -3195,7 +3549,7 @@ public final class Types {
        * InstantiateConfig access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setInstantiateConfig(
           cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder builderForValue) {
@@ -3213,7 +3567,7 @@ public final class Types {
        * InstantiateConfig access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeInstantiateConfig(cosmwasm.wasm.v1beta1.Types.AccessConfig value) {
         if (instantiateConfigBuilder_ == null) {
@@ -3235,7 +3589,7 @@ public final class Types {
        * InstantiateConfig access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearInstantiateConfig() {
         if (instantiateConfigBuilder_ == null) {
@@ -3253,7 +3607,7 @@ public final class Types {
        * InstantiateConfig access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder getInstantiateConfigBuilder() {
         
@@ -3265,7 +3619,7 @@ public final class Types {
        * InstantiateConfig access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
        */
       public cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder getInstantiateConfigOrBuilder() {
         if (instantiateConfigBuilder_ != null) {
@@ -3280,7 +3634,7 @@ public final class Types {
        * InstantiateConfig access control to apply on contract creation, optional
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AccessConfig instantiate_config = 5 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.AccessConfig, cosmwasm.wasm.v1beta1.Types.AccessConfig.Builder, cosmwasm.wasm.v1beta1.Types.AccessConfigOrBuilder> 
@@ -3295,14 +3649,16 @@ public final class Types {
         }
         return instantiateConfigBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3321,11 +3677,12 @@ public final class Types {
 
     private static final com.google.protobuf.Parser<CodeInfo>
         PARSER = new com.google.protobuf.AbstractParser<CodeInfo>() {
+      @java.lang.Override
       public CodeInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CodeInfo(input, extensionRegistry);
+        return new CodeInfo(input, extensionRegistry);
       }
     };
 
@@ -3338,6 +3695,7 @@ public final class Types {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.CodeInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3353,7 +3711,8 @@ public final class Types {
      * CodeID is the reference to the stored Wasm code
      * </pre>
      *
-     * <code>optional uint64 code_id = 1;</code>
+     * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
      */
     long getCodeId();
 
@@ -3362,7 +3721,8 @@ public final class Types {
      * Creator address who initially instantiated the contract
      * </pre>
      *
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The creator.
      */
     java.lang.String getCreator();
     /**
@@ -3370,7 +3730,8 @@ public final class Types {
      * Creator address who initially instantiated the contract
      * </pre>
      *
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The bytes for creator.
      */
     com.google.protobuf.ByteString
         getCreatorBytes();
@@ -3380,7 +3741,8 @@ public final class Types {
      * Admin is an optional address that can execute migrations
      * </pre>
      *
-     * <code>optional string admin = 3;</code>
+     * <code>string admin = 3;</code>
+     * @return The admin.
      */
     java.lang.String getAdmin();
     /**
@@ -3388,7 +3750,8 @@ public final class Types {
      * Admin is an optional address that can execute migrations
      * </pre>
      *
-     * <code>optional string admin = 3;</code>
+     * <code>string admin = 3;</code>
+     * @return The bytes for admin.
      */
     com.google.protobuf.ByteString
         getAdminBytes();
@@ -3398,7 +3761,8 @@ public final class Types {
      * Label is optional metadata to be stored with a contract instance.
      * </pre>
      *
-     * <code>optional string label = 4;</code>
+     * <code>string label = 4;</code>
+     * @return The label.
      */
     java.lang.String getLabel();
     /**
@@ -3406,7 +3770,8 @@ public final class Types {
      * Label is optional metadata to be stored with a contract instance.
      * </pre>
      *
-     * <code>optional string label = 4;</code>
+     * <code>string label = 4;</code>
+     * @return The bytes for label.
      */
     com.google.protobuf.ByteString
         getLabelBytes();
@@ -3417,7 +3782,8 @@ public final class Types {
      * This data should kept internal and not be exposed via query results. Just use for sorting
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+     * @return Whether the created field is set.
      */
     boolean hasCreated();
     /**
@@ -3426,7 +3792,8 @@ public final class Types {
      * This data should kept internal and not be exposed via query results. Just use for sorting
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+     * @return The created.
      */
     cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition getCreated();
     /**
@@ -3435,7 +3802,7 @@ public final class Types {
      * This data should kept internal and not be exposed via query results. Just use for sorting
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
      */
     cosmwasm.wasm.v1beta1.Types.AbsoluteTxPositionOrBuilder getCreatedOrBuilder();
   }
@@ -3446,32 +3813,43 @@ public final class Types {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.ContractInfo}
    */
-  public  static final class ContractInfo extends
+  public static final class ContractInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.ContractInfo)
       ContractInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ContractInfo.newBuilder() to construct.
     private ContractInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private ContractInfo() {
-      codeId_ = 0L;
       creator_ = "";
       admin_ = "";
       label_ = "";
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ContractInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ContractInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3480,12 +3858,6 @@ public final class Types {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               codeId_ = input.readUInt64();
@@ -3522,6 +3894,13 @@ public final class Types {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3530,6 +3909,7 @@ public final class Types {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3538,6 +3918,7 @@ public final class Types {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_ContractInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_ContractInfo_fieldAccessorTable
@@ -3552,8 +3933,10 @@ public final class Types {
      * CodeID is the reference to the stored Wasm code
      * </pre>
      *
-     * <code>optional uint64 code_id = 1;</code>
+     * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
      */
+    @java.lang.Override
     public long getCodeId() {
       return codeId_;
     }
@@ -3565,8 +3948,10 @@ public final class Types {
      * Creator address who initially instantiated the contract
      * </pre>
      *
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The creator.
      */
+    @java.lang.Override
     public java.lang.String getCreator() {
       java.lang.Object ref = creator_;
       if (ref instanceof java.lang.String) {
@@ -3584,8 +3969,10 @@ public final class Types {
      * Creator address who initially instantiated the contract
      * </pre>
      *
-     * <code>optional string creator = 2;</code>
+     * <code>string creator = 2;</code>
+     * @return The bytes for creator.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCreatorBytes() {
       java.lang.Object ref = creator_;
@@ -3607,8 +3994,10 @@ public final class Types {
      * Admin is an optional address that can execute migrations
      * </pre>
      *
-     * <code>optional string admin = 3;</code>
+     * <code>string admin = 3;</code>
+     * @return The admin.
      */
+    @java.lang.Override
     public java.lang.String getAdmin() {
       java.lang.Object ref = admin_;
       if (ref instanceof java.lang.String) {
@@ -3626,8 +4015,10 @@ public final class Types {
      * Admin is an optional address that can execute migrations
      * </pre>
      *
-     * <code>optional string admin = 3;</code>
+     * <code>string admin = 3;</code>
+     * @return The bytes for admin.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAdminBytes() {
       java.lang.Object ref = admin_;
@@ -3649,8 +4040,10 @@ public final class Types {
      * Label is optional metadata to be stored with a contract instance.
      * </pre>
      *
-     * <code>optional string label = 4;</code>
+     * <code>string label = 4;</code>
+     * @return The label.
      */
+    @java.lang.Override
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
       if (ref instanceof java.lang.String) {
@@ -3668,8 +4061,10 @@ public final class Types {
      * Label is optional metadata to be stored with a contract instance.
      * </pre>
      *
-     * <code>optional string label = 4;</code>
+     * <code>string label = 4;</code>
+     * @return The bytes for label.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getLabelBytes() {
       java.lang.Object ref = label_;
@@ -3692,8 +4087,10 @@ public final class Types {
      * This data should kept internal and not be exposed via query results. Just use for sorting
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+     * @return Whether the created field is set.
      */
+    @java.lang.Override
     public boolean hasCreated() {
       return created_ != null;
     }
@@ -3703,8 +4100,10 @@ public final class Types {
      * This data should kept internal and not be exposed via query results. Just use for sorting
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+     * @return The created.
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition getCreated() {
       return created_ == null ? cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.getDefaultInstance() : created_;
     }
@@ -3714,13 +4113,15 @@ public final class Types {
      * This data should kept internal and not be exposed via query results. Just use for sorting
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPositionOrBuilder getCreatedOrBuilder() {
       return getCreated();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3730,6 +4131,7 @@ public final class Types {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (codeId_ != 0L) {
@@ -3747,8 +4149,10 @@ public final class Types {
       if (created_ != null) {
         output.writeMessage(5, getCreated());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3771,11 +4175,11 @@ public final class Types {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getCreated());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3786,21 +4190,21 @@ public final class Types {
       }
       cosmwasm.wasm.v1beta1.Types.ContractInfo other = (cosmwasm.wasm.v1beta1.Types.ContractInfo) obj;
 
-      boolean result = true;
-      result = result && (getCodeId()
-          == other.getCodeId());
-      result = result && getCreator()
-          .equals(other.getCreator());
-      result = result && getAdmin()
-          .equals(other.getAdmin());
-      result = result && getLabel()
-          .equals(other.getLabel());
-      result = result && (hasCreated() == other.hasCreated());
+      if (getCodeId()
+          != other.getCodeId()) return false;
+      if (!getCreator()
+          .equals(other.getCreator())) return false;
+      if (!getAdmin()
+          .equals(other.getAdmin())) return false;
+      if (!getLabel()
+          .equals(other.getLabel())) return false;
+      if (hasCreated() != other.hasCreated()) return false;
       if (hasCreated()) {
-        result = result && getCreated()
-            .equals(other.getCreated());
+        if (!getCreated()
+            .equals(other.getCreated())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3809,7 +4213,7 @@ public final class Types {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CODE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCodeId());
@@ -3828,6 +4232,17 @@ public final class Types {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Types.ContractInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Types.ContractInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Types.ContractInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3887,6 +4302,7 @@ public final class Types {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3894,6 +4310,7 @@ public final class Types {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Types.ContractInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3921,6 +4338,7 @@ public final class Types {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_ContractInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_ContractInfo_fieldAccessorTable
@@ -3943,6 +4361,7 @@ public final class Types {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         codeId_ = 0L;
@@ -3962,15 +4381,18 @@ public final class Types {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_ContractInfo_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.ContractInfo getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Types.ContractInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.ContractInfo build() {
         cosmwasm.wasm.v1beta1.Types.ContractInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -3979,6 +4401,7 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.ContractInfo buildPartial() {
         cosmwasm.wasm.v1beta1.Types.ContractInfo result = new cosmwasm.wasm.v1beta1.Types.ContractInfo(this);
         result.codeId_ = codeId_;
@@ -3994,32 +4417,39 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Types.ContractInfo) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Types.ContractInfo)other);
@@ -4049,14 +4479,17 @@ public final class Types {
         if (other.hasCreated()) {
           mergeCreated(other.getCreated());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4081,8 +4514,10 @@ public final class Types {
        * CodeID is the reference to the stored Wasm code
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return The codeId.
        */
+      @java.lang.Override
       public long getCodeId() {
         return codeId_;
       }
@@ -4091,7 +4526,9 @@ public final class Types {
        * CodeID is the reference to the stored Wasm code
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+       * @param value The codeId to set.
+       * @return This builder for chaining.
        */
       public Builder setCodeId(long value) {
         
@@ -4104,7 +4541,8 @@ public final class Types {
        * CodeID is the reference to the stored Wasm code
        * </pre>
        *
-       * <code>optional uint64 code_id = 1;</code>
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearCodeId() {
         
@@ -4119,7 +4557,8 @@ public final class Types {
        * Creator address who initially instantiated the contract
        * </pre>
        *
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @return The creator.
        */
       public java.lang.String getCreator() {
         java.lang.Object ref = creator_;
@@ -4138,7 +4577,8 @@ public final class Types {
        * Creator address who initially instantiated the contract
        * </pre>
        *
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @return The bytes for creator.
        */
       public com.google.protobuf.ByteString
           getCreatorBytes() {
@@ -4158,7 +4598,9 @@ public final class Types {
        * Creator address who initially instantiated the contract
        * </pre>
        *
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @param value The creator to set.
+       * @return This builder for chaining.
        */
       public Builder setCreator(
           java.lang.String value) {
@@ -4175,7 +4617,8 @@ public final class Types {
        * Creator address who initially instantiated the contract
        * </pre>
        *
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCreator() {
         
@@ -4188,7 +4631,9 @@ public final class Types {
        * Creator address who initially instantiated the contract
        * </pre>
        *
-       * <code>optional string creator = 2;</code>
+       * <code>string creator = 2;</code>
+       * @param value The bytes for creator to set.
+       * @return This builder for chaining.
        */
       public Builder setCreatorBytes(
           com.google.protobuf.ByteString value) {
@@ -4208,7 +4653,8 @@ public final class Types {
        * Admin is an optional address that can execute migrations
        * </pre>
        *
-       * <code>optional string admin = 3;</code>
+       * <code>string admin = 3;</code>
+       * @return The admin.
        */
       public java.lang.String getAdmin() {
         java.lang.Object ref = admin_;
@@ -4227,7 +4673,8 @@ public final class Types {
        * Admin is an optional address that can execute migrations
        * </pre>
        *
-       * <code>optional string admin = 3;</code>
+       * <code>string admin = 3;</code>
+       * @return The bytes for admin.
        */
       public com.google.protobuf.ByteString
           getAdminBytes() {
@@ -4247,7 +4694,9 @@ public final class Types {
        * Admin is an optional address that can execute migrations
        * </pre>
        *
-       * <code>optional string admin = 3;</code>
+       * <code>string admin = 3;</code>
+       * @param value The admin to set.
+       * @return This builder for chaining.
        */
       public Builder setAdmin(
           java.lang.String value) {
@@ -4264,7 +4713,8 @@ public final class Types {
        * Admin is an optional address that can execute migrations
        * </pre>
        *
-       * <code>optional string admin = 3;</code>
+       * <code>string admin = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAdmin() {
         
@@ -4277,7 +4727,9 @@ public final class Types {
        * Admin is an optional address that can execute migrations
        * </pre>
        *
-       * <code>optional string admin = 3;</code>
+       * <code>string admin = 3;</code>
+       * @param value The bytes for admin to set.
+       * @return This builder for chaining.
        */
       public Builder setAdminBytes(
           com.google.protobuf.ByteString value) {
@@ -4297,7 +4749,8 @@ public final class Types {
        * Label is optional metadata to be stored with a contract instance.
        * </pre>
        *
-       * <code>optional string label = 4;</code>
+       * <code>string label = 4;</code>
+       * @return The label.
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -4316,7 +4769,8 @@ public final class Types {
        * Label is optional metadata to be stored with a contract instance.
        * </pre>
        *
-       * <code>optional string label = 4;</code>
+       * <code>string label = 4;</code>
+       * @return The bytes for label.
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -4336,7 +4790,9 @@ public final class Types {
        * Label is optional metadata to be stored with a contract instance.
        * </pre>
        *
-       * <code>optional string label = 4;</code>
+       * <code>string label = 4;</code>
+       * @param value The label to set.
+       * @return This builder for chaining.
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -4353,7 +4809,8 @@ public final class Types {
        * Label is optional metadata to be stored with a contract instance.
        * </pre>
        *
-       * <code>optional string label = 4;</code>
+       * <code>string label = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLabel() {
         
@@ -4366,7 +4823,9 @@ public final class Types {
        * Label is optional metadata to be stored with a contract instance.
        * </pre>
        *
-       * <code>optional string label = 4;</code>
+       * <code>string label = 4;</code>
+       * @param value The bytes for label to set.
+       * @return This builder for chaining.
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -4380,7 +4839,7 @@ public final class Types {
         return this;
       }
 
-      private cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition created_ = null;
+      private cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition created_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition, cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.Builder, cosmwasm.wasm.v1beta1.Types.AbsoluteTxPositionOrBuilder> createdBuilder_;
       /**
@@ -4389,7 +4848,8 @@ public final class Types {
        * This data should kept internal and not be exposed via query results. Just use for sorting
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * @return Whether the created field is set.
        */
       public boolean hasCreated() {
         return createdBuilder_ != null || created_ != null;
@@ -4400,7 +4860,8 @@ public final class Types {
        * This data should kept internal and not be exposed via query results. Just use for sorting
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * @return The created.
        */
       public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition getCreated() {
         if (createdBuilder_ == null) {
@@ -4415,7 +4876,7 @@ public final class Types {
        * This data should kept internal and not be exposed via query results. Just use for sorting
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
        */
       public Builder setCreated(cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition value) {
         if (createdBuilder_ == null) {
@@ -4436,7 +4897,7 @@ public final class Types {
        * This data should kept internal and not be exposed via query results. Just use for sorting
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
        */
       public Builder setCreated(
           cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.Builder builderForValue) {
@@ -4455,7 +4916,7 @@ public final class Types {
        * This data should kept internal and not be exposed via query results. Just use for sorting
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
        */
       public Builder mergeCreated(cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition value) {
         if (createdBuilder_ == null) {
@@ -4478,7 +4939,7 @@ public final class Types {
        * This data should kept internal and not be exposed via query results. Just use for sorting
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
        */
       public Builder clearCreated() {
         if (createdBuilder_ == null) {
@@ -4497,7 +4958,7 @@ public final class Types {
        * This data should kept internal and not be exposed via query results. Just use for sorting
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
        */
       public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.Builder getCreatedBuilder() {
         
@@ -4510,7 +4971,7 @@ public final class Types {
        * This data should kept internal and not be exposed via query results. Just use for sorting
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
        */
       public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPositionOrBuilder getCreatedOrBuilder() {
         if (createdBuilder_ != null) {
@@ -4526,7 +4987,7 @@ public final class Types {
        * This data should kept internal and not be exposed via query results. Just use for sorting
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition created = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition, cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.Builder, cosmwasm.wasm.v1beta1.Types.AbsoluteTxPositionOrBuilder> 
@@ -4541,14 +5002,16 @@ public final class Types {
         }
         return createdBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4567,11 +5030,12 @@ public final class Types {
 
     private static final com.google.protobuf.Parser<ContractInfo>
         PARSER = new com.google.protobuf.AbstractParser<ContractInfo>() {
+      @java.lang.Override
       public ContractInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ContractInfo(input, extensionRegistry);
+        return new ContractInfo(input, extensionRegistry);
       }
     };
 
@@ -4584,6 +5048,7 @@ public final class Types {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.ContractInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4595,11 +5060,13 @@ public final class Types {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+     * @return The enum numeric value on the wire for operation.
      */
     int getOperationValue();
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+     * @return The operation.
      */
     cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType getOperation();
 
@@ -4608,7 +5075,8 @@ public final class Types {
      * CodeID is the reference to the stored WASM code
      * </pre>
      *
-     * <code>optional uint64 code_id = 2;</code>
+     * <code>uint64 code_id = 2 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
      */
     long getCodeId();
 
@@ -4617,7 +5085,8 @@ public final class Types {
      * Updated Tx position when the operation was executed.
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+     * @return Whether the updated field is set.
      */
     boolean hasUpdated();
     /**
@@ -4625,7 +5094,8 @@ public final class Types {
      * Updated Tx position when the operation was executed.
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+     * @return The updated.
      */
     cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition getUpdated();
     /**
@@ -4633,12 +5103,13 @@ public final class Types {
      * Updated Tx position when the operation was executed.
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
      */
     cosmwasm.wasm.v1beta1.Types.AbsoluteTxPositionOrBuilder getUpdatedOrBuilder();
 
     /**
-     * <code>optional bytes msg = 4;</code>
+     * <code>bytes msg = 4 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The msg.
      */
     com.google.protobuf.ByteString getMsg();
   }
@@ -4649,31 +5120,42 @@ public final class Types {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry}
    */
-  public  static final class ContractCodeHistoryEntry extends
+  public static final class ContractCodeHistoryEntry extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.ContractCodeHistoryEntry)
       ContractCodeHistoryEntryOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ContractCodeHistoryEntry.newBuilder() to construct.
     private ContractCodeHistoryEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private ContractCodeHistoryEntry() {
       operation_ = 0;
-      codeId_ = 0L;
       msg_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ContractCodeHistoryEntry();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ContractCodeHistoryEntry(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4682,12 +5164,6 @@ public final class Types {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
 
@@ -4717,6 +5193,13 @@ public final class Types {
               msg_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4725,6 +5208,7 @@ public final class Types {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4733,6 +5217,7 @@ public final class Types {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_ContractCodeHistoryEntry_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_ContractCodeHistoryEntry_fieldAccessorTable
@@ -4743,15 +5228,18 @@ public final class Types {
     public static final int OPERATION_FIELD_NUMBER = 1;
     private int operation_;
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+     * @return The enum numeric value on the wire for operation.
      */
-    public int getOperationValue() {
+    @java.lang.Override public int getOperationValue() {
       return operation_;
     }
     /**
-     * <code>optional .cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+     * <code>.cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+     * @return The operation.
      */
-    public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType getOperation() {
+    @java.lang.Override public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType getOperation() {
+      @SuppressWarnings("deprecation")
       cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType result = cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType.valueOf(operation_);
       return result == null ? cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType.UNRECOGNIZED : result;
     }
@@ -4763,8 +5251,10 @@ public final class Types {
      * CodeID is the reference to the stored WASM code
      * </pre>
      *
-     * <code>optional uint64 code_id = 2;</code>
+     * <code>uint64 code_id = 2 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
      */
+    @java.lang.Override
     public long getCodeId() {
       return codeId_;
     }
@@ -4776,8 +5266,10 @@ public final class Types {
      * Updated Tx position when the operation was executed.
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+     * @return Whether the updated field is set.
      */
+    @java.lang.Override
     public boolean hasUpdated() {
       return updated_ != null;
     }
@@ -4786,8 +5278,10 @@ public final class Types {
      * Updated Tx position when the operation was executed.
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+     * @return The updated.
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition getUpdated() {
       return updated_ == null ? cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.getDefaultInstance() : updated_;
     }
@@ -4796,8 +5290,9 @@ public final class Types {
      * Updated Tx position when the operation was executed.
      * </pre>
      *
-     * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+     * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
      */
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPositionOrBuilder getUpdatedOrBuilder() {
       return getUpdated();
     }
@@ -4805,13 +5300,16 @@ public final class Types {
     public static final int MSG_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString msg_;
     /**
-     * <code>optional bytes msg = 4;</code>
+     * <code>bytes msg = 4 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * @return The msg.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMsg() {
       return msg_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4821,6 +5319,7 @@ public final class Types {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (operation_ != cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType.CONTRACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIFIED.getNumber()) {
@@ -4835,8 +5334,10 @@ public final class Types {
       if (!msg_.isEmpty()) {
         output.writeBytes(4, msg_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4858,11 +5359,11 @@ public final class Types {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, msg_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4873,18 +5374,18 @@ public final class Types {
       }
       cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry other = (cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry) obj;
 
-      boolean result = true;
-      result = result && operation_ == other.operation_;
-      result = result && (getCodeId()
-          == other.getCodeId());
-      result = result && (hasUpdated() == other.hasUpdated());
+      if (operation_ != other.operation_) return false;
+      if (getCodeId()
+          != other.getCodeId()) return false;
+      if (hasUpdated() != other.hasUpdated()) return false;
       if (hasUpdated()) {
-        result = result && getUpdated()
-            .equals(other.getUpdated());
+        if (!getUpdated()
+            .equals(other.getUpdated())) return false;
       }
-      result = result && getMsg()
-          .equals(other.getMsg());
-      return result;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4893,7 +5394,7 @@ public final class Types {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + OPERATION_FIELD_NUMBER;
       hash = (53 * hash) + operation_;
       hash = (37 * hash) + CODE_ID_FIELD_NUMBER;
@@ -4910,6 +5411,17 @@ public final class Types {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4969,6 +5481,7 @@ public final class Types {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4976,6 +5489,7 @@ public final class Types {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5003,6 +5517,7 @@ public final class Types {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_ContractCodeHistoryEntry_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_ContractCodeHistoryEntry_fieldAccessorTable
@@ -5025,6 +5540,7 @@ public final class Types {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         operation_ = 0;
@@ -5042,15 +5558,18 @@ public final class Types {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_ContractCodeHistoryEntry_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry build() {
         cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry result = buildPartial();
         if (!result.isInitialized()) {
@@ -5059,6 +5578,7 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry buildPartial() {
         cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry result = new cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry(this);
         result.operation_ = operation_;
@@ -5073,32 +5593,39 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry)other);
@@ -5122,14 +5649,17 @@ public final class Types {
         if (other.getMsg() != com.google.protobuf.ByteString.EMPTY) {
           setMsg(other.getMsg());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5150,28 +5680,37 @@ public final class Types {
 
       private int operation_ = 0;
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+       * @return The enum numeric value on the wire for operation.
        */
-      public int getOperationValue() {
+      @java.lang.Override public int getOperationValue() {
         return operation_;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+       * @param value The enum numeric value on the wire for operation to set.
+       * @return This builder for chaining.
        */
       public Builder setOperationValue(int value) {
+        
         operation_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+       * @return The operation.
        */
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType getOperation() {
+        @SuppressWarnings("deprecation")
         cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType result = cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType.valueOf(operation_);
         return result == null ? cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+       * @param value The operation to set.
+       * @return This builder for chaining.
        */
       public Builder setOperation(cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryOperationType value) {
         if (value == null) {
@@ -5183,7 +5722,8 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional .cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+       * <code>.cosmwasm.wasm.v1beta1.ContractCodeHistoryOperationType operation = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOperation() {
         
@@ -5198,8 +5738,10 @@ public final class Types {
        * CodeID is the reference to the stored WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 2;</code>
+       * <code>uint64 code_id = 2 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return The codeId.
        */
+      @java.lang.Override
       public long getCodeId() {
         return codeId_;
       }
@@ -5208,7 +5750,9 @@ public final class Types {
        * CodeID is the reference to the stored WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 2;</code>
+       * <code>uint64 code_id = 2 [(.gogoproto.customname) = "CodeID"];</code>
+       * @param value The codeId to set.
+       * @return This builder for chaining.
        */
       public Builder setCodeId(long value) {
         
@@ -5221,7 +5765,8 @@ public final class Types {
        * CodeID is the reference to the stored WASM code
        * </pre>
        *
-       * <code>optional uint64 code_id = 2;</code>
+       * <code>uint64 code_id = 2 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearCodeId() {
         
@@ -5230,7 +5775,7 @@ public final class Types {
         return this;
       }
 
-      private cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition updated_ = null;
+      private cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition updated_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition, cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.Builder, cosmwasm.wasm.v1beta1.Types.AbsoluteTxPositionOrBuilder> updatedBuilder_;
       /**
@@ -5238,7 +5783,8 @@ public final class Types {
        * Updated Tx position when the operation was executed.
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * @return Whether the updated field is set.
        */
       public boolean hasUpdated() {
         return updatedBuilder_ != null || updated_ != null;
@@ -5248,7 +5794,8 @@ public final class Types {
        * Updated Tx position when the operation was executed.
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * @return The updated.
        */
       public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition getUpdated() {
         if (updatedBuilder_ == null) {
@@ -5262,7 +5809,7 @@ public final class Types {
        * Updated Tx position when the operation was executed.
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
        */
       public Builder setUpdated(cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition value) {
         if (updatedBuilder_ == null) {
@@ -5282,7 +5829,7 @@ public final class Types {
        * Updated Tx position when the operation was executed.
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
        */
       public Builder setUpdated(
           cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.Builder builderForValue) {
@@ -5300,7 +5847,7 @@ public final class Types {
        * Updated Tx position when the operation was executed.
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
        */
       public Builder mergeUpdated(cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition value) {
         if (updatedBuilder_ == null) {
@@ -5322,7 +5869,7 @@ public final class Types {
        * Updated Tx position when the operation was executed.
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
        */
       public Builder clearUpdated() {
         if (updatedBuilder_ == null) {
@@ -5340,7 +5887,7 @@ public final class Types {
        * Updated Tx position when the operation was executed.
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
        */
       public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.Builder getUpdatedBuilder() {
         
@@ -5352,7 +5899,7 @@ public final class Types {
        * Updated Tx position when the operation was executed.
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
        */
       public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPositionOrBuilder getUpdatedOrBuilder() {
         if (updatedBuilder_ != null) {
@@ -5367,7 +5914,7 @@ public final class Types {
        * Updated Tx position when the operation was executed.
        * </pre>
        *
-       * <code>optional .cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
+       * <code>.cosmwasm.wasm.v1beta1.AbsoluteTxPosition updated = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition, cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.Builder, cosmwasm.wasm.v1beta1.Types.AbsoluteTxPositionOrBuilder> 
@@ -5385,13 +5932,17 @@ public final class Types {
 
       private com.google.protobuf.ByteString msg_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes msg = 4;</code>
+       * <code>bytes msg = 4 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return The msg.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getMsg() {
         return msg_;
       }
       /**
-       * <code>optional bytes msg = 4;</code>
+       * <code>bytes msg = 4 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
        */
       public Builder setMsg(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5403,7 +5954,8 @@ public final class Types {
         return this;
       }
       /**
-       * <code>optional bytes msg = 4;</code>
+       * <code>bytes msg = 4 [(.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearMsg() {
         
@@ -5411,14 +5963,16 @@ public final class Types {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5437,11 +5991,12 @@ public final class Types {
 
     private static final com.google.protobuf.Parser<ContractCodeHistoryEntry>
         PARSER = new com.google.protobuf.AbstractParser<ContractCodeHistoryEntry>() {
+      @java.lang.Override
       public ContractCodeHistoryEntry parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ContractCodeHistoryEntry(input, extensionRegistry);
+        return new ContractCodeHistoryEntry(input, extensionRegistry);
       }
     };
 
@@ -5454,6 +6009,7 @@ public final class Types {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.ContractCodeHistoryEntry getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5469,7 +6025,8 @@ public final class Types {
      * BlockHeight is the block the contract was created at
      * </pre>
      *
-     * <code>optional uint64 block_height = 1;</code>
+     * <code>uint64 block_height = 1;</code>
+     * @return The blockHeight.
      */
     long getBlockHeight();
 
@@ -5478,7 +6035,8 @@ public final class Types {
      * TxIndex is a monotonic counter within the block (actual transaction index, or gas consumed)
      * </pre>
      *
-     * <code>optional uint64 tx_index = 2;</code>
+     * <code>uint64 tx_index = 2;</code>
+     * @return The txIndex.
      */
     long getTxIndex();
   }
@@ -5489,30 +6047,40 @@ public final class Types {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.AbsoluteTxPosition}
    */
-  public  static final class AbsoluteTxPosition extends
+  public static final class AbsoluteTxPosition extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.AbsoluteTxPosition)
       AbsoluteTxPositionOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AbsoluteTxPosition.newBuilder() to construct.
     private AbsoluteTxPosition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private AbsoluteTxPosition() {
-      blockHeight_ = 0L;
-      txIndex_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AbsoluteTxPosition();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private AbsoluteTxPosition(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5521,12 +6089,6 @@ public final class Types {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               blockHeight_ = input.readUInt64();
@@ -5537,6 +6099,13 @@ public final class Types {
               txIndex_ = input.readUInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5545,6 +6114,7 @@ public final class Types {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5553,6 +6123,7 @@ public final class Types {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AbsoluteTxPosition_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AbsoluteTxPosition_fieldAccessorTable
@@ -5567,8 +6138,10 @@ public final class Types {
      * BlockHeight is the block the contract was created at
      * </pre>
      *
-     * <code>optional uint64 block_height = 1;</code>
+     * <code>uint64 block_height = 1;</code>
+     * @return The blockHeight.
      */
+    @java.lang.Override
     public long getBlockHeight() {
       return blockHeight_;
     }
@@ -5580,13 +6153,16 @@ public final class Types {
      * TxIndex is a monotonic counter within the block (actual transaction index, or gas consumed)
      * </pre>
      *
-     * <code>optional uint64 tx_index = 2;</code>
+     * <code>uint64 tx_index = 2;</code>
+     * @return The txIndex.
      */
+    @java.lang.Override
     public long getTxIndex() {
       return txIndex_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5596,6 +6172,7 @@ public final class Types {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (blockHeight_ != 0L) {
@@ -5604,8 +6181,10 @@ public final class Types {
       if (txIndex_ != 0L) {
         output.writeUInt64(2, txIndex_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5619,11 +6198,11 @@ public final class Types {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, txIndex_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5634,12 +6213,12 @@ public final class Types {
       }
       cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition other = (cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition) obj;
 
-      boolean result = true;
-      result = result && (getBlockHeight()
-          == other.getBlockHeight());
-      result = result && (getTxIndex()
-          == other.getTxIndex());
-      return result;
+      if (getBlockHeight()
+          != other.getBlockHeight()) return false;
+      if (getTxIndex()
+          != other.getTxIndex()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5648,7 +6227,7 @@ public final class Types {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BLOCK_HEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBlockHeight());
@@ -5660,6 +6239,17 @@ public final class Types {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5719,6 +6309,7 @@ public final class Types {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5726,6 +6317,7 @@ public final class Types {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5753,6 +6345,7 @@ public final class Types {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AbsoluteTxPosition_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AbsoluteTxPosition_fieldAccessorTable
@@ -5775,6 +6368,7 @@ public final class Types {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         blockHeight_ = 0L;
@@ -5784,15 +6378,18 @@ public final class Types {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_AbsoluteTxPosition_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition build() {
         cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition result = buildPartial();
         if (!result.isInitialized()) {
@@ -5801,6 +6398,7 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition buildPartial() {
         cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition result = new cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition(this);
         result.blockHeight_ = blockHeight_;
@@ -5809,32 +6407,39 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition)other);
@@ -5852,14 +6457,17 @@ public final class Types {
         if (other.getTxIndex() != 0L) {
           setTxIndex(other.getTxIndex());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5884,8 +6492,10 @@ public final class Types {
        * BlockHeight is the block the contract was created at
        * </pre>
        *
-       * <code>optional uint64 block_height = 1;</code>
+       * <code>uint64 block_height = 1;</code>
+       * @return The blockHeight.
        */
+      @java.lang.Override
       public long getBlockHeight() {
         return blockHeight_;
       }
@@ -5894,7 +6504,9 @@ public final class Types {
        * BlockHeight is the block the contract was created at
        * </pre>
        *
-       * <code>optional uint64 block_height = 1;</code>
+       * <code>uint64 block_height = 1;</code>
+       * @param value The blockHeight to set.
+       * @return This builder for chaining.
        */
       public Builder setBlockHeight(long value) {
         
@@ -5907,7 +6519,8 @@ public final class Types {
        * BlockHeight is the block the contract was created at
        * </pre>
        *
-       * <code>optional uint64 block_height = 1;</code>
+       * <code>uint64 block_height = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBlockHeight() {
         
@@ -5922,8 +6535,10 @@ public final class Types {
        * TxIndex is a monotonic counter within the block (actual transaction index, or gas consumed)
        * </pre>
        *
-       * <code>optional uint64 tx_index = 2;</code>
+       * <code>uint64 tx_index = 2;</code>
+       * @return The txIndex.
        */
+      @java.lang.Override
       public long getTxIndex() {
         return txIndex_;
       }
@@ -5932,7 +6547,9 @@ public final class Types {
        * TxIndex is a monotonic counter within the block (actual transaction index, or gas consumed)
        * </pre>
        *
-       * <code>optional uint64 tx_index = 2;</code>
+       * <code>uint64 tx_index = 2;</code>
+       * @param value The txIndex to set.
+       * @return This builder for chaining.
        */
       public Builder setTxIndex(long value) {
         
@@ -5945,7 +6562,8 @@ public final class Types {
        * TxIndex is a monotonic counter within the block (actual transaction index, or gas consumed)
        * </pre>
        *
-       * <code>optional uint64 tx_index = 2;</code>
+       * <code>uint64 tx_index = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTxIndex() {
         
@@ -5953,14 +6571,16 @@ public final class Types {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5979,11 +6599,12 @@ public final class Types {
 
     private static final com.google.protobuf.Parser<AbsoluteTxPosition>
         PARSER = new com.google.protobuf.AbstractParser<AbsoluteTxPosition>() {
+      @java.lang.Override
       public AbsoluteTxPosition parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AbsoluteTxPosition(input, extensionRegistry);
+        return new AbsoluteTxPosition(input, extensionRegistry);
       }
     };
 
@@ -5996,6 +6617,7 @@ public final class Types {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.AbsoluteTxPosition getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6011,7 +6633,8 @@ public final class Types {
      * hex-encode key to read it better (this is often ascii)
      * </pre>
      *
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+     * @return The key.
      */
     com.google.protobuf.ByteString getKey();
 
@@ -6020,7 +6643,8 @@ public final class Types {
      * base64-encode raw value
      * </pre>
      *
-     * <code>optional bytes value = 2;</code>
+     * <code>bytes value = 2;</code>
+     * @return The value.
      */
     com.google.protobuf.ByteString getValue();
   }
@@ -6031,10 +6655,11 @@ public final class Types {
    *
    * Protobuf type {@code cosmwasm.wasm.v1beta1.Model}
    */
-  public  static final class Model extends
+  public static final class Model extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1beta1.Model)
       ModelOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Model.newBuilder() to construct.
     private Model(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6045,16 +6670,27 @@ public final class Types {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Model();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Model(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6063,12 +6699,6 @@ public final class Types {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               key_ = input.readBytes();
@@ -6079,6 +6709,13 @@ public final class Types {
               value_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6087,6 +6724,7 @@ public final class Types {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6095,6 +6733,7 @@ public final class Types {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_Model_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_Model_fieldAccessorTable
@@ -6109,8 +6748,10 @@ public final class Types {
      * hex-encode key to read it better (this is often ascii)
      * </pre>
      *
-     * <code>optional bytes key = 1;</code>
+     * <code>bytes key = 1 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+     * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
@@ -6122,13 +6763,16 @@ public final class Types {
      * base64-encode raw value
      * </pre>
      *
-     * <code>optional bytes value = 2;</code>
+     * <code>bytes value = 2;</code>
+     * @return The value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6138,6 +6782,7 @@ public final class Types {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!key_.isEmpty()) {
@@ -6146,8 +6791,10 @@ public final class Types {
       if (!value_.isEmpty()) {
         output.writeBytes(2, value_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6161,11 +6808,11 @@ public final class Types {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, value_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6176,12 +6823,12 @@ public final class Types {
       }
       cosmwasm.wasm.v1beta1.Types.Model other = (cosmwasm.wasm.v1beta1.Types.Model) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && getValue()
-          .equals(other.getValue());
-      return result;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6190,7 +6837,7 @@ public final class Types {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -6200,6 +6847,17 @@ public final class Types {
       return hash;
     }
 
+    public static cosmwasm.wasm.v1beta1.Types.Model parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1beta1.Types.Model parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmwasm.wasm.v1beta1.Types.Model parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6259,6 +6917,7 @@ public final class Types {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6266,6 +6925,7 @@ public final class Types {
     public static Builder newBuilder(cosmwasm.wasm.v1beta1.Types.Model prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6293,6 +6953,7 @@ public final class Types {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_Model_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_Model_fieldAccessorTable
@@ -6315,6 +6976,7 @@ public final class Types {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = com.google.protobuf.ByteString.EMPTY;
@@ -6324,15 +6986,18 @@ public final class Types {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmwasm.wasm.v1beta1.Types.internal_static_cosmwasm_wasm_v1beta1_Model_descriptor;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.Model getDefaultInstanceForType() {
         return cosmwasm.wasm.v1beta1.Types.Model.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.Model build() {
         cosmwasm.wasm.v1beta1.Types.Model result = buildPartial();
         if (!result.isInitialized()) {
@@ -6341,6 +7006,7 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public cosmwasm.wasm.v1beta1.Types.Model buildPartial() {
         cosmwasm.wasm.v1beta1.Types.Model result = new cosmwasm.wasm.v1beta1.Types.Model(this);
         result.key_ = key_;
@@ -6349,32 +7015,39 @@ public final class Types {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmwasm.wasm.v1beta1.Types.Model) {
           return mergeFrom((cosmwasm.wasm.v1beta1.Types.Model)other);
@@ -6392,14 +7065,17 @@ public final class Types {
         if (other.getValue() != com.google.protobuf.ByteString.EMPTY) {
           setValue(other.getValue());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6424,8 +7100,10 @@ public final class Types {
        * hex-encode key to read it better (this is often ascii)
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * @return The key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getKey() {
         return key_;
       }
@@ -6434,7 +7112,9 @@ public final class Types {
        * hex-encode key to read it better (this is often ascii)
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -6450,7 +7130,8 @@ public final class Types {
        * hex-encode key to read it better (this is often ascii)
        * </pre>
        *
-       * <code>optional bytes key = 1;</code>
+       * <code>bytes key = 1 [(.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -6465,8 +7146,10 @@ public final class Types {
        * base64-encode raw value
        * </pre>
        *
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @return The value.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getValue() {
         return value_;
       }
@@ -6475,7 +7158,9 @@ public final class Types {
        * base64-encode raw value
        * </pre>
        *
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -6491,7 +7176,8 @@ public final class Types {
        * base64-encode raw value
        * </pre>
        *
-       * <code>optional bytes value = 2;</code>
+       * <code>bytes value = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
         
@@ -6499,14 +7185,16 @@ public final class Types {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6525,11 +7213,12 @@ public final class Types {
 
     private static final com.google.protobuf.Parser<Model>
         PARSER = new com.google.protobuf.AbstractParser<Model>() {
+      @java.lang.Override
       public Model parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Model(input, extensionRegistry);
+        return new Model(input, extensionRegistry);
       }
     };
 
@@ -6542,6 +7231,7 @@ public final class Types {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmwasm.wasm.v1beta1.Types.Model getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6606,7 +7296,7 @@ public final class Types {
       "sTypeB\025\362\336\037\021yaml:\"permission\"\022#\n\007address\030" +
       "\002 \001(\tB\022\362\336\037\016yaml:\"address\":\004\230\240\037\001\"\243\002\n\006Para" +
       "ms\022b\n\022code_upload_access\030\001 \001(\0132#.cosmwas" +
-      "m.wasm.v1beta1.AccessConfigB!\310\336\037\000\362\336\037\031yam",
+      "m.wasm.v1beta1.AccessConfigB!\310\336\037\000\362\336\037\031yam" +
       "l:\"code_upload_access\"\022t\n\036instantiate_de" +
       "fault_permission\030\002 \001(\0162!.cosmwasm.wasm.v" +
       "1beta1.AccessTypeB)\362\336\037%yaml:\"instantiate" +
@@ -6616,7 +7306,7 @@ public final class Types {
       "\007creator\030\002 \001(\t\022\016\n\006source\030\003 \001(\t\022\017\n\007builde" +
       "r\030\004 \001(\t\022E\n\022instantiate_config\030\005 \001(\0132#.co" +
       "smwasm.wasm.v1beta1.AccessConfigB\004\310\336\037\000\"\234" +
-      "\001\n\014ContractInfo\022\033\n\007code_id\030\001 \001(\004B\n\342\336\037\006Co",
+      "\001\n\014ContractInfo\022\033\n\007code_id\030\001 \001(\004B\n\342\336\037\006Co" +
       "deID\022\017\n\007creator\030\002 \001(\t\022\r\n\005admin\030\003 \001(\t\022\r\n\005" +
       "label\030\004 \001(\t\022:\n\007created\030\005 \001(\0132).cosmwasm." +
       "wasm.v1beta1.AbsoluteTxPosition:\004\350\240\037\001\"\352\001" +
@@ -6626,7 +7316,7 @@ public final class Types {
       "\n\342\336\037\006CodeID\022:\n\007updated\030\003 \001(\0132).cosmwasm." +
       "wasm.v1beta1.AbsoluteTxPosition\022)\n\003msg\030\004" +
       " \001(\014B\034\372\336\037\030encoding/json.RawMessage\"<\n\022Ab" +
-      "soluteTxPosition\022\024\n\014block_height\030\001 \001(\004\022\020",
+      "soluteTxPosition\022\024\n\014block_height\030\001 \001(\004\022\020" +
       "\n\010tx_index\030\002 \001(\004\"]\n\005Model\022E\n\003key\030\001 \001(\014B8" +
       "\372\336\0374github.com/tendermint/tendermint/lib" +
       "s/bytes.HexBytes\022\r\n\005value\030\002 \001(\014*\351\001\n\nAcce" +
@@ -6636,7 +7326,7 @@ public final class Types {
       "YPE_ONLY_ADDRESS\020\002\032\031\212\235 \025AccessTypeOnlyAd" +
       "dress\0222\n\025ACCESS_TYPE_EVERYBODY\020\003\032\027\212\235 \023Ac" +
       "cessTypeEverybody\032\010\210\243\036\000\250\244\036\000*\246\003\n Contract" +
-      "CodeHistoryOperationType\022e\n0CONTRACT_COD",
+      "CodeHistoryOperationType\022e\n0CONTRACT_COD" +
       "E_HISTORY_OPERATION_TYPE_UNSPECIFIED\020\000\032/" +
       "\212\235 +ContractCodeHistoryOperationTypeUnsp" +
       "ecified\022W\n)CONTRACT_CODE_HISTORY_OPERATI" +
@@ -6646,22 +7336,14 @@ public final class Types {
       "CodeHistoryOperationTypeMigrate\022]\n,CONTR" +
       "ACT_CODE_HISTORY_OPERATION_TYPE_GENESIS\020" +
       "\003\032+\212\235 \'ContractCodeHistoryOperationTypeG" +
-      "enesis\032\004\210\243\036\000B:Z0github.com/CosmWasm/wasm",
+      "enesis\032\004\210\243\036\000B:Z0github.com/CosmWasm/wasm" +
       "d/x/wasmd/internal/types\310\341\036\000\250\342\036\001b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmwasm_wasm_v1beta1_AccessTypeParam_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmwasm_wasm_v1beta1_AccessTypeParam_fieldAccessorTable = new

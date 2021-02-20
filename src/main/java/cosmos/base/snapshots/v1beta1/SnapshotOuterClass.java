@@ -19,35 +19,41 @@ public final class SnapshotOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint64 height = 1;</code>
+     * <code>uint64 height = 1;</code>
+     * @return The height.
      */
     long getHeight();
 
     /**
-     * <code>optional uint32 format = 2;</code>
+     * <code>uint32 format = 2;</code>
+     * @return The format.
      */
     int getFormat();
 
     /**
-     * <code>optional uint32 chunks = 3;</code>
+     * <code>uint32 chunks = 3;</code>
+     * @return The chunks.
      */
     int getChunks();
 
     /**
-     * <code>optional bytes hash = 4;</code>
+     * <code>bytes hash = 4;</code>
+     * @return The hash.
      */
     com.google.protobuf.ByteString getHash();
 
     /**
-     * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+     * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
-     * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+     * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
+     * @return The metadata.
      */
     cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata getMetadata();
     /**
-     * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+     * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.snapshots.v1beta1.SnapshotOuterClass.MetadataOrBuilder getMetadataOrBuilder();
   }
@@ -58,32 +64,41 @@ public final class SnapshotOuterClass {
    *
    * Protobuf type {@code cosmos.base.snapshots.v1beta1.Snapshot}
    */
-  public  static final class Snapshot extends
+  public static final class Snapshot extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.snapshots.v1beta1.Snapshot)
       SnapshotOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Snapshot.newBuilder() to construct.
     private Snapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Snapshot() {
-      height_ = 0L;
-      format_ = 0;
-      chunks_ = 0;
       hash_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Snapshot();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Snapshot(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -92,12 +107,6 @@ public final class SnapshotOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               height_ = input.readUInt64();
@@ -131,6 +140,13 @@ public final class SnapshotOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -139,6 +155,7 @@ public final class SnapshotOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -147,6 +164,7 @@ public final class SnapshotOuterClass {
       return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.internal_static_cosmos_base_snapshots_v1beta1_Snapshot_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.internal_static_cosmos_base_snapshots_v1beta1_Snapshot_fieldAccessorTable
@@ -157,8 +175,10 @@ public final class SnapshotOuterClass {
     public static final int HEIGHT_FIELD_NUMBER = 1;
     private long height_;
     /**
-     * <code>optional uint64 height = 1;</code>
+     * <code>uint64 height = 1;</code>
+     * @return The height.
      */
+    @java.lang.Override
     public long getHeight() {
       return height_;
     }
@@ -166,8 +186,10 @@ public final class SnapshotOuterClass {
     public static final int FORMAT_FIELD_NUMBER = 2;
     private int format_;
     /**
-     * <code>optional uint32 format = 2;</code>
+     * <code>uint32 format = 2;</code>
+     * @return The format.
      */
+    @java.lang.Override
     public int getFormat() {
       return format_;
     }
@@ -175,8 +197,10 @@ public final class SnapshotOuterClass {
     public static final int CHUNKS_FIELD_NUMBER = 3;
     private int chunks_;
     /**
-     * <code>optional uint32 chunks = 3;</code>
+     * <code>uint32 chunks = 3;</code>
+     * @return The chunks.
      */
+    @java.lang.Override
     public int getChunks() {
       return chunks_;
     }
@@ -184,8 +208,10 @@ public final class SnapshotOuterClass {
     public static final int HASH_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString hash_;
     /**
-     * <code>optional bytes hash = 4;</code>
+     * <code>bytes hash = 4;</code>
+     * @return The hash.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getHash() {
       return hash_;
     }
@@ -193,25 +219,31 @@ public final class SnapshotOuterClass {
     public static final int METADATA_FIELD_NUMBER = 5;
     private cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata metadata_;
     /**
-     * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+     * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the metadata field is set.
      */
+    @java.lang.Override
     public boolean hasMetadata() {
       return metadata_ != null;
     }
     /**
-     * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+     * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
+     * @return The metadata.
      */
+    @java.lang.Override
     public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata getMetadata() {
       return metadata_ == null ? cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata.getDefaultInstance() : metadata_;
     }
     /**
-     * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+     * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
      */
+    @java.lang.Override
     public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.MetadataOrBuilder getMetadataOrBuilder() {
       return getMetadata();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -221,6 +253,7 @@ public final class SnapshotOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (height_ != 0L) {
@@ -238,8 +271,10 @@ public final class SnapshotOuterClass {
       if (metadata_ != null) {
         output.writeMessage(5, getMetadata());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -265,11 +300,11 @@ public final class SnapshotOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getMetadata());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -280,21 +315,21 @@ public final class SnapshotOuterClass {
       }
       cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot other = (cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot) obj;
 
-      boolean result = true;
-      result = result && (getHeight()
-          == other.getHeight());
-      result = result && (getFormat()
-          == other.getFormat());
-      result = result && (getChunks()
-          == other.getChunks());
-      result = result && getHash()
-          .equals(other.getHash());
-      result = result && (hasMetadata() == other.hasMetadata());
+      if (getHeight()
+          != other.getHeight()) return false;
+      if (getFormat()
+          != other.getFormat()) return false;
+      if (getChunks()
+          != other.getChunks()) return false;
+      if (!getHash()
+          .equals(other.getHash())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
       if (hasMetadata()) {
-        result = result && getMetadata()
-            .equals(other.getMetadata());
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
       }
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -303,7 +338,7 @@ public final class SnapshotOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getHeight());
@@ -322,6 +357,17 @@ public final class SnapshotOuterClass {
       return hash;
     }
 
+    public static cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -381,6 +427,7 @@ public final class SnapshotOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -388,6 +435,7 @@ public final class SnapshotOuterClass {
     public static Builder newBuilder(cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -415,6 +463,7 @@ public final class SnapshotOuterClass {
         return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.internal_static_cosmos_base_snapshots_v1beta1_Snapshot_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.internal_static_cosmos_base_snapshots_v1beta1_Snapshot_fieldAccessorTable
@@ -437,6 +486,7 @@ public final class SnapshotOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         height_ = 0L;
@@ -456,15 +506,18 @@ public final class SnapshotOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.internal_static_cosmos_base_snapshots_v1beta1_Snapshot_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot getDefaultInstanceForType() {
         return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot build() {
         cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot result = buildPartial();
         if (!result.isInitialized()) {
@@ -473,6 +526,7 @@ public final class SnapshotOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot buildPartial() {
         cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot result = new cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot(this);
         result.height_ = height_;
@@ -488,32 +542,39 @@ public final class SnapshotOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot) {
           return mergeFrom((cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot)other);
@@ -540,14 +601,17 @@ public final class SnapshotOuterClass {
         if (other.hasMetadata()) {
           mergeMetadata(other.getMetadata());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -568,13 +632,17 @@ public final class SnapshotOuterClass {
 
       private long height_ ;
       /**
-       * <code>optional uint64 height = 1;</code>
+       * <code>uint64 height = 1;</code>
+       * @return The height.
        */
+      @java.lang.Override
       public long getHeight() {
         return height_;
       }
       /**
-       * <code>optional uint64 height = 1;</code>
+       * <code>uint64 height = 1;</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
        */
       public Builder setHeight(long value) {
         
@@ -583,7 +651,8 @@ public final class SnapshotOuterClass {
         return this;
       }
       /**
-       * <code>optional uint64 height = 1;</code>
+       * <code>uint64 height = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHeight() {
         
@@ -594,13 +663,17 @@ public final class SnapshotOuterClass {
 
       private int format_ ;
       /**
-       * <code>optional uint32 format = 2;</code>
+       * <code>uint32 format = 2;</code>
+       * @return The format.
        */
+      @java.lang.Override
       public int getFormat() {
         return format_;
       }
       /**
-       * <code>optional uint32 format = 2;</code>
+       * <code>uint32 format = 2;</code>
+       * @param value The format to set.
+       * @return This builder for chaining.
        */
       public Builder setFormat(int value) {
         
@@ -609,7 +682,8 @@ public final class SnapshotOuterClass {
         return this;
       }
       /**
-       * <code>optional uint32 format = 2;</code>
+       * <code>uint32 format = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearFormat() {
         
@@ -620,13 +694,17 @@ public final class SnapshotOuterClass {
 
       private int chunks_ ;
       /**
-       * <code>optional uint32 chunks = 3;</code>
+       * <code>uint32 chunks = 3;</code>
+       * @return The chunks.
        */
+      @java.lang.Override
       public int getChunks() {
         return chunks_;
       }
       /**
-       * <code>optional uint32 chunks = 3;</code>
+       * <code>uint32 chunks = 3;</code>
+       * @param value The chunks to set.
+       * @return This builder for chaining.
        */
       public Builder setChunks(int value) {
         
@@ -635,7 +713,8 @@ public final class SnapshotOuterClass {
         return this;
       }
       /**
-       * <code>optional uint32 chunks = 3;</code>
+       * <code>uint32 chunks = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearChunks() {
         
@@ -646,13 +725,17 @@ public final class SnapshotOuterClass {
 
       private com.google.protobuf.ByteString hash_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes hash = 4;</code>
+       * <code>bytes hash = 4;</code>
+       * @return The hash.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getHash() {
         return hash_;
       }
       /**
-       * <code>optional bytes hash = 4;</code>
+       * <code>bytes hash = 4;</code>
+       * @param value The hash to set.
+       * @return This builder for chaining.
        */
       public Builder setHash(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -664,7 +747,8 @@ public final class SnapshotOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes hash = 4;</code>
+       * <code>bytes hash = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHash() {
         
@@ -673,17 +757,19 @@ public final class SnapshotOuterClass {
         return this;
       }
 
-      private cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata metadata_ = null;
+      private cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata metadata_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata, cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata.Builder, cosmos.base.snapshots.v1beta1.SnapshotOuterClass.MetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+       * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the metadata field is set.
        */
       public boolean hasMetadata() {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
-       * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+       * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
+       * @return The metadata.
        */
       public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata getMetadata() {
         if (metadataBuilder_ == null) {
@@ -693,7 +779,7 @@ public final class SnapshotOuterClass {
         }
       }
       /**
-       * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+       * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setMetadata(cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata value) {
         if (metadataBuilder_ == null) {
@@ -709,7 +795,7 @@ public final class SnapshotOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+       * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setMetadata(
           cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata.Builder builderForValue) {
@@ -723,7 +809,7 @@ public final class SnapshotOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+       * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeMetadata(cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata value) {
         if (metadataBuilder_ == null) {
@@ -741,7 +827,7 @@ public final class SnapshotOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+       * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearMetadata() {
         if (metadataBuilder_ == null) {
@@ -755,7 +841,7 @@ public final class SnapshotOuterClass {
         return this;
       }
       /**
-       * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+       * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata.Builder getMetadataBuilder() {
         
@@ -763,7 +849,7 @@ public final class SnapshotOuterClass {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+       * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.MetadataOrBuilder getMetadataOrBuilder() {
         if (metadataBuilder_ != null) {
@@ -774,7 +860,7 @@ public final class SnapshotOuterClass {
         }
       }
       /**
-       * <code>optional .cosmos.base.snapshots.v1beta1.Metadata metadata = 5;</code>
+       * <code>.cosmos.base.snapshots.v1beta1.Metadata metadata = 5 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata, cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata.Builder, cosmos.base.snapshots.v1beta1.SnapshotOuterClass.MetadataOrBuilder> 
@@ -789,14 +875,16 @@ public final class SnapshotOuterClass {
         }
         return metadataBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -815,11 +903,12 @@ public final class SnapshotOuterClass {
 
     private static final com.google.protobuf.Parser<Snapshot>
         PARSER = new com.google.protobuf.AbstractParser<Snapshot>() {
+      @java.lang.Override
       public Snapshot parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Snapshot(input, extensionRegistry);
+        return new Snapshot(input, extensionRegistry);
       }
     };
 
@@ -832,6 +921,7 @@ public final class SnapshotOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Snapshot getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -848,6 +938,7 @@ public final class SnapshotOuterClass {
      * </pre>
      *
      * <code>repeated bytes chunk_hashes = 1;</code>
+     * @return A list containing the chunkHashes.
      */
     java.util.List<com.google.protobuf.ByteString> getChunkHashesList();
     /**
@@ -856,6 +947,7 @@ public final class SnapshotOuterClass {
      * </pre>
      *
      * <code>repeated bytes chunk_hashes = 1;</code>
+     * @return The count of chunkHashes.
      */
     int getChunkHashesCount();
     /**
@@ -864,6 +956,8 @@ public final class SnapshotOuterClass {
      * </pre>
      *
      * <code>repeated bytes chunk_hashes = 1;</code>
+     * @param index The index of the element to return.
+     * @return The chunkHashes at the given index.
      */
     com.google.protobuf.ByteString getChunkHashes(int index);
   }
@@ -874,10 +968,11 @@ public final class SnapshotOuterClass {
    *
    * Protobuf type {@code cosmos.base.snapshots.v1beta1.Metadata}
    */
-  public  static final class Metadata extends
+  public static final class Metadata extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.snapshots.v1beta1.Metadata)
       MetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Metadata.newBuilder() to construct.
     private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -887,16 +982,28 @@ public final class SnapshotOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Metadata();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Metadata(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -905,18 +1012,19 @@ public final class SnapshotOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 chunkHashes_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
                 mutable_bitField0_ |= 0x00000001;
               }
               chunkHashes_.add(input.readBytes());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -927,9 +1035,10 @@ public final class SnapshotOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          chunkHashes_ = java.util.Collections.unmodifiableList(chunkHashes_);
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          chunkHashes_ = java.util.Collections.unmodifiableList(chunkHashes_); // C
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -938,6 +1047,7 @@ public final class SnapshotOuterClass {
       return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.internal_static_cosmos_base_snapshots_v1beta1_Metadata_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.internal_static_cosmos_base_snapshots_v1beta1_Metadata_fieldAccessorTable
@@ -953,7 +1063,9 @@ public final class SnapshotOuterClass {
      * </pre>
      *
      * <code>repeated bytes chunk_hashes = 1;</code>
+     * @return A list containing the chunkHashes.
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.ByteString>
         getChunkHashesList() {
       return chunkHashes_;
@@ -964,6 +1076,7 @@ public final class SnapshotOuterClass {
      * </pre>
      *
      * <code>repeated bytes chunk_hashes = 1;</code>
+     * @return The count of chunkHashes.
      */
     public int getChunkHashesCount() {
       return chunkHashes_.size();
@@ -974,12 +1087,15 @@ public final class SnapshotOuterClass {
      * </pre>
      *
      * <code>repeated bytes chunk_hashes = 1;</code>
+     * @param index The index of the element to return.
+     * @return The chunkHashes at the given index.
      */
     public com.google.protobuf.ByteString getChunkHashes(int index) {
       return chunkHashes_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -989,13 +1105,16 @@ public final class SnapshotOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < chunkHashes_.size(); i++) {
         output.writeBytes(1, chunkHashes_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1010,11 +1129,11 @@ public final class SnapshotOuterClass {
         size += dataSize;
         size += 1 * getChunkHashesList().size();
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1025,10 +1144,10 @@ public final class SnapshotOuterClass {
       }
       cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata other = (cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata) obj;
 
-      boolean result = true;
-      result = result && getChunkHashesList()
-          .equals(other.getChunkHashesList());
-      return result;
+      if (!getChunkHashesList()
+          .equals(other.getChunkHashesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1037,7 +1156,7 @@ public final class SnapshotOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getChunkHashesCount() > 0) {
         hash = (37 * hash) + CHUNK_HASHES_FIELD_NUMBER;
         hash = (53 * hash) + getChunkHashesList().hashCode();
@@ -1047,6 +1166,17 @@ public final class SnapshotOuterClass {
       return hash;
     }
 
+    public static cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1106,6 +1236,7 @@ public final class SnapshotOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1113,6 +1244,7 @@ public final class SnapshotOuterClass {
     public static Builder newBuilder(cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1140,6 +1272,7 @@ public final class SnapshotOuterClass {
         return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.internal_static_cosmos_base_snapshots_v1beta1_Metadata_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.internal_static_cosmos_base_snapshots_v1beta1_Metadata_fieldAccessorTable
@@ -1162,6 +1295,7 @@ public final class SnapshotOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         chunkHashes_ = java.util.Collections.emptyList();
@@ -1169,15 +1303,18 @@ public final class SnapshotOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.internal_static_cosmos_base_snapshots_v1beta1_Metadata_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata getDefaultInstanceForType() {
         return cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata build() {
         cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata result = buildPartial();
         if (!result.isInitialized()) {
@@ -1186,10 +1323,11 @@ public final class SnapshotOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata buildPartial() {
         cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata result = new cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           chunkHashes_ = java.util.Collections.unmodifiableList(chunkHashes_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -1198,32 +1336,39 @@ public final class SnapshotOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata) {
           return mergeFrom((cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata)other);
@@ -1245,14 +1390,17 @@ public final class SnapshotOuterClass {
           }
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1274,7 +1422,7 @@ public final class SnapshotOuterClass {
 
       private java.util.List<com.google.protobuf.ByteString> chunkHashes_ = java.util.Collections.emptyList();
       private void ensureChunkHashesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           chunkHashes_ = new java.util.ArrayList<com.google.protobuf.ByteString>(chunkHashes_);
           bitField0_ |= 0x00000001;
          }
@@ -1285,10 +1433,12 @@ public final class SnapshotOuterClass {
        * </pre>
        *
        * <code>repeated bytes chunk_hashes = 1;</code>
+       * @return A list containing the chunkHashes.
        */
       public java.util.List<com.google.protobuf.ByteString>
           getChunkHashesList() {
-        return java.util.Collections.unmodifiableList(chunkHashes_);
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(chunkHashes_) : chunkHashes_;
       }
       /**
        * <pre>
@@ -1296,6 +1446,7 @@ public final class SnapshotOuterClass {
        * </pre>
        *
        * <code>repeated bytes chunk_hashes = 1;</code>
+       * @return The count of chunkHashes.
        */
       public int getChunkHashesCount() {
         return chunkHashes_.size();
@@ -1306,6 +1457,8 @@ public final class SnapshotOuterClass {
        * </pre>
        *
        * <code>repeated bytes chunk_hashes = 1;</code>
+       * @param index The index of the element to return.
+       * @return The chunkHashes at the given index.
        */
       public com.google.protobuf.ByteString getChunkHashes(int index) {
         return chunkHashes_.get(index);
@@ -1316,6 +1469,9 @@ public final class SnapshotOuterClass {
        * </pre>
        *
        * <code>repeated bytes chunk_hashes = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The chunkHashes to set.
+       * @return This builder for chaining.
        */
       public Builder setChunkHashes(
           int index, com.google.protobuf.ByteString value) {
@@ -1333,6 +1489,8 @@ public final class SnapshotOuterClass {
        * </pre>
        *
        * <code>repeated bytes chunk_hashes = 1;</code>
+       * @param value The chunkHashes to add.
+       * @return This builder for chaining.
        */
       public Builder addChunkHashes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1349,6 +1507,8 @@ public final class SnapshotOuterClass {
        * </pre>
        *
        * <code>repeated bytes chunk_hashes = 1;</code>
+       * @param values The chunkHashes to add.
+       * @return This builder for chaining.
        */
       public Builder addAllChunkHashes(
           java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -1364,6 +1524,7 @@ public final class SnapshotOuterClass {
        * </pre>
        *
        * <code>repeated bytes chunk_hashes = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearChunkHashes() {
         chunkHashes_ = java.util.Collections.emptyList();
@@ -1371,14 +1532,16 @@ public final class SnapshotOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1397,11 +1560,12 @@ public final class SnapshotOuterClass {
 
     private static final com.google.protobuf.Parser<Metadata>
         PARSER = new com.google.protobuf.AbstractParser<Metadata>() {
+      @java.lang.Override
       public Metadata parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Metadata(input, extensionRegistry);
+        return new Metadata(input, extensionRegistry);
       }
     };
 
@@ -1414,6 +1578,7 @@ public final class SnapshotOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.snapshots.v1beta1.SnapshotOuterClass.Metadata getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1449,19 +1614,11 @@ public final class SnapshotOuterClass {
       "hub.com/cosmos/cosmos-sdk/snapshots/type" +
       "sb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_base_snapshots_v1beta1_Snapshot_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_base_snapshots_v1beta1_Snapshot_fieldAccessorTable = new

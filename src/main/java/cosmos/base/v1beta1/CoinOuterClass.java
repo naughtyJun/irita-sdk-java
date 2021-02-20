@@ -19,21 +19,25 @@ public final class CoinOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
     java.lang.String getDenom();
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
     com.google.protobuf.ByteString
         getDenomBytes();
 
     /**
-     * <code>optional string amount = 2;</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+     * @return The amount.
      */
     java.lang.String getAmount();
     /**
-     * <code>optional string amount = 2;</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+     * @return The bytes for amount.
      */
     com.google.protobuf.ByteString
         getAmountBytes();
@@ -47,10 +51,11 @@ public final class CoinOuterClass {
    *
    * Protobuf type {@code cosmos.base.v1beta1.Coin}
    */
-  public  static final class Coin extends
+  public static final class Coin extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.v1beta1.Coin)
       CoinOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Coin.newBuilder() to construct.
     private Coin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -61,16 +66,27 @@ public final class CoinOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Coin();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Coin(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -79,12 +95,6 @@ public final class CoinOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -97,6 +107,13 @@ public final class CoinOuterClass {
               amount_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -105,6 +122,7 @@ public final class CoinOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -113,6 +131,7 @@ public final class CoinOuterClass {
       return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_Coin_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_Coin_fieldAccessorTable
@@ -123,8 +142,10 @@ public final class CoinOuterClass {
     public static final int DENOM_FIELD_NUMBER = 1;
     private volatile java.lang.Object denom_;
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
+    @java.lang.Override
     public java.lang.String getDenom() {
       java.lang.Object ref = denom_;
       if (ref instanceof java.lang.String) {
@@ -138,8 +159,10 @@ public final class CoinOuterClass {
       }
     }
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDenomBytes() {
       java.lang.Object ref = denom_;
@@ -157,8 +180,10 @@ public final class CoinOuterClass {
     public static final int AMOUNT_FIELD_NUMBER = 2;
     private volatile java.lang.Object amount_;
     /**
-     * <code>optional string amount = 2;</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+     * @return The amount.
      */
+    @java.lang.Override
     public java.lang.String getAmount() {
       java.lang.Object ref = amount_;
       if (ref instanceof java.lang.String) {
@@ -172,8 +197,10 @@ public final class CoinOuterClass {
       }
     }
     /**
-     * <code>optional string amount = 2;</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+     * @return The bytes for amount.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAmountBytes() {
       java.lang.Object ref = amount_;
@@ -189,6 +216,7 @@ public final class CoinOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -198,6 +226,7 @@ public final class CoinOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getDenomBytes().isEmpty()) {
@@ -206,8 +235,10 @@ public final class CoinOuterClass {
       if (!getAmountBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, amount_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -219,11 +250,11 @@ public final class CoinOuterClass {
       if (!getAmountBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, amount_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -234,12 +265,12 @@ public final class CoinOuterClass {
       }
       cosmos.base.v1beta1.CoinOuterClass.Coin other = (cosmos.base.v1beta1.CoinOuterClass.Coin) obj;
 
-      boolean result = true;
-      result = result && getDenom()
-          .equals(other.getDenom());
-      result = result && getAmount()
-          .equals(other.getAmount());
-      return result;
+      if (!getDenom()
+          .equals(other.getDenom())) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -248,7 +279,7 @@ public final class CoinOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DENOM_FIELD_NUMBER;
       hash = (53 * hash) + getDenom().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
@@ -258,6 +289,17 @@ public final class CoinOuterClass {
       return hash;
     }
 
+    public static cosmos.base.v1beta1.CoinOuterClass.Coin parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.v1beta1.CoinOuterClass.Coin parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.v1beta1.CoinOuterClass.Coin parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -317,6 +359,7 @@ public final class CoinOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -324,6 +367,7 @@ public final class CoinOuterClass {
     public static Builder newBuilder(cosmos.base.v1beta1.CoinOuterClass.Coin prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -353,6 +397,7 @@ public final class CoinOuterClass {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_Coin_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_Coin_fieldAccessorTable
@@ -375,6 +420,7 @@ public final class CoinOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         denom_ = "";
@@ -384,15 +430,18 @@ public final class CoinOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_Coin_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.Coin getDefaultInstanceForType() {
         return cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.Coin build() {
         cosmos.base.v1beta1.CoinOuterClass.Coin result = buildPartial();
         if (!result.isInitialized()) {
@@ -401,6 +450,7 @@ public final class CoinOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.Coin buildPartial() {
         cosmos.base.v1beta1.CoinOuterClass.Coin result = new cosmos.base.v1beta1.CoinOuterClass.Coin(this);
         result.denom_ = denom_;
@@ -409,32 +459,39 @@ public final class CoinOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.v1beta1.CoinOuterClass.Coin) {
           return mergeFrom((cosmos.base.v1beta1.CoinOuterClass.Coin)other);
@@ -454,14 +511,17 @@ public final class CoinOuterClass {
           amount_ = other.amount_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -482,7 +542,8 @@ public final class CoinOuterClass {
 
       private java.lang.Object denom_ = "";
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The denom.
        */
       public java.lang.String getDenom() {
         java.lang.Object ref = denom_;
@@ -497,7 +558,8 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The bytes for denom.
        */
       public com.google.protobuf.ByteString
           getDenomBytes() {
@@ -513,7 +575,9 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenom(
           java.lang.String value) {
@@ -526,7 +590,8 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDenom() {
         
@@ -535,7 +600,9 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The bytes for denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenomBytes(
           com.google.protobuf.ByteString value) {
@@ -551,7 +618,8 @@ public final class CoinOuterClass {
 
       private java.lang.Object amount_ = "";
       /**
-       * <code>optional string amount = 2;</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+       * @return The amount.
        */
       public java.lang.String getAmount() {
         java.lang.Object ref = amount_;
@@ -566,7 +634,8 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string amount = 2;</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+       * @return The bytes for amount.
        */
       public com.google.protobuf.ByteString
           getAmountBytes() {
@@ -582,7 +651,9 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string amount = 2;</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
        */
       public Builder setAmount(
           java.lang.String value) {
@@ -595,7 +666,8 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string amount = 2;</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearAmount() {
         
@@ -604,7 +676,9 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string amount = 2;</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
        */
       public Builder setAmountBytes(
           com.google.protobuf.ByteString value) {
@@ -617,14 +691,16 @@ public final class CoinOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -643,11 +719,12 @@ public final class CoinOuterClass {
 
     private static final com.google.protobuf.Parser<Coin>
         PARSER = new com.google.protobuf.AbstractParser<Coin>() {
+      @java.lang.Override
       public Coin parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Coin(input, extensionRegistry);
+        return new Coin(input, extensionRegistry);
       }
     };
 
@@ -660,6 +737,7 @@ public final class CoinOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -671,21 +749,25 @@ public final class CoinOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
     java.lang.String getDenom();
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
     com.google.protobuf.ByteString
         getDenomBytes();
 
     /**
-     * <code>optional string amount = 2;</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+     * @return The amount.
      */
     java.lang.String getAmount();
     /**
-     * <code>optional string amount = 2;</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+     * @return The bytes for amount.
      */
     com.google.protobuf.ByteString
         getAmountBytes();
@@ -699,10 +781,11 @@ public final class CoinOuterClass {
    *
    * Protobuf type {@code cosmos.base.v1beta1.DecCoin}
    */
-  public  static final class DecCoin extends
+  public static final class DecCoin extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.v1beta1.DecCoin)
       DecCoinOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use DecCoin.newBuilder() to construct.
     private DecCoin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -713,16 +796,27 @@ public final class CoinOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DecCoin();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private DecCoin(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -731,12 +825,6 @@ public final class CoinOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -749,6 +837,13 @@ public final class CoinOuterClass {
               amount_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -757,6 +852,7 @@ public final class CoinOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -765,6 +861,7 @@ public final class CoinOuterClass {
       return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecCoin_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecCoin_fieldAccessorTable
@@ -775,8 +872,10 @@ public final class CoinOuterClass {
     public static final int DENOM_FIELD_NUMBER = 1;
     private volatile java.lang.Object denom_;
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The denom.
      */
+    @java.lang.Override
     public java.lang.String getDenom() {
       java.lang.Object ref = denom_;
       if (ref instanceof java.lang.String) {
@@ -790,8 +889,10 @@ public final class CoinOuterClass {
       }
     }
     /**
-     * <code>optional string denom = 1;</code>
+     * <code>string denom = 1;</code>
+     * @return The bytes for denom.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDenomBytes() {
       java.lang.Object ref = denom_;
@@ -809,8 +910,10 @@ public final class CoinOuterClass {
     public static final int AMOUNT_FIELD_NUMBER = 2;
     private volatile java.lang.Object amount_;
     /**
-     * <code>optional string amount = 2;</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+     * @return The amount.
      */
+    @java.lang.Override
     public java.lang.String getAmount() {
       java.lang.Object ref = amount_;
       if (ref instanceof java.lang.String) {
@@ -824,8 +927,10 @@ public final class CoinOuterClass {
       }
     }
     /**
-     * <code>optional string amount = 2;</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+     * @return The bytes for amount.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAmountBytes() {
       java.lang.Object ref = amount_;
@@ -841,6 +946,7 @@ public final class CoinOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -850,6 +956,7 @@ public final class CoinOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getDenomBytes().isEmpty()) {
@@ -858,8 +965,10 @@ public final class CoinOuterClass {
       if (!getAmountBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, amount_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -871,11 +980,11 @@ public final class CoinOuterClass {
       if (!getAmountBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, amount_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -886,12 +995,12 @@ public final class CoinOuterClass {
       }
       cosmos.base.v1beta1.CoinOuterClass.DecCoin other = (cosmos.base.v1beta1.CoinOuterClass.DecCoin) obj;
 
-      boolean result = true;
-      result = result && getDenom()
-          .equals(other.getDenom());
-      result = result && getAmount()
-          .equals(other.getAmount());
-      return result;
+      if (!getDenom()
+          .equals(other.getDenom())) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -900,7 +1009,7 @@ public final class CoinOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DENOM_FIELD_NUMBER;
       hash = (53 * hash) + getDenom().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
@@ -910,6 +1019,17 @@ public final class CoinOuterClass {
       return hash;
     }
 
+    public static cosmos.base.v1beta1.CoinOuterClass.DecCoin parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.v1beta1.CoinOuterClass.DecCoin parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.v1beta1.CoinOuterClass.DecCoin parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -969,6 +1089,7 @@ public final class CoinOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -976,6 +1097,7 @@ public final class CoinOuterClass {
     public static Builder newBuilder(cosmos.base.v1beta1.CoinOuterClass.DecCoin prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1005,6 +1127,7 @@ public final class CoinOuterClass {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecCoin_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecCoin_fieldAccessorTable
@@ -1027,6 +1150,7 @@ public final class CoinOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         denom_ = "";
@@ -1036,15 +1160,18 @@ public final class CoinOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecCoin_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin getDefaultInstanceForType() {
         return cosmos.base.v1beta1.CoinOuterClass.DecCoin.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin build() {
         cosmos.base.v1beta1.CoinOuterClass.DecCoin result = buildPartial();
         if (!result.isInitialized()) {
@@ -1053,6 +1180,7 @@ public final class CoinOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin buildPartial() {
         cosmos.base.v1beta1.CoinOuterClass.DecCoin result = new cosmos.base.v1beta1.CoinOuterClass.DecCoin(this);
         result.denom_ = denom_;
@@ -1061,32 +1189,39 @@ public final class CoinOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.v1beta1.CoinOuterClass.DecCoin) {
           return mergeFrom((cosmos.base.v1beta1.CoinOuterClass.DecCoin)other);
@@ -1106,14 +1241,17 @@ public final class CoinOuterClass {
           amount_ = other.amount_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1134,7 +1272,8 @@ public final class CoinOuterClass {
 
       private java.lang.Object denom_ = "";
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The denom.
        */
       public java.lang.String getDenom() {
         java.lang.Object ref = denom_;
@@ -1149,7 +1288,8 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return The bytes for denom.
        */
       public com.google.protobuf.ByteString
           getDenomBytes() {
@@ -1165,7 +1305,9 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenom(
           java.lang.String value) {
@@ -1178,7 +1320,8 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDenom() {
         
@@ -1187,7 +1330,9 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string denom = 1;</code>
+       * <code>string denom = 1;</code>
+       * @param value The bytes for denom to set.
+       * @return This builder for chaining.
        */
       public Builder setDenomBytes(
           com.google.protobuf.ByteString value) {
@@ -1203,7 +1348,8 @@ public final class CoinOuterClass {
 
       private java.lang.Object amount_ = "";
       /**
-       * <code>optional string amount = 2;</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+       * @return The amount.
        */
       public java.lang.String getAmount() {
         java.lang.Object ref = amount_;
@@ -1218,7 +1364,8 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string amount = 2;</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+       * @return The bytes for amount.
        */
       public com.google.protobuf.ByteString
           getAmountBytes() {
@@ -1234,7 +1381,9 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string amount = 2;</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
        */
       public Builder setAmount(
           java.lang.String value) {
@@ -1247,7 +1396,8 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string amount = 2;</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearAmount() {
         
@@ -1256,7 +1406,9 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string amount = 2;</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
        */
       public Builder setAmountBytes(
           com.google.protobuf.ByteString value) {
@@ -1269,14 +1421,16 @@ public final class CoinOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1295,11 +1449,12 @@ public final class CoinOuterClass {
 
     private static final com.google.protobuf.Parser<DecCoin>
         PARSER = new com.google.protobuf.AbstractParser<DecCoin>() {
+      @java.lang.Override
       public DecCoin parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DecCoin(input, extensionRegistry);
+        return new DecCoin(input, extensionRegistry);
       }
     };
 
@@ -1312,6 +1467,7 @@ public final class CoinOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.DecCoin getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1323,11 +1479,13 @@ public final class CoinOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string int = 1;</code>
+     * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+     * @return The int.
      */
     java.lang.String getInt();
     /**
-     * <code>optional string int = 1;</code>
+     * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+     * @return The bytes for int.
      */
     com.google.protobuf.ByteString
         getIntBytes();
@@ -1339,10 +1497,11 @@ public final class CoinOuterClass {
    *
    * Protobuf type {@code cosmos.base.v1beta1.IntProto}
    */
-  public  static final class IntProto extends
+  public static final class IntProto extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.v1beta1.IntProto)
       IntProtoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use IntProto.newBuilder() to construct.
     private IntProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1352,16 +1511,27 @@ public final class CoinOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new IntProto();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private IntProto(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1370,16 +1540,17 @@ public final class CoinOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               int_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1390,6 +1561,7 @@ public final class CoinOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1398,6 +1570,7 @@ public final class CoinOuterClass {
       return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_IntProto_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_IntProto_fieldAccessorTable
@@ -1408,8 +1581,10 @@ public final class CoinOuterClass {
     public static final int INT_FIELD_NUMBER = 1;
     private volatile java.lang.Object int_;
     /**
-     * <code>optional string int = 1;</code>
+     * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+     * @return The int.
      */
+    @java.lang.Override
     public java.lang.String getInt() {
       java.lang.Object ref = int_;
       if (ref instanceof java.lang.String) {
@@ -1423,8 +1598,10 @@ public final class CoinOuterClass {
       }
     }
     /**
-     * <code>optional string int = 1;</code>
+     * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+     * @return The bytes for int.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIntBytes() {
       java.lang.Object ref = int_;
@@ -1440,6 +1617,7 @@ public final class CoinOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1449,13 +1627,16 @@ public final class CoinOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIntBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, int_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1464,11 +1645,11 @@ public final class CoinOuterClass {
       if (!getIntBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, int_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1479,10 +1660,10 @@ public final class CoinOuterClass {
       }
       cosmos.base.v1beta1.CoinOuterClass.IntProto other = (cosmos.base.v1beta1.CoinOuterClass.IntProto) obj;
 
-      boolean result = true;
-      result = result && getInt()
-          .equals(other.getInt());
-      return result;
+      if (!getInt()
+          .equals(other.getInt())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1491,7 +1672,7 @@ public final class CoinOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + INT_FIELD_NUMBER;
       hash = (53 * hash) + getInt().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1499,6 +1680,17 @@ public final class CoinOuterClass {
       return hash;
     }
 
+    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1558,6 +1750,7 @@ public final class CoinOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1565,6 +1758,7 @@ public final class CoinOuterClass {
     public static Builder newBuilder(cosmos.base.v1beta1.CoinOuterClass.IntProto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1592,6 +1786,7 @@ public final class CoinOuterClass {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_IntProto_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_IntProto_fieldAccessorTable
@@ -1614,6 +1809,7 @@ public final class CoinOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         int_ = "";
@@ -1621,15 +1817,18 @@ public final class CoinOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_IntProto_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.IntProto getDefaultInstanceForType() {
         return cosmos.base.v1beta1.CoinOuterClass.IntProto.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.IntProto build() {
         cosmos.base.v1beta1.CoinOuterClass.IntProto result = buildPartial();
         if (!result.isInitialized()) {
@@ -1638,6 +1837,7 @@ public final class CoinOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.IntProto buildPartial() {
         cosmos.base.v1beta1.CoinOuterClass.IntProto result = new cosmos.base.v1beta1.CoinOuterClass.IntProto(this);
         result.int_ = int_;
@@ -1645,32 +1845,39 @@ public final class CoinOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.v1beta1.CoinOuterClass.IntProto) {
           return mergeFrom((cosmos.base.v1beta1.CoinOuterClass.IntProto)other);
@@ -1686,14 +1893,17 @@ public final class CoinOuterClass {
           int_ = other.int_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1714,7 +1924,8 @@ public final class CoinOuterClass {
 
       private java.lang.Object int_ = "";
       /**
-       * <code>optional string int = 1;</code>
+       * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+       * @return The int.
        */
       public java.lang.String getInt() {
         java.lang.Object ref = int_;
@@ -1729,7 +1940,8 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string int = 1;</code>
+       * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+       * @return The bytes for int.
        */
       public com.google.protobuf.ByteString
           getIntBytes() {
@@ -1745,7 +1957,9 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string int = 1;</code>
+       * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+       * @param value The int to set.
+       * @return This builder for chaining.
        */
       public Builder setInt(
           java.lang.String value) {
@@ -1758,7 +1972,8 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string int = 1;</code>
+       * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearInt() {
         
@@ -1767,7 +1982,9 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string int = 1;</code>
+       * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int"];</code>
+       * @param value The bytes for int to set.
+       * @return This builder for chaining.
        */
       public Builder setIntBytes(
           com.google.protobuf.ByteString value) {
@@ -1780,14 +1997,16 @@ public final class CoinOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1806,11 +2025,12 @@ public final class CoinOuterClass {
 
     private static final com.google.protobuf.Parser<IntProto>
         PARSER = new com.google.protobuf.AbstractParser<IntProto>() {
+      @java.lang.Override
       public IntProto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new IntProto(input, extensionRegistry);
+        return new IntProto(input, extensionRegistry);
       }
     };
 
@@ -1823,6 +2043,7 @@ public final class CoinOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.IntProto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1834,11 +2055,13 @@ public final class CoinOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string dec = 1;</code>
+     * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+     * @return The dec.
      */
     java.lang.String getDec();
     /**
-     * <code>optional string dec = 1;</code>
+     * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+     * @return The bytes for dec.
      */
     com.google.protobuf.ByteString
         getDecBytes();
@@ -1850,10 +2073,11 @@ public final class CoinOuterClass {
    *
    * Protobuf type {@code cosmos.base.v1beta1.DecProto}
    */
-  public  static final class DecProto extends
+  public static final class DecProto extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.v1beta1.DecProto)
       DecProtoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use DecProto.newBuilder() to construct.
     private DecProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1863,16 +2087,27 @@ public final class CoinOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DecProto();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private DecProto(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1881,16 +2116,17 @@ public final class CoinOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               dec_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1901,6 +2137,7 @@ public final class CoinOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1909,6 +2146,7 @@ public final class CoinOuterClass {
       return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecProto_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecProto_fieldAccessorTable
@@ -1919,8 +2157,10 @@ public final class CoinOuterClass {
     public static final int DEC_FIELD_NUMBER = 1;
     private volatile java.lang.Object dec_;
     /**
-     * <code>optional string dec = 1;</code>
+     * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+     * @return The dec.
      */
+    @java.lang.Override
     public java.lang.String getDec() {
       java.lang.Object ref = dec_;
       if (ref instanceof java.lang.String) {
@@ -1934,8 +2174,10 @@ public final class CoinOuterClass {
       }
     }
     /**
-     * <code>optional string dec = 1;</code>
+     * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+     * @return The bytes for dec.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDecBytes() {
       java.lang.Object ref = dec_;
@@ -1951,6 +2193,7 @@ public final class CoinOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1960,13 +2203,16 @@ public final class CoinOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getDecBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dec_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1975,11 +2221,11 @@ public final class CoinOuterClass {
       if (!getDecBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dec_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1990,10 +2236,10 @@ public final class CoinOuterClass {
       }
       cosmos.base.v1beta1.CoinOuterClass.DecProto other = (cosmos.base.v1beta1.CoinOuterClass.DecProto) obj;
 
-      boolean result = true;
-      result = result && getDec()
-          .equals(other.getDec());
-      return result;
+      if (!getDec()
+          .equals(other.getDec())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2002,7 +2248,7 @@ public final class CoinOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DEC_FIELD_NUMBER;
       hash = (53 * hash) + getDec().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2010,6 +2256,17 @@ public final class CoinOuterClass {
       return hash;
     }
 
+    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2069,6 +2326,7 @@ public final class CoinOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2076,6 +2334,7 @@ public final class CoinOuterClass {
     public static Builder newBuilder(cosmos.base.v1beta1.CoinOuterClass.DecProto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2103,6 +2362,7 @@ public final class CoinOuterClass {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecProto_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecProto_fieldAccessorTable
@@ -2125,6 +2385,7 @@ public final class CoinOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         dec_ = "";
@@ -2132,15 +2393,18 @@ public final class CoinOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecProto_descriptor;
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.DecProto getDefaultInstanceForType() {
         return cosmos.base.v1beta1.CoinOuterClass.DecProto.getDefaultInstance();
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.DecProto build() {
         cosmos.base.v1beta1.CoinOuterClass.DecProto result = buildPartial();
         if (!result.isInitialized()) {
@@ -2149,6 +2413,7 @@ public final class CoinOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public cosmos.base.v1beta1.CoinOuterClass.DecProto buildPartial() {
         cosmos.base.v1beta1.CoinOuterClass.DecProto result = new cosmos.base.v1beta1.CoinOuterClass.DecProto(this);
         result.dec_ = dec_;
@@ -2156,32 +2421,39 @@ public final class CoinOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof cosmos.base.v1beta1.CoinOuterClass.DecProto) {
           return mergeFrom((cosmos.base.v1beta1.CoinOuterClass.DecProto)other);
@@ -2197,14 +2469,17 @@ public final class CoinOuterClass {
           dec_ = other.dec_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2225,7 +2500,8 @@ public final class CoinOuterClass {
 
       private java.lang.Object dec_ = "";
       /**
-       * <code>optional string dec = 1;</code>
+       * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+       * @return The dec.
        */
       public java.lang.String getDec() {
         java.lang.Object ref = dec_;
@@ -2240,7 +2516,8 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string dec = 1;</code>
+       * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+       * @return The bytes for dec.
        */
       public com.google.protobuf.ByteString
           getDecBytes() {
@@ -2256,7 +2533,9 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>optional string dec = 1;</code>
+       * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+       * @param value The dec to set.
+       * @return This builder for chaining.
        */
       public Builder setDec(
           java.lang.String value) {
@@ -2269,7 +2548,8 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string dec = 1;</code>
+       * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearDec() {
         
@@ -2278,7 +2558,9 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>optional string dec = 1;</code>
+       * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec"];</code>
+       * @param value The bytes for dec to set.
+       * @return This builder for chaining.
        */
       public Builder setDecBytes(
           com.google.protobuf.ByteString value) {
@@ -2291,14 +2573,16 @@ public final class CoinOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2317,11 +2601,12 @@ public final class CoinOuterClass {
 
     private static final com.google.protobuf.Parser<DecProto>
         PARSER = new com.google.protobuf.AbstractParser<DecProto>() {
+      @java.lang.Override
       public DecProto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DecProto(input, extensionRegistry);
+        return new DecProto(input, extensionRegistry);
       }
     };
 
@@ -2334,6 +2619,7 @@ public final class CoinOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.DecProto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2379,19 +2665,11 @@ public final class CoinOuterClass {
       ".com/cosmos/cosmos-sdk/types\330\341\036\000\200\342\036\000b\006pr" +
       "oto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-        }, assigner);
+        });
     internal_static_cosmos_base_v1beta1_Coin_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_base_v1beta1_Coin_fieldAccessorTable = new

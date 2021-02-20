@@ -68,19 +68,11 @@ public final class Cosmos {
       "ieldOptions\030\311\326\005 \001(\tB\'Z%github.com/regen-" +
       "network/cosmos-protob\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.DescriptorProtos.getDescriptor(),
-        }, assigner);
+        });
     interfaceType.internalInit(descriptor.getExtensions().get(0));
     implementsInterface.internalInit(descriptor.getExtensions().get(1));
     acceptsInterface.internalInit(descriptor.getExtensions().get(2));

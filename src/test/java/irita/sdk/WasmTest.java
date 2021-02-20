@@ -7,9 +7,9 @@ import irita.sdk.module.base.ResultTx;
 import irita.sdk.module.keys.Key;
 import irita.sdk.module.keys.KeyManager;
 import irita.sdk.module.wasm.*;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -37,8 +37,8 @@ public class WasmTest {
     }
 
 
-    // when you want to add new Contract to block-chain, remove the @Ignore
-    @Ignore
+    // when you want to add new Contract to block-chain, remove the @Disabled
+    @Disabled
     @Test
     public void store() throws IOException {
         StoreRequest req = new StoreRequest();
@@ -51,7 +51,7 @@ public class WasmTest {
     }
 
     @Test
-    @Ignore
+    @Disabled
     public void instantiate() throws IOException {
         // code_id is res of store
         long codeId = 7L;
@@ -78,7 +78,7 @@ public class WasmTest {
     }
 
     @Test
-    @Ignore
+    @Disabled
     public void execute() throws IOException {
         // contractAddress is res of instantiate
         String contractAddress = "iaa1pcknsatx5ceyfu6zvtmz3yr8auumzrdtrn8h4v";
@@ -107,7 +107,7 @@ public class WasmTest {
     }
 
     @Test
-    @Ignore
+    @Disabled
     public void exportContractState() {
         String contractAddress = "iaa1pcknsatx5ceyfu6zvtmz3yr8auumzrdtrn8h4v";
 

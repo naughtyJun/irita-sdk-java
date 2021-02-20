@@ -1,6 +1,8 @@
 package irita.sdk.module.keys;
 
 import com.codahale.xsalsa20poly1305.SimpleBox;
+import irita.sdk.module.crypto.ArmoredInputStream;
+import irita.sdk.module.crypto.ArmoredOutputStreamImpl;
 import irita.sdk.util.Bech32Utils;
 import irita.sdk.util.Bip44Utils;
 import irita.sdk.util.HashUtils;
@@ -8,17 +10,25 @@ import irita.sdk.util.SM2Utils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.bitcoinj.crypto.DeterministicKey;
 import org.bouncycastle.crypto.CryptoException;
+import org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPrivateKey;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.math.ec.ECPoint;
 import org.bouncycastle.util.encoders.Hex;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
+import java.security.KeyStore;
+import java.security.Security;
+import java.util.Arrays;
+import java.util.Hashtable;
 
 import static irita.sdk.constant.Armored.*;
-import static irita.sdk.module.keys.BCryptImpl.decode_base64;
+import static irita.sdk.module.crypto.BCryptImpl.decode_base64;
+import static irita.sdk.module.crypto.BCryptImpl.encode_base64;
 
 public class KeyManager implements Key {
     private BigInteger privKey;
@@ -27,6 +37,9 @@ public class KeyManager implements Key {
     // this KEY_PATH just for iris
     private static final String KEY_PATH = "m/44'/118'/0'/0/0";
     private static final String HRP = "iaa";
+
+    public KeyManager() {
+    }
 
     public KeyManager(String mnemonic) {
         byte[] seed = Bip44Utils.getSeed(mnemonic);
@@ -53,6 +66,50 @@ public class KeyManager implements Key {
 
         this.addr = Bech32Utils.toBech32(HRP, pre20);
         this.privKey = privKey;
+    }
+
+    public KeyManager(InputStream keystore, String password) throws IOException {
+        ArmoredInputStream aIS = new ArmoredInputStream(keystore);
+        String[] headers = aIS.getArmorHeaders();
+        Hashtable<String, String> headersTable = new Hashtable<>();
+        for (String headersItem : headers) {
+            String[] itemSplit = headersItem.split(": ");
+            headersTable.put(itemSplit[0], itemSplit[1]);
+        }
+        byte[] encBytes = new byte[77];
+        aIS.read(encBytes);
+
+        byte[] realSaltByte = Hex.decode(headersTable.get("salt"));
+        String realSaltString = encode_base64(realSaltByte, 16);
+        String salt = PREFIX_SALT + realSaltString;
+
+        String keyHash = BCrypt.hashpw(password, salt);
+        byte[] keyHashByte = keyHash.getBytes(StandardCharsets.UTF_8);
+        byte[] keyHashSha256 = HashUtils.sha256(keyHashByte);
+
+        SimpleBox box = new SimpleBox(keyHashSha256);
+        byte[] privKeyAmino = box.open(encBytes).get();
+        byte[] privKeyTemp = Arrays.copyOfRange(privKeyAmino, 5, privKeyAmino.length);
+
+        BigInteger privKey = new BigInteger(1, privKeyTemp);
+        ECPoint pubkey = SM2Utils.getPublicKeyFromPrivkey(privKey);
+
+        byte[] encoded = pubkey.getEncoded(true);
+        byte[] hash = HashUtils.sha256(encoded);
+        byte[] pre20 = new byte[20];
+        System.arraycopy(hash, 0, pre20, 0, 20);
+
+        this.addr = Bech32Utils.toBech32(HRP, pre20);
+        this.privKey = privKey;
+    }
+
+    public static Key recoverFromCAKeystore(InputStream keystore, String password) throws Exception {
+        Security.addProvider(new BouncyCastleProvider());
+        KeyStore ks = KeyStore.getInstance("PKCS12", "BC");
+        ks.load(keystore, password.toCharArray());
+        BCECPrivateKey privateKey = (BCECPrivateKey) ks.getKey("signKey", password.toCharArray());
+
+        return new KeyManager(privateKey.getD());
     }
 
     @Override

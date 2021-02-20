@@ -1,4 +1,4 @@
-package irita.sdk.module.keys;
+package irita.sdk.module.crypto;
 
 // Copyright (c) 2006 Damien Miller <djm@mindrot.org>
 //

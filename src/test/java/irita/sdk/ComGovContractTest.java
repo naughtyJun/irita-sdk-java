@@ -13,9 +13,9 @@ import irita.sdk.module.keys.KeyManager;
 import irita.sdk.module.wasm.InstantiateRequest;
 import irita.sdk.module.wasm.StoreRequest;
 import irita.sdk.module.wasm.WasmClient;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -25,13 +25,13 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@Ignore
+@Disabled
 public class ComGovContractTest {
     private CommunityGovClient comGovClient;
     private WasmClient wasmClient;
 
     @BeforeEach
-    @Ignore
+    @Disabled
     public void init() {
         String mnemonic = "opera vivid pride shallow brick crew found resist decade neck expect apple chalk belt sick author know try tank detail tree impact hand best";
         Key km = new KeyManager(mnemonic);
@@ -184,7 +184,7 @@ public class ComGovContractTest {
     // this is a pressure test, it is ignore by default
     // Repeat execution add_member and remove_addr
     @Test
-    @Ignore
+    @Disabled
     public void pressureTest() {
         String addr = "iaa1ufs8gvg6qf6nzpx7wme5tmyja34dva58kqtx2z";
 

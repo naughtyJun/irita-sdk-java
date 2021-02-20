@@ -7,8 +7,8 @@ import irita.sdk.module.base.Account;
 import irita.sdk.module.base.BaseClient;
 import irita.sdk.module.keys.Key;
 import irita.sdk.module.keys.KeyManager;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class ClientTest {
     }
 
     @Test
-    @Ignore
+    @Disabled
     public void send() throws IOException {
         BankClient bankClient = client.getBankClient();
         String res = bankClient.send("1", "iaa18xcshrf7qwjmmurxxxe6tezw7qeqzjaz2z5326");

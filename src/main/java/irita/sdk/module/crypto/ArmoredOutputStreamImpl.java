@@ -1,4 +1,4 @@
-package irita.sdk.module.keys;
+package irita.sdk.module.crypto;
 
 
 import org.bouncycastle.util.Strings;

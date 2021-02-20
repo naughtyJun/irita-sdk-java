@@ -1,10 +1,10 @@
 package irita.sdk;
 
 import irita.sdk.util.HttpUtils;
-import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-@Ignore
+@Disabled
 public class HttpUtilsTest {
     @Test
     public void get() throws Exception {

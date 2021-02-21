@@ -7,6 +7,7 @@ import irita.sdk.constant.enums.DocType;
 import irita.sdk.constant.enums.Role;
 import irita.sdk.exception.ContractException;
 import irita.sdk.module.base.BaseTx;
+import irita.sdk.module.base.ResultTx;
 import irita.sdk.module.community_gov.CommunityGovClient;
 import irita.sdk.module.keys.Key;
 import irita.sdk.module.keys.KeyManager;
@@ -31,7 +32,6 @@ public class ComGovContractTest {
     private WasmClient wasmClient;
 
     @BeforeEach
-    @Disabled
     public void init() {
         String mnemonic = "opera vivid pride shallow brick crew found resist decade neck expect apple chalk belt sick author know try tank detail tree impact hand best";
         Key km = new KeyManager(mnemonic);
@@ -155,8 +155,9 @@ public class ComGovContractTest {
         String fileHash = "789";
 
         try {
-            comGovClient1.addHash(docType, docId, strHash, fileHash);
-        } catch (IOException | ContractException e) {
+            ResultTx resultTx = comGovClient1.addHash(docType, docId, strHash, fileHash);
+            System.out.println(resultTx.getResult().getHash());
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -199,5 +200,11 @@ public class ComGovContractTest {
             i++;
         }
 
+    }
+
+    @Test
+    public void exportContractState() {
+        Map<String, String> map = wasmClient.exportContractState(ContractAddress.DEFAULT);
+        System.out.println(map);
     }
 }

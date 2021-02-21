@@ -112,7 +112,7 @@ public class WasmClient extends Client {
         TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
 
         String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        return checkResTxAndConvert(res);
+        return JSON.parseObject(res, ResultTx.class);
     }
 
     public ResultTx migrate(String contractAddress, long newCodeID, byte[] msgByte) throws IOException {
@@ -127,7 +127,7 @@ public class WasmClient extends Client {
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(null, body, false);
         String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        return checkResTxAndConvert(res);
+        return JSON.parseObject(res, ResultTx.class);
     }
 
     // return the contract information
@@ -185,6 +185,7 @@ public class WasmClient extends Client {
         return map;
     }
 
+    // TODO client do this
     private ResultTx checkResTxAndConvert(String res) {
         ResultTx resultTx = JSON.parseObject(res, ResultTx.class);
 

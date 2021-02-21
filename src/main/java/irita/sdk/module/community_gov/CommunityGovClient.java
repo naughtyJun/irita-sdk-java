@@ -10,6 +10,7 @@ import irita.sdk.constant.enums.Role;
 import irita.sdk.exception.ContractException;
 import irita.sdk.exception.IritaSDKException;
 import irita.sdk.module.base.BaseTx;
+import irita.sdk.module.base.ResultTx;
 import irita.sdk.module.wasm.ContractABI;
 import irita.sdk.module.wasm.WasmClient;
 import org.apache.commons.lang3.StringUtils;
@@ -133,7 +134,7 @@ public class CommunityGovClient {
      * @param strHash  文件hash, 当file_hash为空时必填
      * @param fileHash 字符hash, 当str_hash为空时必填
      */
-    public void addHash(DocType docType, String docId, String strHash, String fileHash) throws IOException, ContractException {
+    public ResultTx addHash(DocType docType, String docId, String strHash, String fileHash) throws IOException {
         if (!addHashParamExist(docId, strHash, fileHash)) {
             throw new NullPointerException("param is not correct");
         }
@@ -148,11 +149,7 @@ public class CommunityGovClient {
         abi.setMethod(ContractMethod.ADD_HASH);
         abi.setArgs(args);
 
-        try {
-            wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
-        } catch (IritaSDKException | IOException e) {
-            throw new ContractException(e.getMessage());
-        }
+        return wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
     }
 
     private boolean addHashParamExist(String docId, String strHash, String fileHash) {

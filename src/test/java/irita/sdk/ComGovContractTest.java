@@ -112,7 +112,7 @@ public class ComGovContractTest {
 
         try {
             comGovClient.addMember(newAddr, Role.HASH_ADMIN);
-        } catch (ContractException e) {
+        } catch (ContractException | IOException e) {
             e.printStackTrace();
         }
 
@@ -194,7 +194,7 @@ public class ComGovContractTest {
             try {
                 comGovClient.addMember(addr, Role.ADMIN);
                 comGovClient.removeMember(addr);
-            } catch (ContractException e) {
+            } catch (ContractException | IOException e) {
                 e.printStackTrace();
             }
             i++;

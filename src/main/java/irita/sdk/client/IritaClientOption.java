@@ -28,6 +28,11 @@ public class IritaClientOption {
             this.amount = amount;
             this.denom = denom;
         }
+
+        public void toMin() {
+            amount += "000000"; // 10的6次方
+            denom = "u" + denom;
+        }
     }
 
     private IritaClientOption() {
@@ -44,7 +49,7 @@ public class IritaClientOption {
         return option;
     }
 
-    public IritaClientOption(int gas, Fee fees, int maxTxsBytes, String mode, double gasAdjustment, KeyManager keyManager) {
+    public IritaClientOption(int gas, Fee fees, int maxTxsBytes, String mode, double gasAdjustment, Key keyManager) {
         this.gas = gas;
         this.fee = fees;
         this.maxTxsBytes = maxTxsBytes;

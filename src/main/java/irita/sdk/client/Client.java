@@ -7,6 +7,7 @@ import cosmos.base.v1beta1.CoinOuterClass;
 import cosmos.crypto.sm2.Keys;
 import cosmos.tx.signing.v1beta1.Signing;
 import cosmos.tx.v1beta1.TxOuterClass;
+import irita.opb.OpbOption;
 import irita.sdk.exception.IritaSDKException;
 import irita.sdk.model.QueryAccountResp;
 import irita.sdk.module.base.Account;
@@ -23,7 +24,8 @@ import java.io.IOException;
 import java.math.BigInteger;
 
 public abstract class Client implements TxService {
-    protected IritaClientOption option;
+    public IritaClientOption option;
+    protected OpbOption opbOption;
     protected String nodeUri;
     protected String lcd;
     protected String chainId;
@@ -92,7 +94,7 @@ public abstract class Client implements TxService {
     }
 
     public Account queryAccount(String address) {
-        String queryAccountUrl = lcd + "/auth/accounts/" + address;
+        String queryAccountUrl = getQueryAccountUrl(address);
         String res = HttpUtils.get(queryAccountUrl);
         QueryAccountResp baseAccount = JSONObject.parseObject(res, QueryAccountResp.class);
 
@@ -105,5 +107,62 @@ public abstract class Client implements TxService {
         account.setAccountNumber(baseAccount.getAccountNumber());
         account.setSequence(baseAccount.getSequence());
         return account;
+    }
+
+    private String getQueryAccountUrl(String address) {
+        String urlPrefix = null;
+
+        switch (opbOption.getOpbEnum()) {
+            case ENABLE:
+                urlPrefix = opbOption.getOpbRestUri();
+                break;
+            case DISABLE:
+                urlPrefix = lcd;
+                break;
+        }
+
+        return urlPrefix + "/auth/accounts/" + address;
+    }
+
+    protected String getQueryUri() {
+        switch (opbOption.getOpbEnum()) {
+            case ENABLE:
+                return opbOption.getOpbRestUri();
+            case DISABLE:
+                return lcd;
+            default:
+                throw new IritaSDKException("opbOption incorrect");
+        }
+    }
+
+    protected String getTxUri() {
+        switch (opbOption.getOpbEnum()) {
+            case ENABLE:
+                return opbOption.getOpbRpcUri();
+            case DISABLE:
+                return nodeUri;
+            default:
+                throw new IritaSDKException("opbOption incorrect");
+        }
+    }
+
+    public IritaClientOption getOption() {
+        return option;
+    }
+
+    public OpbOption getOpbOption() {
+        return opbOption;
+    }
+
+    public String getNodeUri() {
+        return nodeUri;
+    }
+
+    public String getLcd() {
+        return lcd;
+    }
+
+    public String getChainId() {
+        return chainId;
     }
 }

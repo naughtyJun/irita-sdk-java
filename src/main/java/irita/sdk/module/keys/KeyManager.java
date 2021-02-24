@@ -38,9 +38,6 @@ public class KeyManager implements Key {
     private static final String KEY_PATH = "m/44'/118'/0'/0/0";
     private static final String HRP = "iaa";
 
-    public KeyManager() {
-    }
-
     public KeyManager(String mnemonic) {
         byte[] seed = Bip44Utils.getSeed(mnemonic);
         DeterministicKey dk = Bip44Utils.getDeterministicKey(mnemonic, seed, KEY_PATH);

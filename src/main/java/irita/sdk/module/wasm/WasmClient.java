@@ -7,7 +7,6 @@ import cosmos.base.v1beta1.CoinOuterClass;
 import cosmos.tx.v1beta1.TxOuterClass;
 import cosmwasm.wasm.v1beta1.Tx;
 import irita.sdk.client.Client;
-import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.TxStatus;
 import irita.sdk.constant.enums.EventEnum;
 import irita.sdk.exception.ContractException;
@@ -28,11 +27,12 @@ import java.util.Map;
 import java.util.Optional;
 
 public class WasmClient extends Client {
-    public WasmClient(String nodeUri, String lcd, String chainId, IritaClientOption option) {
-        this.nodeUri = nodeUri;
-        this.lcd = lcd;
-        this.chainId = chainId;
-        this.option = option;
+    public WasmClient(Client client) {
+        this.nodeUri = client.getNodeUri();
+        this.lcd = client.getLcd();
+        this.chainId = client.getChainId();
+        this.opbOption = client.getOpbOption();
+        this.option = client.getOption();
     }
 
     // upload the contract to block-chain and return the codeId for user
@@ -59,7 +59,7 @@ public class WasmClient extends Client {
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
 
-        String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
+        String res = HttpUtils.post(getTxUri(), new WrappedRequest<>(tx));
         ResultTx resultTx = checkResTxAndConvert(res);
 
         return resultTx.getEventValue(EventEnum.MESSAGE_CODE_ID);
@@ -86,7 +86,7 @@ public class WasmClient extends Client {
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
 
-        String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
+        String res = HttpUtils.post(getTxUri(), new WrappedRequest<>(tx));
         ResultTx resultTx = checkResTxAndConvert(res);
 
         return resultTx.getEventValue(EventEnum.MESSAGE_CONTRACT_ADDRESS);
@@ -114,7 +114,7 @@ public class WasmClient extends Client {
         TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
 
         String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        return JSON.parseObject(res, ResultTx.class);
+        return checkResTxAndConvert(res);
     }
 
     public ResultTx migrate(String contractAddress, long newCodeID, byte[] msgByte) throws IOException {
@@ -128,13 +128,13 @@ public class WasmClient extends Client {
 
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(null, body, false);
-        String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        return JSON.parseObject(res, ResultTx.class);
+        String res = HttpUtils.post(getTxUri(), new WrappedRequest<>(tx));
+        return checkResTxAndConvert(res);
     }
 
     // return the contract information
     public ContractInfo queryContractInfo(String contractAddress) throws ContractException {
-        String queryContractInfoUri = lcd + "/wasm/v1beta1/contract/" + contractAddress;
+        String queryContractInfoUri = getQueryUri() + "/wasm/v1beta1/contract/" + contractAddress;
         String res = HttpUtils.get(queryContractInfoUri);
         QueryContractInfoResp contractInfoResp = JSONObject.parseObject(res, QueryContractInfoResp.class);
 
@@ -150,13 +150,13 @@ public class WasmClient extends Client {
         String encodeParams = URLEncoder.encode(params);
 
         String baseUri = "/wasm/v1beta1/contract/%s/smart/%s";
-        String queryContractUri = String.format(lcd + baseUri, address, encodeParams);
+        String queryContractUri = String.format(getQueryUri() + baseUri, address, encodeParams);
         return HttpUtils.get(queryContractUri);
     }
 
     // export all state data of the contract
     public Map<String, String> exportContractState(String address) {
-        String exportContractStateUri = lcd + "/wasm/v1beta1/contract/" + address + "/state";
+        String exportContractStateUri = getQueryUri() + "/wasm/v1beta1/contract/" + address + "/state";
         String res = HttpUtils.get(exportContractStateUri);
         QueryContractStateResp contractStateResp = JSONObject.parseObject(res, QueryContractStateResp.class);
 

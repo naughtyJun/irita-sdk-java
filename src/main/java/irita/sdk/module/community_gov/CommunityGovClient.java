@@ -47,7 +47,9 @@ public class CommunityGovClient {
         abi.setArgs(args);
 
         try {
-            wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
+            // TODO
+            ResultTx resultTx = wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
+            System.out.println(resultTx);
         } catch (IritaSDKException | IOException e) {
             throw new ContractException(e.getMessage());
         }
@@ -83,7 +85,7 @@ public class CommunityGovClient {
      * @param address 成员管理员的地址
      * @param role    成员的角色
      */
-    public void addMember(String address, Role role) throws ContractException {
+    public ResultTx addMember(String address, Role role) throws ContractException, IOException {
         if (StringUtils.isEmpty(address) || role == null) {
             throw new NullPointerException("address or role is null");
         }
@@ -96,11 +98,8 @@ public class CommunityGovClient {
         abi.setMethod(ContractMethod.ADD_MEMBER);
         abi.setArgs(args);
 
-        try {
-            wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
-        } catch (IritaSDKException | IOException e) {
-            throw new ContractException(e.getMessage());
-        }
+
+        return wasmClient.execute(ContractAddress.DEFAULT, abi, null, getComGovBaseTx());
     }
 
     /**
@@ -178,7 +177,8 @@ public class CommunityGovClient {
         return hashResp.found();
     }
 
+    // TODO move this
     private BaseTx getComGovBaseTx() {
-        return new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+        return new BaseTx(2000000, new IritaClientOption.Fee("200000000", "uirita"));
     }
 }

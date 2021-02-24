@@ -2,6 +2,7 @@ package irita.sdk.util;
 
 
 import com.alibaba.fastjson.JSON;
+import irita.sdk.exception.ContractException;
 import irita.sdk.module.base.WrappedRequest;
 
 import java.io.*;
@@ -10,14 +11,13 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class HttpUtils {
-    // common get
-    public static String get(String uri) {
-        HttpURLConnection connection = null;
-        InputStream is = null;
-        BufferedReader br = null;
+    // this get just for call lcd, if you want use a common get, you will need refactor
+    public static String get(String uri) throws ContractException {
+        HttpURLConnection connection;
+        InputStream is;
         String result = null;
+        URL url;
 
-        URL url = null;
         try {
             url = new URL(uri);
             connection = (HttpURLConnection) url.openConnection();
@@ -28,32 +28,35 @@ public class HttpUtils {
             connection.connect();
             if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 is = connection.getInputStream();
-                // return charset
-                br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
-                // 存放数据
-                StringBuilder builder = new StringBuilder();
-                String temp = null;
-                while ((temp = br.readLine()) != null) {
-                    builder.append(temp);
-                    builder.append("\r\n");
-                }
-                result = builder.toString();
+                result = getResponse(is);
+            } else if (http400or500(connection)) {
+                is = connection.getErrorStream();
+                result = getResponse(is);
             } else {
-                // TODO this, 抛出一个可检测异常，供外部 try catch
-                throw new RuntimeException("connect error");
+                throw new RuntimeException("connect error:" + connection.getResponseMessage());
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
+
         return result;
+    }
+
+    private static String getResponse(InputStream input) throws IOException {
+        // return charset and save data
+        BufferedReader br = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));
+        StringBuilder builder = new StringBuilder();
+        String temp = null;
+        while ((temp = br.readLine()) != null) {
+            builder.append(temp);
+        }
+        br.close();
+        input.close();
+        return builder.toString();
+    }
+
+    private static boolean http400or500(HttpURLConnection connection) throws IOException {
+        return connection.getResponseCode() == HttpURLConnection.HTTP_BAD_REQUEST || connection.getResponseCode() == HttpURLConnection.HTTP_INTERNAL_ERROR;
     }
 
     /**
@@ -64,12 +67,11 @@ public class HttpUtils {
      * @return res
      */
     public static String post(String uri, String body) throws IOException {
-        HttpURLConnection connection = null;
-        InputStream is = null;
-        OutputStream os = null;
-        BufferedReader br = null;
-        String result = null;
-        URL url = null;
+        HttpURLConnection connection;
+        InputStream is;
+        OutputStream os;
+        String result;
+        URL url;
 
         url = new URL(uri);
         connection = (HttpURLConnection) url.openConnection();
@@ -80,7 +82,7 @@ public class HttpUtils {
         connection.setReadTimeout(60000);
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Accept", "application/json");
-        connection.connect(); // 获取连接
+        connection.connect(); // require a connect
 
         os = connection.getOutputStream();
         OutputStreamWriter osw = new OutputStreamWriter(os);
@@ -88,20 +90,10 @@ public class HttpUtils {
         osw.flush();
         if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
             is = connection.getInputStream();
-            // return charset
-            br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
-            // 存放数据
-            StringBuilder builder = new StringBuilder();
-            String temp = null;
-            while ((temp = br.readLine()) != null) {
-                builder.append(temp);
-                builder.append("\r\n");
-            }
-            result = builder.toString();
+            result = getResponse(is);
         } else {
             throw new IOException("connect error, httpCode:" + connection.getResponseCode());
         }
-        br.close();
         return result;
     }
 

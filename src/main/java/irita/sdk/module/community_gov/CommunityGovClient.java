@@ -1,5 +1,6 @@
 package irita.sdk.module.community_gov;
 
+import com.alibaba.fastjson.JSON;
 import io.grpc.StatusRuntimeException;
 import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.ContractAddress;
@@ -11,6 +12,7 @@ import irita.sdk.exception.ContractException;
 import irita.sdk.exception.IritaSDKException;
 import irita.sdk.module.base.BaseTx;
 import irita.sdk.module.base.ResultTx;
+import irita.sdk.module.model.GetHashResp;
 import irita.sdk.module.wasm.ContractABI;
 import irita.sdk.module.wasm.WasmClient;
 import org.apache.commons.lang3.StringUtils;
@@ -161,7 +163,7 @@ public class CommunityGovClient {
      *
      * @param hash 文件hash/字符hash
      */
-    public boolean getHash(String hash) throws ContractException {
+    public boolean getHash(String hash) {
         if (StringUtils.isEmpty(hash)) {
             throw new RuntimeException("hash is null");
         }
@@ -172,19 +174,10 @@ public class CommunityGovClient {
         args.put(ContractArg.HASH, hash);
         abi.setArgs(args);
 
-        try {
-            byte[] bytes = wasmClient.queryContract(ContractAddress.DEFAULT, abi);
-            if (bytes.length > 0) {
-                return true;
-            }
-        } catch (StatusRuntimeException e) {
-            if (e.getMessage().contains("not found")) {
-                return false;
-            }
-
-            throw new ContractException(e.getMessage());
-        }
-        return false;
+        String queryContractUri = wasmClient.getLcd() + "/wasm/v1beta1/contract/%s/smart/%s";
+        String res = wasmClient.queryContract(queryContractUri, ContractAddress.DEFAULT, abi);
+        GetHashResp hashResp = JSON.parseObject(res, GetHashResp.class);
+        return hashResp.found();
     }
 
     private BaseTx getComGovBaseTx() {

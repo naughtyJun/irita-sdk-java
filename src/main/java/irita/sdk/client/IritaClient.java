@@ -15,8 +15,9 @@ public class IritaClient extends Client {
     public IritaClient() {
     }
 
-    public IritaClient(String nodeUri, String grpcAddr, String chainId, IritaClientOption option) {
+    public IritaClient(String nodeUri, String lcd, String grpcAddr, String chainId, IritaClientOption option) {
         this.nodeUri = nodeUri;
+        this.lcd = lcd;
         this.grpcAddr = grpcAddr;
         this.chainId = chainId;
         this.option = option;
@@ -56,7 +57,7 @@ public class IritaClient extends Client {
 
     public BankClient getBankClient() {
         if (this.bankClient == null) {
-            this.bankClient = new BankClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
+            this.bankClient = new BankClient(this.nodeUri, this.lcd, this.grpcAddr, this.chainId, this.option);
         }
 
         return this.bankClient;
@@ -64,7 +65,7 @@ public class IritaClient extends Client {
 
     public BaseClient getBaseClient() {
         if (this.baseClient == null) {
-            this.baseClient = new BaseClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
+            this.baseClient = new BaseClient(this.nodeUri, this.lcd, this.grpcAddr, this.chainId, this.option);
         }
 
         return this.baseClient;
@@ -72,7 +73,7 @@ public class IritaClient extends Client {
 
     public WasmClient getWasmClient() {
         if (this.wasmClient == null) {
-            this.wasmClient = new WasmClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
+            this.wasmClient = new WasmClient(this.nodeUri, this.lcd, this.grpcAddr, this.chainId, this.option);
         }
 
         return this.wasmClient;

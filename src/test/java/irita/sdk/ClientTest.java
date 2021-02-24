@@ -28,7 +28,7 @@ public class ClientTest {
         String nodeUri = "http://localhost:26657";
         String grpcAddr = "http://localhost:9090";
         String chainId = "irita";
-        client = new IritaClient(nodeUri, grpcAddr, chainId, option);
+        client = new IritaClient(nodeUri,"", grpcAddr, chainId, option);
 
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
     }

@@ -11,8 +11,9 @@ import irita.sdk.util.HttpUtils;
 import java.io.IOException;
 
 public class BankClient extends Client {
-    public BankClient(String nodeUri, String grpcAddr, String chainId, IritaClientOption option) {
+    public BankClient(String nodeUri, String lcd, String grpcAddr, String chainId, IritaClientOption option) {
         this.nodeUri = nodeUri;
+        this.lcd = lcd;
         this.grpcAddr = grpcAddr;
         this.chainId = chainId;
         this.option = option;

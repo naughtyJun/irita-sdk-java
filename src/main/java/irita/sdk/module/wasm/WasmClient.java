@@ -13,12 +13,14 @@ import irita.sdk.client.Client;
 import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.TxStatus;
 import irita.sdk.constant.enums.EventEnum;
+import irita.sdk.exception.ContractException;
 import irita.sdk.exception.IritaSDKException;
 import irita.sdk.module.base.*;
 import irita.sdk.util.HttpUtils;
 import irita.sdk.util.IOUtils;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
@@ -26,8 +28,9 @@ import java.util.Map;
 import java.util.Optional;
 
 public class WasmClient extends Client {
-    public WasmClient(String nodeUri, String grpcAddr, String chainId, IritaClientOption option) {
+    public WasmClient(String nodeUri, String lcd, String grpcAddr, String chainId, IritaClientOption option) {
         this.nodeUri = nodeUri;
+        this.lcd = lcd;
         this.grpcAddr = grpcAddr;
         this.chainId = chainId;
         this.option = option;
@@ -144,19 +147,18 @@ public class WasmClient extends Client {
     }
 
     // execute contract's query method and return the result
-    public byte[] queryContract(String address, ContractABI abi) {
-        ManagedChannel channel = super.getGrpcClient();
+    public String queryContract(String baseUri, String address, ContractABI abi) {
+        String params = ContractQuery.build(abi.getMethod(), abi.getArgs());
+        String encodeParams = URLEncoder.encode(params);
 
-        byte[] msgBytes = abi.build();
-        QueryOuterClass.QuerySmartContractStateRequest req = QueryOuterClass.QuerySmartContractStateRequest
-                .newBuilder()
-                .setAddress(address)
-                .setQueryData(ByteString.copyFrom(msgBytes))
-                .build();
-
-        QueryOuterClass.QuerySmartContractStateResponse resp = QueryGrpc.newBlockingStub(channel).smartContractState(req);
-        channel.shutdown();
-        return resp.toByteArray();
+        String url = String.format(baseUri, address, encodeParams);
+        try {
+            return HttpUtils.get(url);
+        } catch (ContractException e) {
+            e.printStackTrace();
+        }
+        // TODO
+        return "";
     }
 
     // export all state data of the contract
@@ -193,5 +195,9 @@ public class WasmClient extends Client {
             throw new IritaSDKException(resultTx.getLog());
         }
         return resultTx;
+    }
+
+    public String getLcd() {
+        return lcd;
     }
 }

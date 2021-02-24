@@ -40,7 +40,7 @@ public class ComGovContractTest {
         String nodeUri = "http://localhost:26657";
         String grpcAddr = "http://localhost:9090";
         String chainId = "irita";
-        IritaClient client = new IritaClient(nodeUri, grpcAddr, chainId, option);
+        IritaClient client = new IritaClient(nodeUri, "http://106.14.211.224:30152", grpcAddr, chainId, option);
         wasmClient = client.getWasmClient();
         comGovClient = client.getCommunityGovClient();
 
@@ -146,7 +146,7 @@ public class ComGovContractTest {
         String nodeUri = "http://localhost:26657";
         String grpcAddr = "http://localhost:9090";
         String chainId = "irita";
-        CommunityGovClient comGovClient1 = new IritaClient(nodeUri, grpcAddr, chainId, option).getCommunityGovClient();
+        CommunityGovClient comGovClient1 = new IritaClient(nodeUri, "", grpcAddr, chainId, option).getCommunityGovClient();
 
         // exec add_hash
         DocType docType = DocType.FOREST_SEED_PRODUCTION_OPERATION_LICENSE;
@@ -171,15 +171,15 @@ public class ComGovContractTest {
 
     @Test
     public void getHash() throws ContractException {
-        String strHash = "123";
-        String fileHash = "789";
+        String strHash = "09f798dab87a4e86030b8cf8e1165896889513503783ed208a1abef9ddc12902";
+//        String fileHash = "789";
         boolean isExisted = false;
 
         isExisted = comGovClient.getHash(strHash);
         assertTrue(isExisted);
 
-        isExisted = comGovClient.getHash(fileHash);
-        assertTrue(isExisted);
+//        isExisted = comGovClient.getHash(fileHash);
+//        assertTrue(isExisted);
     }
 
     // this is a pressure test, it is ignore by default

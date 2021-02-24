@@ -2,7 +2,6 @@ package irita.sdk.module.base;
 
 import irita.sdk.constant.enums.EventEnum;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 

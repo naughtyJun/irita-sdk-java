@@ -30,7 +30,7 @@ public class WasmTest {
         String nodeUri = "http://localhost:26657";
         String grpcAddr = "http://localhost:9090";
         String chainId = "irita";
-        IritaClient client = new IritaClient(nodeUri, grpcAddr, chainId, option);
+        IritaClient client = new IritaClient(nodeUri,"", grpcAddr, chainId, option);
         wasmClient = client.getWasmClient();
 
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
@@ -81,29 +81,29 @@ public class WasmTest {
     @Disabled
     public void execute() throws IOException {
         // contractAddress is res of instantiate
-        String contractAddress = "iaa1pcknsatx5ceyfu6zvtmz3yr8auumzrdtrn8h4v";
-        Map<String, Object> args = new HashMap<>();
-        args.put("candidate", "iaa1qvty8x0c78am8c44zv2n7tgm6gfqt78j0verqa");
-
-        ContractABI execAbi = new ContractABI();
-        execAbi.setArgs(args);
-        execAbi.setMethod("vote");
-        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
-
-        ResultTx resultTx = wasmClient.execute(contractAddress, execAbi, null, baseTx);
-
-        String height = resultTx.getResult().getHeight();
-        assertTrue(Integer.parseInt(height) > 0);
-        assertNotNull(resultTx.getResult().getHash());
-
-        // test QueryContract
-        ContractABI queryAbi = new ContractABI();
-        queryAbi.setMethod("get_vote_info");
-
-        byte[] bytes = wasmClient.queryContract(contractAddress, queryAbi);
-        assertNotNull(bytes);
-        assertTrue(bytes.length > 0);
-        System.out.println(new String(bytes));
+//        String contractAddress = "iaa1pcknsatx5ceyfu6zvtmz3yr8auumzrdtrn8h4v";
+//        Map<String, Object> args = new HashMap<>();
+//        args.put("candidate", "iaa1qvty8x0c78am8c44zv2n7tgm6gfqt78j0verqa");
+//
+//        ContractABI execAbi = new ContractABI();
+//        execAbi.setArgs(args);
+//        execAbi.setMethod("vote");
+//        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+//
+//        ResultTx resultTx = wasmClient.execute(contractAddress, execAbi, null, baseTx);
+//
+//        String height = resultTx.getResult().getHeight();
+//        assertTrue(Integer.parseInt(height) > 0);
+//        assertNotNull(resultTx.getResult().getHash());
+//
+//        // test QueryContract
+//        ContractABI queryAbi = new ContractABI();
+//        queryAbi.setMethod("get_vote_info");
+//
+//        byte[] bytes = wasmClient.queryContract(contractAddress, queryAbi);
+//        assertNotNull(bytes);
+//        assertTrue(bytes.length > 0);
+//        System.out.println(new String(bytes));
     }
 
     @Test

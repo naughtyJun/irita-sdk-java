@@ -28,6 +28,7 @@ import java.math.BigInteger;
 public abstract class Client implements TxService {
     protected IritaClientOption option;
     protected String nodeUri;
+    protected String lcd;
     protected String grpcAddr;
     protected String chainId;
 

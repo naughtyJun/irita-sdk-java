@@ -173,8 +173,7 @@ public class CommunityGovClient {
         args.put(ContractArg.HASH, hash);
         abi.setArgs(args);
 
-        String queryContractUri = wasmClient.getLcd() + "/wasm/v1beta1/contract/%s/smart/%s";
-        String res = wasmClient.queryContract(queryContractUri, ContractAddress.DEFAULT, abi);
+        String res = wasmClient.queryContract(ContractAddress.DEFAULT, abi);
         GetHashResp hashResp = JSON.parseObject(res, GetHashResp.class);
         return hashResp.found();
     }

@@ -134,8 +134,8 @@ public class WasmClient extends Client {
 
     // return the contract information
     public ContractInfo queryContractInfo(String contractAddress) throws ContractException {
-        String queryContractInfoUrl = lcd + "/wasm/v1beta1/contract/" + contractAddress;
-        String res = HttpUtils.get(queryContractInfoUrl);
+        String queryContractInfoUri = lcd + "/wasm/v1beta1/contract/" + contractAddress;
+        String res = HttpUtils.get(queryContractInfoUri);
         QueryContractInfoResp contractInfoResp = JSONObject.parseObject(res, QueryContractInfoResp.class);
 
         if (contractInfoResp.notFound()) {
@@ -145,18 +145,19 @@ public class WasmClient extends Client {
     }
 
     // execute contract's query method and return the result
-    public String queryContract(String baseUri, String address, ContractABI abi) {
+    public String queryContract(String address, ContractABI abi) {
         String params = ContractQuery.build(abi.getMethod(), abi.getArgs());
         String encodeParams = URLEncoder.encode(params);
 
-        String url = String.format(baseUri, address, encodeParams);
-        return HttpUtils.get(url);
+        String baseUri = "/wasm/v1beta1/contract/%s/smart/%s";
+        String queryContractUri = String.format(lcd + baseUri, address, encodeParams);
+        return HttpUtils.get(queryContractUri);
     }
 
     // export all state data of the contract
     public Map<String, String> exportContractState(String address) {
-        String exportContractStateUrl = lcd + "/wasm/v1beta1/contract/" + address + "/state";
-        String res = HttpUtils.get(exportContractStateUrl);
+        String exportContractStateUri = lcd + "/wasm/v1beta1/contract/" + address + "/state";
+        String res = HttpUtils.get(exportContractStateUri);
         QueryContractStateResp contractStateResp = JSONObject.parseObject(res, QueryContractStateResp.class);
 
         Map<String, String> map = new HashMap<>(contractStateResp.getModels().size());
@@ -181,9 +182,5 @@ public class WasmClient extends Client {
             throw new IritaSDKException(resultTx.getLog());
         }
         return resultTx;
-    }
-
-    public String getLcd() {
-        return lcd;
     }
 }

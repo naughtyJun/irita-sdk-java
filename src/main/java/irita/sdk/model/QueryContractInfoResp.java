@@ -9,7 +9,7 @@ public class QueryContractInfoResp {
     private String message;
 
     public boolean found() {
-        return code != 0;
+        return code == 0;
     }
 
     public boolean notFound() {

@@ -4,12 +4,10 @@ import irita.sdk.client.IritaClient;
 import irita.sdk.client.IritaClientOption;
 import irita.sdk.exception.ContractException;
 import irita.sdk.module.base.BaseTx;
+import irita.sdk.module.base.ResultTx;
 import irita.sdk.module.keys.Key;
 import irita.sdk.module.keys.KeyManager;
-import irita.sdk.module.wasm.ContractInfo;
-import irita.sdk.module.wasm.InstantiateRequest;
-import irita.sdk.module.wasm.StoreRequest;
-import irita.sdk.module.wasm.WasmClient;
+import irita.sdk.module.wasm.*;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -21,6 +19,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Disabled
 public class WasmTest {
     private WasmClient wasmClient;
 
@@ -41,7 +40,6 @@ public class WasmTest {
 
 
     // when you want to add new Contract to block-chain, remove the @Disabled
-    @Disabled
     @Test
     public void store() throws IOException {
         StoreRequest req = new StoreRequest();
@@ -54,10 +52,9 @@ public class WasmTest {
     }
 
     @Test
-    @Disabled
     public void instantiate() throws IOException {
         // code_id is res of store
-        long codeId = 7L;
+        long codeId = 3L;
 
         Map<String, Object> initMsg = new HashMap<>();
         initMsg.put("start", 1);
@@ -77,7 +74,7 @@ public class WasmTest {
         // test queryContractInfo
         ContractInfo contractInfo = null;
         try {
-            contractInfo = wasmClient.queryContractInfo(contractAddress);
+            contractInfo = wasmClient.queryContractInfo("iaa1sh36qn08g4cqg685cfzmyxqv2952q6r8m8znr6");
         } catch (ContractException e) {
             e.printStackTrace();
         }
@@ -86,36 +83,33 @@ public class WasmTest {
     }
 
     @Test
-    @Disabled
     public void execute() throws IOException {
         // contractAddress is res of instantiate
-//        String contractAddress = "iaa1pcknsatx5ceyfu6zvtmz3yr8auumzrdtrn8h4v";
-//        Map<String, Object> args = new HashMap<>();
-//        args.put("candidate", "iaa1qvty8x0c78am8c44zv2n7tgm6gfqt78j0verqa");
-//
-//        ContractABI execAbi = new ContractABI();
-//        execAbi.setArgs(args);
-//        execAbi.setMethod("vote");
-//        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
-//
-//        ResultTx resultTx = wasmClient.execute(contractAddress, execAbi, null, baseTx);
-//
-//        String height = resultTx.getResult().getHeight();
-//        assertTrue(Integer.parseInt(height) > 0);
-//        assertNotNull(resultTx.getResult().getHash());
-//
-//        // test QueryContract
-//        ContractABI queryAbi = new ContractABI();
-//        queryAbi.setMethod("get_vote_info");
-//
-//        byte[] bytes = wasmClient.queryContract(contractAddress, queryAbi);
-//        assertNotNull(bytes);
-//        assertTrue(bytes.length > 0);
-//        System.out.println(new String(bytes));
+        String contractAddress = "iaa1wgh6adn8geywx0v78zs9azrqtqdegufu2wfles";
+        Map<String, Object> args = new HashMap<>();
+        args.put("candidate", "iaa1qvty8x0c78am8c44zv2n7tgm6gfqt78j0verqa");
+
+        ContractABI execAbi = new ContractABI();
+        execAbi.setArgs(args);
+        execAbi.setMethod("vote");
+        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+
+        ResultTx resultTx = wasmClient.execute(contractAddress, execAbi, null, baseTx);
+
+        String height = resultTx.getResult().getHeight();
+        assertTrue(Integer.parseInt(height) > 0);
+        assertNotNull(resultTx.getResult().getHash());
+
+        // test QueryContract
+        ContractABI queryAbi = new ContractABI();
+        queryAbi.setMethod("get_vote_info");
+
+        String str = wasmClient.queryContract(contractAddress, queryAbi);
+        assertNotNull(str);
+        System.out.println(str);
     }
 
     @Test
-    @Disabled
     public void exportContractState() {
         String contractAddress = "iaa1pcknsatx5ceyfu6zvtmz3yr8auumzrdtrn8h4v";
 

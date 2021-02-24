@@ -6,10 +6,9 @@ import irita.sdk.client.IritaClientOption;
 public class BaseClient extends Client {
     private IritaClientOption option;
 
-    public BaseClient(String nodeUri, String lcd, String grpcAddr, String chainId, IritaClientOption option) {
+    public BaseClient(String nodeUri, String lcd, String chainId, IritaClientOption option) {
         this.nodeUri = nodeUri;
         this.lcd = lcd;
-        this.grpcAddr = grpcAddr;
         this.chainId = chainId;
         this.option = option;
     }

@@ -1,23 +1,20 @@
 package irita.sdk.client;
 
+import com.alibaba.fastjson.JSONObject;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.InvalidProtocolBufferException;
-import cosmos.auth.v1beta1.Auth;
-import cosmos.auth.v1beta1.QueryGrpc;
-import cosmos.auth.v1beta1.QueryOuterClass;
 import cosmos.base.v1beta1.CoinOuterClass;
 import cosmos.crypto.sm2.Keys;
 import cosmos.tx.signing.v1beta1.Signing;
 import cosmos.tx.v1beta1.TxOuterClass;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
 import irita.sdk.exception.IritaSDKException;
+import irita.sdk.model.QueryAccountResp;
 import irita.sdk.module.base.Account;
 import irita.sdk.module.base.BaseTx;
 import irita.sdk.module.base.TxService;
 import irita.sdk.module.keys.Key;
 import irita.sdk.util.ByteUtils;
+import irita.sdk.util.HttpUtils;
 import irita.sdk.util.SM2Utils;
 import org.bouncycastle.crypto.CryptoException;
 import org.bouncycastle.math.ec.ECPoint;
@@ -29,24 +26,7 @@ public abstract class Client implements TxService {
     protected IritaClientOption option;
     protected String nodeUri;
     protected String lcd;
-    protected String grpcAddr;
     protected String chainId;
-
-    protected ManagedChannel getGrpcClient() {
-        String httpProtocol = "http://";
-        if (grpcAddr.startsWith(httpProtocol)) {
-            grpcAddr = grpcAddr.substring(httpProtocol.length());
-        }
-
-        String[] split = grpcAddr.split(":");
-        if (split.length != 2) {
-            throw new IritaSDKException("grpcAddr:\t" + grpcAddr + "is not correct");
-        }
-
-        String addr = split[0];
-        int port = Integer.parseInt(split[1]);
-        return ManagedChannelBuilder.forAddress(addr, port).usePlaintext().build();
-    }
 
     @Override
     public TxOuterClass.Tx signTx(BaseTx base, TxOuterClass.TxBody txBody, boolean offline) {
@@ -112,20 +92,12 @@ public abstract class Client implements TxService {
     }
 
     public Account queryAccount(String address) {
-        ManagedChannel channel = getGrpcClient();
-        QueryOuterClass.QueryAccountRequest req = QueryOuterClass.QueryAccountRequest
-                .newBuilder()
-                .setAddress(address)
-                .build();
+        String queryAccountUrl = lcd + "/auth/accounts/" + address;
+        String res = HttpUtils.get(queryAccountUrl);
+        QueryAccountResp baseAccount = JSONObject.parseObject(res, QueryAccountResp.class);
 
-        QueryOuterClass.QueryAccountResponse resp = QueryGrpc.newBlockingStub(channel).account(req);
-        channel.shutdown();
-
-        Auth.BaseAccount baseAccount = null;
-        try {
-            baseAccount = resp.getAccount().unpack(Auth.BaseAccount.class);
-        } catch (InvalidProtocolBufferException e) {
-            throw new IritaSDKException("account:\t" + address + "is not exist", e);
+        if (baseAccount.notFound()) {
+            throw new IritaSDKException("account:\t" + address + " is not exist");
         }
 
         Account account = new Account();

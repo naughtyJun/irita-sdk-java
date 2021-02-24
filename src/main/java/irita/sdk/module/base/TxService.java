@@ -27,7 +27,6 @@ public interface TxService {
      * @return
      * @throws IritaSDKException
      */
-/*    boolean verifyTx(TxOuterClass.Tx tx, String providerAddress, String pubKey) throws IritaSDKException, IOException;
+//    boolean verifyTx(TxOuterClass.Tx tx, String providerAddress, String pubKey) throws IritaSDKException, IOException;
 
-    void setOptions(IritaClientOption options);*/
 }

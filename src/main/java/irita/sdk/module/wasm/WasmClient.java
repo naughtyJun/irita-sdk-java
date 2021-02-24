@@ -1,37 +1,36 @@
 package irita.sdk.module.wasm;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.google.protobuf.ByteString;
 import cosmos.base.v1beta1.CoinOuterClass;
 import cosmos.tx.v1beta1.TxOuterClass;
-import cosmwasm.wasm.v1beta1.QueryGrpc;
-import cosmwasm.wasm.v1beta1.QueryOuterClass;
 import cosmwasm.wasm.v1beta1.Tx;
-import cosmwasm.wasm.v1beta1.Types;
-import io.grpc.ManagedChannel;
 import irita.sdk.client.Client;
 import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.TxStatus;
 import irita.sdk.constant.enums.EventEnum;
 import irita.sdk.exception.ContractException;
 import irita.sdk.exception.IritaSDKException;
+import irita.sdk.model.QueryContractInfoResp;
+import irita.sdk.model.QueryContractStateResp;
 import irita.sdk.module.base.*;
 import irita.sdk.util.HttpUtils;
 import irita.sdk.util.IOUtils;
+import org.bouncycastle.util.encoders.Hex;
 
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 public class WasmClient extends Client {
-    public WasmClient(String nodeUri, String lcd, String grpcAddr, String chainId, IritaClientOption option) {
+    public WasmClient(String nodeUri, String lcd, String chainId, IritaClientOption option) {
         this.nodeUri = nodeUri;
         this.lcd = lcd;
-        this.grpcAddr = grpcAddr;
         this.chainId = chainId;
         this.option = option;
     }
@@ -134,16 +133,15 @@ public class WasmClient extends Client {
     }
 
     // return the contract information
-    public ContractInfo queryContractInfo(String contractAddress) {
-        ManagedChannel channel = super.getGrpcClient();
-        QueryOuterClass.QueryContractInfoRequest req = QueryOuterClass.QueryContractInfoRequest
-                .newBuilder()
-                .setAddress(contractAddress)
-                .build();
+    public ContractInfo queryContractInfo(String contractAddress) throws ContractException {
+        String queryContractInfoUrl = lcd + "/wasm/v1beta1/contract/" + contractAddress;
+        String res = HttpUtils.get(queryContractInfoUrl);
+        QueryContractInfoResp contractInfoResp = JSONObject.parseObject(res, QueryContractInfoResp.class);
 
-        QueryOuterClass.QueryContractInfoResponse resp = QueryGrpc.newBlockingStub(channel).contractInfo(req);
-        channel.shutdown();
-        return Convert.toContractInfo(resp);
+        if (contractInfoResp.notFound()) {
+            throw new ContractException(contractInfoResp.getMessage());
+        }
+        return contractInfoResp.getContractInfo();
     }
 
     // execute contract's query method and return the result
@@ -152,36 +150,24 @@ public class WasmClient extends Client {
         String encodeParams = URLEncoder.encode(params);
 
         String url = String.format(baseUri, address, encodeParams);
-        try {
-            return HttpUtils.get(url);
-        } catch (ContractException e) {
-            e.printStackTrace();
-        }
-        // TODO
-        return "";
+        return HttpUtils.get(url);
     }
 
     // export all state data of the contract
     public Map<String, String> exportContractState(String address) {
-        ManagedChannel channel = super.getGrpcClient();
-        QueryOuterClass.QueryAllContractStateRequest req = QueryOuterClass.QueryAllContractStateRequest
-                .newBuilder()
-                .setAddress(address)
-                .build();
+        String exportContractStateUrl = lcd + "/wasm/v1beta1/contract/" + address + "/state";
+        String res = HttpUtils.get(exportContractStateUrl);
+        QueryContractStateResp contractStateResp = JSONObject.parseObject(res, QueryContractStateResp.class);
 
-        QueryOuterClass.QueryAllContractStateResponse resp = QueryGrpc.newBlockingStub(channel).allContractState(req);
-        channel.shutdown();
-
-        Map<String, String> map = new HashMap<>();
-        List<Types.Model> models = resp.getModelsList();
-        for (Types.Model model : models) {
-            byte[] bytes = model.getKey().toByteArray();
+        Map<String, String> map = new HashMap<>(contractStateResp.getModels().size());
+        for (QueryContractStateResp.Models model : contractStateResp.getModels()) {
+            byte[] bytes = Hex.decode(model.getKey());
             final int PREFIX = 2;
             byte[] dest = new byte[bytes.length - PREFIX];
             System.arraycopy(bytes, PREFIX, dest, 0, dest.length);
 
             String key = new String(dest);
-            String value = new String(model.getValue().toByteArray());
+            String value = new String(Base64.getDecoder().decode(model.getValue()));
             map.put(key, value);
         }
         return map;

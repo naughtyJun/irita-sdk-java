@@ -1,4 +1,4 @@
-package irita.sdk.module.model;
+package irita.sdk.model;
 
 import com.alibaba.fastjson.annotation.JSONField;
 

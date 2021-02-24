@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
 
 public class HttpUtils {
     // this get just for call lcd, if you want use a common get, you will need refactor
-    public static String get(String uri) throws ContractException {
+    public static String get(String uri) {
         HttpURLConnection connection;
         InputStream is;
         String result = null;

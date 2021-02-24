@@ -1,7 +1,6 @@
 package irita.sdk.module.community_gov;
 
 import com.alibaba.fastjson.JSON;
-import io.grpc.StatusRuntimeException;
 import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.ContractAddress;
 import irita.sdk.constant.ContractArg;
@@ -10,9 +9,9 @@ import irita.sdk.constant.enums.DocType;
 import irita.sdk.constant.enums.Role;
 import irita.sdk.exception.ContractException;
 import irita.sdk.exception.IritaSDKException;
+import irita.sdk.model.GetHashResp;
 import irita.sdk.module.base.BaseTx;
 import irita.sdk.module.base.ResultTx;
-import irita.sdk.module.model.GetHashResp;
 import irita.sdk.module.wasm.ContractABI;
 import irita.sdk.module.wasm.WasmClient;
 import org.apache.commons.lang3.StringUtils;

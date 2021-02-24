@@ -2,11 +2,14 @@ package irita.sdk;
 
 import irita.sdk.client.IritaClient;
 import irita.sdk.client.IritaClientOption;
+import irita.sdk.exception.ContractException;
 import irita.sdk.module.base.BaseTx;
-import irita.sdk.module.base.ResultTx;
 import irita.sdk.module.keys.Key;
 import irita.sdk.module.keys.KeyManager;
-import irita.sdk.module.wasm.*;
+import irita.sdk.module.wasm.ContractInfo;
+import irita.sdk.module.wasm.InstantiateRequest;
+import irita.sdk.module.wasm.StoreRequest;
+import irita.sdk.module.wasm.WasmClient;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -28,9 +31,9 @@ public class WasmTest {
         IritaClientOption option = IritaClientOption.getDefaultOption(km);
 
         String nodeUri = "http://localhost:26657";
-        String grpcAddr = "http://localhost:9090";
+        String lcd = "http://localhost:1317";
         String chainId = "irita";
-        IritaClient client = new IritaClient(nodeUri,"", grpcAddr, chainId, option);
+        IritaClient client = new IritaClient(nodeUri, lcd, chainId, option);
         wasmClient = client.getWasmClient();
 
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
@@ -72,7 +75,12 @@ public class WasmTest {
         System.out.println(contractAddress);
 
         // test queryContractInfo
-        ContractInfo contractInfo = wasmClient.queryContractInfo(contractAddress);
+        ContractInfo contractInfo = null;
+        try {
+            contractInfo = wasmClient.queryContractInfo(contractAddress);
+        } catch (ContractException e) {
+            e.printStackTrace();
+        }
         assertNotNull(contractInfo);
         System.out.println(contractInfo);
     }

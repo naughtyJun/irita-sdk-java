@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class IOUtilTest {
     @Test
     public void readAll() {
-        byte[] bytes = IOUtils.readAll("src/main/resources/test.wasm");
+        byte[] bytes = IOUtils.readAll("src/test/resources/test.wasm");
         assertNotNull(bytes);
         assertEquals(146310, bytes.length);
     }

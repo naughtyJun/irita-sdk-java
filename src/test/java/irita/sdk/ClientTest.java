@@ -28,12 +28,13 @@ public class ClientTest {
         String nodeUri = "http://localhost:26657";
         String lcd = "http://localhost:1317";
         String chainId = "irita";
-        client = new IritaClient(nodeUri,lcd, chainId, option);
+        client = new IritaClient(nodeUri, lcd, chainId, option);
 
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
     }
 
     @Test
+    @Disabled
     public void newClient() {
         BaseClient baseClient = client.getBaseClient();
         String addr = "iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3";

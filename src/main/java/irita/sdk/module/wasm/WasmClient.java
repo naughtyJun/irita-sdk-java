@@ -113,7 +113,7 @@ public class WasmClient extends Client {
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
 
-        String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
+        String res = HttpUtils.post(getTxUri(), new WrappedRequest<>(tx));
         return checkResTxAndConvert(res);
     }
 

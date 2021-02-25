@@ -5,6 +5,7 @@ import irita.opb.OpbOption;
 import irita.sdk.client.IritaClient;
 import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.ContractAddress;
+import irita.sdk.constant.enums.DocType;
 import irita.sdk.constant.enums.Role;
 import irita.sdk.exception.ContractException;
 import irita.sdk.module.bank.BankClient;
@@ -28,11 +29,13 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Disabled
 public class OpbTest {
     private IritaClient client;
     private BankClient bankClient;
     private WasmClient wasmClient;
     private CommunityGovClient comGovClient;
+    private BaseTx baseTx;
 
     @BeforeEach
     public void init() {
@@ -51,6 +54,7 @@ public class OpbTest {
         bankClient = client.getBankClient();
         wasmClient = client.getWasmClient();
         comGovClient = client.getCommunityGovClient();
+        baseTx = comGovClient.getComGovBaseTx();
     }
 
     @Test
@@ -98,7 +102,7 @@ public class OpbTest {
         final String department = "测试部门";
 
         try {
-            comGovClient.addDepartment(department, publicKey);
+            comGovClient.addDepartment(department, publicKey, baseTx);
         } catch (ContractException e) {
             // you can use log to record
             e.printStackTrace();
@@ -118,7 +122,7 @@ public class OpbTest {
         String newAddr = "iaa1wfs050mv8taydn4cttsrhr5dq3tpdaemcm5sk2";
 
         try {
-            comGovClient.addMember(newAddr, Role.HASH_ADMIN);
+            comGovClient.addMember(newAddr, Role.HASH_ADMIN, baseTx);
         } catch (ContractException | IOException e) {
             e.printStackTrace();
         }
@@ -132,5 +136,55 @@ public class OpbTest {
     public void exportContractState() {
         Map<String, String> map = wasmClient.exportContractState(ContractAddress.DEFAULT);
         System.out.println(map);
+    }
+
+    @Test
+    public void addHash() {
+        // new client, he role of cur_address must hash_admin
+        String mnemonic = "apart various produce pond bachelor size pumpkin gate pretty awake silver worth dust pledge pioneer patrol current fall escape lunar zero afraid this fish";
+        Key km = new KeyManager(mnemonic);
+
+        IritaClientOption.Fee fee = new IritaClientOption.Fee("130", "irita");
+        fee.toMin();
+        IritaClientOption option = new IritaClientOption(10, fee, 1073741824, "", 1.0, km);
+
+        OpbOption opbOption = new OpbOption("https://opbningxia.bsngate.com:18602", "7b3c53beda5c48c6b07d98804e156389", null);
+        String chainId = "wenchangchain";
+
+        IritaClient newClient = new IritaClient(chainId, opbOption, option);
+        CommunityGovClient newCommunityGovClient = newClient.getCommunityGovClient();
+
+        // exec add_hash
+        DocType docType = DocType.FOREST_SEED_PRODUCTION_OPERATION_LICENSE;
+        String docId = "1";
+        String strHash = "123";
+        String fileHash = "789";
+
+        try {
+            ResultTx resultTx = newCommunityGovClient.addHash(docType, docId, strHash, fileHash, baseTx);
+            System.out.println(resultTx.getResult().getHash());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // verify from db
+        Map<String, String> map = wasmClient.exportContractState(ContractAddress.DEFAULT);
+        System.out.println(map);
+        assertNotNull(map.get(docType.getCode() + "/" + docId));
+        assertNotNull(map.get(strHash));
+        assertNotNull(map.get(fileHash));
+    }
+
+    @Test
+    public void getHash() {
+        String strHash = "123";
+        String fileHash = "789";
+        boolean isExisted = false;
+
+        isExisted = comGovClient.getHash(strHash);
+        assertTrue(isExisted);
+
+        isExisted = comGovClient.getHash(fileHash);
+        assertTrue(isExisted);
     }
 }

@@ -4,7 +4,6 @@ import cosmos.bank.v1beta1.Tx;
 import cosmos.base.v1beta1.CoinOuterClass;
 import cosmos.tx.v1beta1.TxOuterClass;
 import irita.sdk.client.Client;
-import irita.sdk.exception.IritaSDKException;
 import irita.sdk.module.base.WrappedRequest;
 import irita.sdk.util.HttpUtils;
 

@@ -169,7 +169,7 @@ public class IritaSdkConfig {
     }
 
     public int getGas() {
-        return gas == 0 ? gas : 10000000;
+        return gas != 0 ? gas : 10000000;
     }
 }
 ```

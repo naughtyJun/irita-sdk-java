@@ -57,9 +57,14 @@ String keystore="-----BEGIN TENDERMINT PRIVATE KEY-----\n"+
 ### 2 export
 
 ```java
-        Key km=new KeyManager(privKey);
-        String keystore=km.export("123456");
-        System.out.println(keystore);
+public interface Key {
+    /**
+     * export as keystore
+     *
+     * @param password password of keystore. The password is very important for recovery, so never forget it
+     */
+    String export(String password) throws IOException;
+}
 ```
 
 ### 3 getPrivKey or getAddr

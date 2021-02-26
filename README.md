@@ -2,6 +2,81 @@
 
 irita-sdk-java
 
+## Key Manger
+
+### 1 recover
+
+#### 1.1 recover from mnemonic
+
+```java
+        String mnemonic="xxx";
+        Key km=new KeyManager(mnemonic);
+```
+
+#### 1.2 recover from privKey
+
+```java
+        String privKeyHex="3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec";
+        BigInteger privKey=new BigInteger(privKeyHex,16);
+        Key km=new KeyManager(privKey);
+```
+
+#### 1.3 recover from keystore
+
+**read from str**
+
+```java
+String keystore="-----BEGIN TENDERMINT PRIVATE KEY-----\n"+
+        "salt: 183EF9B57DEF8EF8C3AD9D21DE672E1B\n"+
+        "type: sm2\n"+
+        "kdf: bcrypt\n"+
+        "\n"+
+        "cpreEPwi0X3yIdsAIf94fR6s8L1TnDAQd/r4ifID6GmQX5a+4ehMmnTp2JjDpUe5\n"+
+        "kpgRI7CzF0DjKpPLvY9V9ZSXJFN42LHWscxqQ1E=\n"+
+        "=nJvd\n"+
+        "-----END TENDERMINT PRIVATE KEY-----";
+
+        InputStream input=new ByteArrayInputStream(keystore.getBytes(StandardCharsets.UTF_8));
+        Key km=new KeyManager(input,"123456");
+```
+
+**read from file**
+
+```java
+        FileInputStream input=new FileInputStream("src/test/resources/priv.key");
+        Key km=new KeyManager(input,"123456");
+```
+
+#### 1.4 recoverFromCAKeystore
+
+```java
+        FileInputStream input=new FileInputStream("src/test/resources/ca.JKS");
+        Key km=KeyManager.recoverFromCAKeystore(input,"123456");
+```
+
+### 2 export
+
+```java
+public interface Key {
+    /**
+     * export as keystore
+     *
+     * @param password password of keystore. The password is very important for recovery, so never forget it
+     */
+    String export(String password) throws IOException;
+}
+```
+
+### 3 getPrivKey or getAddr
+
+```java
+public interface Key {
+    BigInteger getPrivKey();
+
+    String getAddr();
+}
+```
+
 ## How to use irita-sdk-java
 
 ### 1 use in normal java project

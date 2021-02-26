@@ -112,21 +112,6 @@ public abstract class Client implements TxService {
         return account;
     }
 
-    private String getQueryAccountUrl(String address) {
-        String urlPrefix = null;
-
-        switch (opbOption.getOpbEnum()) {
-            case ENABLE:
-                urlPrefix = opbOption.getOpbRestUri();
-                break;
-            case DISABLE:
-                urlPrefix = lcd;
-                break;
-        }
-
-        return urlPrefix + "/auth/accounts/" + address;
-    }
-
     // different between when enable ProjectKey
     protected BlockChainHttp httpUtils() {
         switch (opbOption.getOpbEnum()) {
@@ -139,6 +124,10 @@ public abstract class Client implements TxService {
             default:
                 throw new IritaSDKException("opbOption incorrect");
         }
+    }
+
+    private String getQueryAccountUrl(String address) {
+        return getQueryUri() + "/auth/accounts/" + address;
     }
 
     protected String getQueryUri() {

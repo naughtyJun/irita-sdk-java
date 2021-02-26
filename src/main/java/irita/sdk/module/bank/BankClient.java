@@ -5,7 +5,6 @@ import cosmos.base.v1beta1.CoinOuterClass;
 import cosmos.tx.v1beta1.TxOuterClass;
 import irita.sdk.client.Client;
 import irita.sdk.module.base.WrappedRequest;
-import irita.sdk.util.HttpUtils;
 
 import java.io.IOException;
 
@@ -30,6 +29,6 @@ public class BankClient extends Client {
 
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(null, body, false);
-        return HttpUtils.post(getTxUri(), new WrappedRequest<>(tx));
+        return httpUtils().post(getTxUri(), new WrappedRequest<>(tx));
     }
 }

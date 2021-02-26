@@ -15,8 +15,11 @@ import irita.sdk.module.base.BaseTx;
 import irita.sdk.module.base.TxService;
 import irita.sdk.module.keys.Key;
 import irita.sdk.util.ByteUtils;
-import irita.sdk.util.HttpUtils;
 import irita.sdk.util.SM2Utils;
+import irita.sdk.util.http.BlockChainHttp;
+import irita.sdk.util.http.CommonHttpUtils;
+import irita.sdk.util.http.OpbProjectKeyHttpUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bouncycastle.crypto.CryptoException;
 import org.bouncycastle.math.ec.ECPoint;
 
@@ -95,7 +98,7 @@ public abstract class Client implements TxService {
 
     public Account queryAccount(String address) {
         String queryAccountUrl = getQueryAccountUrl(address);
-        String res = HttpUtils.get(queryAccountUrl);
+        String res = httpUtils().get(queryAccountUrl);
         QueryAccountResp baseAccount = JSONObject.parseObject(res, QueryAccountResp.class);
 
         if (baseAccount.notFound()) {
@@ -122,6 +125,20 @@ public abstract class Client implements TxService {
         }
 
         return urlPrefix + "/auth/accounts/" + address;
+    }
+
+    // different between when enable ProjectKey
+    protected BlockChainHttp httpUtils() {
+        switch (opbOption.getOpbEnum()) {
+            case ENABLE:
+                if (StringUtils.isNotEmpty(opbOption.getProjectKey())) {
+                    return new OpbProjectKeyHttpUtils(opbOption.getProjectKey());
+                }
+            case DISABLE:
+                return new CommonHttpUtils();
+            default:
+                throw new IritaSDKException("opbOption incorrect");
+        }
     }
 
     protected String getQueryUri() {

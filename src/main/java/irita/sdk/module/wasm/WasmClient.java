@@ -14,7 +14,6 @@ import irita.sdk.exception.IritaSDKException;
 import irita.sdk.model.QueryContractInfoResp;
 import irita.sdk.model.QueryContractStateResp;
 import irita.sdk.module.base.*;
-import irita.sdk.util.HttpUtils;
 import irita.sdk.util.IOUtils;
 import org.bouncycastle.util.encoders.Hex;
 
@@ -59,7 +58,7 @@ public class WasmClient extends Client {
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
 
-        String res = HttpUtils.post(getTxUri(), new WrappedRequest<>(tx));
+        String res = httpUtils().post(getTxUri(), new WrappedRequest<>(tx));
         ResultTx resultTx = checkResTxAndConvert(res);
 
         return resultTx.getEventValue(EventEnum.MESSAGE_CODE_ID);
@@ -86,7 +85,7 @@ public class WasmClient extends Client {
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
 
-        String res = HttpUtils.post(getTxUri(), new WrappedRequest<>(tx));
+        String res = httpUtils().post(getTxUri(), new WrappedRequest<>(tx));
         ResultTx resultTx = checkResTxAndConvert(res);
 
         return resultTx.getEventValue(EventEnum.MESSAGE_CONTRACT_ADDRESS);
@@ -113,7 +112,7 @@ public class WasmClient extends Client {
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
 
-        String res = HttpUtils.post(getTxUri(), new WrappedRequest<>(tx));
+        String res = httpUtils().post(getTxUri(), new WrappedRequest<>(tx));
         return checkResTxAndConvert(res);
     }
 
@@ -128,14 +127,14 @@ public class WasmClient extends Client {
 
         TxOuterClass.TxBody body = super.buildTxBody(msg);
         TxOuterClass.Tx tx = super.signTx(null, body, false);
-        String res = HttpUtils.post(getTxUri(), new WrappedRequest<>(tx));
+        String res = httpUtils().post(getTxUri(), new WrappedRequest<>(tx));
         return checkResTxAndConvert(res);
     }
 
     // return the contract information
     public ContractInfo queryContractInfo(String contractAddress) throws ContractException {
         String queryContractInfoUri = getQueryUri() + "/wasm/v1beta1/contract/" + contractAddress;
-        String res = HttpUtils.get(queryContractInfoUri);
+        String res = httpUtils().get(queryContractInfoUri);
         QueryContractInfoResp contractInfoResp = JSONObject.parseObject(res, QueryContractInfoResp.class);
 
         if (contractInfoResp.notFound()) {
@@ -151,13 +150,13 @@ public class WasmClient extends Client {
 
         String baseUri = "/wasm/v1beta1/contract/%s/smart/%s";
         String queryContractUri = String.format(getQueryUri() + baseUri, address, encodeParams);
-        return HttpUtils.get(queryContractUri);
+        return httpUtils().get(queryContractUri);
     }
 
     // export all state data of the contract
     public Map<String, String> exportContractState(String address) {
         String exportContractStateUri = getQueryUri() + "/wasm/v1beta1/contract/" + address + "/state";
-        String res = HttpUtils.get(exportContractStateUri);
+        String res = httpUtils().get(exportContractStateUri);
         QueryContractStateResp contractStateResp = JSONObject.parseObject(res, QueryContractStateResp.class);
 
         Map<String, String> map = new HashMap<>(contractStateResp.getModels().size());

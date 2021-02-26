@@ -16,7 +16,7 @@ irita-sdk-java for opb
 #### 1.2 recover from privKey
 
 ```java
-        String privKeyHex=""3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec"";
+        String privKeyHex="3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec";
         BigInteger privKey=new BigInteger(privKeyHex,16);
         Key km=new KeyManager(privKey);
 ```

@@ -3,6 +3,7 @@ package irita.sdk.util.http;
 import com.alibaba.fastjson.JSON;
 import com.google.protobuf.GeneratedMessageV3;
 import irita.sdk.module.base.WrappedRequest;
+import irita.sdk.util.HttpUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +22,35 @@ public class OpbProjectKeyHttpUtils implements BlockChainHttp {
 
     @Override
     public String get(String uri) {
-        return new CommonHttpUtils().get(uri);
+        HttpURLConnection connection;
+        InputStream is;
+        String result = null;
+        URL url;
+
+        try {
+            url = new URL(uri);
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setConnectTimeout(15000);
+            connection.setReadTimeout(60000);
+            connection.setRequestProperty(OPB_PROJECT_KEY_HEADER, projectKey); // different between commonHttpUtils
+
+            // send req to server
+            connection.connect();
+            if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                is = connection.getInputStream();
+                result = HttpUtils.getResponse(is);
+            } else if (HttpUtils.http400or500(connection)) {
+                is = connection.getErrorStream();
+                result = HttpUtils.getResponse(is);
+            } else {
+                throw new RuntimeException("connect error:" + connection.getResponseMessage());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 
     @Override
@@ -50,7 +79,7 @@ public class OpbProjectKeyHttpUtils implements BlockChainHttp {
         osw.flush();
         if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
             is = connection.getInputStream();
-            result = getResponse(is);
+            result = HttpUtils.getResponse(is);
         } else {
             throw new IOException("connect error, httpCode:" + connection.getResponseCode());
         }

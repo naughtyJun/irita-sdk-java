@@ -42,7 +42,7 @@ public class HttpUtils {
         return result;
     }
 
-    private static String getResponse(InputStream input) throws IOException {
+    public static String getResponse(InputStream input) throws IOException {
         // return charset and save data
         BufferedReader br = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));
         StringBuilder builder = new StringBuilder();
@@ -55,7 +55,7 @@ public class HttpUtils {
         return builder.toString();
     }
 
-    private static boolean http400or500(HttpURLConnection connection) throws IOException {
+    public static boolean http400or500(HttpURLConnection connection) throws IOException {
         return connection.getResponseCode() == HttpURLConnection.HTTP_BAD_REQUEST || connection.getResponseCode() == HttpURLConnection.HTTP_INTERNAL_ERROR;
     }
 

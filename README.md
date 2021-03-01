@@ -137,3 +137,35 @@ public class IritaSdkConfig {
     }
 }
 ```
+## Use CommunityGovClient
+
+### 1. add department(添加部门管理员)
+
+```java
+        final String publicKey = "iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3";
+        final String department = "测试部门";
+
+        try {
+            comGovClient.addDepartment(department, publicKey, baseTx);
+        } catch (ContractException e) {
+            // you can use log to record
+            e.printStackTrace();
+        }
+```
+
+### 2. add a member(添加一个成员)
+
+```java
+        String newAddr = "iaa1wfs050mv8taydn4cttsrhr5dq3tpdaemcm5sk2";
+
+        try {
+            comGovClient.addMember(newAddr, Role.HASH_ADMIN, baseTx);
+        } catch (ContractException | IOException e) {
+            e.printStackTrace();
+        }
+        // 关于角色见 Role.java
+```
+
+### 3. other operation(其他方法)
+
+详见KeyMangerTest.java, WasmTest.java, ComGovContractTest.java

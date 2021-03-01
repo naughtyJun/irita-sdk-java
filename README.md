@@ -47,7 +47,7 @@ String keystore="-----BEGIN TENDERMINT PRIVATE KEY-----\n"+
         Key km=new KeyManager(input,"123456");
 ```
 
-#### 1.4 recoverFromCAKeystore
+#### 1.4 recover from CaKeystore
 
 ```java
         FileInputStream input=new FileInputStream("src/test/resources/ca.JKS");

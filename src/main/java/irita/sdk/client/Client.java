@@ -49,7 +49,7 @@ public abstract class Client implements TxService {
                                 .setPublicKey(Any.pack(Keys.PubKey.newBuilder().setKey(ByteString.copyFrom(publicKeyEncoded)).build(), "/"))
                                 .setModeInfo(TxOuterClass.ModeInfo.newBuilder().setSingle(TxOuterClass.ModeInfo.Single.newBuilder().setMode(Signing.SignMode.SIGN_MODE_DIRECT)))
                                 .setSequence(account.getSequence()))
-                .setFee(TxOuterClass.Fee.newBuilder().setGasLimit(option.getGasLimit()).addAmount(CoinOuterClass.Coin.newBuilder().setAmount(baseTx.getFee().amount).setDenom(baseTx.getFee().denom))).build();
+                .setFee(TxOuterClass.Fee.newBuilder().setGasLimit(baseTx.getGas()).addAmount(CoinOuterClass.Coin.newBuilder().setAmount(baseTx.getFee().amount).setDenom(baseTx.getFee().denom))).build();
 
 
         TxOuterClass.SignDoc signDoc = TxOuterClass.SignDoc.newBuilder()
@@ -81,9 +81,7 @@ public abstract class Client implements TxService {
             return baseTx;
         }
 
-        baseTx = new BaseTx();
-        baseTx.setGas(option.getGas());
-        baseTx.setFee(option.getFee());
+        baseTx = new BaseTx(option.getGas(), option.getFee());
         return baseTx;
     }
 

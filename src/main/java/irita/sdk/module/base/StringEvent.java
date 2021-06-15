@@ -1,7 +1,5 @@
 package irita.sdk.module.base;
 
-import irita.sdk.constant.enums.EventEnum;
-
 // StringEvent defines en Event object wrapper where all the attributes
 // contain key/value pairs that are strings instead of raw bytes.
 public class StringEvent {

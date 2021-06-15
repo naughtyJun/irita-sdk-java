@@ -15,6 +15,7 @@ import java.net.URL;
 public class OpbProjectKeyHttpUtils implements BlockChainHttp {
     private final String projectKey;
     private static final String OPB_PROJECT_KEY_HEADER = "x-api-key";
+    private static final int DEFAULT_TIME_OUT = 15000;
 
     public OpbProjectKeyHttpUtils(String projectKey) {
         this.projectKey = projectKey;
@@ -31,8 +32,8 @@ public class OpbProjectKeyHttpUtils implements BlockChainHttp {
             url = new URL(uri);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
-            connection.setConnectTimeout(15000);
-            connection.setReadTimeout(60000);
+            connection.setConnectTimeout(DEFAULT_TIME_OUT);
+            connection.setReadTimeout(DEFAULT_TIME_OUT);
             connection.setRequestProperty(OPB_PROJECT_KEY_HEADER, projectKey); // different between commonHttpUtils
 
             // send req to server
@@ -66,8 +67,8 @@ public class OpbProjectKeyHttpUtils implements BlockChainHttp {
         connection.setRequestMethod("POST");
         connection.setDoInput(true);
         connection.setDoOutput(true);
-        connection.setConnectTimeout(15000);
-        connection.setReadTimeout(60000);
+        connection.setConnectTimeout(DEFAULT_TIME_OUT);
+        connection.setReadTimeout(DEFAULT_TIME_OUT);
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Accept", "application/json");
         connection.setRequestProperty(OPB_PROJECT_KEY_HEADER, projectKey); // different between commonHttpUtils

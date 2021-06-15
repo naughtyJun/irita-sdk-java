@@ -47,7 +47,7 @@ public class OpbTest {
 
         IritaClientOption option = new IritaClientOption(10, fee, 1073741824, "", 1.0, km);
 
-        OpbOption opbOption = new OpbOption("https://opbningxia.bsngate.com:18602", "7b3c53beda5c48c6b07d98804e156389", null);
+        OpbOption opbOption = new OpbOption("https://opbningxia.bsngate.com:18602", "7b3c53beda5c48c6b07d98804e156389", "7a3b5660c0ae47e2be4f309050c1d304");
         String chainId = "wenchangchain";
 
         client = new IritaClient(chainId, opbOption, option);
@@ -148,7 +148,7 @@ public class OpbTest {
         fee.toMin();
         IritaClientOption option = new IritaClientOption(10, fee, 1073741824, "", 1.0, km);
 
-        OpbOption opbOption = new OpbOption("https://opbningxia.bsngate.com:18602", "7b3c53beda5c48c6b07d98804e156389", null);
+        OpbOption opbOption = new OpbOption("https://opbningxia.bsngate.com:18602", "7b3c53beda5c48c6b07d98804e156389", "7a3b5660c0ae47e2be4f309050c1d304");
         String chainId = "wenchangchain";
 
         IritaClient newClient = new IritaClient(chainId, opbOption, option);

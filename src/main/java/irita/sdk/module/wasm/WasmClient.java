@@ -51,8 +51,8 @@ public class WasmClient extends Client {
         Tx.MsgStoreCode msg = Tx.MsgStoreCode.newBuilder()
                 .setSender(account.getAddress())
                 .setWasmByteCode(ByteString.copyFrom(req.getWasmByteCode()))
-                .setSource("")
-                .setBuilder("")
+                .setSource(Optional.ofNullable(req.getSource()).orElse(""))
+                .setBuilder(Optional.ofNullable(req.getBuilder()).orElse(""))
                 .build();
 
         TxOuterClass.TxBody body = super.buildTxBody(msg);

@@ -6,9 +6,6 @@ public class BaseTx {
     private int gas;
     private IritaClientOption.Fee fee;
 
-    public BaseTx() {
-    }
-
     public BaseTx(int gas, IritaClientOption.Fee fee) {
         this.gas = gas;
         this.fee = fee;

@@ -177,6 +177,6 @@ public class CommunityGovClient {
 
     public BaseTx getComGovBaseTx() {
         String denom = wasmClient.getOption().getFee().denom;
-        return new BaseTx(30000000, new IritaClientOption.Fee("20000000", denom));
+        return new BaseTx(180000, new IritaClientOption.Fee("180000", denom));
     }
 }

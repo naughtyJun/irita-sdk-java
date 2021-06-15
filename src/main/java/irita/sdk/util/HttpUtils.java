@@ -11,6 +11,8 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class HttpUtils {
+    private static final int DEFAULT_TIME_OUT = 15000;
+
     // this get just for call lcd, if you want use a common get, you will need refactor
     public static String get(String uri) {
         HttpURLConnection connection;
@@ -22,8 +24,8 @@ public class HttpUtils {
             url = new URL(uri);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
-            connection.setConnectTimeout(15000);
-            connection.setReadTimeout(60000);
+            connection.setConnectTimeout(DEFAULT_TIME_OUT);
+            connection.setReadTimeout(DEFAULT_TIME_OUT);
             // send req to server
             connection.connect();
             if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -78,8 +80,8 @@ public class HttpUtils {
         connection.setRequestMethod("POST");
         connection.setDoInput(true);
         connection.setDoOutput(true);
-        connection.setConnectTimeout(15000);
-        connection.setReadTimeout(60000);
+        connection.setConnectTimeout(DEFAULT_TIME_OUT);
+        connection.setReadTimeout(DEFAULT_TIME_OUT);
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Accept", "application/json");
         connection.connect(); // require a connect

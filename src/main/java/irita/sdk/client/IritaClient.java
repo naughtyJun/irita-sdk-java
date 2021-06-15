@@ -4,12 +4,14 @@ import irita.opb.OpbOption;
 import irita.sdk.module.bank.BankClient;
 import irita.sdk.module.base.BaseClient;
 import irita.sdk.module.community_gov.CommunityGovClient;
+import irita.sdk.module.service.ServiceClient;
 import irita.sdk.module.wasm.WasmClient;
 
 public class IritaClient extends Client {
     private BaseClient baseClient;
     private BankClient bankClient;
     private WasmClient wasmClient;
+    private ServiceClient serviceClient;
     private CommunityGovClient communityGovClient;
 
     public IritaClient(String nodeUri, String lcd, String chainId, IritaClientOption option) {
@@ -20,9 +22,9 @@ public class IritaClient extends Client {
         this.option = option;
     }
 
-    public IritaClient(String chainId, OpbOption useOpb, IritaClientOption option) {
+    public IritaClient(String chainId, OpbOption opbOption, IritaClientOption option) {
         this.chainId = chainId;
-        this.opbOption = useOpb;
+        this.opbOption = opbOption;
         this.option = option;
     }
 
@@ -73,6 +75,15 @@ public class IritaClient extends Client {
 
         return this.wasmClient;
     }
+
+    public ServiceClient getServiceClient() {
+        if (this.serviceClient == null) {
+            this.serviceClient = new ServiceClient(this);
+        }
+
+        return this.serviceClient;
+    }
+
 
     public CommunityGovClient getCommunityGovClient() {
         if (this.communityGovClient == null) {

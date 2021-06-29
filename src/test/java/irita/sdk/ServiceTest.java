@@ -159,7 +159,7 @@ public class ServiceTest {
     }
 
     @Test
-    public void subscribeRequest() {
+    public void subscribeRequest() throws QueryException {
         List<Msg> msgs = serviceClient.subscribeRequest("test", "iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3");
         for (Msg msg : msgs) {
             System.out.println(msg.getValue().getInput());

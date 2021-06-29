@@ -4,9 +4,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ai.bianjie</groupId>
-    <artifactId>irita-sdk-java</artifactId>
-    <version>0.1</version>
+    <groupId>com.github.junjie-bianjie</groupId>
+    <artifactId>irita-sdk</artifactId>
+    <version>0.4</version>
+    <url>https://github.com/junjie-bianjie/irita-sdk-java</url>
+    <name>irita-sdk</name>
+    <licenses>
+        <license>
+            <name>Server Side Public License</name>
+            <url>https://www.mongodb.com/licensing/server-side-public-license</url>
+            <distribution>repo</distribution>
+            <comments>A not business-friendly OSS license</comments>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/junjie-bianjie/irita-sdk-java</url>
+        <connection>https://github.com/junjie-bianjie/irita-sdk-java.git</connection>
+    </scm>
+    <developers>
+        <developer>
+            <name>junjie.chen</name>
+            <email>xiyueedu@gmail.com</email>
+            <organization>bianjie.ai</organization>
+        </developer>
+    </developers>
+    <description>connect block chain irita</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -114,6 +136,66 @@
                 <!--                    </execution>-->
                 <!--                </executions>-->
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+<!--                <version>2.9.1</version>-->
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <show>package</show>
+                    <!-- 禁用java 8 的DocLint新特性，以确保当javadoc有编译错误时，也能正常生成javadoc jar包-->
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 </project>

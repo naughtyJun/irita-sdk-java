@@ -1,8 +1,8 @@
 package irita.sdk.module.base;
 
-import cosmos.tx.v1beta1.TxOuterClass;
 import irita.sdk.exception.IritaSDKException;
 import org.bouncycastle.crypto.CryptoException;
+import proto.cosmos.tx.v1beta1.TxOuterClass;
 
 import java.io.IOException;
 

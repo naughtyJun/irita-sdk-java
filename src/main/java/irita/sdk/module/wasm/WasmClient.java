@@ -2,12 +2,6 @@ package irita.sdk.module.wasm;
 
 import com.alibaba.fastjson.JSON;
 import com.google.protobuf.ByteString;
-import cosmos.base.v1beta1.CoinOuterClass;
-import cosmos.tx.v1beta1.TxOuterClass;
-import cosmwasm.wasm.v1beta1.QueryGrpc;
-import cosmwasm.wasm.v1beta1.QueryOuterClass;
-import cosmwasm.wasm.v1beta1.Tx;
-import cosmwasm.wasm.v1beta1.Types;
 import io.grpc.ManagedChannel;
 import irita.sdk.client.Client;
 import irita.sdk.client.IritaClientOption;
@@ -17,6 +11,12 @@ import irita.sdk.exception.IritaSDKException;
 import irita.sdk.module.base.*;
 import irita.sdk.util.HttpUtils;
 import irita.sdk.util.IOUtils;
+import proto.cosmos.base.v1beta1.CoinOuterClass;
+import proto.cosmos.tx.v1beta1.TxOuterClass;
+import proto.x.wasm.internal.types.QueryGrpc;
+import proto.x.wasm.internal.types.QueryOuterClass;
+import proto.x.wasm.internal.types.Tx;
+import proto.x.wasm.internal.types.Types;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

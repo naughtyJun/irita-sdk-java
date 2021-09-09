@@ -1,12 +1,12 @@
 package irita.sdk.module.bank;
 
-import cosmos.bank.v1beta1.Tx;
-import cosmos.base.v1beta1.CoinOuterClass;
-import cosmos.tx.v1beta1.TxOuterClass;
 import irita.sdk.client.Client;
 import irita.sdk.client.IritaClientOption;
 import irita.sdk.module.base.WrappedRequest;
 import irita.sdk.util.HttpUtils;
+import proto.cosmos.bank.v1beta1.Tx;
+import proto.cosmos.base.v1beta1.CoinOuterClass;
+import proto.cosmos.tx.v1beta1.TxOuterClass;
 
 import java.io.IOException;
 

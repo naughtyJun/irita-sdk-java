@@ -34,6 +34,7 @@ public class ClientTest {
     }
 
     @Test
+    @Disabled
     public void newClient() {
         BaseClient baseClient = client.getBaseClient();
         String addr = "iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3";

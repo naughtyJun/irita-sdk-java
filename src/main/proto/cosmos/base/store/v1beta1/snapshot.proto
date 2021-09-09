@@ -3,7 +3,7 @@ package cosmos.base.store.v1beta1;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/cosmos/cosmos-sdk/store/types";
+option java_package = "proto.cosmos.base.store.v1beta1";
 
 // SnapshotItem is an item contained in a rootmulti.Store snapshot.
 message SnapshotItem {

@@ -1,5 +1,7 @@
 package irita.sdk.new_client;
 
+import irita.sdk.module.nft.NftClient;
+
 public class IritaClient {
     private NftClient nftClient;
     private BankClient bankClient;

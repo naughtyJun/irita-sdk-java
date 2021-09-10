@@ -1,5 +1,7 @@
 package irita.sdk.key;
 
+import irita.sdk.util.Bip44Utils;
+
 import java.io.InputStream;
 import java.math.BigInteger;
 
@@ -8,8 +10,9 @@ import java.math.BigInteger;
  */
 public class Secp256k1KeyManger extends KeyManager {
     @Override
-    public void add() {
-        throw new RuntimeException("TODO");
+    public void add() throws Exception {
+        String mnemonic = Bip44Utils.generateMnemonic();
+        recover(mnemonic);
     }
 
     @Override

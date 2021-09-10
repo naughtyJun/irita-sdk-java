@@ -1,16 +1,26 @@
 package irita.sdk.util;
 
+import irita.sdk.exception.IritaSDKException;
 import org.bitcoinj.core.AddressFormatException;
 
 import java.io.ByteArrayOutputStream;
 
 public class AddressUtils {
 
+    public static void validAddress(String address) throws IritaSDKException {
+        try {
+
+            Bech32Utils.fromBech32(address);
+        } catch (Exception e) {
+            throw new IritaSDKException("address is illegal, reason:" + e.getMessage());
+        }
+    }
+
     /**
      * Helper for re-arranging bits into groups.
      */
     public static byte[] convertBits(final byte[] in, final int inStart, final int inLen, final int fromBits,
-                                      final int toBits, final boolean pad) throws AddressFormatException {
+                                     final int toBits, final boolean pad) throws AddressFormatException {
         int acc = 0;
         int bits = 0;
         ByteArrayOutputStream out = new ByteArrayOutputStream(64);

@@ -5,48 +5,71 @@ import io.grpc.ManagedChannel;
 import irita.sdk.config.ClientConfig;
 import irita.sdk.config.OpbConfig;
 import irita.sdk.exception.IritaSDKException;
-import irita.sdk.module.base.Account;
+import irita.sdk.key.KeyManager;
+import irita.sdk.model.Account;
+import irita.sdk.model.BaseTx;
+import irita.sdk.model.ResultTx;
 import irita.sdk.tx.TxEngine;
+import irita.sdk.tx.TxEngineFactory;
 import proto.cosmos.auth.v1beta1.Auth;
 import proto.cosmos.auth.v1beta1.QueryGrpc;
 import proto.cosmos.auth.v1beta1.QueryOuterClass;
 
+import java.io.IOException;
+
 public class BaseClient {
     private ClientConfig clientConfig;
     private OpbConfig opbConfig;
+    private KeyManager km;
+
     private TxEngine txEngine;
-
     private ManagedChannel grpcClient;
-
+    private RpcClient rpcClient;
 
     public BaseClient() {
     }
 
-    public BaseClient(ClientConfig clientConfig, OpbConfig opbConfig, TxEngine txEngine) {
+    public BaseClient(ClientConfig clientConfig, OpbConfig opbConfig, KeyManager keyManager) {
         this.clientConfig = clientConfig;
         this.opbConfig = opbConfig;
-        this.txEngine = txEngine;
+        this.km = keyManager;
 
-        this.grpcClient = Conn.createGrpcClient(clientConfig, opbConfig);
+        this.txEngine = TxEngineFactory.createDefault(km);
+        this.grpcClient = GrpcFactory.createGrpcClient(clientConfig, opbConfig);
+        this.rpcClient = new RpcClient(clientConfig, opbConfig);
     }
 
-    // TODO next
-    public void getRpcClient() {
+    protected RpcClient getRpcClient() {
+        return rpcClient;
     }
 
     protected ManagedChannel getGrpcClient() {
         return grpcClient;
     }
 
+    protected ResultTx buildAndSend(com.google.protobuf.GeneratedMessageV3 msg, BaseTx baseTx) throws IOException {
+        return buildAndSend(msg, baseTx, null);
+    }
+
+    protected ResultTx buildAndSend(com.google.protobuf.GeneratedMessageV3 msg, BaseTx baseTx, Account account) throws IOException {
+        if (account == null) {
+            account = queryAccount();
+        }
+        TxEngine txEngine = getTxEngine();
+        byte[] txBytes = txEngine.buildAndSign(msg, baseTx, account);
+        return rpcClient.broadcastTx(txBytes, baseTx.getMode());
+    }
+
+    public Account queryAccount() {
+        return queryAccount(km.getAddr());
+    }
+
     public Account queryAccount(String address) {
-        ManagedChannel channel = getGrpcClient();
         QueryOuterClass.QueryAccountRequest req = QueryOuterClass.QueryAccountRequest
                 .newBuilder()
                 .setAddress(address)
                 .build();
-
-        QueryOuterClass.QueryAccountResponse resp = QueryGrpc.newBlockingStub(channel).account(req);
-        channel.shutdown();
+        QueryOuterClass.QueryAccountResponse resp = QueryGrpc.newBlockingStub(grpcClient).account(req);
 
         Auth.BaseAccount baseAccount = null;
         try {
@@ -60,9 +83,6 @@ public class BaseClient {
         account.setAccountNumber(baseAccount.getAccountNumber());
         account.setSequence(baseAccount.getSequence());
         return account;
-    }
-
-    public void brodcast() {
     }
 
     public void subscribe() {

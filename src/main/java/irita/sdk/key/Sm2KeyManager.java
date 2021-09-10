@@ -31,8 +31,9 @@ import static irita.sdk.module.crypto.BCryptImpl.encode_base64;
 
 public class Sm2KeyManager extends KeyManager {
     @Override
-    public void add() {
-
+    public void add() throws Exception {
+        String mnemonic = Bip44Utils.generateMnemonic();
+        recover(mnemonic);
     }
 
     @Override
@@ -41,14 +42,10 @@ public class Sm2KeyManager extends KeyManager {
         DeterministicKey dk = Bip44Utils.getDeterministicKey(mnemonic, seed, getKeyPath());
         BigInteger privKey = dk.getPrivKey();
         ECPoint publicKey = SM2Utils.getPublicKeyFromPrivkey(privKey);
+        String address = pubKeyToAddress(publicKey);
 
-        byte[] encoded = publicKey.getEncoded(true);
-        byte[] hash = HashUtils.sha256(encoded);
-        byte[] pre20 = new byte[20];
-        System.arraycopy(hash, 0, pre20, 0, 20);
-
-
-        super.setAddr(Bech32Utils.toBech32(getHrp(), pre20));
+        super.setAddr(address);
+        super.setPublicKey(publicKey);
         super.setPrivKey(privKey);
         super.setMnemonic(mnemonic);
     }
@@ -56,12 +53,10 @@ public class Sm2KeyManager extends KeyManager {
     @Override
     public void recover(BigInteger privKey) {
         ECPoint publicKey = SM2Utils.getPublicKeyFromPrivkey(privKey);
-        byte[] encoded = publicKey.getEncoded(true);
-        byte[] hash = HashUtils.sha256(encoded);
-        byte[] pre20 = new byte[20];
-        System.arraycopy(hash, 0, pre20, 0, 20);
+        String address = pubKeyToAddress(publicKey);
 
-        super.setAddr(Bech32Utils.toBech32(getHrp(), pre20));
+        super.setAddr(address);
+        super.setPublicKey(publicKey);
         super.setPrivKey(privKey);
     }
 
@@ -91,14 +86,11 @@ public class Sm2KeyManager extends KeyManager {
             byte[] privKeyTemp = Arrays.copyOfRange(privKeyAmino, 5, privKeyAmino.length);
 
             BigInteger privKey = new BigInteger(1, privKeyTemp);
-            ECPoint pubkey = SM2Utils.getPublicKeyFromPrivkey(privKey);
+            ECPoint pubKey = SM2Utils.getPublicKeyFromPrivkey(privKey);
+            String address = pubKeyToAddress(pubKey);
 
-            byte[] encoded = pubkey.getEncoded(true);
-            byte[] hash = HashUtils.sha256(encoded);
-            byte[] pre20 = new byte[20];
-            System.arraycopy(hash, 0, pre20, 0, 20);
-
-            super.setAddr(Bech32Utils.toBech32(getHrp(), pre20));
+            super.setAddr(address);
+            super.setPublicKey(pubKey);
             super.setPrivKey(privKey);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -161,5 +153,13 @@ public class Sm2KeyManager extends KeyManager {
         System.arraycopy(hash, ptr, prefix, 0, 4);
         prefix[4] = 32;
         return prefix;
+    }
+
+    private String pubKeyToAddress(ECPoint publicKey) {
+        byte[] encoded = publicKey.getEncoded(true);
+        byte[] hash = HashUtils.sha256(encoded);
+        byte[] pre20 = new byte[20];
+        System.arraycopy(hash, 0, pre20, 0, 20);
+        return Bech32Utils.toBech32(getHrp(), pre20);
     }
 }

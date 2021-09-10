@@ -1,9 +1,14 @@
 package irita.sdk.key;
 
+import irita.sdk.exception.IritaSDKException;
+import org.apache.commons.lang3.StringUtils;
+import org.bouncycastle.math.ec.ECPoint;
+
 import java.math.BigInteger;
 
 public abstract class KeyManager implements Key {
     private BigInteger privKey;
+    private ECPoint publicKey;
     private String addr;
     private String mnemonic;
     // this keyPath and hrp just for iris
@@ -14,19 +19,31 @@ public abstract class KeyManager implements Key {
         return privKey;
     }
 
-    protected void setPrivKey(BigInteger privKey) {
+    public void setPrivKey(BigInteger privKey) {
         this.privKey = privKey;
+    }
+
+    public ECPoint getPublicKey() {
+        return publicKey;
+    }
+
+    public void setPublicKey(ECPoint publicKey) {
+        this.publicKey = publicKey;
     }
 
     public String getAddr() {
         return addr;
     }
 
-    protected void setAddr(String addr) {
+    public void setAddr(String addr) {
         this.addr = addr;
     }
 
     public String getMnemonic() {
+        if (StringUtils.isEmpty(mnemonic)) {
+            throw new IritaSDKException("this KeyManger can't export mnemonic");
+        }
+
         return mnemonic;
     }
 

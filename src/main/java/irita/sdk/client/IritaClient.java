@@ -1,9 +1,9 @@
 package irita.sdk.client;
 
 import irita.sdk.module.bank.BankClient;
-import irita.sdk.module.base.BaseClient;
 import irita.sdk.module.community_gov.CommunityGovClient;
 import irita.sdk.module.wasm.WasmClient;
+import irita.sdk.new_client.BaseClient;
 
 public class IritaClient extends Client {
     private BaseClient baseClient;
@@ -64,7 +64,7 @@ public class IritaClient extends Client {
 
     public BaseClient getBaseClient() {
         if (this.baseClient == null) {
-            this.baseClient = new BaseClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
+            this.baseClient = new BaseClient();
         }
 
         return this.baseClient;

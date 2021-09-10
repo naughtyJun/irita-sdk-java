@@ -1,24 +1,27 @@
-package irita.sdk.module.base;
+package irita.sdk.model;
 
-import java.io.Serializable;
 import java.util.Base64;
-import java.util.HashMap;
 import java.util.Map;
 
-public class WrappedRequest<T extends com.google.protobuf.GeneratedMessageV3> implements Serializable {
-    private static final long serialVersionUID = 4739712926654477976L;
+public class JsonRpc {
     private String jsonrpc = "2.0";
     private int id = 1;
-    private String method = "broadcast_tx_commit";
+    private String method;
     private Map<String, String> params;
 
-    public WrappedRequest(T tx) {
-        this.params = new HashMap<>();
-        this.params.put("tx", Base64.getEncoder().encodeToString(tx.toByteArray()));
+    private JsonRpc() {
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+    public static JsonRpc WrapMsg(com.google.protobuf.GeneratedMessageV3 msg, String method) {
+        byte[] bytes = msg.toByteArray();
+        return WrapTxBytes(bytes, method);
+    }
+
+    public static JsonRpc WrapTxBytes(byte[] bytes, String method) {
+        JsonRpc rpc = new JsonRpc();
+        rpc.method = method;
+        rpc.params.put("tx", Base64.getEncoder().encodeToString(bytes));
+        return rpc;
     }
 
     public String getJsonrpc() {

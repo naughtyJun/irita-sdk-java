@@ -3,14 +3,14 @@ package irita.sdk.config;
 public class TxConfig {
     private final int gas;
     private final String memo;
-    private final ModeEnum Mode;
+    private final ModeEnum mode;
 //    boolean Simulate;
 //    double gasAdujstment;
 
     public TxConfig(int gas, String memo, ModeEnum mode) {
         this.gas = gas;
         this.memo = memo;
-        Mode = mode;
+        this.mode = mode;
     }
 
     public int getGas() {
@@ -22,6 +22,6 @@ public class TxConfig {
     }
 
     public ModeEnum getMode() {
-        return Mode;
+        return mode;
     }
 }

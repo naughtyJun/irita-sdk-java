@@ -8,7 +8,7 @@ import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.TxStatus;
 import irita.sdk.constant.enums.EventEnum;
 import irita.sdk.exception.IritaSDKException;
-import irita.sdk.module.base.*;
+import irita.sdk.model.*;
 import irita.sdk.util.HttpUtils;
 import irita.sdk.util.IOUtils;
 import proto.cosmos.base.v1beta1.CoinOuterClass;

@@ -11,39 +11,44 @@ public class EditNFTRequest {
         return denom;
     }
 
-    public void setDenom(String denom) {
+    public EditNFTRequest setDenom(String denom) {
         this.denom = denom;
+        return this;
     }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public EditNFTRequest setId(String id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public EditNFTRequest setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getUri() {
         return uri;
     }
 
-    public void setUri(String uri) {
+    public EditNFTRequest setUri(String uri) {
         this.uri = uri;
+        return this;
     }
 
     public String getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public EditNFTRequest setData(String data) {
         this.data = data;
+        return this;
     }
 }

@@ -8,15 +8,17 @@ public class BurnNFTRequest {
         return denom;
     }
 
-    public void setDenom(String denom) {
+    public BurnNFTRequest setDenom(String denom) {
         this.denom = denom;
+        return this;
     }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public BurnNFTRequest setId(String id) {
         this.id = id;
+        return this;
     }
 }

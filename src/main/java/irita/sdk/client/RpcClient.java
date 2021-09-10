@@ -1,4 +1,4 @@
-package irita.sdk.new_client;
+package irita.sdk.client;
 
 import com.alibaba.fastjson.JSON;
 import irita.sdk.config.ClientConfig;
@@ -20,18 +20,26 @@ public class RpcClient {
     }
 
     public RpcClient(ClientConfig clientConfig, OpbConfig opbConfig) {
-        this.rpcUri = clientConfig + "/" + opbConfig.getProjectKey() + "/rpc";
+        if (opbConfig != null) {
+            this.rpcUri = clientConfig.getRpcUri() + "/" + opbConfig.getProjectKey() + "/rpc";
+        } else {
+            this.rpcUri = clientConfig.getRpcUri();
+        }
     }
 
     public synchronized ResultTx broadcastTx(byte[] txBytes, BroadcastMode mode) throws IOException {
+        if (mode == null) {
+            mode = BroadcastMode.Commit;
+        }
         switch (mode) {
             case Sync:
                 return broadcastTxSync(txBytes);
             case Async:
                 return broadcastTxAsync(txBytes);
             case Commit:
-            default:
                 return broadcastTxCommit(txBytes);
+            default:
+                throw new IritaSDKException("unknown broadcastMode");
         }
     }
 

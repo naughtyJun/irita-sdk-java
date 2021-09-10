@@ -12,47 +12,53 @@ public class TransferNFTRequest {
         return denom;
     }
 
-    public void setDenom(String denom) {
+    public TransferNFTRequest setDenom(String denom) {
         this.denom = denom;
+        return this;
     }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public TransferNFTRequest setId(String id) {
         this.id = id;
+        return this;
     }
 
     public String getUri() {
         return uri;
     }
 
-    public void setUri(String uri) {
+    public TransferNFTRequest setUri(String uri) {
         this.uri = uri;
+        return this;
     }
 
     public String getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public TransferNFTRequest setData(String data) {
         this.data = data;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public TransferNFTRequest setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getRecipient() {
         return recipient;
     }
 
-    public void setRecipient(String recipient) {
+    public TransferNFTRequest setRecipient(String recipient) {
         this.recipient = recipient;
+        return this;
     }
 }

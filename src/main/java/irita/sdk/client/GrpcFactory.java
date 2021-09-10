@@ -1,7 +1,6 @@
-package irita.sdk.new_client;
+package irita.sdk.client;
 
 import io.grpc.*;
-import irita.sdk.client.GrpcClientInterceptor;
 import irita.sdk.config.ClientConfig;
 import irita.sdk.config.OpbConfig;
 import irita.sdk.exception.IritaSDKException;

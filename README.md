@@ -86,10 +86,10 @@ public interface Key {
         String nodeUri=http://localhost:26657;
         Key km=new KeyManager(mnemonic);
         IritaClientOption option=IritaClientOption.getDefaultOption(km);
-        IritaClient client=new IritaClient(nodeUri,grpcAddr,chainId,option);
+        IritaClient irita.sdk.client=new IritaClient(nodeUri,grpcAddr,chainId,option);
         WasmClient wasmClient=iritaClient.getWasmClient();
         CommunityGovClient comGovClient=iritaClient.getCommunityGovClient();
-        // get other client is as same as above
+        // get other irita.sdk.client is as same as above
 ```
 
 ### 2 use at spring

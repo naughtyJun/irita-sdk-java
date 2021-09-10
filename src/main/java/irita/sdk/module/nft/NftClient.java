@@ -2,10 +2,10 @@ package irita.sdk.module.nft;
 
 
 import io.grpc.ManagedChannel;
+import irita.sdk.client.BaseClient;
 import irita.sdk.model.Account;
 import irita.sdk.model.BaseTx;
 import irita.sdk.model.ResultTx;
-import irita.sdk.new_client.BaseClient;
 import irita.sdk.util.AddressUtils;
 import org.apache.commons.lang3.StringUtils;
 import proto.cosmos.base.query.v1beta1.Pagination;
@@ -18,9 +18,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NftClient extends BaseClient {
+public class NftClient {
+    private final BaseClient baseClient;
+    private static final String DO_NOT_MODIFY = "[do-not-modify]";
+
+    public NftClient(BaseClient baseClient) {
+        this.baseClient = baseClient;
+    }
+
     public ResultTx issueDenom(IssueDenomRequest req, BaseTx baseTx) throws IOException {
-        Account account = super.queryAccount();
+        Account account = baseClient.queryAccount();
         Tx.MsgIssueDenom msg = Tx.MsgIssueDenom
                 .newBuilder()
                 .setId(req.getId())
@@ -29,7 +36,7 @@ public class NftClient extends BaseClient {
                 .setSender(account.getAddress())
                 .build();
 
-        return super.buildAndSend(msg, baseTx, account);
+        return baseClient.buildAndSend(msg, baseTx, account);
     }
 
     public ResultTx mintNft(MintNFTRequest req, BaseTx baseTx) throws IOException {
@@ -39,36 +46,62 @@ public class NftClient extends BaseClient {
                 .setId(req.getId())
                 .setName(req.getName())
                 .setUri(req.getUri())
-                .setData(req.getData());
+                .setData(req.getData())
+                .setSender(baseClient.getCurrentAddr());
 
         if (StringUtils.isNotEmpty(req.getRecipient())) {
             String recipient = req.getRecipient();
             AddressUtils.validAddress(recipient);
             builder.setRecipient(recipient);
+        } else {
+            builder.setRecipient(baseClient.getCurrentAddr());
         }
         Tx.MsgMintNFT msg = builder.build();
-        return super.buildAndSend(msg, baseTx);
+        return baseClient.buildAndSend(msg, baseTx);
     }
 
     public ResultTx editNft(EditNFTRequest req, BaseTx baseTx) throws IOException {
+        if (StringUtils.isEmpty(req.getData())) {
+            req.setData(DO_NOT_MODIFY);
+        }
+        if (StringUtils.isEmpty(req.getUri())) {
+            req.setUri(DO_NOT_MODIFY);
+        }
+        if (StringUtils.isEmpty(req.getName())) {
+            req.setName(DO_NOT_MODIFY);
+        }
+
         Tx.MsgEditNFT msg = Tx.MsgEditNFT
                 .newBuilder()
                 .setDenomId(req.getDenom())
                 .setId(req.getId())
                 .setName(req.getName())
                 .setUri(req.getUri())
-                .setData(req.getData()).build();
-        return super.buildAndSend(msg, baseTx);
+                .setData(req.getData())
+                .setSender(baseClient.getCurrentAddr())
+                .build();
+        return baseClient.buildAndSend(msg, baseTx);
     }
 
     public ResultTx transferNFt(TransferNFTRequest req, BaseTx baseTx) throws IOException {
+        if (StringUtils.isEmpty(req.getData())) {
+            req.setData(DO_NOT_MODIFY);
+        }
+        if (StringUtils.isEmpty(req.getUri())) {
+            req.setUri(DO_NOT_MODIFY);
+        }
+        if (StringUtils.isEmpty(req.getName())) {
+            req.setName(DO_NOT_MODIFY);
+        }
+
         Tx.MsgTransferNFT.Builder builder = Tx.MsgTransferNFT
                 .newBuilder()
                 .setDenomId(req.getDenom())
                 .setId(req.getId())
                 .setUri(req.getUri())
                 .setData(req.getData())
-                .setName(req.getName());
+                .setName(req.getName())
+                .setSender(baseClient.getCurrentAddr());
 
         if (StringUtils.isNotEmpty(req.getRecipient())) {
             String recipient = req.getRecipient();
@@ -76,20 +109,22 @@ public class NftClient extends BaseClient {
             builder.setRecipient(recipient);
         }
         Tx.MsgTransferNFT msg = builder.build();
-        return super.buildAndSend(msg, baseTx);
+        return baseClient.buildAndSend(msg, baseTx);
     }
 
     public ResultTx burnNft(BurnNFTRequest req, BaseTx baseTx) throws IOException {
         Tx.MsgBurnNFT msg = Tx.MsgBurnNFT
                 .newBuilder()
                 .setDenomId(req.getDenom())
-                .setId(req.getId()).build();
-        return super.buildAndSend(msg, baseTx);
+                .setId(req.getId())
+                .setSender(baseClient.getCurrentAddr())
+                .build();
+        return baseClient.buildAndSend(msg, baseTx);
     }
 
 
     public long querySupply(String denomID, String owner) {
-        ManagedChannel channel = super.getGrpcClient();
+        ManagedChannel channel = baseClient.getGrpcClient();
         QueryOuterClass.QuerySupplyRequest req = QueryOuterClass.QuerySupplyRequest
                 .newBuilder()
                 .setDenomId(denomID)
@@ -100,12 +135,12 @@ public class NftClient extends BaseClient {
         return resp.getAmount();
     }
 
-    public QueryOwnerResp queryOwner(String denomID, String ownerD) {
-        ManagedChannel channel = super.getGrpcClient();
+    public QueryOwnerResp queryOwner(String denomID, String owner) {
+        ManagedChannel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryOwnerRequest req = QueryOuterClass.QueryOwnerRequest
                 .newBuilder()
                 .setDenomId(denomID)
-                .setOwner(ownerD)
+                .setOwner(owner)
                 .build();
 
         QueryOuterClass.QueryOwnerResponse resp = QueryGrpc.newBlockingStub(channel).owner(req);
@@ -113,7 +148,7 @@ public class NftClient extends BaseClient {
     }
 
     public QueryCollectionResp queryCollection(String denomID, Pagination.PageRequest page) {
-        ManagedChannel channel = super.getGrpcClient();
+        ManagedChannel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryCollectionRequest.Builder builder = QueryOuterClass.QueryCollectionRequest
                 .newBuilder()
                 .setDenomId(denomID);
@@ -127,7 +162,7 @@ public class NftClient extends BaseClient {
     }
 
     public QueryDenomResp queryDenom(String denomID) {
-        ManagedChannel channel = super.getGrpcClient();
+        ManagedChannel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryDenomRequest req = QueryOuterClass.QueryDenomRequest
                 .newBuilder()
                 .setDenomId(denomID)
@@ -137,7 +172,7 @@ public class NftClient extends BaseClient {
     }
 
     public List<QueryDenomResp> queryDenoms(Pagination.PageRequest page) {
-        ManagedChannel channel = super.getGrpcClient();
+        ManagedChannel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryDenomsRequest.Builder builder = QueryOuterClass.QueryDenomsRequest.newBuilder();
         if (page != null) {
             builder.setPagination(page);
@@ -149,7 +184,7 @@ public class NftClient extends BaseClient {
     }
 
     public QueryNFTResp queryNFT(String denomID, String nftID) {
-        ManagedChannel channel = super.getGrpcClient();
+        ManagedChannel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryNFTRequest req = QueryOuterClass.QueryNFTRequest
                 .newBuilder()
                 .setDenomId(denomID)
@@ -218,7 +253,7 @@ public class NftClient extends BaseClient {
             res.setName(baseNFT.getName());
             res.setUri(baseNFT.getUri());
             res.setData(baseNFT.getData());
-            res.setCreator(baseNFT.getOwner());
+            res.setOwner(baseNFT.getOwner());
             return res;
         }
     }

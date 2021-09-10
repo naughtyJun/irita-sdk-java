@@ -1,7 +1,5 @@
 package irita.sdk;
 
-import irita.sdk.client.IritaClient;
-import irita.sdk.client.IritaClientOption;
 import irita.sdk.constant.ContractAddress;
 import irita.sdk.constant.enums.DocType;
 import irita.sdk.constant.enums.Role;
@@ -14,6 +12,8 @@ import irita.sdk.module.keys.KeyManager;
 import irita.sdk.module.wasm.InstantiateRequest;
 import irita.sdk.module.wasm.StoreRequest;
 import irita.sdk.module.wasm.WasmClient;
+import irita.sdk.old_client.IritaClient;
+import irita.sdk.old_client.IritaClientOption;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -138,7 +138,7 @@ public class ComGovContractTest {
 
     @Test
     public void addHash() {
-        // new client, he role of cur_address must hash_admin
+        // new irita.sdk.client, he role of cur_address must hash_admin
         String mnemonic = "apart various produce pond bachelor size pumpkin gate pretty awake silver worth dust pledge pioneer patrol current fall escape lunar zero afraid this fish";
         Key km = new KeyManager(mnemonic);
         IritaClientOption option = IritaClientOption.getDefaultOption(km);

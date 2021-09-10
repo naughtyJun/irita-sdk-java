@@ -5,7 +5,7 @@ public class QueryNFTResp {
     private String name;
     private String uri;
     private String data;
-    private String creator;
+    private String owner;
 
     public String getId() {
         return id;
@@ -39,11 +39,11 @@ public class QueryNFTResp {
         this.data = data;
     }
 
-    public String getCreator() {
-        return creator;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setCreator(String creator) {
-        this.creator = creator;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 }

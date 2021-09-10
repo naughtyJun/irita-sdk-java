@@ -2210,7 +2210,7 @@ public final class EvidenceOuterClass {
   }
   /**
    * <pre>
-   * LightClientAttackEvidence contains evidence of a set of validators attempting to mislead a light client.
+   * LightClientAttackEvidence contains evidence of a set of validators attempting to mislead a light irita.sdk.client.
    * </pre>
    *
    * Protobuf type {@code tendermint.types.LightClientAttackEvidence}
@@ -2668,7 +2668,7 @@ public final class EvidenceOuterClass {
     }
     /**
      * <pre>
-     * LightClientAttackEvidence contains evidence of a set of validators attempting to mislead a light client.
+     * LightClientAttackEvidence contains evidence of a set of validators attempting to mislead a light irita.sdk.client.
      * </pre>
      *
      * Protobuf type {@code tendermint.types.LightClientAttackEvidence}

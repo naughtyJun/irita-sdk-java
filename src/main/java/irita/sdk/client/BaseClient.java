@@ -1,4 +1,4 @@
-package irita.sdk.new_client;
+package irita.sdk.client;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import io.grpc.ManagedChannel;
@@ -34,24 +34,28 @@ public class BaseClient {
         this.opbConfig = opbConfig;
         this.km = keyManager;
 
-        this.txEngine = TxEngineFactory.createDefault(km);
+        this.txEngine = TxEngineFactory.createDefault(km, clientConfig.getChainID());
         this.grpcClient = GrpcFactory.createGrpcClient(clientConfig, opbConfig);
         this.rpcClient = new RpcClient(clientConfig, opbConfig);
     }
 
-    protected RpcClient getRpcClient() {
+    public String getCurrentAddr() {
+        return km.getAddr();
+    }
+
+    public RpcClient getRpcClient() {
         return rpcClient;
     }
 
-    protected ManagedChannel getGrpcClient() {
+    public ManagedChannel getGrpcClient() {
         return grpcClient;
     }
 
-    protected ResultTx buildAndSend(com.google.protobuf.GeneratedMessageV3 msg, BaseTx baseTx) throws IOException {
+    public ResultTx buildAndSend(com.google.protobuf.GeneratedMessageV3 msg, BaseTx baseTx) throws IOException {
         return buildAndSend(msg, baseTx, null);
     }
 
-    protected ResultTx buildAndSend(com.google.protobuf.GeneratedMessageV3 msg, BaseTx baseTx, Account account) throws IOException {
+    public ResultTx buildAndSend(com.google.protobuf.GeneratedMessageV3 msg, BaseTx baseTx, Account account) throws IOException {
         if (account == null) {
             account = queryAccount();
         }

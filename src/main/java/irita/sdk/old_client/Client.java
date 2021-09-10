@@ -1,4 +1,4 @@
-package irita.sdk.client;
+package irita.sdk.old_client;
 
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;

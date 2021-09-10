@@ -1,6 +1,6 @@
 package irita.sdk.model;
 
-import irita.sdk.client.IritaClientOption;
+import irita.sdk.old_client.IritaClientOption;
 import irita.sdk.constant.enums.BroadcastMode;
 
 public class BaseTx {

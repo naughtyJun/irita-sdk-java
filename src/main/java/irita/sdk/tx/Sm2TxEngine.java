@@ -23,8 +23,9 @@ public class Sm2TxEngine implements TxEngine {
     private String chainID;
     private final int gasLimit = 20000000; // TODO
 
-    public Sm2TxEngine(KeyManager km) {
+    public Sm2TxEngine(KeyManager km, String chainID) {
         this.km = km;
+        this.chainID = chainID;
     }
 
     @Override
@@ -38,6 +39,9 @@ public class Sm2TxEngine implements TxEngine {
 
     @Override
     public TxOuterClass.TxBody buildTxBodyWithMemo(com.google.protobuf.GeneratedMessageV3 msg, String memo) {
+        if (memo == null) {
+            memo = "";
+        }
         return TxOuterClass.TxBody.newBuilder()
                 .addMessages(Any.pack(msg, "/"))
                 .setMemo(memo)

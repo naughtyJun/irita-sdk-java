@@ -1,88 +1,50 @@
 package irita.sdk.client;
 
-import irita.sdk.module.bank.BankClient;
-import irita.sdk.module.community_gov.CommunityGovClient;
-import irita.sdk.module.wasm.WasmClient;
-import irita.sdk.new_client.BaseClient;
+import irita.sdk.config.ClientConfig;
+import irita.sdk.config.OpbConfig;
+import irita.sdk.key.KeyManager;
+import irita.sdk.module.nft.NftClient;
 
-public class IritaClient extends Client {
+public class IritaClient {
     private BaseClient baseClient;
+    private NftClient nftClient;
     private BankClient bankClient;
-    private WasmClient wasmClient;
-    private CommunityGovClient communityGovClient;
 
-
-    public IritaClient() {
+    private IritaClient() {
     }
 
-    public IritaClient(String nodeUri, String grpcAddr, String chainId, IritaClientOption option) {
-        this.nodeUri = nodeUri;
-        this.grpcAddr = grpcAddr;
-        this.chainId = chainId;
-        this.option = option;
+    public IritaClient(ClientConfig clientConfig, OpbConfig opbConfig, KeyManager km) {
+        BaseClient baseClient = new BaseClient(clientConfig, opbConfig, km);
+        this.baseClient = baseClient;
+        this.nftClient = new NftClient(baseClient);
+        this.bankClient = new BankClient(baseClient);
     }
 
-    public String getNodeUri() {
-        return nodeUri;
+
+    public BaseClient getBaseClient() {
+        return baseClient;
     }
 
-    public void setNodeUri(String nodeUri) {
-        this.nodeUri = nodeUri;
+    public IritaClient setBaseClient(BaseClient baseClient) {
+        this.baseClient = baseClient;
+        return this;
     }
 
-    public String getGrpcAddr() {
-        return grpcAddr;
+    public NftClient getNftClient() {
+        return nftClient;
     }
 
-    public void setGrpcAddr(String grpcAddr) {
-        this.grpcAddr = grpcAddr;
-    }
-
-    public String getChainId() {
-        return chainId;
-    }
-
-    public void setChainId(String chainId) {
-        this.chainId = chainId;
-    }
-
-    public IritaClientOption getOption() {
-        return option;
-    }
-
-    public void setOption(IritaClientOption option) {
-        this.option = option;
+    public IritaClient setNftClient(NftClient nftClient) {
+        this.nftClient = nftClient;
+        return this;
     }
 
     public BankClient getBankClient() {
-        if (this.bankClient == null) {
-            this.bankClient = new BankClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
-        }
-
-        return this.bankClient;
+        return bankClient;
     }
 
-    public BaseClient getBaseClient() {
-        if (this.baseClient == null) {
-            this.baseClient = new BaseClient();
-        }
-
-        return this.baseClient;
-    }
-
-    public WasmClient getWasmClient() {
-        if (this.wasmClient == null) {
-            this.wasmClient = new WasmClient(this.nodeUri, this.grpcAddr, this.chainId, this.option);
-        }
-
-        return this.wasmClient;
-    }
-
-    public CommunityGovClient getCommunityGovClient() {
-        if (this.communityGovClient == null) {
-            this.communityGovClient = new CommunityGovClient(this.getWasmClient());
-        }
-
-        return this.communityGovClient;
+    public IritaClient setBankClient(BankClient bankClient) {
+        this.bankClient = bankClient;
+        return this;
     }
 }

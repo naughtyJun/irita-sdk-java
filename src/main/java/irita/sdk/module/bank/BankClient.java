@@ -1,7 +1,7 @@
 package irita.sdk.module.bank;
 
-import irita.sdk.client.Client;
-import irita.sdk.client.IritaClientOption;
+import irita.sdk.old_client.Client;
+import irita.sdk.old_client.IritaClientOption;
 import irita.sdk.model.WrappedRequest;
 import irita.sdk.util.HttpUtils;
 import proto.cosmos.bank.v1beta1.Tx;

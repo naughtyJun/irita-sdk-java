@@ -3,8 +3,8 @@ package irita.sdk.module.wasm;
 import com.alibaba.fastjson.JSON;
 import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
-import irita.sdk.client.Client;
-import irita.sdk.client.IritaClientOption;
+import irita.sdk.old_client.Client;
+import irita.sdk.old_client.IritaClientOption;
 import irita.sdk.constant.TxStatus;
 import irita.sdk.constant.enums.EventEnum;
 import irita.sdk.exception.IritaSDKException;
@@ -185,7 +185,7 @@ public class WasmClient extends Client {
         return map;
     }
 
-    // TODO client do this
+    // TODO irita.sdk.client do this
     private ResultTx checkResTxAndConvert(String res) {
         ResultTx resultTx = JSON.parseObject(res, ResultTx.class);
 

@@ -1,4 +1,4 @@
-package irita.sdk.client;
+package irita.sdk.old_client;
 
 import irita.sdk.module.keys.Key;
 import irita.sdk.module.keys.KeyManager;

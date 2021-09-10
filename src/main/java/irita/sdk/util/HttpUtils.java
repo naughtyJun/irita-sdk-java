@@ -1,6 +1,9 @@
 package irita.sdk.util;
 
 
+import com.alibaba.fastjson.JSON;
+import irita.sdk.model.WrappedRequest;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -100,5 +103,11 @@ public class HttpUtils {
         }
         br.close();
         return result;
+    }
+
+    // use this to send tx
+    @Deprecated
+    public synchronized static <S extends com.google.protobuf.GeneratedMessageV3> String post(String uri, WrappedRequest<S> object) throws IOException {
+        return post(uri, JSON.toJSONString(object));
     }
 }

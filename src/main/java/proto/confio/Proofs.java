@@ -5703,12 +5703,12 @@ public final class Proofs {
    * <pre>
    **
    *ProofSpec defines what the expected parameters are for a given proof type.
-   *This can be stored in the client and used to validate any incoming proofs.
+   *This can be stored in the irita.sdk.client and used to validate any incoming proofs.
    *verify(ProofSpec, Proof) -&gt; Proof | Error
    *As demonstrated in tests, if we don't fix the algorithm used to calculate the
    *LeafHash for a given tree, there are many possible key-value pairs that can
    *generate a given hash (by interpretting the preimage differently).
-   *We need this for proper security, requires client knows a priori what
+   *We need this for proper security, requires irita.sdk.client knows a priori what
    *tree format server uses. But not in code, rather a configuration object.
    * </pre>
    *
@@ -6123,12 +6123,12 @@ public final class Proofs {
      * <pre>
      **
      *ProofSpec defines what the expected parameters are for a given proof type.
-     *This can be stored in the client and used to validate any incoming proofs.
+     *This can be stored in the irita.sdk.client and used to validate any incoming proofs.
      *verify(ProofSpec, Proof) -&gt; Proof | Error
      *As demonstrated in tests, if we don't fix the algorithm used to calculate the
      *LeafHash for a given tree, there are many possible key-value pairs that can
      *generate a given hash (by interpretting the preimage differently).
-     *We need this for proper security, requires client knows a priori what
+     *We need this for proper security, requires irita.sdk.client knows a priori what
      *tree format server uses. But not in code, rather a configuration object.
      * </pre>
      *

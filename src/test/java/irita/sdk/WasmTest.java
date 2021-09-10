@@ -1,7 +1,7 @@
 package irita.sdk;
 
-import irita.sdk.client.IritaClient;
-import irita.sdk.client.IritaClientOption;
+import irita.sdk.old_client.IritaClient;
+import irita.sdk.old_client.IritaClientOption;
 import irita.sdk.model.BaseTx;
 import irita.sdk.model.ResultTx;
 import irita.sdk.module.keys.Key;

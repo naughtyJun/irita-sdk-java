@@ -33,7 +33,7 @@ public final class ServiceOuterClass {
     BROADCAST_MODE_UNSPECIFIED(0),
     /**
      * <pre>
-     * BROADCAST_MODE_BLOCK defines a tx broadcasting mode where the client waits for
+     * BROADCAST_MODE_BLOCK defines a tx broadcasting mode where the irita.sdk.client waits for
      * the tx to be committed in a block.
      * </pre>
      *
@@ -42,7 +42,7 @@ public final class ServiceOuterClass {
     BROADCAST_MODE_BLOCK(1),
     /**
      * <pre>
-     * BROADCAST_MODE_SYNC defines a tx broadcasting mode where the client waits for
+     * BROADCAST_MODE_SYNC defines a tx broadcasting mode where the irita.sdk.client waits for
      * a CheckTx execution response only.
      * </pre>
      *
@@ -51,7 +51,7 @@ public final class ServiceOuterClass {
     BROADCAST_MODE_SYNC(2),
     /**
      * <pre>
-     * BROADCAST_MODE_ASYNC defines a tx broadcasting mode where the client returns
+     * BROADCAST_MODE_ASYNC defines a tx broadcasting mode where the irita.sdk.client returns
      * immediately.
      * </pre>
      *
@@ -71,7 +71,7 @@ public final class ServiceOuterClass {
     public static final int BROADCAST_MODE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * BROADCAST_MODE_BLOCK defines a tx broadcasting mode where the client waits for
+     * BROADCAST_MODE_BLOCK defines a tx broadcasting mode where the irita.sdk.client waits for
      * the tx to be committed in a block.
      * </pre>
      *
@@ -80,7 +80,7 @@ public final class ServiceOuterClass {
     public static final int BROADCAST_MODE_BLOCK_VALUE = 1;
     /**
      * <pre>
-     * BROADCAST_MODE_SYNC defines a tx broadcasting mode where the client waits for
+     * BROADCAST_MODE_SYNC defines a tx broadcasting mode where the irita.sdk.client waits for
      * a CheckTx execution response only.
      * </pre>
      *
@@ -89,7 +89,7 @@ public final class ServiceOuterClass {
     public static final int BROADCAST_MODE_SYNC_VALUE = 2;
     /**
      * <pre>
-     * BROADCAST_MODE_ASYNC defines a tx broadcasting mode where the client returns
+     * BROADCAST_MODE_ASYNC defines a tx broadcasting mode where the irita.sdk.client returns
      * immediately.
      * </pre>
      *

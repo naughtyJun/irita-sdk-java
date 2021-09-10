@@ -12593,7 +12593,7 @@ public final class Types {
 
     /**
      * <pre>
-     * light client-verified app hash for snapshot height
+     * light irita.sdk.client-verified app hash for snapshot height
      * </pre>
      *
      * <code>bytes app_hash = 2;</code>
@@ -12743,7 +12743,7 @@ public final class Types {
     private com.google.protobuf.ByteString appHash_;
     /**
      * <pre>
-     * light client-verified app hash for snapshot height
+     * light irita.sdk.client-verified app hash for snapshot height
      * </pre>
      *
      * <code>bytes app_hash = 2;</code>
@@ -13248,7 +13248,7 @@ public final class Types {
       private com.google.protobuf.ByteString appHash_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
-       * light client-verified app hash for snapshot height
+       * light irita.sdk.client-verified app hash for snapshot height
        * </pre>
        *
        * <code>bytes app_hash = 2;</code>
@@ -13260,7 +13260,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * light client-verified app hash for snapshot height
+       * light irita.sdk.client-verified app hash for snapshot height
        * </pre>
        *
        * <code>bytes app_hash = 2;</code>
@@ -13278,7 +13278,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * light client-verified app hash for snapshot height
+       * light irita.sdk.client-verified app hash for snapshot height
        * </pre>
        *
        * <code>bytes app_hash = 2;</code>

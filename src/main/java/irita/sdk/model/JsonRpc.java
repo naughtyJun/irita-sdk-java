@@ -1,13 +1,14 @@
 package irita.sdk.model;
 
 import java.util.Base64;
+import java.util.HashMap;
 import java.util.Map;
 
 public class JsonRpc {
     private String jsonrpc = "2.0";
     private int id = 1;
     private String method;
-    private Map<String, String> params;
+    private Map<String, String> params = new HashMap<>();
 
     private JsonRpc() {
     }

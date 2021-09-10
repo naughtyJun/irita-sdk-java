@@ -63,7 +63,7 @@ public class Sm2KeyManager extends KeyManager {
     @Override
     public void recover(InputStream keystore, String password) {
         try {
-            ArmoredInputStream aIS = null;
+            ArmoredInputStream aIS = new ArmoredInputStream(keystore);
             String[] headers = aIS.getArmorHeaders();
             Hashtable<String, String> headersTable = new Hashtable<>();
             for (String headersItem : headers) {

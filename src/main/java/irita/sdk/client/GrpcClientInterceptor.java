@@ -4,7 +4,7 @@ import io.grpc.*;
 
 public class GrpcClientInterceptor implements ClientInterceptor {
     private final String projectKey;
-    private final Metadata.Key<String> token = Metadata.Key.of("token", Metadata.ASCII_STRING_MARSHALLER);
+    private final Metadata.Key<String> OPB_PROJECT_KEY_HEADER = Metadata.Key.of("x-api-key", Metadata.ASCII_STRING_MARSHALLER);
 
     public GrpcClientInterceptor(String projectKey) {
         this.projectKey = projectKey;
@@ -18,7 +18,7 @@ public class GrpcClientInterceptor implements ClientInterceptor {
                 super.start(new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(responseListener) {
                     @Override
                     public void onHeaders(Metadata headers) {
-                        headers.put(token, projectKey); // TODO
+                        headers.put(OPB_PROJECT_KEY_HEADER, projectKey);
                         super.onHeaders(headers);
                     }
                 }, headers);

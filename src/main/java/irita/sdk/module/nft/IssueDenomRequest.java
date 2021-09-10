@@ -9,23 +9,26 @@ public class IssueDenomRequest {
         return id;
     }
 
-    public void setId(String id) {
+    public IssueDenomRequest setId(String id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public IssueDenomRequest setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getSchema() {
         return schema;
     }
 
-    public void setSchema(String schema) {
+    public IssueDenomRequest setSchema(String schema) {
         this.schema = schema;
+        return this;
     }
 }

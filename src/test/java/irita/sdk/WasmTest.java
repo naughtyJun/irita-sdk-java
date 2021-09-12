@@ -1,11 +1,13 @@
 package irita.sdk;
 
-import irita.sdk.old_client.IritaClient;
-import irita.sdk.old_client.IritaClientOption;
+import irita.sdk.client.BaseClient;
+import irita.sdk.config.ClientConfig;
+import irita.sdk.config.OpbConfig;
+import irita.sdk.key.KeyManager;
+import irita.sdk.key.KeyManagerFactory;
 import irita.sdk.model.BaseTx;
+import irita.sdk.model.Fee;
 import irita.sdk.model.ResultTx;
-import irita.sdk.module.keys.Key;
-import irita.sdk.module.keys.KeyManager;
 import irita.sdk.module.wasm.*;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,15 +26,17 @@ public class WasmTest {
     @BeforeEach
     public void init() {
         String mnemonic = "opera vivid pride shallow brick crew found resist decade neck expect apple chalk belt sick author know try tank detail tree impact hand best";
-        Key km = new KeyManager(mnemonic);
-        IritaClientOption option = IritaClientOption.getDefaultOption(km);
+        KeyManager km = KeyManagerFactory.createDefault();
+        km.recover(mnemonic);
 
-        String nodeUri = "http://localhost:26657";
-        String grpcAddr = "http://localhost:9090";
+        String nodeUri = "http://101.132.138.109:26657";
+        String grpcAddr = "http://101.132.138.109:9090";
         String chainId = "irita";
-        IritaClient client = new IritaClient(nodeUri, grpcAddr, chainId, option);
-        wasmClient = client.getWasmClient();
+        ClientConfig clientConfig = new ClientConfig(nodeUri, grpcAddr, chainId);
+//        OpbConfig opbConfig = new OpbConfig("", "", "");
+        OpbConfig opbConfig = null;
 
+        wasmClient = new WasmClient(new BaseClient(clientConfig, opbConfig, km));
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
     }
 
@@ -44,7 +48,7 @@ public class WasmTest {
         StoreRequest req = new StoreRequest();
         req.setWasmFile("src/test/resources/test.wasm");
 
-        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+        BaseTx baseTx = new BaseTx(2000000, new Fee("120", "stake"));
         String codeId = wasmClient.store(req, baseTx);
         assertTrue(StringUtils.isNotEmpty(codeId));
         System.out.println(codeId);
@@ -65,7 +69,7 @@ public class WasmTest {
         req.setCodeId(codeId);
         req.setInitMsg(initMsg);
         req.setLabel("test wasm");
-        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+        BaseTx baseTx = new BaseTx(2000000, new Fee("120", "stake"));
 
         String contractAddress = wasmClient.instantiate(req, baseTx);
         assertTrue(StringUtils.isNotEmpty(contractAddress));
@@ -88,7 +92,7 @@ public class WasmTest {
         ContractABI execAbi = new ContractABI();
         execAbi.setArgs(args);
         execAbi.setMethod("vote");
-        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+        BaseTx baseTx = new BaseTx(2000000, new Fee("120", "stake"));
 
         ResultTx resultTx = wasmClient.execute(contractAddress, execAbi, null, baseTx);
 

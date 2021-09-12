@@ -2,17 +2,16 @@ package irita.sdk.module.wasm;
 
 import com.alibaba.fastjson.JSON;
 import com.google.protobuf.ByteString;
-import io.grpc.ManagedChannel;
-import irita.sdk.old_client.Client;
-import irita.sdk.old_client.IritaClientOption;
-import irita.sdk.constant.TxStatus;
+import io.grpc.Channel;
+import irita.sdk.client.BaseClient;
 import irita.sdk.constant.enums.EventEnum;
 import irita.sdk.exception.IritaSDKException;
-import irita.sdk.model.*;
-import irita.sdk.util.HttpUtils;
+import irita.sdk.model.Account;
+import irita.sdk.model.BaseTx;
+import irita.sdk.model.Coin;
+import irita.sdk.model.ResultTx;
 import irita.sdk.util.IOUtils;
 import proto.cosmos.base.v1beta1.CoinOuterClass;
-import proto.cosmos.tx.v1beta1.TxOuterClass;
 import proto.x.wasm.internal.types.QueryGrpc;
 import proto.x.wasm.internal.types.QueryOuterClass;
 import proto.x.wasm.internal.types.Tx;
@@ -25,17 +24,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class WasmClient extends Client {
-    public WasmClient(String nodeUri, String grpcAddr, String chainId, IritaClientOption option) {
-        this.nodeUri = nodeUri;
-        this.grpcAddr = grpcAddr;
-        this.chainId = chainId;
-        this.option = option;
+public class WasmClient {
+    private final BaseClient baseClient;
+
+    public WasmClient(BaseClient baseClient) {
+        this.baseClient = baseClient;
     }
 
     // upload the contract to block-chain and return the codeId for user
     public String store(StoreRequest req, BaseTx baseTx) throws IOException {
-        Account account = super.queryAccount(option.getKeyManager().getAddr());
+        Account account = baseClient.queryAccount();
 
         if (req.getWasmByteCode() != null) {
             req.setWasmByteCode(req.getWasmByteCode());
@@ -54,18 +52,13 @@ public class WasmClient extends Client {
                 .setBuilder("")
                 .build();
 
-        TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
-
-        String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        ResultTx resultTx = checkResTxAndConvert(res);
-
+        ResultTx resultTx = baseClient.buildAndSend(msg, baseTx, account);
         return resultTx.getEventValue(EventEnum.MESSAGE_CODE_ID);
     }
 
     // instantiate the contract state
     public String instantiate(InstantiateRequest req, BaseTx baseTx) throws IOException {
-        Account account = super.queryAccount(option.getKeyManager().getAddr());
+        Account account = baseClient.queryAccount();
         Tx.MsgInstantiateContract.Builder builder = Tx.MsgInstantiateContract.newBuilder()
                 .setSender(account.getAddress())
                 .setAdmin(Optional.of(req).map(InstantiateRequest::getAdmin).orElse(""))
@@ -81,18 +74,13 @@ public class WasmClient extends Client {
         }
 
         Tx.MsgInstantiateContract msg = builder.build();
-        TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
-
-        String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        ResultTx resultTx = checkResTxAndConvert(res);
-
+        ResultTx resultTx = baseClient.buildAndSend(msg, baseTx, account);
         return resultTx.getEventValue(EventEnum.MESSAGE_CONTRACT_ADDRESS);
     }
 
     // execute the contract method
     public ResultTx execute(String contractAddress, ContractABI abi, Coin funds, BaseTx baseTx) throws IOException {
-        Account account = super.queryAccount(option.getKeyManager().getAddr());
+        Account account = baseClient.queryAccount();
         byte[] msgBytes = abi.build();
 
         Tx.MsgExecuteContract.Builder builder = Tx.MsgExecuteContract.newBuilder()
@@ -108,15 +96,11 @@ public class WasmClient extends Client {
         }
 
         Tx.MsgExecuteContract msg = builder.build();
-        TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
-
-        String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        return JSON.parseObject(res, ResultTx.class);
+        return baseClient.buildAndSend(msg, baseTx, account);
     }
 
-    public ResultTx migrate(String contractAddress, long newCodeID, byte[] msgByte) throws IOException {
-        Account account = super.queryAccount(option.getKeyManager().getAddr());
+    public ResultTx migrate(String contractAddress, long newCodeID, byte[] msgByte, BaseTx baseTx) throws IOException {
+        Account account = baseClient.queryAccount();
         Tx.MsgMigrateContract msg = Tx.MsgMigrateContract.newBuilder()
                 .setSender(account.getAddress())
                 .setContract(contractAddress)
@@ -124,29 +108,24 @@ public class WasmClient extends Client {
                 .setMigrateMsg(ByteString.copyFrom(msgByte))
                 .build();
 
-        TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(null, body, false);
-        String res = HttpUtils.post(nodeUri, new WrappedRequest<>(tx));
-        return JSON.parseObject(res, ResultTx.class);
+        return baseClient.buildAndSend(msg, baseTx, account);
     }
 
     // return the contract information
     public ContractInfo queryContractInfo(String contractAddress) {
-        ManagedChannel channel = super.getGrpcClient();
+        Channel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryContractInfoRequest req = QueryOuterClass.QueryContractInfoRequest
                 .newBuilder()
                 .setAddress(contractAddress)
                 .build();
 
         QueryOuterClass.QueryContractInfoResponse resp = QueryGrpc.newBlockingStub(channel).contractInfo(req);
-        channel.shutdown();
         return Convert.toContractInfo(resp);
     }
 
     // execute contract's query method and return the result
     public byte[] queryContract(String address, ContractABI abi) {
-        ManagedChannel channel = super.getGrpcClient();
-
+        Channel channel = baseClient.getGrpcClient();
         byte[] msgBytes = abi.build();
         QueryOuterClass.QuerySmartContractStateRequest req = QueryOuterClass.QuerySmartContractStateRequest
                 .newBuilder()
@@ -155,20 +134,18 @@ public class WasmClient extends Client {
                 .build();
 
         QueryOuterClass.QuerySmartContractStateResponse resp = QueryGrpc.newBlockingStub(channel).smartContractState(req);
-        channel.shutdown();
         return resp.toByteArray();
     }
 
     // export all state data of the contract
     public Map<String, String> exportContractState(String address) {
-        ManagedChannel channel = super.getGrpcClient();
+        Channel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryAllContractStateRequest req = QueryOuterClass.QueryAllContractStateRequest
                 .newBuilder()
                 .setAddress(address)
                 .build();
 
         QueryOuterClass.QueryAllContractStateResponse resp = QueryGrpc.newBlockingStub(channel).allContractState(req);
-        channel.shutdown();
 
         Map<String, String> map = new HashMap<>();
         List<Types.Model> models = resp.getModelsList();
@@ -183,15 +160,5 @@ public class WasmClient extends Client {
             map.put(key, value);
         }
         return map;
-    }
-
-    // TODO irita.sdk.client do this
-    private ResultTx checkResTxAndConvert(String res) {
-        ResultTx resultTx = JSON.parseObject(res, ResultTx.class);
-
-        if (resultTx.getCode() != TxStatus.SUCCESS) {
-            throw new IritaSDKException(resultTx.getLog());
-        }
-        return resultTx;
     }
 }

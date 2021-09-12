@@ -21,7 +21,7 @@ public class RpcClient {
 
     public RpcClient(ClientConfig clientConfig, OpbConfig opbConfig) {
         if (opbConfig != null) {
-            this.rpcUri = clientConfig.getRpcUri() + "/" + opbConfig.getProjectKey() + "/rpc";
+            this.rpcUri = clientConfig.getRpcUri() + "/" + opbConfig.getProjectID() + "/rpc";
         } else {
             this.rpcUri = clientConfig.getRpcUri();
         }

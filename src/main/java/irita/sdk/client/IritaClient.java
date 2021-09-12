@@ -3,6 +3,7 @@ package irita.sdk.client;
 import irita.sdk.config.ClientConfig;
 import irita.sdk.config.OpbConfig;
 import irita.sdk.key.KeyManager;
+import irita.sdk.module.bank.BankClient;
 import irita.sdk.module.nft.NftClient;
 
 public class IritaClient {

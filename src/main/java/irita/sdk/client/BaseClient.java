@@ -1,6 +1,7 @@
 package irita.sdk.client;
 
 import com.google.protobuf.InvalidProtocolBufferException;
+import io.grpc.Channel;
 import io.grpc.ManagedChannel;
 import irita.sdk.config.ClientConfig;
 import irita.sdk.config.OpbConfig;
@@ -23,7 +24,7 @@ public class BaseClient {
     private KeyManager km;
 
     private TxEngine txEngine;
-    private ManagedChannel grpcClient;
+    private Channel grpcClient;
     private RpcClient rpcClient;
 
     public BaseClient() {
@@ -47,7 +48,7 @@ public class BaseClient {
         return rpcClient;
     }
 
-    public ManagedChannel getGrpcClient() {
+    public Channel getGrpcClient() {
         return grpcClient;
     }
 

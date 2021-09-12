@@ -1,7 +1,7 @@
 package irita.sdk.module.community_gov;
 
 import io.grpc.StatusRuntimeException;
-import irita.sdk.old_client.IritaClientOption;
+import irita.sdk.model.Fee;
 import irita.sdk.constant.ContractAddress;
 import irita.sdk.constant.ContractArg;
 import irita.sdk.constant.ContractMethod;
@@ -188,6 +188,6 @@ public class CommunityGovClient {
     }
 
     private BaseTx getComGovBaseTx() {
-        return new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+        return new BaseTx(2000000, new Fee("120", "stake"));
     }
 }

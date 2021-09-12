@@ -2,31 +2,30 @@
 
 irita-sdk-java
 
-## Key Manger
+## Key Manger管理
 
-### 1 recover
+### 1 恢复私钥
 
-#### 1.1 recover from mnemonic
+#### 1.1 从助记词恢复（recover from mnemonic）
 
 ```java
-        String mnemonic="xxx";
-        Key km=new KeyManager(mnemonic);
+        String mnemonic="opera xxx ..."；
+        KeyManager km=KeyManagerFactory.createDefault();
+        km.recover(mnemonic);
 ```
 
-#### 1.2 recover from privKey
+#### 1.2 从私钥（recover from privKey）
 
 ```java
-        String privKeyHex="3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec";
-        BigInteger privKey=new BigInteger(privKeyHex,16);
-        Key km=new KeyManager(privKey);
+        BigInteger privKey=new BigInteger("3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec",16);
+        KeyManager km=KeyManagerFactory.createKeyManger(AlgoEnum.SM2);
+        km.recover(privKey);
 ```
 
-#### 1.3 recover from keystore
-
-**read from str**
+#### 1.3 从keystore恢复（recover from keystore）
 
 ```java
-String keystore="-----BEGIN TENDERMINT PRIVATE KEY-----\n"+
+        String keystore="-----BEGIN TENDERMINT PRIVATE KEY-----\n"+
         "salt: 183EF9B57DEF8EF8C3AD9D21DE672E1B\n"+
         "type: sm2\n"+
         "kdf: bcrypt\n"+
@@ -37,135 +36,104 @@ String keystore="-----BEGIN TENDERMINT PRIVATE KEY-----\n"+
         "-----END TENDERMINT PRIVATE KEY-----";
 
         InputStream input=new ByteArrayInputStream(keystore.getBytes(StandardCharsets.UTF_8));
-        Key km=new KeyManager(input,"123456");
+        KeyManager km=KeyManagerFactory.createDefault();
+        km.recover(input,"123456");
 ```
 
-**read from file**
+### 2 导出（export）
 
 ```java
-        FileInputStream input=new FileInputStream("src/test/resources/priv.key");
-        Key km=new KeyManager(input,"123456");
+        BigInteger privKey=new BigInteger("3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec",16);
+        KeyManager km=KeyManagerFactory.createDefault();
+        km.recover(privKey);
+
+        String keystore=km.export("123456");
+        System.out.println(keystore);
 ```
 
-#### 1.4 recover from CaKeystore
+## 怎样使用irita-sdk-java（How to use irita-sdk-java）
+
+### 1 初始化IritaClient
 
 ```java
-        FileInputStream input=new FileInputStream("src/test/resources/ca.JKS");
-        Key km=KeyManager.recoverFromCAKeystore(input,"123456");
+        String mnemonic = "opera vivid pride shallow brick crew found resist decade neck expect apple chalk belt sick author know try tank detail tree impact hand best";
+        KeyManager km = KeyManagerFactory.createDefault();
+        km.recover(mnemonic);
+
+        String nodeUri = "http://101.132.138.109:26657";
+        String grpcAddr = "http://101.132.138.109:9090";
+        String chainId = "irita";
+        ClientConfig clientConfig = new ClientConfig(nodeUri, grpcAddr, chainId);
+//        OpbConfig opbConfig = new OpbConfig("", "", "");
+        OpbConfig opbConfig = null;
+
+        client = new IritaClient(clientConfig, opbConfig, km);
+        assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
 ```
 
-### 2 export
+## 使用NFT模块（Use NftClient）
+
+### 1. 新增一个denom（issue denom）
 
 ```java
-public interface Key {
-    /**
-     * export as keystore
-     *
-     * @param password password of keystore. The password is very important for recovery, so never forget it
-     */
-    String export(String password) throws IOException;
-}
+        String denomID = "denomid" + new Random().nextInt(1000);
+        String denomName = "test_name" + new Random().nextInt(1000);
+        String schema = "no shcema";
+
+        IssueDenomRequest req = new IssueDenomRequest()
+        .setId(denomID)
+        .setName(denomName)
+        .setSchema(schema);
+        ResultTx resultTx = nftClient.issueDenom(req, baseTx);
 ```
 
-### 3 getPrivKey or getAddr
+### 2. 发行一个nft（mint nft）
 
 ```java
-public interface Key {
-    BigInteger getPrivKey();
-
-    String getAddr();
-}
+        MintNFTRequest mintReq = new MintNFTRequest()
+        .setDenom(denomID)
+        .setId(nftID)
+        .setName(nftName)
+        .setUri(uri)
+        .setData(data)
+        .setRecipient(km.getAddr());
+        ResultTx resultTx = nftClient.mintNft(mintReq, baseTx);
 ```
 
-## How to use irita-sdk-java
-
-### 1 use in normal java project
+### 3. 编辑/修改存在的nft（edit nft）
 
 ```java
-        String mnemonic="opera vivid pride shallow brick crew found resist decade neck expect apple chalk belt sick author know try tank detail tree impact hand best";
-        String nodeUri=http://localhost:26657;
-        Key km=new KeyManager(mnemonic);
-        IritaClientOption option=IritaClientOption.getDefaultOption(km);
-        IritaClient irita.sdk.client=new IritaClient(nodeUri,grpcAddr,chainId,option);
-        WasmClient wasmClient=iritaClient.getWasmClient();
-        CommunityGovClient comGovClient=iritaClient.getCommunityGovClient();
-        // get other irita.sdk.client is as same as above
+        String newName = "new_name";
+        String newUri = "http://xx.com";
+        String newData = "new_data";
+        EditNFTRequest editReq = new EditNFTRequest()
+                .setDenom(denomID)
+                .setName(newName)
+                .setId(nftID)
+                .setUri(newUri)
+                .setData(newData);
+        ResultTx resultTx = nftClient.editNft(editReq, baseTx);
 ```
 
-### 2 use at spring
-
-Write next in application.yml
-
-```yaml
-irita:
-  sdk:
-    mnemonic: opera vivid pride shallow brick crew found resist decade neck expect apple chalk belt sick author know try tank detail tree impact hand best
-    nodeUri: http://localhost:26657
-    grpcAddr: http://localhost:9090
-    chainId: irita
-```
-
-**Then use @ConfigurationProperties + @Component to register Bean.**
-You can also use EnableConfigurationProperties(IritaSdkConfig.class) as you like
+### 4. 销毁nft（burn nft）
 
 ```java
-
-@Configuration
-@Data
-@ConfigurationProperties(prefix = "irita.sdk")
-public class IritaSdkConfig {
-    private String mnemonic;
-    private String nodeUri;
-    private String grpcAddr;
-    private String chainId;
-
-    @Bean
-    public IritaClient iritaClient() {
-        Key km = new KeyManager(mnemonic);
-        IritaClientOption option = IritaClientOption.getDefaultOption(km);
-        return new IritaClient(nodeUri, grpcAddr, chainId, option);
-    }
-
-    @Bean
-    public WasmClient wasmClient(IritaClient iritaClient) {
-        return iritaClient.getWasmClient();
-    }
-
-    @Bean
-    public CommunityGovClient comGovClient(IritaClient iritaClient) {
-        return iritaClient.getCommunityGovClient();
-    }
-}
+        BurnNFTRequest burnNFTReq = new BurnNFTRequest()
+                .setDenom(denomID)
+                .setId(nftID);
+        Result resultTx = nftClient.burnNft(burnNFTReq, baseTx);
 ```
-## Use CommunityGovClient
 
-### 1. add department(添加部门管理员)
+### 5. 查询denom
 
 ```java
-        final String publicKey = "iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3";
-        final String department = "测试部门";
+        QueryDenomResp denom = nftClient.queryDenom(denomID);
 
-        try {
-            comGovClient.addDepartment(department, publicKey, baseTx);
-        } catch (ContractException e) {
-            // you can use log to record
-            e.printStackTrace();
-        }
+        // next is findAll
+        List<QueryDenomResp> denoms = nftClient.queryDenoms(null);
 ```
 
-### 2. add a member(添加一个成员)
-
+### 6. 通过owner查询
 ```java
-        String newAddr = "iaa1wfs050mv8taydn4cttsrhr5dq3tpdaemcm5sk2";
-
-        try {
-            comGovClient.addMember(newAddr, Role.HASH_ADMIN, baseTx);
-        } catch (ContractException | IOException e) {
-            e.printStackTrace();
-        }
-        // 关于角色见 Role.java
+        QueryOwnerResp owner = nftClient.queryOwner(denomID, km.getAddr());
 ```
-
-### 3. other operation(其他方法)
-
-详见KeyMangerTest.java, WasmTest.java, ComGovContractTest.java

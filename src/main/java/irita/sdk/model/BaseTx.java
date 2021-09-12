@@ -1,18 +1,17 @@
 package irita.sdk.model;
 
-import irita.sdk.old_client.IritaClientOption;
 import irita.sdk.constant.enums.BroadcastMode;
 
 public class BaseTx {
     private int gas;
-    private IritaClientOption.Fee fee;
+    private Fee fee;
     private String memo;
     private BroadcastMode mode;
 
     public BaseTx() {
     }
 
-    public BaseTx(int gas, IritaClientOption.Fee fee) {
+    public BaseTx(int gas, Fee fee) {
         this.gas = gas;
         this.fee = fee;
     }
@@ -26,11 +25,11 @@ public class BaseTx {
         return this;
     }
 
-    public IritaClientOption.Fee getFee() {
+    public Fee getFee() {
         return fee;
     }
 
-    public BaseTx setFee(IritaClientOption.Fee fee) {
+    public BaseTx setFee(Fee fee) {
         this.fee = fee;
         return this;
     }

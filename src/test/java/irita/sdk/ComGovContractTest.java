@@ -1,19 +1,21 @@
 package irita.sdk;
 
+import irita.sdk.client.BaseClient;
+import irita.sdk.config.ClientConfig;
+import irita.sdk.config.OpbConfig;
 import irita.sdk.constant.ContractAddress;
 import irita.sdk.constant.enums.DocType;
 import irita.sdk.constant.enums.Role;
 import irita.sdk.exception.ContractException;
+import irita.sdk.key.KeyManager;
+import irita.sdk.key.KeyManagerFactory;
 import irita.sdk.model.BaseTx;
+import irita.sdk.model.Fee;
 import irita.sdk.model.ResultTx;
 import irita.sdk.module.community_gov.CommunityGovClient;
-import irita.sdk.module.keys.Key;
-import irita.sdk.module.keys.KeyManager;
 import irita.sdk.module.wasm.InstantiateRequest;
 import irita.sdk.module.wasm.StoreRequest;
 import irita.sdk.module.wasm.WasmClient;
-import irita.sdk.old_client.IritaClient;
-import irita.sdk.old_client.IritaClientOption;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -34,16 +36,18 @@ public class ComGovContractTest {
     @BeforeEach
     public void init() {
         String mnemonic = "opera vivid pride shallow brick crew found resist decade neck expect apple chalk belt sick author know try tank detail tree impact hand best";
-        Key km = new KeyManager(mnemonic);
-        IritaClientOption option = IritaClientOption.getDefaultOption(km);
+        KeyManager km = KeyManagerFactory.createDefault();
+        km.recover(mnemonic);
 
-        String nodeUri = "http://localhost:26657";
-        String grpcAddr = "http://localhost:9090";
+        String nodeUri = "http://101.132.138.109:26657";
+        String grpcAddr = "http://101.132.138.109:9090";
         String chainId = "irita";
-        IritaClient client = new IritaClient(nodeUri, grpcAddr, chainId, option);
-        wasmClient = client.getWasmClient();
-        comGovClient = client.getCommunityGovClient();
+        ClientConfig clientConfig = new ClientConfig(nodeUri, grpcAddr, chainId);
+//        OpbConfig opbConfig = new OpbConfig("", "", "");
+        OpbConfig opbConfig = null;
 
+        wasmClient = new WasmClient(new BaseClient(clientConfig, opbConfig, km));
+        comGovClient = new CommunityGovClient(wasmClient);
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
     }
 
@@ -53,7 +57,7 @@ public class ComGovContractTest {
         // store contract
         StoreRequest storeReq = new StoreRequest();
         storeReq.setWasmFile("src/test/resources/community_governance.wasm");
-        BaseTx baseTx = new BaseTx(2000000, new IritaClientOption.Fee("120", "stake"));
+        BaseTx baseTx = new BaseTx(2000000, new Fee("120", "stake"));
 
         String codeId = wasmClient.store(storeReq, baseTx);
         assertTrue(StringUtils.isNotEmpty(codeId));
@@ -140,13 +144,14 @@ public class ComGovContractTest {
     public void addHash() {
         // new irita.sdk.client, he role of cur_address must hash_admin
         String mnemonic = "apart various produce pond bachelor size pumpkin gate pretty awake silver worth dust pledge pioneer patrol current fall escape lunar zero afraid this fish";
-        Key km = new KeyManager(mnemonic);
-        IritaClientOption option = IritaClientOption.getDefaultOption(km);
+        KeyManager km = KeyManagerFactory.createDefault();
+        km.recover(mnemonic);
 
         String nodeUri = "http://localhost:26657";
         String grpcAddr = "http://localhost:9090";
         String chainId = "irita";
-        CommunityGovClient comGovClient1 = new IritaClient(nodeUri, grpcAddr, chainId, option).getCommunityGovClient();
+        ClientConfig clientConfig = new ClientConfig(nodeUri, grpcAddr, chainId);
+        CommunityGovClient comGovClient1 = new CommunityGovClient(new WasmClient(new BaseClient(clientConfig, null, km)));
 
         // exec add_hash
         DocType docType = DocType.FOREST_SEED_PRODUCTION_OPERATION_LICENSE;

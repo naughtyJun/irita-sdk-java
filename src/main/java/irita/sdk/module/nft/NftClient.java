@@ -1,7 +1,7 @@
 package irita.sdk.module.nft;
 
 
-import io.grpc.ManagedChannel;
+import io.grpc.Channel;
 import irita.sdk.client.BaseClient;
 import irita.sdk.model.Account;
 import irita.sdk.model.BaseTx;
@@ -124,7 +124,7 @@ public class NftClient {
 
 
     public long querySupply(String denomID, String owner) {
-        ManagedChannel channel = baseClient.getGrpcClient();
+        Channel channel = baseClient.getGrpcClient();
         QueryOuterClass.QuerySupplyRequest req = QueryOuterClass.QuerySupplyRequest
                 .newBuilder()
                 .setDenomId(denomID)
@@ -136,7 +136,7 @@ public class NftClient {
     }
 
     public QueryOwnerResp queryOwner(String denomID, String owner) {
-        ManagedChannel channel = baseClient.getGrpcClient();
+        Channel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryOwnerRequest req = QueryOuterClass.QueryOwnerRequest
                 .newBuilder()
                 .setDenomId(denomID)
@@ -148,7 +148,7 @@ public class NftClient {
     }
 
     public QueryCollectionResp queryCollection(String denomID, Pagination.PageRequest page) {
-        ManagedChannel channel = baseClient.getGrpcClient();
+        Channel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryCollectionRequest.Builder builder = QueryOuterClass.QueryCollectionRequest
                 .newBuilder()
                 .setDenomId(denomID);
@@ -162,7 +162,7 @@ public class NftClient {
     }
 
     public QueryDenomResp queryDenom(String denomID) {
-        ManagedChannel channel = baseClient.getGrpcClient();
+        Channel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryDenomRequest req = QueryOuterClass.QueryDenomRequest
                 .newBuilder()
                 .setDenomId(denomID)
@@ -172,7 +172,7 @@ public class NftClient {
     }
 
     public List<QueryDenomResp> queryDenoms(Pagination.PageRequest page) {
-        ManagedChannel channel = baseClient.getGrpcClient();
+        Channel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryDenomsRequest.Builder builder = QueryOuterClass.QueryDenomsRequest.newBuilder();
         if (page != null) {
             builder.setPagination(page);
@@ -184,7 +184,7 @@ public class NftClient {
     }
 
     public QueryNFTResp queryNFT(String denomID, String nftID) {
-        ManagedChannel channel = baseClient.getGrpcClient();
+        Channel channel = baseClient.getGrpcClient();
         QueryOuterClass.QueryNFTRequest req = QueryOuterClass.QueryNFTRequest
                 .newBuilder()
                 .setDenomId(denomID)

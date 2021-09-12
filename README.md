@@ -71,6 +71,12 @@ irita-sdk-java
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
 ```
 
+## 离线HASH
+
+```java
+        String txHash = client.getBaseClient().buildTxHash(msg, baseTx, account);
+```
+
 ## 使用NFT模块（Use NftClient）
 
 ### 1. 新增一个denom（issue denom）

@@ -1,12 +1,10 @@
 package irita.sdk;
 
-import irita.sdk.client.IritaClient;
 import irita.sdk.client.OpbClient;
 import irita.sdk.config.ClientConfig;
 import irita.sdk.config.OpbConfig;
 import irita.sdk.key.KeyManager;
 import irita.sdk.key.KeyManagerFactory;
-import irita.sdk.model.Account;
 import irita.sdk.module.nft.NftClient;
 import irita.sdk.module.nft.QueryDenomResp;
 import org.junit.jupiter.api.BeforeEach;
@@ -37,6 +35,7 @@ public class OpbTest {
     }
 
     @Test
+    @Disabled
     public void nftQuery() {
         NftClient nftClient = client.getNftClient();
         List<QueryDenomResp> queryDenomResps = nftClient.queryDenoms(null);

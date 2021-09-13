@@ -6,7 +6,7 @@
 
     <groupId>com.github.junjie-bianjie</groupId>
     <artifactId>irita-sdk</artifactId>
-    <version>0.7</version>
+    <version>0.8</version>
     <url>https://github.com/junjie-bianjie/irita-sdk-java</url>
     <name>irita-sdk</name>
     <licenses>

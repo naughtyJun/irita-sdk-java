@@ -1,6 +1,6 @@
 package irita.sdk.module.service;
 
-import irita.sdk.module.base.Coin;
+import irita.sdk.model.Coin;
 
 import java.util.List;
 

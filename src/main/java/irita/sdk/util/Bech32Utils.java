@@ -2,9 +2,6 @@ package irita.sdk.util;
 
 import org.bitcoinj.core.Bech32;
 
-/**
- * @author Yelong
- */
 public class Bech32Utils {
 
     public static String toBech32(String hrp, byte[] pubkeyHex) {

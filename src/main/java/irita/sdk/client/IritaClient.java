@@ -1,95 +1,73 @@
 package irita.sdk.client;
 
-import irita.opb.OpbOption;
+import irita.sdk.config.ClientConfig;
+import irita.sdk.config.OpbConfig;
+import irita.sdk.key.KeyManager;
 import irita.sdk.module.bank.BankClient;
-import irita.sdk.module.base.BaseClient;
-import irita.sdk.module.community_gov.CommunityGovClient;
-import irita.sdk.module.service.ServiceClient;
-import irita.sdk.module.wasm.WasmClient;
+import irita.sdk.module.nft.NftClient;
+import irita.sdk.module.perm.PermClient;
+import irita.sdk.module.tibc.TibcClient;
 
-public class IritaClient extends Client {
+public class IritaClient {
     private BaseClient baseClient;
+    private NftClient nftClient;
     private BankClient bankClient;
-    private WasmClient wasmClient;
-    private ServiceClient serviceClient;
-    private CommunityGovClient communityGovClient;
+    private PermClient permClient;
+    private TibcClient tibcClient;
 
-    public IritaClient(String nodeUri, String lcd, String chainId, IritaClientOption option) {
-        this.nodeUri = nodeUri;
-        this.lcd = lcd;
-        this.chainId = chainId;
-        this.opbOption = OpbOption.disabled();
-        this.option = option;
+    private IritaClient() {
     }
 
-    public IritaClient(String chainId, OpbOption opbOption, IritaClientOption option) {
-        this.chainId = chainId;
-        this.opbOption = opbOption;
-        this.option = option;
-    }
-
-    public String getNodeUri() {
-        return nodeUri;
-    }
-
-    public void setNodeUri(String nodeUri) {
-        this.nodeUri = nodeUri;
-    }
-
-    public String getChainId() {
-        return chainId;
-    }
-
-    public void setChainId(String chainId) {
-        this.chainId = chainId;
-    }
-
-    public IritaClientOption getOption() {
-        return option;
-    }
-
-    public void setOption(IritaClientOption option) {
-        this.option = option;
-    }
-
-    public BankClient getBankClient() {
-        if (this.bankClient == null) {
-            this.bankClient = new BankClient(this);
-        }
-
-        return this.bankClient;
+    public IritaClient(ClientConfig clientConfig, OpbConfig opbConfig, KeyManager km) {
+        BaseClient baseClient = new BaseClient(clientConfig, opbConfig, km);
+        this.baseClient = baseClient;
+        this.nftClient = new NftClient(baseClient);
+        this.bankClient = new BankClient(baseClient);
+        this.permClient = new PermClient(baseClient);
+        this.tibcClient = new TibcClient(baseClient);
     }
 
     public BaseClient getBaseClient() {
-        if (this.baseClient == null) {
-            this.baseClient = new BaseClient(this);
-        }
-
-        return this.baseClient;
+        return baseClient;
     }
 
-    public WasmClient getWasmClient() {
-        if (this.wasmClient == null) {
-            this.wasmClient = new WasmClient(this);
-        }
-
-        return this.wasmClient;
+    public IritaClient setBaseClient(BaseClient baseClient) {
+        this.baseClient = baseClient;
+        return this;
     }
 
-    public ServiceClient getServiceClient() {
-        if (this.serviceClient == null) {
-            this.serviceClient = new ServiceClient(this);
-        }
-
-        return this.serviceClient;
+    public NftClient getNftClient() {
+        return nftClient;
     }
 
+    public IritaClient setNftClient(NftClient nftClient) {
+        this.nftClient = nftClient;
+        return this;
+    }
 
-    public CommunityGovClient getCommunityGovClient() {
-        if (this.communityGovClient == null) {
-            this.communityGovClient = new CommunityGovClient(this.getWasmClient());
-        }
+    public BankClient getBankClient() {
+        return bankClient;
+    }
 
-        return this.communityGovClient;
+    public IritaClient setBankClient(BankClient bankClient) {
+        this.bankClient = bankClient;
+        return this;
+    }
+
+    public PermClient getPermClient() {
+        return permClient;
+    }
+
+    public void setPermClient(PermClient permClient) {
+        this.permClient = permClient;
+    }
+
+    public TibcClient getTibcClient() {
+        return tibcClient;
+    }
+
+    public IritaClient setTibcClient(TibcClient tibcClient) {
+        this.tibcClient = tibcClient;
+        return this;
     }
 }

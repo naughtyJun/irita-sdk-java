@@ -1,42 +1,37 @@
 package irita.sdk.module.wasm;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.google.protobuf.ByteString;
-import cosmos.base.v1beta1.CoinOuterClass;
-import cosmos.tx.v1beta1.TxOuterClass;
-import cosmwasm.wasm.v1beta1.Tx;
-import irita.sdk.client.Client;
-import irita.sdk.constant.TxStatus;
+import com.google.protobuf.GeneratedMessageV3;
+import io.grpc.Channel;
+import irita.sdk.client.BaseClient;
 import irita.sdk.constant.enums.EventEnum;
-import irita.sdk.exception.ContractException;
 import irita.sdk.exception.IritaSDKException;
-import irita.sdk.model.QueryContractInfoResp;
-import irita.sdk.model.QueryContractStateResp;
-import irita.sdk.module.base.*;
+import irita.sdk.model.Account;
+import irita.sdk.model.BaseTx;
+import irita.sdk.model.Coin;
+import irita.sdk.model.ResultTx;
 import irita.sdk.util.IOUtils;
-import org.bouncycastle.util.encoders.Hex;
+import proto.cosmos.base.v1beta1.CoinOuterClass;
+import proto.x.wasm.internal.types.QueryGrpc;
+import proto.x.wasm.internal.types.QueryOuterClass;
+import proto.x.wasm.internal.types.Tx;
+import proto.x.wasm.internal.types.Types;
 
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
-public class WasmClient extends Client {
-    public WasmClient(Client client) {
-        this.nodeUri = client.getNodeUri();
-        this.lcd = client.getLcd();
-        this.chainId = client.getChainId();
-        this.opbOption = client.getOpbOption();
-        this.option = client.getOption();
+public class WasmClient {
+    private final BaseClient baseClient;
+
+    public WasmClient(BaseClient baseClient) {
+        this.baseClient = baseClient;
     }
 
     // upload the contract to block-chain and return the codeId for user
     public String store(StoreRequest req, BaseTx baseTx) throws IOException {
-        Account account = super.queryAccount(option.getKeyManager().getAddr());
+        Account account = baseClient.queryAccount();
 
         if (req.getWasmByteCode() != null) {
             req.setWasmByteCode(req.getWasmByteCode());
@@ -51,22 +46,17 @@ public class WasmClient extends Client {
         Tx.MsgStoreCode msg = Tx.MsgStoreCode.newBuilder()
                 .setSender(account.getAddress())
                 .setWasmByteCode(ByteString.copyFrom(req.getWasmByteCode()))
-                .setSource(Optional.ofNullable(req.getSource()).orElse(""))
-                .setBuilder(Optional.ofNullable(req.getBuilder()).orElse(""))
+                .setSource("")
+                .setBuilder("")
                 .build();
-
-        TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
-
-        String res = httpUtils().post(getTxUri(), new WrappedRequest<>(tx));
-        ResultTx resultTx = checkResTxAndConvert(res);
-
+        List<GeneratedMessageV3> msgs = Collections.singletonList(msg);
+        ResultTx resultTx = baseClient.buildAndSend(msgs, baseTx, account);
         return resultTx.getEventValue(EventEnum.MESSAGE_CODE_ID);
     }
 
     // instantiate the contract state
     public String instantiate(InstantiateRequest req, BaseTx baseTx) throws IOException {
-        Account account = super.queryAccount(option.getKeyManager().getAddr());
+        Account account = baseClient.queryAccount();
         Tx.MsgInstantiateContract.Builder builder = Tx.MsgInstantiateContract.newBuilder()
                 .setSender(account.getAddress())
                 .setAdmin(Optional.of(req).map(InstantiateRequest::getAdmin).orElse(""))
@@ -82,18 +72,14 @@ public class WasmClient extends Client {
         }
 
         Tx.MsgInstantiateContract msg = builder.build();
-        TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
-
-        String res = httpUtils().post(getTxUri(), new WrappedRequest<>(tx));
-        ResultTx resultTx = checkResTxAndConvert(res);
-
+        List<GeneratedMessageV3> msgs = Collections.singletonList(msg);
+        ResultTx resultTx = baseClient.buildAndSend(msgs, baseTx, account);
         return resultTx.getEventValue(EventEnum.MESSAGE_CONTRACT_ADDRESS);
     }
 
     // execute the contract method
     public ResultTx execute(String contractAddress, ContractABI abi, Coin funds, BaseTx baseTx) throws IOException {
-        Account account = super.queryAccount(option.getKeyManager().getAddr());
+        Account account = baseClient.queryAccount();
         byte[] msgBytes = abi.build();
 
         Tx.MsgExecuteContract.Builder builder = Tx.MsgExecuteContract.newBuilder()
@@ -109,77 +95,70 @@ public class WasmClient extends Client {
         }
 
         Tx.MsgExecuteContract msg = builder.build();
-        TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(baseTx, body, false);
-
-        String res = httpUtils().post(getTxUri(), new WrappedRequest<>(tx));
-        return checkResTxAndConvert(res);
+        List<GeneratedMessageV3> msgs = Collections.singletonList(msg);
+        return baseClient.buildAndSend(msgs, baseTx, account);
     }
 
-    public ResultTx migrate(String contractAddress, long newCodeID, byte[] msgByte) throws IOException {
-        Account account = super.queryAccount(option.getKeyManager().getAddr());
+    public ResultTx migrate(String contractAddress, long newCodeID, byte[] msgByte, BaseTx baseTx) throws IOException {
+        Account account = baseClient.queryAccount();
         Tx.MsgMigrateContract msg = Tx.MsgMigrateContract.newBuilder()
                 .setSender(account.getAddress())
                 .setContract(contractAddress)
                 .setCodeId(newCodeID)
                 .setMigrateMsg(ByteString.copyFrom(msgByte))
                 .build();
-
-        TxOuterClass.TxBody body = super.buildTxBody(msg);
-        TxOuterClass.Tx tx = super.signTx(null, body, false);
-        String res = httpUtils().post(getTxUri(), new WrappedRequest<>(tx));
-        return checkResTxAndConvert(res);
+        List<GeneratedMessageV3> msgs = Collections.singletonList(msg);
+        return baseClient.buildAndSend(msgs, baseTx, account);
     }
 
     // return the contract information
-    public ContractInfo queryContractInfo(String contractAddress) throws ContractException {
-        String queryContractInfoUri = getQueryUri() + "/wasm/v1beta1/contract/" + contractAddress;
-        String res = httpUtils().get(queryContractInfoUri);
-        QueryContractInfoResp contractInfoResp = JSONObject.parseObject(res, QueryContractInfoResp.class);
+    public ContractInfo queryContractInfo(String contractAddress) {
+        Channel channel = baseClient.getGrpcClient();
+        QueryOuterClass.QueryContractInfoRequest req = QueryOuterClass.QueryContractInfoRequest
+                .newBuilder()
+                .setAddress(contractAddress)
+                .build();
 
-        if (contractInfoResp.notFound()) {
-            throw new ContractException(contractInfoResp.getMessage());
-        }
-        return contractInfoResp.getContractInfo();
+        QueryOuterClass.QueryContractInfoResponse resp = QueryGrpc.newBlockingStub(channel).contractInfo(req);
+        return Convert.toContractInfo(resp);
     }
 
     // execute contract's query method and return the result
-    public String queryContract(String address, ContractABI abi) {
-        String params = ContractQuery.build(abi.getMethod(), abi.getArgs());
-        String encodeParams = URLEncoder.encode(params);
+    public byte[] queryContract(String address, ContractABI abi) {
+        Channel channel = baseClient.getGrpcClient();
+        byte[] msgBytes = abi.build();
+        QueryOuterClass.QuerySmartContractStateRequest req = QueryOuterClass.QuerySmartContractStateRequest
+                .newBuilder()
+                .setAddress(address)
+                .setQueryData(ByteString.copyFrom(msgBytes))
+                .build();
 
-        String baseUri = "/wasm/v1beta1/contract/%s/smart/%s";
-        String queryContractUri = String.format(getQueryUri() + baseUri, address, encodeParams);
-        return httpUtils().get(queryContractUri);
+        QueryOuterClass.QuerySmartContractStateResponse resp = QueryGrpc.newBlockingStub(channel).smartContractState(req);
+        return resp.toByteArray();
     }
 
     // export all state data of the contract
     public Map<String, String> exportContractState(String address) {
-        String exportContractStateUri = getQueryUri() + "/wasm/v1beta1/contract/" + address + "/state";
-        String res = httpUtils().get(exportContractStateUri);
-        QueryContractStateResp contractStateResp = JSONObject.parseObject(res, QueryContractStateResp.class);
+        Channel channel = baseClient.getGrpcClient();
+        QueryOuterClass.QueryAllContractStateRequest req = QueryOuterClass.QueryAllContractStateRequest
+                .newBuilder()
+                .setAddress(address)
+                .build();
 
-        Map<String, String> map = new HashMap<>(contractStateResp.getModels().size());
-        for (QueryContractStateResp.Models model : contractStateResp.getModels()) {
-            byte[] bytes = Hex.decode(model.getKey());
+        QueryOuterClass.QueryAllContractStateResponse resp = QueryGrpc.newBlockingStub(channel).allContractState(req);
+
+        Map<String, String> map = new HashMap<>();
+        List<Types.Model> models = resp.getModelsList();
+        for (Types.Model model : models) {
+            byte[] bytes = model.getKey().toByteArray();
             final int PREFIX = 2;
             byte[] dest = new byte[bytes.length - PREFIX];
             System.arraycopy(bytes, PREFIX, dest, 0, dest.length);
 
             String key = new String(dest);
-            String value = new String(Base64.getDecoder().decode(model.getValue()));
+            String value = new String(model.getValue().toByteArray());
             map.put(key, value);
         }
         return map;
-    }
-
-    // TODO client do this
-    private ResultTx checkResTxAndConvert(String res) {
-        ResultTx resultTx = JSON.parseObject(res, ResultTx.class);
-
-        if (resultTx.getCode() != TxStatus.SUCCESS) {
-            throw new IritaSDKException(resultTx.getLog());
-        }
-        return resultTx;
     }
 }

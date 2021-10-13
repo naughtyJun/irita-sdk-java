@@ -1,6 +1,6 @@
 package irita.sdk.module.service;
 
-import irita.sdk.module.base.ResultTx;
+import irita.sdk.model.ResultTx;
 
 public class CallServiceResp {
     private String reqCtxId;

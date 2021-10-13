@@ -1,7 +1,8 @@
 package irita.sdk;
 
-import irita.sdk.module.keys.Key;
-import irita.sdk.module.keys.KeyManager;
+import irita.sdk.key.AlgoEnum;
+import irita.sdk.key.KeyManager;
+import irita.sdk.key.KeyManagerFactory;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,8 @@ public class KeyManagerTest {
     @Test
     public void recoverFromMnemonic() {
         String mnemonic = "opera vivid pride shallow brick crew found resist decade neck expect apple chalk belt sick author know try tank detail tree impact hand best";
-        Key km = new KeyManager(mnemonic);
+        KeyManager km = KeyManagerFactory.createDefault();
+        km.recover(mnemonic);
 
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
         assertEquals("3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec", km.getPrivKey().toString(16));
@@ -27,16 +29,18 @@ public class KeyManagerTest {
     @Test
     public void recoverFromPrivateKey() {
         BigInteger privKey = new BigInteger("3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec", 16);
-        Key km = new KeyManager(privKey);
+        KeyManager km = KeyManagerFactory.createKeyManger(AlgoEnum.SM2);
+        km.recover(privKey);
 
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
         assertEquals("3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec", km.getPrivKey().toString(16));
     }
 
     @Test
-    public void export() throws IOException {
+    public void export() {
         BigInteger privKey = new BigInteger("3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec", 16);
-        Key km = new KeyManager(privKey);
+        KeyManager km = KeyManagerFactory.createDefault();
+        km.recover(privKey);
 
         String keystore = km.export("123456");
         System.out.println(keystore);
@@ -56,7 +60,8 @@ public class KeyManagerTest {
                 "-----END TENDERMINT PRIVATE KEY-----";
 
         InputStream input = new ByteArrayInputStream(keystore.getBytes(StandardCharsets.UTF_8));
-        Key km = new KeyManager(input, "123456");
+        KeyManager km = KeyManagerFactory.createDefault();
+        km.recover(input, "123456");
 
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
         assertEquals("3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec", km.getPrivKey().toString(16));
@@ -66,7 +71,8 @@ public class KeyManagerTest {
     @Tag("read keystore from file")
     public void recoverFromKeystore2() throws IOException {
         FileInputStream input = new FileInputStream("src/test/resources/priv.key");
-        Key km = new KeyManager(input, "123456");
+        KeyManager km = KeyManagerFactory.createDefault();
+        km.recover(input, "123456");
 
         assertEquals("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3", km.getAddr());
         assertEquals("3c49175daf981965679bf88d2690e22144424e16c84e9d397ddb58b63603eeec", km.getPrivKey().toString(16));
@@ -75,7 +81,17 @@ public class KeyManagerTest {
     @Test
     public void recoverFromCAKeystore() throws Exception {
         FileInputStream input = new FileInputStream("src/test/resources/ca.JKS");
-        Key km = KeyManager.recoverFromCAKeystore(input, "123456");
+        KeyManager km = KeyManagerFactory.createDefault();
+        km.recoverFromCA(input, "123456");
+
         assertEquals("iaa1sul8jyesxq5nuwstyj5lzzsdc2sedeehl365qk", km.getAddr());
+    }
+
+    @Test
+    public void addNewKm() throws Exception {
+        KeyManager km = KeyManagerFactory.createDefault();
+        km.add();
+        String mnemonic = km.getMnemonic();
+        System.out.println(mnemonic);
     }
 }

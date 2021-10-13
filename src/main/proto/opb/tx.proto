@@ -3,7 +3,7 @@ package irita.opb;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/bianjieai/irita/modules/opb/types";
+option java_package = "proto.opb";
 option (gogoproto.goproto_getters_all)  = false;
 
 // Msg defines the OPB Msg service.

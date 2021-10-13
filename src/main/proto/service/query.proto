@@ -7,6 +7,8 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "service/service.proto";
 
+option java_package = "proto.service";
+
 // Query creates service with iservice as rpc
 service Query {
     // Definition returns service definition

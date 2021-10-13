@@ -1,9 +1,8 @@
 package irita.sdk.util;
 
 
-import com.alibaba.fastjson.JSON;
-import irita.sdk.exception.ContractException;
-import irita.sdk.module.base.WrappedRequest;
+import irita.sdk.constant.Constant;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -12,9 +11,17 @@ import java.nio.charset.StandardCharsets;
 
 public class HttpUtils {
     private static final int DEFAULT_TIME_OUT = 15000;
+    private String projectKey;
+
+    public HttpUtils() {
+    }
+
+    public HttpUtils(String projectKey) {
+        this.projectKey = projectKey;
+    }
 
     // this get just for call lcd, if you want use a common get, you will need refactor
-    public static String get(String uri) {
+    public String get(String uri) {
         HttpURLConnection connection;
         InputStream is;
         String result = null;
@@ -23,9 +30,11 @@ public class HttpUtils {
         try {
             url = new URL(uri);
             connection = (HttpURLConnection) url.openConnection();
+            setProjectKey(connection);
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(DEFAULT_TIME_OUT);
             connection.setReadTimeout(DEFAULT_TIME_OUT);
+
             // send req to server
             connection.connect();
             if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -57,7 +66,7 @@ public class HttpUtils {
         return builder.toString();
     }
 
-    public static boolean http400or500(HttpURLConnection connection) throws IOException {
+    public boolean http400or500(HttpURLConnection connection) throws IOException {
         return connection.getResponseCode() == HttpURLConnection.HTTP_BAD_REQUEST || connection.getResponseCode() == HttpURLConnection.HTTP_INTERNAL_ERROR;
     }
 
@@ -68,7 +77,7 @@ public class HttpUtils {
      * @param body json
      * @return res
      */
-    public static String post(String uri, String body) throws IOException {
+    public String post(String uri, String body) throws IOException {
         HttpURLConnection connection;
         InputStream is;
         OutputStream os;
@@ -77,6 +86,7 @@ public class HttpUtils {
 
         url = new URL(uri);
         connection = (HttpURLConnection) url.openConnection();
+        setProjectKey(connection);
         connection.setRequestMethod("POST");
         connection.setDoInput(true);
         connection.setDoOutput(true);
@@ -99,9 +109,9 @@ public class HttpUtils {
         return result;
     }
 
-    // use this to send tx
-    // TODO use lock
-    public static <S extends com.google.protobuf.GeneratedMessageV3> String post(String uri, WrappedRequest<S> object) throws IOException {
-        return post(uri, JSON.toJSONString(object));
+    private void setProjectKey(HttpURLConnection con) {
+        if (StringUtils.isNotEmpty(projectKey)) {
+            con.setRequestProperty(Constant.OPB_PROJECT_KEY_HEADER, projectKey);
+        }
     }
 }

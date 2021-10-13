@@ -1,15 +1,15 @@
 package irita.sdk.model;
 
 public class Coin {
-    private String amount;
     private String denom;
+    private String amount;
 
     public Coin() {
     }
 
-    public Coin(String amount, String denom) {
-        this.amount = amount;
+    public Coin(String denom, String amount) {
         this.denom = denom;
+        this.amount = amount;
     }
 
     public String getDenom() {

@@ -29,9 +29,4 @@ public class Account {
     public void setSequence(long sequence) {
         this.sequence = sequence;
     }
-
-    @Override
-    public String toString() {
-        return address;
-    }
 }

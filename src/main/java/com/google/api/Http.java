@@ -12,7 +12,7 @@ package com.google.api;
  *
  * Protobuf type {@code google.api.Http}
  */
-public final class Http extends
+public  final class Http extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.api.Http)
     HttpOrBuilder {
@@ -23,13 +23,7 @@ private static final long serialVersionUID = 0L;
   }
   private Http() {
     rules_ = java.util.Collections.emptyList();
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new Http();
+    fullyDecodeReservedExpansion_ = false;
   }
 
   @java.lang.Override
@@ -57,7 +51,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               rules_ = new java.util.ArrayList<com.google.api.HttpRule>();
               mutable_bitField0_ |= 0x00000001;
             }
@@ -71,7 +65,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownField(
+            if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -85,7 +79,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         rules_ = java.util.Collections.unmodifiableList(rules_);
       }
       this.unknownFields = unknownFields.build();
@@ -105,6 +99,7 @@ private static final long serialVersionUID = 0L;
             com.google.api.Http.class, com.google.api.Http.Builder.class);
   }
 
+  private int bitField0_;
   public static final int RULES_FIELD_NUMBER = 1;
   private java.util.List<com.google.api.HttpRule> rules_;
   /**
@@ -115,7 +110,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.HttpRule rules = 1;</code>
    */
-  @java.lang.Override
   public java.util.List<com.google.api.HttpRule> getRulesList() {
     return rules_;
   }
@@ -127,7 +121,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.HttpRule rules = 1;</code>
    */
-  @java.lang.Override
   public java.util.List<? extends com.google.api.HttpRuleOrBuilder> 
       getRulesOrBuilderList() {
     return rules_;
@@ -140,7 +133,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.HttpRule rules = 1;</code>
    */
-  @java.lang.Override
   public int getRulesCount() {
     return rules_.size();
   }
@@ -152,7 +144,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.HttpRule rules = 1;</code>
    */
-  @java.lang.Override
   public com.google.api.HttpRule getRules(int index) {
     return rules_.get(index);
   }
@@ -164,7 +155,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.HttpRule rules = 1;</code>
    */
-  @java.lang.Override
   public com.google.api.HttpRuleOrBuilder getRulesOrBuilder(
       int index) {
     return rules_.get(index);
@@ -182,9 +172,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool fully_decode_reserved_expansion = 2;</code>
-   * @return The fullyDecodeReservedExpansion.
    */
-  @java.lang.Override
   public boolean getFullyDecodeReservedExpansion() {
     return fullyDecodeReservedExpansion_;
   }
@@ -241,12 +229,13 @@ private static final long serialVersionUID = 0L;
     }
     com.google.api.Http other = (com.google.api.Http) obj;
 
-    if (!getRulesList()
-        .equals(other.getRulesList())) return false;
-    if (getFullyDecodeReservedExpansion()
-        != other.getFullyDecodeReservedExpansion()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    boolean result = true;
+    result = result && getRulesList()
+        .equals(other.getRulesList());
+    result = result && (getFullyDecodeReservedExpansion()
+        == other.getFullyDecodeReservedExpansion());
+    result = result && unknownFields.equals(other.unknownFields);
+    return result;
   }
 
   @java.lang.Override
@@ -438,8 +427,9 @@ private static final long serialVersionUID = 0L;
     public com.google.api.Http buildPartial() {
       com.google.api.Http result = new com.google.api.Http(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -448,41 +438,42 @@ private static final long serialVersionUID = 0L;
         result.rules_ = rulesBuilder_.build();
       }
       result.fullyDecodeReservedExpansion_ = fullyDecodeReservedExpansion_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.setField(field, value);
+      return (Builder) super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+      return (Builder) super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+      return (Builder) super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -558,7 +549,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.HttpRule> rules_ =
       java.util.Collections.emptyList();
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         rules_ = new java.util.ArrayList<com.google.api.HttpRule>(rules_);
         bitField0_ |= 0x00000001;
        }
@@ -877,7 +868,7 @@ private static final long serialVersionUID = 0L;
         rulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.HttpRule, com.google.api.HttpRule.Builder, com.google.api.HttpRuleOrBuilder>(
                 rules_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
                 isClean());
         rules_ = null;
@@ -896,9 +887,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool fully_decode_reserved_expansion = 2;</code>
-     * @return The fullyDecodeReservedExpansion.
      */
-    @java.lang.Override
     public boolean getFullyDecodeReservedExpansion() {
       return fullyDecodeReservedExpansion_;
     }
@@ -912,8 +901,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool fully_decode_reserved_expansion = 2;</code>
-     * @param value The fullyDecodeReservedExpansion to set.
-     * @return This builder for chaining.
      */
     public Builder setFullyDecodeReservedExpansion(boolean value) {
       
@@ -931,7 +918,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool fully_decode_reserved_expansion = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearFullyDecodeReservedExpansion() {
       
@@ -942,7 +928,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     @java.lang.Override

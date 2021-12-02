@@ -13,7 +13,6 @@ public interface HttpBodyOrBuilder extends
    * </pre>
    *
    * <code>string content_type = 1;</code>
-   * @return The contentType.
    */
   java.lang.String getContentType();
   /**
@@ -22,7 +21,6 @@ public interface HttpBodyOrBuilder extends
    * </pre>
    *
    * <code>string content_type = 1;</code>
-   * @return The bytes for contentType.
    */
   com.google.protobuf.ByteString
       getContentTypeBytes();
@@ -33,7 +31,6 @@ public interface HttpBodyOrBuilder extends
    * </pre>
    *
    * <code>bytes data = 2;</code>
-   * @return The data.
    */
   com.google.protobuf.ByteString getData();
 

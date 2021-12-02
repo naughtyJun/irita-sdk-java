@@ -35,7 +35,6 @@ public interface AnyOrBuilder extends
    * </pre>
    *
    * <code>string type_url = 1;</code>
-   * @return The typeUrl.
    */
   java.lang.String getTypeUrl();
   /**
@@ -66,7 +65,6 @@ public interface AnyOrBuilder extends
    * </pre>
    *
    * <code>string type_url = 1;</code>
-   * @return The bytes for typeUrl.
    */
   com.google.protobuf.ByteString
       getTypeUrlBytes();
@@ -77,7 +75,6 @@ public interface AnyOrBuilder extends
    * </pre>
    *
    * <code>bytes value = 2;</code>
-   * @return The value.
    */
   com.google.protobuf.ByteString getValue();
 }

@@ -1061,11 +1061,19 @@ public final class GoGoProtos {
       "oProtosZ\"github.com/gogo/protobuf/gogopr" +
       "oto"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.DescriptorProtos.getDescriptor(),
-        });
+        }, assigner);
     goprotoEnumPrefix.internalInit(descriptor.getExtensions().get(0));
     goprotoEnumStringer.internalInit(descriptor.getExtensions().get(1));
     enumStringer.internalInit(descriptor.getExtensions().get(2));

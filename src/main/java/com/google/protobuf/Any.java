@@ -72,7 +72,7 @@ package com.google.protobuf;
  *
  * Protobuf type {@code google.protobuf.Any}
  */
-public final class Any extends
+public  final class Any extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.protobuf.Any)
     AnyOrBuilder {
@@ -84,13 +84,6 @@ private static final long serialVersionUID = 0L;
   private Any() {
     typeUrl_ = "";
     value_ = com.google.protobuf.ByteString.EMPTY;
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new Any();
   }
 
   @java.lang.Override
@@ -106,6 +99,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -128,7 +122,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownField(
+            if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -211,16 +205,12 @@ private static final long serialVersionUID = 0L;
   public <T extends com.google.protobuf.Message> T unpack(
       java.lang.Class<T> clazz)
       throws com.google.protobuf.InvalidProtocolBufferException {
-    boolean invalidClazz = false;
-    if (cachedUnpackValue != null) {
-      if (cachedUnpackValue.getClass() == clazz) {
-        return (T) cachedUnpackValue;
-      }
-      invalidClazz = true;
-    }
-    if (invalidClazz || !is(clazz)) {
+    if (!is(clazz)) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           "Type of the Any message does not match the given class.");
+    }
+    if (cachedUnpackValue != null) {
+      return (T) cachedUnpackValue;
     }
     T defaultInstance =
         com.google.protobuf.Internal.getDefaultInstance(clazz);
@@ -259,9 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string type_url = 1;</code>
-   * @return The typeUrl.
    */
-  @java.lang.Override
   public java.lang.String getTypeUrl() {
     java.lang.Object ref = typeUrl_;
     if (ref instanceof java.lang.String) {
@@ -302,9 +290,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string type_url = 1;</code>
-   * @return The bytes for typeUrl.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString
       getTypeUrlBytes() {
     java.lang.Object ref = typeUrl_;
@@ -327,9 +313,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes value = 2;</code>
-   * @return The value.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getValue() {
     return value_;
   }
@@ -385,12 +369,13 @@ private static final long serialVersionUID = 0L;
     }
     com.google.protobuf.Any other = (com.google.protobuf.Any) obj;
 
-    if (!getTypeUrl()
-        .equals(other.getTypeUrl())) return false;
-    if (!getValue()
-        .equals(other.getValue())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    boolean result = true;
+    result = result && getTypeUrl()
+        .equals(other.getTypeUrl());
+    result = result && getValue()
+        .equals(other.getValue());
+    result = result && unknownFields.equals(other.unknownFields);
+    return result;
   }
 
   @java.lang.Override
@@ -641,35 +626,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.setField(field, value);
+      return (Builder) super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+      return (Builder) super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+      return (Builder) super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -748,7 +733,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type_url = 1;</code>
-     * @return The typeUrl.
      */
     public java.lang.String getTypeUrl() {
       java.lang.Object ref = typeUrl_;
@@ -790,7 +774,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type_url = 1;</code>
-     * @return The bytes for typeUrl.
      */
     public com.google.protobuf.ByteString
         getTypeUrlBytes() {
@@ -833,8 +816,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type_url = 1;</code>
-     * @param value The typeUrl to set.
-     * @return This builder for chaining.
      */
     public Builder setTypeUrl(
         java.lang.String value) {
@@ -874,7 +855,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type_url = 1;</code>
-     * @return This builder for chaining.
      */
     public Builder clearTypeUrl() {
       
@@ -910,8 +890,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type_url = 1;</code>
-     * @param value The bytes for typeUrl to set.
-     * @return This builder for chaining.
      */
     public Builder setTypeUrlBytes(
         com.google.protobuf.ByteString value) {
@@ -932,9 +910,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes value = 2;</code>
-     * @return The value.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
@@ -944,8 +920,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes value = 2;</code>
-     * @param value The value to set.
-     * @return This builder for chaining.
      */
     public Builder setValue(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -962,7 +936,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes value = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearValue() {
       
@@ -973,7 +946,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     @java.lang.Override

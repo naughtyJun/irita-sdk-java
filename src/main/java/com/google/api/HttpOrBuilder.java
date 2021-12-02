@@ -66,7 +66,6 @@ public interface HttpOrBuilder extends
    * </pre>
    *
    * <code>bool fully_decode_reserved_expansion = 2;</code>
-   * @return The fullyDecodeReservedExpansion.
    */
   boolean getFullyDecodeReservedExpansion();
 }

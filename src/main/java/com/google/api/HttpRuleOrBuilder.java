@@ -14,7 +14,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string selector = 1;</code>
-   * @return The selector.
    */
   java.lang.String getSelector();
   /**
@@ -24,7 +23,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string selector = 1;</code>
-   * @return The bytes for selector.
    */
   com.google.protobuf.ByteString
       getSelectorBytes();
@@ -35,7 +33,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string get = 2;</code>
-   * @return The get.
    */
   java.lang.String getGet();
   /**
@@ -44,7 +41,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string get = 2;</code>
-   * @return The bytes for get.
    */
   com.google.protobuf.ByteString
       getGetBytes();
@@ -55,7 +51,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string put = 3;</code>
-   * @return The put.
    */
   java.lang.String getPut();
   /**
@@ -64,7 +59,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string put = 3;</code>
-   * @return The bytes for put.
    */
   com.google.protobuf.ByteString
       getPutBytes();
@@ -75,7 +69,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string post = 4;</code>
-   * @return The post.
    */
   java.lang.String getPost();
   /**
@@ -84,7 +77,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string post = 4;</code>
-   * @return The bytes for post.
    */
   com.google.protobuf.ByteString
       getPostBytes();
@@ -95,7 +87,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string delete = 5;</code>
-   * @return The delete.
    */
   java.lang.String getDelete();
   /**
@@ -104,7 +95,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string delete = 5;</code>
-   * @return The bytes for delete.
    */
   com.google.protobuf.ByteString
       getDeleteBytes();
@@ -115,7 +105,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string patch = 6;</code>
-   * @return The patch.
    */
   java.lang.String getPatch();
   /**
@@ -124,7 +113,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string patch = 6;</code>
-   * @return The bytes for patch.
    */
   com.google.protobuf.ByteString
       getPatchBytes();
@@ -138,7 +126,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.api.CustomHttpPattern custom = 8;</code>
-   * @return Whether the custom field is set.
    */
   boolean hasCustom();
   /**
@@ -150,7 +137,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.api.CustomHttpPattern custom = 8;</code>
-   * @return The custom.
    */
   com.google.api.CustomHttpPattern getCustom();
   /**
@@ -174,7 +160,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string body = 7;</code>
-   * @return The body.
    */
   java.lang.String getBody();
   /**
@@ -186,7 +171,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string body = 7;</code>
-   * @return The bytes for body.
    */
   com.google.protobuf.ByteString
       getBodyBytes();
@@ -199,7 +183,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string response_body = 12;</code>
-   * @return The responseBody.
    */
   java.lang.String getResponseBody();
   /**
@@ -210,7 +193,6 @@ public interface HttpRuleOrBuilder extends
    * </pre>
    *
    * <code>string response_body = 12;</code>
-   * @return The bytes for responseBody.
    */
   com.google.protobuf.ByteString
       getResponseBodyBytes();

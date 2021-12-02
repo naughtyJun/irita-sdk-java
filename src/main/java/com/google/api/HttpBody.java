@@ -38,7 +38,7 @@ package com.google.api;
  *
  * Protobuf type {@code google.api.HttpBody}
  */
-public final class HttpBody extends
+public  final class HttpBody extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.api.HttpBody)
     HttpBodyOrBuilder {
@@ -51,13 +51,6 @@ private static final long serialVersionUID = 0L;
     contentType_ = "";
     data_ = com.google.protobuf.ByteString.EMPTY;
     extensions_ = java.util.Collections.emptyList();
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new HttpBody();
   }
 
   @java.lang.Override
@@ -96,16 +89,16 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
               extensions_ = new java.util.ArrayList<com.google.protobuf.Any>();
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000004;
             }
             extensions_.add(
                 input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
             break;
           }
           default: {
-            if (!parseUnknownField(
+            if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -119,7 +112,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         extensions_ = java.util.Collections.unmodifiableList(extensions_);
       }
       this.unknownFields = unknownFields.build();
@@ -139,6 +132,7 @@ private static final long serialVersionUID = 0L;
             com.google.api.HttpBody.class, com.google.api.HttpBody.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CONTENT_TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object contentType_;
   /**
@@ -147,9 +141,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string content_type = 1;</code>
-   * @return The contentType.
    */
-  @java.lang.Override
   public java.lang.String getContentType() {
     java.lang.Object ref = contentType_;
     if (ref instanceof java.lang.String) {
@@ -168,9 +160,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string content_type = 1;</code>
-   * @return The bytes for contentType.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString
       getContentTypeBytes() {
     java.lang.Object ref = contentType_;
@@ -193,9 +183,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes data = 2;</code>
-   * @return The data.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getData() {
     return data_;
   }
@@ -210,7 +198,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.protobuf.Any extensions = 3;</code>
    */
-  @java.lang.Override
   public java.util.List<com.google.protobuf.Any> getExtensionsList() {
     return extensions_;
   }
@@ -222,7 +209,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.protobuf.Any extensions = 3;</code>
    */
-  @java.lang.Override
   public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
       getExtensionsOrBuilderList() {
     return extensions_;
@@ -235,7 +221,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.protobuf.Any extensions = 3;</code>
    */
-  @java.lang.Override
   public int getExtensionsCount() {
     return extensions_.size();
   }
@@ -247,7 +232,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.protobuf.Any extensions = 3;</code>
    */
-  @java.lang.Override
   public com.google.protobuf.Any getExtensions(int index) {
     return extensions_.get(index);
   }
@@ -259,7 +243,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.protobuf.Any extensions = 3;</code>
    */
-  @java.lang.Override
   public com.google.protobuf.AnyOrBuilder getExtensionsOrBuilder(
       int index) {
     return extensions_.get(index);
@@ -323,14 +306,15 @@ private static final long serialVersionUID = 0L;
     }
     com.google.api.HttpBody other = (com.google.api.HttpBody) obj;
 
-    if (!getContentType()
-        .equals(other.getContentType())) return false;
-    if (!getData()
-        .equals(other.getData())) return false;
-    if (!getExtensionsList()
-        .equals(other.getExtensionsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    boolean result = true;
+    result = result && getContentType()
+        .equals(other.getContentType());
+    result = result && getData()
+        .equals(other.getData());
+    result = result && getExtensionsList()
+        .equals(other.getExtensionsList());
+    result = result && unknownFields.equals(other.unknownFields);
+    return result;
   }
 
   @java.lang.Override
@@ -520,7 +504,7 @@ private static final long serialVersionUID = 0L;
 
       if (extensionsBuilder_ == null) {
         extensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         extensionsBuilder_.clear();
       }
@@ -551,52 +535,54 @@ private static final long serialVersionUID = 0L;
     public com.google.api.HttpBody buildPartial() {
       com.google.api.HttpBody result = new com.google.api.HttpBody(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.contentType_ = contentType_;
       result.data_ = data_;
       if (extensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
           extensions_ = java.util.Collections.unmodifiableList(extensions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.extensions_ = extensions_;
       } else {
         result.extensions_ = extensionsBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.setField(field, value);
+      return (Builder) super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+      return (Builder) super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+      return (Builder) super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -621,7 +607,7 @@ private static final long serialVersionUID = 0L;
         if (!other.extensions_.isEmpty()) {
           if (extensions_.isEmpty()) {
             extensions_ = other.extensions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureExtensionsIsMutable();
             extensions_.addAll(other.extensions_);
@@ -634,7 +620,7 @@ private static final long serialVersionUID = 0L;
             extensionsBuilder_.dispose();
             extensionsBuilder_ = null;
             extensions_ = other.extensions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             extensionsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getExtensionsFieldBuilder() : null;
@@ -680,7 +666,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string content_type = 1;</code>
-     * @return The contentType.
      */
     public java.lang.String getContentType() {
       java.lang.Object ref = contentType_;
@@ -700,7 +685,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string content_type = 1;</code>
-     * @return The bytes for contentType.
      */
     public com.google.protobuf.ByteString
         getContentTypeBytes() {
@@ -721,8 +705,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string content_type = 1;</code>
-     * @param value The contentType to set.
-     * @return This builder for chaining.
      */
     public Builder setContentType(
         java.lang.String value) {
@@ -740,7 +722,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string content_type = 1;</code>
-     * @return This builder for chaining.
      */
     public Builder clearContentType() {
       
@@ -754,8 +735,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string content_type = 1;</code>
-     * @param value The bytes for contentType to set.
-     * @return This builder for chaining.
      */
     public Builder setContentTypeBytes(
         com.google.protobuf.ByteString value) {
@@ -776,9 +755,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 2;</code>
-     * @return The data.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
@@ -788,8 +765,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 2;</code>
-     * @param value The data to set.
-     * @return This builder for chaining.
      */
     public Builder setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -806,7 +781,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearData() {
       
@@ -818,9 +792,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.protobuf.Any> extensions_ =
       java.util.Collections.emptyList();
     private void ensureExtensionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         extensions_ = new java.util.ArrayList<com.google.protobuf.Any>(extensions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -1025,7 +999,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearExtensions() {
       if (extensionsBuilder_ == null) {
         extensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         extensionsBuilder_.clear();
@@ -1137,7 +1111,7 @@ private static final long serialVersionUID = 0L;
         extensionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                 extensions_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
                 isClean());
         extensions_ = null;
@@ -1147,7 +1121,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     @java.lang.Override

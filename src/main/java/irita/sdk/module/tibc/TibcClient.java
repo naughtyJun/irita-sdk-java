@@ -16,14 +16,13 @@ import java.util.List;
 
 public class TibcClient {
     private final BaseClient baseClient;
-    private static final String DO_NOT_MODIFY = "[do-not-modify]";
 
     public TibcClient(BaseClient baseClient) {
         this.baseClient = baseClient;
     }
 
     public ResultTx nftTransfer(String class_, String id, String receiver, String destChainName, String realayChainName, BaseTx baseTx) throws IOException {
-        Account account = baseClient.queryAccount();
+        Account account = baseClient.queryAccount(baseTx);
         Tx.MsgNftTransfer msg = Tx.MsgNftTransfer
                 .newBuilder()
                 .setClass_(class_)

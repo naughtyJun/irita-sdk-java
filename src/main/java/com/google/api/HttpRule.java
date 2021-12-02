@@ -183,7 +183,7 @@ package com.google.api;
  *
  * Protobuf type {@code google.api.HttpRule}
  */
-public final class HttpRule extends
+public  final class HttpRule extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.api.HttpRule)
     HttpRuleOrBuilder {
@@ -197,13 +197,6 @@ private static final long serialVersionUID = 0L;
     body_ = "";
     responseBody_ = "";
     additionalBindings_ = java.util.Collections.emptyList();
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new HttpRule();
   }
 
   @java.lang.Override
@@ -287,9 +280,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
               additionalBindings_ = new java.util.ArrayList<com.google.api.HttpRule>();
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000200;
             }
             additionalBindings_.add(
                 input.readMessage(com.google.api.HttpRule.parser(), extensionRegistry));
@@ -302,7 +295,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownField(
+            if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -316,7 +309,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
         additionalBindings_ = java.util.Collections.unmodifiableList(additionalBindings_);
       }
       this.unknownFields = unknownFields.build();
@@ -336,11 +329,11 @@ private static final long serialVersionUID = 0L;
             com.google.api.HttpRule.class, com.google.api.HttpRule.Builder.class);
   }
 
+  private int bitField0_;
   private int patternCase_ = 0;
   private java.lang.Object pattern_;
   public enum PatternCase
-      implements com.google.protobuf.Internal.EnumLite,
-          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      implements com.google.protobuf.Internal.EnumLite {
     GET(2),
     PUT(3),
     POST(4),
@@ -353,8 +346,6 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
-     * @param value The number of the enum to look for.
-     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -394,9 +385,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string selector = 1;</code>
-   * @return The selector.
    */
-  @java.lang.Override
   public java.lang.String getSelector() {
     java.lang.Object ref = selector_;
     if (ref instanceof java.lang.String) {
@@ -416,9 +405,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string selector = 1;</code>
-   * @return The bytes for selector.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString
       getSelectorBytes() {
     java.lang.Object ref = selector_;
@@ -440,7 +427,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string get = 2;</code>
-   * @return The get.
    */
   public java.lang.String getGet() {
     java.lang.Object ref = "";
@@ -465,7 +451,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string get = 2;</code>
-   * @return The bytes for get.
    */
   public com.google.protobuf.ByteString
       getGetBytes() {
@@ -493,7 +478,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string put = 3;</code>
-   * @return The put.
    */
   public java.lang.String getPut() {
     java.lang.Object ref = "";
@@ -518,7 +502,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string put = 3;</code>
-   * @return The bytes for put.
    */
   public com.google.protobuf.ByteString
       getPutBytes() {
@@ -546,7 +529,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string post = 4;</code>
-   * @return The post.
    */
   public java.lang.String getPost() {
     java.lang.Object ref = "";
@@ -571,7 +553,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string post = 4;</code>
-   * @return The bytes for post.
    */
   public com.google.protobuf.ByteString
       getPostBytes() {
@@ -599,7 +580,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string delete = 5;</code>
-   * @return The delete.
    */
   public java.lang.String getDelete() {
     java.lang.Object ref = "";
@@ -624,7 +604,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string delete = 5;</code>
-   * @return The bytes for delete.
    */
   public com.google.protobuf.ByteString
       getDeleteBytes() {
@@ -652,7 +631,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string patch = 6;</code>
-   * @return The patch.
    */
   public java.lang.String getPatch() {
     java.lang.Object ref = "";
@@ -677,7 +655,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string patch = 6;</code>
-   * @return The bytes for patch.
    */
   public com.google.protobuf.ByteString
       getPatchBytes() {
@@ -708,9 +685,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.api.CustomHttpPattern custom = 8;</code>
-   * @return Whether the custom field is set.
    */
-  @java.lang.Override
   public boolean hasCustom() {
     return patternCase_ == 8;
   }
@@ -723,9 +698,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.api.CustomHttpPattern custom = 8;</code>
-   * @return The custom.
    */
-  @java.lang.Override
   public com.google.api.CustomHttpPattern getCustom() {
     if (patternCase_ == 8) {
        return (com.google.api.CustomHttpPattern) pattern_;
@@ -742,7 +715,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.api.CustomHttpPattern custom = 8;</code>
    */
-  @java.lang.Override
   public com.google.api.CustomHttpPatternOrBuilder getCustomOrBuilder() {
     if (patternCase_ == 8) {
        return (com.google.api.CustomHttpPattern) pattern_;
@@ -761,9 +733,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string body = 7;</code>
-   * @return The body.
    */
-  @java.lang.Override
   public java.lang.String getBody() {
     java.lang.Object ref = body_;
     if (ref instanceof java.lang.String) {
@@ -785,9 +755,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string body = 7;</code>
-   * @return The bytes for body.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString
       getBodyBytes() {
     java.lang.Object ref = body_;
@@ -812,9 +780,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string response_body = 12;</code>
-   * @return The responseBody.
    */
-  @java.lang.Override
   public java.lang.String getResponseBody() {
     java.lang.Object ref = responseBody_;
     if (ref instanceof java.lang.String) {
@@ -835,9 +801,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string response_body = 12;</code>
-   * @return The bytes for responseBody.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString
       getResponseBodyBytes() {
     java.lang.Object ref = responseBody_;
@@ -863,7 +827,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.HttpRule additional_bindings = 11;</code>
    */
-  @java.lang.Override
   public java.util.List<com.google.api.HttpRule> getAdditionalBindingsList() {
     return additionalBindings_;
   }
@@ -876,7 +839,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.HttpRule additional_bindings = 11;</code>
    */
-  @java.lang.Override
   public java.util.List<? extends com.google.api.HttpRuleOrBuilder> 
       getAdditionalBindingsOrBuilderList() {
     return additionalBindings_;
@@ -890,7 +852,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.HttpRule additional_bindings = 11;</code>
    */
-  @java.lang.Override
   public int getAdditionalBindingsCount() {
     return additionalBindings_.size();
   }
@@ -903,7 +864,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.HttpRule additional_bindings = 11;</code>
    */
-  @java.lang.Override
   public com.google.api.HttpRule getAdditionalBindings(int index) {
     return additionalBindings_.get(index);
   }
@@ -916,7 +876,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.HttpRule additional_bindings = 11;</code>
    */
-  @java.lang.Override
   public com.google.api.HttpRuleOrBuilder getAdditionalBindingsOrBuilder(
       int index) {
     return additionalBindings_.get(index);
@@ -1022,45 +981,48 @@ private static final long serialVersionUID = 0L;
     }
     com.google.api.HttpRule other = (com.google.api.HttpRule) obj;
 
-    if (!getSelector()
-        .equals(other.getSelector())) return false;
-    if (!getBody()
-        .equals(other.getBody())) return false;
-    if (!getResponseBody()
-        .equals(other.getResponseBody())) return false;
-    if (!getAdditionalBindingsList()
-        .equals(other.getAdditionalBindingsList())) return false;
-    if (!getPatternCase().equals(other.getPatternCase())) return false;
+    boolean result = true;
+    result = result && getSelector()
+        .equals(other.getSelector());
+    result = result && getBody()
+        .equals(other.getBody());
+    result = result && getResponseBody()
+        .equals(other.getResponseBody());
+    result = result && getAdditionalBindingsList()
+        .equals(other.getAdditionalBindingsList());
+    result = result && getPatternCase().equals(
+        other.getPatternCase());
+    if (!result) return false;
     switch (patternCase_) {
       case 2:
-        if (!getGet()
-            .equals(other.getGet())) return false;
+        result = result && getGet()
+            .equals(other.getGet());
         break;
       case 3:
-        if (!getPut()
-            .equals(other.getPut())) return false;
+        result = result && getPut()
+            .equals(other.getPut());
         break;
       case 4:
-        if (!getPost()
-            .equals(other.getPost())) return false;
+        result = result && getPost()
+            .equals(other.getPost());
         break;
       case 5:
-        if (!getDelete()
-            .equals(other.getDelete())) return false;
+        result = result && getDelete()
+            .equals(other.getDelete());
         break;
       case 6:
-        if (!getPatch()
-            .equals(other.getPatch())) return false;
+        result = result && getPatch()
+            .equals(other.getPatch());
         break;
       case 8:
-        if (!getCustom()
-            .equals(other.getCustom())) return false;
+        result = result && getCustom()
+            .equals(other.getCustom());
         break;
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    result = result && unknownFields.equals(other.unknownFields);
+    return result;
   }
 
   @java.lang.Override
@@ -1427,7 +1389,7 @@ private static final long serialVersionUID = 0L;
 
       if (additionalBindingsBuilder_ == null) {
         additionalBindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         additionalBindingsBuilder_.clear();
       }
@@ -1460,6 +1422,7 @@ private static final long serialVersionUID = 0L;
     public com.google.api.HttpRule buildPartial() {
       com.google.api.HttpRule result = new com.google.api.HttpRule(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.selector_ = selector_;
       if (patternCase_ == 2) {
         result.pattern_ = pattern_;
@@ -1486,14 +1449,15 @@ private static final long serialVersionUID = 0L;
       result.body_ = body_;
       result.responseBody_ = responseBody_;
       if (additionalBindingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
           additionalBindings_ = java.util.Collections.unmodifiableList(additionalBindings_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.additionalBindings_ = additionalBindings_;
       } else {
         result.additionalBindings_ = additionalBindingsBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       result.patternCase_ = patternCase_;
       onBuilt();
       return result;
@@ -1501,35 +1465,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.setField(field, value);
+      return (Builder) super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+      return (Builder) super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+      return (Builder) super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1559,7 +1523,7 @@ private static final long serialVersionUID = 0L;
         if (!other.additionalBindings_.isEmpty()) {
           if (additionalBindings_.isEmpty()) {
             additionalBindings_ = other.additionalBindings_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureAdditionalBindingsIsMutable();
             additionalBindings_.addAll(other.additionalBindings_);
@@ -1572,7 +1536,7 @@ private static final long serialVersionUID = 0L;
             additionalBindingsBuilder_.dispose();
             additionalBindingsBuilder_ = null;
             additionalBindings_ = other.additionalBindings_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000200);
             additionalBindingsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAdditionalBindingsFieldBuilder() : null;
@@ -1673,7 +1637,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string selector = 1;</code>
-     * @return The selector.
      */
     public java.lang.String getSelector() {
       java.lang.Object ref = selector_;
@@ -1694,7 +1657,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string selector = 1;</code>
-     * @return The bytes for selector.
      */
     public com.google.protobuf.ByteString
         getSelectorBytes() {
@@ -1716,8 +1678,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string selector = 1;</code>
-     * @param value The selector to set.
-     * @return This builder for chaining.
      */
     public Builder setSelector(
         java.lang.String value) {
@@ -1736,7 +1696,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string selector = 1;</code>
-     * @return This builder for chaining.
      */
     public Builder clearSelector() {
       
@@ -1751,8 +1710,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string selector = 1;</code>
-     * @param value The bytes for selector to set.
-     * @return This builder for chaining.
      */
     public Builder setSelectorBytes(
         com.google.protobuf.ByteString value) {
@@ -1772,9 +1729,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string get = 2;</code>
-     * @return The get.
      */
-    @java.lang.Override
     public java.lang.String getGet() {
       java.lang.Object ref = "";
       if (patternCase_ == 2) {
@@ -1798,9 +1753,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string get = 2;</code>
-     * @return The bytes for get.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getGetBytes() {
       java.lang.Object ref = "";
@@ -1825,8 +1778,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string get = 2;</code>
-     * @param value The get to set.
-     * @return This builder for chaining.
      */
     public Builder setGet(
         java.lang.String value) {
@@ -1844,7 +1795,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string get = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearGet() {
       if (patternCase_ == 2) {
@@ -1860,8 +1810,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string get = 2;</code>
-     * @param value The bytes for get to set.
-     * @return This builder for chaining.
      */
     public Builder setGetBytes(
         com.google.protobuf.ByteString value) {
@@ -1881,9 +1829,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string put = 3;</code>
-     * @return The put.
      */
-    @java.lang.Override
     public java.lang.String getPut() {
       java.lang.Object ref = "";
       if (patternCase_ == 3) {
@@ -1907,9 +1853,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string put = 3;</code>
-     * @return The bytes for put.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getPutBytes() {
       java.lang.Object ref = "";
@@ -1934,8 +1878,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string put = 3;</code>
-     * @param value The put to set.
-     * @return This builder for chaining.
      */
     public Builder setPut(
         java.lang.String value) {
@@ -1953,7 +1895,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string put = 3;</code>
-     * @return This builder for chaining.
      */
     public Builder clearPut() {
       if (patternCase_ == 3) {
@@ -1969,8 +1910,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string put = 3;</code>
-     * @param value The bytes for put to set.
-     * @return This builder for chaining.
      */
     public Builder setPutBytes(
         com.google.protobuf.ByteString value) {
@@ -1990,9 +1929,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string post = 4;</code>
-     * @return The post.
      */
-    @java.lang.Override
     public java.lang.String getPost() {
       java.lang.Object ref = "";
       if (patternCase_ == 4) {
@@ -2016,9 +1953,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string post = 4;</code>
-     * @return The bytes for post.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getPostBytes() {
       java.lang.Object ref = "";
@@ -2043,8 +1978,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string post = 4;</code>
-     * @param value The post to set.
-     * @return This builder for chaining.
      */
     public Builder setPost(
         java.lang.String value) {
@@ -2062,7 +1995,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string post = 4;</code>
-     * @return This builder for chaining.
      */
     public Builder clearPost() {
       if (patternCase_ == 4) {
@@ -2078,8 +2010,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string post = 4;</code>
-     * @param value The bytes for post to set.
-     * @return This builder for chaining.
      */
     public Builder setPostBytes(
         com.google.protobuf.ByteString value) {
@@ -2099,9 +2029,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string delete = 5;</code>
-     * @return The delete.
      */
-    @java.lang.Override
     public java.lang.String getDelete() {
       java.lang.Object ref = "";
       if (patternCase_ == 5) {
@@ -2125,9 +2053,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string delete = 5;</code>
-     * @return The bytes for delete.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDeleteBytes() {
       java.lang.Object ref = "";
@@ -2152,8 +2078,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string delete = 5;</code>
-     * @param value The delete to set.
-     * @return This builder for chaining.
      */
     public Builder setDelete(
         java.lang.String value) {
@@ -2171,7 +2095,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string delete = 5;</code>
-     * @return This builder for chaining.
      */
     public Builder clearDelete() {
       if (patternCase_ == 5) {
@@ -2187,8 +2110,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string delete = 5;</code>
-     * @param value The bytes for delete to set.
-     * @return This builder for chaining.
      */
     public Builder setDeleteBytes(
         com.google.protobuf.ByteString value) {
@@ -2208,9 +2129,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patch = 6;</code>
-     * @return The patch.
      */
-    @java.lang.Override
     public java.lang.String getPatch() {
       java.lang.Object ref = "";
       if (patternCase_ == 6) {
@@ -2234,9 +2153,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patch = 6;</code>
-     * @return The bytes for patch.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getPatchBytes() {
       java.lang.Object ref = "";
@@ -2261,8 +2178,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patch = 6;</code>
-     * @param value The patch to set.
-     * @return This builder for chaining.
      */
     public Builder setPatch(
         java.lang.String value) {
@@ -2280,7 +2195,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patch = 6;</code>
-     * @return This builder for chaining.
      */
     public Builder clearPatch() {
       if (patternCase_ == 6) {
@@ -2296,8 +2210,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patch = 6;</code>
-     * @param value The bytes for patch to set.
-     * @return This builder for chaining.
      */
     public Builder setPatchBytes(
         com.google.protobuf.ByteString value) {
@@ -2322,9 +2234,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.api.CustomHttpPattern custom = 8;</code>
-     * @return Whether the custom field is set.
      */
-    @java.lang.Override
     public boolean hasCustom() {
       return patternCase_ == 8;
     }
@@ -2337,9 +2247,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.api.CustomHttpPattern custom = 8;</code>
-     * @return The custom.
      */
-    @java.lang.Override
     public com.google.api.CustomHttpPattern getCustom() {
       if (customBuilder_ == null) {
         if (patternCase_ == 8) {
@@ -2475,7 +2383,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.api.CustomHttpPattern custom = 8;</code>
      */
-    @java.lang.Override
     public com.google.api.CustomHttpPatternOrBuilder getCustomOrBuilder() {
       if ((patternCase_ == 8) && (customBuilder_ != null)) {
         return customBuilder_.getMessageOrBuilder();
@@ -2525,7 +2432,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string body = 7;</code>
-     * @return The body.
      */
     public java.lang.String getBody() {
       java.lang.Object ref = body_;
@@ -2548,7 +2454,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string body = 7;</code>
-     * @return The bytes for body.
      */
     public com.google.protobuf.ByteString
         getBodyBytes() {
@@ -2572,8 +2477,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string body = 7;</code>
-     * @param value The body to set.
-     * @return This builder for chaining.
      */
     public Builder setBody(
         java.lang.String value) {
@@ -2594,7 +2497,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string body = 7;</code>
-     * @return This builder for chaining.
      */
     public Builder clearBody() {
       
@@ -2611,8 +2513,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string body = 7;</code>
-     * @param value The bytes for body to set.
-     * @return This builder for chaining.
      */
     public Builder setBodyBytes(
         com.google.protobuf.ByteString value) {
@@ -2635,7 +2535,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string response_body = 12;</code>
-     * @return The responseBody.
      */
     public java.lang.String getResponseBody() {
       java.lang.Object ref = responseBody_;
@@ -2657,7 +2556,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string response_body = 12;</code>
-     * @return The bytes for responseBody.
      */
     public com.google.protobuf.ByteString
         getResponseBodyBytes() {
@@ -2680,8 +2578,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string response_body = 12;</code>
-     * @param value The responseBody to set.
-     * @return This builder for chaining.
      */
     public Builder setResponseBody(
         java.lang.String value) {
@@ -2701,7 +2597,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string response_body = 12;</code>
-     * @return This builder for chaining.
      */
     public Builder clearResponseBody() {
       
@@ -2717,8 +2612,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string response_body = 12;</code>
-     * @param value The bytes for responseBody to set.
-     * @return This builder for chaining.
      */
     public Builder setResponseBodyBytes(
         com.google.protobuf.ByteString value) {
@@ -2735,9 +2628,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.HttpRule> additionalBindings_ =
       java.util.Collections.emptyList();
     private void ensureAdditionalBindingsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
         additionalBindings_ = new java.util.ArrayList<com.google.api.HttpRule>(additionalBindings_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000200;
        }
     }
 
@@ -2953,7 +2846,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearAdditionalBindings() {
       if (additionalBindingsBuilder_ == null) {
         additionalBindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         additionalBindingsBuilder_.clear();
@@ -3072,7 +2965,7 @@ private static final long serialVersionUID = 0L;
         additionalBindingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.HttpRule, com.google.api.HttpRule.Builder, com.google.api.HttpRuleOrBuilder>(
                 additionalBindings_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000200) == 0x00000200),
                 getParentForChildren(),
                 isClean());
         additionalBindings_ = null;
@@ -3082,7 +2975,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     @java.lang.Override

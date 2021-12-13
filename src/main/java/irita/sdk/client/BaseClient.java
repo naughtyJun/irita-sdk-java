@@ -25,7 +25,6 @@ import proto.cosmos.auth.v1beta1.QueryOuterClass;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import java.util.Objects;
 
 public class BaseClient {
     private ClientConfig clientConfig;
@@ -76,7 +75,7 @@ public class BaseClient {
 
     public Account queryAccount(BaseTx baseTx) {
         if (!km.getKeyDAO().has(baseTx.getFrom())) {
-            throw new IritaSDKException(String.format("name %s has existed in keyDao", baseTx.getFrom()));
+            throw new IritaSDKException(String.format("name %s hasn't existed in keyDao", baseTx.getFrom()));
         }
         KeyInfo keyInfo = km.getKeyDAO().read(baseTx.getFrom(), baseTx.getPassword());
         return queryAccount(keyInfo.getAddress());
@@ -112,18 +111,18 @@ public class BaseClient {
         return rpcClient.simulateTx(txBytes);
     }
 
-    public ResultQueryTx queryTx(String hash) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public ResultQueryTx queryTx(String hash) throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         return rpcClient.queryTx(hash);
     }
 
-    public ResultSearchTxs queryTxs(EventQueryBuilder builder, int page, int size) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+    public ResultSearchTxs queryTxs(EventQueryBuilder builder, int page, int size) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         if (builder == null) {
             throw new IritaSDKException("EventQueryBuilder can not be null");
         }
         return rpcClient.queryTxs(builder, page, size);
     }
 
-    public BlockDetail queryBlock(String height) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public BlockDetail queryBlock(String height) throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         ResultBlock resultBlock = rpcClient.queryBlock(height);
         BlockResult blockResult = rpcClient.queryBlockResult(height);
 
